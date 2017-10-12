@@ -82,8 +82,7 @@ this.game.scale.refresh();
         //pass the background music to the gameMedia object
         gameMedia.setBackgroundMusic(this.backgroundMusic);
         
-        game.world.bringToTop(StickerGroup);
-        game.world.bringToTop(ColorGroup);
+
         
         //Images Variables
         var GameCenter_x = game.width/2;
@@ -222,7 +221,12 @@ this.game.scale.refresh();
         Character.add(this.MagnifyingLenz);
         
         game.world.bringToTop(Character);
-        game.world.bringToTop(buttongroup);
+        game.world.bringToTop(StickerGroup);
+        game.world.bringToTop(ColorGroup);
+        
+        
+        
+        //game.world.bringToTop(buttongroup);
         //init the music
         gameMedia.updateMusic();        
         //init the sound buttons
