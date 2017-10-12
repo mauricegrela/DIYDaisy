@@ -41,6 +41,8 @@ this.game.scale.refresh();
         //  Create the group for the stickers
         StickerGroup = game.add.group();
 
+        //Main button group 
+        MainButtonGroup = game.add.group();
         //  Create the group for the color pallet
         ColorGroup = game.add.group();
         
@@ -82,8 +84,7 @@ this.game.scale.refresh();
         //pass the background music to the gameMedia object
         gameMedia.setBackgroundMusic(this.backgroundMusic);
         
-        game.world.bringToTop(StickerGroup);
-        game.world.bringToTop(ColorGroup);
+
         
         //Images Variables
         var GameCenter_x = game.width/2;
@@ -112,12 +113,15 @@ this.game.scale.refresh();
         //Hint Button
         this.MainStickerButton = gameButtons.addGenericButton("0", MenuTopButtons_Pos_x+160, MenuTopButtons_Pos_y+20, this.AlphaHintOn, this,"creativeButtons",3); 
         this.MainStickerButton.scale.setTo(MacroButton_Scale,MacroButton_Scale);
+        MainButtonGroup.add(this.MainStickerButton);
         //Save Button
         this.MainColorButton = gameButtons.addGenericButton("0", MenuTopButtons_Pos_x+300, MenuTopButtons_Pos_y+20, this.SaveClicked, this,"creativeButtons",4); 
         this.MainColorButton.scale.setTo(MacroButton_Scale,MacroButton_Scale);
+        MainButtonGroup.add(this.MainColorButton);
         //Back button
         this.MainResetButton = gameButtons.addGenericButton("0", MenuTopButtons_Pos_x+440, MenuTopButtons_Pos_y+20, this.BackToCharacterSelect, this,"creativeButtons",5); 
         this.MainResetButton.scale.setTo(MacroButton_Scale,MacroButton_Scale);
+        MainButtonGroup.add(this.MainResetButton);
         
         //Sticker Buttons
         var ButtonsPos_x = 800;
@@ -222,7 +226,12 @@ this.game.scale.refresh();
         Character.add(this.MagnifyingLenz);
         
         game.world.bringToTop(Character);
-        game.world.bringToTop(buttongroup);
+        game.world.bringToTop(StickerGroup);
+        game.world.bringToTop(ColorGroup);
+        game.world.bringToTop(MainButtonGroup);
+        
+        
+        //game.world.bringToTop(buttongroup);
         //init the music
         gameMedia.updateMusic();        
         //init the sound buttons
