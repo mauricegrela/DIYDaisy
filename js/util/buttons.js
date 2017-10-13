@@ -76,14 +76,14 @@ GameButtons = function () {
             return mButton;
         },//STICKER BUTTON VARIABLES 
         
-        this.addStickerButton = function (type, xx, yy, f, scope, SpriteRef) {
+        this.addStickerButton = function (type, xx, yy, f, scope, SpriteRef,ButtonArtRef) {
         if (xx == -1) {
                 xx = game.world.centerX;
             }
             if (yy == -1) {
                 yy = game.world.centerY;
             }
-            var sButton = game.add.sprite(xx, yy, "StickerLeaf1");
+            var sButton = game.add.sprite(xx, yy, ButtonArtRef);
             sButton.frame = SpriteRef;
             /*if (type == "music") {
                 
