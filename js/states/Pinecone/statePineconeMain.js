@@ -1,4 +1,4 @@
-var StateMainLeaf = {
+var StatePineconeMain = {
 ////////////////////////////////////////////
 ///////////REMEMBER TO REFRESH/////////////
 //////////////////////////////////////////
@@ -57,11 +57,11 @@ this.game.scale.refresh();
         score = 0;
         
         //Add background      
-        this.craftBackground = game.add.sprite(0, 0, 'craft_Backgroung');
-        BackgroundGroup.add(this.craftBackground); 
+        //this.craftBackground = game.add.sprite(0, 0, 'craft_Backgroung');
+        //BackgroundGroup.add(this.craftBackground); 
         
-        this.craftBackground.width = game.width;
-        this.craftBackground.height = game.height;
+        //this.craftBackground.width = game.width;
+        //this.craftBackground.height = game.height;
         
         //add some buttons
         //this.btnYes = gameButtons.addButton("save", game.world.centerX+(game.world.centerX/2), -1, this.SaveClicked, this);
@@ -126,14 +126,32 @@ this.game.scale.refresh();
         //Sticker Buttons
         var ButtonsPos_x = 800;
         var ButtonsPos_y = 700;
-        this.StickerButton1 = gameButtons.addStickerButton("0", ButtonsPos_x, ButtonsPos_y, this.Sticker_1, this,0); 
+        
+        this.StickerButton1 = gameButtons.addStickerButton("0", ButtonsPos_x, ButtonsPos_y, this.Sticker_1_Place, this,0); 
         StickerGroup.add(this.StickerButton1);
-        this.StickerButton2 = gameButtons.addStickerButton("0", ButtonsPos_x+80, ButtonsPos_y, this.Sticker_2, this,1); 
+        
+        this.StickerButton2 = gameButtons.addStickerButton("0", ButtonsPos_x+80, ButtonsPos_y, this.Sticker_2_Place, this,1); 
         StickerGroup.add(this.StickerButton2);
-        this.StickerButton3 = gameButtons.addStickerButton("0", ButtonsPos_x+160, ButtonsPos_y, this.Sticker_3, this,2);  
+        
+        this.StickerButton3 = gameButtons.addStickerButton("0", ButtonsPos_x+160, ButtonsPos_y, this.Sticker_3_Place, this,2);  
         StickerGroup.add(this.StickerButton3);
-        this.StickerButton4 = gameButtons.addStickerButton("0", ButtonsPos_x+240, ButtonsPos_y, this.Sticker_4, this,3);
+        
+        this.StickerButton4 = gameButtons.addStickerButton("0", ButtonsPos_x+240, ButtonsPos_y, this.Sticker_4_Place, this,3);
         StickerGroup.add(this.StickerButton4);
+        
+        this.StickerButton5 = gameButtons.addStickerButton("0", ButtonsPos_x, ButtonsPos_y+60, this.Sticker_5_Place, this,0); 
+        StickerGroup.add(this.StickerButton5);
+        
+        this.StickerButton6 = gameButtons.addStickerButton("0", ButtonsPos_x+80, ButtonsPos_y+60, this.Sticker_6_Place, this,1); 
+        StickerGroup.add(this.StickerButton6);
+        
+        this.StickerButton7 = gameButtons.addStickerButton("0", ButtonsPos_x+160, ButtonsPos_y+60, this.Sticker_7_Place, this,2);  
+        StickerGroup.add(this.StickerButton7);
+        
+        this.StickerButton8 = gameButtons.addStickerButton("0", ButtonsPos_x+240, ButtonsPos_y+60, this.Sticker_8_Place, this,3);
+        StickerGroup.add(this.StickerButton8);
+                
+        
         StickerGroup.visible = true;
         
         //Hit Button
@@ -153,50 +171,87 @@ this.game.scale.refresh();
         this.Selectedcolor = this.ColorButton1;
         
         
-        //Leaf Body
-        this.LeafBody = game.add.sprite(GameCenter_x, GameCenter_y, 'Body');   
-        this.LeafBody.anchor.set(0.5);
-        this.LeafBody.alpha = 1;
-        this.LeafBody.inputEnabled = true;
-        this.LeafBody.input.pixelPerfectOver = true;
-        this.LeafBody.events.onInputOver.add(this.BodyClick, this);    
-        Character.add(this.LeafBody); 
+        //Pinecone Body
+        this.PineconeBody = game.add.sprite(GameCenter_x, GameCenter_y, 'PineconeBody');   
+        this.PineconeBody.anchor.set(0.5);
+        this.PineconeBody.alpha = 1;
+        this.PineconeBody.inputEnabled = true;
+        this.PineconeBody.input.pixelPerfectOver = true;
+        this.PineconeBody.events.onInputOver.add(this.BodyClick, this);    
+        Character.add(this.PineconeBody); 
         
-        //Leaf Ears
-        this.LeafEars = game.add.sprite(GameCenter_x, GameCenter_y, 'Ears');        
-        this.LeafEars.alpha = 0;
-        this.LeafEars.anchor.set(0.5);
-        this.LeafEars.inputEnabled = true;
-        this.LeafEars.input.pixelPerfectOver = true;
-        this.LeafEars.events.onInputOver.add(this.Sticker_1Click, this);  
-        Character.add(this.LeafEars); 
+        //Sticker_1_1
+        this.Sticker_1 = game.add.sprite(GameCenter_x, GameCenter_y, 'PineconeFeet_1');        
+        this.Sticker_1.alpha = 0;
+        this.Sticker_1.anchor.set(0.5);
+        this.Sticker_1.inputEnabled = true;
+        this.Sticker_1.input.pixelPerfectOver = true;
+        this.Sticker_1.events.onInputOver.add(this.Sticker_1Click, this);  
+        Character.add(this.Sticker_1);  
         
-        //Leaf Eyes       
-        this.LeafEyes = game.add.sprite(GameCenter_x, GameCenter_y, 'Eyes');
-        this.LeafEyes.alpha = 0;
-        this.LeafEyes.anchor.set(0.5);
-        this.LeafEyes.inputEnabled = true;
-        this.LeafEyes.input.pixelPerfectOver = true;
-        this.LeafEyes.events.onInputOver.add(this.Sticker_2Click, this);
-        Character.add(this.LeafEyes);
         
-        //Leaf whiskers
-        this.LeafWhiskers = game.add.sprite(GameCenter_x, GameCenter_y, 'Whiskers');
-        this.LeafWhiskers.alpha = 0;
-        this.LeafWhiskers.anchor.set(0.5);
-        this.LeafWhiskers.inputEnabled = true;
-        this.LeafWhiskers.input.pixelPerfectOver = true;
-        this.LeafWhiskers.events.onInputOver.add(this.Sticker_3Click, this);
-        Character.add(this.LeafWhiskers);
+        //Sticker_2      
+        this.Sticker_2 = game.add.sprite(GameCenter_x, GameCenter_y, 'PineconeFeet_2');
+        this.Sticker_2.alpha = 0;
+        this.Sticker_2.anchor.set(0.5);
+        this.Sticker_2.inputEnabled = true;
+        this.Sticker_2.input.pixelPerfectOver = true;
+        this.Sticker_2.events.onInputOver.add(this.Sticker_2Click, this);
+        Character.add(this.Sticker_2);
+       
+        //Sticker_3
+        this.Sticker_3 = game.add.sprite(GameCenter_x, GameCenter_y, 'PineconeWings_1');
+        this.Sticker_3.alpha = 0;
+        this.Sticker_3.anchor.set(0.5);
+        this.Sticker_3.inputEnabled = true;
+        this.Sticker_3.input.pixelPerfectOver = true;
+        this.Sticker_3.events.onInputOver.add(this.Sticker_3Click, this);
+        Character.add(this.Sticker_3);
         
-        //LeafNose
-        this.LeafNose = game.add.sprite(GameCenter_x, GameCenter_y, 'Nose');
-        this.LeafNose.alpha = 0;
-        this.LeafNose.anchor.set(0.5);
-        this.LeafNose.inputEnabled = true;
-        this.LeafNose.input.pixelPerfectOver = true;
-        this.LeafNose.events.onInputOver.add(this.Sticker_4Click, this);
-        Character.add(this.LeafNose);
+        //Sticker_4
+        this.Sticker_4 = game.add.sprite(GameCenter_x, GameCenter_y, 'PineconeWings_2');
+        this.Sticker_4.alpha = 0;
+        this.Sticker_4.anchor.set(0.5);
+        this.Sticker_4.inputEnabled = true;
+        this.Sticker_4.input.pixelPerfectOver = true;
+        this.Sticker_4.events.onInputOver.add(this.Sticker_4Click, this);
+        Character.add(this.Sticker_4);
+        
+        //Sticker_5
+        this.Sticker_5 = game.add.sprite(GameCenter_x, GameCenter_y, 'PineconeMouth_1');        
+        this.Sticker_5.alpha = 0;
+        this.Sticker_5.anchor.set(0.5);
+        this.Sticker_5.inputEnabled = true;
+        this.Sticker_5.input.pixelPerfectOver = true;
+        this.Sticker_5.events.onInputOver.add(this.Sticker_5Click, this);  
+        Character.add(this.Sticker_5);      
+        
+        //Sticker_6      
+        this.Sticker_6 = game.add.sprite(GameCenter_x, GameCenter_y, 'PineconeMouth_2');
+        this.Sticker_6.alpha = 0;
+        this.Sticker_6.anchor.set(0.5);
+        this.Sticker_6.inputEnabled = true;
+        this.Sticker_6.input.pixelPerfectOver = true;
+        this.Sticker_6.events.onInputOver.add(this.Sticker_6Click, this);
+        Character.add(this.Sticker_6);
+       
+        //Sticker_7
+        this.Sticker_7 = game.add.sprite(GameCenter_x, GameCenter_y, 'PineconeEyes_1');
+        this.Sticker_7.alpha = 0;
+        this.Sticker_7.anchor.set(0.5);
+        this.Sticker_7.inputEnabled = true;
+        this.Sticker_7.input.pixelPerfectOver = true;
+        this.Sticker_7.events.onInputOver.add(this.Sticker_7Click, this);
+        Character.add(this.Sticker_7);
+        
+        //Sticker_8
+        this.Sticker_8 = game.add.sprite(GameCenter_x, GameCenter_y, 'PineconeEyes_2');
+        this.Sticker_8.alpha = 0;
+        this.Sticker_8.anchor.set(0.5);
+        this.Sticker_8.inputEnabled = true;
+        this.Sticker_8.input.pixelPerfectOver = true;
+        this.Sticker_8.events.onInputOver.add(this.Sticker_8Click, this);
+        Character.add(this.Sticker_8);
         
         //Animation test
         var mummy = game.add.sprite(300, 200, 'mummy');
@@ -257,7 +312,7 @@ this.game.scale.refresh();
           if(isClickDragging == true) 
           {//If the player is dragging the image onto the 
             if( game.input.activePointer.leftButton.isDown == true )
-            {////this.LeafBody.alpha = 0;
+            {////this.PineconeBody.alpha = 0;
                 this.SelectedButton.x = game.input.mousePointer.x;
                 this.SelectedButton.y = game.input.mousePointer.y;
             }
@@ -277,7 +332,7 @@ this.game.scale.refresh();
         isAddindpaint = true;
         if(isClickDragging == false)
         {
-        this.LeafBody.tint = SelectedColor;
+        this.PineconeBody.tint = SelectedColor;
         testArrayColor[0] = SelectedColor;
         }
     }, 
@@ -287,7 +342,7 @@ this.game.scale.refresh();
         isAddindpaint = true;
         if(isClickDragging == false)
         {
-        this.LeafEyes.tint = SelectedColor;
+        this.Sticker_2.tint = SelectedColor;
         testArrayColor[2] = SelectedColor;
         }
     },
@@ -296,7 +351,7 @@ this.game.scale.refresh();
         if(isClickDragging == false)
         {
         isAddindpaint = true;
-        this.LeafEars.tint = SelectedColor;
+        this.Sticker_1.tint = SelectedColor;
         testArrayColor[1] = SelectedColor;
         }
     },
@@ -305,7 +360,7 @@ this.game.scale.refresh();
         if(isClickDragging == false)
         {
         isAddindpaint = true;
-        this.LeafNose.tint = SelectedColor;
+        this.Sticker_4.tint = SelectedColor;
         testArrayColor[4] = SelectedColor;
         }
     },
@@ -314,54 +369,121 @@ this.game.scale.refresh();
         if(isClickDragging == false)
         {
         isAddindpaint = true;
-        this.LeafWhiskers.tint = SelectedColor;
+        this.Sticker_3.tint = SelectedColor;
         testArrayColor[3] = SelectedColor;
         }
     },
+    
+    Sticker_5Click: function () {
+        if(isClickDragging == false)
+        {
+        isAddindpaint = true;
+        this.Sticker_4.tint = SelectedColor;
+        testArrayColor[4] = SelectedColor;
+        }
+    },
+    
+    Sticker_6Click: function () {
+        if(isClickDragging == false)
+        {
+        isAddindpaint = true;
+        this.Sticker_5.tint = SelectedColor;
+        testArrayColor[5] = SelectedColor;
+        }
+    },
+             
+    Sticker_7Click: function () {
+        if(isClickDragging == false)
+        {
+        isAddindpaint = true;
+        this.Sticker_6.tint = SelectedColor;
+        testArrayColor[6] = SelectedColor;
+        }
+    },
+    
+   Sticker_8Click: function () {
+        if(isClickDragging == false)
+        {
+        isAddindpaint = true;
+        this.Sticker_7.tint = SelectedColor;
+        testArrayColor[7] = SelectedColor;
+        }
+    }, 
     ////////////
     //Sickers.//
     ////////////
-    Sticker_1: function () {
-        
+    Sticker_1_Place: function () {    
     isClickDragging = true;
     isAddindpaint = false;
-    this.SelectedButton = this.LeafEyes;
-    this.LeafEyes.alpha = 1;  
+    this.SelectedButton = this.Sticker_1;
+    this.Sticker_1.alpha = 1;  
     PositionArrayIndicator = 1;
     testArrayAlpha[1] = 1;
-    //if(this.LeafEyes.alpha == 1){//isClickDragging = true;this.SelectedButton = this.LeafEyes; this.LeafEyes.alpha = 1//this.LeafEyes.alpha = 0;testArrayAlpha[1] = 0;}else{//testArrayAlpha[1] = 1;this.LeafEyes.alpha = 1;}
     },  
     
-    Sticker_2: function () {
+    Sticker_2_Place: function () {
     isClickDragging = true;
     isAddindpaint = false;
-    this.SelectedButton = this.LeafEars;
-    this.LeafEars.alpha = 1;
+    this.SelectedButton = this.Sticker_2;
+    this.Sticker_2.alpha = 1;
     PositionArrayIndicator = 2;
     testArrayAlpha[2] = 1;
-    //if(this.LeafEars.alpha == 1){this.LeafEars.alpha = 0;testArrayAlpha[2] = 0;}else{this.LeafEars.alpha = 1;testArrayAlpha[2] = 1;}
     }, 
     
-    Sticker_3: function () {
+    Sticker_3_Place: function () {
     isClickDragging = true;
     isAddindpaint = false;
-    this.SelectedButton = this.LeafNose;
-    this.LeafNose.alpha = 1;
+    this.SelectedButton = this.Sticker_3;
+    this.Sticker_3.alpha = 1;
     PositionArrayIndicator = 3;
     testArrayAlpha[3] = 1;
-    //if(this.LeafNose.alpha == 1){this.LeafNose.alpha = 0;testArrayAlpha[3] = 0;}else{this.LeafNose.alpha = 1;testArrayAlpha[3] = 1;}
     },   
     
-    Sticker_4: function () {
+    Sticker_4_Place: function () {
     isClickDragging = true;
     isAddindpaint = false;
-    this.SelectedButton = this.LeafWhiskers;
-    this.LeafWhiskers.alpha = 1;  
+    this.SelectedButton = this.Sticker_4;
+    this.Sticker_4.alpha = 1;  
     PositionArrayIndicator = 4;
     testArrayAlpha[4] = 1;
-    //if(this.LeafWhiskers.alpha == 1){this.LeafWhiskers.alpha = 0;testArrayAlpha[4] = 0;}else{this.LeafWhiskers.alpha = 1;testArrayAlpha[4] = 1;}
     }, 
     
+    Sticker_5_Place: function () {
+    isClickDragging = true;
+    isAddindpaint = false;
+    this.SelectedButton = this.Sticker_5;
+    this.Sticker_5.alpha = 1;  
+    PositionArrayIndicator = 5;
+    testArrayAlpha[5] = 1;
+    }, 
+        
+    Sticker_6_Place: function () {
+    isClickDragging = true;
+    isAddindpaint = false;
+    this.SelectedButton = this.Sticker_6;
+    this.Sticker_6.alpha = 1;  
+    PositionArrayIndicator = 6;
+    testArrayAlpha[6] = 1;
+    }, 
+            
+    Sticker_7_Place: function () {
+    isClickDragging = true;
+    isAddindpaint = false;
+    this.SelectedButton = this.Sticker_7;
+    this.Sticker_7.alpha = 1;  
+    PositionArrayIndicator = 7;
+    testArrayAlpha[7] = 1;
+    }, 
+             
+    Sticker_8_Place: function () {
+    isClickDragging = true;
+    isAddindpaint = false;
+    this.SelectedButton = this.Sticker_8;
+    this.Sticker_8.alpha = 1;  
+    PositionArrayIndicator = 8;
+    testArrayAlpha[8] = 1;
+    }, 
+       
     //Alpha Hint
     AlphaHintOn: function () {
     if(IsInAlpha == true){IsInAlpha = false;this.mask.x = -100;this.mask.y = -100;}
@@ -374,18 +496,21 @@ this.game.scale.refresh();
     SelectedColor =0xAEE313;
     this.ColorButton1.scale.setTo(2, 2);
     },
+    
     Color_2: function () {
     this.Selectedcolor.scale.setTo(1, 1);
     this.Selectedcolor = this.ColorButton2;
     SelectedColor =0x13AEE3;
     this.ColorButton2.scale.setTo(2, 2);
     },
+    
     Color_3: function () {
     this.Selectedcolor.scale.setTo(1, 1);
     this.Selectedcolor = this.ColorButton3;
     SelectedColor =0xAE13E3;
     this.ColorButton3.scale.setTo(2, 2);
     },
+    
     Color_4: function () {
     this.Selectedcolor.scale.setTo(1, 1);
     this.Selectedcolor = this.ColorButton4;
@@ -397,7 +522,7 @@ this.game.scale.refresh();
     ColorTurnOn: function () {StickerGroup.visible = true;ColorGroup.visible = false;},
     CharacterHitOn: function () {StickerGroup.visible = true;ColorGroup.visible = false;},
     
-    SaveClicked: function () {game.state.start("StateLeafOuttro")},
+    SaveClicked: function () {game.state.start("StatePineconeOuttro")},
     
     BackToCharacterSelect: function () {game.state.start("StateCharacterSelect")},
         

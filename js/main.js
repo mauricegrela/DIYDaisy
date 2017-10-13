@@ -29,7 +29,11 @@ var testArray = [];
         'images/Leaf/LeafEyes.png',//Sticker1 
         'images/Leaf/LeafEars.png',//Sticker2             
         'images/Leaf/LeafNose.png',//Sticker3       
-        'images/Leaf/LeafWiskers.png'//Sticker4             
+        'images/Leaf/LeafWiskers.png',//Sticker4   
+        'images/Leaf/LeafEyes.png',//Sticker5 
+        'images/Leaf/LeafEars.png',//Sticker6             
+        'images/Leaf/LeafNose.png',//Sticker7      
+        'images/Leaf/LeafWiskers.png'//Sticker8  
         ];
 
     var testArrayColor = [
@@ -38,7 +42,11 @@ var testArray = [];
         0xAEE313,//Sticker1
         0xAEE313,//Sticker2
         0xAEE313,//Sticker3
-        0xAEE313//Sticker4
+        0xAEE313,//Sticker4
+        0xAEE313,//Sticker5
+        0xAEE313,//Sticker6
+        0xAEE313,//Sticker7
+        0xAEE313//Sticker8
         ];
 
     var testArrayAlpha = [
@@ -47,7 +55,11 @@ var testArray = [];
         0,//Sticker1
         0,//Sticker2
         0,//Sticker3
-        0//Sticker4
+        0,//Sticker4
+        0,//Sticker5
+        0,//Sticker6
+        0,//Sticker7
+        0//Sticker8
         ];
 
 var PositionArrayIndicator = 0;
@@ -58,7 +70,11 @@ var PositionArrayIndicator = 0;
         0,//Sticker1
         0,//Sticker2
         0,//Sticker3
-        0//Sticker4
+        0,//Sticker4
+        0,//Sticker5
+        0,//Sticker6
+        0,//Sticker7
+        0//Sticker8
         ];
     var Ypos_ArrayAlpha = [
         //Yposition of the drag
@@ -66,7 +82,11 @@ var PositionArrayIndicator = 0;
         0,//Sticker1
         0,//Sticker2
         0,//Sticker3
-        0//Sticker4
+        0,//Sticker4
+        0,//Sticker5
+        0,//Sticker6
+        0,//Sticker7
+        0//Sticker8
         ];
 
 
@@ -123,6 +143,12 @@ if (isMobile>-1)
     game.state.add("StateLeafOuttro",StateLeafOuttro);
     game.state.add("StateLeafDirectory",StateLeafDirectory);
     game.state.add("StateLeaf_Episode",StateLeaf_Episode);
+    //Pinecone States
+    game.state.add("StatePineconeMain", StatePineconeMain);
+    game.state.add("StatePineconePlace",StatePineconePlace);
+    game.state.add("StatePineconeOuttro",StatePineconeOuttro);
+    game.state.add("StatePineconeDirectory",StatePineconeDirectory);
+    game.state.add("StatePinecone_Episode",StatePinecone_Episode);
     //StateShit
     game.state.add("StateLoad", StateLoad);
     game.state.add("StateInit", StateInit);

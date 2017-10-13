@@ -17,6 +17,23 @@ var StateLoad = {
         game.load.image('Body', 'images/Leaf/LeafBody.png');
         game.load.image('Ears', 'images/Leaf/LeafEars.png');
         game.load.image('Eyes', 'images/Leaf/LeafEyes.png');
+        
+        //Pinecones
+         game.load.image('MagLenz', 'images/Leaf/alphaMaskState.png');      
+        //Load Stickers and body
+        game.load.image('PineconeBody', 'images/Pinecone/PineconeBody.png');
+        game.load.image('PineconeFeet_1', 'images/Pinecone/PineconeFeet_1.png');
+        game.load.image('PineconeFeet_2', 'images/Pinecone/PineconeFeet_2.png');  
+        
+        game.load.image('PineconeMouth_1', 'images/Pinecone/PineconeMouth_1.png');
+        game.load.image('PineconeMouth_2', 'images/Pinecone/PineconeMouth_2.png'); 
+        
+        game.load.image('PineconeWings_1', 'images/Pinecone/PineconeWings_1.png');
+        game.load.image('PineconeWings_2', 'images/Pinecone/PineconeWings_2.png');  
+        
+        game.load.image('PineconeEyes_1', 'images/Pinecone/PineconeEyes_1.png'); 
+        game.load.image('PineconeEyes_2', 'images/Pinecone/PineconeEyes_2.png');  
+        
         //Load Background images and stickers for leaf
         game.load.image('craft_Backgroung', 'images/backgrounds/Background_1.jpg');
         game.load.image('placing_Backgroung', 'images/backgrounds/Background_2.PNG');
@@ -48,10 +65,7 @@ var StateLoad = {
 
     create: function () {
         //game.state.start("StateIntroMovie");
-        
-        
-        
-        game.state.start("StateMainLeaf");
+        game.state.start("StatePineconeMain");
     },
 
     update: function () {
