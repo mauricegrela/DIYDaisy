@@ -15,8 +15,9 @@ var SelectedColor;
 var isMobile;
 //Sprite Manipulation Library
 var isClickDragging = false;
-var isAddindpaint = false;
-
+var isAddingPaint = false;
+var isAddingSticker = true;
+var isMovingSticker = true;
 
 
 var testArray = [];
@@ -25,15 +26,15 @@ var testArray = [];
 
     var testArray = [
         //Directory,Tint,Transparancy
-        'images/Leaf/LeafBody.png',//Body  
-        'images/Leaf/LeafEyes.png',//Sticker1 
-        'images/Leaf/LeafEars.png',//Sticker2             
-        'images/Leaf/LeafNose.png',//Sticker3       
-        'images/Leaf/LeafWiskers.png',//Sticker4   
-        'images/Leaf/LeafEyes.png',//Sticker5 
-        'images/Leaf/LeafEars.png',//Sticker6             
-        'images/Leaf/LeafNose.png',//Sticker7      
-        'images/Leaf/LeafWiskers.png'//Sticker8  
+        'images/Pinecone/PineconeBody.png',//Body  
+        'images/Pinecone/PineconeFeet_1.png',//Sticker1 
+        'images/Pinecone/PineconeFeet_2.png',//Sticker2             
+        'images/Pinecone/PineconeMouth_1.png',//Sticker3       
+        'images/Pinecone/PineconeMouth_2.png',//Sticker4   
+        'images/Pinecone/PineconeWings_1.png',//Sticker5 
+        'images/Pinecone/PineconeWings_2.png',//Sticker6             
+        'images/Pinecone/PineconeEyes_1.png',//Sticker7      
+        'images/Pinecone/PineconeEyes_2.png'//Sticker8  
         ];
 
     var testArrayColor = [

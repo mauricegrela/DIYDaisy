@@ -6,9 +6,9 @@ var StateInit = {
 
         if (isMobile==true) {
             if (useLandscape == true) {
-                game.scale.forceOrientation(true, false);
+                //game.scale.forceOrientation(true, false);
             } else {
-                game.scale.forceOrientation(false, true);
+               // game.scale.forceOrientation(false, true);
             }
 
 

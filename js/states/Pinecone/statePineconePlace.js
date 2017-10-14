@@ -46,6 +46,24 @@ var StatePineconePlace = {
         this.Sticker4.alpha = testArrayAlpha[4];
         this.Sticker4.tint = testArrayColor[4];
         
+        this.Sticker5 = game.add.sprite(Xpos_ArrayAlpha[5], Ypos_ArrayAlpha[5], 'Sticker5');
+        this.Sticker5.alpha = testArrayAlpha[5];
+        this.Sticker5.tint = testArrayColor[5];
+        
+        this.Sticker6 = game.add.sprite(Xpos_ArrayAlpha[6], Ypos_ArrayAlpha[6], 'Sticker6');
+        this.Sticker6.alpha = testArrayAlpha[6];
+        this.Sticker6.tint = testArrayColor[6];
+        
+        this.Sticker7 = game.add.sprite(Xpos_ArrayAlpha[7], Ypos_ArrayAlpha[7], 'Sticker7');
+        this.Sticker7.alpha = testArrayAlpha[7];
+        this.Sticker7.tint = testArrayColor[7];
+        
+        this.Sticker8 = game.add.sprite(Xpos_ArrayAlpha[8], Ypos_ArrayAlpha[8], 'Sticker8');
+        this.Sticker8.alpha = testArrayAlpha[8];
+        this.Sticker8.tint = testArrayColor[8];
+        
+        
+        
     }
     , startGame: function () {     
         game.state.start("StateCharacterSelect");
