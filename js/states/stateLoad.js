@@ -31,10 +31,26 @@ var StateLoad = {
         game.load.image('PineconeEyes_1', 'images/Pinecone/PineconeEyes_1.png'); 
         game.load.image('PineconeEyes_2', 'images/Pinecone/PineconeEyes_2.png');  
         game.load.spritesheet("Pinecone_Stickers", "images/ui/Pinecone_stickers.png", 44, 44, 8);
+        //Rock
+        
+        game.load.image('MagLenz', 'images/Leaf/alphaMaskState.png');      
+        //Load Stickers and body
+        game.load.image('RockBody', 'images/Rock/RockBody.png');     
+        game.load.image('RockAntenae_1', 'images/Rock/RockAntenae_1.png');
+        game.load.image('RockAntenae_2', 'images/Rock/RockAntenae_2.png');      
+        game.load.image('RockFace_1', 'images/Rock/RockFace_1.png');
+        game.load.image('RockFace_2', 'images/Rock/RockFace_2.png');      
+        game.load.image('RockFeet_1', 'images/Rock/RockFeet_1.png');
+        game.load.image('RockFeet_2', 'images/Rock/RockFeet_2.png');         
+        game.load.image('RockWings_1', 'images/Rock/RockWings_1.png'); 
+        game.load.image('RockWings_2', 'images/Rock/RockWings_2.png');  
+        game.load.spritesheet("Rock_Stickers", "images/ui/Rock_stickers.png", 44, 44, 8);
+        
         
         //Load Background images and stickers for leaf
         game.load.image('craft_Backgroung', 'images/backgrounds/Background_1.jpg');
         game.load.image('placing_Backgroung', 'images/backgrounds/Background_2.PNG');
+        
         //Animations
         game.load.spritesheet('mummy', 'images/SpriteSheets/metalslug_mummy37x45.png', 37, 45, 18);
         //Loading Variables      
@@ -55,15 +71,13 @@ var StateLoad = {
         game.load.audio("backgroundMusic", "audio/background/piano.mp3");
         game.load.audio("elephant", "audio/sfx/elephant.mp3");
 
-        
-        //Leaf Stickers
-        game.load.spritesheet("StickerLeaf1", "images/ui/StickerButtons-White.png", 44, 44, 5);
+
 
     },
 
     create: function () {
-        //game.state.start("StateIntroMovie");
-        game.state.start("StatePineconeMain");
+        game.state.start("StateIntroMovie");
+        //game.state.start("StateRockMain");
     },
 
     update: function () {

@@ -20,10 +20,26 @@ var isAddingSticker = true;
 var isMovingSticker = true;
 
 
-var testArray = [];
+var StickerAssigner = "Pinecone_Stickers"; 
+
+
+
+var ImageAssetArray = 
+    [
+        'PineconeBody',
+        'PineconeWings_1',
+        'PineconeWings_2',
+        'PineconeEyes_1',
+        'PineconeEyes_2',
+        'PineconeFeet_1',
+        'PineconeFeet_2',
+        'PineconeMouth_1',
+        'PineconeMouth_2'             
+    ];
+
+
 
  //var testArray = [ 'Name' ];
-
     var testArray = [
         //Directory,Tint,Transparancy
         'images/Pinecone/PineconeBody.png',//Body  
@@ -39,15 +55,15 @@ var testArray = [];
 
     var testArrayColor = [
         //Directory,Tint,Transparancy
-        0xAEE313,//Body
-        0xAEE313,//Sticker1
-        0xAEE313,//Sticker2
-        0xAEE313,//Sticker3
-        0xAEE313,//Sticker4
-        0xAEE313,//Sticker5
-        0xAEE313,//Sticker6
-        0xAEE313,//Sticker7
-        0xAEE313//Sticker8
+         0xFFFFFF,//Body
+         0xFFFFFF,//Sticker1
+         0xFFFFFF,//Sticker2
+         0xFFFFFF,//Sticker3
+         0xFFFFFF,//Sticker4
+         0xFFFFFF,//Sticker5
+         0xFFFFFF,//Sticker6
+         0xFFFFFF,//Sticker7
+         0xFFFFFF//Sticker8
         ];
 
     var testArrayAlpha = [
@@ -131,25 +147,21 @@ if (isMobile>-1)
     gameMedia = new GameMedia();
     gameButtons = new GameButtons();
     //add a state or screen to the game
-    //Adding the 
+    
+    //Adding the intro states
     game.state.add("StateTitle", StateTitle);
     game.state.add("StateParentsCorner", StateParentsCorner);
-    game.state.add("StateMain", StateMain);
     game.state.add("StateIntroMovie", StateIntroMovie);
     //Character Creation States
     game.state.add("StateCharacterSelect", StateCharacterSelect);
-    //Leaf States
-    game.state.add("StateMainLeaf", StateMainLeaf);
-    game.state.add("StateLeafPlace",StateLeafPlace);
-    game.state.add("StateLeafOuttro",StateLeafOuttro);
-    game.state.add("StateLeafDirectory",StateLeafDirectory);
-    game.state.add("StateLeaf_Episode",StateLeaf_Episode);
-    //Pinecone States
-    game.state.add("StatePineconeMain", StatePineconeMain);
-    game.state.add("StatePineconePlace",StatePineconePlace);
-    game.state.add("StatePineconeOuttro",StatePineconeOuttro);
-    game.state.add("StatePineconeDirectory",StatePineconeDirectory);
-    game.state.add("StatePinecone_Episode",StatePinecone_Episode);
+    
+    //GameLoopState
+    game.state.add("StateMain",StateMain);
+    game.state.add("StatePlace",StatePlace);
+    game.state.add("StateOuttro",StateOuttro);
+    game.state.add("StateDirectory",StateDirectory);
+    game.state.add("StateEpisode",StateEpisode);
+    
     //StateShit
     game.state.add("StateLoad", StateLoad);
     game.state.add("StateInit", StateInit);

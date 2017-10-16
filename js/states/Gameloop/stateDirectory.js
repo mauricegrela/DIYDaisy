@@ -1,4 +1,4 @@
-var StateRockDirectory = {
+var StateDirectory = {
 
     preload: function () {
 
@@ -15,10 +15,10 @@ var StateRockDirectory = {
     },
     
     PlaceCreation: function () {
-    game.state.start("StateRockPlace")
+    game.state.start("StatePlace")
     },
     WatchEpisode: function () {
-    game.state.start("StateRock_Episode");
+    game.state.start("StateEpisode");
     },
     SaveFile: function () {
 

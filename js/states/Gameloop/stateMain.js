@@ -1,4 +1,4 @@
-var StateRockMain = {
+var StateMain = {
 ////////////////////////////////////////////
 ///////////REMEMBER TO REFRESH/////////////
 //////////////////////////////////////////
@@ -199,8 +199,34 @@ this.game.scale.refresh();
         this.PineconeBody.scale.setTo(scaleRatio,scaleRatio);
         this.SelectedButton = this.PineconeBody;
         //Character.add(this.PineconeBody);       
-         //Sticker_3
-        this.Sticker_3 = game.add.sprite(OGPose_X, OGPose_Y, ImageAssetArray[1]);
+        
+        //Sticker_1_1
+        this.Sticker_1 = game.add.sprite(OGPose_X, OGPose_Y, ImageAssetArray[1]);        
+        this.Sticker_1.alpha = 1;
+        //this.Sticker_1.anchor.set(0.5);
+        this.Sticker_1.anchor.x = 0.5;
+        this.Sticker_1.anchor.y = 1;
+        this.Sticker_1.inputEnabled = true;
+        this.Sticker_1.input.pixelPerfectOver = true;
+        this.Sticker_1.events.onInputOver.add(this.Sticker_1Click, this);  
+        this.Sticker_1.scale.setTo(scaleRatio,scaleRatio);        
+        //Character.add(this.Sticker_1);  
+        
+        
+        //Sticker_2      
+        this.Sticker_2 = game.add.sprite(OGPose_X, OGPose_Y, ImageAssetArray[2]);
+        this.Sticker_2.alpha = 0;
+        //this.Sticker_2.anchor.set(0.5);
+        this.Sticker_2.anchor.x = 0.5;
+        this.Sticker_2.anchor.y = 1;
+        this.Sticker_2.inputEnabled = true;
+        this.Sticker_2.input.pixelPerfectOver = true;
+        this.Sticker_2.events.onInputOver.add(this.Sticker_2Click, this);
+        this.Sticker_2.scale.setTo(scaleRatio,scaleRatio);   
+        //Character.add(this.Sticker_2);
+        
+        //Sticker_3
+        this.Sticker_3 = game.add.sprite(OGPose_X, OGPose_Y, ImageAssetArray[3]);
         this.Sticker_3.alpha = 0;
 
         //this.Sticker_3.anchor.set(0.5);
@@ -214,7 +240,7 @@ this.game.scale.refresh();
         //Character.add(this.Sticker_3);
         
         //Sticker_4
-        this.Sticker_4 = game.add.sprite(OGPose_X, OGPose_Y, ImageAssetArray[2]);
+        this.Sticker_4 = game.add.sprite(OGPose_X, OGPose_Y, ImageAssetArray[4]);
         this.Sticker_4.alpha = 0;
         //this.Sticker_4.anchor.set(0.5);
         this.Sticker_4.anchor.x = 0.5;
@@ -225,59 +251,8 @@ this.game.scale.refresh();
         this.Sticker_4.scale.setTo(scaleRatio,scaleRatio); 
         //Character.add(this.Sticker_4);
         
-        //Sticker_7
-        this.Sticker_7 = game.add.sprite(OGPose_X, OGPose_Y, ImageAssetArray[3]);
-        this.Sticker_7.alpha = 0;
-        //this.Sticker_7.anchor.set(0.5);
-        this.Sticker_7.anchor.x = 0.5;
-        this.Sticker_7.anchor.y = 0.5;
-        this.Sticker_7.inputEnabled = true;
-        this.Sticker_7.input.pixelPerfectOver = true;
-        this.Sticker_7.events.onInputOver.add(this.Sticker_7Click, this);
-        this.Sticker_7.scale.setTo(scaleRatio,scaleRatio); 
-        //Character.add(this.Sticker_7);
-        
-        //Sticker_8
-        this.Sticker_8 = game.add.sprite(OGPose_X, OGPose_Y, ImageAssetArray[4]);
-        this.Sticker_8.alpha = 0;
-        //this.Sticker_8.anchor.set(0.5);
-        this.Sticker_8.anchor.x = 0.5;
-        this.Sticker_8.anchor.y = 0.5;
-        this.Sticker_8.inputEnabled = true;
-        this.Sticker_8.input.pixelPerfectOver = true;
-        this.Sticker_8.events.onInputOver.add(this.Sticker_8Click, this);
-        this.Sticker_8.scale.setTo(scaleRatio,scaleRatio); 
-        //Character.add(this.Sticker_8);
-        
-        
-        //Sticker_1_1
-        this.Sticker_1 = game.add.sprite(OGPose_X, OGPose_Y, ImageAssetArray[5]);        
-        this.Sticker_1.alpha = 1;
-        //this.Sticker_1.anchor.set(0.5);
-        this.Sticker_1.anchor.x = 0.5;
-        this.Sticker_1.anchor.y = 1;
-        this.Sticker_1.inputEnabled = true;
-        this.Sticker_1.input.pixelPerfectOver = true;
-        this.Sticker_1.events.onInputOver.add(this.Sticker_1Click, this);  
-        this.Sticker_1.scale.setTo(scaleRatio,scaleRatio);        
-        //Character.add(this.Sticker_1);  
-        
-        
-        //Sticker_2      
-        this.Sticker_2 = game.add.sprite(OGPose_X, OGPose_Y, ImageAssetArray[6]);
-        this.Sticker_2.alpha = 0;
-        //this.Sticker_2.anchor.set(0.5);
-        this.Sticker_2.anchor.x = 0.5;
-        this.Sticker_2.anchor.y = 1;
-        this.Sticker_2.inputEnabled = true;
-        this.Sticker_2.input.pixelPerfectOver = true;
-        this.Sticker_2.events.onInputOver.add(this.Sticker_2Click, this);
-        this.Sticker_2.scale.setTo(scaleRatio,scaleRatio);   
-        //Character.add(this.Sticker_2);
-       
-        
         //Sticker_5
-        this.Sticker_5 = game.add.sprite(OGPose_X, OGPose_Y, ImageAssetArray[7]);        
+        this.Sticker_5 = game.add.sprite(OGPose_X, OGPose_Y, ImageAssetArray[5]);        
         this.Sticker_5.alpha = 0;
         //this.Sticker_5.anchor.set(0.5);
         this.Sticker_5.anchor.x = 0.5;
@@ -289,7 +264,7 @@ this.game.scale.refresh();
         //Character.add(this.Sticker_5);      
         
         //Sticker_6      
-        this.Sticker_6 = game.add.sprite(OGPose_X, OGPose_Y, ImageAssetArray[8]);
+        this.Sticker_6 = game.add.sprite(OGPose_X, OGPose_Y, ImageAssetArray[6]);
         this.Sticker_6.alpha = 0;
         //this.Sticker_6.anchor.set(0.5);
         this.Sticker_6.anchor.x = 0.5;
@@ -299,8 +274,31 @@ this.game.scale.refresh();
         this.Sticker_6.events.onInputOver.add(this.Sticker_6Click, this);
         this.Sticker_6.scale.setTo(scaleRatio,scaleRatio);
         //Character.add(this.Sticker_6);
-       
-     
+        
+        //Sticker_7
+        this.Sticker_7 = game.add.sprite(OGPose_X, OGPose_Y, ImageAssetArray[7]);
+        this.Sticker_7.alpha = 0;
+        //this.Sticker_7.anchor.set(0.5);
+        this.Sticker_7.anchor.x = 0.5;
+        this.Sticker_7.anchor.y = 0.5;
+        this.Sticker_7.inputEnabled = true;
+        this.Sticker_7.input.pixelPerfectOver = true;
+        this.Sticker_7.events.onInputOver.add(this.Sticker_7Click, this);
+        this.Sticker_7.scale.setTo(scaleRatio,scaleRatio); 
+        //Character.add(this.Sticker_7);
+        
+        //Sticker_8
+        this.Sticker_8 = game.add.sprite(OGPose_X, OGPose_Y, ImageAssetArray[8]);
+        this.Sticker_8.alpha = 0;
+        //this.Sticker_8.anchor.set(0.5);
+        this.Sticker_8.anchor.x = 0.5;
+        this.Sticker_8.anchor.y = 0.5;
+        this.Sticker_8.inputEnabled = true;
+        this.Sticker_8.input.pixelPerfectOver = true;
+        this.Sticker_8.events.onInputOver.add(this.Sticker_8Click, this);
+        this.Sticker_8.scale.setTo(scaleRatio,scaleRatio); 
+        //Character.add(this.Sticker_8);
+        
         //Animation test
         var mummy = game.add.sprite(300, 200, 'mummy');
         mummy.inputEnabled = true;
@@ -685,9 +683,9 @@ this.game.scale.refresh();
         isAddingSticker = false;
     },
     
-    SaveClicked: function () {game.state.start("StatePineconeOuttro")},
+    SaveClicked: function () {game.state.start("StateOuttro")},
     
-    BackToCharacterSelect: function () {game.state.start("StateCharacterSelect")},
+    BackToCharacterSelect: function () {game.state.start("StateSelect")},
         
     ImageClick: function () {this.param1.animations.play(this.param2, 30, false);}, 
     

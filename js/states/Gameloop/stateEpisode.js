@@ -1,4 +1,4 @@
-var StateRock_Episode = {
+var StateEpisode = {
 
     preload: function () {
 

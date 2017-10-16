@@ -15,7 +15,7 @@ var StateIntroMovie = {
         this.btnStart.anchor.set(0.5, 0.5)
         video1 = game.add.video('Intro');
         video1.play(true); 
-        video1.addToWorld(game.world.centerX, game.world.centerY-100, 0.5, 0.5, 0.5, 0.5); 
+        video1.addToWorld(game.world.centerX, game.world.centerY-250, 0.5, 0.5, 0.5, 0.5); 
     }
     , startGame: function () {   
         video1.stop();
