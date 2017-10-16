@@ -50,21 +50,21 @@ var StateRockPlace = {
         this.Sticker4.alpha = testArrayAlpha[4];
         this.Sticker4.tint = testArrayColor[4];
 
-        this.Sticker4 = game.add.sprite(Xpos_ArrayAlpha[4], Ypos_ArrayAlpha[4], 'Sticker5');
-        this.Sticker4.alpha = testArrayAlpha[4];
-        this.Sticker4.tint = testArrayColor[4];
+        this.Sticker5 = game.add.sprite(Xpos_ArrayAlpha[4], Ypos_ArrayAlpha[4], 'Sticker5');
+        this.Sticker5.alpha = testArrayAlpha[4];
+        this.Sticker5.tint = testArrayColor[4];
 
-        this.Sticker4 = game.add.sprite(Xpos_ArrayAlpha[4], Ypos_ArrayAlpha[4], 'Sticker6');
-        this.Sticker4.alpha = testArrayAlpha[4];
-        this.Sticker4.tint = testArrayColor[4];
+        this.Sticker6 = game.add.sprite(Xpos_ArrayAlpha[4], Ypos_ArrayAlpha[4], 'Sticker6');
+        this.Sticker6.alpha = testArrayAlpha[4];
+        this.Sticker6.tint = testArrayColor[4];
 
-        this.Sticker4 = game.add.sprite(Xpos_ArrayAlpha[4], Ypos_ArrayAlpha[4], 'Sticker7');
-        this.Sticker4.alpha = testArrayAlpha[4];
-        this.Sticker4.tint = testArrayColor[4];
+        this.Sticker7 = game.add.sprite(Xpos_ArrayAlpha[4], Ypos_ArrayAlpha[4], 'Sticker7');
+        this.Sticker7.alpha = testArrayAlpha[4];
+        this.Sticker7.tint = testArrayColor[4];
 
-        this.Sticker4 = game.add.sprite(Xpos_ArrayAlpha[4], Ypos_ArrayAlpha[4], 'Sticker8');
-        this.Sticker4.alpha = testArrayAlpha[4];
-        this.Sticker4.tint = testArrayColor[4];
+        this.Sticker8 = game.add.sprite(Xpos_ArrayAlpha[4], Ypos_ArrayAlpha[4], 'Sticker8');
+        this.Sticker8.alpha = testArrayAlpha[4];
+        this.Sticker8.tint = testArrayColor[4];
         
     }
     , startGame: function () {     
