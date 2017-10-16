@@ -7,6 +7,10 @@ var StateRockPlace = {
         game.load.image('Sticker2', testArray[2]);
         game.load.image('Sticker3', testArray[3]);
         game.load.image('Sticker4', testArray[4]);
+        game.load.image('Sticker4', testArray[5]);
+        game.load.image('Sticker4', testArray[6]);
+        game.load.image('Sticker4', testArray[7]);
+        game.load.image('Sticker4', testArray[8]);
 
         
 
@@ -43,6 +47,22 @@ var StateRockPlace = {
         this.Sticker3.tint = testArrayColor[3];
         
         this.Sticker4 = game.add.sprite(Xpos_ArrayAlpha[4], Ypos_ArrayAlpha[4], 'Sticker4');
+        this.Sticker4.alpha = testArrayAlpha[4];
+        this.Sticker4.tint = testArrayColor[4];
+
+        this.Sticker4 = game.add.sprite(Xpos_ArrayAlpha[4], Ypos_ArrayAlpha[4], 'Sticker5');
+        this.Sticker4.alpha = testArrayAlpha[4];
+        this.Sticker4.tint = testArrayColor[4];
+
+        this.Sticker4 = game.add.sprite(Xpos_ArrayAlpha[4], Ypos_ArrayAlpha[4], 'Sticker6');
+        this.Sticker4.alpha = testArrayAlpha[4];
+        this.Sticker4.tint = testArrayColor[4];
+
+        this.Sticker4 = game.add.sprite(Xpos_ArrayAlpha[4], Ypos_ArrayAlpha[4], 'Sticker7');
+        this.Sticker4.alpha = testArrayAlpha[4];
+        this.Sticker4.tint = testArrayColor[4];
+
+        this.Sticker4 = game.add.sprite(Xpos_ArrayAlpha[4], Ypos_ArrayAlpha[4], 'Sticker8');
         this.Sticker4.alpha = testArrayAlpha[4];
         this.Sticker4.tint = testArrayColor[4];
         
