@@ -7,10 +7,10 @@ var StateRockPlace = {
         game.load.image('Sticker2', testArray[2]);
         game.load.image('Sticker3', testArray[3]);
         game.load.image('Sticker4', testArray[4]);
-        game.load.image('Sticker4', testArray[5]);
-        game.load.image('Sticker4', testArray[6]);
-        game.load.image('Sticker4', testArray[7]);
-        game.load.image('Sticker4', testArray[8]);
+        game.load.image('Sticker5', testArray[5]);
+        game.load.image('Sticker6', testArray[6]);
+        game.load.image('Sticker7', testArray[7]);
+        game.load.image('Sticker8', testArray[8]);
 
         
 
