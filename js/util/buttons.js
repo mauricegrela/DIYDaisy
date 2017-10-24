@@ -97,6 +97,8 @@ GameButtons = function () {
             return sButton;
         }, 
         
+        
+        
         this.addGenericButton = function (type, xx, yy, f, scope, SpriteSheet, SpriteRef) {
         if (xx == -1) {
                 xx = game.world.centerX;
@@ -118,14 +120,14 @@ GameButtons = function () {
             return sButton;
         }, 
         
-        this.addColorButton = function (type, xx, yy, f, scope, color) {
+        this.addColorButton = function (type, xx, yy, f, scope, color,SpriteRef) {
         if (xx == -1) {
                 xx = game.world.centerX;
             }
             if (yy == -1) {
                 yy = game.world.centerY;
             }
-            var sButton = game.add.sprite(xx, yy, "StickerLeaf1");
+            var sButton = game.add.sprite(xx, yy, SpriteRef);
             sButton.frame = 0;
             sButton.tint = color;
             sButton.inputEnabled = true;

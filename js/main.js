@@ -23,8 +23,7 @@ var isMovingSticker = true;
 var StickerAssigner = "Pinecone_Stickers"; 
 
 
-
-var ImageAssetArray = 
+var ImageAssetArray = //Images
     [
         'PineconeBody',
         'PineconeWings_1',
@@ -37,21 +36,33 @@ var ImageAssetArray =
         'PineconeMouth_2'             
     ];
 
+var PivotPoint_X =//PivotPoint x
+    [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+    ];
+
+var PivotPoint_Y =//PivotPoint y
+    [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+    ];
 
 
- //var testArray = [ 'Name' ];
-    var testArray = [
-        //Directory,Tint,Transparancy
-        'images/Pinecone/PineconeBody.png',//Body  
-        'images/Pinecone/PineconeFeet_1.png',//Sticker1 
-        'images/Pinecone/PineconeFeet_2.png',//Sticker2             
-        'images/Pinecone/PineconeMouth_1.png',//Sticker3       
-        'images/Pinecone/PineconeMouth_2.png',//Sticker4   
-        'images/Pinecone/PineconeWings_1.png',//Sticker5 
-        'images/Pinecone/PineconeWings_2.png',//Sticker6             
-        'images/Pinecone/PineconeEyes_1.png',//Sticker7      
-        'images/Pinecone/PineconeEyes_2.png'//Sticker8  
-        ];
 
     var testArrayColor = [
         //Directory,Tint,Transparancy

@@ -15,7 +15,7 @@ var StatePlace = {
     , create: function () {
         
         var GameCenter_x = game.width/2;
-        var GameCenter_y = game.height/3;
+        var GameCenter_y = game.height/2;
         
         /*var titleText = game.add.text(game.world.centerX, game.world.centerY - 100, "GAME TITLE");
         titleText.fill = "#ffffff";
@@ -27,38 +27,56 @@ var StatePlace = {
         //video1.addToWorld(game.world.centerX, game.world.centerY-100, 0.5, 0.5, 1, 1); 
         
         this.Body = game.add.sprite(GameCenter_x, GameCenter_y, ImageAssetArray[0]);
+        this.Body.anchor.x = PivotPoint_X[0];
+        this.Body.anchor.y =  PivotPoint_Y[0];
         this.Body.alpha = testArrayAlpha[0];
         this.Body.tint = testArrayColor[0];
         
         this.Sticker1 = game.add.sprite(Xpos_ArrayAlpha[1], Ypos_ArrayAlpha[1], ImageAssetArray[1]);
+        this.Sticker1.anchor.x = PivotPoint_X[1];
+        this.Sticker1.anchor.y =  PivotPoint_Y[1];
         this.Sticker1.alpha = testArrayAlpha[1];
         this.Sticker1.tint = testArrayColor[1];
         
         this.Sticker2 = game.add.sprite(Xpos_ArrayAlpha[2], Ypos_ArrayAlpha[2], ImageAssetArray[2]);
+        this.Sticker2.anchor.x = PivotPoint_X[2];
+        this.Sticker2.anchor.y =  PivotPoint_Y[2];
         this.Sticker2.alpha = testArrayAlpha[2];
         this.Sticker2.tint = testArrayColor[2];
         
         this.Sticker3 = game.add.sprite(Xpos_ArrayAlpha[3], Ypos_ArrayAlpha[3], ImageAssetArray[3]);
+        this.Sticker3.anchor.x = PivotPoint_X[3];
+        this.Sticker3.anchor.y =  PivotPoint_Y[3];
         this.Sticker3.alpha = testArrayAlpha[3];
         this.Sticker3.tint = testArrayColor[3];
         
         this.Sticker4 = game.add.sprite(Xpos_ArrayAlpha[4], Ypos_ArrayAlpha[4], ImageAssetArray[4]);
+        this.Sticker4.anchor.x = PivotPoint_X[4];
+        this.Sticker4.anchor.y =  PivotPoint_Y[4];
         this.Sticker4.alpha = testArrayAlpha[4];
         this.Sticker4.tint = testArrayColor[4];
 
         this.Sticker5 = game.add.sprite(Xpos_ArrayAlpha[5], Ypos_ArrayAlpha[5], ImageAssetArray[5]);
+        this.Sticker5.anchor.x = PivotPoint_X[5];
+        this.Sticker5.anchor.y =  PivotPoint_Y[5];
         this.Sticker5.alpha = testArrayAlpha[5];
         this.Sticker5.tint = testArrayColor[5];
 
         this.Sticker6 = game.add.sprite(Xpos_ArrayAlpha[6], Ypos_ArrayAlpha[6], ImageAssetArray[6]);
+        this.Sticker5.anchor.x = PivotPoint_X[6];
+        this.Sticker5.anchor.y =  PivotPoint_Y[6];
         this.Sticker6.alpha = testArrayAlpha[6];
         this.Sticker6.tint = testArrayColor[6];
 
         this.Sticker7 = game.add.sprite(Xpos_ArrayAlpha[7], Ypos_ArrayAlpha[7], ImageAssetArray[7]);
+        this.Sticker7.anchor.x = PivotPoint_X[7];
+        this.Sticker7.anchor.y =  PivotPoint_Y[7];
         this.Sticker7.alpha = testArrayAlpha[7];
         this.Sticker7.tint = testArrayColor[7];
 
         this.Sticker8 = game.add.sprite(Xpos_ArrayAlpha[8], Ypos_ArrayAlpha[8], ImageAssetArray[8]);
+        this.Sticker8.anchor.x = PivotPoint_X[8];
+        this.Sticker8.anchor.y =  PivotPoint_Y[8];
         this.Sticker8.alpha = testArrayAlpha[8];
         this.Sticker8.tint = testArrayColor[8];
         

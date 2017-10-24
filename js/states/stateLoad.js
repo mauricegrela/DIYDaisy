@@ -69,8 +69,8 @@ var StateLoad = {
         game.load.spritesheet("soundButtons", "images/ui/soundButtons-blue.png", 44, 44, 4);
         game.load.spritesheet("creativeButtons", "images/ui/CreativeButtons.png", 140, 160, 7);
         game.load.audio("backgroundMusic", "audio/background/piano.mp3");
-        game.load.audio("elephant", "audio/sfx/elephant.mp3");
-
+        game.load.audio("elephant", "audio/sfx/elephant.mp3");  
+        game.load.image("PaintUI", "images/ui/PaintDrop.png");
 
 
     },
