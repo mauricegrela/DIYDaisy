@@ -38,8 +38,14 @@ var StateMain = {
         Character = game.add.group();
         
         //  Create the group for the stickers
-        StickerGroup = game.add.group();
-
+        StickerGroup_1 = game.add.group();
+        //  Create the group for the stickers
+        StickerGroup_2 = game.add.group();
+        //  Create the group for the stickers
+        StickerGroup_3 = game.add.group();
+        //  Create the group for the stickers
+        StickerGroup_4 = game.add.group();
+        
         //Character change buttons 
         CharacterStickerGroup = game.add.group();
         
@@ -59,8 +65,14 @@ var StateMain = {
         score = 0;
         
         //Add background      
-        this.craftBackground = game.add.sprite(0, 0, 'craft_Backgroung');
-        BackgroundGroup.add(this.craftBackground); 
+        //this.craftBackground = game.add.sprite(0, 0, 'craft_Backgroung');
+        //BackgroundGroup.add(this.craftBackground);     
+        
+
+        carouselScaleOffset = 1.2;
+     
+        
+        
         
         //this.craftBackground.width = game.width;
         //this.craftBackground.height = game.height;
@@ -90,14 +102,20 @@ var StateMain = {
         
         //Images Variables
         var GameCenter_x = game.width/2;
-        var GameCenter_y = game.height/2;
+        var GameCenter_y = game.height/3;
         SelectedColor = 0xff00ff;
-                   
+       
+        
+///////////////////////////
+///button Sticker Group////
+///////////////////////////
+        
+        
         //Main Button Placement
         var MainButtonsPos_x = window.innerWidth/10;
         var MainButtonsPos_y = game.height/4;
         var MacroButton_Scale = 0.5;
-        
+   
         //Placeable Buttons
         this.MainStickerButton = gameButtons.addGenericButton("0", MainButtonsPos_x, MainButtonsPos_y+20, this.CharacterHitOn, this,"creativeButtons",0); 
         this.MainStickerButton.scale.setTo(scaleRatio,scaleRatio);
@@ -111,7 +129,6 @@ var StateMain = {
         this.MainResetButton = gameButtons.addGenericButton("0", MainButtonsPos_x+this.MainStickerButton.width*2, MainButtonsPos_y+20, this.StickerTurnOn, this,"creativeButtons",2); 
         this.MainResetButton.scale.setTo(scaleRatio,scaleRatio);
         buttongroup.add(this.MainResetButton);
-        
         
         //Top Menu Buttons
         MenuTopButtons_Pos_x = 700;     
@@ -130,10 +147,23 @@ var StateMain = {
         this.MainResetButton.scale.setTo(scaleRatio,scaleRatio);
         MainButtonGroup.add(this.MainResetButton);
         
-
-        var ButtonsPos_x = window.innerWidth/10;
-        var ButtonsPos_y = window.innerHeight/2+window.innerHeight/5; 
-        var ButtonsScale = 1.5;
+        
+///////////////////////////
+//character Sticker Group//
+///////////////////////////
+        
+        var ButtonsPos_x = game.width/3.6;
+        var ButtonsPos_y = game.height; 
+        var ButtonsScale = scaleRatio;
+        
+        //character Carosels
+        charactercarouselScaleOffset = 1.2;
+        this.charactercarousel = game.add.sprite(game.width/2, game.height, 'characterCaroselTab');
+        this.charactercarousel.anchor.x = 0.5;
+        this.charactercarousel.anchor.y =  1;
+        this.charactercarousel.scale.setTo(scaleRatio*carouselScaleOffset,scaleRatio*carouselScaleOffset);
+        CharacterStickerGroup.add(this.charactercarousel); 
+        
         
         //Character Rock Stickers
         this.RockCharacter = game.add.sprite(ButtonsPos_x, ButtonsPos_y , 'RockBody');   
@@ -141,6 +171,10 @@ var StateMain = {
         this.RockCharacter.events.onInputOver.add(this.RockCharSticker, this.RockCharacter);   
         this.RockCharacter.scale.setTo(scaleRatio/2,scaleRatio/2);
         CharacterStickerGroup.add(this.RockCharacter);
+        
+        var ButtonsPos_y = game.height-this.RockCharacter.height*2; 
+        
+        this.RockCharacter.y = ButtonsPos_y;
         
         //Character Pinecone Stickers
         this.PineconeCharacter = game.add.sprite(ButtonsPos_x+this.RockCharacter.width, ButtonsPos_y , 'PineconeBody');   
@@ -152,41 +186,183 @@ var StateMain = {
         
         CharacterStickerGroup.visible = false;
         
-        //Sticker Buttons
-        this.StickerButton1 = gameButtons.addStickerButton("0", ButtonsPos_x, ButtonsPos_y, this.Sticker_1_Place, this,0,StickerAssigner); 
-        this.StickerButton1.scale.setTo(ButtonsScale,ButtonsScale);
-        StickerGroup.add(this.StickerButton1);
         
-        this.StickerButton2 = gameButtons.addStickerButton("0", ButtonsPos_x, ButtonsPos_y+this.StickerButton1.height, this.Sticker_2_Place, this,1,StickerAssigner); 
-        this.StickerButton2.scale.setTo(ButtonsScale,ButtonsScale);
-        StickerGroup.add(this.StickerButton2);
-        
-        this.StickerButton3 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width, ButtonsPos_y, this.Sticker_3_Place, this,2,StickerAssigner);  
-        this.StickerButton3.scale.setTo(ButtonsScale,ButtonsScale);
-        StickerGroup.add(this.StickerButton3);
-        
-        this.StickerButton4 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width, ButtonsPos_y+this.StickerButton1.height, this.Sticker_4_Place, this,3,StickerAssigner);
-        this.StickerButton4.scale.setTo(ButtonsScale,ButtonsScale);
-        StickerGroup.add(this.StickerButton4);
-        
-        this.StickerButton5 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width*2, ButtonsPos_y, this.Sticker_5_Place, this,4,StickerAssigner); 
-        this.StickerButton5.scale.setTo(ButtonsScale,ButtonsScale);
-        StickerGroup.add(this.StickerButton5);
-        
-        this.StickerButton6 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width*2, ButtonsPos_y+this.StickerButton1.height, this.Sticker_6_Place, this,5,StickerAssigner); 
-        this.StickerButton6.scale.setTo(ButtonsScale,ButtonsScale);
-        StickerGroup.add(this.StickerButton6);
-        
-        this.StickerButton7 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width*3, ButtonsPos_y, this.Sticker_7_Place, this,6,StickerAssigner);  
-        this.StickerButton7.scale.setTo(ButtonsScale,ButtonsScale);
-        StickerGroup.add(this.StickerButton7);
-        
-        this.StickerButton8 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width*3, ButtonsPos_y+this.StickerButton1.height, this.Sticker_8_Place, this,7,StickerAssigner);
-        this.StickerButton8.scale.setTo(ButtonsScale,ButtonsScale);
-        StickerGroup.add(this.StickerButton8);
                 
+///////////////////////////
+//Placable Sticker Group///
+///////////////////////////
+
         
-        StickerGroup.visible = true;
+        //Sticker Carosels        
+        this.charactercarousel = game.add.sprite(game.width/2, game.height, 'StickerCaroselTab');
+        this.charactercarousel.anchor.x = 0.5;
+        this.charactercarousel.anchor.y =  1;
+        this.charactercarousel.scale.setTo(scaleRatio*carouselScaleOffset,scaleRatio*carouselScaleOffset);
+        //StickerGroup.add(this.charactercarousel);  
+        
+        ///////////////////////////
+        ////First Sticker Group////
+        ///////////////////////////
+        
+        this.StickerButton1 = gameButtons.addStickerButton("0", ButtonsPos_x, ButtonsPos_y, 
+        this.Sticker_1_Place, this,0,StickerAssigner_set1); 
+        this.StickerButton1.scale.setTo(ButtonsScale,ButtonsScale);
+        StickerGroup_1.add(this.StickerButton1);
+     
+        this.StickerButton2 = gameButtons.addStickerButton("0", ButtonsPos_x, ButtonsPos_y+this.StickerButton1.height, this.Sticker_2_Place, this,1,StickerAssigner_set1); 
+        this.StickerButton2.scale.setTo(ButtonsScale,ButtonsScale);
+        StickerGroup_1.add(this.StickerButton2);
+        
+        this.StickerButton3 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width, ButtonsPos_y, this.Sticker_3_Place, this,2,StickerAssigner_set1);  
+        this.StickerButton3.scale.setTo(ButtonsScale,ButtonsScale);
+        StickerGroup_1.add(this.StickerButton3);
+        
+        this.StickerButton4 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width, ButtonsPos_y+this.StickerButton1.height, this.Sticker_4_Place, this,3,StickerAssigner_set1);
+        this.StickerButton4.scale.setTo(ButtonsScale,ButtonsScale);
+        StickerGroup_1.add(this.StickerButton4);
+        
+        this.StickerButton5 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width*2, ButtonsPos_y, this.Sticker_5_Place, this,4,StickerAssigner_set1); 
+        this.StickerButton5.scale.setTo(ButtonsScale,ButtonsScale);
+        StickerGroup_1.add(this.StickerButton5);
+        
+        this.StickerButton6 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width*2, ButtonsPos_y+this.StickerButton1.height, this.Sticker_6_Place, this,5,StickerAssigner_set1); 
+        this.StickerButton6.scale.setTo(ButtonsScale,ButtonsScale);
+        StickerGroup_1.add(this.StickerButton6);
+        
+        this.StickerButton7 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width*3, ButtonsPos_y, this.Sticker_7_Place, this,6,StickerAssigner_set1);  
+        this.StickerButton7.scale.setTo(ButtonsScale,ButtonsScale);
+        StickerGroup_1.add(this.StickerButton7);
+        
+        this.StickerButton8 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width*3, ButtonsPos_y+this.StickerButton1.height, this.Sticker_8_Place, this,7,StickerAssigner_set1);
+        this.StickerButton8.scale.setTo(ButtonsScale,ButtonsScale);
+        StickerGroup_1.add(this.StickerButton8);
+        
+        ///////////////////////////
+        ////Second Sticker Group///
+        ///////////////////////////
+        
+
+        this.StickerButton9 = gameButtons.addStickerButton("0", ButtonsPos_x, ButtonsPos_y, 
+        this.Sticker_8_Place, this,8,StickerAssigner_set1); 
+        this.StickerButton9.scale.setTo(ButtonsScale,ButtonsScale);
+        StickerGroup_2.add(this.StickerButton9);
+       
+        this.StickerButton10 = gameButtons.addStickerButton("0", ButtonsPos_x, ButtonsPos_y+this.StickerButton1.height, this.Sticker_2_Place, this,9,StickerAssigner_set1); 
+        this.StickerButton10.scale.setTo(ButtonsScale,ButtonsScale);
+        StickerGroup_2.add(this.StickerButton10);
+        
+        this.StickerButton11 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width, ButtonsPos_y, this.Sticker_3_Place, this,10,StickerAssigner_set1);  
+        this.StickerButton11.scale.setTo(ButtonsScale,ButtonsScale);
+        StickerGroup_2.add(this.StickerButton11);
+        
+        this.StickerButton12 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width, ButtonsPos_y+this.StickerButton1.height, this.Sticker_4_Place, this,11,StickerAssigner_set1);
+        this.StickerButton12.scale.setTo(ButtonsScale,ButtonsScale);
+        StickerGroup_2.add(this.StickerButton12);
+        
+        this.StickerButton13 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width*2, ButtonsPos_y, this.Sticker_5_Place, this,12,StickerAssigner_set1); 
+        this.StickerButton13.scale.setTo(ButtonsScale,ButtonsScale);
+        StickerGroup_2.add(this.StickerButton13);
+        
+        this.StickerButton14 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width*2, ButtonsPos_y+this.StickerButton1.height, this.Sticker_6_Place, this,13,StickerAssigner_set1); 
+        this.StickerButton14.scale.setTo(ButtonsScale,ButtonsScale);
+        StickerGroup_2.add(this.StickerButton14);
+        
+        this.StickerButton15 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width*3, ButtonsPos_y, this.Sticker_7_Place, this,14,StickerAssigner_set1);  
+        this.StickerButton15.scale.setTo(ButtonsScale,ButtonsScale);
+        StickerGroup_2.add(this.StickerButton15);
+        
+        this.StickerButton16 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width*3, ButtonsPos_y+this.StickerButton1.height, this.Sticker_8_Place, this,15,StickerAssigner_set1);
+        this.StickerButton16.scale.setTo(ButtonsScale,ButtonsScale);
+        StickerGroup_2.add(this.StickerButton16);
+        
+        ///////////////////////////
+        ////Third Sticker Group////
+        ///////////////////////////
+
+        this.StickerButton17 = gameButtons.addStickerButton("0", ButtonsPos_x, ButtonsPos_y, 
+        this.Sticker_8_Place, this,16,StickerAssigner_set1); 
+        this.StickerButton17.scale.setTo(ButtonsScale,ButtonsScale);
+        StickerGroup_3.add(this.StickerButton17);
+       
+        this.StickerButton18 = gameButtons.addStickerButton("0", ButtonsPos_x, ButtonsPos_y+this.StickerButton1.height, this.Sticker_2_Place, this,17,StickerAssigner_set1); 
+        this.StickerButton18.scale.setTo(ButtonsScale,ButtonsScale);
+        StickerGroup_3.add(this.StickerButton18);
+        
+        this.StickerButton19 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width, ButtonsPos_y, this.Sticker_3_Place, this,18,StickerAssigner_set1);  
+        this.StickerButton19.scale.setTo(ButtonsScale,ButtonsScale);
+        StickerGroup_3.add(this.StickerButton19);
+        
+        this.StickerButton20 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width, ButtonsPos_y+this.StickerButton1.height, this.Sticker_4_Place, this,19,StickerAssigner_set1);
+        this.StickerButton20.scale.setTo(ButtonsScale,ButtonsScale);
+        StickerGroup_3.add(this.StickerButton20);
+        
+        this.StickerButton21 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width*2, ButtonsPos_y, this.Sticker_5_Place, this,20,StickerAssigner_set1); 
+        this.StickerButton21.scale.setTo(ButtonsScale,ButtonsScale);
+        StickerGroup_3.add(this.StickerButton21);
+        
+        this.StickerButton22 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width*2, ButtonsPos_y+this.StickerButton1.height, this.Sticker_6_Place, this,21,StickerAssigner_set1); 
+        this.StickerButton22.scale.setTo(ButtonsScale,ButtonsScale);
+        StickerGroup_3.add(this.StickerButton22);
+        
+        this.StickerButton23 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width*3, ButtonsPos_y, this.Sticker_7_Place, this,22,StickerAssigner_set1);  
+        this.StickerButton23.scale.setTo(ButtonsScale,ButtonsScale);
+        StickerGroup_3.add(this.StickerButton23);
+        
+        this.StickerButton24 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width*3, ButtonsPos_y+this.StickerButton1.height, this.Sticker_8_Place, this,23,StickerAssigner_set1);
+        this.StickerButton24.scale.setTo(ButtonsScale,ButtonsScale);
+        StickerGroup_3.add(this.StickerButton24);
+        
+        ///////////////////////////
+        ////Third Sticker Group////
+        ///////////////////////////
+
+        this.StickerButton25 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width*2, ButtonsPos_y, this.Sticker_5_Place, this,24,StickerAssigner_set1); 
+        this.StickerButton25.scale.setTo(ButtonsScale,ButtonsScale);
+        StickerGroup_4.add(this.StickerButton25);
+        
+        this.StickerButton26 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width*2, ButtonsPos_y+this.StickerButton1.height, this.Sticker_6_Place, this,25,StickerAssigner_set1); 
+        this.StickerButton26.scale.setTo(ButtonsScale,ButtonsScale);
+        StickerGroup_4.add(this.StickerButton26);
+        
+        this.StickerButton27 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width*3, ButtonsPos_y, this.Sticker_7_Place, this,26,StickerAssigner_set1);  
+        this.StickerButton27.scale.setTo(ButtonsScale,ButtonsScale);
+        StickerGroup_4.add(this.StickerButton27);
+        
+        this.StickerButton28 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width*3, ButtonsPos_y+this.StickerButton1.height, this.Sticker_8_Place, this,27,StickerAssigner_set1);
+        this.StickerButton28.scale.setTo(ButtonsScale,ButtonsScale);
+        StickerGroup_4.add(this.StickerButton28);                  
+
+        
+        Arrow_Y = game.height-this.StickerButton1.height;
+        
+        //Carosels Left
+        this.CaroselArrow_Left = gameButtons.addGenericButton("0", ButtonsPos_x, Arrow_Y, this.Carosel_Left, this,"CaroselArrows",0); 
+        this.CaroselArrow_Left.anchor.x = 1;
+        this.CaroselArrow_Left.scale.setTo(scaleRatio,scaleRatio);
+        //StickerGroup.add(this.CaroselArrow_Left);
+        
+        //Carosels Right
+        this.CaroselArrow_Right = gameButtons.addGenericButton("0", ButtonsPos_x+this.StickerButton1.width*4, Arrow_Y, this.Carosel_Right, this,"CaroselArrows",1); 
+        this.CaroselArrow_Right.scale.setTo(scaleRatio,scaleRatio);
+        //StickerGroup.add(this.CaroselArrow_Right);
+        
+        GroupRefArrayCounter = 0;
+        
+        GroupRefArray[0] = StickerGroup_1;
+        GroupRefArray[1] = StickerGroup_2;
+        GroupRefArray[2] = StickerGroup_3;
+        GroupRefArray[3] = StickerGroup_4;
+        
+        GroupRefArray[0].visible = false;
+        GroupRefArray[1].visible = false;
+        GroupRefArray[2].visible = false;
+        GroupRefArray[3].visible = false;
+        /*StickerGroup_1.visible = false;
+        StickerGroup_2.visible = false;
+        StickerGroup_3.visible = false;
+        StickerGroup_4.visible = false;*/
+        GroupRefArray[GroupRefArrayCounter].visible = true;
+        
         
         //Hit Button
         /*this.Hintbutton = gameButtons.addStickerButton("0", ButtonsPos_x+160, ButtonsPos_x+20, this.AlphaHitOn, this,4); */
@@ -355,7 +531,10 @@ var StateMain = {
         Character.add(this.MagnifyingLenz);
         
         //game.world.bringToTop(Character);
-        game.world.bringToTop(StickerGroup);
+        game.world.bringToTop(StickerGroup_4);
+        game.world.bringToTop(StickerGroup_3);
+        game.world.bringToTop(StickerGroup_2);
+        game.world.bringToTop(StickerGroup_1);
         game.world.bringToTop(ColorGroup);
         game.world.bringToTop(MainButtonGroup);
         game.world.bringToTop(CharacterStickerGroup);
@@ -402,7 +581,7 @@ var StateMain = {
         ImageAssetArray[8]='RockAntenae_2';         
         PivotPoint_X[8] = 0.5;
         PivotPoint_Y[8] = 0; 
-        StickerAssigner = "Rock_Stickers";           
+        StickerAssigner_set1 = "Rock_Stickers_1";           
         game.state.start("StateMain");
     },
     
@@ -434,7 +613,7 @@ var StateMain = {
         ImageAssetArray[8]='PineconeMouth_2';           
         PivotPoint_X[8] = 0.5;
         PivotPoint_Y[8] = 0.5; 
-        StickerAssigner = "Pinecone_Stickers";      
+        StickerAssigner_set1 = "Pinecone_Stickers";      
         game.state.start("StateMain");
     },
     
@@ -580,10 +759,32 @@ var StateMain = {
             }
     }, 
     
-    CharacterStickerClick: function()
+    Carosel_Left: function()
+    {   
+     GroupRefArray[GroupRefArrayCounter].visible = false;
+        if(GroupRefArrayCounter>0)
+        {
+        GroupRefArrayCounter-=1;
+        }
+            else
+            {
+            GroupRefArrayCounter=GroupRefArray.length-1;
+            }
+    GroupRefArray[GroupRefArrayCounter].visible = true;
+    },
+    
+    Carosel_Right: function()
     {
-    
-    
+     GroupRefArray[GroupRefArrayCounter].visible = false;
+        if(GroupRefArrayCounter<GroupRefArray.length-1)
+        {
+        GroupRefArrayCounter+=1;
+        }
+            else
+            {
+            GroupRefArrayCounter=0;
+            }
+    GroupRefArray[GroupRefArrayCounter].visible = true;
     },
     
 
@@ -609,7 +810,7 @@ var StateMain = {
             {
             //isMovingSticker = true;
             isClickDragging = true;
-            this.SelectedButton = this.Sticker_1;
+            this.SelectedButton = this.StickerRef;
             PositionArrayIndicator = 1;
             }
     },
@@ -831,7 +1032,8 @@ var StateMain = {
     }, 
     
     StickerTurnOn: function () {
-        StickerGroup.visible = true;
+        StickerGroup_1.visible = true;
+        StickerGroup_2.visible = false;
         ColorGroup.visible = false;
         CharacterStickerGroup.visible = false;
         isAddingPaint = false;
@@ -839,7 +1041,8 @@ var StateMain = {
         },
     
     ColorTurnOn: function () {   
-        StickerGroup.visible = false;
+        StickerGroup_1.visible = false;
+        StickerGroup_2.visible = false;
         ColorGroup.visible = true; 
         CharacterStickerGroup.visible = false;
         isAddingPaint = true;
@@ -847,7 +1050,8 @@ var StateMain = {
         },
     
     CharacterHitOn: function () {
-        StickerGroup.visible = false;
+        StickerGroup_1.visible = false;
+        StickerGroup_2.visible = false;
         ColorGroup.visible = false;
         CharacterStickerGroup.visible = true;
         isAddingPaint = false;

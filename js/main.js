@@ -20,20 +20,49 @@ var isAddingSticker = true;
 var isMovingSticker = true;
 
 
-var StickerAssigner = "Pinecone_Stickers"; 
+
+var StickerAssigner_set1 = "Pinecone_Stickers"; 
+var StickerAssigner_set2 = "Rock_Stickers_2";
+
+
+var GroupRefArrayCounter = 0;
+var GroupRefArray = //Images
+    [
+    0,
+    0,
+    0,  
+    0
+    ];
 
 
 var ImageAssetArray = //Images
     [
         'PineconeBody',
-        'PineconeWings_1',
-        'PineconeWings_2',
-        'PineconeEyes_1',
-        'PineconeEyes_2',
-        'PineconeFeet_1',
-        'PineconeFeet_2',
-        'PineconeMouth_1',
-        'PineconeMouth_2'             
+        '1',
+        '2',
+        '3',
+        '4',
+        '5',
+        '6',
+        '7',
+        '8',
+        '9',
+        '10',
+        '11',
+        '12',
+        '13',
+        '14',
+        '15',
+        '16',
+        '17',
+        '18',
+        '19',
+        '20',
+        '21',
+        '22',
+        '23',
+        '24',
+        '25'             
     ];
 
 var PivotPoint_X =//PivotPoint x
