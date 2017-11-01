@@ -59,17 +59,20 @@ var StateCharacterSelect = {
 
         ImageAssetArray[0]='PineconeBody';
         PivotPoint_X[0] = 0.5;
-        PivotPoint_Y[0] = 0.5;      
+        PivotPoint_Y[0] = 0.5;    
+///////////////////////////
+////First Sticker Group////
+///////////////////////////
         ImageAssetArray[1]='PineconeWings_1';
         PivotPoint_X[1] = 0.5;
         PivotPoint_Y[1] = 0.5;   
         ImageAssetArray[2]='PineconeWings_2';
         PivotPoint_X[2] = 0.5;
         PivotPoint_Y[2] = 0.5;   
-        ImageAssetArray[3]='PineconeEyes_1';
+        ImageAssetArray[3]='PineconeWings_3';
         PivotPoint_X[3] = 0.5;
         PivotPoint_Y[3] = 0.5;   
-        ImageAssetArray[4]='PineconeEyes_2';
+        ImageAssetArray[4]='PineconeWings_4';
         PivotPoint_X[4] = 0.5;
         PivotPoint_Y[4] = 0.5;   
         ImageAssetArray[5]='PineconeFeet_1';
@@ -78,57 +81,69 @@ var StateCharacterSelect = {
         ImageAssetArray[6]='PineconeFeet_2';
         PivotPoint_X[6] = 0.5;
         PivotPoint_Y[6] = 1; 
-        ImageAssetArray[9]='PineconeFeet_2';
+        ImageAssetArray[7]='Bowtie';
+        PivotPoint_X[7] = 0.5;
+        PivotPoint_Y[7] = 0.5;      
+        ImageAssetArray[8]='skirt';
+        PivotPoint_X[8] = 0.5;
+        PivotPoint_Y[8] = 0.5;   
+///////////////////////////
+////Second Sticker Group///
+///////////////////////////
+        ImageAssetArray[9]='Shoes_1';
         PivotPoint_X[9] = 0.5;
-        PivotPoint_Y[9] = 0.5;      
-        ImageAssetArray[10]='PineconeWings_1';
+        PivotPoint_Y[9] = 0.5;   
+        ImageAssetArray[10]='Shoes_2';
         PivotPoint_X[10] = 0.5;
         PivotPoint_Y[10] = 0.5;   
-        ImageAssetArray[11]='PineconeWings_2';
+        ImageAssetArray[11]='PineconeEyes_1';
         PivotPoint_X[11] = 0.5;
         PivotPoint_Y[11] = 0.5;   
-        ImageAssetArray[12]='PineconeEyes_1';
+        ImageAssetArray[12]='PineconeEyes_2';
         PivotPoint_X[12] = 0.5;
-        PivotPoint_Y[12] = 0.5;   
-        ImageAssetArray[13]='PineconeEyes_2';
+        PivotPoint_Y[12] = 1;   
+        ImageAssetArray[13]='PineconeEyes_3';
         PivotPoint_X[13] = 0.5;
-        PivotPoint_Y[13] = 0.5;   
-        ImageAssetArray[14]='PineconeFeet_1';
+        PivotPoint_Y[13] = 1; 
+        ImageAssetArray[14]='PineconeEyes_4';
         PivotPoint_X[14] = 0.5;
-        PivotPoint_Y[14] = 1;   
-        ImageAssetArray[15]='PineconeFeet_2';
+        PivotPoint_Y[14] = 0.5;
+        ImageAssetArray[15]='PineconeEyes_5';           
         PivotPoint_X[15] = 0.5;
-        PivotPoint_Y[15] = 1; 
-        ImageAssetArray[16]='PineconeMouth_1';
+        PivotPoint_Y[15] = 0.5;
+        ImageAssetArray[16]='Shades_1';
         PivotPoint_X[16] = 0.5;
-        PivotPoint_Y[16] = 0.5;
-        ImageAssetArray[17]='PineconeMouth_2';           
+        PivotPoint_Y[16] = 1;   
+///////////////////////////
+////Third Sticker Group////
+///////////////////////////
+        ImageAssetArray[17]='Shades_2';
         PivotPoint_X[17] = 0.5;
-        PivotPoint_Y[17] = 0.5;
-        ImageAssetArray[18]='PineconeFeet_1';
+        PivotPoint_Y[17] = 1; 
+        ImageAssetArray[18]='PineconeNose_2';
         PivotPoint_X[18] = 0.5;
-        PivotPoint_Y[18] = 1;   
-        ImageAssetArray[19]='PineconeFeet_2';
-        PivotPoint_X[19] = 0.5;
-        PivotPoint_Y[19] = 1; 
-        ImageAssetArray[20]='PineconeFeet_2';
+        PivotPoint_Y[18] = 0.5;    
+        ImageAssetArray[19]='PineconeNose_1';
+        PivotPoint_X[17] = 0.5;
+        PivotPoint_Y[17] = 1; 
+        ImageAssetArray[20]='PineconeHair_1';
         PivotPoint_X[20] = 0.5;
         PivotPoint_Y[20] = 0.5;      
-        ImageAssetArray[21]='PineconeWings_1';
+        ImageAssetArray[21]='PineconeHair_2';
         PivotPoint_X[21] = 0.5;
         PivotPoint_Y[21] = 0.5;   
-        ImageAssetArray[22]='PineconeWings_2';
+        ImageAssetArray[22]='PineconeHair_3';
         PivotPoint_X[22] = 0.5;
         PivotPoint_Y[22] = 0.5;   
-        ImageAssetArray[23]='PineconeEyes_1';
+        ImageAssetArray[23]='PineconeHeadGear_1';
         PivotPoint_X[23] = 0.5;
         PivotPoint_Y[23] = 0.5;   
-        ImageAssetArray[24]='PineconeEyes_2';
+        ImageAssetArray[24]='PineconeHeadGear_2';
         PivotPoint_X[24] = 0.5;
         PivotPoint_Y[24] = 0.5;   
-        ImageAssetArray[25]='PineconeFeet_1';
-        PivotPoint_X[25] = 0.5;
-        PivotPoint_Y[25] = 1;   
+        ImageAssetArray[25]='PineconeHeadGear_3';
+        PivotPoint_X[23] = 0.5;
+        PivotPoint_Y[23] = 1;   
 
         
         
