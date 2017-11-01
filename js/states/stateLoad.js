@@ -9,17 +9,8 @@ var StateLoad = {
         game.load.video('Extro', 'Videos/Pray_For_Mojo.mp4');
         game.load.video('Episode', 'Videos/The_Nine_Inch_Nails_in_Twin_Peaks.mp4');
         
-        //Leaf
-        game.load.image('MagLenz', 'images/Leaf/alphaMaskState.png');      
-        //Load Stickers and body
-        game.load.image('Whiskers', 'images/Leaf/LeafWiskers.png');
-        game.load.image('Nose', 'images/Leaf/LeafNose.png');
-        game.load.image('Body', 'images/Leaf/LeafBody.png');
-        game.load.image('Ears', 'images/Leaf/LeafEars.png');
-        game.load.image('Eyes', 'images/Leaf/LeafEyes.png');
-        
         //Pinecones
-         game.load.image('MagLenz', 'images/Leaf/alphaMaskState.png');      
+         game.load.image('MagLenz', 'images/Pinecone/alphaMaskState.png');      
         //Load Stickers and body
         game.load.image('PineconeBody', 'images/Pinecone/PineconeBody.png');
         //Clothing X
@@ -62,7 +53,7 @@ var StateLoad = {
         game.load.spritesheet("Pinecone_Stickers", "images/ui/Pinecone_stickers.png", 280, 200, 28);
         //Rock
         
-        game.load.image('MagLenz', 'images/Leaf/alphaMaskState.png');      
+        game.load.image('MagLenz', 'images/Pinecone/alphaMaskState.png');      
         //Load Stickers and body
         game.load.image('RockBody', 'images/Rock/RockBody.png');     
         game.load.image('RockAntenae_1', 'images/Rock/RockAntenae_1.png');
@@ -74,7 +65,6 @@ var StateLoad = {
         game.load.image('RockWings_1', 'images/Rock/RockWings_1.png'); 
         game.load.image('RockWings_2', 'images/Rock/RockWings_2.png');  
         game.load.spritesheet("Rock_Stickers_1", "images/ui/Rock_stickers.png", 140, 100, 8);
-        game.load.spritesheet("Rock_Stickers_2", "images/ui/Rock_stickers2.png", 140, 100, 8);
 
         ///////////////////////////
         //Carosel Stickers to load/

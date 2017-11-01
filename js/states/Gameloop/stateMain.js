@@ -46,6 +46,7 @@ var StateMain = {
         //  Create the group for the stickers
         StickerGroup_4 = game.add.group();
         
+        MagnifinylLenzGroup = game.add.group(); 
         //Character change buttons 
         CharacterStickerGroup = game.add.group();
         
@@ -131,21 +132,23 @@ var StateMain = {
         buttongroup.add(this.MainResetButton);
         
         //Top Menu Buttons
-        MenuTopButtons_Pos_x = 700;     
+        MenuTopButtons_Pos_x = game.width/9;     
         MenuTopButtons_Pos_y = 0;
         
         //Hint Button
-        this.MainStickerButton = gameButtons.addGenericButton("0", MenuTopButtons_Pos_x, MenuTopButtons_Pos_y+20, this.AlphaHintOn, this,"creativeButtons",3); 
-        this.MainStickerButton.scale.setTo(scaleRatio,scaleRatio);
-        MainButtonGroup.add(this.MainStickerButton);
+        this.AlphaButton = gameButtons.addGenericButton("0", MenuTopButtons_Pos_x, MenuTopButtons_Pos_y+20, this.AlphaHintOn, this,"creativeButtons",3); 
+        this.AlphaButton.scale.setTo(scaleRatio,scaleRatio);
+        MainButtonGroup.add(this.AlphaButton);
+        
         //Save Button
-        this.MainColorButton = gameButtons.addGenericButton("0", MenuTopButtons_Pos_x+this.MainStickerButton.width, MenuTopButtons_Pos_y+20, this.SaveClicked, this,"creativeButtons",4); 
-        this.MainColorButton.scale.setTo(scaleRatio,scaleRatio);
-        MainButtonGroup.add(this.MainColorButton);
+        this.SaveButton = gameButtons.addGenericButton("0", MenuTopButtons_Pos_x+this.MainStickerButton.width, MenuTopButtons_Pos_y+20, this.SaveClicked, this,"creativeButtons",4); 
+        this.SaveButton.scale.setTo(scaleRatio,scaleRatio);
+        MainButtonGroup.add(this.SaveButton);
+        
         //Back button
-        this.MainResetButton = gameButtons.addGenericButton("0", MenuTopButtons_Pos_x+this.MainStickerButton.width*2, MenuTopButtons_Pos_y+20, this.BackToCharacterSelect, this,"creativeButtons",5); 
-        this.MainResetButton.scale.setTo(scaleRatio,scaleRatio);
-        MainButtonGroup.add(this.MainResetButton);
+        this.BackToButton = gameButtons.addGenericButton("0", MenuTopButtons_Pos_x+this.MainStickerButton.width*2, MenuTopButtons_Pos_y+20, this.BackToCharacterSelect, this,"creativeButtons",5); 
+        this.BackToButton.scale.setTo(scaleRatio,scaleRatio);
+        MainButtonGroup.add(this.BackToButton);
         
         
 ///////////////////////////
@@ -172,7 +175,7 @@ var StateMain = {
         this.RockCharacter.scale.setTo(scaleRatio/2,scaleRatio/2);
         CharacterStickerGroup.add(this.RockCharacter);
         
-        var ButtonsPos_y = game.height-this.RockCharacter.height*2; 
+        var ButtonsPos_y = game.height-this.RockCharacter.height; 
         
         this.RockCharacter.y = ButtonsPos_y;
         
@@ -701,17 +704,19 @@ var StateMain = {
         //Alpha hint 
         this.MagnifyingLenz = game.add.sprite(GameCenter_x, GameCenter_y, 'MagLenz');
         this.MagnifyingLenz.anchor.set(0.5);   
+        this.MagnifyingLenz.scale.setTo(scaleRatio,scaleRatio); 
         //	A mask is a Graphics object
         this.mask = game.add.graphics(0, 0);
         //	Shapes drawn to the Graphics object must be filled.
         this.mask.beginFill(0xffffff);
         //	Here we'll draw a circle
-        this.mask.drawCircle(100, 100, 100);
+        this.mask.drawCircle(250, 250, 250);
         //	And apply it to the Sprite
         this.MagnifyingLenz.mask = this.mask;
-        Character.add(this.MagnifyingLenz);
+        MagnifinylLenzGroup.add(this.MagnifyingLenz);
         
         //game.world.bringToTop(Character);
+        game.world.bringToTop(MagnifinylLenzGroup);
         game.world.bringToTop(StickerGroup_4);
         game.world.bringToTop(StickerGroup_3);
         game.world.bringToTop(StickerGroup_2);
@@ -719,6 +724,7 @@ var StateMain = {
         game.world.bringToTop(ColorGroup);
         game.world.bringToTop(MainButtonGroup);
         game.world.bringToTop(CharacterStickerGroup);
+        
         
         //game.world.bringToTop(buttongroup);
         //init the music
