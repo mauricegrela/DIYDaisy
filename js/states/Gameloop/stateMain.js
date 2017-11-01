@@ -1620,7 +1620,7 @@ var StateMain = {
     
     SaveClicked: function () {game.state.start("StateOuttro")},
     
-    BackToCharacterSelect: function () {game.state.start("StateSelect")},
+    BackToCharacterSelect: function () {game.state.start("StateCharacterSelect")},
         
     ImageClick: function () {this.param1.animations.play(this.param2, 30, false);}, 
     
@@ -1641,5 +1641,5 @@ var StateMain = {
 	},
     
     
-    sayNo: function () {this.backgroundMusic.stop();game.state.start("StateOver");}
+    sayNo: function () {this.backgroundMusic.stop();game.state.start("StateCharacterSelect");}
 }

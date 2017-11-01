@@ -8,9 +8,16 @@ var StateLoad = {
         game.load.video('Intro', 'Videos/The_Nine_Inch_Nails_in_Twin_Peaks.mp4');
         game.load.video('Extro', 'Videos/Pray_For_Mojo.mp4');
         game.load.video('Episode', 'Videos/The_Nine_Inch_Nails_in_Twin_Peaks.mp4');
+////////////////
+/////Mobile/////
+////////////////    
+        game.load.image('MobileBody', 'images/Mobile/MobileBody.png');
         
-        //Pinecones
-         game.load.image('MagLenz', 'images/Pinecone/alphaMaskState.png');      
+        
+////////////////
+////Pinecones////
+////////////////    
+     game.load.image('MagLenz',     'images/Pinecone/alphaMaskState.png');      
         //Load Stickers and body
         game.load.image('PineconeBody', 'images/Pinecone/PineconeBody.png');
         //Clothing X
@@ -51,8 +58,11 @@ var StateLoad = {
         game.load.image('PineconeWings_4', 'images/Pinecone/PineconeWings_4.png');
         
         game.load.spritesheet("Pinecone_Stickers", "images/ui/Pinecone_stickers.png", 280, 200, 28);
-        //Rock
+
         
+////////////////
+//////Rock//////
+////////////////           
         game.load.image('MagLenz', 'images/Pinecone/alphaMaskState.png');      
         //Load Stickers and body
         game.load.image('RockBody', 'images/Rock/RockBody.png');     
@@ -66,9 +76,19 @@ var StateLoad = {
         game.load.image('RockWings_2', 'images/Rock/RockWings_2.png');  
         game.load.spritesheet("Rock_Stickers_1", "images/ui/Rock_stickers.png", 140, 100, 8);
 
-        ///////////////////////////
-        //Carosel Stickers to load/
-        ///////////////////////////
+////////////////
+///SmudgStick///
+////////////////    
+        game.load.image('SmudgeStickBody', 'images/SmudgeStick/SmudgeStickBody.png');          
+         
+////////////////
+///StickWand///
+////////////////    
+        game.load.image('StickWandBody', 'images/StickWand/StickWandBody.png');   
+        
+///////////////////////////
+//Carosel Stickers to load/
+///////////////////////////
         //Load Background images for the rock
         game.load.image('craft_Backgroung', 'images/backgrounds/Background_1.jpg');
         
