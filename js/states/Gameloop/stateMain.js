@@ -21,10 +21,7 @@ var StateMain = {
       game.scale.pageAlignHorizontally = true;
       game.scale.setScreenSize(true);
 */       
-        
-    this.game.scale.fullScreenScaleMode = Phaser.ScaleManager.SHOW_ALL;
-    this.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
-    this.game.scale.refresh();
+
      
     },
 
@@ -66,8 +63,8 @@ var StateMain = {
         score = 0;
         
         //Add background      
-        //this.craftBackground = game.add.sprite(0, 0, 'craft_Backgroung');
-        //BackgroundGroup.add(this.craftBackground);     
+        this.craftBackground = game.add.sprite(0, 0, 'craft_Backgroung');
+       BackgroundGroup.add(this.craftBackground);     
         
 
         carouselScaleOffset = 1.2;
@@ -676,7 +673,7 @@ var StateMain = {
         
         //Sticker_24
         this.Sticker_24 = game.add.sprite(OGPose_X, OGPose_Y, ImageAssetArray[24]);
-        this.Sticker_24.alpha = 1;
+        this.Sticker_24.alpha = 0;
         this.Sticker_24.anchor.x = PivotPoint_X[24];
         this.Sticker_24.anchor.y =  PivotPoint_Y[24];
         this.Sticker_24.inputEnabled = true;

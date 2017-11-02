@@ -2,6 +2,10 @@ var StateLoad = {
 
     preload: function () {
 
+        this.game.scale.fullScreenScaleMode = Phaser.ScaleManager.SHOW_ALL;
+        this.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+        this.game.scale.refresh();
+        
         this.time.advacedTiming = true;
         
         var video1;
@@ -107,6 +111,15 @@ var StateLoad = {
         
         //Animations
         game.load.spritesheet('mummy', 'images/SpriteSheets/metalslug_mummy37x45.png', 37, 45, 18);
+        
+        //PRELOAD EVERYTHING HERE
+        game.load.spritesheet("buttons", "images/ui/buttons-red.png", 265, 75);
+        game.load.spritesheet("soundButtons", "images/ui/soundButtons-blue.png", 44, 44, 4);
+        game.load.spritesheet("creativeButtons", "images/ui/CreativeButtons.png", 140, 160, 7);
+        game.load.audio("backgroundMusic", "audio/background/piano.mp3");
+        game.load.audio("elephant", "audio/sfx/elephant.mp3");  
+        game.load.image("PaintUI", "images/ui/PaintDrop.png");
+        
         //Loading Variables      
         var empty = game.add.image(0, 0, "loadingEmpty");
         var full = game.add.image(0, 0, "loadingFull");
@@ -118,13 +131,7 @@ var StateLoad = {
 
         game.load.setPreloadSprite(full);
 
-        //PRELOAD EVERYTHING HERE
-        game.load.spritesheet("buttons", "images/ui/buttons-red.png", 265, 75);
-        game.load.spritesheet("soundButtons", "images/ui/soundButtons-blue.png", 44, 44, 4);
-        game.load.spritesheet("creativeButtons", "images/ui/CreativeButtons.png", 140, 160, 7);
-        game.load.audio("backgroundMusic", "audio/background/piano.mp3");
-        game.load.audio("elephant", "audio/sfx/elephant.mp3");  
-        game.load.image("PaintUI", "images/ui/PaintDrop.png");
+
 
 
     },
