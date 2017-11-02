@@ -16,8 +16,6 @@ var StateLoad = {
 /////Mobile/////
 ////////////////    
         game.load.image('MobileBody', 'images/Mobile/MobileBody.png');
-        
-        
 ////////////////
 ////Pinecones////
 ////////////////    
@@ -62,7 +60,6 @@ var StateLoad = {
         game.load.image('PineconeWings_4', 'images/Pinecone/PineconeWings_4.png');
         
         game.load.spritesheet("Pinecone_Stickers", "images/ui/Pinecone_stickers.png", 280, 200, 28);
-
         
 ////////////////
 //////Rock//////
@@ -105,6 +102,8 @@ var StateLoad = {
         //Arrows Tab
         game.load.spritesheet("CaroselArrows", "images/ui/sticker-arrows.png", 118, 44, 2);     
         
+          //Sticker Tab
+        game.load.image('TabButton', 'images/ui/StickerCollisionBox.png');
         
         //Placement Background
         game.load.image('placing_Backgroung', 'images/backgrounds/Background_2.PNG');

@@ -110,40 +110,42 @@ var StateMain = {
         
         
         //Main Button Placement
-        var MainButtonsPos_x = window.innerWidth/10;
-        var MainButtonsPos_y = game.height/4;
-        var MacroButton_Scale = 0.5;
+        var MainButtonsPos_x = window.innerWidth/2.3;
+        var MainButtonsPos_y = game.height/1.7;
+        var MacroButton_Scale = scaleRatio*1.2;
    
         //Placeable Buttons
-        this.MainStickerButton = gameButtons.addGenericButton("0", MainButtonsPos_x, MainButtonsPos_y+20, this.CharacterHitOn, this,"creativeButtons",0); 
-        this.MainStickerButton.scale.setTo(scaleRatio,scaleRatio);
+        this.MainStickerButton = gameButtons.addGenericButton("0", MainButtonsPos_x, MainButtonsPos_y+20, this.CharacterHitOn, this,"TabButton",0); 
+        this.MainStickerButton.scale.setTo(MacroButton_Scale,MacroButton_Scale);
+        this.MainStickerButton.alpha = 0;
         buttongroup.add(this.MainStickerButton);
         
-        this.MainColorButton = gameButtons.addGenericButton("0", MainButtonsPos_x+this.MainStickerButton.width, MainButtonsPos_y+20, this.ColorTurnOn, this,"creativeButtons",1); 
+        /*this.MainColorButton = gameButtons.addGenericButton("0", MainButtonsPos_x+this.MainStickerButton.width, MainButtonsPos_y+20, this.ColorTurnOn, this,"creativeButtons",1); 
         buttongroup.add(this.MainColorButton);
         this.MainColorButton.scale.setTo(scaleRatio,scaleRatio);
-        buttongroup.add(this.MainColorButton);
+        buttongroup.add(this.MainColorButton);*/
         
-        this.MainResetButton = gameButtons.addGenericButton("0", MainButtonsPos_x+this.MainStickerButton.width*2, MainButtonsPos_y+20, this.StickerTurnOn, this,"creativeButtons",2); 
-        this.MainResetButton.scale.setTo(scaleRatio,scaleRatio);
+        this.MainResetButton = gameButtons.addGenericButton("0", MainButtonsPos_x+this.MainStickerButton.width, MainButtonsPos_y+20, this.StickerTurnOn, this,"TabButton",0);
+        this.MainResetButton.alpha = 0;
+        this.MainResetButton.scale.setTo(MacroButton_Scale,MacroButton_Scale);
         buttongroup.add(this.MainResetButton);
         
         //Top Menu Buttons
-        MenuTopButtons_Pos_x = game.width/9;     
+        MenuTopButtons_Pos_x = game.width;     
         MenuTopButtons_Pos_y = 0;
         
         //Hint Button
         this.AlphaButton = gameButtons.addGenericButton("0", MenuTopButtons_Pos_x, MenuTopButtons_Pos_y+20, this.AlphaHintOn, this,"creativeButtons",3); 
         this.AlphaButton.scale.setTo(scaleRatio,scaleRatio);
         MainButtonGroup.add(this.AlphaButton);
-        
+        this.AlphaButton.x = MenuTopButtons_Pos_x-this.AlphaButton.width;
         //Save Button
-        this.SaveButton = gameButtons.addGenericButton("0", MenuTopButtons_Pos_x+this.MainStickerButton.width, MenuTopButtons_Pos_y+20, this.SaveClicked, this,"creativeButtons",4); 
+        this.SaveButton = gameButtons.addGenericButton("0", MenuTopButtons_Pos_x-this.AlphaButton.width*2, MenuTopButtons_Pos_y+20, this.SaveClicked, this,"creativeButtons",4); 
         this.SaveButton.scale.setTo(scaleRatio,scaleRatio);
         MainButtonGroup.add(this.SaveButton);
         
         //Back button
-        this.BackToButton = gameButtons.addGenericButton("0", MenuTopButtons_Pos_x+this.MainStickerButton.width*2, MenuTopButtons_Pos_y+20, this.BackToCharacterSelect, this,"creativeButtons",5); 
+        this.BackToButton = gameButtons.addGenericButton("0", MenuTopButtons_Pos_x-this.AlphaButton.width*3, MenuTopButtons_Pos_y+20, this.BackToCharacterSelect, this,"creativeButtons",5); 
         this.BackToButton.scale.setTo(scaleRatio,scaleRatio);
         MainButtonGroup.add(this.BackToButton);
         
@@ -721,9 +723,7 @@ var StateMain = {
         game.world.bringToTop(ColorGroup);
         game.world.bringToTop(MainButtonGroup);
         game.world.bringToTop(CharacterStickerGroup);
-        
-        
-        //game.world.bringToTop(buttongroup);
+        game.world.bringToTop(buttongroup);
         //init the music
         gameMedia.updateMusic();        
         //init the sound buttons
@@ -1589,8 +1589,9 @@ var StateMain = {
     }, 
     
     StickerTurnOn: function () {
-        StickerGroup_1.visible = true;
-        StickerGroup_2.visible = false;
+        //StickerGroup_1.visible = true;
+        //StickerGroup_2.visible = false;
+        GroupRefArray[GroupRefArrayCounter].visible = true;
         ColorGroup.visible = false;
         CharacterStickerGroup.visible = false;
         isAddingPaint = false;
@@ -1598,8 +1599,7 @@ var StateMain = {
         },
     
     ColorTurnOn: function () {   
-        StickerGroup_1.visible = false;
-        StickerGroup_2.visible = false;
+
         ColorGroup.visible = true; 
         CharacterStickerGroup.visible = false;
         isAddingPaint = true;
@@ -1607,8 +1607,7 @@ var StateMain = {
         },
     
     CharacterHitOn: function () {
-        StickerGroup_1.visible = false;
-        StickerGroup_2.visible = false;
+        GroupRefArray[GroupRefArrayCounter].visible = false;
         ColorGroup.visible = false;
         CharacterStickerGroup.visible = true;
         isAddingPaint = false;
