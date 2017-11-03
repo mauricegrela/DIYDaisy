@@ -75,6 +75,23 @@ var PivotPoint_X =//PivotPoint x
         0,
         0,
         0,
+        0,        
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         0,
     ];
 
@@ -88,63 +105,144 @@ var PivotPoint_Y =//PivotPoint y
         0,
         0,
         0,
+        0,        
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         0,
     ];
 
-
-
     var testArrayColor = [
         //Directory,Tint,Transparancy
-         0xFFFFFF,//Body
-         0xFFFFFF,//Sticker1
-         0xFFFFFF,//Sticker2
-         0xFFFFFF,//Sticker3
-         0xFFFFFF,//Sticker4
-         0xFFFFFF,//Sticker5
-         0xFFFFFF,//Sticker6
-         0xFFFFFF,//Sticker7
-         0xFFFFFF//Sticker8
+         0xFFFFFF,//
+         0xFFFFFF,//
+         0xFFFFFF,//
+         0xFFFFFF,//
+         0xFFFFFF,//
+         0xFFFFFF,//
+         0xFFFFFF,//
+         0xFFFFFF,//
+         0xFFFFFF,//
+         0xFFFFFF,//
+         0xFFFFFF,//
+         0xFFFFFF,//
+         0xFFFFFF,//
+         0xFFFFFF,//
+         0xFFFFFF,//
+         0xFFFFFF,//
+         0xFFFFFF,//
+         0xFFFFFF,//
+         0xFFFFFF,//
+         0xFFFFFF,//
+         0xFFFFFF,//
+         0xFFFFFF,//
+         0xFFFFFF,//
+         0xFFFFFF,//
+         0xFFFFFF,//
+         0xFFFFFF,//
         ];
 
     var testArrayAlpha = [
         //Directory,Tint,Transparancy
-        1,//Body
-        0,//Sticker1
-        0,//Sticker2
-        0,//Sticker3
-        0,//Sticker4
-        0,//Sticker5
-        0,//Sticker6
-        0,//Sticker7
-        0//Sticker8
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,        
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         ];
 
 var PositionArrayIndicator = 0;
 
     var Xpos_ArrayAlpha = [
-        //Xposition of the drag
-        0,//Body
-        0,//Sticker1
-        0,//Sticker2
-        0,//Sticker3
-        0,//Sticker4
-        0,//Sticker5
-        0,//Sticker6
-        0,//Sticker7
-        0//Sticker8
-        ];
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,        
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+    ];
     var Ypos_ArrayAlpha = [
-        //Yposition of the drag
-        0,//Body
-        0,//Sticker1
-        0,//Sticker2
-        0,//Sticker3
-        0,//Sticker4
-        0,//Sticker5
-        0,//Sticker6
-        0,//Sticker7
-        0//Sticker8
-        ];
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,        
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+    ];
 
 
 //portrait or landscape
@@ -206,6 +304,11 @@ if (isMobile>-1)
     game.state.add("StateLoad", StateLoad);
     game.state.add("StateInit", StateInit);
     game.state.add("StateOver", StateOver);
+    
     game.state.start("StateInit");
+    
+    
+     
+    
 
 }

@@ -105,7 +105,7 @@ var StateMain = {
        
         
 ///////////////////////////
-///button Sticker Group////
+///CaroseleButtons Sticker Group////
 ///////////////////////////
         
         
@@ -119,11 +119,6 @@ var StateMain = {
         this.MainStickerButton.scale.setTo(MacroButton_Scale,MacroButton_Scale);
         this.MainStickerButton.alpha = 0;
         buttongroup.add(this.MainStickerButton);
-        
-        /*this.MainColorButton = gameButtons.addGenericButton("0", MainButtonsPos_x+this.MainStickerButton.width, MainButtonsPos_y+20, this.ColorTurnOn, this,"creativeButtons",1); 
-        buttongroup.add(this.MainColorButton);
-        this.MainColorButton.scale.setTo(scaleRatio,scaleRatio);
-        buttongroup.add(this.MainColorButton);*/
         
         this.MainResetButton = gameButtons.addGenericButton("0", MainButtonsPos_x+this.MainStickerButton.width, MainButtonsPos_y+20, this.StickerTurnOn, this,"TabButton",0);
         this.MainResetButton.alpha = 0;
@@ -158,6 +153,8 @@ var StateMain = {
         var ButtonsPos_y = game.height; 
         var ButtonsScale = scaleRatio;
         
+        var CharacterButtonScale = scaleRatio/3;
+        
         //character Carosels
         charactercarouselScaleOffset = 1.2;
         this.charactercarousel = game.add.sprite(game.width/2, game.height, 'characterCaroselTab');
@@ -170,25 +167,47 @@ var StateMain = {
         //Character Rock Stickers
         this.RockCharacter = game.add.sprite(ButtonsPos_x, ButtonsPos_y , 'RockBody');   
         this.RockCharacter.inputEnabled = true;
-        this.RockCharacter.events.onInputOver.add(this.RockCharSticker, this.RockCharacter);   
-        this.RockCharacter.scale.setTo(scaleRatio/2,scaleRatio/2);
+        this.RockCharacter.events.onInputOver.add(this.RockSticker, this.RockCharacter);   
+        this.RockCharacter.scale.setTo(CharacterButtonScale,CharacterButtonScale);
         CharacterStickerGroup.add(this.RockCharacter);
         
-        var ButtonsPos_y = game.height-this.RockCharacter.height; 
-        
-        this.RockCharacter.y = ButtonsPos_y;
+        this.RockCharacter.y = game.height-this.RockCharacter.height*1.5;  
+        ButtonsPos_y = game.height-this.RockCharacter.height*1.5;  
         
         //Character Pinecone Stickers
         this.PineconeCharacter = game.add.sprite(ButtonsPos_x+this.RockCharacter.width, ButtonsPos_y , 'PineconeBody');   
         this.PineconeCharacter.inputEnabled = true;
         //this.PineconeBody.input.pixelPerfectOver = true; 
-        this.PineconeCharacter.events.onInputOver.add(this.PineconeCharSticker, this.PineconeCharacter);   
-        this.PineconeCharacter.scale.setTo(scaleRatio/2,scaleRatio/2);
+        this.PineconeCharacter.events.onInputOver.add(this.PineconeSticker, this.PineconeCharacter);   
+        this.PineconeCharacter.scale.setTo(CharacterButtonScale,CharacterButtonScale);
         CharacterStickerGroup.add(this.PineconeCharacter);
         
+        //Character Mobile Stickers
+        this.MobileCharacter = game.add.sprite(ButtonsPos_x+this.RockCharacter.width*2, ButtonsPos_y , 'MobileBody');   
+        this.MobileCharacter.inputEnabled = true;
+        //this.PineconeBody.input.pixelPerfectOver = true; 
+        this.MobileCharacter.events.onInputOver.add(this.MobileSticker, this.MobileCharacter);   
+        this.MobileCharacter.scale.setTo(CharacterButtonScale,CharacterButtonScale);
+        CharacterStickerGroup.add(this.MobileCharacter);
+                
+        //Character StickWand Stickers
+        this.SmudgeStickCharacter = game.add.sprite(ButtonsPos_x+this.RockCharacter.width*3, ButtonsPos_y , 'SmudgeStickBody');   
+        this.SmudgeStickCharacter.inputEnabled = true;
+        //this.PineconeBody.input.pixelPerfectOver = true; 
+        this.SmudgeStickCharacter.events.onInputOver.add(this.SmudgeStickSticker, this.SmudgeStickCharacter);   
+        this.SmudgeStickCharacter.scale.setTo(CharacterButtonScale,CharacterButtonScale);
+        CharacterStickerGroup.add(this.SmudgeStickCharacter);
+        
+        //Character Mobile Stickers
+        this.StickWandCharacter = game.add.sprite(ButtonsPos_x+this.RockCharacter.width*4, ButtonsPos_y , 'StickWandBody');
+        this.StickWandCharacter.inputEnabled = true;
+        //this.PineconeBody.input.pixelPerfectOver = true; 
+        this.StickWandCharacter.events.onInputOver.add(this.StickWandSticker, this.StickWandCharacter);   
+        this.StickWandCharacter.scale.setTo(CharacterButtonScale,CharacterButtonScale);
+        CharacterStickerGroup.add(this.StickWandCharacter);
+        
         CharacterStickerGroup.visible = false;
-        
-        
+        //var ButtonsPos_y = game.height-this.RockCharacter.height; 
                 
 ///////////////////////////
 //Placable Sticker Group///
@@ -212,6 +231,9 @@ var StateMain = {
         this.StickerButton1.scale.setTo(ButtonsScale,ButtonsScale);
         StickerGroup_1.add(this.StickerButton1);
      
+        this.StickerButton1.y = game.height-this.StickerButton1.height*2;  
+        var ButtonsPos_y = game.height-this.StickerButton1.height*2;
+        
         this.StickerButton2 = gameButtons.addStickerButton("0", ButtonsPos_x, ButtonsPos_y+this.StickerButton1.height, this.Sticker_2_Place, this,4,StickerAssigner_set1); 
         this.StickerButton2.scale.setTo(ButtonsScale,ButtonsScale);
         StickerGroup_1.add(this.StickerButton2);
@@ -337,12 +359,11 @@ var StateMain = {
         GroupRefArray[0] = StickerGroup_1;
         GroupRefArray[1] = StickerGroup_2;
         GroupRefArray[2] = StickerGroup_3;
-        GroupRefArray[3] = StickerGroup_4;
+
         
         GroupRefArray[0].visible = false;
         GroupRefArray[1].visible = false;
         GroupRefArray[2].visible = false;
-        GroupRefArray[3].visible = false;
         /*StickerGroup_1.visible = false;
         StickerGroup_2.visible = false;
         StickerGroup_3.visible = false;
@@ -383,7 +404,7 @@ var StateMain = {
         
         //Sticker_1_1
         this.Sticker_1 = game.add.sprite(OGPose_X, OGPose_Y, ImageAssetArray[1]);  
-        this.Sticker_1.alpha = 1;
+        this.Sticker_1.alpha = 0;
         this.Sticker_1.anchor.x = PivotPoint_X[1];
         this.Sticker_1.anchor.y =  PivotPoint_Y[1];
         this.Sticker_1.inputEnabled = true;
@@ -737,67 +758,38 @@ var StateMain = {
        //this.onResize();
     },      
     
-    RockCharSticker: function () {
+    RockSticker: function () {
         ImageAssetArray[0]='RockBody';
         PivotPoint_X[0] = 0.5;
-        PivotPoint_Y[0] = 0.5;       
-        ImageAssetArray[1]='RockWings_1';
-        PivotPoint_X[1] = 0.5;
-        PivotPoint_Y[1] = 0.5;  
-        ImageAssetArray[2]='RockWings_2';
-        PivotPoint_X[2] = 0.5;
-        PivotPoint_Y[2] = 0.5; 
-        ImageAssetArray[3]='RockFace_1';
-        PivotPoint_X[3] = 0.5;
-        PivotPoint_Y[3] = 0.5; 
-        ImageAssetArray[4]='RockFace_2';
-        PivotPoint_X[4] = 0.5;
-        PivotPoint_Y[4] = 0.5; 
-        ImageAssetArray[5]='RockFeet_1';
-        PivotPoint_X[5] = 0.5;
-        PivotPoint_Y[5] = 1; 
-        ImageAssetArray[6]='RockFeet_2';
-        PivotPoint_X[6] = 0.5;
-        PivotPoint_Y[6] = 1; 
-        ImageAssetArray[7]='RockAntenae_1';
-        PivotPoint_X[7] = 0.5;
-        PivotPoint_Y[7] = 0; 
-        ImageAssetArray[8]='RockAntenae_2';         
-        PivotPoint_X[8] = 0.5;
-        PivotPoint_Y[8] = 0; 
-        StickerAssigner_set1 = "Rock_Stickers_1";           
+        PivotPoint_Y[0] = 0.5;                     
         game.state.start("StateMain");
     },
     
-    PineconeCharSticker: function () {
+    PineconeSticker: function () {
         ImageAssetArray[0]='PineconeBody';
         PivotPoint_X[0] = 0.5;
-        PivotPoint_Y[0] = 0.5;      
-        ImageAssetArray[1]='PineconeWings_1';
-        PivotPoint_X[1] = 0.5;
-        PivotPoint_Y[1] = 0.5;   
-        ImageAssetArray[2]='PineconeWings_2';
-        PivotPoint_X[2] = 0.5;
-        PivotPoint_Y[2] = 0.5;   
-        ImageAssetArray[3]='PineconeEyes_1';
-        PivotPoint_X[3] = 0.5;
-        PivotPoint_Y[3] = 0.5;   
-        ImageAssetArray[4]='PineconeEyes_2';
-        PivotPoint_X[4] = 0.5;
-        PivotPoint_Y[4] = 0.5;   
-        ImageAssetArray[5]='PineconeFeet_1';
-        PivotPoint_X[5] = 0.5;
-        PivotPoint_Y[5] = 1;   
-        ImageAssetArray[6]='PineconeFeet_2';
-        PivotPoint_X[6] = 0.5;
-        PivotPoint_Y[6] = 1; 
-        ImageAssetArray[7]='PineconeMouth_1';
-        PivotPoint_X[7] = 0.5;
-        PivotPoint_Y[7] = 0.5;
-        ImageAssetArray[8]='PineconeMouth_2';           
-        PivotPoint_X[8] = 0.5;
-        PivotPoint_Y[8] = 0.5; 
-        StickerAssigner_set1 = "Pinecone_Stickers";      
+        PivotPoint_Y[0] = 0.5; 
+        game.state.start("StateMain");
+    },
+    
+    MobileSticker: function () {
+        ImageAssetArray[0]='MobileBody';
+        PivotPoint_X[0] = 0.5;
+        PivotPoint_Y[0] = 0.5;                     
+        game.state.start("StateMain");
+    },
+    
+    SmudgeStickSticker: function () {
+        ImageAssetArray[0]='SmudgeStickBody';
+        PivotPoint_X[0] = 0.5;
+        PivotPoint_Y[0] = 0.5; 
+        game.state.start("StateMain");
+    },
+     
+    StickWandSticker: function () {
+        ImageAssetArray[0]='StickWandBody';
+        PivotPoint_X[0] = 0.5;
+        PivotPoint_Y[0] = 0.5; 
         game.state.start("StateMain");
     },
     
@@ -1497,7 +1489,7 @@ var StateMain = {
     isClickDragging = true;
     this.SelectedButton = this.Sticker_18;
     this.Sticker_18.alpha = 1; 
-
+    this.Sticker_19.alpha = 0; 
     PositionArrayIndicator = 18;
     testArrayAlpha[18] = 1;
     }, 
@@ -1505,8 +1497,8 @@ var StateMain = {
     Sticker_19_Place: function () {
     isClickDragging = true;
     this.SelectedButton = this.Sticker_19;
+    this.Sticker_18.alpha = 0;
     this.Sticker_19.alpha = 1;     
-   
     PositionArrayIndicator = 19;
     testArrayAlpha[19] = 1;
     },   
@@ -1514,7 +1506,9 @@ var StateMain = {
     Sticker_20_Place: function () {
     isClickDragging = true;
     this.SelectedButton = this.Sticker_20;
-    this.Sticker_20.alpha = 1;     
+    this.Sticker_20.alpha = 1;    
+    this.Sticker_21.alpha = 0; 
+    this.Sticker_22.alpha = 0; 
     PositionArrayIndicator = 20;
     testArrayAlpha[20] = 1;
     }, 
@@ -1522,7 +1516,9 @@ var StateMain = {
     Sticker_21_Place: function () {
     isClickDragging = true;
     this.SelectedButton = this.Sticker_21;
-    this.Sticker_21.alpha = 1; 
+    this.Sticker_20.alpha = 0;    
+    this.Sticker_21.alpha = 1;
+    this.Sticker_22.alpha = 0; 
     PositionArrayIndicator = 21;
     testArrayAlpha[21] = 1;
     }, 
@@ -1530,6 +1526,8 @@ var StateMain = {
     Sticker_22_Place: function () {
     isClickDragging = true;
     this.SelectedButton = this.Sticker_22;
+    this.Sticker_20.alpha = 0;    
+    this.Sticker_21.alpha = 0;
     this.Sticker_22.alpha = 1; 
     PositionArrayIndicator = 22;
     testArrayAlpha[22] = 1;

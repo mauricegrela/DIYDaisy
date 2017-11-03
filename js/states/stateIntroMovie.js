@@ -19,7 +19,7 @@ var StateIntroMovie = {
     }
     , startGame: function () {   
         video1.stop();
-        game.state.start("StateCharacterSelect");
+        game.state.start("StateMain");
         
     }
     , update: function () {
