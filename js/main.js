@@ -18,7 +18,8 @@ var isClickDragging = false;
 var isAddingPaint = false;
 var isAddingSticker = true;
 var isMovingSticker = true;
-
+var GameCenter_x;
+var GameCenter_y;
 
 
 var StickerAssigner_set1 = "Pinecone_Stickers"; 
@@ -32,6 +33,35 @@ var GroupRefArray = //Images
     0,
     0,  
     0
+    ];
+
+ var PlacableArray = [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,        
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
     ];
 
 
@@ -304,6 +334,8 @@ if (isMobile>-1)
     game.state.add("StateLoad", StateLoad);
     game.state.add("StateInit", StateInit);
     game.state.add("StateOver", StateOver);
+    
+
     
     game.state.start("StateInit");
     

@@ -22,14 +22,17 @@ var StateMain = {
       game.scale.setScreenSize(true);
 */       
 
-     
+        GameCenter_x = game.width/2;
+        GameCenter_y = game.height/3;   
     },
 
     create: function () {
 
+
+        
         scaleRatio = window.devicePixelRatio / 2;
         
-            game.input.addPointer();
+        game.input.addPointer();
 
         //Set the character Group 
         Character = game.add.group();
@@ -99,8 +102,7 @@ var StateMain = {
 
         
         //Images Variables
-        var GameCenter_x = game.width/2;
-        var GameCenter_y = game.height/3;
+
         SelectedColor = 0xff00ff;
        
         
@@ -801,65 +803,8 @@ var StateMain = {
     },
     
     render: function () {
-
-    /*var x = 32;
-    var y = 0;
-    var yi = 32;
-
-    game.debug.text('Viewport', x, y += yi);
-
-    game.debug.text('Viewport Width: ' + game.scale.viewportWidth, x, y += yi);
-    game.debug.text('window.innerWidth: ' + window.innerWidth, x, y += yi);
-    game.debug.text('window.outerWidth: ' + window.outerWidth, x, y += yi);
-
-    game.debug.text('Viewport Height: ' + game.scale.viewportHeight, x, y += yi);
-    game.debug.text('window.innerHeight: ' + window.innerHeight, x, y += yi);
-    game.debug.text('window.outerHeight: ' + window.outerHeight, x, y += yi);
-
-    game.debug.text('Document', x, y += yi*2);
-
-    game.debug.text('Document Width: ' + game.scale.documentWidth, x, y += yi);
-    game.debug.text('Document Height: ' + game.scale.documentHeight, x, y += yi);
-
-    //  Device: How to get device size.
-
-    //  Use window.screen.width for device width and window.screen.height for device height. 
-    //  .availWidth and .availHeight give you the device size minus UI taskbars. (Try on an iPhone.) 
-    //  Device size is static and does not change when the page is resized or rotated.
-
-    x = 350;
-    y = 0;
-
-    game.debug.text('Device', x, y += yi);
-
-    game.debug.text('window.screen.width: ' + window.screen.width, x, y += yi);
-    game.debug.text('window.screen.availWidth: ' + window.screen.availWidth, x, y += yi);
-    game.debug.text('window.screen.height: ' + window.screen.height, x, y += yi);
-    game.debug.text('window.screen.availHeight: ' + window.screen.availHeight, x, y += yi);
-
-    game.debug.spriteInputInfo(this.PineconeBody, 32, 32);
-    game.debug.geom(this.PineconeBody.input._tempPoint);
-        
-    game.debug.spriteInputInfo(this.Sticker_1, 32, 42*4);
-    game.debug.geom(this.Sticker_1.input._tempPoint);
-        
-    game.debug.spriteInputInfo(this.Sticker_2, 32, 42*6);
-    game.debug.geom(this.Sticker_2.input._tempPoint);
-        
-    game.debug.spriteInputInfo(this.Sticker_3, 32, 42*8);
-    game.debug.geom(this.Sticker_3.input._tempPoint);
-        
-    game.debug.spriteInputInfo(this.Sticker_4, 32, 42*10);
-    game.debug.geom(this.Sticker_4.input._tempPoint);
-        
-    game.debug.spriteInputInfo(this.Sticker_5, 32, 42*12);
-    game.debug.geom(this.Sticker_5.input._tempPoint);
-        
-    game.debug.spriteInputInfo(this.Sticker_6, 32, 32*14);
-    game.debug.geom(this.Sticker_6.input._tempPoint);
-        
-    game.debug.spriteInputInfo(this.Sticker_7, 32, 32*16);
-    game.debug.geom(this.Sticker_7.input._tempPoint);*/
+    game.debug.text( GameCenter_x-game.input.x, 100, 380 );
+    game.debug.text( GameCenter_y-game.input.y, 100, 390 );      
 },
 
     update: function () { 
@@ -884,8 +829,8 @@ var StateMain = {
                     {
                         isMovingSticker = false;
                         isClickDragging = false;
-                        Xpos_ArrayAlpha[PositionArrayIndicator]= game.input.x;
-                        Ypos_ArrayAlpha[PositionArrayIndicator]= game.input.y;
+                        Xpos_ArrayAlpha[PositionArrayIndicator]= game.input.x-GameCenter_x;
+                        Ypos_ArrayAlpha[PositionArrayIndicator]= game.input.y-GameCenter_y;
                     }
             }
     }, 
@@ -917,17 +862,6 @@ var StateMain = {
                 }
         GroupRefArray[GroupRefArrayCounter].visible = true;
     },
-    
-
-    BodyClick: function () 
-    { 
-        
-        /*if(isAddingPaint == true)
-        {
-        this.PineconeBody.tint = SelectedColor;
-        testArrayColor[0] = SelectedColor;
-        }*/
-    }, 
            
 //////////////////////////////////
 ////First Sticker Button Group////
