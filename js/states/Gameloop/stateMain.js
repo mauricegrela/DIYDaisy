@@ -708,10 +708,13 @@ var StateMain = {
         this.Sticker_24.scale.setTo(scaleRatio,scaleRatio); 
         //Character.add(this.Sticker_8);
         
-        
-        //Animation test
-        var mummy = game.add.sprite(300, 200, 'mummy');
+        /////////////////////////
+        //PaintBrush Animation///
+        /////////////////////////
+        var mummy = game.add.sprite(window.innerWidth, window.innerHeight, 'PaintBrush');
         mummy.inputEnabled = true;
+        mummy.anchor.x = 0;
+        mummy.anchor.y = 0;
         //  Here we add a new animation called 'walk'
         //  Because we didn't give any other parameters it's going to make an animation from all available frames in the 'mummy' sprite sheet
         var walk = mummy.animations.add('walk');
@@ -719,9 +722,29 @@ var StateMain = {
         //  And this starts the animation playing by using its key ("walk")
         //  30 is the frame rate (30fps)
         //  true means it will loop when it finishes
-        //mummy.animations.play('walk', 30, false);
-        mummy.events.onInputOut.add(this.ImageClick, {param1: mummy, param2: "walk"});
-        mummy.alpha = 0; 
+        mummy.animations.play('walk', 30, false);
+        mummy.events.onInputDown.add(this.ImageClick, {param1: mummy, param2: "walk"});
+        mummy.alpha = 1; 
+        /////////////////////////
+        //////Jar Animation//////
+        /////////////////////////
+        var Jar = game.add.sprite(0, window.innerHeight, 'PencilJar');
+        Jar.inputEnabled = true;
+        Jar.anchor.x = 0;
+        Jar.anchor.y = 0.6;
+        //  Here we add a new animation called 'walk'
+        //  Because we didn't give any other parameters it's going to make an animation from all available frames in the 'mummy' sprite sheet
+        var walk = Jar.animations.add('walk');
+        //PlacableMenuGroup.add(this.mummy);
+        //  And this starts the animation playing by using its key ("walk")
+        //  30 is the frame rate (30fps)
+        //  true means it will loop when it finishes
+        Jar.animations.play('walk', 30, false);
+        Jar.events.onInputDown.add(this.ImageClick, {param1: Jar, param2: "walk"});
+        Jar.alpha = 1; 
+
+        
+        
         
         //Alpha hint 
         this.MagnifyingLenz = game.add.sprite(GameCenter_x, GameCenter_y, 'MagLenz');
@@ -735,7 +758,7 @@ var StateMain = {
         this.mask.drawCircle(250, 250, 250);
         //	And apply it to the Sprite
         this.MagnifyingLenz.mask = this.mask;
-        MagnifinylLenzGroup.add(this.MagnifyingLenz);
+
         
         //game.world.bringToTop(Character);
         game.world.bringToTop(MagnifinylLenzGroup);
@@ -763,7 +786,8 @@ var StateMain = {
     RockSticker: function () {
         ImageAssetArray[0]='RockBody';
         PivotPoint_X[0] = 0.5;
-        PivotPoint_Y[0] = 0.5;                     
+        PivotPoint_Y[0] = 0.5;  
+        StickerAssigner_set1 = "Pinecone_Stickers";
         game.state.start("StateMain");
     },
     
@@ -771,13 +795,15 @@ var StateMain = {
         ImageAssetArray[0]='PineconeBody';
         PivotPoint_X[0] = 0.5;
         PivotPoint_Y[0] = 0.5; 
+        StickerAssigner_set1 = "Pinecone_Stickers"; 
         game.state.start("StateMain");
     },
     
     MobileSticker: function () {
         ImageAssetArray[0]='MobileBody';
         PivotPoint_X[0] = 0.5;
-        PivotPoint_Y[0] = 0.5;                     
+        PivotPoint_Y[0] = 0.5;
+        StickerAssigner_set1 = "Pinecone_Stickers";
         game.state.start("StateMain");
     },
     
@@ -792,6 +818,7 @@ var StateMain = {
         ImageAssetArray[0]='StickWandBody';
         PivotPoint_X[0] = 0.5;
         PivotPoint_Y[0] = 0.5; 
+        
         game.state.start("StateMain");
     },
     
@@ -1550,7 +1577,9 @@ var StateMain = {
     
     BackToCharacterSelect: function () {game.state.start("StateCharacterSelect")},
         
-    ImageClick: function () {this.param1.animations.play(this.param2, 30, false);}, 
+    ImageClick: function () {
+    this.param1.animations.play(this.param2, 30, false);
+    }, 
     
     onResize: function(){
 		// this function is called each time the browser is resized, and re-positions

@@ -282,6 +282,9 @@ var StatePlace = {
         for (let i = 1; i < PlacableArray.length-1; i++) {
             PlacableArray[i].x = game.input.x+Xpos_ArrayAlpha[i]
             PlacableArray[i].y = game.input.y+Ypos_ArrayAlpha[i]
+
         }
+    CharacterGroup.rotation += 0.02;
+
     }
 }

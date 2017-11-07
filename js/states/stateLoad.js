@@ -16,6 +16,7 @@ var StateLoad = {
 /////Mobile/////
 ////////////////    
         game.load.image('MobileBody', 'images/Mobile/MobileBody.png');
+        game.load.spritesheet("Mobile_stickers", "images/ui/Mobile_stickers.png", 280, 200, 28);
 ////////////////
 ////Pinecones////
 ////////////////    
@@ -107,6 +108,13 @@ var StateLoad = {
         
         //Placement Background
         game.load.image('placing_Backgroung', 'images/backgrounds/Background_2.PNG');
+        
+        //Paint Brush Sprite
+        game.load.spritesheet('PaintBrush', 'images/backgrounds/paintbrush-sprite.png', 409, 549, 3);
+        
+        //JarAnim Sprite
+        game.load.spritesheet('PencilJar', 'images/backgrounds/jar-sprite.png', 500, 750, 2);
+        
         
         //Animations
         game.load.spritesheet('mummy', 'images/SpriteSheets/metalslug_mummy37x45.png', 37, 45, 18);
