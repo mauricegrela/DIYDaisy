@@ -3,33 +3,29 @@ var StateMain = {
 ///////////REMEMBER TO REFRESH/////////////
 //////////////////////////////////////////
     preload: function () {
-/*
+    /*
     game.scale.scaleMode = Phaser.ScaleManager.show;
     game.scale.pageAlignVertically = true;
     game.scale.pageAlignHorizontally = true;
     game.scale.setShowAll();
     game.scale.refresh();
-             
-        
+                  
     this.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
     game.scale.fullScreenScaleMode = Phaser.ScaleManager.RESIZE
-      game.scale.minWidth = window.innerWidth/4;
-      game.scale.minHeight = window.innerHeight/4;
-      game.scale.maxWidth = window.innerWidth/1.5;
-      game.scale.maxHeight = window.innerHeight/1.5;
-      game.scale.forceLandscape = true;
-      game.scale.pageAlignHorizontally = true;
-      game.scale.setScreenSize(true);
-*/       
+    game.scale.minWidth = window.innerWidth/4;
+    game.scale.minHeight = window.innerHeight/4;
+    game.scale.maxWidth = window.innerWidth/1.5;
+    game.scale.maxHeight = window.innerHeight/1.5;
+    game.scale.forceLandscape = true;
+    game.scale.pageAlignHorizontally = true;
+    game.scale.setScreenSize(true);
+    */       
 
         GameCenter_x = game.width/2;
         GameCenter_y = game.height/3;   
     },
 
     create: function () {
-
-
-        
         scaleRatio = window.devicePixelRatio / 2;
         
         game.input.addPointer();
@@ -67,14 +63,10 @@ var StateMain = {
         
         //Add background      
         this.craftBackground = game.add.sprite(0, 0, 'craft_Backgroung');
-       BackgroundGroup.add(this.craftBackground);     
-        
+        BackgroundGroup.add(this.craftBackground);     
 
         carouselScaleOffset = 1.2;
-     
-        
-        
-        
+
         //this.craftBackground.width = game.width;
         //this.craftBackground.height = game.height;
         
@@ -215,7 +207,6 @@ var StateMain = {
 //Placable Sticker Group///
 ///////////////////////////
 
-        
         //Sticker Carosels        
         this.charactercarousel = game.add.sprite(game.width/2, game.height, 'StickerCaroselTab');
         this.charactercarousel.anchor.x = 0.5;
@@ -269,7 +260,6 @@ var StateMain = {
 ////Second Sticker Group///
 ///////////////////////////
         
-
         this.StickerButton9 = gameButtons.addStickerButton("0", ButtonsPos_x, ButtonsPos_y, 
         this.Sticker_9_Place, this,StickerIconSetter[8],StickerAssigner_set1); 
         this.StickerButton9.scale.setTo(ButtonsScale,ButtonsScale);
@@ -360,23 +350,17 @@ var StateMain = {
         GroupRefArray[0] = StickerGroup_1;
         GroupRefArray[1] = StickerGroup_2;
         GroupRefArray[2] = StickerGroup_3;
-
         
         GroupRefArray[0].visible = false;
         GroupRefArray[1].visible = false;
         GroupRefArray[2].visible = false;
-        /*StickerGroup_1.visible = false;
-        StickerGroup_2.visible = false;
-        StickerGroup_3.visible = false;
-        StickerGroup_4.visible = false;*/
         GroupRefArray[GroupRefArrayCounter].visible = true;
         
         
         //Hit Button
         /*this.Hintbutton = gameButtons.addStickerButton("0", ButtonsPos_x+160, ButtonsPos_x+20, this.AlphaHitOn, this,4); */
 
-       
-        
+
         //Color Buttons
         this.ColorButton1 = gameButtons.addColorButton("0", ButtonsPos_x, ButtonsPos_y, this.Color_1, this,0xAEE313,"PaintUI"); 
         this.ColorButton1.scale.setTo(1,1);
@@ -805,6 +789,27 @@ var StateMain = {
         PivotPoint_Y[0] = 0.5;
         StickerAssigner_set1 = "Mobile_stickers";
         game.state.start("StateMain");
+        StickerIconSetter[0] = 0;
+        StickerIconSetter[1] = 1;
+        StickerIconSetter[2] = 2;
+        StickerIconSetter[3] = 3;
+        StickerIconSetter[4] = 4;
+        StickerIconSetter[5] = 5;
+        StickerIconSetter[6] = 6;
+        StickerIconSetter[7] = 7;
+        StickerIconSetter[8] = 8;
+        StickerIconSetter[9] = 9;
+        StickerIconSetter[10] = 10;
+        StickerIconSetter[11] = 11;
+        StickerIconSetter[12] = 12;
+        StickerIconSetter[13] = 13;
+        StickerIconSetter[14] = 14;
+        StickerIconSetter[15] = 15;
+        StickerIconSetter[16] = 16;
+        StickerIconSetter[17] = 17;
+        StickerIconSetter[18] = 18;
+        StickerIconSetter[19] = 19;
+        StickerIconSetter[20] = 20;  
     },
     
     SmudgeStickSticker: function () {
