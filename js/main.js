@@ -34,8 +34,9 @@ var GroupRefArray = //Images
     0,  
     0
     ];
-
- var PlacableArray = [
+//This array is used to move the sitcker creation around?
+ var PlacableArray = 
+        [
         0,
         0,
         0,
@@ -62,11 +63,11 @@ var GroupRefArray = //Images
         0,
         0,
         0,
-    ];
+        ];
 
-
+//This array sets which stickers can be placed in the level
 var ImageAssetArray = //Images
-    [
+        [
         'PineconeBody',
         '1',
         '2',
@@ -93,10 +94,10 @@ var ImageAssetArray = //Images
         '23',
         '24',
         '25'             
-    ];
-
-var PivotPoint_X =//PivotPoint x
-    [
+        ];
+//PivotPoint x of each sprite
+var PivotPoint_X =
+        [
         0,
         0,
         0,
@@ -123,10 +124,10 @@ var PivotPoint_X =//PivotPoint x
         0,
         0,
         0,
-    ];
-
-var PivotPoint_Y =//PivotPoint y
-    [
+        ];
+//PivotPoint y of each sprite
+var PivotPoint_Y =
+        [
         0,
         0,
         0,
@@ -153,8 +154,8 @@ var PivotPoint_Y =//PivotPoint y
         0,
         0,
         0,
-    ];
-
+        ];
+//Colors 
     var testArrayColor = [
         //Directory,Tint,Transparancy
          0xFFFFFF,//
@@ -184,7 +185,7 @@ var PivotPoint_Y =//PivotPoint y
          0xFFFFFF,//
          0xFFFFFF,//
         ];
-
+//tracks which arrays are on and off 
     var testArrayAlpha = [
         //Directory,Tint,Transparancy
         1,
@@ -216,7 +217,7 @@ var PivotPoint_Y =//PivotPoint y
         ];
 
 var PositionArrayIndicator = 0;
-
+//XPosition
     var Xpos_ArrayAlpha = [
         0,
         0,
@@ -244,7 +245,8 @@ var PositionArrayIndicator = 0;
         0,
         0,
         0,
-    ];
+        ];
+//YPosition
     var Ypos_ArrayAlpha = [
         0,
         0,
@@ -272,8 +274,36 @@ var PositionArrayIndicator = 0;
         0,
         0,
         0,
-    ];
-
+        ];
+//These stickers will dictate the order inwhich stickers will be shown 
+    var StickerIconSetter = [
+        3,
+        4,
+        5,
+        6,
+        11,
+        26,
+        9,
+        10,
+        12,        
+        13,
+        18,
+        19,
+        20,
+        21,
+        22,
+        16,
+        17,
+        15,
+        14,
+        7,
+        8,
+        25,
+        0,
+        1,
+        0,
+        0,
+        ];
 
 //portrait or landscape
 
