@@ -48,6 +48,21 @@ GameButtons = function () {
                 over = 12;
                 down = 13;
                 break; 
+                    
+            case "credits":
+                over = 14;
+                down = 15;
+                break; 
+                    
+            case "terms and conditions":
+                over = 16;
+                down = 17;
+                break; 
+                                
+            case "privacy":
+                over = 18;
+                down = 19;
+                break; 
             }
 
             var button = game.add.button(xx, yy, "buttons", f, scope, down, over, down);

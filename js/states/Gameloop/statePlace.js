@@ -284,7 +284,7 @@ var StatePlace = {
             PlacableArray[i].y = game.input.y+Ypos_ArrayAlpha[i]
 
         }
-    CharacterGroup.rotation += 0.02;
+    //CharacterGroup.rotation += 0.02;
 
     }
 }
