@@ -21,6 +21,8 @@ var isMovingSticker = true;
 var GameCenter_x;
 var GameCenter_y;
 
+var DrawnSprite; 
+
 
 var StickerAssigner_set1 = "Pinecone_Stickers"; 
 var StickerAssigner_set2 = "Rock_Stickers_2";

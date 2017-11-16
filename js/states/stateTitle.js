@@ -12,7 +12,9 @@ var StateTitle = {
         
         //testArray[0,0] = 'images/Leaf/LeafEyes.png';
         
-
+        //	This is the BitmapData we're going to be drawing to
+        bmd = game.add.bitmapData(game.width, game.height);
+        bmd.addToWorld();
         
         var titleText = game.add.text(game.world.centerX, game.world.centerY - 100, "DIYDAISY!");
         titleText.fill = "#ffffff";
@@ -37,7 +39,8 @@ var StateTitle = {
     }, 
     
     ParentsCorner: function () {
-        
+    
+
     game.state.start("StateParentsCorner");
     //video1.stop();
     }, 

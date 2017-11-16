@@ -23,6 +23,8 @@ var StateOuttro = {
         video1 = game.add.video('Extro');
         video1.play(true); 
         video1.addToWorld(game.world.centerX, game.world.centerY, 0.5, 0.5, 0.5, 0.5); 
+        
+        
     },
     
     startGame: function () {  

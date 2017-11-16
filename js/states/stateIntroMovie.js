@@ -7,6 +7,7 @@ var StateIntroMovie = {
 
     , create: function () {
         
+
         
         /*var titleText = game.add.text(game.world.centerX, game.world.centerY - 100, "GAME TITLE");
         titleText.fill = "#ffffff";
@@ -16,6 +17,13 @@ var StateIntroMovie = {
         video1 = game.add.video('Intro');
         video1.play(true); 
         video1.addToWorld(game.world.centerX, game.world.centerY-200, 0.5, 0.5, 0.5, 0.5); 
+        
+                
+        /*
+        this.tester = game.add.sprite(0, 0, game.cache.getBitmapData(this.DrawnSprite));''
+        */
+        
+        
     }
     , startGame: function () {   
         video1.stop();
@@ -23,7 +31,7 @@ var StateIntroMovie = {
         
     }
     , update: function () {
-
+        //this.tester.rotation += 0.1;
     }
 
 }

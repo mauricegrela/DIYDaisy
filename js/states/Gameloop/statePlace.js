@@ -272,6 +272,8 @@ var StatePlace = {
         PlacableArray[24] = this.Sticker24;
         CharacterGroup.add(this.Sticker24);
         
+          
+        this.tester = game.add.sprite(0, 0, game.cache.getBitmapData(this.DrawnSprite));
     }
     , startGame: function () {     
         //game.state.start("StateCharacterSelect");

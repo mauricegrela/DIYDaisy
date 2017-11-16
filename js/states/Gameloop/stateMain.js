@@ -26,6 +26,8 @@ var StateMain = {
     },
 
     create: function () {
+      
+        
         scaleRatio = window.devicePixelRatio / 2;
         
         game.input.addPointer();
@@ -119,24 +121,30 @@ var StateMain = {
         this.MainResetButton.scale.setTo(MacroButton_Scale,MacroButton_Scale);
         buttongroup.add(this.MainResetButton);
         
+       /* this.MainResetButton = gameButtons.addGenericButton("0", MainButtonsPos_x-this.MainStickerButton.width*2, MainButtonsPos_y-20, this.ColorTurnOn, this,"creativeButtons",1);
+        this.MainResetButton.alpha = 1;
+        this.MainResetButton.scale.setTo(MacroButton_Scale,MacroButton_Scale);
+        buttongroup.add(this.MainResetButton);*/
+        
         //Top Menu Buttons
-        MenuTopButtons_Pos_x = game.width;     
+        MenuTopButtons_Pos_x = game.width/2;     
         MenuTopButtons_Pos_y = 0;
         
         //Hint Button
-        this.AlphaButton = gameButtons.addGenericButton("0", MenuTopButtons_Pos_x, MenuTopButtons_Pos_y+20, this.AlphaHintOn, this,"creativeButtons",3); 
+        /*this.AlphaButton = gameButtons.addGenericButton("0", MenuTopButtons_Pos_x, MenuTopButtons_Pos_y+20, this.AlphaHintOn, this,"creativeButtons",3); 
         this.AlphaButton.scale.setTo(scaleRatio,scaleRatio);
         MainButtonGroup.add(this.AlphaButton);
-        this.AlphaButton.x = MenuTopButtons_Pos_x-this.AlphaButton.width;
+        this.AlphaButton.x = MenuTopButtons_Pos_x-this.AlphaButton.width;*/
+        
         //Save Button
-        this.SaveButton = gameButtons.addGenericButton("0", MenuTopButtons_Pos_x-this.AlphaButton.width*2, MenuTopButtons_Pos_y+20, this.SaveClicked, this,"creativeButtons",4); 
+        this.SaveButton = gameButtons.addGenericButton("0", MenuTopButtons_Pos_x, MenuTopButtons_Pos_y+20, this.SaveClicked, this,"creativeButtons",4); 
         this.SaveButton.scale.setTo(scaleRatio,scaleRatio);
         MainButtonGroup.add(this.SaveButton);
         
         //Back button
-        this.BackToButton = gameButtons.addGenericButton("0", MenuTopButtons_Pos_x-this.AlphaButton.width*3, MenuTopButtons_Pos_y+20, this.BackToCharacterSelect, this,"creativeButtons",5); 
+        /*this.BackToButton = gameButtons.addGenericButton("0", MenuTopButtons_Pos_x-this.AlphaButton.width*3, MenuTopButtons_Pos_y+20, this.BackToCharacterSelect, this,"creativeButtons",5); 
         this.BackToButton.scale.setTo(scaleRatio,scaleRatio);
-        MainButtonGroup.add(this.BackToButton);
+        MainButtonGroup.add(this.BackToButton);*/
         
         
 ///////////////////////////
@@ -727,9 +735,6 @@ var StateMain = {
         Jar.events.onInputDown.add(this.ImageClick, {param1: Jar, param2: "walk"});
         Jar.alpha = 1; 
 
-        
-        
-        
         //Alpha hint 
         this.MagnifyingLenz = game.add.sprite(GameCenter_x, GameCenter_y, 'MagLenz');
         this.MagnifyingLenz.anchor.set(0.5);   
@@ -742,7 +747,9 @@ var StateMain = {
         this.mask.drawCircle(250, 250, 250);
         //	And apply it to the Sprite
         this.MagnifyingLenz.mask = this.mask;
-
+            
+        /*this.test = game.add.sprite(0, 0, game.cache.getBitmapData(this.DrawnSprite));
+        buttongroup.add(this.test);*/
         
         //game.world.bringToTop(Character);
         game.world.bringToTop(MagnifinylLenzGroup);
@@ -762,9 +769,40 @@ var StateMain = {
         vidGroup = game.add.group();
         //Set the Episoderovideo
         vidGroup_Ep = game.add.group();
-       
+
+          //////////////////////
+        //New Coloring Tools//
+        //////////////////////
+        var bmd;
+        var loop;
+
+        //	This is the sprite we're going to be drawing onto the BitmapData
+        //	We use game.make because we don't need it displayed, we just need it to exist
+        this.loop = game.make.sprite(0, 0, 'PaintDot');
+        this.loop.tint = 0xFE7805;
+        this.loop.alpha = 0.5;   
+        this.loop.anchor.set(0.5);
+        this.loop.blendMode = PIXI.blendModes.ADD;
+        //	Note that any properties you set here will be replicated when the Sprite is drawn
+        // this.loop.scale.set(2);
+
+        //this.crab = game.make.sprite(0, 0,'PineconeBody');
+
+        //	This is the BitmapData we're going to be drawing to
+        this.bmd = game.add.bitmapData(game.width, game.height);
+        this.bmd.addToWorld();
+
+        //	Disables anti-aliasing when we draw sprites to the BitmapData
+        this.bmd.smoothed = true;
+
+        //this.bmd.draw(this.crab, 10, 10);
+
+        game.input.addMoveCallback(this.paint, this);  
         
-       //this.onResize();
+        game.world.bringToTop(this.bmd);
+        //////////////////////
+        //////////////////////
+        //////////////////////
     },      
     
     RockSticker: function () {
@@ -861,11 +899,23 @@ var StateMain = {
                     {
                         isMovingSticker = false;
                         isClickDragging = false;
-                        Xpos_ArrayAlpha[PositionArrayIndicator]= game.input.x-GameCenter_x;
-                        Ypos_ArrayAlpha[PositionArrayIndicator]= game.input.y-GameCenter_y;
+                        this.SelectedButton.x = GameCenter_x;
+                        this.SelectedButton.y = GameCenter_y;
+                        Xpos_ArrayAlpha[PositionArrayIndicator]= GameCenter_x;//game.input.x-GameCenter_x;
+                        Ypos_ArrayAlpha[PositionArrayIndicator]= GameCenter_y;//game.input.y-GameCenter_y;
                     }
             }
     }, 
+    
+    paint: function (pointer, x, y) {
+
+        if (pointer.isDown && isAddingPaint  == true)
+        {
+            
+            this.bmd.draw(this.loop, x, y);
+        }
+
+    },
     
     Carosel_Left: function()
     {   
@@ -910,7 +960,7 @@ var StateMain = {
         
         if(isAddingPaint == true)
         {
-        this.Sticker_1.tint = SelectedColor;
+        //this.Sticker_1.tint = SelectedColor;
         //testArrayColor[1] = SelectedColor;
         }
             else if (isMovingSticker == false)
@@ -926,7 +976,7 @@ var StateMain = {
         
         if(isAddingPaint == true)
         {
-        this.Sticker_2.tint = SelectedColor;
+        //this.Sticker_2.tint = SelectedColor;
         //testArrayColor[2] = SelectedColor;
         }
             else if (isMovingSticker == false)
@@ -941,7 +991,7 @@ var StateMain = {
     Sticker_3Click: function () {
         if(isAddingPaint == true)
         {
-        this.Sticker_3.tint = SelectedColor;
+        //this.Sticker_3.tint = SelectedColor;
         //testArrayColor[3] = SelectedColor;
         }
             else if (isMovingSticker == false)
@@ -956,7 +1006,7 @@ var StateMain = {
     Sticker_4Click: function () {
         if(isAddingPaint == true)
         {
-        this.Sticker_4.tint = SelectedColor;
+        //this.Sticker_4.tint = SelectedColor;
         //testArrayColor[4] = SelectedColor;
         }
             else if (isMovingSticker == false)
@@ -971,7 +1021,7 @@ var StateMain = {
     Sticker_5Click: function () {
         if(isAddingPaint == true)
         {
-        this.Sticker_5.tint = SelectedColor;
+        //this.Sticker_5.tint = SelectedColor;
         //testArrayColor[5] = SelectedColor;
         }
             else if (isMovingSticker == false)
@@ -986,7 +1036,7 @@ var StateMain = {
     Sticker_6Click: function () {
         if(isAddingPaint == true)
         {
-        this.Sticker_6.tint = SelectedColor;
+        //this.Sticker_6.tint = SelectedColor;
         //testArrayColor[6] = SelectedColor;
         }
             else if (isMovingSticker == false)
@@ -1001,7 +1051,7 @@ var StateMain = {
     Sticker_7Click: function () {
         if(isAddingPaint == true)
         {
-        this.Sticker_7.tint = SelectedColor;
+        //this.Sticker_7.tint = SelectedColor;
         //testArrayColor[7] = SelectedColor;
         }
             else if (isMovingSticker == false)
@@ -1017,8 +1067,8 @@ var StateMain = {
    Sticker_8Click: function () {
         if(isClickDragging == false)
         {
-        this.Sticker_8.tint = SelectedColor;
-        //testArrayColor[8] = SelectedColor;
+        //his.Sticker_8.tint = SelectedColor;
+        ///testArrayColor[8] = SelectedColor;
         }
             else if (isMovingSticker == false)
             {
@@ -1036,7 +1086,7 @@ var StateMain = {
         
         if(isAddingPaint == true)
         {
-        this.Sticker_1.tint = SelectedColor;
+        //this.Sticker_1.tint = SelectedColor;
         //testArrayColor[1] = SelectedColor;
         }
             else if (isMovingSticker == false)
@@ -1052,7 +1102,7 @@ var StateMain = {
         
         if(isAddingPaint == true)
         {
-        this.Sticker_2.tint = SelectedColor;
+        //this.Sticker_2.tint = SelectedColor;
         //testArrayColor[2] = SelectedColor;
         }
             else if (isMovingSticker == false)
@@ -1067,7 +1117,7 @@ var StateMain = {
     Sticker_11Click: function () {
         if(isAddingPaint == true)
         {
-        this.Sticker_3.tint = SelectedColor;
+        //this.Sticker_3.tint = SelectedColor;
         //testArrayColor[3] = SelectedColor;
         }
             else if (isMovingSticker == false)
@@ -1082,8 +1132,8 @@ var StateMain = {
     Sticker_12Click: function () {
         if(isAddingPaint == true)
         {
-        this.Sticker_4.tint = SelectedColor;
-        //testArrayColor[4] = SelectedColor;
+        //this.Sticker_4.tint = SelectedColor;
+        ///testArrayColor[4] = SelectedColor;
         }
             else if (isMovingSticker == false)
             {
@@ -1097,7 +1147,7 @@ var StateMain = {
     Sticker_13Click: function () {
         if(isAddingPaint == true)
         {
-        this.Sticker_5.tint = SelectedColor;
+        //this.Sticker_5.tint = SelectedColor;
         //testArrayColor[5] = SelectedColor;
         }
             else if (isMovingSticker == false)
@@ -1112,7 +1162,7 @@ var StateMain = {
     Sticker_14Click: function () {
         if(isAddingPaint == true)
         {
-        this.Sticker_6.tint = SelectedColor;
+        //this.Sticker_6.tint = SelectedColor;
         //testArrayColor[6] = SelectedColor;
         }
             else if (isMovingSticker == false)
@@ -1127,7 +1177,7 @@ var StateMain = {
     Sticker_15Click: function () {
         if(isAddingPaint == true)
         {
-        this.Sticker_7.tint = SelectedColor;
+        //this.Sticker_7.tint = SelectedColor;
         //testArrayColor[7] = SelectedColor;
         }
             else if (isMovingSticker == false)
@@ -1143,7 +1193,7 @@ var StateMain = {
    Sticker_16Click: function () {
         if(isClickDragging == false)
         {
-        this.Sticker_8.tint = SelectedColor;
+        //this.Sticker_8.tint = SelectedColor;
         //testArrayColor[8] = SelectedColor;
         }
             else if (isMovingSticker == false)
@@ -1162,7 +1212,7 @@ var StateMain = {
         
         if(isAddingPaint == true)
         {
-        this.Sticker_1.tint = SelectedColor;
+        //this.Sticker_1.tint = SelectedColor;
         //testArrayColor[1] = SelectedColor;
         }
             else if (isMovingSticker == false)
@@ -1178,7 +1228,7 @@ var StateMain = {
         
         if(isAddingPaint == true)
         {
-        this.Sticker_2.tint = SelectedColor;
+        //this.Sticker_2.tint = SelectedColor;
         //testArrayColor[2] = SelectedColor;
         }
             else if (isMovingSticker == false)
@@ -1193,7 +1243,7 @@ var StateMain = {
     Sticker_19Click: function () {
         if(isAddingPaint == true)
         {
-        this.Sticker_3.tint = SelectedColor;
+        //this.Sticker_3.tint = SelectedColor;
         //testArrayColor[3] = SelectedColor;
         }
             else if (isMovingSticker == false)
@@ -1208,7 +1258,7 @@ var StateMain = {
     Sticker_20Click: function () {
         if(isAddingPaint == true)
         {
-        this.Sticker_4.tint = SelectedColor;
+        //this.Sticker_4.tint = SelectedColor;
         //testArrayColor[4] = SelectedColor;
         }
             else if (isMovingSticker == false)
@@ -1223,7 +1273,7 @@ var StateMain = {
     Sticker_21Click: function () {
         if(isAddingPaint == true)
         {
-        this.Sticker_5.tint = SelectedColor;
+        //this.Sticker_5.tint = SelectedColor;
         //testArrayColor[5] = SelectedColor;
         }
             else if (isMovingSticker == false)
@@ -1238,7 +1288,7 @@ var StateMain = {
     Sticker_22Click: function () {
         if(isAddingPaint == true)
         {
-        this.Sticker_6.tint = SelectedColor;
+       //this.Sticker_6.tint = SelectedColor;
         //testArrayColor[6] = SelectedColor;
         }
             else if (isMovingSticker == false)
@@ -1253,7 +1303,7 @@ var StateMain = {
     Sticker_23Click: function () {
         if(isAddingPaint == true)
         {
-        this.Sticker_7.tint = SelectedColor;
+        //this.Sticker_7.tint = SelectedColor;
         //testArrayColor[7] = SelectedColor;
         }
             else if (isMovingSticker == false)
@@ -1269,7 +1319,7 @@ var StateMain = {
    Sticker_24Click: function () {
         if(isClickDragging == false)
         {
-        this.Sticker_8.tint = SelectedColor;
+        //this.Sticker_8.tint = SelectedColor;
         //testArrayColor[8] = SelectedColor;
         }
             else if (isMovingSticker == false)
@@ -1534,28 +1584,28 @@ var StateMain = {
     Color_1: function () {
     this.Selectedcolor.scale.setTo(1, 1);
     this.Selectedcolor = this.ColorButton1;
-    SelectedColor =0xAEE313;
+    this.loop.tint = 0xAEE313;
     this.ColorButton1.scale.setTo(1.2, 1.2);
     },
     
     Color_2: function () {
     this.Selectedcolor.scale.setTo(1, 1);
     this.Selectedcolor = this.ColorButton2;
-    SelectedColor =0x13AEE3;
+    this.loop.tint = 0x13AEE3;
     this.ColorButton2.scale.setTo(1.2, 1.2);
     },
     
     Color_3: function () {
     this.Selectedcolor.scale.setTo(1, 1);
     this.Selectedcolor = this.ColorButton3;
-    SelectedColor =0xAE13E3;
+    this.loop.tint = 0xAE13E3;
     this.ColorButton3.scale.setTo(1.2, 1.2);
     },
     
     Color_4: function () {
     this.Selectedcolor.scale.setTo(1, 1);
     this.Selectedcolor = this.ColorButton4;
-    SelectedColor =0xFE7805;
+    this.loop.tint = 0xFE7805;
     this.ColorButton4.scale.setTo(1.2, 1.2);
     }, 
     
@@ -1570,7 +1620,7 @@ var StateMain = {
         },
     
     ColorTurnOn: function () {   
-
+        GroupRefArray[GroupRefArrayCounter].visible = false;
         ColorGroup.visible = true; 
         CharacterStickerGroup.visible = false;
         isAddingPaint = true;
@@ -1585,7 +1635,7 @@ var StateMain = {
         isAddingSticker = false;
     },
     
-    SaveClicked: function () {game.state.start("StateOuttro")},
+    SaveClicked: function () { game.cache.addBitmapData(this.DrawnSprite, this.bmd);game.state.start("StateOuttro")},
     
     BackToCharacterSelect: function () {game.state.start("StateCharacterSelect")},
         

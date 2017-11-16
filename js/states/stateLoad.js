@@ -20,7 +20,7 @@ var StateLoad = {
 ////////////////
 ////Pinecones////
 ////////////////    
-     game.load.image('MagLenz',     'images/Pinecone/alphaMaskState.png');      
+        game.load.image('MagLenz',     'images/Pinecone/alphaMaskState.png');      
         //Load Stickers and body
         game.load.image('PineconeBody', 'images/Pinecone/PineconeBody.png');
         //Clothing X
@@ -78,6 +78,10 @@ var StateLoad = {
         game.load.image('RockWings_2', 'images/Rock/RockWings_2.png');  
         game.load.spritesheet("Rock_Stickers_1", "images/ui/Rock_stickers.png", 140, 100, 8);
 
+        
+                //Object Tab
+        game.load.image('PaintDot', 'images/ui/PaintDropTest.png');
+        
 ////////////////
 ///SmudgStick///
 ////////////////    
@@ -164,10 +168,10 @@ var StateLoad = {
         PivotPoint_Y[4] = 0.5;   
         ImageAssetArray[5]='PineconeFeet_1';
         PivotPoint_X[5] = 0.5;
-        PivotPoint_Y[5] = 1;   
+        PivotPoint_Y[5] = 0.5;   
         ImageAssetArray[6]='PineconeFeet_2';
         PivotPoint_X[6] = 0.5;
-        PivotPoint_Y[6] = 1; 
+        PivotPoint_Y[6] = 0.5; 
         ImageAssetArray[7]='Bowtie';
         PivotPoint_X[7] = 0.5;
         PivotPoint_Y[7] = 0.5;      
@@ -179,34 +183,34 @@ var StateLoad = {
 ///////////////////////////
         ImageAssetArray[9]='Shoes_1';
         PivotPoint_X[9] = 0.5;
-        PivotPoint_Y[9] = 1;   
+        PivotPoint_Y[9] = 0.5;   
         ImageAssetArray[10]='Shoes_2';
         PivotPoint_X[10] = 0.5;
-        PivotPoint_Y[10] = 1;   
+        PivotPoint_Y[10] = 0.5;   
         ImageAssetArray[11]='PineconeEyes_1';
         PivotPoint_X[11] = 0.5;
-        PivotPoint_Y[11] = 0.3;   
+        PivotPoint_Y[11] = 0.5;;   
         ImageAssetArray[12]='PineconeEyes_2';
         PivotPoint_X[12] = 0.5;
-        PivotPoint_Y[12] = 0.3; 
+        PivotPoint_Y[12] = 0.5; 
         ImageAssetArray[13]='PineconeEyes_3';
         PivotPoint_X[13] = 0.5;
-        PivotPoint_Y[13] = 0.3; 
+        PivotPoint_Y[13] = 0.5; 
         ImageAssetArray[14]='PineconeEyes_4';
         PivotPoint_X[14] = 0.5;
-        PivotPoint_Y[14] = 0.3; 
+        PivotPoint_Y[14] = 0.5; 
         ImageAssetArray[15]='PineconeEyes_5';           
         PivotPoint_X[15] = 0.5;
-        PivotPoint_Y[15] = 0.3; 
+        PivotPoint_Y[15] = 0.5; 
         ImageAssetArray[16]='Shades_1';
         PivotPoint_X[16] = 0.5;
-        PivotPoint_Y[16] = 0.3; 
+        PivotPoint_Y[16] = 0.5; 
 ///////////////////////////
 ////Third Sticker Group////
 ///////////////////////////
         ImageAssetArray[17]='Shades_2';
         PivotPoint_X[17] = 0.5;
-        PivotPoint_Y[17] = 0.3; 
+        PivotPoint_Y[17] = 0.5; 
         ImageAssetArray[18]='PineconeNose_2';
         PivotPoint_X[18] = 0.5;
         PivotPoint_Y[18] = 0.5;    
@@ -218,19 +222,19 @@ var StateLoad = {
         PivotPoint_Y[20] = 0.5;      
         ImageAssetArray[21]='PineconeHair_2';
         PivotPoint_X[21] = 0.5;
-        PivotPoint_Y[21] = 0;   
+        PivotPoint_Y[21] = 0.5;   
         ImageAssetArray[22]='PineconeHair_3';
         PivotPoint_X[22] = 0.5;
-        PivotPoint_Y[22] = 0;   
+        PivotPoint_Y[22] = 0.5;   
         ImageAssetArray[23]='PineconeHeadGear_1';
         PivotPoint_X[23] = 0.5;
-        PivotPoint_Y[23] = 0;   
+        PivotPoint_Y[23] = 0.5;   
         ImageAssetArray[24]='PineconeHeadGear_2';
         PivotPoint_X[24] = 0.5;
-        PivotPoint_Y[24] = 0;   
+        PivotPoint_Y[24] = 0.5;   
         ImageAssetArray[25]='PineconeHeadGear_3';
         PivotPoint_X[23] = 0.5;
-        PivotPoint_Y[23] = 0;   
+        PivotPoint_Y[23] = 0.5;   
 
         StickerAssigner_set1 = "Pinecone_Stickers";
         //StickerAssigner_set2 = "Rock_Stickers_2";
