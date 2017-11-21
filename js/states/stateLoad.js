@@ -114,10 +114,10 @@ var StateLoad = {
         game.load.image('placing_Backgroung', 'images/backgrounds/Background_2.PNG');
         
         //Paint Brush Sprite
-        game.load.spritesheet('PaintBrush', 'images/backgrounds/paintbrush-sprite.png', 409, 549, 3);
+        //game.load.spritesheet('PaintBrush', 'images/backgrounds/paintbrush-sprite.png', 409, 549, 3);
         
         //JarAnim Sprite
-        game.load.spritesheet('PencilJar', 'images/backgrounds/jar-sprite.png', 500, 750, 2);
+        //game.load.spritesheet('PencilJar', 'images/backgrounds/jar-sprite.png', 500, 750, 2);
         
         
         //Animations
