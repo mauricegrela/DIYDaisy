@@ -25,7 +25,7 @@ var StatePlace = {
         CharacterGroup = game.add.group();
 
         
-        this.Body = game.add.sprite(GameCenter_x, GameCenter_y, ImageAssetArray[0]);
+        this.Body = game.add.sprite(game.width/2, game.height/2, ImageAssetArray[0]);
         this.Body.scale.setTo(scaleRatio,scaleRatio);
         this.Body.anchor.x = PivotPoint_X[0];
         this.Body.anchor.y =  PivotPoint_Y[0];
@@ -34,7 +34,7 @@ var StatePlace = {
         PlacableArray[0] = this.Body;
         CharacterGroup.add(this.Body);
         
-        this.Sticker1 = game.add.sprite(GameCenter_x+Xpos_ArrayAlpha[1], GameCenter_y+Ypos_ArrayAlpha[1], ImageAssetArray[1]);
+        this.Sticker1 = game.add.sprite(Xpos_ArrayAlpha[1], Ypos_ArrayAlpha[1], ImageAssetArray[1]);
         this.Sticker1.scale.setTo(scaleRatio,scaleRatio);
         this.Sticker1.anchor.x = PivotPoint_X[1];
         this.Sticker1.anchor.y =  PivotPoint_Y[1];
@@ -44,7 +44,7 @@ var StatePlace = {
         CharacterGroup.add(this.Sticker1);
         
         
-        this.Sticker2 = game.add.sprite(GameCenter_x+Xpos_ArrayAlpha[2], GameCenter_y+Ypos_ArrayAlpha[2], ImageAssetArray[2]);
+        this.Sticker2 = game.add.sprite(Xpos_ArrayAlpha[2], Ypos_ArrayAlpha[2], ImageAssetArray[2]);
         this.Sticker2.scale.setTo(scaleRatio,scaleRatio);
         this.Sticker2.anchor.x = PivotPoint_X[2];
         this.Sticker2.anchor.y =  PivotPoint_Y[2];
@@ -54,7 +54,7 @@ var StatePlace = {
         CharacterGroup.add(this.Sticker2);
         
         
-        this.Sticker3 = game.add.sprite(GameCenter_x+Xpos_ArrayAlpha[3], GameCenter_y+Ypos_ArrayAlpha[3], ImageAssetArray[3]);
+        this.Sticker3 = game.add.sprite(Xpos_ArrayAlpha[3], Ypos_ArrayAlpha[3], ImageAssetArray[3]);
         this.Sticker3.scale.setTo(scaleRatio,scaleRatio);
         this.Sticker3.anchor.x = PivotPoint_X[3];
         this.Sticker3.anchor.y =  PivotPoint_Y[3];
@@ -64,7 +64,7 @@ var StatePlace = {
         CharacterGroup.add(this.Sticker3);
         
         
-        this.Sticker4 = game.add.sprite(GameCenter_x+Xpos_ArrayAlpha[4], GameCenter_y+Ypos_ArrayAlpha[4], ImageAssetArray[4]);
+        this.Sticker4 = game.add.sprite(Xpos_ArrayAlpha[4], Ypos_ArrayAlpha[4], ImageAssetArray[4]);
         this.Sticker4.scale.setTo(scaleRatio,scaleRatio);
         this.Sticker4.anchor.x = PivotPoint_X[4];
         this.Sticker4.anchor.y =  PivotPoint_Y[4];
@@ -74,7 +74,7 @@ var StatePlace = {
         CharacterGroup.add(this.Sticker4);
         
 
-        this.Sticker5 = game.add.sprite(GameCenter_x+Xpos_ArrayAlpha[5], GameCenter_y+Ypos_ArrayAlpha[5], ImageAssetArray[5]);
+        this.Sticker5 = game.add.sprite(Xpos_ArrayAlpha[5], Ypos_ArrayAlpha[5], ImageAssetArray[5]);
         this.Sticker5.scale.setTo(scaleRatio,scaleRatio);
         this.Sticker5.anchor.x = PivotPoint_X[5];
         this.Sticker5.anchor.y =  PivotPoint_Y[5];
@@ -84,7 +84,7 @@ var StatePlace = {
         CharacterGroup.add(this.Sticker5);
         
 
-        this.Sticker6 = game.add.sprite(GameCenter_x+Xpos_ArrayAlpha[6], GameCenter_y+Ypos_ArrayAlpha[6], ImageAssetArray[6]);
+        this.Sticker6 = game.add.sprite(Xpos_ArrayAlpha[6], Ypos_ArrayAlpha[6], ImageAssetArray[6]);
         this.Sticker6.scale.setTo(scaleRatio,scaleRatio);
         this.Sticker6.anchor.x = PivotPoint_X[6];
         this.Sticker6.anchor.y =  PivotPoint_Y[6];
@@ -95,7 +95,7 @@ var StatePlace = {
                 
 
         
-        this.Sticker7 = game.add.sprite(GameCenter_x+Xpos_ArrayAlpha[7], GameCenter_y+Ypos_ArrayAlpha[7], ImageAssetArray[7]);
+        this.Sticker7 = game.add.sprite(Xpos_ArrayAlpha[7], Ypos_ArrayAlpha[7], ImageAssetArray[7]);
         this.Sticker7.anchor.x = PivotPoint_X[7];
         this.Sticker7.anchor.y =  PivotPoint_Y[7];
         this.Sticker7.alpha = testArrayAlpha[7];
@@ -104,7 +104,7 @@ var StatePlace = {
         CharacterGroup.add(this.Sticker7);
         
 
-        this.Sticker8 = game.add.sprite(GameCenter_x+Xpos_ArrayAlpha[8], GameCenter_y+Ypos_ArrayAlpha[8], ImageAssetArray[8]);
+        this.Sticker8 = game.add.sprite(Xpos_ArrayAlpha[8], Ypos_ArrayAlpha[8], ImageAssetArray[8]);
         this.Sticker8.scale.setTo(scaleRatio,scaleRatio);
         this.Sticker8.anchor.x = PivotPoint_X[8];
         this.Sticker8.anchor.y =  PivotPoint_Y[8];
@@ -114,7 +114,7 @@ var StatePlace = {
         CharacterGroup.add(this.Sticker8);
         
         
-        this.Sticker9 = game.add.sprite(GameCenter_x+Xpos_ArrayAlpha[9], GameCenter_y+Ypos_ArrayAlpha[9], ImageAssetArray[9]);
+        this.Sticker9 = game.add.sprite(Xpos_ArrayAlpha[9], Ypos_ArrayAlpha[9], ImageAssetArray[9]);
         this.Sticker9.scale.setTo(scaleRatio,scaleRatio);
         this.Sticker9.anchor.x = PivotPoint_X[9];
         this.Sticker9.anchor.y =  PivotPoint_Y[9];
@@ -124,7 +124,7 @@ var StatePlace = {
         CharacterGroup.add(this.Sticker9);
         
         
-        this.Sticker10 = game.add.sprite(GameCenter_x+Xpos_ArrayAlpha[10], GameCenter_y+Ypos_ArrayAlpha[10], ImageAssetArray[10]);
+        this.Sticker10 = game.add.sprite(Xpos_ArrayAlpha[10], Ypos_ArrayAlpha[10], ImageAssetArray[10]);
         this.Sticker10.scale.setTo(scaleRatio,scaleRatio);
         this.Sticker10.anchor.x = PivotPoint_X[10];
         this.Sticker10.anchor.y =  PivotPoint_Y[10];
@@ -134,7 +134,7 @@ var StatePlace = {
         CharacterGroup.add(this.Sticker10);
         
         
-        this.Sticker11 = game.add.sprite(GameCenter_x+Xpos_ArrayAlpha[11], GameCenter_y+Ypos_ArrayAlpha[11], ImageAssetArray[11]);
+        this.Sticker11 = game.add.sprite(Xpos_ArrayAlpha[11], Ypos_ArrayAlpha[11], ImageAssetArray[11]);
         this.Sticker11.scale.setTo(scaleRatio,scaleRatio);
         this.Sticker11.anchor.x = PivotPoint_X[11];
         this.Sticker11.anchor.y =  PivotPoint_Y[11];
@@ -144,7 +144,7 @@ var StatePlace = {
         CharacterGroup.add(this.Sticker11);
         
         
-        this.Sticker12 = game.add.sprite(GameCenter_x+Xpos_ArrayAlpha[12], GameCenter_y+Ypos_ArrayAlpha[12], ImageAssetArray[12]);
+        this.Sticker12 = game.add.sprite(Xpos_ArrayAlpha[12], Ypos_ArrayAlpha[12], ImageAssetArray[12]);
         this.Sticker12.scale.setTo(scaleRatio,scaleRatio);
         this.Sticker12.anchor.x = PivotPoint_X[12];
         this.Sticker12.anchor.y =  PivotPoint_Y[12];
@@ -154,7 +154,7 @@ var StatePlace = {
         CharacterGroup.add(this.Sticker12);
         
 
-        this.Sticker13 = game.add.sprite(GameCenter_x+Xpos_ArrayAlpha[13], GameCenter_y+Ypos_ArrayAlpha[13], ImageAssetArray[13]);
+        this.Sticker13 = game.add.sprite(Xpos_ArrayAlpha[13], Ypos_ArrayAlpha[13], ImageAssetArray[13]);
         this.Sticker13.scale.setTo(scaleRatio,scaleRatio);
         this.Sticker13.anchor.x = PivotPoint_X[13];
         this.Sticker13.anchor.y =  PivotPoint_Y[13];
@@ -164,7 +164,7 @@ var StatePlace = {
         CharacterGroup.add(this.Sticker13);
         
 
-        this.Sticker14 = game.add.sprite(GameCenter_x+Xpos_ArrayAlpha[14], GameCenter_y+Ypos_ArrayAlpha[14], ImageAssetArray[14]);
+        this.Sticker14 = game.add.sprite(Xpos_ArrayAlpha[14], Ypos_ArrayAlpha[14], ImageAssetArray[14]);
         this.Sticker14.scale.setTo(scaleRatio,scaleRatio);
         this.Sticker14.anchor.x = PivotPoint_X[14];
         this.Sticker14.anchor.y =  PivotPoint_Y[14];
@@ -174,7 +174,7 @@ var StatePlace = {
         CharacterGroup.add(this.Sticker14);
         
 
-        this.Sticker15 = game.add.sprite(GameCenter_x+Xpos_ArrayAlpha[15], GameCenter_y+Ypos_ArrayAlpha[15], ImageAssetArray[15]);
+        this.Sticker15 = game.add.sprite(Xpos_ArrayAlpha[15], Ypos_ArrayAlpha[15], ImageAssetArray[15]);
         this.Sticker15.scale.setTo(scaleRatio,scaleRatio);
         this.Sticker15.anchor.x = PivotPoint_X[15];
         this.Sticker15.anchor.y =  PivotPoint_Y[15];
@@ -184,7 +184,7 @@ var StatePlace = {
         CharacterGroup.add(this.Sticker15);
         
 
-        this.Sticker16 = game.add.sprite(GameCenter_x+Xpos_ArrayAlpha[16], GameCenter_y+Ypos_ArrayAlpha[16], ImageAssetArray[16]);
+        this.Sticker16 = game.add.sprite(Xpos_ArrayAlpha[16], Ypos_ArrayAlpha[16], ImageAssetArray[16]);
         this.Sticker16.scale.setTo(scaleRatio,scaleRatio);
         this.Sticker16.anchor.x = PivotPoint_X[16];
         this.Sticker16.anchor.y =  PivotPoint_Y[16];
@@ -194,7 +194,7 @@ var StatePlace = {
         CharacterGroup.add(this.Sticker16);
         
         
-        this.Sticker17 = game.add.sprite(GameCenter_x+Xpos_ArrayAlpha[17], GameCenter_y+Ypos_ArrayAlpha[17], ImageAssetArray[17]);
+        this.Sticker17 = game.add.sprite(Xpos_ArrayAlpha[17], Ypos_ArrayAlpha[17], ImageAssetArray[17]);
         this.Sticker17.scale.setTo(scaleRatio,scaleRatio);
         this.Sticker17.anchor.x = PivotPoint_X[17];
         this.Sticker17.anchor.y =  PivotPoint_Y[17];
@@ -204,7 +204,7 @@ var StatePlace = {
         CharacterGroup.add(this.Sticker17);
         
                 
-        this.Sticker18 = game.add.sprite(GameCenter_x+Xpos_ArrayAlpha[18], GameCenter_y+Ypos_ArrayAlpha[18], ImageAssetArray[18]);
+        this.Sticker18 = game.add.sprite(Xpos_ArrayAlpha[18], Ypos_ArrayAlpha[18], ImageAssetArray[18]);
         this.Sticker18.scale.setTo(scaleRatio,scaleRatio);
         this.Sticker18.anchor.x = PivotPoint_X[18];
         this.Sticker18.anchor.y =  PivotPoint_Y[18];
@@ -213,7 +213,7 @@ var StatePlace = {
         PlacableArray[18] = this.Sticker18;
         CharacterGroup.add(this.Sticker18);
                           
-        this.Sticker19 = game.add.sprite(GameCenter_x+Xpos_ArrayAlpha[19], GameCenter_y+Ypos_ArrayAlpha[19], ImageAssetArray[19]);
+        this.Sticker19 = game.add.sprite(Xpos_ArrayAlpha[19], Ypos_ArrayAlpha[19], ImageAssetArray[19]);
         this.Sticker19.scale.setTo(scaleRatio,scaleRatio);
         this.Sticker19.anchor.x = PivotPoint_X[19];
         this.Sticker19.anchor.y =  PivotPoint_Y[19];
@@ -223,7 +223,7 @@ var StatePlace = {
         CharacterGroup.add(this.Sticker19);
               
                                   
-        this.Sticker20 = game.add.sprite(GameCenter_x+Xpos_ArrayAlpha[20], GameCenter_y+Ypos_ArrayAlpha[20], ImageAssetArray[20]);
+        this.Sticker20 = game.add.sprite(Xpos_ArrayAlpha[20], Ypos_ArrayAlpha[20], ImageAssetArray[20]);
         this.Sticker20.scale.setTo(scaleRatio,scaleRatio);
         this.Sticker20.anchor.x = PivotPoint_X[20];
         this.Sticker20.anchor.y =  PivotPoint_Y[20];
@@ -233,7 +233,7 @@ var StatePlace = {
         CharacterGroup.add(this.Sticker20);
         
                                           
-        this.Sticker21 = game.add.sprite(GameCenter_x+Xpos_ArrayAlpha[21], GameCenter_y+Ypos_ArrayAlpha[21], ImageAssetArray[21]);
+        this.Sticker21 = game.add.sprite(Xpos_ArrayAlpha[21], Ypos_ArrayAlpha[21], ImageAssetArray[21]);
         this.Sticker21.scale.setTo(scaleRatio,scaleRatio);
         this.Sticker21.anchor.x = PivotPoint_X[21];
         this.Sticker21.anchor.y =  PivotPoint_Y[21];
@@ -243,7 +243,7 @@ var StatePlace = {
         CharacterGroup.add(this.Sticker21);
         
                                                   
-        this.Sticker22 = game.add.sprite(GameCenter_x+Xpos_ArrayAlpha[22], GameCenter_y+Ypos_ArrayAlpha[22], ImageAssetArray[22]);
+        this.Sticker22 = game.add.sprite(Xpos_ArrayAlpha[22], Ypos_ArrayAlpha[22], ImageAssetArray[22]);
         this.Sticker22.scale.setTo(scaleRatio,scaleRatio);
         this.Sticker22.anchor.x = PivotPoint_X[22];
         this.Sticker22.anchor.y =  PivotPoint_Y[22];
@@ -253,7 +253,7 @@ var StatePlace = {
         CharacterGroup.add(this.Sticker22);
         
                                                           
-        this.Sticker23 = game.add.sprite(GameCenter_x+Xpos_ArrayAlpha[23], GameCenter_y+Ypos_ArrayAlpha[23], ImageAssetArray[23]);
+        this.Sticker23 = game.add.sprite(Xpos_ArrayAlpha[23], Ypos_ArrayAlpha[23], ImageAssetArray[23]);
         this.Sticker23.scale.setTo(scaleRatio,scaleRatio);
         this.Sticker23.anchor.x = PivotPoint_X[23];
         this.Sticker23.anchor.y =  PivotPoint_Y[23];
@@ -263,7 +263,7 @@ var StatePlace = {
         CharacterGroup.add(this.Sticker23);
         
                                                                   
-        this.Sticker24 = game.add.sprite(GameCenter_x+Xpos_ArrayAlpha[24], GameCenter_y+Ypos_ArrayAlpha[24], ImageAssetArray[24]);
+        this.Sticker24 = game.add.sprite(Xpos_ArrayAlpha[24], Ypos_ArrayAlpha[24], ImageAssetArray[24]);
         this.Sticker24.scale.setTo(scaleRatio,scaleRatio);
         this.Sticker24.anchor.x = PivotPoint_X[24];
         this.Sticker24.anchor.y =  PivotPoint_Y[24];
@@ -281,9 +281,9 @@ var StatePlace = {
     }
     , update: function () 
     {
-        for (let i = 1; i < PlacableArray.length-1; i++) {
-            PlacableArray[i].x = game.input.x+Xpos_ArrayAlpha[i]
-            PlacableArray[i].y = game.input.y+Ypos_ArrayAlpha[i]
+        for (let i = 0; i < PlacableArray.length-1; i++) {
+            PlacableArray[i].x = game.input.x;
+            PlacableArray[i].y = game.input.y;
 
         }
     //CharacterGroup.rotation += 0.02;

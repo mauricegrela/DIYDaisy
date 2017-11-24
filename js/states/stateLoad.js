@@ -17,55 +17,49 @@ var StateLoad = {
 ////////////////    
         game.load.image('MobileBody', 'images/Mobile/MobileBody.png');
         game.load.spritesheet("Mobile_stickers", "images/ui/Mobile_stickers.png", 280, 200, 28);
+        
 ////////////////
 ////Pinecones////
 ////////////////    
-        game.load.image('MagLenz',     'images/Pinecone/alphaMaskState.png');      
+        //game.load.image('MagLenz',     'images/Pinecone/alphaMaskState.png');      
         //Load Stickers and body
         game.load.image('PineconeBody', 'images/Pinecone/PineconeBody.png');
-        //Clothing X
-        game.load.image('Bowtie', 'images/Pinecone/PineconeClothing_1.png');
-        game.load.image('skirt', 'images/Pinecone/PineconeClothing_2.png');
-        //Shoes X
-        game.load.image('Shoes_1', 'images/Pinecone/PineconeClothing_3.png');      
-        game.load.image('Shoes_2', 'images/Pinecone/PineconeClothing_4.png');
-        //Shades X
-        game.load.image('Shades_1', 'images/Pinecone/PineconeClothing_5.png');      
-        game.load.image('Shades_2', 'images/Pinecone/PineconeClothing_6.png');
-        //Eyes X
-        game.load.image('PineconeEyes_1', 'images/Pinecone/PineconeEyes_1.png');         
+        //Clothing 
+        game.load.image('PineconeClothing_1', 'images/Pinecone/PineconeClothing_1.png');
+        game.load.image('PineconeClothing_2', 'images/Pinecone/PineconeClothing_2.png');
+        game.load.image('PineconeClothing_3', 'images/Pinecone/PineconeClothing_3.png');      
+        game.load.image('PineconeClothing_4', 'images/Pinecone/PineconeClothing_4.png');
+        //Eyes 
+        game.load.image('PineconeEyes_1', 'images/Pinecone/PineconeEyes_1.png');     
         game.load.image('PineconeEyes_2', 'images/Pinecone/PineconeEyes_2.png'); 
         game.load.image('PineconeEyes_3', 'images/Pinecone/PineconeEyes_3.png'); 
-        game.load.image('PineconeEyes_4', 'images/Pinecone/PineconeEyes_4.png');       
-        game.load.image('PineconeEyes_5', 'images/Pinecone/PineconeEyes_5.png');   
-        game.load.image('PineconeEyes_4', 'images/Pinecone/PineconeEyes_4.png');       
-        game.load.image('PineconeEyes_5', 'images/Pinecone/PineconeEyes_5.png'); 
-        //feet X
-        game.load.image('PineconeFeet_1', 'images/Pinecone/PineconeFeet_1.png');       
+        game.load.image('PineconeEyes_4', 'images/Pinecone/PineconeEyes_4.png');  
+        //Feet
+        game.load.image('PineconeFeet_1', 'images/Pinecone/PineconeFeet_1.png');     
         game.load.image('PineconeFeet_2', 'images/Pinecone/PineconeFeet_2.png'); 
-        //Hair X
-        game.load.image('PineconeHair_1', 'images/Pinecone/PineconeHair_1.png'); 
-        game.load.image('PineconeHair_2', 'images/Pinecone/PineconeHair_2.png');       
-        game.load.image('PineconeHair_3', 'images/Pinecone/PineconeHair_3.png'); 
-        //head gear X
-        game.load.image('PineconeHeadGear_1', 'images/Pinecone/PineconeHeadGear_1.png'); 
-        game.load.image('PineconeHeadGear_2', 'images/Pinecone/PineconeHeadGear_2.png');       
-        game.load.image('PineconeHeadGear_3', 'images/Pinecone/PineconeHeadGear_3.png');
-        //Noes X
-        game.load.image('PineconeNose_1', 'images/Pinecone/PineconeNose_1.png'); 
-        game.load.image('PineconeNose_2', 'images/Pinecone/PineconeNose_2.png');
-        //head gear X
-        game.load.image('PineconeWings_1', 'images/Pinecone/PineconeWings_1.png'); 
-        game.load.image('PineconeWings_2', 'images/Pinecone/PineconeWings_2.png');       
-        game.load.image('PineconeWings_3', 'images/Pinecone/PineconeWings_3.png');
+        game.load.image('PineconeFeet_3', 'images/Pinecone/PineconeFeet_3.png'); 
+        game.load.image('PineconeFeet_4', 'images/Pinecone/PineconeFeet_4.png');    
+        //Feet
+        game.load.image('PineconeGlasses_1', 'images/Pinecone/PineconeGlasses_1.png');     
+        game.load.image('PineconeGlasses_2', 'images/Pinecone/PineconeGlasses_2.png'); 
+        game.load.image('PineconeGlasses_3', 'images/Pinecone/PineconeGlasses_3.png'); 
+        game.load.image('PineconeGlasses_4', 'images/Pinecone/PineconeGlasses_4.png'); 
+        //Head gear
+        game.load.image('PineconeHeadgear_1', 'images/Pinecone/PineconeHeadgear_1.png');     
+        game.load.image('PineconeHeadgear_2', 'images/Pinecone/PineconeHeadgear_2.png'); 
+        game.load.image('PineconeHeadgear_3', 'images/Pinecone/PineconeHeadgear_3.png'); 
+        game.load.image('PineconeHeadgear_4', 'images/Pinecone/PineconeHeadgear_4.png');
+        //Wings
+        game.load.image('PineconeWings_1', 'images/Pinecone/PineconeWings_1.png');     
+        game.load.image('PineconeWings_2', 'images/Pinecone/PineconeWings_2.png'); 
+        game.load.image('PineconeWings_3', 'images/Pinecone/PineconeWings_3.png'); 
         game.load.image('PineconeWings_4', 'images/Pinecone/PineconeWings_4.png');
-        
-        game.load.spritesheet("Pinecone_Stickers", "images/ui/Pinecone_stickers.png", 280, 200, 28);
+        game.load.spritesheet("Pinecone_Stickers", "images/ui/Pinecone_stickers.png", 365, 250, 24);
         
 ////////////////
 //////Rock//////
 ////////////////           
-        game.load.image('MagLenz', 'images/Pinecone/alphaMaskState.png');      
+        //game.load.image('MagLenz', 'images/Pinecone/alphaMaskState.png');      
         //Load Stickers and body
         game.load.image('RockBody', 'images/Rock/RockBody.png');     
         game.load.image('RockAntenae_1', 'images/Rock/RockAntenae_1.png');
@@ -105,7 +99,7 @@ var StateLoad = {
         game.load.image('StickerCaroselTab', 'images/ui/stickers-tab-active.png');
         
         //Arrows Tab
-        game.load.spritesheet("CaroselArrows", "images/ui/sticker-arrows.png", 118, 44, 2);     
+        game.load.spritesheet("CaroselArrows", "images/ui/sticker-arrows.png", 92, 95, 2);     
         
           //Sticker Tab
         game.load.image('TabButton', 'images/ui/StickerCollisionBox.png');
@@ -149,92 +143,50 @@ var StateLoad = {
 
     create: function () {
         ImageAssetArray[0]='PineconeBody';
-        PivotPoint_X[0] = 0.5;
-        PivotPoint_Y[0] = 0.5;    
 ///////////////////////////
 ////First Sticker Group////
 ///////////////////////////
-        ImageAssetArray[1]='PineconeWings_1';
-        PivotPoint_X[1] = 0.5;
-        PivotPoint_Y[1] = 0.5;   
-        ImageAssetArray[2]='PineconeWings_2';
-        PivotPoint_X[2] = 0.5;
-        PivotPoint_Y[2] = 0.5;   
-        ImageAssetArray[3]='PineconeWings_3';
-        PivotPoint_X[3] = 0.5;
-        PivotPoint_Y[3] = 0.5;   
-        ImageAssetArray[4]='PineconeWings_4';
-        PivotPoint_X[4] = 0.5;
-        PivotPoint_Y[4] = 0.5;   
-        ImageAssetArray[5]='PineconeFeet_1';
-        PivotPoint_X[5] = 0.5;
-        PivotPoint_Y[5] = 0.5;   
-        ImageAssetArray[6]='PineconeFeet_2';
-        PivotPoint_X[6] = 0.5;
-        PivotPoint_Y[6] = 0.5; 
-        ImageAssetArray[7]='Bowtie';
-        PivotPoint_X[7] = 0.5;
-        PivotPoint_Y[7] = 0.5;      
-        ImageAssetArray[8]='skirt';
-        PivotPoint_X[8] = 0.5;
-        PivotPoint_Y[8] = 0.5;   
+        
+        
+        ImageAssetArray[1]='PineconeEyes_1';
+        ImageAssetArray[2]='PineconeEyes_2'; 
+        ImageAssetArray[3]='PineconeEyes_3';
+        ImageAssetArray[4]='PineconeEyes_4';
 ///////////////////////////
 ////Second Sticker Group///
 ///////////////////////////
-        ImageAssetArray[9]='Shoes_1';
-        PivotPoint_X[9] = 0.5;
-        PivotPoint_Y[9] = 0.5;   
-        ImageAssetArray[10]='Shoes_2';
-        PivotPoint_X[10] = 0.5;
-        PivotPoint_Y[10] = 0.5;   
-        ImageAssetArray[11]='PineconeEyes_1';
-        PivotPoint_X[11] = 0.5;
-        PivotPoint_Y[11] = 0.5;;   
-        ImageAssetArray[12]='PineconeEyes_2';
-        PivotPoint_X[12] = 0.5;
-        PivotPoint_Y[12] = 0.5; 
-        ImageAssetArray[13]='PineconeEyes_3';
-        PivotPoint_X[13] = 0.5;
-        PivotPoint_Y[13] = 0.5; 
-        ImageAssetArray[14]='PineconeEyes_4';
-        PivotPoint_X[14] = 0.5;
-        PivotPoint_Y[14] = 0.5; 
-        ImageAssetArray[15]='PineconeEyes_5';           
-        PivotPoint_X[15] = 0.5;
-        PivotPoint_Y[15] = 0.5; 
-        ImageAssetArray[16]='Shades_1';
-        PivotPoint_X[16] = 0.5;
-        PivotPoint_Y[16] = 0.5; 
+        ImageAssetArray[5]='PineconeGlasses_1';
+        ImageAssetArray[6]='PineconeGlasses_2';
+        ImageAssetArray[7]='PineconeGlasses_3';
+        ImageAssetArray[8]='PineconeGlasses_4';
 ///////////////////////////
 ////Third Sticker Group////
 ///////////////////////////
-        ImageAssetArray[17]='Shades_2';
-        PivotPoint_X[17] = 0.5;
-        PivotPoint_Y[17] = 0.5; 
-        ImageAssetArray[18]='PineconeNose_2';
-        PivotPoint_X[18] = 0.5;
-        PivotPoint_Y[18] = 0.5;    
-        ImageAssetArray[19]='PineconeNose_1';
-        PivotPoint_X[19] = 0.5;
-        PivotPoint_Y[19] = 0.5; 
-        ImageAssetArray[20]='PineconeHair_1';
-        PivotPoint_X[20] = 0.5;
-        PivotPoint_Y[20] = 0.5;      
-        ImageAssetArray[21]='PineconeHair_2';
-        PivotPoint_X[21] = 0.5;
-        PivotPoint_Y[21] = 0.5;   
-        ImageAssetArray[22]='PineconeHair_3';
-        PivotPoint_X[22] = 0.5;
-        PivotPoint_Y[22] = 0.5;   
-        ImageAssetArray[23]='PineconeHeadGear_1';
-        PivotPoint_X[23] = 0.5;
-        PivotPoint_Y[23] = 0.5;   
-        ImageAssetArray[24]='PineconeHeadGear_2';
-        PivotPoint_X[24] = 0.5;
-        PivotPoint_Y[24] = 0.5;   
-        ImageAssetArray[25]='PineconeHeadGear_3';
-        PivotPoint_X[23] = 0.5;
-        PivotPoint_Y[23] = 0.5;   
+        ImageAssetArray[9]='PineconeHeadgear_1';
+        ImageAssetArray[10]='PineconeHeadgear_2';
+        ImageAssetArray[11]='PineconeHeadgear_3';
+        ImageAssetArray[12]='PineconeHeadgear_4';
+///////////////////////////
+////Fourth Sticker Group///
+///////////////////////////
+        ImageAssetArray[13]='PineconeWings_1';
+        ImageAssetArray[14]='PineconeWings_2';
+        ImageAssetArray[15]='PineconeWings_3';  
+        ImageAssetArray[16]='PineconeWings_4';
+///////////////////////////
+////Fifth Sticker Group////
+///////////////////////////
+        ImageAssetArray[17]='PineconeClothing_1';
+        ImageAssetArray[18]='PineconeClothing_2';
+        ImageAssetArray[19]='PineconeClothing_3';
+        ImageAssetArray[20]='PineconeClothing_4';
+///////////////////////////
+////Sixth Sticker Group////
+///////////////////////////
+        ImageAssetArray[21]='PineconeFeet_1';
+        ImageAssetArray[22]='PineconeFeet_2';
+        ImageAssetArray[23]='PineconeFeet_3';
+        ImageAssetArray[24]='PineconeFeet_4';
 
         StickerAssigner_set1 = "Pinecone_Stickers";
         //StickerAssigner_set2 = "Rock_Stickers_2";

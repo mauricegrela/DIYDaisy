@@ -37,12 +37,11 @@ var StateMain = {
         
         //  Create the group for the stickers
         StickerGroup_1 = game.add.group();
-        //  Create the group for the stickers
         StickerGroup_2 = game.add.group();
-        //  Create the group for the stickers
         StickerGroup_3 = game.add.group();
-        //  Create the group for the stickers
         StickerGroup_4 = game.add.group();
+        StickerGroup_5 = game.add.group();
+        StickerGroup_6 = game.add.group();
         
         MagnifinylLenzGroup = game.add.group(); 
         //Character change buttons 
@@ -68,14 +67,6 @@ var StateMain = {
         BackgroundGroup.add(this.craftBackground);     
 
         carouselScaleOffset = 1.2;
-
-        //this.craftBackground.width = game.width;
-        //this.craftBackground.height = game.height;
-        
-        //add some buttons
-        //this.btnYes = gameButtons.addButton("save", game.world.centerX+(game.world.centerX/2), -1, this.SaveClicked, this);
-        //DressUpGroup.add(this.btnYes);
-        //this.btnNo = gameButtons.addButton("no", -1, this.btnYes.y - this.btnYes.height, this.sayNo, this);
         
         //add sound buttons
         this.btnMusic = gameButtons.addAudioButton("music", 20, 20, gameButtons.toggleMusic, this);
@@ -104,6 +95,7 @@ var StateMain = {
 ///CaroseleButtons Sticker Group////
 ///////////////////////////
         
+        if(this.game.device.desktop == true){ }
         
         //Main Button Placement
         var MainButtonsPos_x = window.innerWidth/2.3;
@@ -127,7 +119,7 @@ var StateMain = {
         buttongroup.add(this.MainResetButton);*/
         
         //Top Menu Buttons
-        MenuTopButtons_Pos_x = game.width/2;     
+        MenuTopButtons_Pos_x = game.width-game.width/3;     
         MenuTopButtons_Pos_y = 0;
         
         //Hint Button
@@ -145,13 +137,13 @@ var StateMain = {
         /*this.BackToButton = gameButtons.addGenericButton("0", MenuTopButtons_Pos_x-this.AlphaButton.width*3, MenuTopButtons_Pos_y+20, this.BackToCharacterSelect, this,"creativeButtons",5); 
         this.BackToButton.scale.setTo(scaleRatio,scaleRatio);
         MainButtonGroup.add(this.BackToButton);*/
-        
+               
         
 ///////////////////////////
 //character Sticker Group//
 ///////////////////////////
         
-        var ButtonsPos_x = game.width/3.6;
+        var ButtonsPos_x = game.width/2;
         var ButtonsPos_y = game.height; 
         var ButtonsScale = scaleRatio;
         
@@ -175,6 +167,10 @@ var StateMain = {
         
         this.RockCharacter.y = game.height-this.RockCharacter.height*1.5;  
         ButtonsPos_y = game.height-this.RockCharacter.height*1.5;  
+        
+        this.RockCharacter.x = game.width/2-this.RockCharacter.height*2.5;  
+        ButtonsPos_x = this.RockCharacter.x;
+        
         
         //Character Pinecone Stickers
         this.PineconeCharacter = game.add.sprite(ButtonsPos_x+this.RockCharacter.width, ButtonsPos_y , 'PineconeBody');   
@@ -225,120 +221,133 @@ var StateMain = {
 ///////////////////////////
 ////First Sticker Group////
 ///////////////////////////
-        
+        //Sticker_Place, {param1: this.StickerButton1, param2: 2, param3: 1}
         //Wings
         this.StickerButton1 = gameButtons.addStickerButton("0", ButtonsPos_x, ButtonsPos_y, 
-        this.Sticker_1_Place, this,StickerIconSetter[0],StickerAssigner_set1); 
+        this.Sticker_1_Place, this,0,StickerAssigner_set1); 
         this.StickerButton1.scale.setTo(ButtonsScale,ButtonsScale);
         StickerGroup_1.add(this.StickerButton1);
-        this.StickerButton1.y = game.height-this.StickerButton1.height*2;  
-        var ButtonsPos_y = game.height-this.StickerButton1.height*2;
         
-        this.StickerButton2 = gameButtons.addStickerButton("0", ButtonsPos_x, ButtonsPos_y+this.StickerButton1.height, this.Sticker_2_Place, this,StickerIconSetter[1],StickerAssigner_set1); 
+        this.StickerButton1.y = game.height-this.StickerButton1.height*2;  
+        var ButtonsPos_y = this.StickerButton1.y;
+        
+        this.StickerButton1.x = game.width/2-this.StickerButton1.width*2;  
+        var ButtonsPos_x = this.StickerButton1.x;
+        
+        this.StickerButton2 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width, ButtonsPos_y, this.Sticker_2_Place, this,1,StickerAssigner_set1); 
         this.StickerButton2.scale.setTo(ButtonsScale,ButtonsScale);
         StickerGroup_1.add(this.StickerButton2);
         
-        this.StickerButton3 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width, ButtonsPos_y, this.Sticker_3_Place, this,StickerIconSetter[2],StickerAssigner_set1);  
+        this.StickerButton3 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width*2, ButtonsPos_y, this.Sticker_3_Place, this,2,StickerAssigner_set1);  
         this.StickerButton3.scale.setTo(ButtonsScale,ButtonsScale);
         StickerGroup_1.add(this.StickerButton3);
         
-        this.StickerButton4 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width, ButtonsPos_y+this.StickerButton1.height, this.Sticker_4_Place, this,StickerIconSetter[3],StickerAssigner_set1);
+        this.StickerButton4 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width*3, ButtonsPos_y, this.Sticker_4_Place, this,3,StickerAssigner_set1);
         this.StickerButton4.scale.setTo(ButtonsScale,ButtonsScale);
         StickerGroup_1.add(this.StickerButton4);
         
-        //feet
-        this.StickerButton5 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width*2, ButtonsPos_y, this.Sticker_5_Place, this,StickerIconSetter[4],StickerAssigner_set1); 
-        this.StickerButton5.scale.setTo(ButtonsScale,ButtonsScale);
-        StickerGroup_1.add(this.StickerButton5);
-        
-        this.StickerButton6 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width*2, ButtonsPos_y+this.StickerButton1.height, this.Sticker_6_Place, this,StickerIconSetter[5],StickerAssigner_set1); 
-        this.StickerButton6.scale.setTo(ButtonsScale,ButtonsScale);
-        StickerGroup_1.add(this.StickerButton6);
-        
-        //Clothing
-        this.StickerButton7 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width*3, ButtonsPos_y, this.Sticker_7_Place, this,StickerIconSetter[6],StickerAssigner_set1);  
-        this.StickerButton7.scale.setTo(ButtonsScale,ButtonsScale);
-        StickerGroup_1.add(this.StickerButton7);
-        
-        this.StickerButton8 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width*3, ButtonsPos_y+this.StickerButton1.height, this.Sticker_8_Place, this,StickerIconSetter[7],StickerAssigner_set1);
-        this.StickerButton8.scale.setTo(ButtonsScale,ButtonsScale);
-        StickerGroup_1.add(this.StickerButton8);
-        
 ///////////////////////////
 ////Second Sticker Group///
-///////////////////////////
+/////////////////////////// 
         
-        this.StickerButton9 = gameButtons.addStickerButton("0", ButtonsPos_x, ButtonsPos_y, 
-        this.Sticker_9_Place, this,StickerIconSetter[8],StickerAssigner_set1); 
-        this.StickerButton9.scale.setTo(ButtonsScale,ButtonsScale);
-        StickerGroup_2.add(this.StickerButton9);
-       
-        this.StickerButton10 = gameButtons.addStickerButton("0", ButtonsPos_x, ButtonsPos_y+this.StickerButton1.height, this.Sticker_10_Place, this,StickerIconSetter[9],StickerAssigner_set1); 
-        this.StickerButton10.scale.setTo(ButtonsScale,ButtonsScale);
-        StickerGroup_2.add(this.StickerButton10);
+        //feet
+        this.StickerButton5 = gameButtons.addStickerButton("0", ButtonsPos_x, ButtonsPos_y, this.Sticker_5_Place, this,4,StickerAssigner_set1); 
+        this.StickerButton5.scale.setTo(ButtonsScale,ButtonsScale);
+        StickerGroup_2.add(this.StickerButton5);
         
-        this.StickerButton11 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width, ButtonsPos_y, this.Sticker_11_Place, this,StickerIconSetter[10],StickerAssigner_set1);  
-        this.StickerButton11.scale.setTo(ButtonsScale,ButtonsScale);
-        StickerGroup_2.add(this.StickerButton11);
+        this.StickerButton6 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width, ButtonsPos_y, this.Sticker_6_Place, this,5,StickerAssigner_set1); 
+        this.StickerButton6.scale.setTo(ButtonsScale,ButtonsScale);
+        StickerGroup_2.add(this.StickerButton6);
         
-        this.StickerButton12 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width, ButtonsPos_y+this.StickerButton1.height, this.Sticker_12_Place, this,StickerIconSetter[11],StickerAssigner_set1);
-        this.StickerButton12.scale.setTo(ButtonsScale,ButtonsScale);
-        StickerGroup_2.add(this.StickerButton12);
+        //Clothing
+        this.StickerButton7 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width*2, ButtonsPos_y, this.Sticker_7_Place, this,6,StickerAssigner_set1);  
+        this.StickerButton7.scale.setTo(ButtonsScale,ButtonsScale);
+        StickerGroup_2.add(this.StickerButton7);
         
-        this.StickerButton13 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width*2, ButtonsPos_y, this.Sticker_13_Place, this,StickerIconSetter[12],StickerAssigner_set1); 
-        this.StickerButton13.scale.setTo(ButtonsScale,ButtonsScale);
-        StickerGroup_2.add(this.StickerButton13);
-        
-        this.StickerButton14 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width*2, ButtonsPos_y+this.StickerButton1.height, this.Sticker_14_Place, this,StickerIconSetter[13],StickerAssigner_set1); 
-        this.StickerButton14.scale.setTo(ButtonsScale,ButtonsScale);
-        StickerGroup_2.add(this.StickerButton14);
-        
-        this.StickerButton15 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width*3, ButtonsPos_y, this.Sticker_15_Place, this,StickerIconSetter[14],StickerAssigner_set1);  
-        this.StickerButton15.scale.setTo(ButtonsScale,ButtonsScale);
-        StickerGroup_2.add(this.StickerButton15);
-        
-        this.StickerButton16 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width*3, ButtonsPos_y+this.StickerButton1.height, this.Sticker_16_Place, this,StickerIconSetter[15],StickerAssigner_set1);
-        this.StickerButton16.scale.setTo(ButtonsScale,ButtonsScale);
-        StickerGroup_2.add(this.StickerButton16);
+        this.StickerButton8 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width*3, ButtonsPos_y, this.Sticker_8_Place, this,7,StickerAssigner_set1);
+        this.StickerButton8.scale.setTo(ButtonsScale,ButtonsScale);
+        StickerGroup_2.add(this.StickerButton8);
         
 ///////////////////////////
 ////Third Sticker Group////
 ///////////////////////////
-
-        this.StickerButton17 = gameButtons.addStickerButton("0", ButtonsPos_x, ButtonsPos_y, 
-        this.Sticker_17_Place, this,StickerIconSetter[16],StickerAssigner_set1); 
-        this.StickerButton17.scale.setTo(ButtonsScale,ButtonsScale);
-        StickerGroup_3.add(this.StickerButton17);
+        
+        this.StickerButton9 = gameButtons.addStickerButton("0", ButtonsPos_x, ButtonsPos_y, this.Sticker_9_Place, this,8,StickerAssigner_set1); 
+        this.StickerButton9.scale.setTo(ButtonsScale,ButtonsScale);
+        StickerGroup_3.add(this.StickerButton9);
        
-        this.StickerButton18 = gameButtons.addStickerButton("0", ButtonsPos_x, ButtonsPos_y+this.StickerButton1.height, this.Sticker_18_Place, this,StickerIconSetter[17],StickerAssigner_set1); 
-        this.StickerButton18.scale.setTo(ButtonsScale,ButtonsScale);
-        StickerGroup_3.add(this.StickerButton18);
+        this.StickerButton10 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width, ButtonsPos_y, this.Sticker_10_Place, this,9,StickerAssigner_set1); 
+        this.StickerButton10.scale.setTo(ButtonsScale,ButtonsScale);
+        StickerGroup_3.add(this.StickerButton10);
         
-        this.StickerButton19 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width, ButtonsPos_y, this.Sticker_19_Place, this,StickerIconSetter[18],StickerAssigner_set1);  
-        this.StickerButton19.scale.setTo(ButtonsScale,ButtonsScale);
-        StickerGroup_3.add(this.StickerButton19);
+        this.StickerButton11 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width*2, ButtonsPos_y, this.Sticker_11_Place, this,10,StickerAssigner_set1);  
+        this.StickerButton11.scale.setTo(ButtonsScale,ButtonsScale);
+        StickerGroup_3.add(this.StickerButton11);
         
-        this.StickerButton20 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width, ButtonsPos_y+this.StickerButton1.height, this.Sticker_20_Place, this,StickerIconSetter[19],StickerAssigner_set1);
-        this.StickerButton20.scale.setTo(ButtonsScale,ButtonsScale);
-        StickerGroup_3.add(this.StickerButton20);
+        this.StickerButton12 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width*3, ButtonsPos_y, this.Sticker_12_Place, this,11,StickerAssigner_set1);
+        this.StickerButton12.scale.setTo(ButtonsScale,ButtonsScale);
+        StickerGroup_3.add(this.StickerButton12);
         
-        this.StickerButton21 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width*2, ButtonsPos_y, this.Sticker_21_Place, this,StickerIconSetter[20],StickerAssigner_set1); 
-        this.StickerButton21.scale.setTo(ButtonsScale,ButtonsScale);
-        StickerGroup_3.add(this.StickerButton21);
+//////////////////////////
+////Four Sticker Group////
+//////////////////////////
         
-        this.StickerButton22 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width*2, ButtonsPos_y+this.StickerButton1.height, this.Sticker_22_Place, this,StickerIconSetter[21],StickerAssigner_set1); 
-        this.StickerButton22.scale.setTo(ButtonsScale,ButtonsScale);
-        StickerGroup_3.add(this.StickerButton22);
+        this.StickerButton13 = gameButtons.addStickerButton("0", ButtonsPos_x, ButtonsPos_y, this.Sticker_13_Place, this,12,StickerAssigner_set1); 
+        this.StickerButton13.scale.setTo(ButtonsScale,ButtonsScale);
+        StickerGroup_4.add(this.StickerButton13);
         
-        this.StickerButton23 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width*3, ButtonsPos_y, this.Sticker_23_Place, this,StickerIconSetter[22],StickerAssigner_set1);  
-        this.StickerButton23.scale.setTo(ButtonsScale,ButtonsScale);
-        StickerGroup_3.add(this.StickerButton23);
+        this.StickerButton14 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width, ButtonsPos_y, this.Sticker_14_Place, this,13,StickerAssigner_set1); 
+        this.StickerButton14.scale.setTo(ButtonsScale,ButtonsScale);
+        StickerGroup_4.add(this.StickerButton14);
         
-        this.StickerButton24 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width*3, ButtonsPos_y+this.StickerButton1.height, this.Sticker_24_Place, this,StickerIconSetter[23],StickerAssigner_set1);
-        this.StickerButton24.scale.setTo(ButtonsScale,ButtonsScale);
-        StickerGroup_3.add(this.StickerButton24);
-                    
+        this.StickerButton15 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width*2, ButtonsPos_y, this.Sticker_15_Place, this,14,StickerAssigner_set1);  
+        this.StickerButton15.scale.setTo(ButtonsScale,ButtonsScale);
+        StickerGroup_4.add(this.StickerButton15);
+        
+        this.StickerButton16 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width*3, ButtonsPos_y, this.Sticker_16_Place, this,15,StickerAssigner_set1);
+        this.StickerButton16.scale.setTo(ButtonsScale,ButtonsScale);
+        StickerGroup_4.add(this.StickerButton16);
+        
+///////////////////////////
+/////Five Sticker Group/////
+///////////////////////////
 
+        this.StickerButton17 = gameButtons.addStickerButton("0", ButtonsPos_x, ButtonsPos_y,this.Sticker_17_Place, this,16,StickerAssigner_set1); 
+        this.StickerButton17.scale.setTo(ButtonsScale,ButtonsScale);
+        StickerGroup_5.add(this.StickerButton17);
+       
+        this.StickerButton18 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width, ButtonsPos_y, this.Sticker_18_Place, this,17,StickerAssigner_set1); 
+        this.StickerButton18.scale.setTo(ButtonsScale,ButtonsScale);
+        StickerGroup_5.add(this.StickerButton18);
+        
+        this.StickerButton19 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width*2, ButtonsPos_y, this.Sticker_19_Place, this,18,StickerAssigner_set1);  
+        this.StickerButton19.scale.setTo(ButtonsScale,ButtonsScale);
+        StickerGroup_5.add(this.StickerButton19);
+        
+        this.StickerButton20 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width*3, ButtonsPos_y, this.Sticker_20_Place, this,19,StickerAssigner_set1);
+        this.StickerButton20.scale.setTo(ButtonsScale,ButtonsScale);
+        StickerGroup_5.add(this.StickerButton20);
+        
+///////////////////////////
+/////Six Sticker Group/////
+///////////////////////////
+        
+        this.StickerButton21 = gameButtons.addStickerButton("0", ButtonsPos_x, ButtonsPos_y, this.Sticker_21_Place, this,20,StickerAssigner_set1); 
+        this.StickerButton21.scale.setTo(ButtonsScale,ButtonsScale);
+        StickerGroup_6.add(this.StickerButton21);
+        
+        this.StickerButton22 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width, ButtonsPos_y, this.Sticker_22_Place, this,21,StickerAssigner_set1); 
+        this.StickerButton22.scale.setTo(ButtonsScale,ButtonsScale);
+        StickerGroup_6.add(this.StickerButton22);
+        
+        this.StickerButton23 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width*2, ButtonsPos_y, this.Sticker_23_Place, this,22,StickerAssigner_set1);  
+        this.StickerButton23.scale.setTo(ButtonsScale,ButtonsScale);
+        StickerGroup_6.add(this.StickerButton23);
+        
+        this.StickerButton24 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width*3, ButtonsPos_y, this.Sticker_24_Place, this,23,StickerAssigner_set1);
+        this.StickerButton24.scale.setTo(ButtonsScale,ButtonsScale);
+        StickerGroup_6.add(this.StickerButton24);
+                
         
         Arrow_Y = game.height-this.StickerButton1.height;
         
@@ -358,10 +367,16 @@ var StateMain = {
         GroupRefArray[0] = StickerGroup_1;
         GroupRefArray[1] = StickerGroup_2;
         GroupRefArray[2] = StickerGroup_3;
+        GroupRefArray[3] = StickerGroup_4;
+        GroupRefArray[4] = StickerGroup_5;
+        GroupRefArray[5] = StickerGroup_6;
         
         GroupRefArray[0].visible = false;
         GroupRefArray[1].visible = false;
         GroupRefArray[2].visible = false;
+        GroupRefArray[3].visible = false;
+        GroupRefArray[4].visible = false;
+        GroupRefArray[5].visible = false;
         GroupRefArray[GroupRefArrayCounter].visible = true;
         
         
@@ -395,348 +410,355 @@ var StateMain = {
 ////First Sticker Group////
 ///////////////////////////
         
+        //Pinecone Body
+        this.PineconeBody = game.add.sprite(GameCenter_x, GameCenter_y+StickerDepth[0], ImageAssetArray[0]);
+        this.PineconeBody.anchor.x = 0.5;
+        this.PineconeBody.anchor.y = 0.5;
+        this.PineconeBody.scale.setTo(scaleRatio,scaleRatio);
+        this.SelectedButton = this.PineconeBody;
+        Character.add(this.PineconeBody);   
+        
         //Sticker_1_1
-        this.Sticker_1 = game.add.sprite(OGPose_X, OGPose_Y, ImageAssetArray[1]);  
+        this.Sticker_1 = game.add.sprite(OGPose_X, OGPose_Y+StickerDepth[1], ImageAssetArray[1]);  
         this.Sticker_1.alpha = 0;
-        this.Sticker_1.anchor.x = PivotPoint_X[1];
-        this.Sticker_1.anchor.y =  PivotPoint_Y[1];
+        this.Sticker_1.anchor.x = 0.5;
+        this.Sticker_1.anchor.y = 0.5;
+        this.Sticker_1.z =-1;
         this.Sticker_1.inputEnabled = true;
         this.Sticker_1.input.pixelPerfectOver = true;
-        //game.input.addMoveCallback(this.p, this.Sticker_1);
-        this.Sticker_1.events.onInputOver.add(this.Sticker_1Click, this);  
-        //this.Sticker_1.events.onInputOver.add(this.sticker_Click, {param1: this.Sticker_1, param2: 1});
+        this.Sticker_1.events.onInputOver.add(this.sticker_Click, {param1: this.Sticker_1, param2: 1});
         this.Sticker_1.scale.setTo(scaleRatio,scaleRatio);        
-        //Character.add(this.Sticker_1);  
+        Character.add(this.Sticker_1);  
             
         //Sticker_2      
-        this.Sticker_2 = game.add.sprite(OGPose_X, OGPose_Y, ImageAssetArray[2]);
+        this.Sticker_2 = game.add.sprite(OGPose_X, OGPose_Y+StickerDepth[2], ImageAssetArray[2]);
         this.Sticker_2.alpha = 0;
-        //this.Sticker_2.anchor.set(0.5);
-        this.Sticker_2.anchor.x = PivotPoint_X[2];
-        this.Sticker_2.anchor.y =  PivotPoint_Y[2];
+        this.Sticker_2.anchor.x = 0.5;
+        this.Sticker_2.anchor.y = 0.5;
         this.Sticker_2.inputEnabled = true;
         this.Sticker_2.input.pixelPerfectOver = true;
         //game.input.addMoveCallback(this.p, this.Sticker_2);
-        this.Sticker_2.events.onInputOver.add(this.Sticker_2Click, this);
+        //this.Sticker_2.events.onInputOver.add(this.Sticker_2Click, this);
+        this.Sticker_2.events.onInputOver.add(this.sticker_Click, {param1: this.Sticker_2, param2: 2});
         this.Sticker_2.scale.setTo(scaleRatio,scaleRatio);   
-        //Character.add(this.Sticker_2);
+        Character.add(this.Sticker_2);
         
         //Sticker_3
-        this.Sticker_3 = game.add.sprite(OGPose_X, OGPose_Y, ImageAssetArray[3]);
+        this.Sticker_3 = game.add.sprite(OGPose_X, OGPose_Y+StickerDepth[3], ImageAssetArray[3]);
         this.Sticker_3.alpha = 0;
-        this.Sticker_3.anchor.x = PivotPoint_X[3];
-        this.Sticker_3.anchor.y =  PivotPoint_Y[3];
+        this.Sticker_3.anchor.x = 0.5;
+        this.Sticker_3.anchor.y = 0.5;
         this.Sticker_3.inputEnabled = true;
         this.Sticker_3.input.pixelPerfectOver = true;
         //game.input.addMoveCallback(this.p, this.Sticker_3);
-        this.Sticker_3.events.onInputOver.add(this.Sticker_3Click, this);    
+        //this.Sticker_3.events.onInputOver.add(this.Sticker_3Click, this);  
+        this.Sticker_3.events.onInputOver.add(this.sticker_Click, {param1: this.Sticker_3, param2: 3});
         this.Sticker_3.scale.setTo(scaleRatio,scaleRatio); 
-        
-        //Character.add(this.Sticker_3);
+        Character.add(this.Sticker_3);
         
         //Sticker_4
-        this.Sticker_4 = game.add.sprite(OGPose_X, OGPose_Y, ImageAssetArray[4]);
+        this.Sticker_4 = game.add.sprite(OGPose_X, OGPose_Y+StickerDepth[4], ImageAssetArray[4]);
         this.Sticker_4.alpha = 0;
-        this.Sticker_4.anchor.x = PivotPoint_X[4];
-        this.Sticker_4.anchor.y =  PivotPoint_Y[4];
+        this.Sticker_4.anchor.x = 0.5;
+        this.Sticker_4.anchor.y = 0.5;
+
         this.Sticker_4.inputEnabled = true;
         this.Sticker_4.input.pixelPerfectOver = true;
         //game.input.addMoveCallback(this.p, this.Sticker_4);
-        this.Sticker_4.events.onInputOver.add(this.Sticker_4Click, this);
+        //this.Sticker_4.events.onInputOver.add(this.Sticker_4Click, this);
+        this.Sticker_4.events.onInputOver.add(this.sticker_Click, {param1: this.Sticker_4, param2: 4});
         this.Sticker_4.scale.setTo(scaleRatio,scaleRatio); 
-        //Character.add(this.Sticker_4);
+        Character.add(this.Sticker_4);
         
         //Sticker_5
-        this.Sticker_5 = game.add.sprite(OGPose_X, OGPose_Y, ImageAssetArray[5]);        
+        this.Sticker_5 = game.add.sprite(OGPose_X, OGPose_Y+StickerDepth[5], ImageAssetArray[5]);        
         this.Sticker_5.alpha = 0;
-        this.Sticker_5.anchor.x = PivotPoint_X[5];
-        this.Sticker_5.anchor.y =  PivotPoint_Y[5];
+        this.Sticker_5.anchor.x = 0.5;
+        this.Sticker_5.anchor.y = 0.5;
         this.Sticker_5.inputEnabled = true;
         this.Sticker_5.input.pixelPerfectOver = true;
         //game.input.addMoveCallback(this.p, this.Sticker_5);
-        this.Sticker_5.events.onInputOver.add(this.Sticker_5Click, this);  
+        //this.Sticker_5.events.onInputOver.add(this.Sticker_5Click, this);  
+        this.Sticker_5.events.onInputOver.add(this.sticker_Click, {param1: this.Sticker_5, param2: 5});
         this.Sticker_5.scale.setTo(scaleRatio,scaleRatio);   
-        //Character.add(this.Sticker_5);      
+        Character.add(this.Sticker_5);      
         
         //Sticker_6      
-        this.Sticker_6 = game.add.sprite(OGPose_X, OGPose_Y, ImageAssetArray[6]);
+        this.Sticker_6 = game.add.sprite(OGPose_X, OGPose_Y+StickerDepth[6], ImageAssetArray[6]);
         this.Sticker_6.alpha = 0;
-        this.Sticker_6.anchor.x = PivotPoint_X[6];
-        this.Sticker_6.anchor.y =  PivotPoint_Y[6];
+        this.Sticker_6.anchor.x = 0.5;
+        this.Sticker_6.anchor.y = 0.5;
         this.Sticker_6.inputEnabled = true;
         this.Sticker_6.input.pixelPerfectOver = true;
         //game.input.addMoveCallback(this.p, this.Sticker_6);
-        this.Sticker_6.events.onInputOver.add(this.Sticker_6Click, this);
+        //this.Sticker_6.events.onInputOver.add(this.Sticker_6Click, this);
+        this.Sticker_6.events.onInputOver.add(this.sticker_Click, {param1: this.Sticker_6, param2: 6});
         this.Sticker_6.scale.setTo(scaleRatio,scaleRatio);
-        //Character.add(this.Sticker_6);
+        Character.add(this.Sticker_6);
         
-        //Pinecone Body
-        this.PineconeBody = game.add.sprite(GameCenter_x, GameCenter_y, ImageAssetArray[0]);   
-        this.PineconeBody.anchor.x = PivotPoint_X[0];
-        this.PineconeBody.anchor.y =  PivotPoint_Y[0];
-        //this.PineconeBody.events.onInputOver.add(this.BodyClick, this.PineconeBody);   
-        this.PineconeBody.scale.setTo(scaleRatio,scaleRatio);
-        this.SelectedButton = this.PineconeBody;
-        //Character.add(this.PineconeBody);     
+  
         
         //Sticker_7
-        this.Sticker_7 = game.add.sprite(OGPose_X, OGPose_Y, ImageAssetArray[7]);
+        this.Sticker_7 = game.add.sprite(OGPose_X, OGPose_Y+StickerDepth[6], ImageAssetArray[7]);
         this.Sticker_7.alpha = 0;
-        this.Sticker_7.anchor.x = PivotPoint_X[7];
-        this.Sticker_7.anchor.y =  PivotPoint_Y[7];
+        this.Sticker_7.anchor.x = 0.5;
+        this.Sticker_7.anchor.y = 0.5;
         this.Sticker_7.inputEnabled = true;
         this.Sticker_7.input.pixelPerfectOver = true;
         //game.input.addMoveCallback(this.p, this.Sticker_7);
-        this.Sticker_7.events.onInputOver.add(this.Sticker_7Click, this);
+        //this.Sticker_7.events.onInputOver.add(this.Sticker_7Click, this);
+        this.Sticker_7.events.onInputOver.add(this.sticker_Click, {param1: this.Sticker_7, param2: 7});
         this.Sticker_7.scale.setTo(scaleRatio,scaleRatio); 
-        //Character.add(this.Sticker_7);
+        Character.add(this.Sticker_7);
         
         //Sticker_8
-        this.Sticker_8 = game.add.sprite(OGPose_X, OGPose_Y, ImageAssetArray[8]);
+        this.Sticker_8 = game.add.sprite(OGPose_X, OGPose_Y+StickerDepth[8], ImageAssetArray[8]);
         this.Sticker_8.alpha = 0;
-        this.Sticker_8.anchor.x = PivotPoint_X[8];
-        this.Sticker_8.anchor.y =  PivotPoint_Y[8];
+        this.Sticker_8.anchor.x = 0.5;
+        this.Sticker_8.anchor.y = 0.5;
         this.Sticker_8.inputEnabled = true;
         this.Sticker_8.input.pixelPerfectOver = true;
         //game.input.addMoveCallback(this.p, this.Sticker_8);
-        this.Sticker_8.events.onInputOver.add(this.Sticker_8Click, this);
+        //this.Sticker_8.events.onInputOver.add(this.Sticker_8Click, this);
+        this.Sticker_8.events.onInputOver.add(this.sticker_Click, {param1: this.Sticker_8, param2: 8});    
         this.Sticker_8.scale.setTo(scaleRatio,scaleRatio); 
-        //Character.add(this.Sticker_8);
+        Character.add(this.Sticker_8);
 ///////////////////////////
 ////Second Sticker Group///
 ///////////////////////////
         //Sticker_9
-        this.Sticker_9 = game.add.sprite(OGPose_X, OGPose_Y, ImageAssetArray[9]);
+        this.Sticker_9 = game.add.sprite(OGPose_X, OGPose_Y+StickerDepth[9], ImageAssetArray[9]);
         this.Sticker_9.alpha = 0;
-        this.Sticker_9.anchor.x = PivotPoint_X[9];
-        this.Sticker_9.anchor.y =  PivotPoint_Y[9];
+        this.Sticker_9.anchor.x = 0.5;
+        this.Sticker_9.anchor.y = 0.5;
         this.Sticker_9.inputEnabled = true;
         this.Sticker_9.input.pixelPerfectOver = true;
         //game.input.addMoveCallback(this.p, this.Sticker_7);
-        this.Sticker_9.events.onInputOver.add(this.Sticker_9Click, this);
+        //this.Sticker_9.events.onInputOver.add(this.Sticker_9Click, this);
+        this.Sticker_9.events.onInputOver.add(this.sticker_Click, {param1: this.Sticker_9, param2: 9});  
         this.Sticker_9.scale.setTo(scaleRatio,scaleRatio); 
-        //Character.add(this.Sticker_7);
+        Character.add(this.Sticker_7);
         
         //Sticker_10
-        this.Sticker_10 = game.add.sprite(OGPose_X, OGPose_Y, ImageAssetArray[10]);
+        this.Sticker_10 = game.add.sprite(OGPose_X, OGPose_Y+StickerDepth[10], ImageAssetArray[10]);
         this.Sticker_10.alpha = 0;
-        this.Sticker_10.anchor.x = PivotPoint_X[10];
-        this.Sticker_10.anchor.y =  PivotPoint_Y[10];
+        this.Sticker_10.anchor.x = 0.5;
+        this.Sticker_10.anchor.y = 0.5;
         this.Sticker_10.inputEnabled = true;
         this.Sticker_10.input.pixelPerfectOver = true;
         //game.input.addMoveCallback(this.p, this.Sticker_8);
-        this.Sticker_10.events.onInputOver.add(this.Sticker_10Click, this);
+        //this.Sticker_10.events.onInputOver.add(this.Sticker_10Click, this);
+        this.Sticker_10.events.onInputOver.add(this.sticker_Click, {param1: this.Sticker_10, param2: 10});  
         this.Sticker_10.scale.setTo(scaleRatio,scaleRatio); 
-        //Character.add(this.Sticker_8);     
+        Character.add(this.Sticker_8);     
                 
         //Sticker_11
-        this.Sticker_11 = game.add.sprite(OGPose_X, OGPose_Y, ImageAssetArray[11]);
+        this.Sticker_11 = game.add.sprite(OGPose_X, OGPose_Y+StickerDepth[11], ImageAssetArray[11]);
         this.Sticker_11.alpha = 0;
-        this.Sticker_11.anchor.x = PivotPoint_X[11];
-        this.Sticker_11.anchor.y =  PivotPoint_Y[11];
+        this.Sticker_11.anchor.x = 0.5;
+        this.Sticker_11.anchor.y = 0.5;
         this.Sticker_11.inputEnabled = true;
         this.Sticker_11.input.pixelPerfectOver = true;
         //game.input.addMoveCallback(this.p, this.Sticker_8);
-        this.Sticker_11.events.onInputOver.add(this.Sticker_11Click, this);
+        //this.Sticker_11.events.onInputOver.add(this.Sticker_11Click, this);
+        this.Sticker_11.events.onInputOver.add(this.sticker_Click, {param1: this.Sticker_11, param2: 11}); 
         this.Sticker_11.scale.setTo(scaleRatio,scaleRatio); 
-        //Character.add(this.Sticker_8);     
+        Character.add(this.Sticker_8);     
                 
         //Sticker_12
-        this.Sticker_12 = game.add.sprite(OGPose_X, OGPose_Y, ImageAssetArray[12]);
+        this.Sticker_12 = game.add.sprite(OGPose_X, OGPose_Y+StickerDepth[12], ImageAssetArray[12]);
         this.Sticker_12.alpha = 0;
-        this.Sticker_12.anchor.x = PivotPoint_X[12];
-        this.Sticker_12.anchor.y =  PivotPoint_Y[12];
+        this.Sticker_12.anchor.x = 0.5;
+        this.Sticker_12.anchor.y = 0.5;
         this.Sticker_12.inputEnabled = true;
         this.Sticker_12.input.pixelPerfectOver = true;
         //game.input.addMoveCallback(this.p, this.Sticker_8);
-        this.Sticker_12.events.onInputOver.add(this.Sticker_12Click, this);
+        //this.Sticker_12.events.onInputOver.add(this.Sticker_12Click, this);
+        //this.Sticker_12.events.onInputOver.add(this.sticker_Click, {param1: this.Sticker_12, param2: 12}); 
+        this.Sticker_12.events.onInputOver.add(this.sticker_Click, {param1: this.Sticker_12, param2: 12}); 
         this.Sticker_12.scale.setTo(scaleRatio,scaleRatio); 
-        //Character.add(this.Sticker_8);     
+        Character.add(this.Sticker_8);     
                 
         //Sticker_13
-        this.Sticker_13 = game.add.sprite(OGPose_X, OGPose_Y, ImageAssetArray[13]);
+        this.Sticker_13 = game.add.sprite(OGPose_X, OGPose_Y+StickerDepth[13], ImageAssetArray[13]);
         this.Sticker_13.alpha = 0;
-        this.Sticker_13.anchor.x = PivotPoint_X[13];
-        this.Sticker_13.anchor.y =  PivotPoint_Y[13];
+        this.Sticker_13.anchor.x = 0.5;
+        this.Sticker_13.anchor.y = 0.5;
         this.Sticker_13.inputEnabled = true;
         this.Sticker_13.input.pixelPerfectOver = true;
         //game.input.addMoveCallback(this.p, this.Sticker_8);
-        this.Sticker_13.events.onInputOver.add(this.Sticker_13Click, this);
+        //this.Sticker_13.events.onInputOver.add(this.Sticker_13Click, this);
+        this.Sticker_13.events.onInputOver.add(this.sticker_Click, {param1: this.Sticker_13, param2: 13}); 
         this.Sticker_13.scale.setTo(scaleRatio,scaleRatio); 
-        //Character.add(this.Sticker_8);     
+        Character.add(this.Sticker_8);     
                 
         //Sticker_14
-        this.Sticker_14 = game.add.sprite(OGPose_X, OGPose_Y, ImageAssetArray[14]);
+        this.Sticker_14 = game.add.sprite(OGPose_X, OGPose_Y+StickerDepth[14], ImageAssetArray[14]);
         this.Sticker_14.alpha = 0;
-        this.Sticker_14.anchor.x = PivotPoint_X[14];
-        this.Sticker_14.anchor.y =  PivotPoint_Y[14];
+        this.Sticker_14.anchor.x = 0.5;
+        this.Sticker_14.anchor.y = 0.5;
         this.Sticker_14.inputEnabled = true;
         this.Sticker_14.input.pixelPerfectOver = true;
         //game.input.addMoveCallback(this.p, this.Sticker_8);
-        this.Sticker_14.events.onInputOver.add(this.Sticker_14Click, this);
+        //this.Sticker_14.events.onInputOver.add(this.Sticker_14Click, this);
+        this.Sticker_14.events.onInputOver.add(this.sticker_Click, {param1: this.Sticker_14, param2: 14}); 
         this.Sticker_14.scale.setTo(scaleRatio,scaleRatio); 
-        //Character.add(this.Sticker_8);     
+        Character.add(this.Sticker_8);     
                 
         //Sticker_15
-        this.Sticker_15 = game.add.sprite(OGPose_X, OGPose_Y, ImageAssetArray[15]);
+        this.Sticker_15 = game.add.sprite(OGPose_X, OGPose_Y+StickerDepth[15], ImageAssetArray[15]);
         this.Sticker_15.alpha = 0;
-        this.Sticker_15.anchor.x = PivotPoint_X[15];
-        this.Sticker_15.anchor.y =  PivotPoint_Y[15];
+        this.Sticker_15.anchor.x = 0.5;
+        this.Sticker_15.anchor.y = 0.5;
         this.Sticker_15.inputEnabled = true;
         this.Sticker_15.input.pixelPerfectOver = true;
         //game.input.addMoveCallback(this.p, this.Sticker_8);
-        this.Sticker_15.events.onInputOver.add(this.Sticker_15Click, this);
+        //this.Sticker_15.events.onInputOver.add(this.Sticker_15Click, this);
+        this.Sticker_15.events.onInputOver.add(this.sticker_Click, {param1: this.Sticker_15, param2: 15}); 
         this.Sticker_15.scale.setTo(scaleRatio,scaleRatio); 
-        //Character.add(this.Sticker_8);     
+        Character.add(this.Sticker_8);     
                 
         //Sticker_16
-        this.Sticker_16 = game.add.sprite(OGPose_X, OGPose_Y, ImageAssetArray[16]);
+        this.Sticker_16 = game.add.sprite(OGPose_X, OGPose_Y+StickerDepth[16], ImageAssetArray[16]);
         this.Sticker_16.alpha = 0;
-        this.Sticker_16.anchor.x = PivotPoint_X[16];
-        this.Sticker_16.anchor.y =  PivotPoint_Y[16];
+        this.Sticker_16.anchor.x = 0.5;
+        this.Sticker_16.anchor.y = 0.5;
         this.Sticker_16.inputEnabled = true;
         this.Sticker_16.input.pixelPerfectOver = true;
         //game.input.addMoveCallback(this.p, this.Sticker_8);
-        this.Sticker_16.events.onInputOver.add(this.Sticker_16Click, this);
+        //this.Sticker_16.events.onInputOver.add(this.Sticker_16Click, this);
+        this.Sticker_16.events.onInputOver.add(this.sticker_Click, {param1: this.Sticker_16, param2: 16}); 
         this.Sticker_16.scale.setTo(scaleRatio,scaleRatio); 
-        //Character.add(this.Sticker_8);    
+        Character.add(this.Sticker_8);    
         
 ///////////////////////////
 ////Third Sticker Group////
 ///////////////////////////
         
         //Sticker_17
-        this.Sticker_17 = game.add.sprite(OGPose_X, OGPose_Y, ImageAssetArray[17]);
+        this.Sticker_17 = game.add.sprite(OGPose_X, OGPose_Y+StickerDepth[17], ImageAssetArray[17]);
         this.Sticker_17.alpha = 0;
-        this.Sticker_17.anchor.x = PivotPoint_X[17];
-        this.Sticker_17.anchor.y =  PivotPoint_Y[17];
+        this.Sticker_17.anchor.x = 0.5;
+        this.Sticker_17.anchor.y = 0.5;
         this.Sticker_17.inputEnabled = true;
         this.Sticker_17.input.pixelPerfectOver = true;
-        //game.input.addMoveCallback(this.p, this.Sticker_8);
-        this.Sticker_17.events.onInputOver.add(this.Sticker_17Click, this);
+        this.Sticker_17.events.onInputOver.add(this.sticker_Click, {param1: this.Sticker_17, param2: 17}); 
         this.Sticker_17.scale.setTo(scaleRatio,scaleRatio); 
-        //Character.add(this.Sticker_8);     
+        Character.add(this.Sticker_8);     
                 
         //Sticker_18
-        this.Sticker_18 = game.add.sprite(OGPose_X, OGPose_Y, ImageAssetArray[18]);
+        this.Sticker_18 = game.add.sprite(OGPose_X, OGPose_Y+StickerDepth[18], ImageAssetArray[18]);
         this.Sticker_18.alpha = 0;
-        this.Sticker_18.anchor.x = PivotPoint_X[18];
-        this.Sticker_18.anchor.y =  PivotPoint_Y[18];
+        this.Sticker_18.anchor.x = 0.5;
+        this.Sticker_18.anchor.y = 0.5;
         this.Sticker_18.inputEnabled = true;
         this.Sticker_18.input.pixelPerfectOver = true;
-        this.Sticker_18.events.onInputOver.add(this.Sticker_18Click, this);
+        this.Sticker_18.events.onInputOver.add(this.sticker_Click, {param1: this.Sticker_18, param2: 18}); 
         this.Sticker_18.scale.setTo(scaleRatio,scaleRatio); 
-        //Character.add(this.Sticker_8);     
+        Character.add(this.Sticker_8);     
                 
         //Sticker_19
-        this.Sticker_19 = game.add.sprite(OGPose_X, OGPose_Y, ImageAssetArray[19]);
+        this.Sticker_19 = game.add.sprite(OGPose_X, OGPose_Y+StickerDepth[19], ImageAssetArray[19]);
         this.Sticker_19.alpha = 0;
-        this.Sticker_19.anchor.x = PivotPoint_X[19];
-        this.Sticker_19.anchor.y =  PivotPoint_Y[19];
+        this.Sticker_19.anchor.x = 0.5;
+        this.Sticker_19.anchor.y = 0.5;
         this.Sticker_19.inputEnabled = true;
         this.Sticker_19.input.pixelPerfectOver = true;
-        //game.input.addMoveCallback(this.p, this.Sticker_8);
-        this.Sticker_19.events.onInputOver.add(this.Sticker_19Click, this);
+        this.Sticker_19.events.onInputOver.add(this.sticker_Click, {param1: this.Sticker_19, param2: 19});
         this.Sticker_19.scale.setTo(scaleRatio,scaleRatio); 
-        //Character.add(this.Sticker_8);     
+        Character.add(this.Sticker_8);     
                 
         //Sticker_20
-        this.Sticker_20 = game.add.sprite(OGPose_X, OGPose_Y, ImageAssetArray[20]);
+        this.Sticker_20 = game.add.sprite(OGPose_X, OGPose_Y+StickerDepth[20], ImageAssetArray[20]);
         this.Sticker_20.alpha = 0;
-        this.Sticker_20.anchor.x = PivotPoint_X[20];
-        this.Sticker_20.anchor.y =  PivotPoint_Y[20];
+        this.Sticker_20.anchor.x = 0.5;
+        this.Sticker_20.anchor.y = 0.5;
         this.Sticker_20.inputEnabled = true;
-        this.Sticker_20.input.pixelPerfectOver = true;
-        //game.input.addMoveCallback(this.p, this.Sticker_8);
-        this.Sticker_20.events.onInputOver.add(this.Sticker_20Click, this);
+        this.Sticker_20.events.onInputOver.add(this.sticker_Click, {param1: this.Sticker_20, param2: 20});
         this.Sticker_20.scale.setTo(scaleRatio,scaleRatio); 
-        //Character.add(this.Sticker_8);     
+        Character.add(this.Sticker_8);     
                 
         //Sticker_21
-        this.Sticker_21 = game.add.sprite(OGPose_X, OGPose_Y, ImageAssetArray[21]);
+        this.Sticker_21 = game.add.sprite(OGPose_X, OGPose_Y+StickerDepth[21], ImageAssetArray[21]);
         this.Sticker_21.alpha = 0;
-        this.Sticker_21.anchor.x = PivotPoint_X[21];
-        this.Sticker_21.anchor.y =  PivotPoint_Y[21];
+        this.Sticker_21.anchor.x = 0.5;
+        this.Sticker_21.anchor.y = 0.5;
         this.Sticker_21.inputEnabled = true;
         this.Sticker_21.input.pixelPerfectOver = true;
-        //game.input.addMoveCallback(this.p, this.Sticker_8);
-        this.Sticker_21.events.onInputOver.add(this.Sticker_21Click, this);
+        this.Sticker_21.events.onInputOver.add(this.sticker_Click, {param1: this.Sticker_21, param2: 21});
         this.Sticker_21.scale.setTo(scaleRatio,scaleRatio); 
-        //Character.add(this.Sticker_8);     
+        Character.add(this.Sticker_8);     
                 
         //Sticker_22
-        this.Sticker_22 = game.add.sprite(OGPose_X, OGPose_Y, ImageAssetArray[22]);
+        this.Sticker_22 = game.add.sprite(OGPose_X, OGPose_Y+StickerDepth[22], ImageAssetArray[22]);
         this.Sticker_22.alpha = 0;
-        this.Sticker_22.anchor.x = PivotPoint_X[22];
-        this.Sticker_22.anchor.y =  PivotPoint_Y[22];
+        this.Sticker_22.anchor.x = 0.5;
+        this.Sticker_22.anchor.y = 0.5;
         this.Sticker_22.inputEnabled = true;
         this.Sticker_22.input.pixelPerfectOver = true;
         //game.input.addMoveCallback(this.p, this.Sticker_8);
-        this.Sticker_22.events.onInputOver.add(this.Sticker_22Click, this);
+        //this.Sticker_22.events.onInputOver.add(this.Sticker_22Click, this);
+        this.Sticker_22.events.onInputOver.add(this.sticker_Click, {param1: this.Sticker_22, param2: 22});
         this.Sticker_22.scale.setTo(scaleRatio,scaleRatio); 
-        //Character.add(this.Sticker_8);     
+        Character.add(this.Sticker_8);     
                 
         //Sticker_23
-        this.Sticker_23 = game.add.sprite(OGPose_X, OGPose_Y, ImageAssetArray[23]);
+        this.Sticker_23 = game.add.sprite(OGPose_X, OGPose_Y+StickerDepth[23], ImageAssetArray[23]);
         this.Sticker_23.alpha = 0;
-        this.Sticker_23.anchor.x = PivotPoint_X[23];
-        this.Sticker_23.anchor.y =  PivotPoint_Y[23];
+        this.Sticker_23.anchor.x = 0.5;
+        this.Sticker_23.anchor.y = 0.5;
         this.Sticker_23.inputEnabled = true;
         this.Sticker_23.input.pixelPerfectOver = true;
         //game.input.addMoveCallback(this.p, this.Sticker_8);
-        this.Sticker_23.events.onInputOver.add(this.Sticker_23Click, this);
+        //this.Sticker_23.events.onInputOver.add(this.Sticker_23Click, this);
+        this.Sticker_23.events.onInputOver.add(this.sticker_Click, {param1: this.Sticker_23, param2: 23});
         this.Sticker_23.scale.setTo(scaleRatio,scaleRatio); 
-        //Character.add(this.Sticker_8);  
+        Character.add(this.Sticker_8);  
         
         //Sticker_24
-        this.Sticker_24 = game.add.sprite(OGPose_X, OGPose_Y, ImageAssetArray[24]);
+        this.Sticker_24 = game.add.sprite(OGPose_X, OGPose_Y+StickerDepth[24], ImageAssetArray[24]);
         this.Sticker_24.alpha = 0;
-        this.Sticker_24.anchor.x = PivotPoint_X[24];
-        this.Sticker_24.anchor.y =  PivotPoint_Y[24];
+        this.Sticker_24.anchor.x = 0.5;
+        this.Sticker_24.anchor.y = 0.5;
         this.Sticker_24.inputEnabled = true;
         this.Sticker_24.input.pixelPerfectOver = true;
         //game.input.addMoveCallback(this.p, this.Sticker_8);
-        this.Sticker_24.events.onInputOver.add(this.Sticker_24Click, this);
+        this.Sticker_24.events.onInputOver.add(this.sticker_Click, {param1: this.Sticker_24, param2: 24});
         this.Sticker_24.scale.setTo(scaleRatio,scaleRatio); 
-        //Character.add(this.Sticker_8);
+        Character.add(this.Sticker_8);
         
+        Character.sort();
+        
+        /*Animated Elements 
         /////////////////////////
         //PaintBrush Animation///
         /////////////////////////
-        var mummy = game.add.sprite(window.innerWidth, window.innerHeight, 'PaintBrush');
+        var mummy = game.add.sprite(game.width, game.height/2, 'PaintBrush');
+        mummy.scale.setTo(scaleRatio,scaleRatio); 
         mummy.inputEnabled = true;
-        mummy.anchor.x = 0;
-        mummy.anchor.y = 0;
-        //  Here we add a new animation called 'walk'
-        //  Because we didn't give any other parameters it's going to make an animation from all available frames in the 'mummy' sprite sheet
+        mummy.anchor.x = 1;
+        mummy.anchor.y = 0.5;
         var walk = mummy.animations.add('walk');
-        //PlacableMenuGroup.add(this.mummy);
-        //  And this starts the animation playing by using its key ("walk")
-        //  30 is the frame rate (30fps)
-        //  true means it will loop when it finishes
         mummy.animations.play('walk', 30, false);
         mummy.events.onInputDown.add(this.ImageClick, {param1: mummy, param2: "walk"});
         mummy.alpha = 1; 
+        
         /////////////////////////
         //////Jar Animation//////
         /////////////////////////
-        var Jar = game.add.sprite(0, window.innerHeight, 'PencilJar');
+        var Jar = game.add.sprite(0, game.height/2, 'PencilJar');
+        Jar.scale.setTo(scaleRatio,scaleRatio); 
         Jar.inputEnabled = true;
         Jar.anchor.x = 0;
-        Jar.anchor.y = 0.6;
-        //  Here we add a new animation called 'walk'
-        //  Because we didn't give any other parameters it's going to make an animation from all available frames in the 'mummy' sprite sheet
+        Jar.anchor.y = 0.5;
         var walk = Jar.animations.add('walk');
-        //PlacableMenuGroup.add(this.mummy);
-        //  And this starts the animation playing by using its key ("walk")
-        //  30 is the frame rate (30fps)
-        //  true means it will loop when it finishes
         Jar.animations.play('walk', 30, false);
         Jar.events.onInputDown.add(this.ImageClick, {param1: Jar, param2: "walk"});
         Jar.alpha = 1; 
-
+        */
+        
         //Alpha hint 
-        this.MagnifyingLenz = game.add.sprite(GameCenter_x, GameCenter_y, 'MagLenz');
+        /*this.MagnifyingLenz = game.add.sprite(GameCenter_x, GameCenter_y, 'MagLenz');
         this.MagnifyingLenz.anchor.set(0.5);   
         this.MagnifyingLenz.scale.setTo(scaleRatio,scaleRatio); 
         //	A mask is a Graphics object
@@ -746,13 +768,15 @@ var StateMain = {
         //	Here we'll draw a circle
         this.mask.drawCircle(250, 250, 250);
         //	And apply it to the Sprite
-        this.MagnifyingLenz.mask = this.mask;
+        this.MagnifyingLenz.mask = this.mask;*/
             
         /*this.test = game.add.sprite(0, 0, game.cache.getBitmapData(this.DrawnSprite));
         buttongroup.add(this.test);*/
-        
-        //game.world.bringToTop(Character);
+
+        game.world.bringToTop(Character);
         game.world.bringToTop(MagnifinylLenzGroup);
+        game.world.bringToTop(StickerGroup_6);
+        game.world.bringToTop(StickerGroup_5);       
         game.world.bringToTop(StickerGroup_4);
         game.world.bringToTop(StickerGroup_3);
         game.world.bringToTop(StickerGroup_2);
@@ -807,61 +831,30 @@ var StateMain = {
     
     RockSticker: function () {
         ImageAssetArray[0]='RockBody';
-        PivotPoint_X[0] = 0.5;
-        PivotPoint_Y[0] = 0.5;  
+ 
         StickerAssigner_set1 = "Pinecone_Stickers";
         game.state.start("StateMain");
     },
     
     PineconeSticker: function () {
         ImageAssetArray[0]='PineconeBody';
-        PivotPoint_X[0] = 0.5;
-        PivotPoint_Y[0] = 0.5; 
         StickerAssigner_set1 = "Pinecone_Stickers"; 
         game.state.start("StateMain");
     },
     
     MobileSticker: function () {
         ImageAssetArray[0]='MobileBody';
-        PivotPoint_X[0] = 0.5;
-        PivotPoint_Y[0] = 0.5;
         StickerAssigner_set1 = "Mobile_stickers";
         game.state.start("StateMain");
-        StickerIconSetter[0] = 0;
-        StickerIconSetter[1] = 1;
-        StickerIconSetter[2] = 2;
-        StickerIconSetter[3] = 3;
-        StickerIconSetter[4] = 4;
-        StickerIconSetter[5] = 5;
-        StickerIconSetter[6] = 6;
-        StickerIconSetter[7] = 7;
-        StickerIconSetter[8] = 8;
-        StickerIconSetter[9] = 9;
-        StickerIconSetter[10] = 10;
-        StickerIconSetter[11] = 11;
-        StickerIconSetter[12] = 12;
-        StickerIconSetter[13] = 13;
-        StickerIconSetter[14] = 14;
-        StickerIconSetter[15] = 15;
-        StickerIconSetter[16] = 16;
-        StickerIconSetter[17] = 17;
-        StickerIconSetter[18] = 18;
-        StickerIconSetter[19] = 19;
-        StickerIconSetter[20] = 20;  
     },
     
     SmudgeStickSticker: function () {
         ImageAssetArray[0]='SmudgeStickBody';
-        PivotPoint_X[0] = 0.5;
-        PivotPoint_Y[0] = 0.5; 
         game.state.start("StateMain");
     },
      
     StickWandSticker: function () {
         ImageAssetArray[0]='StickWandBody';
-        PivotPoint_X[0] = 0.5;
-        PivotPoint_Y[0] = 0.5; 
-        
         game.state.start("StateMain");
     },
     
@@ -879,6 +872,8 @@ var StateMain = {
 
     update: function () { 
  
+        Character.sort('y', Phaser.Group.SORT_DESCENDING );
+        
         //game.scale.setShowAll();
         //game.scale.refresh();
         
@@ -901,8 +896,6 @@ var StateMain = {
                         isClickDragging = false;
                         this.SelectedButton.x = GameCenter_x;
                         this.SelectedButton.y = GameCenter_y;
-                        Xpos_ArrayAlpha[PositionArrayIndicator]= GameCenter_x;//game.input.x-GameCenter_x;
-                        Ypos_ArrayAlpha[PositionArrayIndicator]= GameCenter_y;//game.input.y-GameCenter_y;
                     }
             }
     }, 
@@ -934,7 +927,7 @@ var StateMain = {
     Carosel_Right: function()
     {
          GroupRefArray[GroupRefArrayCounter].visible = false;
-            if(GroupRefArrayCounter<GroupRefArray.length-2)
+            if(GroupRefArrayCounter<GroupRefArray.length-1)
             {
             GroupRefArrayCounter+=1;
             }
@@ -956,380 +949,17 @@ var StateMain = {
         PositionArrayIndicator = this.param2;   
     },
     
-    Sticker_1Click: function () {
-        
-        if(isAddingPaint == true)
-        {
-        //this.Sticker_1.tint = SelectedColor;
-        //testArrayColor[1] = SelectedColor;
-        }
-            else if (isMovingSticker == false)
-            {
-            //isMovingSticker = true;
-            isClickDragging = true;
-            this.SelectedButton = this.Sticker_1;
-            PositionArrayIndicator = 1;
-            }
-    },
+   
     
-    Sticker_2Click: function () {
-        
-        if(isAddingPaint == true)
-        {
-        //this.Sticker_2.tint = SelectedColor;
-        //testArrayColor[2] = SelectedColor;
-        }
-            else if (isMovingSticker == false)
-            {
-            //isMovingSticker = true;
-            isClickDragging = true;
-            this.SelectedButton = this.Sticker_2;
-            PositionArrayIndicator = 2;
-            }
-    },
-    
-    Sticker_3Click: function () {
-        if(isAddingPaint == true)
-        {
-        //this.Sticker_3.tint = SelectedColor;
-        //testArrayColor[3] = SelectedColor;
-        }
-            else if (isMovingSticker == false)
-            {
-            //isMovingSticker = true;
-            isClickDragging = true;
-            this.SelectedButton = this.Sticker_3;
-            PositionArrayIndicator = 3;
-            }
-    },
-    
-    Sticker_4Click: function () {
-        if(isAddingPaint == true)
-        {
-        //this.Sticker_4.tint = SelectedColor;
-        //testArrayColor[4] = SelectedColor;
-        }
-            else if (isMovingSticker == false)
-            {
-            //isMovingSticker = true;
-            isClickDragging = true;
-            this.SelectedButton = this.Sticker_4;
-            PositionArrayIndicator = 4;
-            }
-    },
-    
-    Sticker_5Click: function () {
-        if(isAddingPaint == true)
-        {
-        //this.Sticker_5.tint = SelectedColor;
-        //testArrayColor[5] = SelectedColor;
-        }
-            else if (isMovingSticker == false)
-            {
-            //isMovingSticker = true;
-            isClickDragging = true;
-            this.SelectedButton = this.Sticker_5;
-            PositionArrayIndicator = 5;
-            }
-    },
-    
-    Sticker_6Click: function () {
-        if(isAddingPaint == true)
-        {
-        //this.Sticker_6.tint = SelectedColor;
-        //testArrayColor[6] = SelectedColor;
-        }
-            else if (isMovingSticker == false)
-            {
-            //isMovingSticker = true;
-            isClickDragging = true;
-            this.SelectedButton = this.Sticker_6;
-            PositionArrayIndicator = 6;
-            }
-    },
-             
-    Sticker_7Click: function () {
-        if(isAddingPaint == true)
-        {
-        //this.Sticker_7.tint = SelectedColor;
-        //testArrayColor[7] = SelectedColor;
-        }
-            else if (isMovingSticker == false)
-            {
-            //isMovingSticker = true;
-            isClickDragging = true;
-            this.SelectedButton = this.Sticker_7;
-            PositionArrayIndicator = 7;
-            }
-        
-    },
-    
-   Sticker_8Click: function () {
-        if(isClickDragging == false)
-        {
-        //his.Sticker_8.tint = SelectedColor;
-        ///testArrayColor[8] = SelectedColor;
-        }
-            else if (isMovingSticker == false)
-            {
-            //isMovingSticker = true;
-            isClickDragging = true;
-            this.SelectedButton = this.Sticker_8;
-            PositionArrayIndicator = 8;
-            }
-    }, 
-//////////////////////////////////
-///Second Sticker Button Group////
-//////////////////////////////////
-    
-    Sticker_9Click: function () {
-        
-        if(isAddingPaint == true)
-        {
-        //this.Sticker_1.tint = SelectedColor;
-        //testArrayColor[1] = SelectedColor;
-        }
-            else if (isMovingSticker == false)
-            {
-            //isMovingSticker = true;
-            isClickDragging = true;
-            this.SelectedButton = this.Sticker_9;
-            PositionArrayIndicator = 9;
-            }
-    },
-    
-    Sticker_10Click: function () {
-        
-        if(isAddingPaint == true)
-        {
-        //this.Sticker_2.tint = SelectedColor;
-        //testArrayColor[2] = SelectedColor;
-        }
-            else if (isMovingSticker == false)
-            {
-            //isMovingSticker = true;
-            isClickDragging = true;
-            this.SelectedButton = this.Sticker_10;
-            PositionArrayIndicator = 10;
-            }
-    },
-    
-    Sticker_11Click: function () {
-        if(isAddingPaint == true)
-        {
-        //this.Sticker_3.tint = SelectedColor;
-        //testArrayColor[3] = SelectedColor;
-        }
-            else if (isMovingSticker == false)
-            {
-            //isMovingSticker = true;
-            isClickDragging = true;
-            this.SelectedButton = this.Sticker_11;
-            PositionArrayIndicator = 11;
-            }
-    },
-    
-    Sticker_12Click: function () {
-        if(isAddingPaint == true)
-        {
-        //this.Sticker_4.tint = SelectedColor;
-        ///testArrayColor[4] = SelectedColor;
-        }
-            else if (isMovingSticker == false)
-            {
-            //isMovingSticker = true;
-            isClickDragging = true;
-            this.SelectedButton = this.Sticker_12;
-            PositionArrayIndicator = 12;
-            }
-    },
-    
-    Sticker_13Click: function () {
-        if(isAddingPaint == true)
-        {
-        //this.Sticker_5.tint = SelectedColor;
-        //testArrayColor[5] = SelectedColor;
-        }
-            else if (isMovingSticker == false)
-            {
-            //isMovingSticker = true;
-            isClickDragging = true;
-            this.SelectedButton = this.Sticker_13;
-            PositionArrayIndicator = 13;
-            }
-    },
-    
-    Sticker_14Click: function () {
-        if(isAddingPaint == true)
-        {
-        //this.Sticker_6.tint = SelectedColor;
-        //testArrayColor[6] = SelectedColor;
-        }
-            else if (isMovingSticker == false)
-            {
-            //isMovingSticker = true;
-            isClickDragging = true;
-            this.SelectedButton = this.Sticker_14;
-            PositionArrayIndicator = 14;
-            }
-    },
-             
-    Sticker_15Click: function () {
-        if(isAddingPaint == true)
-        {
-        //this.Sticker_7.tint = SelectedColor;
-        //testArrayColor[7] = SelectedColor;
-        }
-            else if (isMovingSticker == false)
-            {
-            //isMovingSticker = true;
-            isClickDragging = true;
-            this.SelectedButton = this.Sticker_15;
-            PositionArrayIndicator = 15;
-            }
-        
-    },
-    
-   Sticker_16Click: function () {
-        if(isClickDragging == false)
-        {
-        //this.Sticker_8.tint = SelectedColor;
-        //testArrayColor[8] = SelectedColor;
-        }
-            else if (isMovingSticker == false)
-            {
-            //isMovingSticker = true;
-            isClickDragging = true;
-            this.SelectedButton = this.Sticker_16;
-            PositionArrayIndicator = 16;
-            }
-    }, 
-//////////////////////////////////
-////Third Sticker Button Group////
-//////////////////////////////////
-    
-    Sticker_17Click: function () {
-        
-        if(isAddingPaint == true)
-        {
-        //this.Sticker_1.tint = SelectedColor;
-        //testArrayColor[1] = SelectedColor;
-        }
-            else if (isMovingSticker == false)
-            {
-            //isMovingSticker = true;
-            isClickDragging = true;
-            this.SelectedButton = this.Sticker_17;
-            PositionArrayIndicator = 17;
-            }
-    },
-    
-    Sticker_18Click: function () {
-        
-        if(isAddingPaint == true)
-        {
-        //this.Sticker_2.tint = SelectedColor;
-        //testArrayColor[2] = SelectedColor;
-        }
-            else if (isMovingSticker == false)
-            {
-            //isMovingSticker = true;
-            isClickDragging = true;
-            this.SelectedButton = this.Sticker_18;
-            PositionArrayIndicator = 18;
-            }
-    },
-    
-    Sticker_19Click: function () {
-        if(isAddingPaint == true)
-        {
-        //this.Sticker_3.tint = SelectedColor;
-        //testArrayColor[3] = SelectedColor;
-        }
-            else if (isMovingSticker == false)
-            {
-            //isMovingSticker = true;
-            isClickDragging = true;
-            this.SelectedButton = this.Sticker_19;
-            PositionArrayIndicator = 19;
-            }
-    },
-    
-    Sticker_20Click: function () {
-        if(isAddingPaint == true)
-        {
-        //this.Sticker_4.tint = SelectedColor;
-        //testArrayColor[4] = SelectedColor;
-        }
-            else if (isMovingSticker == false)
-            {
-            //isMovingSticker = true;
-            isClickDragging = true;
-            this.SelectedButton = this.Sticker_20;
-            PositionArrayIndicator = 20;
-            }
-    },
-    
-    Sticker_21Click: function () {
-        if(isAddingPaint == true)
-        {
-        //this.Sticker_5.tint = SelectedColor;
-        //testArrayColor[5] = SelectedColor;
-        }
-            else if (isMovingSticker == false)
-            {
-            //isMovingSticker = true;
-            isClickDragging = true;
-            this.SelectedButton = this.Sticker_21;
-            PositionArrayIndicator = 21;
-            }
-    },
-    
-    Sticker_22Click: function () {
-        if(isAddingPaint == true)
-        {
-       //this.Sticker_6.tint = SelectedColor;
-        //testArrayColor[6] = SelectedColor;
-        }
-            else if (isMovingSticker == false)
-            {
-            //isMovingSticker = true;
-            isClickDragging = true;
-            this.SelectedButton = this.Sticker_22;
-            PositionArrayIndicator = 22;
-            }
-    },
-             
-    Sticker_23Click: function () {
-        if(isAddingPaint == true)
-        {
-        //this.Sticker_7.tint = SelectedColor;
-        //testArrayColor[7] = SelectedColor;
-        }
-            else if (isMovingSticker == false)
-            {
-            //isMovingSticker = true;
-            isClickDragging = true;
-            this.SelectedButton = this.Sticker_23;
-            PositionArrayIndicator = 23;
-            }
-        
-    },
-    
-   Sticker_24Click: function () {
-        if(isClickDragging == false)
-        {
-        //this.Sticker_8.tint = SelectedColor;
-        //testArrayColor[8] = SelectedColor;
-        }
-            else if (isMovingSticker == false)
-            {
-            //isMovingSticker = true;
-            isClickDragging = true;
-            this.SelectedButton = this.Sticker_24;
-            PositionArrayIndicator = 24;
-            }
-    }, 
+    Sticker_Place: function () {    
+    isClickDragging = true;
+    this.SelectedButton = this.param1;
+    this.SelectedButton.alpha = 1; 
+    testArrayAlpha[this.param2] = 1;
+    this.param3.alpha = 0;
+    this.param4.alpha = 0;  
+    this.param5.alpha = 0;
+    },  
     
 //////////////////////////////////
 ////First Sticker Button Group////
@@ -1338,7 +968,9 @@ var StateMain = {
     isClickDragging = true;
     this.SelectedButton = this.Sticker_1;
     this.Sticker_1.alpha = 1;  
-    this.Sticker_2.alpha = 0; 
+    this.Sticker_2.alpha = 0;
+    this.Sticker_3.alpha = 0; 
+    this.Sticker_4.alpha = 0; 
     PositionArrayIndicator = 1;
     testArrayAlpha[1] = 1;
     },  
@@ -1346,8 +978,10 @@ var StateMain = {
     Sticker_2_Place: function () {
     isClickDragging = true;
     this.SelectedButton = this.Sticker_2;
+    this.Sticker_1.alpha = 0; 
     this.Sticker_2.alpha = 1;
-    this.Sticker_1.alpha = 0;  
+    this.Sticker_3.alpha = 0; 
+    this.Sticker_4.alpha = 0; 
     PositionArrayIndicator = 2;
     testArrayAlpha[2] = 1;
     }, 
@@ -1355,6 +989,8 @@ var StateMain = {
     Sticker_3_Place: function () {
     isClickDragging = true;
     this.SelectedButton = this.Sticker_3;
+    this.Sticker_1.alpha = 0; 
+    this.Sticker_2.alpha = 0; 
     this.Sticker_3.alpha = 1;
     this.Sticker_4.alpha = 0;      
     PositionArrayIndicator = 3;
@@ -1364,17 +1000,25 @@ var StateMain = {
     Sticker_4_Place: function () {
     isClickDragging = true;
     this.SelectedButton = this.Sticker_4;
-    this.Sticker_4.alpha = 1;  
+    this.Sticker_1.alpha = 0; 
+    this.Sticker_2.alpha = 0;
     this.Sticker_3.alpha = 0;
+    this.Sticker_4.alpha = 1; 
     PositionArrayIndicator = 4;
     testArrayAlpha[4] = 1;
     }, 
+    
+///////////////////////////
+///Second Sticker Group////
+///////////////////////////
     
     Sticker_5_Place: function () {
     isClickDragging = true;
     this.SelectedButton = this.Sticker_5;
     this.Sticker_5.alpha = 1;  
-    this.Sticker_6.alpha = 0;  
+    this.Sticker_6.alpha = 0;
+    this.Sticker_7.alpha = 0;
+    this.Sticker_8.alpha = 0;
     PositionArrayIndicator = 5;
     testArrayAlpha[5] = 1;
     }, 
@@ -1382,8 +1026,10 @@ var StateMain = {
     Sticker_6_Place: function () {
     isClickDragging = true;
     this.SelectedButton = this.Sticker_6;
-    this.Sticker_6.alpha = 1; 
     this.Sticker_5.alpha = 0;
+    this.Sticker_6.alpha = 1;
+    this.Sticker_7.alpha = 0;
+    this.Sticker_8.alpha = 0;
     PositionArrayIndicator = 6;
     testArrayAlpha[6] = 1;
     }, 
@@ -1391,6 +1037,8 @@ var StateMain = {
     Sticker_7_Place: function () {
     isClickDragging = true;
     this.SelectedButton = this.Sticker_7;
+    this.Sticker_5.alpha = 0;
+    this.Sticker_6.alpha = 0;
     this.Sticker_7.alpha = 1;  
     this.Sticker_8.alpha = 0; 
     PositionArrayIndicator = 7;
@@ -1400,19 +1048,25 @@ var StateMain = {
     Sticker_8_Place: function () {
     isClickDragging = true;
     this.SelectedButton = this.Sticker_8;
+    this.Sticker_5.alpha = 0;
+    this.Sticker_6.alpha = 0;
+    this.Sticker_7.alpha = 0;
     this.Sticker_8.alpha = 1;  
-    this.Sticker_7.alpha = 0; 
     PositionArrayIndicator = 8;
     testArrayAlpha[8] = 1;
     }, 
+
 ///////////////////////////
-///Second Sticker Group////
+////Third Sticker Group////
 ///////////////////////////
+    
     Sticker_9_Place: function () {    
     isClickDragging = true;
     this.SelectedButton = this.Sticker_9;
     this.Sticker_9.alpha = 1;  
     this.Sticker_10.alpha = 0; 
+    this.Sticker_11.alpha = 0;
+    this.Sticker_12.alpha = 0;
     //this.Sticker_2.alpha = 0; 
     PositionArrayIndicator = 9;
     testArrayAlpha[9] = 1;
@@ -1421,9 +1075,10 @@ var StateMain = {
     Sticker_10_Place: function () {
     isClickDragging = true;
     this.SelectedButton = this.Sticker_10;
-    this.Sticker_10.alpha = 1;
     this.Sticker_9.alpha = 0;  
-    //this.Sticker_1.alpha = 0;  
+    this.Sticker_10.alpha = 1;
+    this.Sticker_11.alpha = 0;
+    this.Sticker_12.alpha = 0; 
     PositionArrayIndicator = 10;
     testArrayAlpha[10] = 1;
     }, 
@@ -1431,12 +1086,10 @@ var StateMain = {
     Sticker_11_Place: function () {
     isClickDragging = true;
     this.SelectedButton = this.Sticker_11;
+    this.Sticker_9.alpha = 0;  
+    this.Sticker_10.alpha = 0;
     this.Sticker_11.alpha = 1;
-    this.Sticker_12.alpha = 0;
-    this.Sticker_13.alpha = 0;
-    this.Sticker_14.alpha = 0;
-    this.Sticker_15.alpha = 0;       
-    //this.Sticker_4.alpha = 0;      
+    this.Sticker_12.alpha = 0;      
     PositionArrayIndicator = 11;
     testArrayAlpha[11] = 1;
     },   
@@ -1444,23 +1097,26 @@ var StateMain = {
     Sticker_12_Place: function () {
     isClickDragging = true;
     this.SelectedButton = this.Sticker_12;
+    this.Sticker_9.alpha = 0;  
+    this.Sticker_10.alpha = 0;
     this.Sticker_11.alpha = 0;
-    this.Sticker_12.alpha = 1;
-    this.Sticker_13.alpha = 0;
-    this.Sticker_14.alpha = 0;
-    this.Sticker_15.alpha = 0;     
+    this.Sticker_12.alpha = 1;    
     PositionArrayIndicator = 12;
     testArrayAlpha[12] = 1;
     }, 
     
+    
+///////////////////////////
+////Fourth Sticker Group///
+///////////////////////////   
+    
     Sticker_13_Place: function () {
     isClickDragging = true;
     this.SelectedButton = this.Sticker_13;
-    this.Sticker_11.alpha = 0;
-    this.Sticker_12.alpha = 0;
     this.Sticker_13.alpha = 1;
     this.Sticker_14.alpha = 0;
-    this.Sticker_15.alpha = 0;  
+    this.Sticker_15.alpha = 0;
+    this.Sticker_16.alpha = 0; 
     PositionArrayIndicator = 13;
     testArrayAlpha[13] = 1;
     }, 
@@ -1468,11 +1124,10 @@ var StateMain = {
     Sticker_14_Place: function () {
     isClickDragging = true;
     this.SelectedButton = this.Sticker_14;
-    this.Sticker_11.alpha = 0;
-    this.Sticker_12.alpha = 0;
     this.Sticker_13.alpha = 0;
     this.Sticker_14.alpha = 1;
-    this.Sticker_15.alpha = 0; 
+    this.Sticker_15.alpha = 0;
+    this.Sticker_16.alpha = 0; 
     PositionArrayIndicator = 14;
     testArrayAlpha[14] = 1;
     }, 
@@ -1480,11 +1135,10 @@ var StateMain = {
     Sticker_15_Place: function () {
     isClickDragging = true;
     this.SelectedButton = this.Sticker_15;
-    this.Sticker_11.alpha = 0;
-    this.Sticker_12.alpha = 0;
     this.Sticker_13.alpha = 0;
     this.Sticker_14.alpha = 0;
-    this.Sticker_15.alpha = 1; 
+    this.Sticker_15.alpha = 2;
+    this.Sticker_16.alpha = 0; 
     PositionArrayIndicator = 15;
     testArrayAlpha[15] = 1;
     }, 
@@ -1492,18 +1146,25 @@ var StateMain = {
     Sticker_16_Place: function () {
     isClickDragging = true;
     this.SelectedButton = this.Sticker_16; 
+    this.Sticker_13.alpha = 0;
+    this.Sticker_14.alpha = 0;
+    this.Sticker_15.alpha = 0;
     this.Sticker_16.alpha = 1; 
     PositionArrayIndicator = 16;
     testArrayAlpha[16] = 1;
     }, 
+
 ///////////////////////////
-////Third Sticker Group////
-///////////////////////////
+////Fifth Sticker Group///
+///////////////////////////  
+    
     Sticker_17_Place: function () {    
     isClickDragging = true;
     this.SelectedButton = this.Sticker_17;
     this.Sticker_17.alpha = 1;  
-    this.Sticker_16.alpha = 0;  
+    this.Sticker_18.alpha = 0;  
+    this.Sticker_19.alpha = 0; 
+    this.Sticker_20.alpha = 0;  
     PositionArrayIndicator = 17;
     testArrayAlpha[17] = 1;
     },  
@@ -1511,8 +1172,10 @@ var StateMain = {
     Sticker_18_Place: function () {
     isClickDragging = true;
     this.SelectedButton = this.Sticker_18;
-    this.Sticker_18.alpha = 1; 
+    this.Sticker_17.alpha = 0;  
+    this.Sticker_18.alpha = 1;  
     this.Sticker_19.alpha = 0; 
+    this.Sticker_20.alpha = 0;  
     PositionArrayIndicator = 18;
     testArrayAlpha[18] = 1;
     }, 
@@ -1520,8 +1183,10 @@ var StateMain = {
     Sticker_19_Place: function () {
     isClickDragging = true;
     this.SelectedButton = this.Sticker_19;
-    this.Sticker_18.alpha = 0;
-    this.Sticker_19.alpha = 1;     
+    this.Sticker_17.alpha = 0;  
+    this.Sticker_18.alpha = 0;  
+    this.Sticker_19.alpha = 1; 
+    this.Sticker_20.alpha = 0;     
     PositionArrayIndicator = 19;
     testArrayAlpha[19] = 1;
     },   
@@ -1529,19 +1194,26 @@ var StateMain = {
     Sticker_20_Place: function () {
     isClickDragging = true;
     this.SelectedButton = this.Sticker_20;
-    this.Sticker_20.alpha = 1;    
-    this.Sticker_21.alpha = 0; 
-    this.Sticker_22.alpha = 0; 
+    this.Sticker_17.alpha = 0;  
+    this.Sticker_18.alpha = 0;  
+    this.Sticker_19.alpha = 0; 
+    this.Sticker_20.alpha = 1; 
     PositionArrayIndicator = 20;
     testArrayAlpha[20] = 1;
     }, 
     
+    
+///////////////////////////
+////Six Sticker Group////
+///////////////////////////
+    
     Sticker_21_Place: function () {
     isClickDragging = true;
     this.SelectedButton = this.Sticker_21;
-    this.Sticker_20.alpha = 0;    
-    this.Sticker_21.alpha = 1;
-    this.Sticker_22.alpha = 0; 
+    this.Sticker_21.alpha = 1;    
+    this.Sticker_22.alpha = 0;
+    this.Sticker_23.alpha = 0; 
+    this.Sticker_24.alpha = 0;
     PositionArrayIndicator = 21;
     testArrayAlpha[21] = 1;
     }, 
@@ -1549,9 +1221,10 @@ var StateMain = {
     Sticker_22_Place: function () {
     isClickDragging = true;
     this.SelectedButton = this.Sticker_22;
-    this.Sticker_20.alpha = 0;    
-    this.Sticker_21.alpha = 0;
-    this.Sticker_22.alpha = 1; 
+    this.Sticker_21.alpha = 0;    
+    this.Sticker_22.alpha = 1;
+    this.Sticker_23.alpha = 0; 
+    this.Sticker_24.alpha = 0;
     PositionArrayIndicator = 22;
     testArrayAlpha[22] = 1;
     }, 
@@ -1559,7 +1232,10 @@ var StateMain = {
     Sticker_23_Place: function () {
     isClickDragging = true;
     this.SelectedButton = this.Sticker_23;
+    this.Sticker_21.alpha = 0;    
+    this.Sticker_22.alpha = 0;
     this.Sticker_23.alpha = 1; 
+    this.Sticker_24.alpha = 0;
     PositionArrayIndicator = 23;
     testArrayAlpha[23] = 1;
     }, 
@@ -1567,6 +1243,9 @@ var StateMain = {
     Sticker_24_Place: function () {
     isClickDragging = true;
     this.SelectedButton = this.Sticker_24;
+    this.Sticker_21.alpha = 0;    
+    this.Sticker_22.alpha = 0;
+    this.Sticker_23.alpha = 0; 
     this.Sticker_24.alpha = 1;
     PositionArrayIndicator = 24;
     testArrayAlpha[24] = 1;

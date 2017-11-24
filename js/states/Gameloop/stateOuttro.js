@@ -18,12 +18,20 @@ var StateOuttro = {
         /*var titleText = game.add.text(game.world.centerX, game.world.centerY - 100, "GAME TITLE");
         titleText.fill = "#ffffff";
         titleText.anchor.set(0.5, 0.5);*/
-        this.btnStart = gameButtons.addButton("skip", game.world.centerX, 600, this.startGame, this);
-        this.btnStart.anchor.set(0.5, 0.5)
+
+        
         video1 = game.add.video('Extro');
         video1.play(true); 
-        video1.addToWorld(game.world.centerX, game.world.centerY, 0.5, 0.5, 0.5, 0.5); 
+        video1.addToWorld(game.width/2, game.height/2, 0.5, 0.5, 1, 1); 
         
+        this.btnStart = gameButtons.addButton("skip",game.width/2, game.height/2+video1.height, this.startGame, this);
+        this.btnStart.anchor.set(0.5, 0.5);
+        this.btnStart.y = game.height-this.btnStart.height;
+        
+        if(this.game.device.desktop == false){ 
+        this.Play = gameButtons.addButton("play", game.width/2, game.height/2, this.StartVideoMobile, this);
+        this.Play.anchor.set(0.5, 0.5);
+        }
         
     },
     
@@ -32,6 +40,10 @@ var StateOuttro = {
         game.state.start("StateDirectory");
         //
     }, 
+    
+    StartVideoMobile: function () {   
+    this.Play.alpha = 0;      
+    },
     
     update: function () {
 

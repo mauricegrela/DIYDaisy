@@ -34,38 +34,10 @@ var GroupRefArray = //Images
     0,
     0,
     0,  
+    0,
+    0,  
     0
     ];
-//This array is used to move the sitcker creation around?
- var PlacableArray = 
-        [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,        
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        ];
 
 //This array sets which stickers can be placed in the level
 var ImageAssetArray = //Images
@@ -97,160 +69,10 @@ var ImageAssetArray = //Images
         '24',
         '25'             
         ];
-//PivotPoint x of each sprite
-var PivotPoint_X =
-        [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,        
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        ];
-//PivotPoint y of each sprite
-var PivotPoint_Y =
-        [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,        
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        ];
-//Colors 
-    var testArrayColor = [
-        //Directory,Tint,Transparancy
-         0xFFFFFF,//
-         0xFFFFFF,//
-         0xFFFFFF,//
-         0xFFFFFF,//
-         0xFFFFFF,//
-         0xFFFFFF,//
-         0xFFFFFF,//
-         0xFFFFFF,//
-         0xFFFFFF,//
-         0xFFFFFF,//
-         0xFFFFFF,//
-         0xFFFFFF,//
-         0xFFFFFF,//
-         0xFFFFFF,//
-         0xFFFFFF,//
-         0xFFFFFF,//
-         0xFFFFFF,//
-         0xFFFFFF,//
-         0xFFFFFF,//
-         0xFFFFFF,//
-         0xFFFFFF,//
-         0xFFFFFF,//
-         0xFFFFFF,//
-         0xFFFFFF,//
-         0xFFFFFF,//
-         0xFFFFFF,//
-        ];
-//tracks which arrays are on and off 
-    var testArrayAlpha = [
+
+var testArrayAlpha = [
         //Directory,Tint,Transparancy
         1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,        
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        ];
-
-var PositionArrayIndicator = 0;
-//XPosition
-    var Xpos_ArrayAlpha = [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,        
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        ];
-//YPosition
-    var Ypos_ArrayAlpha = [
-        0,
         0,
         0,
         0,
@@ -278,33 +100,33 @@ var PositionArrayIndicator = 0;
         0,
         ];
 //These stickers will dictate the order inwhich stickers will be shown 
-    var StickerIconSetter = [
-        3,
+    var StickerDepth = [
+        2,
+        4,
+        4,
+        4,
         4,
         5,
+        5,
+        5,
+        5,
+        6,        
         6,
-        11,
-        26,
-        9,
-        10,
-        12,        
-        13,
-        18,
-        19,
-        20,
-        21,
-        22,
-        16,
-        17,
-        15,
-        14,
-        7,
-        8,
-        25,
-        0,
+        6,
+        6,
         1,
+        1,
+        1,
+        1,
+        3,
+        3,
+        3,
+        3,
         0,
         0,
+        0,
+        0,
+
         ];
 
 //portrait or landscape
