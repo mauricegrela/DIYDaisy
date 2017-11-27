@@ -16,7 +16,7 @@ var StateLoad = {
 /////Mobile/////
 ////////////////    
         game.load.image('MobileBody', 'images/Mobile/MobileBody.png');
-        game.load.spritesheet("Mobile_stickers", "images/ui/Mobile_stickers.png", 280, 200, 28);
+        game.load.spritesheet("Mobile_stickers", "images/ui/Mobile_stickers.png", 365, 250, 24);
         
 ////////////////
 ////Pinecones////
@@ -70,7 +70,7 @@ var StateLoad = {
         game.load.image('RockFeet_2', 'images/Rock/RockFeet_2.png');         
         game.load.image('RockWings_1', 'images/Rock/RockWings_1.png'); 
         game.load.image('RockWings_2', 'images/Rock/RockWings_2.png');  
-        game.load.spritesheet("Rock_Stickers_1", "images/ui/Rock_stickers.png", 140, 100, 8);
+        game.load.spritesheet("Rock_Stickers_1", "images/ui/Rock_stickers.png", 365, 250, 24);
 
         
                 //Object Tab
@@ -146,8 +146,6 @@ var StateLoad = {
 ///////////////////////////
 ////First Sticker Group////
 ///////////////////////////
-        
-        
         ImageAssetArray[1]='PineconeEyes_1';
         ImageAssetArray[2]='PineconeEyes_2'; 
         ImageAssetArray[3]='PineconeEyes_3';
