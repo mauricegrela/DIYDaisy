@@ -505,19 +505,147 @@ var StateMain = {
     
     RockSticker: function () {
         ImageAssetArray[0]='RockBody';
- 
+///////////////////////////
+////First Sticker Group////
+///////////////////////////
+        ImageAssetArray[1]='RockBase_1';
+        ImageAssetArray[2]='RockBase_2'; 
+        ImageAssetArray[3]='RockBase_3';
+        ImageAssetArray[4]='RockBase_4';
+///////////////////////////
+////Second Sticker Group///
+///////////////////////////
+        ImageAssetArray[5]='RockFace_1';
+        ImageAssetArray[6]='RockFace_2';
+        ImageAssetArray[7]='RockFace_3';
+        ImageAssetArray[8]='RockFace_4';
+///////////////////////////
+////Third Sticker Group////
+///////////////////////////
+        ImageAssetArray[9]='RockHeadgear_1';
+        ImageAssetArray[10]='RockHeadgear_2';
+        ImageAssetArray[11]='RockHeadgear_3';
+        ImageAssetArray[12]='RockHeadgear_4';
+///////////////////////////
+////Fourth Sticker Group///
+///////////////////////////
+        ImageAssetArray[13]='RockWings_1';
+        ImageAssetArray[14]='RockWings_2';
+        ImageAssetArray[15]='RockWings_3';  
+        ImageAssetArray[16]='RockWings_4';
+///////////////////////////
+////Fifth Sticker Group////
+///////////////////////////
+        ImageAssetArray[17]='RockFeet_1';
+        ImageAssetArray[18]='RockFeet_2';
+        ImageAssetArray[19]='RockFeet_3';
+        ImageAssetArray[20]='RockFeet_4';
+///////////////////////////
+////Sixth Sticker Group////
+///////////////////////////
+        ImageAssetArray[21]='RockClothing_1';
+        ImageAssetArray[22]='RockClothing_2';
+        ImageAssetArray[23]='RockClothing_3';
+        ImageAssetArray[24]='RockClothing_4';
+        
         StickerAssigner_set1 = "Rock_Stickers_1";
         game.state.start("StateMain");
     },
     
     PineconeSticker: function () {
         ImageAssetArray[0]='PineconeBody';
+///////////////////////////
+////First Sticker Group////
+///////////////////////////
+        ImageAssetArray[1]='PineconeEyes_1';
+        ImageAssetArray[2]='PineconeEyes_2'; 
+        ImageAssetArray[3]='PineconeEyes_3';
+        ImageAssetArray[4]='PineconeEyes_4';
+///////////////////////////
+////Second Sticker Group///
+///////////////////////////
+        ImageAssetArray[5]='PineconeGlasses_1';
+        ImageAssetArray[6]='PineconeGlasses_2';
+        ImageAssetArray[7]='PineconeGlasses_3';
+        ImageAssetArray[8]='PineconeGlasses_4';
+///////////////////////////
+////Third Sticker Group////
+///////////////////////////
+        ImageAssetArray[9]='PineconeHeadgear_1';
+        ImageAssetArray[10]='PineconeHeadgear_2';
+        ImageAssetArray[11]='PineconeHeadgear_3';
+        ImageAssetArray[12]='PineconeHeadgear_4';
+///////////////////////////
+////Fourth Sticker Group///
+///////////////////////////
+        ImageAssetArray[13]='PineconeWings_1';
+        ImageAssetArray[14]='PineconeWings_2';
+        ImageAssetArray[15]='PineconeWings_3';  
+        ImageAssetArray[16]='PineconeWings_4';
+///////////////////////////
+////Fifth Sticker Group////
+///////////////////////////
+        ImageAssetArray[17]='PineconeClothing_1';
+        ImageAssetArray[18]='PineconeClothing_2';
+        ImageAssetArray[19]='PineconeClothing_3';
+        ImageAssetArray[20]='PineconeClothing_4';
+///////////////////////////
+////Sixth Sticker Group////
+///////////////////////////
+        ImageAssetArray[21]='PineconeFeet_1';
+        ImageAssetArray[22]='PineconeFeet_2';
+        ImageAssetArray[23]='PineconeFeet_3';
+        ImageAssetArray[24]='PineconeFeet_4';
+       
         StickerAssigner_set1 = "Pinecone_Stickers"; 
         game.state.start("StateMain");
     },
     
     MobileSticker: function () {
         ImageAssetArray[0]='MobileBody';
+///////////////////////////
+////First Sticker Group////
+///////////////////////////
+        ImageAssetArray[1]='Mobile_1';
+        ImageAssetArray[2]='Mobile_2'; 
+        ImageAssetArray[3]='Mobile_3';
+        ImageAssetArray[4]='Mobile_4';
+///////////////////////////
+////Second Sticker Group///
+///////////////////////////
+        ImageAssetArray[5]='Mobile_5';
+        ImageAssetArray[6]='Mobile_6';
+        ImageAssetArray[7]='Mobile_7';
+        ImageAssetArray[8]='Mobile_8';
+///////////////////////////
+////Third Sticker Group////
+///////////////////////////
+        ImageAssetArray[9]='Mobile_9';
+        ImageAssetArray[10]='Mobile_10';
+        ImageAssetArray[11]='Mobile_11';
+        ImageAssetArray[12]='Mobile_12';
+///////////////////////////
+////Fourth Sticker Group///
+///////////////////////////
+        ImageAssetArray[13]='Mobile_13';
+        ImageAssetArray[14]='Mobile_14';
+        ImageAssetArray[15]='Mobile_15';  
+        ImageAssetArray[16]='Mobile_16';
+///////////////////////////
+////Fifth Sticker Group////
+///////////////////////////
+        ImageAssetArray[17]='Mobile_17';
+        ImageAssetArray[18]='Mobile_18';
+        ImageAssetArray[19]='Mobile_19';
+        ImageAssetArray[20]='Mobile_20';
+///////////////////////////
+////Sixth Sticker Group////
+///////////////////////////
+        ImageAssetArray[21]='Mobile_21';
+        ImageAssetArray[22]='Mobile_22';
+        ImageAssetArray[23]='Mobile_23';
+        ImageAssetArray[24]='Mobile_24';
+
         StickerAssigner_set1 = "Mobile_stickers";
         game.state.start("StateMain");
     },

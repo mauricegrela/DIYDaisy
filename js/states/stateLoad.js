@@ -16,6 +16,32 @@ var StateLoad = {
 /////Mobile/////
 ////////////////    
         game.load.image('MobileBody', 'images/Mobile/MobileBody.png');
+        
+        game.load.image('Mobile_1', 'images/Mobile/Mobile_1.png');
+        game.load.image('Mobile_2', 'images/Mobile/Mobile_2.png');
+        game.load.image('Mobile_3', 'images/Mobile/Mobile_3.png');
+        game.load.image('Mobile_4', 'images/Mobile/Mobile_4.png');
+        game.load.image('Mobile_5', 'images/Mobile/Mobile_5.png');
+        game.load.image('Mobile_6', 'images/Mobile/Mobile_6.png');
+        game.load.image('Mobile_7', 'images/Mobile/Mobile_7.png');
+        game.load.image('Mobile_8', 'images/Mobile/Mobile_8.png');
+        game.load.image('Mobile_9', 'images/Mobile/Mobile_9.png');
+        game.load.image('Mobile_10', 'images/Mobile/Mobile_10.png');
+        game.load.image('Mobile_11', 'images/Mobile/Mobile_11.png');
+        game.load.image('Mobile_12', 'images/Mobile/Mobile_12.png'); 
+        game.load.image('Mobile_13', 'images/Mobile/Mobile_13.png');
+        game.load.image('Mobile_14', 'images/Mobile/Mobile_14.png');
+        game.load.image('Mobile_15', 'images/Mobile/Mobile_15.png');
+        game.load.image('Mobile_16', 'images/Mobile/Mobile_16.png');
+        game.load.image('Mobile_17', 'images/Mobile/Mobile_17.png');
+        game.load.image('Mobile_18', 'images/Mobile/Mobile_18.png'); 
+        game.load.image('Mobile_19', 'images/Mobile/Mobile_19.png');
+        game.load.image('Mobile_20', 'images/Mobile/Mobile_20.png');
+        game.load.image('Mobile_21', 'images/Mobile/Mobile_21.png');
+        game.load.image('Mobile_22', 'images/Mobile/Mobile_22.png');
+        game.load.image('Mobile_23', 'images/Mobile/Mobile_23.png');
+        game.load.image('Mobile_24', 'images/Mobile/Mobile_24.png');
+        
         game.load.spritesheet("Mobile_stickers", "images/ui/Mobile_stickers.png", 365, 250, 24);
         
 ////////////////
@@ -62,14 +88,36 @@ var StateLoad = {
         //game.load.image('MagLenz', 'images/Pinecone/alphaMaskState.png');      
         //Load Stickers and body
         game.load.image('RockBody', 'images/Rock/RockBody.png');     
-        game.load.image('RockAntenae_1', 'images/Rock/RockAntenae_1.png');
-        game.load.image('RockAntenae_2', 'images/Rock/RockAntenae_2.png');      
+        game.load.image('RockBase_1', 'images/Rock/RockBase_1.png');
+        game.load.image('RockBase_2', 'images/Rock/RockBase_2.png');      
+        game.load.image('RockBase_3', 'images/Rock/RockBase_3.png');
+        game.load.image('RockBase_4', 'images/Rock/RockBase_4.png'); 
+                        
         game.load.image('RockFace_1', 'images/Rock/RockFace_1.png');
-        game.load.image('RockFace_2', 'images/Rock/RockFace_2.png');      
+        game.load.image('RockFace_2', 'images/Rock/RockFace_2.png');
+        game.load.image('RockFace_3', 'images/Rock/RockFace_3.png');
+        game.load.image('RockFace_4', 'images/Rock/RockFace_4.png');
+         
+        game.load.image('RockHeadgear_1', 'images/Rock/RockHeadgear_1.png');
+        game.load.image('RockHeadgear_2', 'images/Rock/RockHeadgear_2.png');
+        game.load.image('RockHeadgear_3', 'images/Rock/RockHeadgear_3.png');
+        game.load.image('RockHeadgear_4', 'images/Rock/RockHeadgear_4.png');
+                
+        game.load.image('RockWings_1', 'images/Rock/RockWings_1.png');
+        game.load.image('RockWings_2', 'images/Rock/RockWings_2.png');
+        game.load.image('RockWings_3', 'images/Rock/RockWings_3.png');
+        game.load.image('RockWings_4', 'images/Rock/RockWings_4.png');
+        
         game.load.image('RockFeet_1', 'images/Rock/RockFeet_1.png');
-        game.load.image('RockFeet_2', 'images/Rock/RockFeet_2.png');         
-        game.load.image('RockWings_1', 'images/Rock/RockWings_1.png'); 
-        game.load.image('RockWings_2', 'images/Rock/RockWings_2.png');  
+        game.load.image('RockFeet_2', 'images/Rock/RockFeet_3.png');
+        game.load.image('RockFeet_3', 'images/Rock/RockFeet_2.png');
+        game.load.image('RockFeet_4', 'images/Rock/RockFeet_4.png');
+       
+        game.load.image('RockClothing_1', 'images/Rock/RockClothing_1.png');
+        game.load.image('RockClothing_2', 'images/Rock/RockClothing_2.png');
+        game.load.image('RockClothing_3', 'images/Rock/RockClothing_3.png');
+        game.load.image('RockClothing_4', 'images/Rock/RockClothing_4.png');
+        
         game.load.spritesheet("Rock_Stickers_1", "images/ui/Rock_stickers.png", 365, 250, 24);
 
         
