@@ -23,9 +23,7 @@ var GameCenter_y;
 
 var DrawnSprite; 
 
-
 var StickerAssigner_set1 = "Pinecone_Stickers"; 
-var StickerAssigner_set2 = "Rock_Stickers_2";
 
 
 var GroupRefArrayCounter = 0;
@@ -101,32 +99,12 @@ var testArrayAlpha = [
         ];
 //These stickers will dictate the order inwhich stickers will be shown 
     var StickerDepth = [
-        2,
-        4,
-        4,
-        4,
-        4,
-        5,
-        5,
-        5,
-        5,
-        6,        
-        6,
-        6,
-        6,
-        1,
-        1,
-        1,
-        1,
-        3,
-        3,
-        3,
-        3,
-        0,
-        0,
-        0,
-        0,
-
+        true,
+        true,
+        true,
+        false,
+        true,
+        false
         ];
 
 //portrait or landscape

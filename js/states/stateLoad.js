@@ -190,6 +190,9 @@ var StateLoad = {
     },
 
     create: function () {
+        
+
+        
         ImageAssetArray[0]='PineconeBody';
 ///////////////////////////
 ////First Sticker Group////

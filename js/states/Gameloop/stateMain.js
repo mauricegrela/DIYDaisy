@@ -17,6 +17,8 @@ var StateMain = {
         //Set the character Group 
         Character = game.add.group();
         
+        
+        
         //  Create the group for the stickers
         StickerGroup_1 = game.add.group();
         StickerGroup_2 = game.add.group();
@@ -25,15 +27,16 @@ var StateMain = {
         StickerGroup_5 = game.add.group();
         StickerGroup_6 = game.add.group();
         
-        MagnifinylLenzGroup = game.add.group(); 
+        StickersUnderBody = game.add.group();
+        StickerBody = game.add.group();
+        StickersAboveBody = game.add.group();
+        
         //Character change buttons 
         CharacterStickerGroup = game.add.group();
         
         //Main button group 
         MainButtonGroup = game.add.group();
-        //  Create the group for the color pallet
-        ColorGroup = game.add.group();
-        
+
         //  Create a Group that will sit above Group 1
         //PlacableMenuGroup = game.add.group();  PROTOTYPE FOR THE ANIMATION
         //Background elements
@@ -122,7 +125,6 @@ var StateMain = {
         this.charactercarousel.scale.setTo(scaleRatio*carouselScaleOffset,scaleRatio*carouselScaleOffset);
         CharacterStickerGroup.add(this.charactercarousel); 
         
-        
         //Character Rock Stickers
         this.RockCharacter = game.add.sprite(ButtonsPos_x, ButtonsPos_y , 'RockBody');   
         this.RockCharacter.inputEnabled = true;
@@ -201,7 +203,6 @@ var StateMain = {
         GroupRefArray[GroupRefArrayCounter].visible = true;
         
         //Sticker Vars
-        
         OGPose_X = -100;
         OGPose_Y = -100;
         
@@ -214,8 +215,9 @@ var StateMain = {
         this.PineconeBody.anchor.x = 0.5;
         this.PineconeBody.anchor.y = 0.5;
         this.PineconeBody.scale.setTo(scaleRatio,scaleRatio);
-        this.SelectedButton = this.PineconeBody;
-        Character.add(this.PineconeBody);   
+        StickerBody.add(this.PineconeBody);
+
+        
         
         //Sticker_1_1
         this.Sticker_1 = game.add.sprite(OGPose_X, OGPose_Y+StickerDepth[1], ImageAssetArray[0]);  
@@ -227,7 +229,15 @@ var StateMain = {
         this.Sticker_1.input.pixelPerfectOver = true;
         this.Sticker_1.events.onInputOver.add(this.sticker_Click, {param1: this.Sticker_1, param2: 1});
         this.Sticker_1.scale.setTo(scaleRatio,scaleRatio);        
-        Character.add(this.Sticker_1);  
+        //Character.add(this.Sticker_1);  
+            if(StickerDepth[0]== false)
+            {
+            StickersUnderBody.add(this.Sticker_1);
+            }
+                else
+                {
+                StickersAboveBody.add(this.Sticker_1);
+                }
          
         //Sticker_2      
         this.Sticker_2 = game.add.sprite(OGPose_X, OGPose_Y+StickerDepth[2], ImageAssetArray[0]);
@@ -236,27 +246,37 @@ var StateMain = {
         this.Sticker_2.anchor.y = 0.5;
         this.Sticker_2.inputEnabled = true;
         this.Sticker_2.input.pixelPerfectOver = true;
-        //game.input.addMoveCallback(this.p, this.Sticker_2);
-        //this.Sticker_2.events.onInputOver.add(this.Sticker_2Click, this);
         this.Sticker_2.events.onInputOver.add(this.sticker_Click, {param1: this.Sticker_2, param2: 2});
         this.Sticker_2.scale.setTo(scaleRatio,scaleRatio);   
-        Character.add(this.Sticker_2);
+        //Character.add(this.Sticker_2);
+            if(StickerDepth[1]== false)
+            {
+            StickersUnderBody.add(this.Sticker_2);
+            }
+                else
+                {
+                StickersAboveBody.add(this.Sticker_2);
+                }
                  
-      
         //Sticker_3
         this.Sticker_3 = game.add.sprite(OGPose_X, OGPose_Y+StickerDepth[3], ImageAssetArray[0]);
         this.Sticker_3.alpha = 0;
         this.Sticker_3.anchor.x = 0.5;
         this.Sticker_3.anchor.y = 0.5;
         this.Sticker_3.inputEnabled = true;
-        this.Sticker_3.input.pixelPerfectOver = true;
-        //game.input.addMoveCallback(this.p, this.Sticker_3);
-        //this.Sticker_3.events.onInputOver.add(this.Sticker_3Click, this);  
+        this.Sticker_3.input.pixelPerfectOver = true; 
         this.Sticker_3.events.onInputOver.add(this.sticker_Click, {param1: this.Sticker_3, param2: 3});
         this.Sticker_3.scale.setTo(scaleRatio,scaleRatio); 
-        Character.add(this.Sticker_3);
-        
-         
+        //Character.add(this.Sticker_3);
+            if(StickerDepth[2]== false)
+            {
+            StickersUnderBody.add(this.Sticker_3);
+            }
+                else
+                {
+                StickersAboveBody.add(this.Sticker_3);
+                }
+                
         //Sticker_4
         this.Sticker_4 = game.add.sprite(OGPose_X, OGPose_Y+StickerDepth[4], ImageAssetArray[0]);
         
@@ -265,13 +285,18 @@ var StateMain = {
         this.Sticker_4.anchor.y = 0.5;
         this.Sticker_4.inputEnabled = true;
         this.Sticker_4.input.pixelPerfectOver = true;
-        //game.input.addMoveCallback(this.p, this.Sticker_4);
-        //this.Sticker_4.events.onInputOver.add(this.Sticker_4Click, this);
         this.Sticker_4.events.onInputOver.add(this.sticker_Click, {param1: this.Sticker_4, param2: 4});
         this.Sticker_4.scale.setTo(scaleRatio,scaleRatio); 
-        Character.add(this.Sticker_4);
-        
-        
+        //Character.add(this.Sticker_4);
+            if(StickerDepth[3]== false)
+            {
+            StickersUnderBody.add(this.Sticker_4);
+            }
+                else
+                {
+                StickersAboveBody.add(this.Sticker_4);
+                }
+
         //Sticker_5
         this.Sticker_5 = game.add.sprite(OGPose_X, OGPose_Y+StickerDepth[5], ImageAssetArray[0]);        
         this.Sticker_5.alpha = 0;
@@ -279,11 +304,17 @@ var StateMain = {
         this.Sticker_5.anchor.y = 0.5;
         this.Sticker_5.inputEnabled = true;
         this.Sticker_5.input.pixelPerfectOver = true;
-        //game.input.addMoveCallback(this.p, this.Sticker_5);
-        //this.Sticker_5.events.onInputOver.add(this.Sticker_5Click, this);  
         this.Sticker_5.events.onInputOver.add(this.sticker_Click, {param1: this.Sticker_5, param2: 5});
         this.Sticker_5.scale.setTo(scaleRatio,scaleRatio);   
-        Character.add(this.Sticker_5);      
+        //Character.add(this.Sticker_5);      
+            if(StickerDepth[4]== false)
+            {
+            StickersUnderBody.add(this.Sticker_5);
+            }
+                else
+                {
+                StickersAboveBody.add(this.Sticker_5);
+                }
 
         //Sticker_6      
         this.Sticker_6 = game.add.sprite(OGPose_X, OGPose_Y+StickerDepth[6], ImageAssetArray[0]);
@@ -292,12 +323,17 @@ var StateMain = {
         this.Sticker_6.anchor.y = 0.5;
         this.Sticker_6.inputEnabled = true;
         this.Sticker_6.input.pixelPerfectOver = true;
-        //game.input.addMoveCallback(this.p, this.Sticker_6);
-        //this.Sticker_6.events.onInputOver.add(this.Sticker_6Click, this);
         this.Sticker_6.events.onInputOver.add(this.sticker_Click, {param1: this.Sticker_6, param2: 6});
         this.Sticker_6.scale.setTo(scaleRatio,scaleRatio);
-        Character.add(this.Sticker_6);
-        
+        //Character.add(this.Sticker_6);  
+            if(StickerDepth[5]== false)
+            {
+            StickersUnderBody.add(this.Sticker_6);
+            }
+                else
+                {
+                StickersAboveBody.add(this.Sticker_6);
+                }
         
 ///////////////////////////
 ////First Sticker Group////
@@ -447,15 +483,21 @@ var StateMain = {
         
         Character.sort();
 
-        game.world.bringToTop(Character);
-        game.world.bringToTop(MagnifinylLenzGroup);
+                //StickersUnderBody = game.add.group();
+        //StickerBody = game.add.group();
+        //StickersAboveBody = game.add.group();
+        
+        
+        game.world.bringToTop(StickersUnderBody);
+        game.world.bringToTop(StickerBody);
+        game.world.bringToTop(StickersAboveBody);
+        
         game.world.bringToTop(StickerGroup_6);
         game.world.bringToTop(StickerGroup_5);       
         game.world.bringToTop(StickerGroup_4);
         game.world.bringToTop(StickerGroup_3);
         game.world.bringToTop(StickerGroup_2);
         game.world.bringToTop(StickerGroup_1);
-        game.world.bringToTop(ColorGroup);
         game.world.bringToTop(MainButtonGroup);
         game.world.bringToTop(CharacterStickerGroup);
         game.world.bringToTop(buttongroup);
@@ -468,6 +510,8 @@ var StateMain = {
         //Set the Episoderovideo
         vidGroup_Ep = game.add.group();
 
+        this.SelectedButton = this.PineconeBody;
+        
           //////////////////////
         //New Coloring Tools//
         //////////////////////
@@ -504,6 +548,13 @@ var StateMain = {
     },      
     
     RockSticker: function () {
+        StickerDepth[0]=true;
+        StickerDepth[1]=true;
+        StickerDepth[2]=true;
+        StickerDepth[3]=false;
+        StickerDepth[4]=false;
+        StickerDepth[5]=true;
+        
         ImageAssetArray[0]='RockBody';
 ///////////////////////////
 ////First Sticker Group////
@@ -670,36 +721,28 @@ var StateMain = {
     render: function () {
     game.debug.text( GameCenter_x-game.input.x, 100, 380 );
     game.debug.text( GameCenter_y-game.input.y, 100, 390 );      
-},
+    },
 
     update: function () { 
- 
-        Character.sort('y', Phaser.Group.SORT_DESCENDING );
-        
         //game.scale.setShowAll();
-        //game.scale.refresh();
-        
-        if(IsInAlpha == true)
-        {
-        this.mask.x = game.input.x-100;
-        this.mask.y = game.input.y-100;  
-        }      
-            if(isClickDragging == true) 
-            {//If the player is dragging the image onto the 
-                if( game.input.activePointer.isDown == true )
-                {////this.PineconeBody.alpha = 0;
-                    this.SelectedButton.x = game.input.x;
-                    this.SelectedButton.y = game.input.y;
-                    isMovingSticker = true;
-                }
-                    else
-                    {
-                        isMovingSticker = false;
-                        isClickDragging = false;
-                        this.SelectedButton.x = GameCenter_x;
-                        this.SelectedButton.y = GameCenter_y;
-                    }
+        //game.scale.refresh();  
+        if(isClickDragging == true) 
+        {//If the player is dragging the image onto the 
+            if( game.input.activePointer.isDown == true )
+            {////this.PineconeBody.alpha = 0;
+                this.SelectedButton.x = game.input.x;
+                this.SelectedButton.y = game.input.y;
+                isMovingSticker = true;
             }
+                else
+                {
+                    isMovingSticker = false;
+                    isClickDragging = false;
+                    this.SelectedButton.x = GameCenter_x;
+                    this.SelectedButton.y = GameCenter_y;
+                }
+        }
+    Character.sort('y', Phaser.Group.SORT_DESCENDING);  
     }, 
     
     paint: function (pointer, x, y) {
@@ -709,7 +752,6 @@ var StateMain = {
             
             this.bmd.draw(this.loop, x, y);
         }
-
     },
     
     Carosel_Left: function()
@@ -751,6 +793,7 @@ var StateMain = {
         PositionArrayIndicator = this.param2;   
     },
 
+    
     Sticker_Place: function () {    
     isClickDragging = true;
     this.SelectedButton = this.param1;
@@ -1006,7 +1049,6 @@ var StateMain = {
         //StickerGroup_1.visible = true;
         //StickerGroup_2.visible = false;
         GroupRefArray[GroupRefArrayCounter].visible = true;
-        ColorGroup.visible = false;
         CharacterStickerGroup.visible = false;
         isAddingPaint = false;
         isAddingSticker = true;
@@ -1015,7 +1057,6 @@ var StateMain = {
     
     CharacterHitOn: function () {
         GroupRefArray[GroupRefArrayCounter].visible = false;
-        ColorGroup.visible = false;
         CharacterStickerGroup.visible = true;
         isAddingPaint = false;
         isAddingSticker = false;
