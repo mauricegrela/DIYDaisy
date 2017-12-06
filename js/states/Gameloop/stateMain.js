@@ -665,7 +665,7 @@ var Pivot_Y = [
         game.state.start("StateMain");
     },
     
-    PineconeSticker: function () {
+PineconeSticker: function () {
 //////////////////////////
 ////Sticker Depths////////
 //////////////////////////
@@ -735,9 +735,9 @@ var Pivot_Y = [
         0,
         0,
         ];
-///////////////////////////
+//////////////////////////
 ////Sticker Body//////////
-///////////////////////////
+//////////////////////////
         ImageAssetArray[0]='PineconeBody';
 ///////////////////////////
 ////First Sticker Group////
@@ -856,7 +856,9 @@ var Pivot_Y = [
         0,
         0,
         ];
-        
+//////////////////////////
+////Sticker Body//////////
+//////////////////////////
         ImageAssetArray[0]='MobileBody';
 ///////////////////////////
 ////First Sticker Group////
