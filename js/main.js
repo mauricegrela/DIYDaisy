@@ -70,6 +70,68 @@ var ImageAssetArray = //Images
 
 var testArrayAlpha = [
         //Directory,Tint,Transparancy
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,        
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        ];
+
+///////////////////////////
+////NOTE!!!! These op////
+///////////////////////////
+
+var Pivot_X = [
+        //Directory,Tint,Transparancy
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,        
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        ];
+
+var Pivot_Y = [
+        //Directory,Tint,Transparancy
         1,
         0,
         0,
@@ -95,8 +157,8 @@ var testArrayAlpha = [
         0,
         0,
         0,
-        0,
         ];
+
 //These stickers will dictate the order inwhich stickers will be shown 
     var StickerDepth = [
         true,

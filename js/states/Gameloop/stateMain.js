@@ -18,7 +18,6 @@ var StateMain = {
         Character = game.add.group();
         
         
-        
         //  Create the group for the stickers
         StickerGroup_1 = game.add.group();
         StickerGroup_2 = game.add.group();
@@ -548,13 +547,76 @@ var StateMain = {
     },      
     
     RockSticker: function () {
+//////////////////////////
+////Sticker Depths////////
+//////////////////////////
         StickerDepth[0]=true;
         StickerDepth[1]=true;
         StickerDepth[2]=true;
         StickerDepth[3]=false;
         StickerDepth[4]=false;
         StickerDepth[5]=true;
-        
+///////////////////////////
+////Pivot Positions////////
+///////////////////////////
+    var Pivot_X = [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,        
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        ];
+
+var Pivot_Y = [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,        
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        ];
+///////////////////////////
+////Sticker Body//////////
+///////////////////////////
         ImageAssetArray[0]='RockBody';
 ///////////////////////////
 ////First Sticker Group////
@@ -604,6 +666,78 @@ var StateMain = {
     },
     
     PineconeSticker: function () {
+//////////////////////////
+////Sticker Depths////////
+//////////////////////////
+        StickerDepth[0]=true;
+        StickerDepth[1]=true;
+        StickerDepth[2]=true;
+        StickerDepth[3]=false;
+        StickerDepth[4]=false;
+        StickerDepth[5]=true;
+///////////////////////////
+////Pivot Positions////////
+///////////////////////////
+    var Pivot_X = [
+        //PineCone Sticker
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,        
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        ];
+
+var Pivot_Y = [
+        //Mobile Sticker
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,        
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        ];
+///////////////////////////
+////Sticker Body//////////
+///////////////////////////
         ImageAssetArray[0]='PineconeBody';
 ///////////////////////////
 ////First Sticker Group////
@@ -653,6 +787,76 @@ var StateMain = {
     },
     
     MobileSticker: function () {
+//////////////////////////
+////Sticker Depths////////
+//////////////////////////
+        StickerDepth[0]=true;
+        StickerDepth[1]=true;
+        StickerDepth[2]=true;
+        StickerDepth[3]=false;
+        StickerDepth[4]=false;
+        StickerDepth[5]=true;
+///////////////////////////
+////Pivot Positions////////
+///////////////////////////
+var Pivot_X = [
+        //Mobile Sticker
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,        
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        ];
+
+var Pivot_Y = [
+        //Mobile Sticker
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,        
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        ];
+        
         ImageAssetArray[0]='MobileBody';
 ///////////////////////////
 ////First Sticker Group////
@@ -809,6 +1013,10 @@ var StateMain = {
     this.SelectedButton = this.Sticker_1;
     this.Sticker_1.loadTexture(ImageAssetArray[1]);   
     this.Sticker_1.alpha = 1;  
+    //Pivot 
+    this.Sticker_1.anchor.x = Pivot_X[0];
+    this.Sticker_1.anchor.y = Pivot_Y[0];
+    //Data storage 
     PositionArrayIndicator = 1;
     testArrayAlpha[1] = 1;
     },  
@@ -818,6 +1026,10 @@ var StateMain = {
     this.Sticker_1.loadTexture(ImageAssetArray[2]); 
     this.Sticker_1.alpha = 1;  
     this.SelectedButton = this.Sticker_1;
+    //Pivot 
+    this.Sticker_1.anchor.x = Pivot_X[1];
+    this.Sticker_1.anchor.y = Pivot_Y[1];
+    //Data storage 
     PositionArrayIndicator = 2;
     testArrayAlpha[2] = 1;
     }, 
@@ -827,6 +1039,10 @@ var StateMain = {
     this.Sticker_1.loadTexture(ImageAssetArray[3]);
     this.Sticker_1.alpha = 1;
     this.SelectedButton = this.Sticker_1;    
+    //Pivot 
+    this.Sticker_1.anchor.x = Pivot_X[2];
+    this.Sticker_1.anchor.y = Pivot_Y[2];
+    //Data storage 
     PositionArrayIndicator = 3;
     testArrayAlpha[3] = 1;
     },   
@@ -836,6 +1052,10 @@ var StateMain = {
     this.Sticker_1.loadTexture(ImageAssetArray[4]);
     this.Sticker_1.alpha = 1;
     this.SelectedButton = this.Sticker_1;
+    //Pivot 
+    this.Sticker_1.anchor.x = Pivot_X[3];
+    this.Sticker_1.anchor.y = Pivot_Y[3];
+    //Data storage 
     PositionArrayIndicator = 4;
     testArrayAlpha[4] = 1;
     }, 
@@ -849,6 +1069,10 @@ var StateMain = {
     this.SelectedButton = this.Sticker_2;
     this.Sticker_2.loadTexture(ImageAssetArray[5]);
     this.Sticker_2.alpha = 1; 
+    //Pivot 
+    this.Sticker_2.anchor.x = Pivot_X[4];
+    this.Sticker_2.anchor.y = Pivot_Y[4];
+    //Data storage 
     PositionArrayIndicator = 5;
     testArrayAlpha[5] = 1;
     }, 
@@ -857,7 +1081,11 @@ var StateMain = {
     isClickDragging = true;
     this.SelectedButton = this.Sticker_2;
     this.Sticker_2.loadTexture(ImageAssetArray[6]);
-    this.Sticker_2.alpha = 1;  
+    this.Sticker_2.alpha = 1; 
+    //Pivot 
+    this.Sticker_2.anchor.x = Pivot_X[5];
+    this.Sticker_2.anchor.y = Pivot_Y[5];
+    //Data storage 
     PositionArrayIndicator = 6;
     testArrayAlpha[6] = 1;
     }, 
@@ -867,6 +1095,10 @@ var StateMain = {
     this.SelectedButton = this.Sticker_2;
     this.Sticker_2.loadTexture(ImageAssetArray[7]);
     this.Sticker_2.alpha = 1;  
+    //Pivot 
+    this.Sticker_2.anchor.x = Pivot_X[6];
+    this.Sticker_2.anchor.y = Pivot_Y[6];
+    //Data storage 
     PositionArrayIndicator = 7;
     testArrayAlpha[7] = 1;
     }, 
@@ -875,7 +1107,11 @@ var StateMain = {
     isClickDragging = true;
     this.SelectedButton = this.Sticker_2;
     this.Sticker_2.loadTexture(ImageAssetArray[8]);
-    this.Sticker_2.alpha = 1;  
+    this.Sticker_2.alpha = 1; 
+    //Pivot 
+    this.Sticker_2.anchor.x = Pivot_X[7];
+    this.Sticker_2.anchor.y = Pivot_Y[7];
+    //Data storage
     PositionArrayIndicator = 8;
     testArrayAlpha[8] = 1;
     }, 
@@ -889,7 +1125,10 @@ var StateMain = {
     this.SelectedButton = this.Sticker_3;
     this.Sticker_3.loadTexture(ImageAssetArray[9]);
     this.Sticker_3.alpha = 1; 
-    //this.Sticker_2.alpha = 0; 
+    //Pivot 
+    this.Sticker_3.anchor.x = Pivot_X[8];
+    this.Sticker_3.anchor.y = Pivot_Y[8];
+    //Data storage
     PositionArrayIndicator = 9;
     testArrayAlpha[9] = 1;
     },  
@@ -899,6 +1138,10 @@ var StateMain = {
     this.SelectedButton = this.Sticker_3;
     this.Sticker_3.loadTexture(ImageAssetArray[10]);
     this.Sticker_3.alpha = 1;  
+    //Pivot 
+    this.Sticker_3.anchor.x = Pivot_X[9];
+    this.Sticker_3.anchor.y = Pivot_Y[9];
+    //Data storage
     PositionArrayIndicator = 10;
     testArrayAlpha[10] = 1;
     }, 
@@ -907,7 +1150,11 @@ var StateMain = {
     isClickDragging = true;
     this.SelectedButton = this.Sticker_3;
     this.Sticker_3.loadTexture(ImageAssetArray[11]);
-    this.Sticker_3.alpha = 1;      
+    this.Sticker_3.alpha = 1;
+    //Pivot 
+    this.Sticker_3.anchor.x = Pivot_X[10];
+    this.Sticker_3.anchor.y = Pivot_Y[10];
+    //Data storage
     PositionArrayIndicator = 11;
     testArrayAlpha[11] = 1;
     },   
@@ -917,6 +1164,10 @@ var StateMain = {
     this.SelectedButton = this.Sticker_3;
     this.Sticker_3.loadTexture(ImageAssetArray[12]);
     this.Sticker_3.alpha = 1;   
+    //Pivot 
+    this.Sticker_3.anchor.x = Pivot_X[11];
+    this.Sticker_3.anchor.y = Pivot_Y[11];
+    //Data storage
     PositionArrayIndicator = 12;
     testArrayAlpha[12] = 1;
     }, 
@@ -931,6 +1182,10 @@ var StateMain = {
     this.SelectedButton = this.Sticker_4;
     this.Sticker_4.loadTexture(ImageAssetArray[13]);
     this.Sticker_4.alpha = 1;   
+    //Pivot 
+    this.Sticker_4.anchor.x = Pivot_X[12];
+    this.Sticker_4.anchor.y = Pivot_Y[12];
+    //Data storage
     PositionArrayIndicator = 13;
     testArrayAlpha[13] = 1;
     }, 
@@ -939,7 +1194,11 @@ var StateMain = {
     isClickDragging = true;
     this.SelectedButton = this.Sticker_4;
     this.Sticker_4.loadTexture(ImageAssetArray[14]);
-    this.Sticker_4.alpha = 1;     
+    this.Sticker_4.alpha = 1; 
+    //Pivot 
+    this.Sticker_4.anchor.x = Pivot_X[13];
+    this.Sticker_4.anchor.y = Pivot_Y[13];
+    //Data storage
     PositionArrayIndicator = 14;
     testArrayAlpha[14] = 1;
     }, 
@@ -949,6 +1208,10 @@ var StateMain = {
     this.SelectedButton = this.Sticker_4;
     this.Sticker_4.loadTexture(ImageAssetArray[15]);
     this.Sticker_4.alpha = 1; 
+    //Pivot 
+    this.Sticker_4.anchor.x = Pivot_X[14];
+    this.Sticker_4.anchor.y = Pivot_Y[14];
+    //Data storage
     PositionArrayIndicator = 15;
     testArrayAlpha[15] = 1;
     }, 
@@ -958,6 +1221,10 @@ var StateMain = {
     this.SelectedButton = this.Sticker_4;
     this.Sticker_4.loadTexture(ImageAssetArray[16]);
     this.Sticker_4.alpha = 1; 
+    //Pivot 
+    this.Sticker_4.anchor.x = Pivot_X[15];
+    this.Sticker_4.anchor.y = Pivot_Y[15];
+    //Data storage
     PositionArrayIndicator = 16;
     testArrayAlpha[16] = 1;
     }, 
@@ -971,6 +1238,10 @@ var StateMain = {
     this.SelectedButton = this.Sticker_5;
     this.Sticker_5.loadTexture(ImageAssetArray[17]);
     this.Sticker_5.alpha = 1; 
+    //Pivot 
+    this.Sticker_5.anchor.x = Pivot_X[16];
+    this.Sticker_5.anchor.y = Pivot_Y[16];
+    //Data storage
     PositionArrayIndicator = 17;
     testArrayAlpha[17] = 1;
     },  
@@ -980,6 +1251,10 @@ var StateMain = {
     this.SelectedButton = this.Sticker_5;
     this.Sticker_5.loadTexture(ImageAssetArray[18]);
     this.Sticker_5.alpha = 1; 
+    //Pivot 
+    this.Sticker_5.anchor.x = Pivot_X[17];
+    this.Sticker_5.anchor.y = Pivot_Y[17];
+    //Data storage
     PositionArrayIndicator = 18;
     testArrayAlpha[18] = 1;
     }, 
@@ -988,7 +1263,11 @@ var StateMain = {
     isClickDragging = true;
     this.SelectedButton = this.Sticker_5;
     this.Sticker_5.loadTexture(ImageAssetArray[19]);
-    this.Sticker_5.alpha = 1;     
+    this.Sticker_5.alpha = 1; 
+    //Pivot 
+    this.Sticker_5.anchor.x = Pivot_X[18];
+    this.Sticker_5.anchor.y = Pivot_Y[18];
+    //Data storage
     PositionArrayIndicator = 19;
     testArrayAlpha[19] = 1;
     },   
@@ -998,6 +1277,10 @@ var StateMain = {
     this.SelectedButton = this.Sticker_5;
     this.Sticker_5.loadTexture(ImageAssetArray[20]);
     this.Sticker_5.alpha = 1; 
+    //Pivot 
+    this.Sticker_5.anchor.x = Pivot_X[19];
+    this.Sticker_5.anchor.y = Pivot_Y[19];
+    //Data storage
     PositionArrayIndicator = 20;
     testArrayAlpha[20] = 1;
     }, 
@@ -1012,6 +1295,10 @@ var StateMain = {
     this.SelectedButton = this.Sticker_6;
     this.Sticker_6.loadTexture(ImageAssetArray[21]);
     this.Sticker_6.alpha = 1; 
+    //Pivot 
+    this.Sticker_6.anchor.x = Pivot_X[20];
+    this.Sticker_6.anchor.y = Pivot_Y[20];
+    //Data storage
     PositionArrayIndicator = 21;
     testArrayAlpha[21] = 1;
     }, 
@@ -1021,6 +1308,10 @@ var StateMain = {
     this.SelectedButton = this.Sticker_6;
     this.Sticker_6.loadTexture(ImageAssetArray[22]);
     this.Sticker_6.alpha = 1; 
+    //Pivot 
+    this.Sticker_6.anchor.x = Pivot_X[21];
+    this.Sticker_6.anchor.y = Pivot_Y[21];
+    //Data storage
     PositionArrayIndicator = 22;
     testArrayAlpha[22] = 1;
     }, 
@@ -1030,6 +1321,10 @@ var StateMain = {
     this.SelectedButton = this.Sticker_6;
     this.Sticker_6.loadTexture(ImageAssetArray[23]);
     this.Sticker_6.alpha = 1;
+    //Pivot 
+    this.Sticker_6.anchor.x = Pivot_X[22];
+    this.Sticker_6.anchor.y = Pivot_Y[22];
+    //Data storage
     PositionArrayIndicator = 23;
     testArrayAlpha[23] = 1;
     }, 
@@ -1039,6 +1334,10 @@ var StateMain = {
     this.SelectedButton = this.Sticker_6;
     this.Sticker_6.loadTexture(ImageAssetArray[24]);
     this.Sticker_6.alpha = 1;
+    //Pivot 
+    this.Sticker_6.anchor.x = Pivot_X[23];
+    this.Sticker_6.anchor.y = Pivot_Y[23];
+    //Data storage
     PositionArrayIndicator = 24;
     testArrayAlpha[24] = 1;
     },   
