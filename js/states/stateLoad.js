@@ -125,18 +125,75 @@ var StateLoad = {
         game.load.image('PaintDot', 'images/ui/PaintDropTest.png');
         
 ////////////////
-///SmudgStick///
+///SmudgeStick///
 ////////////////    
         game.load.image('SmudgeStickBody', 'images/SmudgeStick/SmudgeStickBody.png');  
 
-   
+        game.load.image('RockBase_1', 'images/SmudgeStick/RockBase_1.png');
+        game.load.image('RockBase_2', 'images/SmudgeStick/RockBase_2.png');      
+        game.load.image('RockBase_3', 'images/SmudgeStick/RockBase_3.png');
+        game.load.image('RockBase_4', 'images/SmudgeStick/RockBase_4.png'); 
+                        
+        game.load.image('RockFace_1', 'images/SmudgeStick/RockFace_1.png');
+        game.load.image('RockFace_2', 'images/SmudgeStick/RockFace_2.png');
+        game.load.image('RockFace_3', 'images/SmudgeStick/RockFace_3.png');
+        game.load.image('RockFace_4', 'images/SmudgeStick/RockFace_4.png');
+         
+        game.load.image('RockHeadgear_1', 'images/SmudgeStick/RockHeadgear_1.png');
+        game.load.image('RockHeadgear_2', 'images/SmudgeStick/RockHeadgear_2.png');
+        game.load.image('RockHeadgear_3', 'images/SmudgeStick/RockHeadgear_3.png');
+        game.load.image('RockHeadgear_4', 'images/SmudgeStick/RockHeadgear_4.png');
+                
+        game.load.image('RockWings_1', 'images/SmudgeStick/RockWings_1.png');
+        game.load.image('RockWings_2', 'images/SmudgeStick/RockWings_2.png');
+        game.load.image('RockWings_3', 'images/SmudgeStick/RockWings_3.png');
+        game.load.image('RockWings_4', 'images/SmudgeStick/RockWings_4.png');
+        
+        game.load.image('RockFeet_1', 'images/SmudgeStick/RockFeet_1.png');
+        game.load.image('RockFeet_2', 'images/SmudgeStick/RockFeet_3.png');
+        game.load.image('RockFeet_3', 'images/SmudgeStick/RockFeet_2.png');
+        game.load.image('RockFeet_4', 'images/SmudgeStick/RockFeet_4.png');
+       
+        game.load.image('RockClothing_1', 'images/SmudgeStick/RockClothing_1.png');
+        game.load.image('RockClothing_2', 'images/SmudgeStick/RockClothing_2.png');
+        game.load.image('RockClothing_3', 'images/SmudgeStick/RockClothing_3.png');
+        game.load.image('RockClothing_4', 'images/SmudgeStick/RockClothing_4.png');        
          
 ////////////////
 ///StickWand///
 ////////////////    
         game.load.image('StickWandBody', 'images/StickWand/StickWandBody.png');   
 
-
+        game.load.image('RockBase_1', 'images/StickWand/RockBase_1.png');
+        game.load.image('RockBase_2', 'images/StickWand/RockBase_2.png');      
+        game.load.image('RockBase_3', 'images/StickWand/RockBase_3.png');
+        game.load.image('RockBase_4', 'images/StickWand/RockBase_4.png'); 
+                        
+        game.load.image('RockFace_1', 'images/StickWand/RockFace_1.png');
+        game.load.image('RockFace_2', 'images/StickWand/RockFace_2.png');
+        game.load.image('RockFace_3', 'images/StickWand/RockFace_3.png');
+        game.load.image('RockFace_4', 'images/StickWand/RockFace_4.png');
+         
+        game.load.image('RockHeadgear_1', 'images/StickWand/RockHeadgear_1.png');
+        game.load.image('RockHeadgear_2', 'images/StickWand/RockHeadgear_2.png');
+        game.load.image('RockHeadgear_3', 'images/StickWand/RockHeadgear_3.png');
+        game.load.image('RockHeadgear_4', 'images/StickWand/RockHeadgear_4.png');
+                
+        game.load.image('RockWings_1', 'images/StickWand/RockWings_1.png');
+        game.load.image('RockWings_2', 'images/StickWand/RockWings_2.png');
+        game.load.image('RockWings_3', 'images/StickWand/RockWings_3.png');
+        game.load.image('RockWings_4', 'images/StickWand/RockWings_4.png');
+        
+        game.load.image('RockFeet_1', 'images/StickWand/RockFeet_1.png');
+        game.load.image('RockFeet_2', 'images/StickWand/RockFeet_3.png');
+        game.load.image('RockFeet_3', 'images/StickWand/RockFeet_2.png');
+        game.load.image('RockFeet_4', 'images/StickWand/RockFeet_4.png');
+       
+        game.load.image('RockClothing_1', 'images/StickWand/RockClothing_1.png');
+        game.load.image('RockClothing_2', 'images/StickWand/RockClothing_2.png');
+        game.load.image('RockClothing_3', 'images/StickWand/RockClothing_3.png');
+        game.load.image('RockClothing_4', 'images/StickWand/RockClothing_4.png');    
+        
 ///////////////////////////
 //Carosel Stickers to load/
 ///////////////////////////
