@@ -127,13 +127,16 @@ var StateLoad = {
 ////////////////
 ///SmudgStick///
 ////////////////    
-        game.load.image('SmudgeStickBody', 'images/SmudgeStick/SmudgeStickBody.png');          
+        game.load.image('SmudgeStickBody', 'images/SmudgeStick/SmudgeStickBody.png');  
+
+   
          
 ////////////////
 ///StickWand///
 ////////////////    
         game.load.image('StickWandBody', 'images/StickWand/StickWandBody.png');   
-        
+
+
 ///////////////////////////
 //Carosel Stickers to load/
 ///////////////////////////
@@ -168,6 +171,7 @@ var StateLoad = {
         //PRELOAD EVERYTHING HERE
         game.load.spritesheet("buttons", "images/ui/buttons-red.png", 265, 75);
         game.load.spritesheet("soundButtons", "images/ui/soundButtons-blue.png", 44, 44, 4);
+        game.load.spritesheet("daisylogo", "images/ui/daisylogo.png", 44, 44, 34);
         game.load.spritesheet("creativeButtons", "images/ui/CreativeButtons.png", 140, 160, 7);
         game.load.audio("backgroundMusic", "audio/background/piano.mp3");
         game.load.audio("elephant", "audio/sfx/elephant.mp3");  
