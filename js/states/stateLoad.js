@@ -200,6 +200,9 @@ var StateLoad = {
         //Load Background images for the rock
         game.load.image('craft_Backgroung', 'images/backgrounds/Background_1.jpg');
         
+        //Background for character movemeng 
+        game.load.image('placement_Background', 'images/backgrounds/DragBackground.png');
+        
         //Object Tab
         game.load.image('characterCaroselTab', 'images/ui/object-tab-active.png');
         

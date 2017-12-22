@@ -27,14 +27,28 @@ var StickerAssigner_set1 = "Pinecone_Stickers";
 
 
 var GroupRefArrayCounter = 0;
-var GroupRefArray = //Images
+
+var ImageGroupReference = //Images
+    [0,0,0,0,0,0 ];
+
+var ImageReference = //Images
+    [
+    'PineconeBody',
+    'PineconeBody',
+    'PineconeBody',
+    'PineconeBody',
+    'PineconeBody',
+    'PineconeBody',
+    ];
+
+var PlacableCollection = //Images
     [
     0,
     0,
-    0,  
     0,
-    0,  
-    0
+    0,
+    0,
+    0,
     ];
 
 //This array sets which stickers can be placed in the level
@@ -103,60 +117,60 @@ var testArrayAlpha = [
 
 var Pivot_X = [
         //Directory,Tint,Transparancy
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,        
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
         ];
 
 var Pivot_Y = [
         //Directory,Tint,Transparancy
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,        
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
         ];
 
 //These stickers will dictate the order inwhich stickers will be shown 

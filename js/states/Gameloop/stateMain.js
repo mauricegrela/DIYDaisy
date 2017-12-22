@@ -186,20 +186,20 @@ var StateMain = {
 
         GroupRefArrayCounter = 0;
         
-        GroupRefArray[0] = StickerGroup_1;
-        GroupRefArray[1] = StickerGroup_2;
-        GroupRefArray[2] = StickerGroup_3;
-        GroupRefArray[3] = StickerGroup_4;
-        GroupRefArray[4] = StickerGroup_5;
-        GroupRefArray[5] = StickerGroup_6;
+        ImageGroupReference[0] = StickerGroup_1;
+        ImageGroupReference[1] = StickerGroup_2;
+        ImageGroupReference[2] = StickerGroup_3;
+        ImageGroupReference[3] = StickerGroup_4;
+        ImageGroupReference[4] = StickerGroup_5;
+        ImageGroupReference[5] = StickerGroup_6;
         
-        GroupRefArray[0].visible = false;
-        GroupRefArray[1].visible = false;
-        GroupRefArray[2].visible = false;
-        GroupRefArray[3].visible = false;
-        GroupRefArray[4].visible = false;
-        GroupRefArray[5].visible = false;
-        GroupRefArray[GroupRefArrayCounter].visible = true;
+        ImageGroupReference[0].visible = false;
+        ImageGroupReference[1].visible = false;
+        ImageGroupReference[2].visible = false;
+        ImageGroupReference[3].visible = false;
+        ImageGroupReference[4].visible = false;
+        ImageGroupReference[5].visible = false;
+        ImageGroupReference[GroupRefArrayCounter].visible = true;
         
         //Sticker Vars
         OGPose_X = -100;
@@ -962,22 +962,22 @@ var Pivot_Y = [
     
     Carosel_Left: function()
     {   
-         GroupRefArray[GroupRefArrayCounter].visible = false;
+         ImageGroupReference[GroupRefArrayCounter].visible = false;
             if(GroupRefArrayCounter>0)
             {
             GroupRefArrayCounter-=1;
             }
                 else
                 {
-                GroupRefArrayCounter=GroupRefArray.length-1;
+                GroupRefArrayCounter=ImageGroupReference.length-1;
                 }
-        GroupRefArray[GroupRefArrayCounter].visible = true;
+        ImageGroupReference[GroupRefArrayCounter].visible = true;
     },
     
     Carosel_Right: function()
     {
-         GroupRefArray[GroupRefArrayCounter].visible = false;
-            if(GroupRefArrayCounter<GroupRefArray.length-1)
+         ImageGroupReference[GroupRefArrayCounter].visible = false;
+            if(GroupRefArrayCounter<ImageGroupReference.length-1)
             {
             GroupRefArrayCounter+=1;
             }
@@ -985,7 +985,7 @@ var Pivot_Y = [
                 {
                 GroupRefArrayCounter=0;
                 }
-        GroupRefArray[GroupRefArrayCounter].visible = true;
+        ImageGroupReference[GroupRefArrayCounter].visible = true;
     },
            
 //////////////////////////////////
@@ -1015,51 +1015,59 @@ var Pivot_Y = [
     this.SelectedButton = this.Sticker_1;
     this.Sticker_1.loadTexture(ImageAssetArray[1]);   
     this.Sticker_1.alpha = 1;  
+    //Image Reference for placement section
+    ImageReference[1]=ImageAssetArray[1];
     //Pivot 
     this.Sticker_1.anchor.x = Pivot_X[0];
     this.Sticker_1.anchor.y = Pivot_Y[0];
     //Data storage 
     PositionArrayIndicator = 1;
     testArrayAlpha[1] = 1;
-    },  
+    },
     
     Sticker_2_Place: function () {
     isClickDragging = true;
     this.Sticker_1.loadTexture(ImageAssetArray[2]); 
     this.Sticker_1.alpha = 1;  
     this.SelectedButton = this.Sticker_1;
+    //Image Reference for placement section
+    ImageReference[1]=ImageAssetArray[2];
     //Pivot 
     this.Sticker_1.anchor.x = Pivot_X[1];
     this.Sticker_1.anchor.y = Pivot_Y[1];
     //Data storage 
     PositionArrayIndicator = 2;
-    testArrayAlpha[2] = 1;
-    }, 
+    testArrayAlpha[1] = 1;
+    },
     
     Sticker_3_Place: function () {
     isClickDragging = true;
     this.Sticker_1.loadTexture(ImageAssetArray[3]);
     this.Sticker_1.alpha = 1;
-    this.SelectedButton = this.Sticker_1;    
+    this.SelectedButton = this.Sticker_1;
+    //Image Reference for placement section
+    ImageReference[1]=ImageAssetArray[3];
     //Pivot 
     this.Sticker_1.anchor.x = Pivot_X[2];
     this.Sticker_1.anchor.y = Pivot_Y[2];
     //Data storage 
     PositionArrayIndicator = 3;
-    testArrayAlpha[3] = 1;
-    },   
+    testArrayAlpha[1] = 1;
+    },
     
     Sticker_4_Place: function () {
     isClickDragging = true;
     this.Sticker_1.loadTexture(ImageAssetArray[4]);
     this.Sticker_1.alpha = 1;
     this.SelectedButton = this.Sticker_1;
+    //Image Reference for placement section
+    ImageReference[1]=ImageAssetArray[4];
     //Pivot 
     this.Sticker_1.anchor.x = Pivot_X[3];
     this.Sticker_1.anchor.y = Pivot_Y[3];
     //Data storage 
     PositionArrayIndicator = 4;
-    testArrayAlpha[4] = 1;
+    testArrayAlpha[1] = 1;
     }, 
     
 ///////////////////////////
@@ -1071,12 +1079,14 @@ var Pivot_Y = [
     this.SelectedButton = this.Sticker_2;
     this.Sticker_2.loadTexture(ImageAssetArray[5]);
     this.Sticker_2.alpha = 1; 
+    //Image Reference for placement section
+    ImageReference[2]=ImageAssetArray[5];
     //Pivot 
     this.Sticker_2.anchor.x = Pivot_X[4];
     this.Sticker_2.anchor.y = Pivot_Y[4];
     //Data storage 
     PositionArrayIndicator = 5;
-    testArrayAlpha[5] = 1;
+    testArrayAlpha[2] = 1;
     }, 
         
     Sticker_6_Place: function () {
@@ -1084,12 +1094,14 @@ var Pivot_Y = [
     this.SelectedButton = this.Sticker_2;
     this.Sticker_2.loadTexture(ImageAssetArray[6]);
     this.Sticker_2.alpha = 1; 
+    //Image Reference for placement section
+    ImageReference[2]=ImageAssetArray[6];
     //Pivot 
     this.Sticker_2.anchor.x = Pivot_X[5];
     this.Sticker_2.anchor.y = Pivot_Y[5];
     //Data storage 
     PositionArrayIndicator = 6;
-    testArrayAlpha[6] = 1;
+    testArrayAlpha[2] = 1;
     }, 
             
     Sticker_7_Place: function () {
@@ -1097,12 +1109,14 @@ var Pivot_Y = [
     this.SelectedButton = this.Sticker_2;
     this.Sticker_2.loadTexture(ImageAssetArray[7]);
     this.Sticker_2.alpha = 1;  
+    //Image Reference for placemnt section
+    ImageReference[2]=ImageAssetArray[7];
     //Pivot 
     this.Sticker_2.anchor.x = Pivot_X[6];
     this.Sticker_2.anchor.y = Pivot_Y[6];
     //Data storage 
     PositionArrayIndicator = 7;
-    testArrayAlpha[7] = 1;
+    testArrayAlpha[2] = 1;
     }, 
              
     Sticker_8_Place: function () {
@@ -1110,12 +1124,14 @@ var Pivot_Y = [
     this.SelectedButton = this.Sticker_2;
     this.Sticker_2.loadTexture(ImageAssetArray[8]);
     this.Sticker_2.alpha = 1; 
+    //Image Reference for placemnt section
+    ImageReference[2]=ImageAssetArray[8];
     //Pivot 
     this.Sticker_2.anchor.x = Pivot_X[7];
     this.Sticker_2.anchor.y = Pivot_Y[7];
     //Data storage
     PositionArrayIndicator = 8;
-    testArrayAlpha[8] = 1;
+    testArrayAlpha[2] = 1;
     }, 
 
 ///////////////////////////
@@ -1127,12 +1143,14 @@ var Pivot_Y = [
     this.SelectedButton = this.Sticker_3;
     this.Sticker_3.loadTexture(ImageAssetArray[9]);
     this.Sticker_3.alpha = 1; 
+    //Image Reference for placemnt section
+    ImageReference[3]=ImageAssetArray[9];
     //Pivot 
     this.Sticker_3.anchor.x = Pivot_X[8];
     this.Sticker_3.anchor.y = Pivot_Y[8];
     //Data storage
     PositionArrayIndicator = 9;
-    testArrayAlpha[9] = 1;
+    testArrayAlpha[3] = 1;
     },  
     
     Sticker_10_Place: function () {
@@ -1140,12 +1158,14 @@ var Pivot_Y = [
     this.SelectedButton = this.Sticker_3;
     this.Sticker_3.loadTexture(ImageAssetArray[10]);
     this.Sticker_3.alpha = 1;  
+    //Image Reference for placemnt section
+    ImageReference[3]=ImageAssetArray[10];
     //Pivot 
     this.Sticker_3.anchor.x = Pivot_X[9];
     this.Sticker_3.anchor.y = Pivot_Y[9];
     //Data storage
     PositionArrayIndicator = 10;
-    testArrayAlpha[10] = 1;
+    testArrayAlpha[3] = 1;
     }, 
     
     Sticker_11_Place: function () {
@@ -1153,12 +1173,14 @@ var Pivot_Y = [
     this.SelectedButton = this.Sticker_3;
     this.Sticker_3.loadTexture(ImageAssetArray[11]);
     this.Sticker_3.alpha = 1;
+    //Image Reference for placemnt section
+    ImageReference[3]=ImageAssetArray[11];
     //Pivot 
     this.Sticker_3.anchor.x = Pivot_X[10];
     this.Sticker_3.anchor.y = Pivot_Y[10];
     //Data storage
     PositionArrayIndicator = 11;
-    testArrayAlpha[11] = 1;
+    testArrayAlpha[3] = 1;
     },   
     
     Sticker_12_Place: function () {
@@ -1166,12 +1188,14 @@ var Pivot_Y = [
     this.SelectedButton = this.Sticker_3;
     this.Sticker_3.loadTexture(ImageAssetArray[12]);
     this.Sticker_3.alpha = 1;   
+    //Image Reference for placemnt section
+    ImageReference[3]=ImageAssetArray[12];
     //Pivot 
     this.Sticker_3.anchor.x = Pivot_X[11];
     this.Sticker_3.anchor.y = Pivot_Y[11];
     //Data storage
     PositionArrayIndicator = 12;
-    testArrayAlpha[12] = 1;
+    testArrayAlpha[3] = 1;
     }, 
     
     
@@ -1183,26 +1207,30 @@ var Pivot_Y = [
     isClickDragging = true;
     this.SelectedButton = this.Sticker_4;
     this.Sticker_4.loadTexture(ImageAssetArray[13]);
-    this.Sticker_4.alpha = 1;   
+    this.Sticker_4.alpha = 1; 
+    //Image Reference for placemnt section
+    ImageReference[4]=ImageAssetArray[13];
     //Pivot 
     this.Sticker_4.anchor.x = Pivot_X[12];
     this.Sticker_4.anchor.y = Pivot_Y[12];
     //Data storage
     PositionArrayIndicator = 13;
-    testArrayAlpha[13] = 1;
+    testArrayAlpha[4] = 1;
     }, 
         
     Sticker_14_Place: function () {
     isClickDragging = true;
     this.SelectedButton = this.Sticker_4;
     this.Sticker_4.loadTexture(ImageAssetArray[14]);
-    this.Sticker_4.alpha = 1; 
+    this.Sticker_4.alpha = 1;
+    //Image Reference for placemnt section
+    ImageReference[4]=ImageAssetArray[14];
     //Pivot 
     this.Sticker_4.anchor.x = Pivot_X[13];
     this.Sticker_4.anchor.y = Pivot_Y[13];
     //Data storage
     PositionArrayIndicator = 14;
-    testArrayAlpha[14] = 1;
+    testArrayAlpha[4] = 1;
     }, 
             
     Sticker_15_Place: function () {
@@ -1210,12 +1238,14 @@ var Pivot_Y = [
     this.SelectedButton = this.Sticker_4;
     this.Sticker_4.loadTexture(ImageAssetArray[15]);
     this.Sticker_4.alpha = 1; 
+    //Image Reference for placemnt section
+    ImageReference[4]=ImageAssetArray[15];
     //Pivot 
     this.Sticker_4.anchor.x = Pivot_X[14];
     this.Sticker_4.anchor.y = Pivot_Y[14];
     //Data storage
     PositionArrayIndicator = 15;
-    testArrayAlpha[15] = 1;
+    testArrayAlpha[4] = 1;
     }, 
              
     Sticker_16_Place: function () {
@@ -1223,12 +1253,14 @@ var Pivot_Y = [
     this.SelectedButton = this.Sticker_4;
     this.Sticker_4.loadTexture(ImageAssetArray[16]);
     this.Sticker_4.alpha = 1; 
+    //Image Reference for placemnt section
+    ImageReference[4]=ImageAssetArray[16];
     //Pivot 
     this.Sticker_4.anchor.x = Pivot_X[15];
     this.Sticker_4.anchor.y = Pivot_Y[15];
     //Data storage
     PositionArrayIndicator = 16;
-    testArrayAlpha[16] = 1;
+    testArrayAlpha[4] = 1;
     }, 
 
 ///////////////////////////
@@ -1240,25 +1272,29 @@ var Pivot_Y = [
     this.SelectedButton = this.Sticker_5;
     this.Sticker_5.loadTexture(ImageAssetArray[17]);
     this.Sticker_5.alpha = 1; 
+    //Image Reference for placemnt section
+    ImageReference[5]=ImageAssetArray[17];
     //Pivot 
     this.Sticker_5.anchor.x = Pivot_X[16];
     this.Sticker_5.anchor.y = Pivot_Y[16];
     //Data storage
     PositionArrayIndicator = 17;
-    testArrayAlpha[17] = 1;
+    testArrayAlpha[5] = 1;
     },  
     
     Sticker_18_Place: function () {
     isClickDragging = true;
     this.SelectedButton = this.Sticker_5;
     this.Sticker_5.loadTexture(ImageAssetArray[18]);
-    this.Sticker_5.alpha = 1; 
+    this.Sticker_5.alpha = 1;
+    //Image Reference for placemnt section
+    ImageReference[5]=ImageAssetArray[18];
     //Pivot 
     this.Sticker_5.anchor.x = Pivot_X[17];
     this.Sticker_5.anchor.y = Pivot_Y[17];
     //Data storage
     PositionArrayIndicator = 18;
-    testArrayAlpha[18] = 1;
+    testArrayAlpha[5] = 1;
     }, 
     
     Sticker_19_Place: function () {
@@ -1266,12 +1302,14 @@ var Pivot_Y = [
     this.SelectedButton = this.Sticker_5;
     this.Sticker_5.loadTexture(ImageAssetArray[19]);
     this.Sticker_5.alpha = 1; 
+    //Image Reference for placemnt section
+    ImageReference[5]=ImageAssetArray[19];
     //Pivot 
     this.Sticker_5.anchor.x = Pivot_X[18];
     this.Sticker_5.anchor.y = Pivot_Y[18];
     //Data storage
     PositionArrayIndicator = 19;
-    testArrayAlpha[19] = 1;
+    testArrayAlpha[5] = 1;
     },   
     
     Sticker_20_Place: function () {
@@ -1279,12 +1317,14 @@ var Pivot_Y = [
     this.SelectedButton = this.Sticker_5;
     this.Sticker_5.loadTexture(ImageAssetArray[20]);
     this.Sticker_5.alpha = 1; 
+    //Image Reference for placemnt section
+    ImageReference[5]=ImageAssetArray[20];
     //Pivot 
     this.Sticker_5.anchor.x = Pivot_X[19];
     this.Sticker_5.anchor.y = Pivot_Y[19];
     //Data storage
     PositionArrayIndicator = 20;
-    testArrayAlpha[20] = 1;
+    testArrayAlpha[5] = 1;
     }, 
     
     
@@ -1297,25 +1337,29 @@ var Pivot_Y = [
     this.SelectedButton = this.Sticker_6;
     this.Sticker_6.loadTexture(ImageAssetArray[21]);
     this.Sticker_6.alpha = 1; 
+    //Image Reference for placemnt section
+    ImageReference[6]=ImageAssetArray[21];
     //Pivot 
     this.Sticker_6.anchor.x = Pivot_X[20];
     this.Sticker_6.anchor.y = Pivot_Y[20];
     //Data storage
     PositionArrayIndicator = 21;
-    testArrayAlpha[21] = 1;
+    testArrayAlpha[6] = 1;
     }, 
         
     Sticker_22_Place: function () {
     isClickDragging = true;
     this.SelectedButton = this.Sticker_6;
     this.Sticker_6.loadTexture(ImageAssetArray[22]);
-    this.Sticker_6.alpha = 1; 
+    this.Sticker_6.alpha = 1;
+    //Image Reference for placemnt section
+    ImageReference[6]=ImageAssetArray[22];
     //Pivot 
     this.Sticker_6.anchor.x = Pivot_X[21];
     this.Sticker_6.anchor.y = Pivot_Y[21];
     //Data storage
     PositionArrayIndicator = 22;
-    testArrayAlpha[22] = 1;
+    testArrayAlpha[6] = 1;
     }, 
             
     Sticker_23_Place: function () {
@@ -1323,12 +1367,14 @@ var Pivot_Y = [
     this.SelectedButton = this.Sticker_6;
     this.Sticker_6.loadTexture(ImageAssetArray[23]);
     this.Sticker_6.alpha = 1;
+    //Image Reference for placemnt section
+    ImageReference[6]=ImageAssetArray[23];
     //Pivot 
     this.Sticker_6.anchor.x = Pivot_X[22];
     this.Sticker_6.anchor.y = Pivot_Y[22];
     //Data storage
     PositionArrayIndicator = 23;
-    testArrayAlpha[23] = 1;
+    testArrayAlpha[6] = 1;
     }, 
              
     Sticker_24_Place: function () {
@@ -1336,12 +1382,14 @@ var Pivot_Y = [
     this.SelectedButton = this.Sticker_6;
     this.Sticker_6.loadTexture(ImageAssetArray[24]);
     this.Sticker_6.alpha = 1;
+    //Image Reference for placemnt section
+    ImageReference[6]=ImageAssetArray[24];
     //Pivot 
     this.Sticker_6.anchor.x = Pivot_X[23];
     this.Sticker_6.anchor.y = Pivot_Y[23];
     //Data storage
     PositionArrayIndicator = 24;
-    testArrayAlpha[24] = 1;
+    testArrayAlpha[6] = 1;
     },   
 ////////////////////
 //Section Sticekrs//
