@@ -9,9 +9,9 @@ var StateLoad = {
         this.time.advacedTiming = true;
         
         var video1;
-        game.load.video('Intro', 'Videos/The_Nine_Inch_Nails_in_Twin_Peaks.mp4');
-        game.load.video('Extro', 'Videos/Pray_For_Mojo.mp4');
-        game.load.video('Episode', 'Videos/The_Nine_Inch_Nails_in_Twin_Peaks.mp4');
+        game.load.video('Intro', 'https://www.youtube.com/embed/TH8JbGlcm9c');
+        game.load.video('Extro', 'https://www.youtube.com/embed/TH8JbGlcm9c');
+        game.load.video('Episode', 'https://www.youtube.com/embed/TH8JbGlcm9c');
 ////////////////
 /////Mobile/////
 ////////////////    
