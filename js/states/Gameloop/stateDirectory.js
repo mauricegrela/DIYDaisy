@@ -3,6 +3,8 @@ var StateDirectory = {
     preload: function () {
         GameCenter_x = game.width/2;
         GameCenter_y = game.height/3; 
+        
+        XPosition = 0;
     }
 
     , create: function () {   
@@ -125,12 +127,25 @@ var StateDirectory = {
             {
                 
             }*/
-        
-        
-        for (let i = 0; i < PlacableCollection.length-1; i++) {
+        for (let i = 0; i < PlacableCollection.length-1; i++) 
+        {
         PlacableCollection[i].x = game.input.x;
         PlacableCollection[i].y = game.input.y;
+        PlacableCollection[i].fixedToCamera = true;
+        //t.cameraOffset.setTo(200, 500);
+        //this.game.camera.x = PlacableCollection[i].x
         }
+        
+        if(game.input.x>this.game.camera.width-50)
+            {
+               //this.craftBackground.visible = false; 
+                this.game.camera.x += 30;
+            }
+                else if(game.input.x<50)
+                {
+                   //this.craftBackground.visible = false; 
+                    this.game.camera.x -= 30;
+                }
         
         //this.CharacterGroup.x = game.input.x;
         //this.CharacterGroup.y = game.input.y;
