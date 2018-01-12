@@ -12,9 +12,10 @@ var StateIntroMovie = {
         titleText.anchor.set(0.5, 0.5);*/
 
         video1 = game.add.video('Intro');
-        video1.play(true); 
+        //video1.play(true); 
         video1.addToWorld(game.width/2, game.height/2, 0.5, 0.5, 1, 1); 
-                
+        //video1.stop();
+        
         this.btnStart = gameButtons.addButton("skip",game.width/2, game.height-100, this.startGame, this);
         this.btnStart.anchor.set(0.5, 0);
         this.btnStart.y = game.height-this.btnStart.height;

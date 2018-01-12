@@ -51,6 +51,14 @@ var PlacableCollection = //Images
     0,
     ];
 
+var AnimationsInTheGallery = //Images
+    [
+    0,
+    0,
+    0,
+    0,
+    ];
+
 //This array sets which stickers can be placed in the level
 var ImageAssetArray = //Images
         [
