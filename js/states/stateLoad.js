@@ -7,16 +7,18 @@ var StateLoad = {
         this.game.scale.refresh();
         
         this.time.advacedTiming = true;
-        
+////////////////
+/////Videos/////
+////////////////  
         var video1;
         game.load.video('Intro', 'https://www.youtube.com/embed/TH8JbGlcm9c');
         game.load.video('Extro', 'https://www.youtube.com/embed/TH8JbGlcm9c');
         game.load.video('Episode', 'https://www.youtube.com/embed/TH8JbGlcm9c');
+        
 ////////////////
 /////Mobile/////
 ////////////////    
         game.load.image('MobileBody', 'images/Mobile/MobileBody.png');
-        
         game.load.image('Mobile_1', 'images/Mobile/Mobile_1.png');
         game.load.image('Mobile_2', 'images/Mobile/Mobile_2.png');
         game.load.image('Mobile_3', 'images/Mobile/Mobile_3.png');
@@ -121,7 +123,7 @@ var StateLoad = {
         game.load.spritesheet("Rock_Stickers_1", "images/ui/Rock_stickers.png", 365, 250, 24);
 
         
-                //Object Tab
+        //Object Tab
         game.load.image('PaintDot', 'images/ui/PaintDropTest.png');
         
 ////////////////
@@ -215,8 +217,10 @@ var StateLoad = {
           //Sticker Tab
         game.load.image('TabButton', 'images/ui/StickerCollisionBox.png');
         
-        //Placement Background
-        game.load.image('placing_Backgroung', 'images/backgrounds/Background_2.PNG');
+//Placement Background
+        game.load.image('placing_Backgroung1', 'images/backgrounds/Placeable/PlacableBackground_Level1.PNG');
+        game.load.image('placing_Backgroung2', 'images/backgrounds/Placeable/PlacableBackground_Level2.PNG');
+        game.load.image('placing_Backgroung3', 'images/backgrounds/Placeable/PlacableBackground_Level3.PNG');
         
         //Paint Brush Sprite
         //game.load.spritesheet('PaintBrush', 'images/backgrounds/paintbrush-sprite.png', 409, 549, 3);

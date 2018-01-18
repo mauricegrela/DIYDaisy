@@ -69,7 +69,6 @@ var StateMain = {
         gameMedia.setBackgroundMusic(this.backgroundMusic);
         
         //Images Variables
-
         SelectedColor = 0xff00ff;
        
         
@@ -215,8 +214,6 @@ var StateMain = {
         this.PineconeBody.anchor.y = 0.5;
         this.PineconeBody.scale.setTo(scaleRatio,scaleRatio);
         StickerBody.add(this.PineconeBody);
-
-        
         
         //Sticker_1_1
         this.Sticker_1 = game.add.sprite(OGPose_X, OGPose_Y+StickerDepth[1], ImageAssetArray[0]);  
@@ -278,7 +275,6 @@ var StateMain = {
                 
         //Sticker_4
         this.Sticker_4 = game.add.sprite(OGPose_X, OGPose_Y+StickerDepth[4], ImageAssetArray[0]);
-        
         this.Sticker_4.alpha = 0;
         this.Sticker_4.anchor.x = 0.5;
         this.Sticker_4.anchor.y = 0.5;
