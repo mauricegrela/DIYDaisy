@@ -17,276 +17,200 @@ var StatePlace = {
 
         
         
-       /*var GameCenter_x = game.width/2;
-        var GameCenter_y = game.height/3;*///
+    mummy = game.add.sprite(200, 360, 'mummy', 5);
+    mummy.scale.set(4);
+    mummy.smoothed = false;
+    anim = mummy.animations.add('walk');
         
+        
+        //Add background      
+     
         scaleRatio = window.devicePixelRatio / 2;
+
+
+        craftBackgroundScale = window.devicePixelRatio ;
+
+
+        CharacterScaleAdjustment = 0.5;
         
         CharacterGroup = game.add.group();
+     
+        this.craftBackground1 = game.add.sprite(0, 0, 'placing_Backgroung1');
+        this.craftBackground1.scale.setTo(craftBackgroundScale,craftBackgroundScale);
+       
 
         
-        this.Body = game.add.sprite(game.width/2, game.height/2, ImageAssetArray[0]);
-        this.Body.scale.setTo(scaleRatio,scaleRatio);
-        this.Body.anchor.x = PivotPoint_X[0];
-        this.Body.anchor.y =  PivotPoint_Y[0];
-        this.Body.alpha = testArrayAlpha[0];
-        this.Body.tint = testArrayColor[0];
-        PlacableArray[0] = this.Body;
+        //this.craftBackground3 = game.add.sprite(0, 0, 'placing_Backgroung3');
+        //this.craftBackground3.scale.setTo(scaleRatio,scaleRatio);
+        
+        game.world.setBounds(0, 0, this.craftBackground1.width, this.craftBackground1.height);
+        
+        this.cursors = game.input.keyboard.createCursorKeys();
+        
+        
+        this.Body = game.add.sprite(GameCenter_x, GameCenter_y,ImageAssetArray[0]);
+        this.Body.scale.setTo(scaleRatio*CharacterScaleAdjustment,scaleRatio*CharacterScaleAdjustment);
+        this.Body.anchor.x = Pivot_X[0];
+        this.Body.anchor.y =  Pivot_Y[0];
+        this.Body.alpha = 1;
+        PlacableCollection[0]=this.Body;
         CharacterGroup.add(this.Body);
         
-        this.Sticker1 = game.add.sprite(Xpos_ArrayAlpha[1], Ypos_ArrayAlpha[1], ImageAssetArray[1]);
-        this.Sticker1.scale.setTo(scaleRatio,scaleRatio);
-        this.Sticker1.anchor.x = PivotPoint_X[1];
-        this.Sticker1.anchor.y =  PivotPoint_Y[1];
+        this.Sticker1 = game.add.sprite(GameCenter_x, GameCenter_y, ImageReference[1]);
+        this.Sticker1.scale.setTo(scaleRatio*CharacterScaleAdjustment,scaleRatio*CharacterScaleAdjustment);
+        this.Sticker1.anchor.x = Pivot_X[1];
+        this.Sticker1.anchor.y =  Pivot_Y[1];
         this.Sticker1.alpha = testArrayAlpha[1];
-        this.Sticker1.tint = testArrayColor[1];
-        PlacableArray[1] = this.Sticker1;
+        PlacableCollection[1]=this.Sticker1;
         CharacterGroup.add(this.Sticker1);
         
-        
-        this.Sticker2 = game.add.sprite(Xpos_ArrayAlpha[2], Ypos_ArrayAlpha[2], ImageAssetArray[2]);
-        this.Sticker2.scale.setTo(scaleRatio,scaleRatio);
-        this.Sticker2.anchor.x = PivotPoint_X[2];
-        this.Sticker2.anchor.y =  PivotPoint_Y[2];
+        this.Sticker2 = game.add.sprite(GameCenter_x, GameCenter_y, ImageReference[2]);
+        this.Sticker2.scale.setTo(scaleRatio*CharacterScaleAdjustment,scaleRatio*CharacterScaleAdjustment);
+        this.Sticker2.anchor.x = Pivot_X[2];
+        this.Sticker2.anchor.y =  Pivot_Y[2];
         this.Sticker2.alpha = testArrayAlpha[2];
-        this.Sticker2.tint = testArrayColor[2];
-        PlacableArray[2] = this.Sticker1;
+        PlacableCollection[2]=this.Sticker2;
         CharacterGroup.add(this.Sticker2);
         
-        
-        this.Sticker3 = game.add.sprite(Xpos_ArrayAlpha[3], Ypos_ArrayAlpha[3], ImageAssetArray[3]);
-        this.Sticker3.scale.setTo(scaleRatio,scaleRatio);
-        this.Sticker3.anchor.x = PivotPoint_X[3];
-        this.Sticker3.anchor.y =  PivotPoint_Y[3];
+        this.Sticker3 = game.add.sprite(GameCenter_x, GameCenter_y, ImageReference[3]);
+        this.Sticker3.scale.setTo(scaleRatio*CharacterScaleAdjustment,scaleRatio*CharacterScaleAdjustment);
+        this.Sticker3.anchor.x = Pivot_X[3];
+        this.Sticker3.anchor.y =  Pivot_Y[3];
         this.Sticker3.alpha = testArrayAlpha[3];
-        this.Sticker3.tint = testArrayColor[3];
-        PlacableArray[3] = this.Sticker3;
+        PlacableCollection[3]=this.Sticker3;
         CharacterGroup.add(this.Sticker3);
         
-        
-        this.Sticker4 = game.add.sprite(Xpos_ArrayAlpha[4], Ypos_ArrayAlpha[4], ImageAssetArray[4]);
-        this.Sticker4.scale.setTo(scaleRatio,scaleRatio);
-        this.Sticker4.anchor.x = PivotPoint_X[4];
-        this.Sticker4.anchor.y =  PivotPoint_Y[4];
+        this.Sticker4 = game.add.sprite(GameCenter_x, GameCenter_y, ImageReference[4]);
+        this.Sticker4.scale.setTo(scaleRatio*CharacterScaleAdjustment,scaleRatio*CharacterScaleAdjustment);
+        this.Sticker4.anchor.x = Pivot_X[4];
+        this.Sticker4.anchor.y =  Pivot_Y[4];
         this.Sticker4.alpha = testArrayAlpha[4];
-        this.Sticker4.tint = testArrayColor[4];
-        PlacableArray[4] = this.Sticker4;
+        PlacableCollection[4]=this.Sticker4;
         CharacterGroup.add(this.Sticker4);
         
-
-        this.Sticker5 = game.add.sprite(Xpos_ArrayAlpha[5], Ypos_ArrayAlpha[5], ImageAssetArray[5]);
-        this.Sticker5.scale.setTo(scaleRatio,scaleRatio);
-        this.Sticker5.anchor.x = PivotPoint_X[5];
-        this.Sticker5.anchor.y =  PivotPoint_Y[5];
+        this.Sticker5 = game.add.sprite(GameCenter_x, GameCenter_y, ImageReference[5]);
+        this.Sticker5.scale.setTo(scaleRatio*CharacterScaleAdjustment,scaleRatio*CharacterScaleAdjustment);
+        this.Sticker5.anchor.x = Pivot_X[5];
+        this.Sticker5.anchor.y =  Pivot_Y[5];
         this.Sticker5.alpha = testArrayAlpha[5];
-        this.Sticker5.tint = testArrayColor[5];
-        PlacableArray[5] = this.Sticker5;
+        PlacableCollection[5]=this.Sticker5;
         CharacterGroup.add(this.Sticker5);
-        
-
-        this.Sticker6 = game.add.sprite(Xpos_ArrayAlpha[6], Ypos_ArrayAlpha[6], ImageAssetArray[6]);
-        this.Sticker6.scale.setTo(scaleRatio,scaleRatio);
-        this.Sticker6.anchor.x = PivotPoint_X[6];
-        this.Sticker6.anchor.y =  PivotPoint_Y[6];
+      
+        this.Sticker6 = game.add.sprite(GameCenter_x, GameCenter_y, ImageReference[6]);
+        this.Sticker6.scale.setTo(scaleRatio*CharacterScaleAdjustment,scaleRatio*CharacterScaleAdjustment);
+        this.Sticker6.anchor.x = Pivot_X[6];
+        this.Sticker6.anchor.y =  Pivot_Y[6];
         this.Sticker6.alpha = testArrayAlpha[6];
-        this.Sticker6.tint = testArrayColor[6];
-        PlacableArray[6] = this.Sticker6;
-        CharacterGroup.add(this.Sticker6);   
-                
+        PlacableCollection[6]=this.Sticker6;
+        CharacterGroup.add(this.Sticker6);
+        
+        game.world.bringToTop(CharacterGroup);
+        
+        //game.world.bringToTop(this.craftBackground3);
+        
+        this.mummy1 = game.add.sprite(this.craftBackground1.width/2, 0, 'Anim1', 5);
+        this.mummy1.scale.set(1.2);
+        this.mummy1.anchor.x = 0.5;
+        this.mummy1.anchor.y = 0.0;
+        //this.mummy1.smoothed = false;
+        //this.mummy1.fixedToCamera = true;
+        this.anim1 = this.mummy1.animations.add('walk');
 
-        
-        this.Sticker7 = game.add.sprite(Xpos_ArrayAlpha[7], Ypos_ArrayAlpha[7], ImageAssetArray[7]);
-        this.Sticker7.anchor.x = PivotPoint_X[7];
-        this.Sticker7.anchor.y =  PivotPoint_Y[7];
-        this.Sticker7.alpha = testArrayAlpha[7];
-        this.Sticker7.tint = testArrayColor[7];
-        PlacableArray[7] = this.Sticker7;
-        CharacterGroup.add(this.Sticker7);
-        
+        //this.anim1.play(10, true);
 
-        this.Sticker8 = game.add.sprite(Xpos_ArrayAlpha[8], Ypos_ArrayAlpha[8], ImageAssetArray[8]);
-        this.Sticker8.scale.setTo(scaleRatio,scaleRatio);
-        this.Sticker8.anchor.x = PivotPoint_X[8];
-        this.Sticker8.anchor.y =  PivotPoint_Y[8];
-        this.Sticker8.alpha = testArrayAlpha[8];
-        this.Sticker8.tint = testArrayColor[8];
-        PlacableArray[8] = this.Sticker8;
-        CharacterGroup.add(this.Sticker8);
-        
-        
-        this.Sticker9 = game.add.sprite(Xpos_ArrayAlpha[9], Ypos_ArrayAlpha[9], ImageAssetArray[9]);
-        this.Sticker9.scale.setTo(scaleRatio,scaleRatio);
-        this.Sticker9.anchor.x = PivotPoint_X[9];
-        this.Sticker9.anchor.y =  PivotPoint_Y[9];
-        this.Sticker9.alpha = testArrayAlpha[9];
-        this.Sticker9.tint = testArrayColor[9];
-        PlacableArray[9] = this.Sticker9;
-        CharacterGroup.add(this.Sticker9);
-        
-        
-        this.Sticker10 = game.add.sprite(Xpos_ArrayAlpha[10], Ypos_ArrayAlpha[10], ImageAssetArray[10]);
-        this.Sticker10.scale.setTo(scaleRatio,scaleRatio);
-        this.Sticker10.anchor.x = PivotPoint_X[10];
-        this.Sticker10.anchor.y =  PivotPoint_Y[10];
-        this.Sticker10.alpha = testArrayAlpha[10];
-        this.Sticker10.tint = testArrayColor[10];
-        PlacableArray[10] = this.Sticker10;
-        CharacterGroup.add(this.Sticker10);
-        
-        
-        this.Sticker11 = game.add.sprite(Xpos_ArrayAlpha[11], Ypos_ArrayAlpha[11], ImageAssetArray[11]);
-        this.Sticker11.scale.setTo(scaleRatio,scaleRatio);
-        this.Sticker11.anchor.x = PivotPoint_X[11];
-        this.Sticker11.anchor.y =  PivotPoint_Y[11];
-        this.Sticker11.alpha = testArrayAlpha[11];
-        this.Sticker11.tint = testArrayColor[11];
-        PlacableArray[11] = this.Sticker11;
-        CharacterGroup.add(this.Sticker11);
-        
-        
-        this.Sticker12 = game.add.sprite(Xpos_ArrayAlpha[12], Ypos_ArrayAlpha[12], ImageAssetArray[12]);
-        this.Sticker12.scale.setTo(scaleRatio,scaleRatio);
-        this.Sticker12.anchor.x = PivotPoint_X[12];
-        this.Sticker12.anchor.y =  PivotPoint_Y[12];
-        this.Sticker12.alpha = testArrayAlpha[12];
-        this.Sticker12.tint = testArrayColor[12];
-        PlacableArray[12] = this.Sticker12;
-        CharacterGroup.add(this.Sticker12);
-        
+        this.mummy2 = game.add.sprite(this.craftBackground1.width-this.mummy1.width, this.craftBackground1.height, 'Anim2', 5);
+        this.mummy2.scale.set(2);
+        this.mummy2.anchor.x = 0.5;
+        this.mummy2.anchor.y =  1;
+        //this.mummy2.smoothed = false;
+        //this.mummy2.fixedToCamera = true;
+        this.anim2 = this.mummy2.animations.add('walk');
 
-        this.Sticker13 = game.add.sprite(Xpos_ArrayAlpha[13], Ypos_ArrayAlpha[13], ImageAssetArray[13]);
-        this.Sticker13.scale.setTo(scaleRatio,scaleRatio);
-        this.Sticker13.anchor.x = PivotPoint_X[13];
-        this.Sticker13.anchor.y =  PivotPoint_Y[13];
-        this.Sticker13.alpha = testArrayAlpha[13];
-        this.Sticker13.tint = testArrayColor[13];
-        PlacableArray[13] = this.Sticker13;
-        CharacterGroup.add(this.Sticker13);
+        //this.anim1.play(10, true);
         
+        
+        this.mummy3 = game.add.sprite(0, this.craftBackground1.height, 'Anim3', 5);
+        this.mummy3.scale.set(2);
+        this.mummy3.anchor.x = 0.5;
+        this.mummy3.anchor.y =  1;
+        //this.mummy2.smoothed = false;
+        //this.mummy2.fixedToCamera = true;
+        this.anim3 = this.mummy3.animations.add('walk');
+        
+        AnimationsInTheGallery[0]=this.mummy1;
+        AnimationsInTheGallery[1]=this.anim1;
+        AnimationsInTheGallery[2]=this.mummy2;
+        AnimationsInTheGallery[3]=this.anim2;
+        AnimationsInTheGallery[4]=this.mummy3;
+        AnimationsInTheGallery[5]=this.anim3;
+        
+        this.craftBackground2 = game.add.sprite(0, 0, 'placing_Backgroung2');
+        this.craftBackground2.scale.setTo(craftBackgroundScale,craftBackgroundScale);
 
-        this.Sticker14 = game.add.sprite(Xpos_ArrayAlpha[14], Ypos_ArrayAlpha[14], ImageAssetArray[14]);
-        this.Sticker14.scale.setTo(scaleRatio,scaleRatio);
-        this.Sticker14.anchor.x = PivotPoint_X[14];
-        this.Sticker14.anchor.y =  PivotPoint_Y[14];
-        this.Sticker14.alpha = testArrayAlpha[14];
-        this.Sticker14.tint = testArrayColor[14];
-        PlacableArray[14] = this.Sticker14;
-        CharacterGroup.add(this.Sticker14);
-        
+        //game.world.bringToTop(this.mummy);
+        //this.tester = game.add.sprite(0, 0, game.cache.getBitmapData(this.DrawnSprite));
+    }, 
+    PlaceCreation: function () {
+    game.state.start("StatePlace")
+    },
+    WatchEpisode: function () {
+    game.state.start("StateEpisode");
+    },
+    SaveFile: function () {
 
-        this.Sticker15 = game.add.sprite(Xpos_ArrayAlpha[15], Ypos_ArrayAlpha[15], ImageAssetArray[15]);
-        this.Sticker15.scale.setTo(scaleRatio,scaleRatio);
-        this.Sticker15.anchor.x = PivotPoint_X[15];
-        this.Sticker15.anchor.y =  PivotPoint_Y[15];
-        this.Sticker15.alpha = testArrayAlpha[15];
-        this.Sticker15.tint = testArrayColor[15];
-        PlacableArray[15] = this.Sticker15;
-        CharacterGroup.add(this.Sticker15);
-        
-
-        this.Sticker16 = game.add.sprite(Xpos_ArrayAlpha[16], Ypos_ArrayAlpha[16], ImageAssetArray[16]);
-        this.Sticker16.scale.setTo(scaleRatio,scaleRatio);
-        this.Sticker16.anchor.x = PivotPoint_X[16];
-        this.Sticker16.anchor.y =  PivotPoint_Y[16];
-        this.Sticker16.alpha = testArrayAlpha[16];
-        this.Sticker16.tint = testArrayColor[16];
-        PlacableArray[16] = this.Sticker16;
-        CharacterGroup.add(this.Sticker16);
-        
-        
-        this.Sticker17 = game.add.sprite(Xpos_ArrayAlpha[17], Ypos_ArrayAlpha[17], ImageAssetArray[17]);
-        this.Sticker17.scale.setTo(scaleRatio,scaleRatio);
-        this.Sticker17.anchor.x = PivotPoint_X[17];
-        this.Sticker17.anchor.y =  PivotPoint_Y[17];
-        this.Sticker17.alpha = testArrayAlpha[17];
-        this.Sticker17.tint = testArrayColor[17];
-        PlacableArray[17] = this.Sticker17;
-        CharacterGroup.add(this.Sticker17);
-        
-                
-        this.Sticker18 = game.add.sprite(Xpos_ArrayAlpha[18], Ypos_ArrayAlpha[18], ImageAssetArray[18]);
-        this.Sticker18.scale.setTo(scaleRatio,scaleRatio);
-        this.Sticker18.anchor.x = PivotPoint_X[18];
-        this.Sticker18.anchor.y =  PivotPoint_Y[18];
-        this.Sticker18.alpha = testArrayAlpha[18];
-        this.Sticker18.tint = testArrayColor[18];
-        PlacableArray[18] = this.Sticker18;
-        CharacterGroup.add(this.Sticker18);
-                          
-        this.Sticker19 = game.add.sprite(Xpos_ArrayAlpha[19], Ypos_ArrayAlpha[19], ImageAssetArray[19]);
-        this.Sticker19.scale.setTo(scaleRatio,scaleRatio);
-        this.Sticker19.anchor.x = PivotPoint_X[19];
-        this.Sticker19.anchor.y =  PivotPoint_Y[19];
-        this.Sticker19.alpha = testArrayAlpha[19];
-        this.Sticker19.tint = testArrayColor[19];
-        PlacableArray[19] = this.Sticker19;
-        CharacterGroup.add(this.Sticker19);
-              
-                                  
-        this.Sticker20 = game.add.sprite(Xpos_ArrayAlpha[20], Ypos_ArrayAlpha[20], ImageAssetArray[20]);
-        this.Sticker20.scale.setTo(scaleRatio,scaleRatio);
-        this.Sticker20.anchor.x = PivotPoint_X[20];
-        this.Sticker20.anchor.y =  PivotPoint_Y[20];
-        this.Sticker20.alpha = testArrayAlpha[20];
-        this.Sticker20.tint = testArrayColor[20];
-        PlacableArray[20] = this.Sticker20;
-        CharacterGroup.add(this.Sticker20);
-        
-                                          
-        this.Sticker21 = game.add.sprite(Xpos_ArrayAlpha[21], Ypos_ArrayAlpha[21], ImageAssetArray[21]);
-        this.Sticker21.scale.setTo(scaleRatio,scaleRatio);
-        this.Sticker21.anchor.x = PivotPoint_X[21];
-        this.Sticker21.anchor.y =  PivotPoint_Y[21];
-        this.Sticker21.alpha = testArrayAlpha[21];
-        this.Sticker21.tint = testArrayColor[21];
-        PlacableArray[21] = this.Sticker21;
-        CharacterGroup.add(this.Sticker21);
-        
-                                                  
-        this.Sticker22 = game.add.sprite(Xpos_ArrayAlpha[22], Ypos_ArrayAlpha[22], ImageAssetArray[22]);
-        this.Sticker22.scale.setTo(scaleRatio,scaleRatio);
-        this.Sticker22.anchor.x = PivotPoint_X[22];
-        this.Sticker22.anchor.y =  PivotPoint_Y[22];
-        this.Sticker22.alpha = testArrayAlpha[22];
-        this.Sticker22.tint = testArrayColor[22];
-        PlacableArray[22] = this.Sticker22;
-        CharacterGroup.add(this.Sticker22);
-        
-                                                          
-        this.Sticker23 = game.add.sprite(Xpos_ArrayAlpha[23], Ypos_ArrayAlpha[23], ImageAssetArray[23]);
-        this.Sticker23.scale.setTo(scaleRatio,scaleRatio);
-        this.Sticker23.anchor.x = PivotPoint_X[23];
-        this.Sticker23.anchor.y =  PivotPoint_Y[23];
-        this.Sticker23.alpha = testArrayAlpha[23];
-        this.Sticker23.tint = testArrayColor[23];
-        PlacableArray[23] = this.Sticker23;
-        CharacterGroup.add(this.Sticker23);
-        
-                                                                  
-        this.Sticker24 = game.add.sprite(Xpos_ArrayAlpha[24], Ypos_ArrayAlpha[24], ImageAssetArray[24]);
-        this.Sticker24.scale.setTo(scaleRatio,scaleRatio);
-        this.Sticker24.anchor.x = PivotPoint_X[24];
-        this.Sticker24.anchor.y =  PivotPoint_Y[24];
-        this.Sticker24.alpha = testArrayAlpha[24];
-        this.Sticker24.tint = testArrayColor[24];
-        PlacableArray[24] = this.Sticker24;
-        CharacterGroup.add(this.Sticker24);
-        
-          
-        this.tester = game.add.sprite(0, 0, game.cache.getBitmapData(this.DrawnSprite));
     }
-    , startGame: function () {     
-        //game.state.start("StateCharacterSelect");
-        //video1.stop();
-    }
-    , update: function () 
-    {
-        for (let i = 0; i < PlacableArray.length-1; i++) {
-            PlacableArray[i].x = game.input.x;
-            PlacableArray[i].y = game.input.y;
-
+    , update: function () {
+        //Paralaxing background. 
+        this.craftBackground2.x = game.camera.x*0.3;
+        //this.craftBackground3.x = game.camera.x*0.4;
+        
+        //Camera panning
+            if (this.game.input.activePointer.isDown) 
+            {   if (this.game.origDragPoint) {      
+            // move the camera by the amount the mouse has moved since last update      
+            this.game.camera.x += this.game.origDragPoint.x - this.game.input.activePointer.position.x;
+            this.game.camera.y += this.game.origDragPoint.y - this.game.input.activePointer.position.y; }
+            // set new drag origin to current position  
+            this.game.origDragPoint = this.game.input.activePointer.position.clone();
+            }
+                else
+                {   this.game.origDragPoint = null;}
+        
+        for (let i = 0; i < AnimationsInTheGallery.length-1; i+=2) 
+        {
+            if(
+            PlacableCollection[0].x>AnimationsInTheGallery[i].x-AnimationsInTheGallery[i].width &&               PlacableCollection[0].x<AnimationsInTheGallery[i].x+AnimationsInTheGallery[i].width &&
+            AnimationsInTheGallery[i+1].isPlaying  == false)
+            {
+             AnimationsInTheGallery[i+1].play(10, false);
+            }
+                else
+                {
+                //AnimationsInTheGallery[i].alpha =0;
+                //AnimationsInTheGallery[i+1].stop(true, true);
+                //AnimationsInTheGallery[i+1].stop(true, true);
+                }
+            
         }
-    //CharacterGroup.rotation += 0.02;
-
+        
+        //Render each of the character layers. 
+        for (let i = 0; i < PlacableCollection.length-1; i++) 
+        {
+        PlacableCollection[i].x = game.input.x;
+        PlacableCollection[i].y = game.input.y;
+        PlacableCollection[i].fixedToCamera = true;
+        }
+        /*
+        //for panning the camera 
+        if(game.input.x>this.game.camera.width-this.game.camera.width/2.5)
+            {
+               //this.craftBackground.visible = false; 
+                this.game.camera.x += 10;
+            }
+                else if(game.input.x<this.game.camera.width/2.5)
+                {
+                   //this.craftBackground.visible = false; 
+                    this.game.camera.x -= 10;
+                }*/
     }
 }

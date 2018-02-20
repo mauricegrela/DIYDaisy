@@ -11,9 +11,18 @@ var wrongTag = "";
 var gameButtons;
 var gameMedia;
 var SelectedColor;
+
 //PLACE YOUR OWN GLOBALS HERE
 var isMobile;
+
 //Sprite Manipulation Library
+var IsPlacingRock = false;
+var IsPlacingPineCone = false;
+var IsPlacingMobile = false;
+
+var IsPlacingSmudgeStick = false;
+var IsPlacingStickWand = false;
+
 var isClickDragging = false;
 var isAddingPaint = false;
 var isAddingSticker = true;
@@ -27,6 +36,9 @@ var StickerAssigner_set1 = "Pinecone_Stickers";
 
 
 var GroupRefArrayCounter = 0;
+
+var  ExtroVideoRef = //Images
+    [0,0,0,0,0 ];
 
 var ImageGroupReference = //Images
     [0,0,0,0,0,0 ];
@@ -148,7 +160,6 @@ var Pivot_X = [
         0.5,
         0.5,
         0.5,
-        0.5,
         0.5
         ];
 
@@ -162,23 +173,22 @@ var Pivot_Y = [
         0.5,
         0.5,
         0.5,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
         0.5,
         0.5,
         0.5,
         0.5,
-        0.5,
-        0.5,
-        0.5,
-        0.5,
-        0.5,
-        0.5,
-        0.5,
-        0.5,
-        0.5,
-        0.5,
-        0.5,
-        0.5,
-        0.5
+        0.2,
+        0.2,
+        0.4,
+        0.4,
+        0.4,
+        0.4,
+        0.4,
+        0.4
         ];
 
 //These stickers will dictate the order inwhich stickers will be shown 
@@ -228,6 +238,8 @@ if (isMobile>-1)
             wrongTag = "wrongWayPortrait";
         }
     }
+        this.game.crossOrigin = "anonymous";
+
     gameMedia = new GameMedia();
     gameButtons = new GameButtons();
     //add a state or screen to the game

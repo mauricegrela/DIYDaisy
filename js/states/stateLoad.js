@@ -11,15 +11,27 @@ var StateLoad = {
 /////Videos/////
 ////////////////  
         var video1;
-        game.load.video('Intro', 'https://www.youtube.com/embed/TH8JbGlcm9c');
-        game.load.video('Extro', 'https://www.youtube.com/embed/TH8JbGlcm9c');
-        game.load.video('Episode', 'https://www.youtube.com/embed/TH8JbGlcm9c');
-        
+        game.load.video('Intro', 'videos/Intro/DaisyGBK_Intro_720.mp4');
+
+        game.load.video('Extro1', 'videos/Extro/DaisyGBK_Extro1_720.mp4');
+        game.load.video('Extro2', 'videos/Extro/DaisyGBK_Extro2_720.mp4');
+        game.load.video('Extro3', 'videos/Extro/DaisyGBK_Extro3_720.mp4');
+        game.load.video('Extro4', 'videos/Extro/DaisyGBK_Extro4_720.mp4');
+        game.load.video('Extro5', 'videos/Extro/DaisyGBK_Extro5_720.mp4');
+
+
+        //game.load.video('FlowerEpisode', 'videos/Flower_Petal/DaisyGBK_FlowerPetArt_720.mp4');
+        //game.load.video('ForestEpisode', 'videos/Forest_Mobile/DaisyGBK_ForestMob_720.mp4');
+        //game.load.video('LadybugEpisode', 'videos/Ladybug_Rock/DaisyGBK_LadyRock_720.mp4');
+        game.load.video('Episode', 'videos/PineCone_Animal/DaisyGBK_PineCon_Ani_720.mp4');
+        //game.load.video('RainbowEpisode', 'videos/Rainbow_Wands/DaisyGBK_RainWand_720.mp4');
+
+
 ////////////////
 /////Mobile/////
 ////////////////    
         game.load.image('MobileBody', 'images/Mobile/MobileBody.png');
-        game.load.image('Mobile_1', 'images/Mobile/Mobile_1.png');
+       /*	game.load.image('Mobile_1', 'images/Mobile/Mobile_1.png');
         game.load.image('Mobile_2', 'images/Mobile/Mobile_2.png');
         game.load.image('Mobile_3', 'images/Mobile/Mobile_3.png');
         game.load.image('Mobile_4', 'images/Mobile/Mobile_4.png');
@@ -45,7 +57,7 @@ var StateLoad = {
         game.load.image('Mobile_24', 'images/Mobile/Mobile_24.png');
         
         game.load.spritesheet("Mobile_stickers", "images/ui/Mobile_stickers.png", 365, 250, 24);
-        
+        */
 ////////////////
 ////Pinecones////
 ////////////////    
@@ -83,14 +95,14 @@ var StateLoad = {
         game.load.image('PineconeWings_3', 'images/Pinecone/PineconeWings_3.png'); 
         game.load.image('PineconeWings_4', 'images/Pinecone/PineconeWings_4.png');
         game.load.spritesheet("Pinecone_Stickers", "images/ui/Pinecone_stickers.png", 365, 250, 24);
-        
+
 ////////////////
 //////Rock//////
 ////////////////           
         //game.load.image('MagLenz', 'images/Pinecone/alphaMaskState.png');      
         //Load Stickers and body
         game.load.image('RockBody', 'images/Rock/RockBody.png');     
-        game.load.image('RockBase_1', 'images/Rock/RockBase_1.png');
+        /*	game.load.image('RockBase_1', 'images/Rock/RockBase_1.png');
         game.load.image('RockBase_2', 'images/Rock/RockBase_2.png');      
         game.load.image('RockBase_3', 'images/Rock/RockBase_3.png');
         game.load.image('RockBase_4', 'images/Rock/RockBase_4.png'); 
@@ -125,12 +137,12 @@ var StateLoad = {
         
         //Object Tab
         game.load.image('PaintDot', 'images/ui/PaintDropTest.png');
-        
+        */
 ////////////////
 ///SmudgeStick///
 ////////////////    
         game.load.image('SmudgeStickBody', 'images/SmudgeStick/SmudgeStickBody.png');  
-
+        /*
         game.load.image('RockBase_1', 'images/SmudgeStick/RockBase_1.png');
         game.load.image('RockBase_2', 'images/SmudgeStick/RockBase_2.png');      
         game.load.image('RockBase_3', 'images/SmudgeStick/RockBase_3.png');
@@ -160,12 +172,12 @@ var StateLoad = {
         game.load.image('RockClothing_2', 'images/SmudgeStick/RockClothing_2.png');
         game.load.image('RockClothing_3', 'images/SmudgeStick/RockClothing_3.png');
         game.load.image('RockClothing_4', 'images/SmudgeStick/RockClothing_4.png');        
-         
+         */
 ////////////////
 ///StickWand///
 ////////////////    
         game.load.image('StickWandBody', 'images/StickWand/StickWandBody.png');   
-
+        /*
         game.load.image('RockBase_1', 'images/StickWand/RockBase_1.png');
         game.load.image('RockBase_2', 'images/StickWand/RockBase_2.png');      
         game.load.image('RockBase_3', 'images/StickWand/RockBase_3.png');
@@ -195,7 +207,7 @@ var StateLoad = {
         game.load.image('RockClothing_2', 'images/StickWand/RockClothing_2.png');
         game.load.image('RockClothing_3', 'images/StickWand/RockClothing_3.png');
         game.load.image('RockClothing_4', 'images/StickWand/RockClothing_4.png');    
-        
+        */
 ///////////////////////////
 //Carosel Stickers to load/
 ///////////////////////////
@@ -218,9 +230,9 @@ var StateLoad = {
         game.load.image('TabButton', 'images/ui/StickerCollisionBox.png');
         
 //Placement Background
-        game.load.image('placing_Backgroung1', 'images/backgrounds/Placeable/PlacableBackground_Level1.PNG');
-        game.load.image('placing_Backgroung2', 'images/backgrounds/Placeable/PlacableBackground_Level2.PNG');
-        game.load.image('placing_Backgroung3', 'images/backgrounds/Placeable/PlacableBackground_Level3.PNG');
+        game.load.image('placing_Backgroung1', 'images/backgrounds/Placeable/Interactive_main_BG-min.png');
+        game.load.image('placing_Backgroung2', 'images/backgrounds/Placeable/Interactive_main_FOREGROUND-min.png');
+        //game.load.image('placing_Backgroung3', 'images/backgrounds/Placeable/PlacableBackground_Level3.PNG');
         
         //Paint Brush Sprite
         //game.load.spritesheet('PaintBrush', 'images/backgrounds/paintbrush-sprite.png', 409, 549, 3);
@@ -230,9 +242,11 @@ var StateLoad = {
         
         
         //Animations
-        game.load.spritesheet('mummy', 'images/SpriteSheets/metalslug_mummy37x45.png', 37, 45, 18);
-        
-        //PRELOAD EVERYTHING HERE
+        game.load.spritesheet('Anim1', 'images/SpriteSheets/1_Clouds_SpriteSheet.png', 512, 512, 9);
+        game.load.spritesheet('Anim2', 'images/SpriteSheets/2_dandelion_spritesheet-min_1024.png', 341, 341, 9);
+        game.load.spritesheet('Anim3', 'images/SpriteSheets/3_squirrel_spritesheet-min_1024.png', 341, 341, 9);
+
+        //UI Assets
         game.load.spritesheet("buttons", "images/ui/buttons-red.png", 265, 75);
         game.load.spritesheet("soundButtons", "images/ui/soundButtons-blue.png", 44, 44, 4);
         game.load.spritesheet("daisylogo", "images/ui/daisylogo.png", 44, 44, 34);
@@ -251,10 +265,6 @@ var StateLoad = {
         full.y = empty.y;
 
         game.load.setPreloadSprite(full);
-
-
-
-
     },
 
     create: function () {

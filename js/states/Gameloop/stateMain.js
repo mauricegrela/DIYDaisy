@@ -3,12 +3,482 @@ var StateMain = {
 ///////////REMEMBER TO REFRESH/////////////
 //////////////////////////////////////////
     preload: function () { 
+        game.load.image("loadingEmpty", "images/loading/progress_none.png");
+        game.load.image("loadingFull", "images/loading/progress_all.png");
+        
         GameCenter_x = game.width/2;
         GameCenter_y = game.height/3;   
+
+        isTakingPhoto = false;
+
+            if(IsPlacingMobile == true)
+            {
+                game.load.image('Mobile_1', 'images/Mobile/Mobile_1.png');
+                game.load.image('Mobile_2', 'images/Mobile/Mobile_2.png');
+                game.load.image('Mobile_3', 'images/Mobile/Mobile_3.png');
+                game.load.image('Mobile_4', 'images/Mobile/Mobile_4.png');
+                game.load.image('Mobile_5', 'images/Mobile/Mobile_5.png');
+                game.load.image('Mobile_6', 'images/Mobile/Mobile_6.png');
+                game.load.image('Mobile_7', 'images/Mobile/Mobile_7.png');
+                game.load.image('Mobile_8', 'images/Mobile/Mobile_8.png');
+                game.load.image('Mobile_9', 'images/Mobile/Mobile_9.png');
+                game.load.image('Mobile_10', 'images/Mobile/Mobile_10.png');
+                game.load.image('Mobile_11', 'images/Mobile/Mobile_11.png');
+                game.load.image('Mobile_12', 'images/Mobile/Mobile_12.png'); 
+                game.load.image('Mobile_13', 'images/Mobile/Mobile_13.png');
+                game.load.image('Mobile_14', 'images/Mobile/Mobile_14.png');
+                game.load.image('Mobile_15', 'images/Mobile/Mobile_15.png');
+                game.load.image('Mobile_16', 'images/Mobile/Mobile_16.png');
+                game.load.image('Mobile_17', 'images/Mobile/Mobile_17.png');
+                game.load.image('Mobile_18', 'images/Mobile/Mobile_18.png'); 
+                game.load.image('Mobile_19', 'images/Mobile/Mobile_19.png');
+                game.load.image('Mobile_20', 'images/Mobile/Mobile_20.png');
+                game.load.image('Mobile_21', 'images/Mobile/Mobile_21.png');
+                game.load.image('Mobile_22', 'images/Mobile/Mobile_22.png');
+                game.load.image('Mobile_23', 'images/Mobile/Mobile_23.png');
+                game.load.image('Mobile_24', 'images/Mobile/Mobile_24.png');
+                game.load.spritesheet("Mobile_stickers", "images/ui/Mobile_stickers.png", 365, 250, 24);
+
+                //////////////////////////
+                ////Sticker Body//////////
+                //////////////////////////
+                        ImageAssetArray[0]='MobileBody';
+                ///////////////////////////
+                ////First Sticker Group////
+                ///////////////////////////
+                        ImageAssetArray[1]='Mobile_1';
+                        ImageAssetArray[2]='Mobile_2'; 
+                        ImageAssetArray[3]='Mobile_3';
+                        ImageAssetArray[4]='Mobile_4';
+                ///////////////////////////
+                ////Second Sticker Group///
+                ///////////////////////////
+                        ImageAssetArray[5]='Mobile_5';
+                        ImageAssetArray[6]='Mobile_6';
+                        ImageAssetArray[7]='Mobile_7';
+                        ImageAssetArray[8]='Mobile_8';
+                ///////////////////////////
+                ////Third Sticker Group////
+                ///////////////////////////
+                        ImageAssetArray[9]='Mobile_9';
+                        ImageAssetArray[10]='Mobile_10';
+                        ImageAssetArray[11]='Mobile_11';
+                        ImageAssetArray[12]='Mobile_12';
+                ///////////////////////////
+                ////Fourth Sticker Group///
+                ///////////////////////////
+                        ImageAssetArray[13]='Mobile_13';
+                        ImageAssetArray[14]='Mobile_14';
+                        ImageAssetArray[15]='Mobile_15';  
+                        ImageAssetArray[16]='Mobile_16';
+                ///////////////////////////
+                ////Fifth Sticker Group////
+                ///////////////////////////
+                        ImageAssetArray[17]='Mobile_17';
+                        ImageAssetArray[18]='Mobile_18';
+                        ImageAssetArray[19]='Mobile_19';
+                        ImageAssetArray[20]='Mobile_20';
+                ///////////////////////////
+                ////Sixth Sticker Group////
+                ///////////////////////////
+                        ImageAssetArray[21]='Mobile_21';
+                        ImageAssetArray[22]='Mobile_22';
+                        ImageAssetArray[23]='Mobile_23';
+                        ImageAssetArray[24]='Mobile_24';
+                
+
+                Pivot_X [0]=0.8;
+                Pivot_Y [0]=0.2;     
+                Pivot_X [1]=0.8;
+                Pivot_Y [1]=0.2;
+                Pivot_X [2]=0.8;
+                Pivot_Y [2]=0.2;
+                Pivot_X [3]=0.8;
+                Pivot_Y [3]=0.2;
+
+                Pivot_X [4]=0.7;
+                Pivot_Y [4]=0.1; 
+                Pivot_X [5]=0.7;
+                Pivot_Y [5]=0.1;     
+                Pivot_X [6]=0.7;
+                Pivot_Y [6]=0.1;     
+                Pivot_X [7]=0.7;
+                Pivot_Y [7]=0.1;
+
+                Pivot_X [8]=0.45;  
+                Pivot_Y [8]=0.1;   
+                Pivot_X [9]=0.45;
+                Pivot_Y [9]=0.1;   
+                Pivot_X [10]=0.45;
+                Pivot_Y [10]=0.1; 
+                Pivot_X [11]=0.45;
+                Pivot_Y [11]=0.1;
+
+                Pivot_X [12]=0.25;
+                Pivot_Y [12]=0.1;  
+                Pivot_X [13]=0.25;
+                Pivot_Y [13]=0.1;    
+                Pivot_X [14]=0.25;
+                Pivot_Y [14]=0.1;    
+                Pivot_X [15]=0.25;
+                Pivot_Y [15]=0.1;
+
+                Pivot_X [16]=0.19;
+                Pivot_Y [16]=0.23;    
+                Pivot_X [17]=0.2;
+                Pivot_Y [17]=0.275;    
+                Pivot_X [18]=0.2;
+                Pivot_Y [18]=0.26;   
+                Pivot_X [19]=0.2;
+                Pivot_Y [19]=0.26;
+
+                Pivot_Y [20]=0.8;
+                Pivot_X [20]=0.5;              
+                Pivot_Y [21]=0.8;
+                Pivot_X [21]=0.5;       
+                Pivot_Y [22]=0.8; 
+                Pivot_X [22]=0.5;     
+                Pivot_Y [23]=0.8; 
+                Pivot_X [23]=0.5;
+
+
+                StickerAssigner_set1 = "Mobile_stickers";
+                game.load.video('Episode', 'videos/Forest_Mobile/DaisyGBK_ForestMob_720.mp4');
+                
+                //Turn this off in case it gets loaded again
+                IsPlacingMobile=false;
+                
+                
+            }
+
+            if(IsPlacingPineCone == true)
+            {
+                //Clothing 
+                game.load.image('PineconeClothing_1', 'images/Pinecone/PineconeClothing_1.png');
+                game.load.image('PineconeClothing_2', 'images/Pinecone/PineconeClothing_2.png');
+                game.load.image('PineconeClothing_3', 'images/Pinecone/PineconeClothing_3.png');      
+                game.load.image('PineconeClothing_4', 'images/Pinecone/PineconeClothing_4.png');
+                //Eyes 
+                game.load.image('PineconeEyes_1', 'images/Pinecone/PineconeEyes_1.png');     
+                game.load.image('PineconeEyes_2', 'images/Pinecone/PineconeEyes_2.png'); 
+                game.load.image('PineconeEyes_3', 'images/Pinecone/PineconeEyes_3.png'); 
+                game.load.image('PineconeEyes_4', 'images/Pinecone/PineconeEyes_4.png');  
+                //Feet
+                game.load.image('PineconeFeet_1', 'images/Pinecone/PineconeFeet_1.png');     
+                game.load.image('PineconeFeet_2', 'images/Pinecone/PineconeFeet_2.png'); 
+                game.load.image('PineconeFeet_3', 'images/Pinecone/PineconeFeet_3.png'); 
+                game.load.image('PineconeFeet_4', 'images/Pinecone/PineconeFeet_4.png');    
+                //Feet
+                game.load.image('PineconeGlasses_1', 'images/Pinecone/PineconeGlasses_1.png');     
+                game.load.image('PineconeGlasses_2', 'images/Pinecone/PineconeGlasses_2.png'); 
+                game.load.image('PineconeGlasses_3', 'images/Pinecone/PineconeGlasses_3.png'); 
+                game.load.image('PineconeGlasses_4', 'images/Pinecone/PineconeGlasses_4.png'); 
+                //Head gear
+                game.load.image('PineconeHeadgear_1', 'images/Pinecone/PineconeHeadgear_1.png');     
+                game.load.image('PineconeHeadgear_2', 'images/Pinecone/PineconeHeadgear_2.png'); 
+                game.load.image('PineconeHeadgear_3', 'images/Pinecone/PineconeHeadgear_3.png'); 
+                game.load.image('PineconeHeadgear_4', 'images/Pinecone/PineconeHeadgear_4.png');
+                //Wings
+                game.load.image('PineconeWings_1', 'images/Pinecone/PineconeWings_1.png');     
+                game.load.image('PineconeWings_2', 'images/Pinecone/PineconeWings_2.png'); 
+                game.load.image('PineconeWings_3', 'images/Pinecone/PineconeWings_3.png'); 
+                game.load.image('PineconeWings_4', 'images/Pinecone/PineconeWings_4.png');
+                game.load.spritesheet("Pinecone_Stickers", "images/ui/Pinecone_stickers.png", 365, 250, 24);    
+
+                //////////////////////////
+                ////Sticker Body//////////
+                //////////////////////////
+                        ImageAssetArray[0]='PineconeBody';
+                ///////////////////////////
+                ////First Sticker Group////
+                ///////////////////////////
+                        ImageAssetArray[1]='PineconeEyes_1';
+                        ImageAssetArray[2]='PineconeEyes_2'; 
+                        ImageAssetArray[3]='PineconeEyes_3';
+                        ImageAssetArray[4]='PineconeEyes_4';
+                ///////////////////////////
+                ////Second Sticker Group///
+                ///////////////////////////
+                        ImageAssetArray[5]='PineconeGlasses_1';
+                        ImageAssetArray[6]='PineconeGlasses_2';
+                        ImageAssetArray[7]='PineconeGlasses_3';
+                        ImageAssetArray[8]='PineconeGlasses_4';
+                ///////////////////////////
+                ////Third Sticker Group////
+                ///////////////////////////
+                        ImageAssetArray[9]='PineconeHeadgear_1';
+                        ImageAssetArray[10]='PineconeHeadgear_2';
+                        ImageAssetArray[11]='PineconeHeadgear_3';
+                        ImageAssetArray[12]='PineconeHeadgear_4';
+                ///////////////////////////
+                ////Fourth Sticker Group///
+                ///////////////////////////
+                        ImageAssetArray[13]='PineconeWings_1';
+                        ImageAssetArray[14]='PineconeWings_2';
+                        ImageAssetArray[15]='PineconeWings_3';  
+                        ImageAssetArray[16]='PineconeWings_4';
+                ///////////////////////////
+                ////Fifth Sticker Group////
+                ///////////////////////////
+                        ImageAssetArray[17]='PineconeClothing_1';
+                        ImageAssetArray[18]='PineconeClothing_2';
+                        ImageAssetArray[19]='PineconeClothing_3';
+                        ImageAssetArray[20]='PineconeClothing_4';
+                ///////////////////////////
+                ////Sixth Sticker Group////
+                ///////////////////////////
+                        ImageAssetArray[21]='PineconeFeet_1';
+                        ImageAssetArray[22]='PineconeFeet_2';
+                        ImageAssetArray[23]='PineconeFeet_3';
+                        ImageAssetArray[24]='PineconeFeet_4';
+
+         
+            
+                
+                StickerAssigner_set1 = "Pinecone_Stickers"; 
+
+                game.load.video('Episode', 'videos/PineCone_Animal/DaisyGBK_PineCon_Ani_720.mp4');
+
+                //Turn this off in case it gets loaded again        
+                IsPlacingPineCone=false;
+            }
+
+            if (IsPlacingRock == true)
+            {
+            game.load.image('RockBase_1', 'images/Rock/RockBase_1.png');
+            game.load.image('RockBase_2', 'images/Rock/RockBase_2.png');      
+            game.load.image('RockBase_3', 'images/Rock/RockBase_3.png');
+            game.load.image('RockBase_4', 'images/Rock/RockBase_4.png'); 
+                            
+            game.load.image('RockFace_1', 'images/Rock/RockFace_1.png');
+            game.load.image('RockFace_2', 'images/Rock/RockFace_2.png');
+            game.load.image('RockFace_3', 'images/Rock/RockFace_3.png');
+            game.load.image('RockFace_4', 'images/Rock/RockFace_4.png');
+             
+            game.load.image('RockHeadgear_1', 'images/Rock/RockHeadgear_1.png');
+            game.load.image('RockHeadgear_2', 'images/Rock/RockHeadgear_2.png');
+            game.load.image('RockHeadgear_3', 'images/Rock/RockHeadgear_3.png');
+            game.load.image('RockHeadgear_4', 'images/Rock/RockHeadgear_4.png');
+                    
+            game.load.image('RockWings_1', 'images/Rock/RockWings_1.png');
+            game.load.image('RockWings_2', 'images/Rock/RockWings_2.png');
+            game.load.image('RockWings_3', 'images/Rock/RockWings_3.png');
+            game.load.image('RockWings_4', 'images/Rock/RockWings_4.png');
+            
+            game.load.image('RockFeet_1', 'images/Rock/RockFeet_1.png');
+            game.load.image('RockFeet_2', 'images/Rock/RockFeet_3.png');
+            game.load.image('RockFeet_3', 'images/Rock/RockFeet_2.png');
+            game.load.image('RockFeet_4', 'images/Rock/RockFeet_4.png');
+           
+            game.load.image('RockClothing_1', 'images/Rock/RockClothing_1.png');
+            game.load.image('RockClothing_2', 'images/Rock/RockClothing_2.png');
+            game.load.image('RockClothing_3', 'images/Rock/RockClothing_3.png');
+            game.load.image('RockClothing_4', 'images/Rock/RockClothing_4.png');
+            
+            game.load.spritesheet("Rock_Stickers_1", "images/ui/Rock_stickers.png", 365, 250, 24);
+
+
+            ///////////////////////////
+            ////Sticker Body//////////
+            ///////////////////////////
+                    ImageAssetArray[0]='RockBody';
+            ///////////////////////////
+            ////First Sticker Group////
+            ///////////////////////////
+                    ImageAssetArray[1]='RockBase_1';
+                    ImageAssetArray[2]='RockBase_2'; 
+                    ImageAssetArray[3]='RockBase_3';
+                    ImageAssetArray[4]='RockBase_4';
+            ///////////////////////////
+            ////Second Sticker Group///
+            ///////////////////////////
+                    ImageAssetArray[5]='RockFace_1';
+                    ImageAssetArray[6]='RockFace_2';
+                    ImageAssetArray[7]='RockFace_3';
+                    ImageAssetArray[8]='RockFace_4';
+            ///////////////////////////
+            ////Third Sticker Group////
+            ///////////////////////////
+                    ImageAssetArray[9]='RockHeadgear_1';
+                    ImageAssetArray[10]='RockHeadgear_2';
+                    ImageAssetArray[11]='RockHeadgear_3';
+                    ImageAssetArray[12]='RockHeadgear_4';
+            ///////////////////////////
+            ////Fourth Sticker Group///
+            ///////////////////////////
+                    ImageAssetArray[13]='RockWings_1';
+                    ImageAssetArray[14]='RockWings_2';
+                    ImageAssetArray[15]='RockWings_3';  
+                    ImageAssetArray[16]='RockWings_4';
+            ///////////////////////////
+            ////Fifth Sticker Group////
+            ///////////////////////////
+                    ImageAssetArray[17]='RockFeet_1';
+                    ImageAssetArray[18]='RockFeet_2';
+                    ImageAssetArray[19]='RockFeet_3';
+                    ImageAssetArray[20]='RockFeet_4';
+            ///////////////////////////
+            ////Sixth Sticker Group////
+            ///////////////////////////
+                    ImageAssetArray[21]='RockClothing_1';
+                    ImageAssetArray[22]='RockClothing_2';
+                    ImageAssetArray[23]='RockClothing_3';
+                    ImageAssetArray[24]='RockClothing_4';
+
+           
+                
+        Pivot_X [0]=0.5;
+        Pivot_Y [0]=0.5;        
+        Pivot_X [1]=0.5;
+        Pivot_Y [1]=0.5;
+        Pivot_X [2]=0.5;
+        Pivot_Y [2]=0.5;
+        Pivot_X [3]=0.5;
+        Pivot_Y [3]=0.5; 
+                
+        Pivot_X [4]=0.5;
+        Pivot_Y [4]=0.5; 
+        Pivot_X [5]=0.5;
+        Pivot_Y [5]=0.5;     
+        Pivot_X [6]=0.5;
+        Pivot_Y [6]=0.5;     
+        Pivot_X [7]=0.5;
+        Pivot_Y [7]=0.5;
+                
+        Pivot_X [8]=0.5;  
+        Pivot_Y [8]=0.72;   
+        Pivot_X [9]=0.5;
+        Pivot_Y [9]=0.65;    
+        Pivot_X [10]=0.5;
+        Pivot_Y [10]=0.6;  
+        Pivot_X [11]=0.5;
+        Pivot_Y [11]=0.6; 
+                
+        Pivot_X [12]=0.5;
+        Pivot_Y [12]=0.5;  
+        Pivot_X [13]=0.5;
+        Pivot_Y [13]=0.5;    
+        Pivot_X [14]=0.5;
+        Pivot_Y [14]=0.5;    
+        Pivot_X [15]=0.5;
+        Pivot_Y [15]=0.5;
+                
+        Pivot_Y [16]=0.5;
+        Pivot_X [16]=0.5;     
+        Pivot_Y [17]=0.5;
+        Pivot_X [17]=0.5;    
+        Pivot_Y [18]=0.5; 
+        Pivot_X [18]=0.5;      
+        Pivot_Y [19]=0.5;
+        Pivot_X [19]=0.5;
+                
+        Pivot_Y [20]=0.5; 
+        Pivot_X [20]=0.5;              
+        Pivot_Y [21]=0.5;
+        Pivot_X [21]=0.5;       
+        Pivot_Y [22]=0.6; 
+        Pivot_X [22]=0.5;     
+        Pivot_Y [23]=0.6; 
+        Pivot_X [23]=0.5;
+                
+            StickerAssigner_set1 = "Rock_Stickers_1";
+
+            game.load.video('Episode', 'videos/Ladybug_Rock/DaisyGBK_LadyRock_720.mp4');
+
+            IsPlacingRock=false;
+            }
+
+            if(IsPlacingSmudgeStick == true)
+            {
+                game.load.image('RockBase_1', 'images/SmudgeStick/RockBase_1.png');
+                game.load.image('RockBase_2', 'images/SmudgeStick/RockBase_2.png');      
+                game.load.image('RockBase_3', 'images/SmudgeStick/RockBase_3.png');
+                game.load.image('RockBase_4', 'images/SmudgeStick/RockBase_4.png'); 
+                                
+                game.load.image('RockFace_1', 'images/SmudgeStick/RockFace_1.png');
+                game.load.image('RockFace_2', 'images/SmudgeStick/RockFace_2.png');
+                game.load.image('RockFace_3', 'images/SmudgeStick/RockFace_3.png');
+                game.load.image('RockFace_4', 'images/SmudgeStick/RockFace_4.png');
+                 
+                game.load.image('RockHeadgear_1', 'images/SmudgeStick/RockHeadgear_1.png');
+                game.load.image('RockHeadgear_2', 'images/SmudgeStick/RockHeadgear_2.png');
+                game.load.image('RockHeadgear_3', 'images/SmudgeStick/RockHeadgear_3.png');
+                game.load.image('RockHeadgear_4', 'images/SmudgeStick/RockHeadgear_4.png');
+                        
+                game.load.image('RockWings_1', 'images/SmudgeStick/RockWings_1.png');
+                game.load.image('RockWings_2', 'images/SmudgeStick/RockWings_2.png');
+                game.load.image('RockWings_3', 'images/SmudgeStick/RockWings_3.png');
+                game.load.image('RockWings_4', 'images/SmudgeStick/RockWings_4.png');
+                
+                game.load.image('RockFeet_1', 'images/SmudgeStick/RockFeet_1.png');
+                game.load.image('RockFeet_2', 'images/SmudgeStick/RockFeet_3.png');
+                game.load.image('RockFeet_3', 'images/SmudgeStick/RockFeet_2.png');
+                game.load.image('RockFeet_4', 'images/SmudgeStick/RockFeet_4.png');
+               
+                game.load.image('RockClothing_1', 'images/SmudgeStick/RockClothing_1.png');
+                game.load.image('RockClothing_2', 'images/SmudgeStick/RockClothing_2.png');
+                game.load.image('RockClothing_3', 'images/SmudgeStick/RockClothing_3.png');
+                game.load.image('RockClothing_4', 'images/SmudgeStick/RockClothing_4.png');   
+
+                ImageAssetArray[0]='SmudgeStickBody';
+                
+
+    
+
+                game.load.video('Episode', 'videos/Flower_Petal/DaisyGBK_FlowerPetArt_720.mp4');
+
+                IsPlacingSmudgeStick = false;
+            }
+
+            if(IsPlacingStickWand == true)
+            {
+                game.load.image('RockBase_1', 'images/StickWand/RockBase_1.png');
+                game.load.image('RockBase_2', 'images/StickWand/RockBase_2.png');      
+                game.load.image('RockBase_3', 'images/StickWand/RockBase_3.png');
+                game.load.image('RockBase_4', 'images/StickWand/RockBase_4.png'); 
+                                
+                game.load.image('RockFace_1', 'images/StickWand/RockFace_1.png');
+                game.load.image('RockFace_2', 'images/StickWand/RockFace_2.png');
+                game.load.image('RockFace_3', 'images/StickWand/RockFace_3.png');
+                game.load.image('RockFace_4', 'images/StickWand/RockFace_4.png');
+                 
+                game.load.image('RockHeadgear_1', 'images/StickWand/RockHeadgear_1.png');
+                game.load.image('RockHeadgear_2', 'images/StickWand/RockHeadgear_2.png');
+                game.load.image('RockHeadgear_3', 'images/StickWand/RockHeadgear_3.png');
+                game.load.image('RockHeadgear_4', 'images/StickWand/RockHeadgear_4.png');
+                        
+                game.load.image('RockWings_1', 'images/StickWand/RockWings_1.png');
+                game.load.image('RockWings_2', 'images/StickWand/RockWings_2.png');
+                game.load.image('RockWings_3', 'images/StickWand/RockWings_3.png');
+                game.load.image('RockWings_4', 'images/StickWand/RockWings_4.png');
+                
+                game.load.image('RockFeet_1', 'images/StickWand/RockFeet_1.png');
+                game.load.image('RockFeet_2', 'images/StickWand/RockFeet_3.png');
+                game.load.image('RockFeet_3', 'images/StickWand/RockFeet_2.png');
+                game.load.image('RockFeet_4', 'images/StickWand/RockFeet_4.png');
+               
+                game.load.image('RockClothing_1', 'images/StickWand/RockClothing_1.png');
+                game.load.image('RockClothing_2', 'images/StickWand/RockClothing_2.png');
+                game.load.image('RockClothing_3', 'images/StickWand/RockClothing_3.png');
+                game.load.image('RockClothing_4', 'images/StickWand/RockClothing_4.png');
+
+                ImageAssetArray[0]='StickWandBody';
+                
+                
+                
+
+                game.load.video('Episode', 'videos/Forest_Mobile/DaisyGBK_ForestMob_720.mp4');
+                
+                IsPlacingStickWand = false;
+                
+            }
+
+
     },
 
     create: function () {
       
+
         
         scaleRatio = window.devicePixelRatio / 2;
         
@@ -86,18 +556,19 @@ var StateMain = {
         //Placeable Buttons
         this.MainStickerButton = gameButtons.addGenericButton("0", MainButtonsPos_x, MainButtonsPos_y, this.CharacterHitOn, this,"TabButton",0); 
         this.MainStickerButton.scale.setTo(MacroButton_Scale,MacroButton_Scale);
-        this.MainStickerButton.alpha = 0;
+        this.MainStickerButton.alpha = 1;
         buttongroup.add(this.MainStickerButton);
         this.MainStickerButton.x -=this.MainStickerButton.width;
         
         this.MainResetButton = gameButtons.addGenericButton("0", MainButtonsPos_x, MainButtonsPos_y, this.StickerTurnOn, this,"TabButton",0);
-        this.MainResetButton.alpha = 0;
+        this.MainResetButton.alpha = 1;
         this.MainResetButton.scale.setTo(MacroButton_Scale,MacroButton_Scale);
         buttongroup.add(this.MainResetButton);
         //Top Menu Buttons
         MenuTopButtons_Pos_x = game.width-game.width/3;     
         MenuTopButtons_Pos_y = 0;
         
+
         //Save Button
         this.SaveButton = gameButtons.addGenericButton("0", MenuTopButtons_Pos_x, MenuTopButtons_Pos_y+20, this.SaveClicked, this,"creativeButtons",4); 
         this.SaveButton.scale.setTo(scaleRatio,scaleRatio);
@@ -539,10 +1010,15 @@ var StateMain = {
         game.world.bringToTop(this.bmd);
         //////////////////////
         //////////////////////
-        //////////////////////
+
+        //window.open(game.canvas.toDataURL('image/png'));
+
+
     },      
     
     RockSticker: function () {
+//Turn on the loading mechanisim. 
+    IsPlacingRock = true;
 //////////////////////////
 ////Sticker Depths////////
 //////////////////////////
@@ -550,118 +1026,21 @@ var StateMain = {
         StickerDepth[1]=true;
         StickerDepth[2]=true;
         StickerDepth[3]=false;
-        StickerDepth[4]=false;
+        StickerDepth[4]=true;
         StickerDepth[5]=true;
 ///////////////////////////
 ////Pivot Positions////////
 ///////////////////////////
-    var Pivot_X = [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,        
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        ];
+    
 
-var Pivot_Y = [
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,        
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        ];
-///////////////////////////
-////Sticker Body//////////
-///////////////////////////
-        ImageAssetArray[0]='RockBody';
-///////////////////////////
-////First Sticker Group////
-///////////////////////////
-        ImageAssetArray[1]='RockBase_1';
-        ImageAssetArray[2]='RockBase_2'; 
-        ImageAssetArray[3]='RockBase_3';
-        ImageAssetArray[4]='RockBase_4';
-///////////////////////////
-////Second Sticker Group///
-///////////////////////////
-        ImageAssetArray[5]='RockFace_1';
-        ImageAssetArray[6]='RockFace_2';
-        ImageAssetArray[7]='RockFace_3';
-        ImageAssetArray[8]='RockFace_4';
-///////////////////////////
-////Third Sticker Group////
-///////////////////////////
-        ImageAssetArray[9]='RockHeadgear_1';
-        ImageAssetArray[10]='RockHeadgear_2';
-        ImageAssetArray[11]='RockHeadgear_3';
-        ImageAssetArray[12]='RockHeadgear_4';
-///////////////////////////
-////Fourth Sticker Group///
-///////////////////////////
-        ImageAssetArray[13]='RockWings_1';
-        ImageAssetArray[14]='RockWings_2';
-        ImageAssetArray[15]='RockWings_3';  
-        ImageAssetArray[16]='RockWings_4';
-///////////////////////////
-////Fifth Sticker Group////
-///////////////////////////
-        ImageAssetArray[17]='RockFeet_1';
-        ImageAssetArray[18]='RockFeet_2';
-        ImageAssetArray[19]='RockFeet_3';
-        ImageAssetArray[20]='RockFeet_4';
-///////////////////////////
-////Sixth Sticker Group////
-///////////////////////////
-        ImageAssetArray[21]='RockClothing_1';
-        ImageAssetArray[22]='RockClothing_2';
-        ImageAssetArray[23]='RockClothing_3';
-        ImageAssetArray[24]='RockClothing_4';
-        
-        StickerAssigner_set1 = "Rock_Stickers_1";
+
+
         game.state.start("StateMain");
     },
     
 PineconeSticker: function () {
+//Turn on the loading mechanisim. 
+    IsPlacingPineCone = true;
 //////////////////////////
 ////Sticker Depths////////
 //////////////////////////
@@ -674,115 +1053,15 @@ PineconeSticker: function () {
 ///////////////////////////
 ////Pivot Positions////////
 ///////////////////////////
-    var Pivot_X = [
-        //PineCone Sticker
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,        
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        ];
-
-var Pivot_Y = [
-        //Mobile Sticker
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,        
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        ];
-//////////////////////////
-////Sticker Body//////////
-//////////////////////////
-        ImageAssetArray[0]='PineconeBody';
-///////////////////////////
-////First Sticker Group////
-///////////////////////////
-        ImageAssetArray[1]='PineconeEyes_1';
-        ImageAssetArray[2]='PineconeEyes_2'; 
-        ImageAssetArray[3]='PineconeEyes_3';
-        ImageAssetArray[4]='PineconeEyes_4';
-///////////////////////////
-////Second Sticker Group///
-///////////////////////////
-        ImageAssetArray[5]='PineconeGlasses_1';
-        ImageAssetArray[6]='PineconeGlasses_2';
-        ImageAssetArray[7]='PineconeGlasses_3';
-        ImageAssetArray[8]='PineconeGlasses_4';
-///////////////////////////
-////Third Sticker Group////
-///////////////////////////
-        ImageAssetArray[9]='PineconeHeadgear_1';
-        ImageAssetArray[10]='PineconeHeadgear_2';
-        ImageAssetArray[11]='PineconeHeadgear_3';
-        ImageAssetArray[12]='PineconeHeadgear_4';
-///////////////////////////
-////Fourth Sticker Group///
-///////////////////////////
-        ImageAssetArray[13]='PineconeWings_1';
-        ImageAssetArray[14]='PineconeWings_2';
-        ImageAssetArray[15]='PineconeWings_3';  
-        ImageAssetArray[16]='PineconeWings_4';
-///////////////////////////
-////Fifth Sticker Group////
-///////////////////////////
-        ImageAssetArray[17]='PineconeClothing_1';
-        ImageAssetArray[18]='PineconeClothing_2';
-        ImageAssetArray[19]='PineconeClothing_3';
-        ImageAssetArray[20]='PineconeClothing_4';
-///////////////////////////
-////Sixth Sticker Group////
-///////////////////////////
-        ImageAssetArray[21]='PineconeFeet_1';
-        ImageAssetArray[22]='PineconeFeet_2';
-        ImageAssetArray[23]='PineconeFeet_3';
-        ImageAssetArray[24]='PineconeFeet_4';
        
-        StickerAssigner_set1 = "Pinecone_Stickers"; 
+       
+
         game.state.start("StateMain");
     },
     
     MobileSticker: function () {
+//Turn on the loading mechanisim. 
+    IsPlacingMobile = true;
 //////////////////////////
 ////Sticker Depths////////
 //////////////////////////
@@ -795,121 +1074,24 @@ var Pivot_Y = [
 ///////////////////////////
 ////Pivot Positions////////
 ///////////////////////////
-var Pivot_X = [
-        //Mobile Sticker
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,        
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        ];
 
-var Pivot_Y = [
-        //Mobile Sticker
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,        
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        ];
-//////////////////////////
-////Sticker Body//////////
-//////////////////////////
-        ImageAssetArray[0]='MobileBody';
-///////////////////////////
-////First Sticker Group////
-///////////////////////////
-        ImageAssetArray[1]='Mobile_1';
-        ImageAssetArray[2]='Mobile_2'; 
-        ImageAssetArray[3]='Mobile_3';
-        ImageAssetArray[4]='Mobile_4';
-///////////////////////////
-////Second Sticker Group///
-///////////////////////////
-        ImageAssetArray[5]='Mobile_5';
-        ImageAssetArray[6]='Mobile_6';
-        ImageAssetArray[7]='Mobile_7';
-        ImageAssetArray[8]='Mobile_8';
-///////////////////////////
-////Third Sticker Group////
-///////////////////////////
-        ImageAssetArray[9]='Mobile_9';
-        ImageAssetArray[10]='Mobile_10';
-        ImageAssetArray[11]='Mobile_11';
-        ImageAssetArray[12]='Mobile_12';
-///////////////////////////
-////Fourth Sticker Group///
-///////////////////////////
-        ImageAssetArray[13]='Mobile_13';
-        ImageAssetArray[14]='Mobile_14';
-        ImageAssetArray[15]='Mobile_15';  
-        ImageAssetArray[16]='Mobile_16';
-///////////////////////////
-////Fifth Sticker Group////
-///////////////////////////
-        ImageAssetArray[17]='Mobile_17';
-        ImageAssetArray[18]='Mobile_18';
-        ImageAssetArray[19]='Mobile_19';
-        ImageAssetArray[20]='Mobile_20';
-///////////////////////////
-////Sixth Sticker Group////
-///////////////////////////
-        ImageAssetArray[21]='Mobile_21';
-        ImageAssetArray[22]='Mobile_22';
-        ImageAssetArray[23]='Mobile_23';
-        ImageAssetArray[24]='Mobile_24';
 
-        StickerAssigner_set1 = "Mobile_stickers";
+
+
         game.state.start("StateMain");
     },
     
     SmudgeStickSticker: function () {
-        ImageAssetArray[0]='SmudgeStickBody';
+    //Turn on the loading mechanisim. 
+        IsPlacingSmudgeStick = true;
+
         game.state.start("StateMain");
     },
      
     StickWandSticker: function () {
-        ImageAssetArray[0]='StickWandBody';
+    //Turn on the loading mechanisim. 
+        IsPlacingStickWand = true;
+
         game.state.start("StateMain");
     },
     
@@ -921,13 +1103,15 @@ var Pivot_Y = [
     },
     
     render: function () {
-    game.debug.text( GameCenter_x-game.input.x, 100, 380 );
-    game.debug.text( GameCenter_y-game.input.y, 100, 390 );      
+    game.debug.text( this.SelectedButton.anchor.x, 100, 380 );
+    game.debug.text( this.SelectedButton.anchor.y, 100, 390 ); 
+    
+    game.debug.text( Pivot_X[0], 100, 380 );
+    game.debug.text( Pivot_Y[0], 100, 390 );     
+        
     },
 
     update: function () { 
-        //game.scale.setShowAll();
-        //game.scale.refresh();  
         if(isClickDragging == true) 
         {//If the player is dragging the image onto the 
             if( game.input.activePointer.isDown == true )
@@ -944,6 +1128,7 @@ var Pivot_Y = [
                     this.SelectedButton.y = GameCenter_y;
                 }
         }
+        
     Character.sort('y', Phaser.Group.SORT_DESCENDING);  
     }, 
     
@@ -1391,9 +1576,6 @@ var Pivot_Y = [
 //Section Sticekrs//
 ////////////////////
     StickerTurnOn: function () {
-        //StickerGroup_1.visible = true;
-        //StickerGroup_2.visible = false;
-        GroupRefArray[GroupRefArrayCounter].visible = true;
         CharacterStickerGroup.visible = false;
         isAddingPaint = false;
         isAddingSticker = true;
@@ -1401,13 +1583,16 @@ var Pivot_Y = [
     
     
     CharacterHitOn: function () {
-        GroupRefArray[GroupRefArrayCounter].visible = false;
         CharacterStickerGroup.visible = true;
         isAddingPaint = false;
         isAddingSticker = false;
     },
     
-    SaveClicked: function () { game.cache.addBitmapData(this.DrawnSprite, this.bmd);game.state.start("StateOuttro")},
+    SaveClicked: function () { 
+
+        game.cache.addBitmapData(this.DrawnSprite, this.bmd);
+        game.state.start("StateOuttro");
+    },
     
     BackToCharacterSelect: function () {game.state.start("StateCharacterSelect")},
         
