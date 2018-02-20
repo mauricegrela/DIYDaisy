@@ -138,7 +138,7 @@ var StateLoad = {
 ///SmudgeStick///
 ////////////////    
         game.load.image('SmudgeStickBody', 'images/SmudgeStick/SmudgeStickBody.png');  
-        /*
+       
         game.load.image('RockBase_1', 'images/SmudgeStick/RockBase_1.png');
         game.load.image('RockBase_2', 'images/SmudgeStick/RockBase_2.png');      
         game.load.image('RockBase_3', 'images/SmudgeStick/RockBase_3.png');
@@ -164,11 +164,7 @@ var StateLoad = {
         game.load.image('RockFeet_3', 'images/SmudgeStick/RockFeet_2.png');
         game.load.image('RockFeet_4', 'images/SmudgeStick/RockFeet_4.png');
        
-        game.load.image('RockClothing_1', 'images/SmudgeStick/RockClothing_1.png');
-        game.load.image('RockClothing_2', 'images/SmudgeStick/RockClothing_2.png');
-        game.load.image('RockClothing_3', 'images/SmudgeStick/RockClothing_3.png');
-        game.load.image('RockClothing_4', 'images/SmudgeStick/RockClothing_4.png');        
-         */
+         
 ////////////////
 ///StickWand///
 ////////////////    
