@@ -149,10 +149,10 @@ var StateLoad = {
         game.load.image('LeafHeadgear_3', 'images/Leaf/LeafHeadgear_3.png');
         game.load.image('LeafHeadgear_4', 'images/Leaf/LeafHeadgear_4.png');
         
-        game.load.image('LeafFeet_1', 'images/Leaf/LeafClothing_1.png');
-        game.load.image('LeafFeet_2', 'images/Leaf/LeafClothing_2.png');
-        game.load.image('LeafFeet_3', 'images/Leaf/LeafClothing_3.png');
-        game.load.image('LeafFeet_4', 'images/Leaf/LeafClothing_4.png');
+        game.load.image('LeafClothing_1', 'images/Leaf/LeafClothing_1.png');
+        game.load.image('LeafClothing_2', 'images/Leaf/LeafClothing_2.png');
+        game.load.image('LeafClothing_3', 'images/Leaf/LeafClothing_3.png');
+        game.load.image('LeafClothing_4', 'images/Leaf/LeafClothing_4.png');
        
         game.load.spritesheet("Leaf_Stickers_1", "images/ui/Leaf_stickers.png", 365, 250, 24);
 
