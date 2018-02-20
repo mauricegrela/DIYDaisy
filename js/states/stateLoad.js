@@ -271,45 +271,42 @@ var StateLoad = {
 ///////////////////////////
 ////First Sticker Group////
 ///////////////////////////
-        ImageAssetArray[1]='PineconeEyes_1';
-        ImageAssetArray[2]='PineconeEyes_2'; 
-        ImageAssetArray[3]='PineconeEyes_3';
-        ImageAssetArray[4]='PineconeEyes_4';
-///////////////////////////
-////Second Sticker Group///
-///////////////////////////
-        ImageAssetArray[5]='PineconeGlasses_1';
-        ImageAssetArray[6]='PineconeGlasses_2';
-        ImageAssetArray[7]='PineconeGlasses_3';
-        ImageAssetArray[8]='PineconeGlasses_4';
-///////////////////////////
-////Third Sticker Group////
-///////////////////////////
-        ImageAssetArray[9]='PineconeHeadgear_1';
-        ImageAssetArray[10]='PineconeHeadgear_2';
-        ImageAssetArray[11]='PineconeHeadgear_3';
-        ImageAssetArray[12]='PineconeHeadgear_4';
-///////////////////////////
-////Fourth Sticker Group///
-///////////////////////////
         ImageAssetArray[13]='PineconeWings_1';
         ImageAssetArray[14]='PineconeWings_2';
         ImageAssetArray[15]='PineconeWings_3';  
         ImageAssetArray[16]='PineconeWings_4';
 ///////////////////////////
-////Fifth Sticker Group////
+////Second Sticker Group///
 ///////////////////////////
-        ImageAssetArray[17]='PineconeClothing_1';
-        ImageAssetArray[18]='PineconeClothing_2';
-        ImageAssetArray[19]='PineconeClothing_3';
-        ImageAssetArray[20]='PineconeClothing_4';
+        ImageAssetArray[1]='PineconeEyes_1';
+        ImageAssetArray[2]='PineconeEyes_2'; 
+        ImageAssetArray[3]='PineconeEyes_3';
+        ImageAssetArray[4]='PineconeEyes_4';
+
 ///////////////////////////
-////Sixth Sticker Group////
+////Third Sticker Group////
 ///////////////////////////
         ImageAssetArray[21]='PineconeFeet_1';
         ImageAssetArray[22]='PineconeFeet_2';
         ImageAssetArray[23]='PineconeFeet_3';
         ImageAssetArray[24]='PineconeFeet_4';
+       
+////Fourth Sticker Group///
+///////////////////////////
+        ImageAssetArray[9]='PineconeHeadgear_1';
+        ImageAssetArray[10]='PineconeHeadgear_2';
+        ImageAssetArray[11]='PineconeHeadgear_3';
+        ImageAssetArray[12]='PineconeHeadgear_4';
+ 
+///////////////////////////
+////Fifth Sticker Group////
+///////////////////////////
+
+        ImageAssetArray[17]='PineconeClothing_1';
+        ImageAssetArray[18]='PineconeClothing_2';
+        ImageAssetArray[19]='PineconeClothing_3';
+        ImageAssetArray[20]='PineconeClothing_4';
+
 
         StickerAssigner_set1 = "Pinecone_Stickers";
         //StickerAssigner_set2 = "Rock_Stickers_2";
