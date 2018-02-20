@@ -127,34 +127,35 @@ var StateLoad = {
 
         
         //Object Tab
-        game.load.image('PaintDot', 'images/ui/PaintDropTest.png');
-        */
+        //game.load.image('PaintDot', 'images/ui/PaintDropTest.png');
+       
 ////////////////
 ///Leaf///
 ////////////////    
         game.load.image('LeafBody', 'images/Leaf/LeafBody.png');  
-                        
-        game.load.image('LeafFace_1', 'images/Leaf/RockFace_1.png');
-        game.load.image('LeafFace_2', 'images/Leaf/RockFace_2.png');
-        game.load.image('LeafFace_3', 'images/Leaf/RockFace_3.png');
-        game.load.image('LeafFace_4', 'images/Leaf/RockFace_4.png');
          
-        game.load.image('LeafHeadgear_1', 'images/Leaf/RockHeadgear_1.png');
-        game.load.image('LeafHeadgear_2', 'images/Leaf/RockHeadgear_2.png');
-        game.load.image('LeafHeadgear_3', 'images/Leaf/RockHeadgear_3.png');
-        game.load.image('LeafHeadgear_4', 'images/Leaf/RockHeadgear_4.png');
-                
-        game.load.image('LeafWings_1', 'images/Leaf/RockWings_1.png');
-        game.load.image('LeafWings_2', 'images/Leaf/RockWings_2.png');
-        game.load.image('LeafWings_3', 'images/Leaf/RockWings_3.png');
-        game.load.image('LeafWings_4', 'images/Leaf/RockWings_4.png');
+        game.load.image('LeafWings_1', 'images/Leaf/LeafWings_1.png');
+        game.load.image('LeafWings_2', 'images/Leaf/LeafWings_2.png');
+        game.load.image('LeafWings_3', 'images/Leaf/LeafWings_3.png');
+        game.load.image('LeafWings_4', 'images/Leaf/LeafWings_4.png');
+
+        game.load.image('LeafFace_1', 'images/Leaf/LeafFace_1.png');
+        game.load.image('LeafFace_2', 'images/Leaf/LeafFace_2.png');
+        game.load.image('LeafFace_3', 'images/Leaf/LeafFace_3.png');
+        game.load.image('LeafFace_4', 'images/Leaf/LeafFace_4.png');
+         
+        game.load.image('LeafHeadgear_1', 'images/Leaf/LeafHeadgear_1.png');
+        game.load.image('LeafHeadgear_2', 'images/Leaf/LeafHeadgear_2.png');
+        game.load.image('LeafHeadgear_3', 'images/Leaf/LeafHeadgear_3.png');
+        game.load.image('LeafHeadgear_4', 'images/Leaf/LeafHeadgear_4.png');
         
-        game.load.image('LeafFeet_1', 'images/Leaf/RockFeet_1.png');
-        game.load.image('LeafFeet_2', 'images/Leaf/RockFeet_3.png');
-        game.load.image('LeafFeet_3', 'images/Leaf/RockFeet_2.png');
-        game.load.image('LeafFeet_4', 'images/Leaf/RockFeet_4.png');
+        game.load.image('LeafFeet_1', 'images/Leaf/LeafClothing_1.png');
+        game.load.image('LeafFeet_2', 'images/Leaf/LeafClothing_2.png');
+        game.load.image('LeafFeet_3', 'images/Leaf/LeafClothing_3.png');
+        game.load.image('LeafFeet_4', 'images/Leaf/LeafClothing_4.png');
        
-          
+        game.load.spritesheet("Leaf_Stickers_1", "images/ui/Leaf_stickers.png", 365, 250, 24);
+
          
 ////////////////
 ///StickWand///
