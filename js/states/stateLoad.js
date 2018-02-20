@@ -64,11 +64,11 @@ var StateLoad = {
         //game.load.image('MagLenz',     'images/Pinecone/alphaMaskState.png');      
         //Load Stickers and body
         game.load.image('PineconeBody', 'images/Pinecone/PineconeBody.png');
-        //Clothing 
-        game.load.image('PineconeClothing_1', 'images/Pinecone/PineconeClothing_1.png');
-        game.load.image('PineconeClothing_2', 'images/Pinecone/PineconeClothing_2.png');
-        game.load.image('PineconeClothing_3', 'images/Pinecone/PineconeClothing_3.png');      
-        game.load.image('PineconeClothing_4', 'images/Pinecone/PineconeClothing_4.png');
+        //Wings
+        game.load.image('PineconeWings_1', 'images/Pinecone/PineconeWings_1.png');     
+        game.load.image('PineconeWings_2', 'images/Pinecone/PineconeWings_2.png'); 
+        game.load.image('PineconeWings_3', 'images/Pinecone/PineconeWings_3.png'); 
+        game.load.image('PineconeWings_4', 'images/Pinecone/PineconeWings_4.png');
         //Eyes 
         game.load.image('PineconeEyes_1', 'images/Pinecone/PineconeEyes_1.png');     
         game.load.image('PineconeEyes_2', 'images/Pinecone/PineconeEyes_2.png'); 
@@ -78,22 +78,18 @@ var StateLoad = {
         game.load.image('PineconeFeet_1', 'images/Pinecone/PineconeFeet_1.png');     
         game.load.image('PineconeFeet_2', 'images/Pinecone/PineconeFeet_2.png'); 
         game.load.image('PineconeFeet_3', 'images/Pinecone/PineconeFeet_3.png'); 
-        game.load.image('PineconeFeet_4', 'images/Pinecone/PineconeFeet_4.png');    
-        //Feet
-        game.load.image('PineconeGlasses_1', 'images/Pinecone/PineconeGlasses_1.png');     
-        game.load.image('PineconeGlasses_2', 'images/Pinecone/PineconeGlasses_2.png'); 
-        game.load.image('PineconeGlasses_3', 'images/Pinecone/PineconeGlasses_3.png'); 
-        game.load.image('PineconeGlasses_4', 'images/Pinecone/PineconeGlasses_4.png'); 
+        game.load.image('PineconeFeet_4', 'images/Pinecone/PineconeFeet_4.png');
         //Head gear
         game.load.image('PineconeHeadgear_1', 'images/Pinecone/PineconeHeadgear_1.png');     
         game.load.image('PineconeHeadgear_2', 'images/Pinecone/PineconeHeadgear_2.png'); 
         game.load.image('PineconeHeadgear_3', 'images/Pinecone/PineconeHeadgear_3.png'); 
-        game.load.image('PineconeHeadgear_4', 'images/Pinecone/PineconeHeadgear_4.png');
-        //Wings
-        game.load.image('PineconeWings_1', 'images/Pinecone/PineconeWings_1.png');     
-        game.load.image('PineconeWings_2', 'images/Pinecone/PineconeWings_2.png'); 
-        game.load.image('PineconeWings_3', 'images/Pinecone/PineconeWings_3.png'); 
-        game.load.image('PineconeWings_4', 'images/Pinecone/PineconeWings_4.png');
+        game.load.image('PineconeHeadgear_4', 'images/Pinecone/PineconeHeadgear_4.png');    
+        //Clothing 
+        game.load.image('PineconeClothing_1', 'images/Pinecone/PineconeClothing_1.png');
+        game.load.image('PineconeClothing_2', 'images/Pinecone/PineconeClothing_2.png');
+        game.load.image('PineconeClothing_3', 'images/Pinecone/PineconeClothing_3.png');      
+        game.load.image('PineconeClothing_4', 'images/Pinecone/PineconeClothing_4.png');
+      
         game.load.spritesheet("Pinecone_Stickers", "images/ui/Pinecone_stickers.png", 365, 250, 24);
 
 ////////////////
