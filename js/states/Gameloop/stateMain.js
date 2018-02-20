@@ -153,36 +153,32 @@ var StateMain = {
 
             if(IsPlacingPineCone == true)
             {
-                //Clothing 
-                game.load.image('PineconeClothing_1', 'images/Pinecone/PineconeClothing_1.png');
-                game.load.image('PineconeClothing_2', 'images/Pinecone/PineconeClothing_2.png');
-                game.load.image('PineconeClothing_3', 'images/Pinecone/PineconeClothing_3.png');      
-                game.load.image('PineconeClothing_4', 'images/Pinecone/PineconeClothing_4.png');
-                //Eyes 
-                game.load.image('PineconeEyes_1', 'images/Pinecone/PineconeEyes_1.png');     
-                game.load.image('PineconeEyes_2', 'images/Pinecone/PineconeEyes_2.png'); 
-                game.load.image('PineconeEyes_3', 'images/Pinecone/PineconeEyes_3.png'); 
-                game.load.image('PineconeEyes_4', 'images/Pinecone/PineconeEyes_4.png');  
-                //Feet
-                game.load.image('PineconeFeet_1', 'images/Pinecone/PineconeFeet_1.png');     
-                game.load.image('PineconeFeet_2', 'images/Pinecone/PineconeFeet_2.png'); 
-                game.load.image('PineconeFeet_3', 'images/Pinecone/PineconeFeet_3.png'); 
-                game.load.image('PineconeFeet_4', 'images/Pinecone/PineconeFeet_4.png');    
-                //Feet
-                game.load.image('PineconeGlasses_1', 'images/Pinecone/PineconeGlasses_1.png');     
-                game.load.image('PineconeGlasses_2', 'images/Pinecone/PineconeGlasses_2.png'); 
-                game.load.image('PineconeGlasses_3', 'images/Pinecone/PineconeGlasses_3.png'); 
-                game.load.image('PineconeGlasses_4', 'images/Pinecone/PineconeGlasses_4.png'); 
-                //Head gear
-                game.load.image('PineconeHeadgear_1', 'images/Pinecone/PineconeHeadgear_1.png');     
-                game.load.image('PineconeHeadgear_2', 'images/Pinecone/PineconeHeadgear_2.png'); 
-                game.load.image('PineconeHeadgear_3', 'images/Pinecone/PineconeHeadgear_3.png'); 
-                game.load.image('PineconeHeadgear_4', 'images/Pinecone/PineconeHeadgear_4.png');
                 //Wings
                 game.load.image('PineconeWings_1', 'images/Pinecone/PineconeWings_1.png');     
                 game.load.image('PineconeWings_2', 'images/Pinecone/PineconeWings_2.png'); 
                 game.load.image('PineconeWings_3', 'images/Pinecone/PineconeWings_3.png'); 
                 game.load.image('PineconeWings_4', 'images/Pinecone/PineconeWings_4.png');
+                //Eyes 
+                game.load.image('PineconeEyes_1', 'images/Pinecone/PineconeEyes_1.png');     
+                game.load.image('PineconeEyes_2', 'images/Pinecone/PineconeEyes_2.png'); 
+                game.load.image('PineconeEyes_3', 'images/Pinecone/PineconeEyes_3.png'); 
+                game.load.image('PineconeEyes_4', 'images/Pinecone/PineconeEyes_4.png'); 
+                //Feet
+                game.load.image('PineconeFeet_1', 'images/Pinecone/PineconeFeet_1.png');     
+                game.load.image('PineconeFeet_2', 'images/Pinecone/PineconeFeet_2.png'); 
+                game.load.image('PineconeFeet_3', 'images/Pinecone/PineconeFeet_3.png'); 
+                game.load.image('PineconeFeet_4', 'images/Pinecone/PineconeFeet_4.png'); 
+                //Head gear
+                game.load.image('PineconeHeadgear_1', 'images/Pinecone/PineconeHeadgear_1.png');     
+                game.load.image('PineconeHeadgear_2', 'images/Pinecone/PineconeHeadgear_2.png'); 
+                game.load.image('PineconeHeadgear_3', 'images/Pinecone/PineconeHeadgear_3.png'); 
+                game.load.image('PineconeHeadgear_4', 'images/Pinecone/PineconeHeadgear_4.png'); 
+                //Clothing 
+                game.load.image('PineconeClothing_1', 'images/Pinecone/PineconeClothing_1.png');
+                game.load.image('PineconeClothing_2', 'images/Pinecone/PineconeClothing_2.png');
+                game.load.image('PineconeClothing_3', 'images/Pinecone/PineconeClothing_3.png');      
+                game.load.image('PineconeClothing_4', 'images/Pinecone/PineconeClothing_4.png');
+           
                 game.load.spritesheet("Pinecone_Stickers", "images/ui/Pinecone_stickers.png", 365, 250, 24);    
 
                 //////////////////////////
@@ -192,31 +188,32 @@ var StateMain = {
                 ///////////////////////////
                 ////First Sticker Group////
                 ///////////////////////////
+                        ImageAssetArray[13]='PineconeWings_1';
+                        ImageAssetArray[14]='PineconeWings_2';
+                        ImageAssetArray[15]='PineconeWings_3';  
+                        ImageAssetArray[16]='PineconeWings_4';
+                ///////////////////////////
+                ////Second Sticker Group///
+                ///////////////////////////
                         ImageAssetArray[1]='PineconeEyes_1';
                         ImageAssetArray[2]='PineconeEyes_2'; 
                         ImageAssetArray[3]='PineconeEyes_3';
                         ImageAssetArray[4]='PineconeEyes_4';
                 ///////////////////////////
-                ////Second Sticker Group///
-                ///////////////////////////
-                        ImageAssetArray[5]='PineconeGlasses_1';
-                        ImageAssetArray[6]='PineconeGlasses_2';
-                        ImageAssetArray[7]='PineconeGlasses_3';
-                        ImageAssetArray[8]='PineconeGlasses_4';
-                ///////////////////////////
                 ////Third Sticker Group////
+                ///////////////////////////
+                        ImageAssetArray[21]='PineconeFeet_1';
+                        ImageAssetArray[22]='PineconeFeet_2';
+                        ImageAssetArray[23]='PineconeFeet_3';
+                        ImageAssetArray[24]='PineconeFeet_4';
+                        
+                ///////////////////////////
+                ////Fourth Sticker Group///
                 ///////////////////////////
                         ImageAssetArray[9]='PineconeHeadgear_1';
                         ImageAssetArray[10]='PineconeHeadgear_2';
                         ImageAssetArray[11]='PineconeHeadgear_3';
                         ImageAssetArray[12]='PineconeHeadgear_4';
-                ///////////////////////////
-                ////Fourth Sticker Group///
-                ///////////////////////////
-                        ImageAssetArray[13]='PineconeWings_1';
-                        ImageAssetArray[14]='PineconeWings_2';
-                        ImageAssetArray[15]='PineconeWings_3';  
-                        ImageAssetArray[16]='PineconeWings_4';
                 ///////////////////////////
                 ////Fifth Sticker Group////
                 ///////////////////////////
@@ -227,10 +224,7 @@ var StateMain = {
                 ///////////////////////////
                 ////Sixth Sticker Group////
                 ///////////////////////////
-                        ImageAssetArray[21]='PineconeFeet_1';
-                        ImageAssetArray[22]='PineconeFeet_2';
-                        ImageAssetArray[23]='PineconeFeet_3';
-                        ImageAssetArray[24]='PineconeFeet_4';
+                       
 
          
             
@@ -269,11 +263,6 @@ var StateMain = {
             game.load.image('RockFeet_2', 'images/Rock/RockFeet_3.png');
             game.load.image('RockFeet_3', 'images/Rock/RockFeet_2.png');
             game.load.image('RockFeet_4', 'images/Rock/RockFeet_4.png');
-           
-            game.load.image('RockClothing_1', 'images/Rock/RockClothing_1.png');
-            game.load.image('RockClothing_2', 'images/Rock/RockClothing_2.png');
-            game.load.image('RockClothing_3', 'images/Rock/RockClothing_3.png');
-            game.load.image('RockClothing_4', 'images/Rock/RockClothing_4.png');
             
             game.load.spritesheet("Rock_Stickers_1", "images/ui/Rock_stickers.png", 365, 250, 24);
 
@@ -320,10 +309,6 @@ var StateMain = {
             ///////////////////////////
             ////Sixth Sticker Group////
             ///////////////////////////
-                    ImageAssetArray[21]='RockClothing_1';
-                    ImageAssetArray[22]='RockClothing_2';
-                    ImageAssetArray[23]='RockClothing_3';
-                    ImageAssetArray[24]='RockClothing_4';
 
            
                 
@@ -372,14 +357,6 @@ var StateMain = {
         Pivot_Y [19]=0.5;
         Pivot_X [19]=0.5;
                 
-        Pivot_Y [20]=0.5; 
-        Pivot_X [20]=0.5;              
-        Pivot_Y [21]=0.5;
-        Pivot_X [21]=0.5;       
-        Pivot_Y [22]=0.6; 
-        Pivot_X [22]=0.5;     
-        Pivot_Y [23]=0.6; 
-        Pivot_X [23]=0.5;
                 
             StickerAssigner_set1 = "Rock_Stickers_1";
 
@@ -388,39 +365,29 @@ var StateMain = {
             IsPlacingRock=false;
             }
 
-            if(IsPlacingSmudgeStick == true)
+            if(IsPlacingLeaf == true)
             {
-                game.load.image('RockBase_1', 'images/SmudgeStick/RockBase_1.png');
-                game.load.image('RockBase_2', 'images/SmudgeStick/RockBase_2.png');      
-                game.load.image('RockBase_3', 'images/SmudgeStick/RockBase_3.png');
-                game.load.image('RockBase_4', 'images/SmudgeStick/RockBase_4.png'); 
-                                
-                game.load.image('RockFace_1', 'images/SmudgeStick/RockFace_1.png');
-                game.load.image('RockFace_2', 'images/SmudgeStick/RockFace_2.png');
-                game.load.image('RockFace_3', 'images/SmudgeStick/RockFace_3.png');
-                game.load.image('RockFace_4', 'images/SmudgeStick/RockFace_4.png');
-                 
-                game.load.image('RockHeadgear_1', 'images/SmudgeStick/RockHeadgear_1.png');
-                game.load.image('RockHeadgear_2', 'images/SmudgeStick/RockHeadgear_2.png');
-                game.load.image('RockHeadgear_3', 'images/SmudgeStick/RockHeadgear_3.png');
-                game.load.image('RockHeadgear_4', 'images/SmudgeStick/RockHeadgear_4.png');
-                        
-                game.load.image('RockWings_1', 'images/SmudgeStick/RockWings_1.png');
-                game.load.image('RockWings_2', 'images/SmudgeStick/RockWings_2.png');
-                game.load.image('RockWings_3', 'images/SmudgeStick/RockWings_3.png');
-                game.load.image('RockWings_4', 'images/SmudgeStick/RockWings_4.png');
-                
-                game.load.image('RockFeet_1', 'images/SmudgeStick/RockFeet_1.png');
-                game.load.image('RockFeet_2', 'images/SmudgeStick/RockFeet_3.png');
-                game.load.image('RockFeet_3', 'images/SmudgeStick/RockFeet_2.png');
-                game.load.image('RockFeet_4', 'images/SmudgeStick/RockFeet_4.png');
-               
-                game.load.image('RockClothing_1', 'images/SmudgeStick/RockClothing_1.png');
-                game.load.image('RockClothing_2', 'images/SmudgeStick/RockClothing_2.png');
-                game.load.image('RockClothing_3', 'images/SmudgeStick/RockClothing_3.png');
-                game.load.image('RockClothing_4', 'images/SmudgeStick/RockClothing_4.png');   
+                game.load.image('LeafWings_1', 'images/Leaf/LeafWings_1.png');
+                game.load.image('LeafWings_2', 'images/Leaf/LeafWings_2.png');
+                game.load.image('LeafWings_3', 'images/Leaf/LeafWings_3.png');
+                game.load.image('LeafWings_4', 'images/Leaf/LeafWings_4.png');
 
-                ImageAssetArray[0]='SmudgeStickBody';
+                game.load.image('LeafFace_1', 'images/Leaf/LeafFace_1.png');
+                game.load.image('LeafFace_2', 'images/Leaf/LeafFace_2.png');
+                game.load.image('LeafFace_3', 'images/Leaf/LeafFace_3.png');
+                game.load.image('LeafFace_4', 'images/Leaf/LeafFace_4.png');
+         
+                game.load.image('LeafHeadgear_1', 'images/Leaf/LeafHeadgear_1.png');
+                game.load.image('LeafHeadgear_2', 'images/Leaf/LeafHeadgear_2.png');
+                game.load.image('LeafHeadgear_3', 'images/Leaf/LeafHeadgear_3.png');
+                game.load.image('LeafHeadgear_4', 'images/Leaf/LeafHeadgear_4.png');
+        
+                game.load.image('LeafClothing_1', 'images/Leaf/LeafClothing_1.png');
+                game.load.image('LeafClothing_2', 'images/Leaf/LeafClothing_2.png');
+                game.load.image('LeafClothing_3', 'images/Leaf/LeafClothing_3.png');
+                game.load.image('LeafClothing_4', 'images/Leaf/LeafClothing_4.png');
+
+                ImageAssetArray[0]='LeafBody';
                 
 
     
