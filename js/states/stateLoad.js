@@ -98,7 +98,7 @@ var StateLoad = {
         //game.load.image('MagLenz', 'images/Pinecone/alphaMaskState.png');      
         //Load Stickers and body
         game.load.image('RockBody', 'images/Rock/RockBody.png');     
-        /*	game.load.image('RockBase_1', 'images/Rock/RockBase_1.png');
+        game.load.image('RockBase_1', 'images/Rock/RockBase_1.png');
         game.load.image('RockBase_2', 'images/Rock/RockBase_2.png');      
         game.load.image('RockBase_3', 'images/Rock/RockBase_3.png');
         game.load.image('RockBase_4', 'images/Rock/RockBase_4.png'); 
@@ -122,11 +122,6 @@ var StateLoad = {
         game.load.image('RockFeet_2', 'images/Rock/RockFeet_3.png');
         game.load.image('RockFeet_3', 'images/Rock/RockFeet_2.png');
         game.load.image('RockFeet_4', 'images/Rock/RockFeet_4.png');
-       
-        game.load.image('RockClothing_1', 'images/Rock/RockClothing_1.png');
-        game.load.image('RockClothing_2', 'images/Rock/RockClothing_2.png');
-        game.load.image('RockClothing_3', 'images/Rock/RockClothing_3.png');
-        game.load.image('RockClothing_4', 'images/Rock/RockClothing_4.png');
         
         game.load.spritesheet("Rock_Stickers_1", "images/ui/Rock_stickers.png", 365, 250, 24);
 
@@ -135,35 +130,31 @@ var StateLoad = {
         game.load.image('PaintDot', 'images/ui/PaintDropTest.png');
         */
 ////////////////
-///SmudgeStick///
+///Leaf///
 ////////////////    
-        game.load.image('SmudgeStickBody', 'images/SmudgeStick/SmudgeStickBody.png');  
-       
-        game.load.image('RockBase_1', 'images/SmudgeStick/RockBase_1.png');
-        game.load.image('RockBase_2', 'images/SmudgeStick/RockBase_2.png');      
-        game.load.image('RockBase_3', 'images/SmudgeStick/RockBase_3.png');
-        game.load.image('RockBase_4', 'images/SmudgeStick/RockBase_4.png'); 
+        game.load.image('LeafBody', 'images/Leaf/LeafBody.png');  
                         
-        game.load.image('RockFace_1', 'images/SmudgeStick/RockFace_1.png');
-        game.load.image('RockFace_2', 'images/SmudgeStick/RockFace_2.png');
-        game.load.image('RockFace_3', 'images/SmudgeStick/RockFace_3.png');
-        game.load.image('RockFace_4', 'images/SmudgeStick/RockFace_4.png');
+        game.load.image('LeafFace_1', 'images/Leaf/RockFace_1.png');
+        game.load.image('LeafFace_2', 'images/Leaf/RockFace_2.png');
+        game.load.image('LeafFace_3', 'images/Leaf/RockFace_3.png');
+        game.load.image('LeafFace_4', 'images/Leaf/RockFace_4.png');
          
-        game.load.image('RockHeadgear_1', 'images/SmudgeStick/RockHeadgear_1.png');
-        game.load.image('RockHeadgear_2', 'images/SmudgeStick/RockHeadgear_2.png');
-        game.load.image('RockHeadgear_3', 'images/SmudgeStick/RockHeadgear_3.png');
-        game.load.image('RockHeadgear_4', 'images/SmudgeStick/RockHeadgear_4.png');
+        game.load.image('LeafHeadgear_1', 'images/Leaf/RockHeadgear_1.png');
+        game.load.image('LeafHeadgear_2', 'images/Leaf/RockHeadgear_2.png');
+        game.load.image('LeafHeadgear_3', 'images/Leaf/RockHeadgear_3.png');
+        game.load.image('LeafHeadgear_4', 'images/Leaf/RockHeadgear_4.png');
                 
-        game.load.image('RockWings_1', 'images/SmudgeStick/RockWings_1.png');
-        game.load.image('RockWings_2', 'images/SmudgeStick/RockWings_2.png');
-        game.load.image('RockWings_3', 'images/SmudgeStick/RockWings_3.png');
-        game.load.image('RockWings_4', 'images/SmudgeStick/RockWings_4.png');
+        game.load.image('LeafWings_1', 'images/Leaf/RockWings_1.png');
+        game.load.image('LeafWings_2', 'images/Leaf/RockWings_2.png');
+        game.load.image('LeafWings_3', 'images/Leaf/RockWings_3.png');
+        game.load.image('LeafWings_4', 'images/Leaf/RockWings_4.png');
         
-        game.load.image('RockFeet_1', 'images/SmudgeStick/RockFeet_1.png');
-        game.load.image('RockFeet_2', 'images/SmudgeStick/RockFeet_3.png');
-        game.load.image('RockFeet_3', 'images/SmudgeStick/RockFeet_2.png');
-        game.load.image('RockFeet_4', 'images/SmudgeStick/RockFeet_4.png');
+        game.load.image('LeafFeet_1', 'images/Leaf/RockFeet_1.png');
+        game.load.image('LeafFeet_2', 'images/Leaf/RockFeet_3.png');
+        game.load.image('LeafFeet_3', 'images/Leaf/RockFeet_2.png');
+        game.load.image('LeafFeet_4', 'images/Leaf/RockFeet_4.png');
        
+          
          
 ////////////////
 ///StickWand///
