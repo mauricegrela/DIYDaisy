@@ -382,15 +382,88 @@ var StateMain = {
                 game.load.image('LeafClothing_2', 'images/Leaf/LeafClothing_2.png');
                 game.load.image('LeafClothing_3', 'images/Leaf/LeafClothing_3.png');
                 game.load.image('LeafClothing_4', 'images/Leaf/LeafClothing_4.png');
+   
+            game.load.spritesheet("Rock_Stickers_1", "images/ui/Leaf_stickers.png", 365, 250, 24);
 
-                ImageAssetArray[0]='LeafBody';
-                
 
+            ///////////////////////////
+            ////Sticker Body//////////
+            ///////////////////////////
+                    ImageAssetArray[0]='LeafBody';
+            ///////////////////////////
+            ////First Sticker Group////
+            ///////////////////////////
+                    ImageAssetArray[1]='LeafWings_1';
+                    ImageAssetArray[2]='LeafWings_2'; 
+                    ImageAssetArray[3]='LeafWings_3';
+                    ImageAssetArray[4]='LeafWings_4';
+            ///////////////////////////
+            ////Second Sticker Group///
+            ///////////////////////////
+                    ImageAssetArray[5]='LeafFace_1';
+                    ImageAssetArray[6]='LeafFace_2';
+                    ImageAssetArray[7]='LeafFace_3';
+                    ImageAssetArray[8]='LeafFace_4';
+            ///////////////////////////
+            ////Third Sticker Group////
+            ///////////////////////////
+                    ImageAssetArray[9]='LeafHeadgear_1.png';
+                    ImageAssetArray[10]='LeafHeadgear_2.png';
+                    ImageAssetArray[11]='LeafHeadgear_3.png';
+                    ImageAssetArray[12]='LeafHeadgear_4.png';
+            ///////////////////////////
+            ////Fourth Sticker Group///
+            ///////////////////////////
+                    ImageAssetArray[13]='LeafClothing_1';
+                    ImageAssetArray[14]='LeafClothing_2';
+                    ImageAssetArray[15]='LeafClothing_3';  
+                    ImageAssetArray[16]='LeafClothing_4';
     
-
+           
+                
+        Pivot_X [0]=0.5;
+        Pivot_Y [0]=0.5;        
+        Pivot_X [1]=0.5;
+        Pivot_Y [1]=0.5;
+        Pivot_X [2]=0.5;
+        Pivot_Y [2]=0.5;
+        Pivot_X [3]=0.5;
+        Pivot_Y [3]=0.5; 
+                
+        Pivot_X [4]=0.5;
+        Pivot_Y [4]=0.5; 
+        Pivot_X [5]=0.5;
+        Pivot_Y [5]=0.5;     
+        Pivot_X [6]=0.5;
+        Pivot_Y [6]=0.5;     
+        Pivot_X [7]=0.5;
+        Pivot_Y [7]=0.5;
+                
+        Pivot_X [8]=0.5;  
+        Pivot_Y [8]=0.72;   
+        Pivot_X [9]=0.5;
+        Pivot_Y [9]=0.65;    
+        Pivot_X [10]=0.5;
+        Pivot_Y [10]=0.6;  
+        Pivot_X [11]=0.5;
+        Pivot_Y [11]=0.6; 
+                
+        Pivot_X [12]=0.5;
+        Pivot_Y [12]=0.5;  
+        Pivot_X [13]=0.5;
+        Pivot_Y [13]=0.5;    
+        Pivot_X [14]=0.5;
+        Pivot_Y [14]=0.5;    
+        Pivot_X [15]=0.5;
+        Pivot_Y [15]=0.5;
+                
+                
+                
+                StickerAssigner_set1 = "Leaf_Stickers_1";
+                
                 game.load.video('Episode', 'videos/Flower_Petal/DaisyGBK_FlowerPetArt_720.mp4');
 
-                IsPlacingSmudgeStick = false;
+                IsPlacingStickWand = false;
             }
 
             if(IsPlacingStickWand == true)
@@ -421,8 +494,6 @@ var StateMain = {
                 game.load.image('StickWandClothing_4', 'images/StickWand/StickWandClothing_4.png');    
 
                 ImageAssetArray[0]='StickWandBody';
-                
-                
                 
 
                 game.load.video('Episode', 'videos/Forest_Mobile/DaisyGBK_ForestMob_720.mp4');
@@ -582,12 +653,12 @@ var StateMain = {
         CharacterStickerGroup.add(this.MobileCharacter);
                 
         //Character StickWand Stickers
-        this.SmudgeStickCharacter = game.add.sprite(ButtonsPos_x+this.RockCharacter.width*3, ButtonsPos_y , 'SmudgeStickBody');   
-        this.SmudgeStickCharacter.inputEnabled = true;
+        this.StickWandCharacter = game.add.sprite(ButtonsPos_x+this.RockCharacter.width*3, ButtonsPos_y , 'StickWandBody');   
+        this.StickWandCharacter.inputEnabled = true;
         //this.PineconeBody.input.pixelPerfectOver = true; 
-        this.SmudgeStickCharacter.events.onInputOver.add(this.SmudgeStickSticker, this.SmudgeStickCharacter);   
-        this.SmudgeStickCharacter.scale.setTo(CharacterButtonScale,CharacterButtonScale);
-        CharacterStickerGroup.add(this.SmudgeStickCharacter);
+        this.StickWandCharacter.events.onInputOver.add(this.StickWandSticker, this.StickWandCharacter);   
+        this.StickWandCharacter.scale.setTo(CharacterButtonScale,CharacterButtonScale);
+        CharacterStickerGroup.add(this.StickWandCharacter);
         
         //Character Mobile Stickers
         this.StickWandCharacter = game.add.sprite(ButtonsPos_x+this.RockCharacter.width*4, ButtonsPos_y , 'StickWandBody');
@@ -1039,9 +1110,9 @@ PineconeSticker: function () {
         game.state.start("StateMain");
     },
     
-    SmudgeStickSticker: function () {
+    StickWandSticker: function () {
     //Turn on the loading mechanisim. 
-        IsPlacingSmudgeStick = true;
+        IsPlacingStickWand = true;
 
         game.state.start("StateMain");
     },
