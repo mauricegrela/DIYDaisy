@@ -1190,6 +1190,8 @@ PineconeSticker: function () {
         StickerDepth[3]=false;
         StickerDepth[4]=false;
         StickerDepth[5]=true;
+        StickerDepth[6]=true;
+        StickerDepth[7]=true;
 ///////////////////////////
 ////Pivot Positions////////
 ///////////////////////////
@@ -1200,9 +1202,19 @@ PineconeSticker: function () {
         game.state.start("StateMain");
     },
     
-    StickWandSticker: function () {
+    LeafSticker: function () {
     //Turn on the loading mechanisim. 
-        IsPlacingStickWand = true;
+        IsPlacingLeaf = true;
+    //////////////////////////
+    ////Sticker Depths////////
+    //////////////////////////
+        StickerDepth[0]=true;
+        StickerDepth[1]=true;
+        StickerDepth[2]=true;
+        StickerDepth[3]=false;
+    ///////////////////////////
+    ////Pivot Positions////////
+    ///////////////////////////
 
         game.state.start("StateMain");
     },
@@ -1210,6 +1222,18 @@ PineconeSticker: function () {
     StickWandSticker: function () {
     //Turn on the loading mechanisim. 
         IsPlacingStickWand = true;
+    //////////////////////////
+    ////Sticker Depths////////
+    //////////////////////////
+        StickerDepth[0]=true;
+        StickerDepth[1]=true;
+        StickerDepth[2]=true;
+        StickerDepth[3]=false;
+        StickerDepth[4]=false;
+        StickerDepth[5]=true;
+    ///////////////////////////
+    ////Pivot Positions////////
+    ///////////////////////////
 
         game.state.start("StateMain");
     },
