@@ -17,12 +17,9 @@ var isMobile;
 
 //Sprite Manipulation Library
 var IsPlacingRock = false;
-
-var IsPlacingPineCone = true;
-
+var IsPlacingPinecone = true;
 var IsPlacingMobile = false;
 var IsPlacingLeaf = false;
-var IsPlacingPinecone = true;
 var IsPlacingLeaf = false;
 var IsPlacingStickWand = false;
 
@@ -215,7 +212,7 @@ var Pivot_Y = [
 
 //These stickers will dictate the order inwhich stickers will be shown 
     var StickerDepth = [
-        true,
+        false,
         true,
         true,
         false,

@@ -103,59 +103,81 @@ var StateMain = {
                         ImageAssetArray[28]='Mobile_28';
                 
 
-                Pivot_X [0]=0.8;
-                Pivot_Y [0]=0.2;     
-                Pivot_X [1]=0.8;
-                Pivot_Y [1]=0.2;
-                Pivot_X [2]=0.8;
-                Pivot_Y [2]=0.2;
-                Pivot_X [3]=0.8;
-                Pivot_Y [3]=0.2;
+                //////////////////////////
+                ////Sticker Depths////////
+                //////////////////////////
+                        StickerDepth[0]=true;
+                        StickerDepth[1]=true;
+                        StickerDepth[2]=false;
+                        StickerDepth[3]=true;
+                        StickerDepth[4]=true;
+                        StickerDepth[5]=true;
 
-                Pivot_X [4]=0.7;
-                Pivot_Y [4]=0.1; 
-                Pivot_X [5]=0.7;
-                Pivot_Y [5]=0.1;     
-                Pivot_X [6]=0.7;
-                Pivot_Y [6]=0.1;     
-                Pivot_X [7]=0.7;
-                Pivot_Y [7]=0.1;
+                //////////////////////////
+                //////Pivot Points////////
+                //////////////////////////
+                Pivot_X [0]=0.5;
+                Pivot_Y [0]=0.5;
+                Pivot_X [1]=0.5;
+                Pivot_Y [1]=0.5;
+                Pivot_X [2]=0.5;
+                Pivot_Y [2]=0.5;
+                Pivot_X [3]=0.5;
+                Pivot_Y [3]=0.5;
 
-                Pivot_X [8]=0.45;  
-                Pivot_Y [8]=0.1;   
-                Pivot_X [9]=0.45;
-                Pivot_Y [9]=0.1;   
-                Pivot_X [10]=0.45;
-                Pivot_Y [10]=0.1; 
-                Pivot_X [11]=0.45;
-                Pivot_Y [11]=0.1;
+                Pivot_X [4]=0.5;
+                Pivot_Y [4]=0.5;
+                Pivot_X [5]=0.5;
+                Pivot_Y [5]=0.5;
+                Pivot_X [6]=0.5;
+                Pivot_Y [6]=0.5; 
+                Pivot_X [7]=0.5;
+                Pivot_Y [7]=0.5;
 
-                Pivot_X [12]=0.25;
-                Pivot_Y [12]=0.1;  
-                Pivot_X [13]=0.25;
-                Pivot_Y [13]=0.1;    
-                Pivot_X [14]=0.25;
-                Pivot_Y [14]=0.1;    
-                Pivot_X [15]=0.25;
-                Pivot_Y [15]=0.1;
+                Pivot_X [8]=0.5;
+                Pivot_Y [8]=0.5;
+                Pivot_X [9]=0.5;
+                Pivot_Y [9]=0.5;
+                Pivot_X [10]=0.5;
+                Pivot_Y [10]=0.5;
+                Pivot_X [11]=0.5;
+                Pivot_Y [11]=0.5;
 
-                Pivot_X [16]=0.19;
-                Pivot_Y [16]=0.23;    
-                Pivot_X [17]=0.2;
-                Pivot_Y [17]=0.275;    
-                Pivot_X [18]=0.2;
-                Pivot_Y [18]=0.26;   
-                Pivot_X [19]=0.2;
-                Pivot_Y [19]=0.26;
+                Pivot_X [12]=0.5;
+                Pivot_Y [12]=0.5;
+                Pivot_X [13]=0.5;
+                Pivot_Y [13]=0.5;   
+                Pivot_X [14]=0.5;
+                Pivot_Y [14]=0.5;
+                Pivot_X [15]=0.5;
+                Pivot_Y [15]=0.5;
 
-                Pivot_Y [20]=0.8;
-                Pivot_X [20]=0.5;              
-                Pivot_Y [21]=0.8;
-                Pivot_X [21]=0.5;       
-                Pivot_Y [22]=0.8; 
-                Pivot_X [22]=0.5;     
-                Pivot_Y [23]=0.8; 
+                Pivot_X [16]=0.5;
+                Pivot_Y [16]=0.5;
+                Pivot_X [17]=0.5;
+                Pivot_Y [17]=0.5;   
+                Pivot_X [18]=0.5;
+                Pivot_Y [18]=0.5;  
+                Pivot_X [19]=0.5;
+                Pivot_Y [19]=0.5;
+
+                Pivot_Y [20]=0.5;
+                Pivot_X [20]=0.5;      
+                Pivot_Y [21]=0.5;
+                Pivot_X [21]=0.5;    
+                Pivot_Y [22]=0.5;
+                Pivot_X [22]=0.5;   
+                Pivot_Y [23]=0.5;
                 Pivot_X [23]=0.5;
+                
+                Pivot_Y [24]=0.5;
+                Pivot_X [24]=0.5;      
+                Pivot_Y [25]=0.5;
+                Pivot_X [25]=0.5;    
+                Pivot_Y [26]=0.5;
+                Pivot_X [26]=0.5;   
+                Pivot_Y [27]=0.5;
+                Pivot_X [27]=0.5;
 
 
                 
@@ -202,36 +224,37 @@ var StateMain = {
                 //////////////////////////
                 ////Sticker Body//////////
                 //////////////////////////
-                        ImageAssetArray[0]='PineconeBody';
+                                ImageAssetArray[0]='PineconeBody';
                 ///////////////////////////
                 ////First Sticker Group////
                 ///////////////////////////
-                        ImageAssetArray[13]='PineconeWings_1';
-                        ImageAssetArray[14]='PineconeWings_2';
-                        ImageAssetArray[15]='PineconeWings_3';  
-                        ImageAssetArray[16]='PineconeWings_4';
+                        ImageAssetArray[1]='PineconeWings_1';
+                        ImageAssetArray[2]='PineconeWings_2';
+                        ImageAssetArray[3]='PineconeWings_3';  
+                        ImageAssetArray[4]='PineconeWings_4';
                 ///////////////////////////
                 ////Second Sticker Group///
                 ///////////////////////////
-                        ImageAssetArray[1]='PineconeEyes_1';
-                        ImageAssetArray[2]='PineconeEyes_2'; 
-                        ImageAssetArray[3]='PineconeEyes_3';
-                        ImageAssetArray[4]='PineconeEyes_4';
+                        ImageAssetArray[5]='PineconeEyes_1';
+                        ImageAssetArray[6]='PineconeEyes_2'; 
+                        ImageAssetArray[7]='PineconeEyes_3';
+                        ImageAssetArray[8]='PineconeEyes_4';
+
                 ///////////////////////////
                 ////Third Sticker Group////
                 ///////////////////////////
-                        ImageAssetArray[21]='PineconeFeet_1';
-                        ImageAssetArray[22]='PineconeFeet_2';
-                        ImageAssetArray[23]='PineconeFeet_3';
-                        ImageAssetArray[24]='PineconeFeet_4';
-                        
-                ///////////////////////////
+                        ImageAssetArray[9]='PineconeFeet_1';
+                        ImageAssetArray[10]='PineconeFeet_2';
+                        ImageAssetArray[11]='PineconeFeet_3';
+                        ImageAssetArray[12]='PineconeFeet_4';
+
                 ////Fourth Sticker Group///
                 ///////////////////////////
-                        ImageAssetArray[9]='PineconeHeadgear_1';
-                        ImageAssetArray[10]='PineconeHeadgear_2';
-                        ImageAssetArray[11]='PineconeHeadgear_3';
-                        ImageAssetArray[12]='PineconeHeadgear_4';
+                        ImageAssetArray[13]='PineconeHeadgear_1';
+                        ImageAssetArray[14]='PineconeHeadgear_2';
+                        ImageAssetArray[15]='PineconeHeadgear_3';
+                        ImageAssetArray[16]='PineconeHeadgear_4';
+
                 ///////////////////////////
                 ////Fifth Sticker Group////
                 ///////////////////////////
@@ -239,20 +262,78 @@ var StateMain = {
                         ImageAssetArray[18]='PineconeClothing_2';
                         ImageAssetArray[19]='PineconeClothing_3';
                         ImageAssetArray[20]='PineconeClothing_4';
-                ///////////////////////////
-                ////Sixth Sticker Group////
-                ///////////////////////////
-                       
+                //////////////////////////
+                ////Sticker Depths////////
+                //////////////////////////
+                        StickerDepth[0]=false;
+                        StickerDepth[1]=true;
+                        StickerDepth[2]=false;
+                        StickerDepth[3]=true;
+                        StickerDepth[4]=true;
+                        StickerDepth[5]=true;
 
-         
-            
-                
+                //////////////////////////
+                //////Pivot Points////////
+                //////////////////////////
+                    Pivot_X [0]=0.5;
+                    Pivot_Y [0]=0.5;
+                    Pivot_X [1]=0.5;
+                    Pivot_Y [1]=0.5;
+                    Pivot_X [2]=0.5;
+                    Pivot_Y [2]=0.5;
+                    Pivot_X [3]=0.5;
+                    Pivot_Y [3]=0.5;
+
+                    Pivot_X [4]=0.5;
+                    Pivot_Y [4]=0.5;
+                    Pivot_X [5]=0.5;
+                    Pivot_Y [5]=0.5;
+                    Pivot_X [6]=0.5;
+                    Pivot_Y [6]=0.5; 
+                    Pivot_X [7]=0.5;
+                    Pivot_Y [7]=0.5;
+
+                    Pivot_X [8]=0.5;
+                    Pivot_Y [8]=0.5;
+                    Pivot_X [9]=0.5;
+                    Pivot_Y [9]=0.5;
+                    Pivot_X [10]=0.5;
+                    Pivot_Y [10]=0.5;
+                    Pivot_X [11]=0.5;
+                    Pivot_Y [11]=0.5;
+
+                    Pivot_X [12]=0.5;
+                    Pivot_Y [12]=0.5;
+                    Pivot_X [13]=0.5;
+                    Pivot_Y [13]=0.5;   
+                    Pivot_X [14]=0.5;
+                    Pivot_Y [14]=0.5;
+                    Pivot_X [15]=0.5;
+                    Pivot_Y [15]=0.5;
+
+                    Pivot_X [16]=0.5;
+                    Pivot_Y [16]=0.5;
+                    Pivot_X [17]=0.5;
+                    Pivot_Y [17]=0.5;   
+                    Pivot_X [18]=0.5;
+                    Pivot_Y [18]=0.5;  
+                    Pivot_X [19]=0.5;
+                    Pivot_Y [19]=0.5;
+
+                    Pivot_Y [20]=0.5;
+                    Pivot_X [20]=0.5;      
+                    Pivot_Y [21]=0.5;
+                    Pivot_X [21]=0.5;    
+                    Pivot_Y [22]=0.5;
+                    Pivot_X [22]=0.5;   
+                    Pivot_Y [23]=0.5;
+                    Pivot_X [23]=0.5;
 
 
                 game.load.video('Episode', 'videos/PineCone_Animal/DaisyGBK_PineCon_Ani_720.mp4');
 
                 //Turn this off in case it gets loaded again        
-                IsPlacingPineCone=false;
+                IsPlacingPinecone=false;
             }
 
             if (IsPlacingRock == true)
@@ -325,52 +406,71 @@ var StateMain = {
                     ImageAssetArray[18]='RockFeet_2';
                     ImageAssetArray[19]='RockFeet_3';
                     ImageAssetArray[20]='RockFeet_4';
-           
-                
-        Pivot_X [0]=0.5;
-        Pivot_Y [0]=0.5;        
-        Pivot_X [1]=0.5;
-        Pivot_Y [1]=0.5;
-        Pivot_X [2]=0.5;
-        Pivot_Y [2]=0.5;
-        Pivot_X [3]=0.5;
-        Pivot_Y [3]=0.5; 
-                
-        Pivot_X [4]=0.5;
-        Pivot_Y [4]=0.5; 
-        Pivot_X [5]=0.5;
-        Pivot_Y [5]=0.5;     
-        Pivot_X [6]=0.5;
-        Pivot_Y [6]=0.5;     
-        Pivot_X [7]=0.5;
-        Pivot_Y [7]=0.5;
-                
-        Pivot_X [8]=0.5;  
-        Pivot_Y [8]=0.72;   
-        Pivot_X [9]=0.5;
-        Pivot_Y [9]=0.65;    
-        Pivot_X [10]=0.5;
-        Pivot_Y [10]=0.6;  
-        Pivot_X [11]=0.5;
-        Pivot_Y [11]=0.6; 
-                
-        Pivot_X [12]=0.5;
-        Pivot_Y [12]=0.5;  
-        Pivot_X [13]=0.5;
-        Pivot_Y [13]=0.5;    
-        Pivot_X [14]=0.5;
-        Pivot_Y [14]=0.5;    
-        Pivot_X [15]=0.5;
-        Pivot_Y [15]=0.5;
-                
-        Pivot_Y [16]=0.5;
-        Pivot_X [16]=0.5;     
-        Pivot_Y [17]=0.5;
-        Pivot_X [17]=0.5;    
-        Pivot_Y [18]=0.5; 
-        Pivot_X [18]=0.5;      
-        Pivot_Y [19]=0.5;
-        Pivot_X [19]=0.5;
+            //////////////////////////
+            ////Sticker Depths////////
+            //////////////////////////
+                    StickerDepth[0]=true;
+                    StickerDepth[1]=true;
+                    StickerDepth[2]=true;
+                    StickerDepth[3]=false;
+                    StickerDepth[4]=true;
+                    StickerDepth[5]=true;
+            //////////////////////////
+            //////Pivot Points////////
+            //////////////////////////
+                Pivot_X [0]=0.5;
+                Pivot_Y [0]=0.5;
+                Pivot_X [1]=0.5;
+                Pivot_Y [1]=0.5;
+                Pivot_X [2]=0.5;
+                Pivot_Y [2]=0.5;
+                Pivot_X [3]=0.5;
+                Pivot_Y [3]=0.5;
+
+                Pivot_X [4]=0.5;
+                Pivot_Y [4]=0.5;
+                Pivot_X [5]=0.5;
+                Pivot_Y [5]=0.5;
+                Pivot_X [6]=0.5;
+                Pivot_Y [6]=0.5; 
+                Pivot_X [7]=0.5;
+                Pivot_Y [7]=0.5;
+
+                Pivot_X [8]=0.5;
+                Pivot_Y [8]=0.5;
+                Pivot_X [9]=0.5;
+                Pivot_Y [9]=0.5;
+                Pivot_X [10]=0.5;
+                Pivot_Y [10]=0.5;
+                Pivot_X [11]=0.5;
+                Pivot_Y [11]=0.5;
+
+                Pivot_X [12]=0.5;
+                Pivot_Y [12]=0.5;
+                Pivot_X [13]=0.5;
+                Pivot_Y [13]=0.5;   
+                Pivot_X [14]=0.5;
+                Pivot_Y [14]=0.5;
+                Pivot_X [15]=0.5;
+                Pivot_Y [15]=0.5;
+
+                Pivot_X [16]=0.5;
+                Pivot_Y [16]=0.5;
+                Pivot_X [17]=0.5;
+                Pivot_Y [17]=0.5;   
+                Pivot_X [18]=0.5;
+                Pivot_Y [18]=0.5;  
+                Pivot_X [19]=0.5;
+                Pivot_Y [19]=0.5;
+
+                Pivot_Y [20]=0.5;
+                Pivot_X [20]=0.5;      
+                Pivot_Y [21]=0.5;
+                Pivot_X [21]=0.5;    
+                Pivot_Y [22]=0.5;
+                Pivot_X [22]=0.5;   
+                Pivot_Y [23]=0.5;
+                Pivot_X [23]=0.5;
                 
                 
 
@@ -401,21 +501,20 @@ var StateMain = {
                 game.load.image('LeafClothing_2', 'images/Leaf/LeafClothing_2.png');
                 game.load.image('LeafClothing_3', 'images/Leaf/LeafClothing_3.png');
                 game.load.image('LeafClothing_4', 'images/Leaf/LeafClothing_4.png');
-   
-            game.load.spritesheet("Rock_Stickers_1", "images/ui/Leaf_stickers.png", 365, 250, 24);
+
 
 
                 game.load.spritesheet("Leaf_Stickers", "images/ui/Leaf_stickers.png", 365, 250, 16);  
                 CaroselGroupNumber = 3;
                 StickerAssigner_set1 = "Leaf_Stickers";
                 
-                ImageAssetArray[0]='LeafBody';
+
                 
 
             ///////////////////////////
             ////Sticker Body//////////
             ///////////////////////////
-                    ImageAssetArray[0]='RockBody';
+                    ImageAssetArray[0]='LeafBody';
             ///////////////////////////
             ////First Sticker Group////
             ///////////////////////////
@@ -444,78 +543,71 @@ var StateMain = {
                     ImageAssetArray[14]='LeafClothing_2';
                     ImageAssetArray[15]='LeafClothing_3';  
                     ImageAssetArray[16]='LeafClothing_4';
-                
-            ///////////////////////////
-            ////Sticker Body//////////
-            ///////////////////////////
-                    ImageAssetArray[0]='LeafBody';
-            ///////////////////////////
-            ////First Sticker Group////
-            ///////////////////////////
-                    ImageAssetArray[1]='LeafWings_1';
-                    ImageAssetArray[2]='LeafWings_2'; 
-                    ImageAssetArray[3]='LeafWings_3';
-                    ImageAssetArray[4]='LeafWings_4';
-            ///////////////////////////
-            ////Second Sticker Group///
-            ///////////////////////////
-                    ImageAssetArray[5]='LeafFace_1';
-                    ImageAssetArray[6]='LeafFace_2';
-                    ImageAssetArray[7]='LeafFace_3';
-                    ImageAssetArray[8]='LeafFace_4';
-            ///////////////////////////
-            ////Third Sticker Group////
-            ///////////////////////////
-                    ImageAssetArray[9]='LeafHeadgear_1.png';
-                    ImageAssetArray[10]='LeafHeadgear_2.png';
-                    ImageAssetArray[11]='LeafHeadgear_3.png';
-                    ImageAssetArray[12]='LeafHeadgear_4.png';
-            ///////////////////////////
-            ////Fourth Sticker Group///
-            ///////////////////////////
-                    ImageAssetArray[13]='LeafClothing_1';
-                    ImageAssetArray[14]='LeafClothing_2';
-                    ImageAssetArray[15]='LeafClothing_3';  
-                    ImageAssetArray[16]='LeafClothing_4';
-    
-           
-                
-        Pivot_X [0]=0.5;
-        Pivot_Y [0]=0.5;        
-        Pivot_X [1]=0.5;
-        Pivot_Y [1]=0.5;
-        Pivot_X [2]=0.5;
-        Pivot_Y [2]=0.5;
-        Pivot_X [3]=0.5;
-        Pivot_Y [3]=0.5; 
-                
-        Pivot_X [4]=0.5;
-        Pivot_Y [4]=0.5; 
-        Pivot_X [5]=0.5;
-        Pivot_Y [5]=0.5;     
-        Pivot_X [6]=0.5;
-        Pivot_Y [6]=0.5;     
-        Pivot_X [7]=0.5;
-        Pivot_Y [7]=0.5;
-                
-        Pivot_X [8]=0.5;  
-        Pivot_Y [8]=0.72;   
-        Pivot_X [9]=0.5;
-        Pivot_Y [9]=0.65;    
-        Pivot_X [10]=0.5;
-        Pivot_Y [10]=0.6;  
-        Pivot_X [11]=0.5;
-        Pivot_Y [11]=0.6; 
-                
-        Pivot_X [12]=0.5;
-        Pivot_Y [12]=0.5;  
-        Pivot_X [13]=0.5;
-        Pivot_Y [13]=0.5;    
-        Pivot_X [14]=0.5;
-        Pivot_Y [14]=0.5;    
-        Pivot_X [15]=0.5;
-        Pivot_Y [15]=0.5;
-                
+            //////////////////////////
+            ////Sticker Depths////////
+            //////////////////////////
+                    StickerDepth[0]=false;
+                    StickerDepth[1]=true;
+                    StickerDepth[2]=true;
+                    StickerDepth[3]=true;
+                    StickerDepth[4]=true;
+                    StickerDepth[5]=true;    
+            //////////////////////////
+            //////Pivot Points////////
+            //////////////////////////
+                Pivot_X [0]=0.5;
+                Pivot_Y [0]=0.5;
+                Pivot_X [1]=0.5;
+                Pivot_Y [1]=0.5;
+                Pivot_X [2]=0.5;
+                Pivot_Y [2]=0.5;
+                Pivot_X [3]=0.5;
+                Pivot_Y [3]=0.5;
+
+                Pivot_X [4]=0.5;
+                Pivot_Y [4]=0.5;
+                Pivot_X [5]=0.5;
+                Pivot_Y [5]=0.5;
+                Pivot_X [6]=0.5;
+                Pivot_Y [6]=0.5; 
+                Pivot_X [7]=0.5;
+                Pivot_Y [7]=0.5;
+
+                Pivot_X [8]=0.5;
+                Pivot_Y [8]=0.5;
+                Pivot_X [9]=0.5;
+                Pivot_Y [9]=0.5;
+                Pivot_X [10]=0.5;
+                Pivot_Y [10]=0.5;
+                Pivot_X [11]=0.5;
+                Pivot_Y [11]=0.5;
+
+                Pivot_X [12]=0.5;
+                Pivot_Y [12]=0.5;
+                Pivot_X [13]=0.5;
+                Pivot_Y [13]=0.5;   
+                Pivot_X [14]=0.5;
+                Pivot_Y [14]=0.5;
+                Pivot_X [15]=0.5;
+                Pivot_Y [15]=0.5;
+
+                Pivot_X [16]=0.5;
+                Pivot_Y [16]=0.5;
+                Pivot_X [17]=0.5;
+                Pivot_Y [17]=0.5;   
+                Pivot_X [18]=0.5;
+                Pivot_Y [18]=0.5;  
+                Pivot_X [19]=0.5;
+                Pivot_Y [19]=0.5;
+
+                Pivot_Y [20]=0.5;
+                Pivot_X [20]=0.5;      
+                Pivot_Y [21]=0.5;
+                Pivot_X [21]=0.5;    
+                Pivot_Y [22]=0.5;
+                Pivot_X [22]=0.5;   
+                Pivot_Y [23]=0.5;
+                Pivot_X [23]=0.5;
                 
                 
                 StickerAssigner_set1 = "Leaf_Stickers_1";
@@ -560,18 +652,18 @@ var StateMain = {
                 game.load.image('StickWandHeadgear_3', 'images/StickWand/StickWandHeadgear_3.png');
                 game.load.image('StickWandHeadgear_4', 'images/StickWand/StickWandHeadgear_4.png');
 
-                game.load.spritesheet("StickWand_stickers", "images/ui/StickWand_stickers.png", 365, 250, 20);  
+                game.load.spritesheet("StickWand_stickers", "images/ui/StickWand_stickers.png", 365, 250, 24);  
                 CaroselGroupNumber = 4;
-                StickerAssigner_set1 = "Leaf_Stickers";
-                ImageAssetArray[0]='StickWandBody';
+                StickerAssigner_set1 = "StickWand_stickers";
                 
-                game.load.spritesheet("StickWand_Stickers_1", "images/ui/StickWand_stickers.png", 365, 250, 24);
+                
+                //game.load.spritesheet("StickWand_Stickers_1", "images/ui/StickWand_stickers.png", 365, 250, 24);
 
 
             ///////////////////////////
             ////Sticker Body//////////
             ///////////////////////////
-                    ImageAssetArray[0]='StickWand';
+                    ImageAssetArray[0]='StickWandBody';
             ///////////////////////////
             ////First Sticker Group////
             ///////////////////////////
@@ -596,10 +688,10 @@ var StateMain = {
             ///////////////////////////
             ////Fourth Sticker Group///
             ///////////////////////////
-                    ImageAssetArray[17]='StickWandFeet_1';
-                    ImageAssetArray[18]='StickWandFeet_2';
-                    ImageAssetArray[19]='StickWandFeet_3';
-                    ImageAssetArray[20]='StickWandFeet_4';
+                    ImageAssetArray[13]='StickWandFeet_1';
+                    ImageAssetArray[14]='StickWandFeet_2';
+                    ImageAssetArray[15]='StickWandFeet_3';
+                    ImageAssetArray[16]='StickWandFeet_4';
             ///////////////////////////
             ////Fifth Sticker Group////
             ///////////////////////////
@@ -607,85 +699,83 @@ var StateMain = {
                     ImageAssetArray[18]='StickWandClothing_2';
                     ImageAssetArray[19]='StickWandClothing_3';
                     ImageAssetArray[20]='StickWandClothing_4';
-           
-            ///////////////////////////
-            ////Sticker Body//////////
-            ///////////////////////////
-                    ImageAssetArray[0]='LeafBody';
-            ///////////////////////////
-            ////First Sticker Group////
-            ///////////////////////////
-                    ImageAssetArray[1]='StickWandBase_1';
-                    ImageAssetArray[2]='StickWandBase_2'; 
-                    ImageAssetArray[3]='StickWandBase_3';
-                    ImageAssetArray[4]='StickWandBase_4';
-            ///////////////////////////
-            ///Second Sticker Group////
-            ///////////////////////////
-                    ImageAssetArray[5]='StickWandFace_1';
-                    ImageAssetArray[6]='StickWandFace_2';
-                    ImageAssetArray[7]='StickWandFace_3';
-                    ImageAssetArray[8]='StickWandFace_4';
-            ///////////////////////////
-            ////Third Sticker Group////
-            ///////////////////////////
-                    ImageAssetArray[9]='StickWandClothing_1';
-                    ImageAssetArray[10]='StickWandClothing_2';
-                    ImageAssetArray[11]='StickWandClothing_3';
-                    ImageAssetArray[12]='StickWandClothing_4';
-            ///////////////////////////
-            ////Fourth Sticker Group///
-            ///////////////////////////
-                    ImageAssetArray[13]='StickWandFeet_1';
-                    ImageAssetArray[14]='StickWandFeet_2';
-                    ImageAssetArray[15]='StickWandFeet_3';  
-                    ImageAssetArray[16]='StickWandFeet_4';
-            ///////////////////////////
-            ////Fifth Sticker Group///
-            ///////////////////////////
-                    ImageAssetArray[17]='StickWandHeadgear_1';
-                    ImageAssetArray[18]='StickWandHeadgear_2';
-                    ImageAssetArray[19]='StickWandHeadgear_3';  
-                    ImageAssetArray[20]='StickWandHeadgear_4';               
+                //////////////////////////
+                ////Sticker Depths////////
+                //////////////////////////
+                        StickerDepth[0]=true;
+                        StickerDepth[1]=true;
+                        StickerDepth[2]=true;
+                        StickerDepth[3]=true;
+                        StickerDepth[4]=true;
+                        StickerDepth[5]=true;
 
-            Pivot_X [4]=0.5;
-            Pivot_Y [4]=0.5; 
-            Pivot_X [5]=0.5;
-            Pivot_Y [5]=0.5;     
-            Pivot_X [6]=0.5;
-            Pivot_Y [6]=0.5;     
-            Pivot_X [7]=0.5;
-            Pivot_Y [7]=0.5;
+                //////////////////////////
+                //////Pivot Points////////
+                //////////////////////////
+                Pivot_X [0]=0.5;
+                Pivot_Y [0]=0.5;
+                Pivot_X [1]=0.5;
+                Pivot_Y [1]=0.5;
+                Pivot_X [2]=0.5;
+                Pivot_Y [2]=0.5;
+                Pivot_X [3]=0.5;
+                Pivot_Y [3]=0.5;
 
-            Pivot_X [8]=0.5;  
-            Pivot_Y [8]=0.72;   
-            Pivot_X [9]=0.5;
-            Pivot_Y [9]=0.65;    
-            Pivot_X [10]=0.5;
-            Pivot_Y [10]=0.6;  
-            Pivot_X [11]=0.5;
-            Pivot_Y [11]=0.6; 
+                Pivot_X [4]=0.5;
+                Pivot_Y [4]=0.5;
+                Pivot_X [5]=0.5;
+                Pivot_Y [5]=0.5;
+                Pivot_X [6]=0.5;
+                Pivot_Y [6]=0.5; 
+                Pivot_X [7]=0.5;
+                Pivot_Y [7]=0.5;
 
-            Pivot_X [12]=0.5;
-            Pivot_Y [12]=0.5;  
-            Pivot_X [13]=0.5;
-            Pivot_Y [13]=0.5;    
-            Pivot_X [14]=0.5;
-            Pivot_Y [14]=0.5;    
-            Pivot_X [15]=0.5;
-            Pivot_Y [15]=0.5;
+                Pivot_X [8]=0.5;
+                Pivot_Y [8]=0.5;
+                Pivot_X [9]=0.5;
+                Pivot_Y [9]=0.5;
+                Pivot_X [10]=0.5;
+                Pivot_Y [10]=0.5;
+                Pivot_X [11]=0.5;
+                Pivot_Y [11]=0.5;
 
-            Pivot_Y [16]=0.5;
-            Pivot_X [16]=0.5;     
-            Pivot_Y [17]=0.5;
-            Pivot_X [17]=0.5;    
-            Pivot_Y [18]=0.5; 
-            Pivot_X [18]=0.5;      
-            Pivot_Y [19]=0.5;
-            Pivot_X [19]=0.5;
+                Pivot_X [12]=0.5;
+                Pivot_Y [12]=0.5;
+                Pivot_X [13]=0.5;
+                Pivot_Y [13]=0.5;   
+                Pivot_X [14]=0.5;
+                Pivot_Y [14]=0.5;
+                Pivot_X [15]=0.5;
+                Pivot_Y [15]=0.5;
+
+                Pivot_X [16]=0.5;
+                Pivot_Y [16]=0.5;
+                Pivot_X [17]=0.5;
+                Pivot_Y [17]=0.5;   
+                Pivot_X [18]=0.5;
+                Pivot_Y [18]=0.5;  
+                Pivot_X [19]=0.5;
+                Pivot_Y [19]=0.5;
+
+                Pivot_Y [20]=0.5;
+                Pivot_X [20]=0.5;      
+                Pivot_Y [21]=0.5;
+                Pivot_X [21]=0.5;    
+                Pivot_Y [22]=0.5;
+                Pivot_X [22]=0.5;   
+                Pivot_Y [23]=0.5;
+                Pivot_X [23]=0.5;
                 
+                Pivot_Y [24]=0.5;
+                Pivot_X [24]=0.5;      
+                Pivot_Y [25]=0.5;
+                Pivot_X [25]=0.5;    
+                Pivot_Y [26]=0.5;
+                Pivot_X [26]=0.5;   
+                Pivot_Y [27]=0.5;
+                Pivot_X [27]=0.5;
                 
-            StickerAssigner_set1 = "StickWand_Stickers_1";
+
                 game.load.video('Episode', 'videos/Forest_Mobile/DaisyGBK_ForestMob_720.mp4');
                 
                 IsPlacingStickWand = false;
@@ -846,14 +936,10 @@ var StateMain = {
         //Character StickWand Stickers
         this.SmudgeStickCharacter = game.add.sprite(ButtonsPos_x+this.RockCharacter.width*3, ButtonsPos_y , 'LeafBody');   
         this.SmudgeStickCharacter.inputEnabled = true;
-
-        this.StickWandCharacter = game.add.sprite(ButtonsPos_x+this.RockCharacter.width*3, ButtonsPos_y , 'StickWandBody');   
-        this.StickWandCharacter.inputEnabled = true;
-
-        //this.PineconeBody.input.pixelPerfectOver = true; 
-        this.StickWandCharacter.events.onInputOver.add(this.StickWandSticker, this.StickWandCharacter);   
-        this.StickWandCharacter.scale.setTo(CharacterButtonScale,CharacterButtonScale);
-        CharacterStickerGroup.add(this.StickWandCharacter);
+        this.SmudgeStickCharacter.events.onInputOver.add(this.LeafSticker, this.SmudgeStickCharacter);   
+        this.SmudgeStickCharacter.scale.setTo(CharacterButtonScale,CharacterButtonScale);
+        CharacterStickerGroup.add(this.SmudgeStickCharacter);
+        
         
         //Character Mobile Stickers
         this.StickWandCharacter = game.add.sprite(ButtonsPos_x+this.RockCharacter.width*4, ButtonsPos_y , 'StickWandBody');
@@ -1285,49 +1371,19 @@ var StateMain = {
     RockSticker: function () {
 //Turn on the loading mechanisim. 
     IsPlacingRock = true;
-//////////////////////////
-////Sticker Depths////////
-//////////////////////////
-        StickerDepth[0]=true;
-        StickerDepth[1]=true;
-        StickerDepth[2]=true;
-        StickerDepth[3]=false;
-        StickerDepth[4]=true;
-        StickerDepth[5]=true;
-///////////////////////////
-////Pivot Positions////////
-///////////////////////////
-    
-
-
-
-        game.state.start("StateMain");
+    game.state.start("StateMain");
     },
     
 PineconeSticker: function () {
 //Turn on the loading mechanisim. 
-    IsPlacingPineCone = true;
-//////////////////////////
-////Sticker Depths////////
-//////////////////////////
-        StickerDepth[0]=true;
-        StickerDepth[1]=true;
-        StickerDepth[2]=true;
-        StickerDepth[3]=false;
-        StickerDepth[4]=false;
-        StickerDepth[5]=true;
-///////////////////////////
-////Pivot Positions////////
-///////////////////////////
-       
-       
-
-        game.state.start("StateMain");
+    IsPlacingPinecone = true;
+    game.state.start("StateMain");
     },
     
     MobileSticker: function () {
 //Turn on the loading mechanisim. 
     IsPlacingMobile = true;
+        
 //////////////////////////
 ////Sticker Depths////////
 //////////////////////////
@@ -1392,11 +1448,11 @@ PineconeSticker: function () {
     },
     
     render: function () {
-    game.debug.text( this.SelectedButton.anchor.x, 100, 380 );
-    game.debug.text( this.SelectedButton.anchor.y, 100, 390 ); 
+    game.debug.text( ImageAssetArray[0], 100, 380 );
+    game.debug.text( ImageAssetArray[0], 100, 390 ); 
     
-    game.debug.text( Pivot_X[0], 100, 380 );
-    game.debug.text( Pivot_Y[0], 100, 390 );     
+    //game.debug.text( Pivot_X[0], 100, 380 );
+    //game.debug.text( Pivot_Y[0], 100, 390 );     
         
     },
 

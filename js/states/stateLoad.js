@@ -34,56 +34,23 @@ game.load.image('DirectoryBackground', 'images/results/book.png');
         
         var video1;
         game.load.video('Intro', 'videos/Intro/DaisyGBK_Intro_720.mp4');
-
+        
+        //Exptros which will pla 
         game.load.video('Extro1', 'videos/Extro/DaisyGBK_Extro1_720.mp4');
         game.load.video('Extro2', 'videos/Extro/DaisyGBK_Extro2_720.mp4');
         game.load.video('Extro3', 'videos/Extro/DaisyGBK_Extro3_720.mp4');
         game.load.video('Extro4', 'videos/Extro/DaisyGBK_Extro4_720.mp4');
         game.load.video('Extro5', 'videos/Extro/DaisyGBK_Extro5_720.mp4');
 
-
-        //game.load.video('FlowerEpisode', 'videos/Flower_Petal/DaisyGBK_FlowerPetArt_720.mp4');
-        //game.load.video('ForestEpisode', 'videos/Forest_Mobile/DaisyGBK_ForestMob_720.mp4');
-        //game.load.video('LadybugEpisode', 'videos/Ladybug_Rock/DaisyGBK_LadyRock_720.mp4');
+        //Default Video loaded 
         game.load.video('Episode', 'videos/PineCone_Animal/DaisyGBK_PineCon_Ani_720.mp4');
-        //game.load.video('RainbowEpisode', 'videos/Rainbow_Wands/DaisyGBK_RainWand_720.mp4');
 
 
 ////////////////
 /////Mobile/////
 ////////////////    
         game.load.image('MobileBody', 'images/Mobile/MobileBody.png');
-        game.load.image('Mobile_1', 'images/Mobile/Mobile_1.png');
-        game.load.image('Mobile_2', 'images/Mobile/Mobile_2.png');
-        game.load.image('Mobile_3', 'images/Mobile/Mobile_3.png');
-        game.load.image('Mobile_4', 'images/Mobile/Mobile_4.png');
-        game.load.image('Mobile_5', 'images/Mobile/Mobile_5.png');
-        game.load.image('Mobile_6', 'images/Mobile/Mobile_6.png');
-        game.load.image('Mobile_7', 'images/Mobile/Mobile_7.png');
-        game.load.image('Mobile_8', 'images/Mobile/Mobile_8.png');
-        game.load.image('Mobile_9', 'images/Mobile/Mobile_9.png');
-        game.load.image('Mobile_10', 'images/Mobile/Mobile_10.png');
-        game.load.image('Mobile_11', 'images/Mobile/Mobile_11.pSng');
-        game.load.image('Mobile_12', 'images/Mobile/Mobile_12.png'); 
-        game.load.image('Mobile_13', 'images/Mobile/Mobile_13.png');
-        game.load.image('Mobile_14', 'images/Mobile/Mobile_14.png');
-        game.load.image('Mobile_15', 'images/Mobile/Mobile_15.png');
-        game.load.image('Mobile_16', 'images/Mobile/Mobile_16.png');
-        game.load.image('Mobile_17', 'images/Mobile/Mobile_17.png');
-        game.load.image('Mobile_18', 'images/Mobile/Mobile_18.png'); 
-        game.load.image('Mobile_19', 'images/Mobile/Mobile_19.png');
-        game.load.image('Mobile_20', 'images/Mobile/Mobile_20.png');
-        game.load.image('Mobile_21', 'images/Mobile/Mobile_21.png');
-        game.load.image('Mobile_22', 'images/Mobile/Mobile_22.png');
-        game.load.image('Mobile_23', 'images/Mobile/Mobile_23.png');
-        game.load.image('Mobile_24', 'images/Mobile/Mobile_24.png');
-        game.load.image('Mobile_24', 'images/Mobile/Mobile_25.png');
-        game.load.image('Mobile_24', 'images/Mobile/Mobile_26.png');
-        game.load.image('Mobile_24', 'images/Mobile/Mobile_27.png');
-        game.load.image('Mobile_24', 'images/Mobile/Mobile_28.png');
         
-        game.load.spritesheet("Mobile_stickers", "images/ui/Mobile_stickers.png", 365, 250, 24);
-       
 ////////////////
 ////Pinecones////
 ////////////////    
@@ -187,32 +154,6 @@ game.load.image('DirectoryBackground', 'images/results/book.png');
 ///StickWand///
 ////////////////    
         game.load.image('StickWandBody', 'images/StickWand/StickWandBody.png');   
-        
-        game.load.image('StickWandBase_1', 'images/StickWand/StickWandBase_1.png');
-        game.load.image('StickWandBase_2', 'images/StickWand/StickWandBase_2.png');      
-        game.load.image('StickWandBase_3', 'images/StickWand/StickWandBase_3.png');
-        game.load.image('StickWandBase_4', 'images/StickWand/StickWandBase_4.png'); 
-                        
-        game.load.image('StickWandFace_1', 'images/StickWand/StickWandFace_1.png');
-        game.load.image('StickWandFace_2', 'images/StickWand/StickWandFace_2.png');
-        game.load.image('StickWandFace_3', 'images/StickWand/StickWandFace_3.png');
-        game.load.image('StickWandFace_4', 'images/StickWand/StickWandFace_4.png');
-         
-        game.load.image('StickWandHeadgear_1', 'images/StickWand/StickWandHeadgear_1.png');
-        game.load.image('StickWandHeadgear_2', 'images/StickWand/StickWandHeadgear_2.png');
-        game.load.image('StickWandHeadgear_3', 'images/StickWand/StickWandHeadgear_3.png');
-        game.load.image('StickWandHeadgear_4', 'images/StickWand/StickWandHeadgear_4.png');
-
-        game.load.image('StickWandFeet_1', 'images/StickWand/StickWandFeet_1.png');
-        game.load.image('StickWandFeet_2', 'images/StickWand/StickWandFeet_3.png');
-        game.load.image('StickWandFeet_3', 'images/StickWand/StickWandFeet_2.png');
-        game.load.image('StickWandFeet_4', 'images/StickWand/StickWandFeet_4.png');
-       
-        game.load.image('StickWandClothing_1', 'images/StickWand/StickWandClothing_1.png');
-        game.load.image('StickWandClothing_2', 'images/StickWand/StickWandClothing_2.png');
-        game.load.image('StickWandClothing_3', 'images/StickWand/StickWandClothing_3.png');
-        game.load.image('StickWandClothing_4', 'images/StickWand/StickWandClothing_4.png');    
-       
 ///////////////////////////
 //Carosel Stickers to load/
 ///////////////////////////
@@ -273,52 +214,6 @@ game.load.image('DirectoryBackground', 'images/results/book.png');
     },
 
     create: function () {
-        
-
-        
-        ImageAssetArray[0]='PineconeBody';
-///////////////////////////
-////First Sticker Group////
-///////////////////////////
-        ImageAssetArray[1]='PineconeWings_1';
-        ImageAssetArray[2]='PineconeWings_2';
-        ImageAssetArray[3]='PineconeWings_3';  
-        ImageAssetArray[4]='PineconeWings_4';
-///////////////////////////
-////Second Sticker Group///
-///////////////////////////
-        ImageAssetArray[5]='PineconeEyes_1';
-        ImageAssetArray[6]='PineconeEyes_2'; 
-        ImageAssetArray[7]='PineconeEyes_3';
-        ImageAssetArray[8]='PineconeEyes_4';
-
-///////////////////////////
-////Third Sticker Group////
-///////////////////////////
-        ImageAssetArray[9]='PineconeFeet_1';
-        ImageAssetArray[10]='PineconeFeet_2';
-        ImageAssetArray[11]='PineconeFeet_3';
-        ImageAssetArray[12]='PineconeFeet_4';
-       
-////Fourth Sticker Group///
-///////////////////////////
-        ImageAssetArray[13]='PineconeHeadgear_1';
-        ImageAssetArray[14]='PineconeHeadgear_2';
-        ImageAssetArray[15]='PineconeHeadgear_3';
-        ImageAssetArray[16]='PineconeHeadgear_4';
- 
-///////////////////////////
-////Fifth Sticker Group////
-///////////////////////////
-
-        ImageAssetArray[17]='PineconeClothing_1';
-        ImageAssetArray[18]='PineconeClothing_2';
-        ImageAssetArray[19]='PineconeClothing_3';
-        ImageAssetArray[20]='PineconeClothing_4';
-
-
-        StickerAssigner_set1 = "Pinecone_Stickers";
-        //StickerAssigner_set2 = "Rock_Stickers_2";
         game.state.start("StateTitle");
         //game.state.start("StateCharacterSelect");
         //game.state.start("StateRockMain");
