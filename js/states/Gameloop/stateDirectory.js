@@ -1,24 +1,75 @@
 var StateDirectory = {
 
     preload: function () {
-        GameCenter_x = game.width/2;
-        GameCenter_y = game.height/3; 
+        GameCenter_x = game.world.centerX+game.width/8;
+        GameCenter_y = game.world.centerY-game.height/30;
         
-        XPosition = 0;
+        
+        
+        XPosition = game.world.centerX-game.width/8;
+        YPosition = game.world.centerY;
     }
 
     , create: function () {   
     
-    ExtroMenu = game.add.group();
-    this.PlaceModeButton = gameButtons.addButton("place", 300, 100, this.PlaceCreation, this);//Save File
-    ExtroMenu.add(this.PlaceModeButton);
-    this.EpisodeModeButton = gameButtons.addButton("watch", 300, 200, this.WatchEpisode, this);//Watch Episode
-    ExtroMenu.add(this.EpisodeModeButton);
-    this.DownloadModeButton = gameButtons.addButton("download", 300, 300, this.SaveFile, this);//Enter place mode 
-    ExtroMenu.add(this.DownloadModeButton);   
-
         scaleRatio = window.devicePixelRatio / 2;
-        CharacterScaleAdjustment = 0.5;
+        
+        butonScale = 1.5;
+        
+                 this.craftBackground = game.add.sprite(0, 0, 'craft_Backgroung');
+        //BackgroundGroup.add(this.craftBackground); 
+        
+        //Background Working
+        this.Background = game.add.sprite(game.world.centerX,game.world.centerY, 'DirectoryBackground');
+        this.Background.anchor.set(0.5);
+        this.Background.scale.setTo(scaleRatio,scaleRatio);
+        //this.Background.width =game.width; 
+        //this.Background.height =game.height;
+        
+        
+    this.PlaceModeButton = gameButtons.addGenericButton("0",
+    XPosition,
+    (YPosition), 
+    this.PlaceCreation, this,"creativeButtons",2); 
+    this.PlaceModeButton.scale.setTo(scaleRatio*butonScale,scaleRatio*butonScale); 
+        
+    this.EpisodeModeButton = gameButtons.addGenericButton("0",
+    XPosition-this.PlaceModeButton.width,
+    (YPosition-this.PlaceModeButton.height), 
+    this.WatchEpisode, this,"creativeButtons",1); 
+    this.EpisodeModeButton.scale.setTo(scaleRatio*butonScale,scaleRatio*butonScale); 
+        
+    /*ExtroMenu = game.add.group();
+    this.PlaceModeButton = gameButtons.addButton("place",                                          
+    XPosition,
+    YPosition, 
+    this.PlaceCreation, this);//Save File
+        
+        
+    ExtroMenu.add(this.PlaceModeButton);
+        
+    this.EpisodeModeButton = gameButtons.addButton("watch",
+    XPosition-this.PlaceModeButton.width,
+    (YPosition-this.PlaceModeButton.height),  
+    this.WatchEpisode, this);//Watch Episode
+    ExtroMenu.add(this.EpisodeModeButton);
+        
+    /*this.DownloadModeButton = gameButtons.addButton("download", 
+    XPosition-this.PlaceModeButton.width,
+    (YPosition+this.PlaceModeButton.height), 
+    this.SaveFile, this);//Enter place mode 
+    ExtroMenu.add(this.DownloadModeButton); */
+        
+    //Save Button
+    this.SaveButton = gameButtons.addGenericButton("0",
+     XPosition-this.PlaceModeButton.width,
+    (YPosition+this.PlaceModeButton.height), 
+    this.SaveClicked, this,"creativeButtons",4); 
+    this.SaveButton.scale.setTo(scaleRatio,scaleRatio);
+    //MainButtonGroup.add(this.SaveButton);
+
+        
+        CharacterScaleAdjustment = 1.0;
         CharacterGroup = game.add.group();
 
         this.Body = game.add.sprite(GameCenter_x, GameCenter_y,ImageAssetArray[0]);
@@ -79,9 +130,20 @@ var StateDirectory = {
         
         game.world.bringToTop(CharacterGroup);
 
-        
+
 
         
+    },    
+    
+    SaveClicked: function () { 
+        this.link = document.createElement('a');
+        this.link.href = this.game.canvas.toDataURL('image/png');
+        this.link.download = 'MyCreation.jpg';
+        document.body.appendChild(this.link);
+        this.link.click();
+        document.body.removeChild(this.link);
+        //game.cache.addBitmapData(this.DrawnSprite, this.bmd);
+        //game.state.start("StateOuttro");
     },
     
     PlaceCreation: function () {

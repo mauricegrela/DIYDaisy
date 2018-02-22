@@ -7,6 +7,8 @@ var StateIntroMovie = {
 
     , create: function () {
 
+        this.craftBackground1 = game.add.sprite(0, 0, 'VideoBackGround');
+        this.craftBackground1.scale.setTo(1,1);
         /*var titleText = game.add.text(game.world.centerX, game.world.centerY - 100, "GAME TITLE");
         titleText.fill = "#ffffff";
         titleText.anchor.set(0.5, 0.5);*/
@@ -17,8 +19,9 @@ var StateIntroMovie = {
         //video1.stop();
         
         this.btnStart = gameButtons.addButton("skip",game.width/2, game.height-100, this.startGame, this);
-        this.btnStart.anchor.set(0.5, 0);
-        this.btnStart.y = game.height-this.btnStart.height;
+        this.btnStart.x = this.btnStart.width;
+        this.btnStart.y = this.btnStart.height;
+        this.btnStart.anchor.set(1.0, 1.0);
         /*
         this.tester = game.add.sprite(0, 0, game.cache.getBitmapData(this.DrawnSprite));''
         */

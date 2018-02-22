@@ -20,21 +20,21 @@ var StateOuttro = {
     }
 
     , create: function () {
-        /*var titleText = game.add.text(game.world.centerX, game.world.centerY - 100, "GAME TITLE");
-        titleText.fill = "#ffffff";
-        titleText.anchor.set(0.5, 0.5);*/
-
+        
+        this.craftBackground1 = game.add.sprite(0, 0, 'VideoBackGround');
+        this.craftBackground1.scale.setTo(1,1);
         
         video1 = game.add.video(ExtroVideoRef[game.rnd.integerInRange(0, 4)]);
         video1.play(true); 
         video1.addToWorld(game.width/2, game.height/2, 0.5, 0.5, 1, 1); 
-        //video1.stop();
-        
+
         this.btnStart = gameButtons.addButton("skip",game.width/2, game.height/2+video1.height, this.startGame, this);
-        this.btnStart.anchor.set(0.5, 0.5);
-        this.btnStart.y = game.height-this.btnStart.height;
+        this.btnStart.x = this.btnStart.width;
+        this.btnStart.y = this.btnStart.height;
+        this.btnStart.anchor.set(1.0, 1.0);
         
-        if(this.game.device.desktop == false){ 
+        if(this.game.device.desktop == false)
+        { 
         this.Play = gameButtons.addButton("play", game.width/2, game.height/2, this.StartVideoMobile, this);
         this.Play.anchor.set(0.5, 0.5);
         }

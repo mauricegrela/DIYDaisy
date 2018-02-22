@@ -4,24 +4,30 @@ var StateEpisode = {
 
     }
 
-    , create: function () {   
-       
+    , create: function () 
+    {  
+
+        
+       this.VideoBackground = game.add.sprite(0, 0, 'VideoBackGround');
+        //BackgroundGroup.add(this.craftBackground);   
+        
         video1 = game.add.video("Episode");
         video1.play(true); 
         video1.addToWorld(game.width/2, game.height/2, 0.5, 0.5, 1, 1); 
         //video1.stop();
         
-        this.btnStart = gameButtons.addButton("skip",game.width/2, game.height/2+video1.height, this.startGame, this);
-        this.btnStart.anchor.set(0.5, 0.5);
-        this.btnStart.y = game.height-this.btnStart.height;
+       
         
         if(this.game.device.desktop == false){ 
         this.Play = gameButtons.addButton("play", game.width/2, game.height/2, this.StartVideoMobile, this);
-        this.Play.anchor.set(0.5, 0.5);
+        this.Play.anchor.set(0.0, 0.0);
         }
     ExtroMenu = game.add.group();
-    this.PlaceModeButton = gameButtons.addButton("skip", 300, 100, this.PlaceCreation, this);//Save File
-                   
+    this.PlaceModeButton = gameButtons.addButton("skip",0,0,this.startGame, this);
+    this.PlaceModeButton.x = this.PlaceModeButton.width;
+    this.PlaceModeButton.y = this.PlaceModeButton.height;
+    this.PlaceModeButton.anchor.set(1.0, 1.0);
+   
     },
     
     
