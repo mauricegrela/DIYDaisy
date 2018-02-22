@@ -151,7 +151,7 @@ var StateMain = {
                 
             }
 
-            if(IsPlacingPineCone == true)
+            if(IsPlacingPinecone == true)
             {
                 //Wings
                 game.load.image('PineconeWings_1', 'images/Pinecone/PineconeWings_1.png');     

@@ -17,10 +17,10 @@ var isMobile;
 
 //Sprite Manipulation Library
 var IsPlacingRock = false;
-var IsPlacingPineCone = false;
+var IsPlacingPinecone = false;
 var IsPlacingMobile = false;
 
-var IsPlacingStickWand = false;
+var IsPlacingLeaf = false;
 var IsPlacingStickWand = false;
 
 var isClickDragging = false;
