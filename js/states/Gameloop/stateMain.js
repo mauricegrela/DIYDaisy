@@ -495,7 +495,97 @@ var StateMain = {
 
                 ImageAssetArray[0]='StickWandBody';
                 
+                game.load.spritesheet("StickWand_Stickers_1", "images/ui/StickWand_stickers.png", 365, 250, 24);
 
+
+            ///////////////////////////
+            ////Sticker Body//////////
+            ///////////////////////////
+                    ImageAssetArray[0]='StickWand';
+            ///////////////////////////
+            ////First Sticker Group////
+            ///////////////////////////
+                    ImageAssetArray[1]='StickWandBase_1';
+                    ImageAssetArray[2]='StickWandBase_2'; 
+                    ImageAssetArray[3]='StickWandBase_3';
+                    ImageAssetArray[4]='StickWandBase_4';
+            ///////////////////////////
+            ////Second Sticker Group///
+            ///////////////////////////
+                    ImageAssetArray[5]='StickWandFace_1';
+                    ImageAssetArray[6]='StickWandFace_2';
+                    ImageAssetArray[7]='StickWandFace_3';
+                    ImageAssetArray[8]='StickWandFace_4';
+            ///////////////////////////
+            ////Third Sticker Group////
+            ///////////////////////////
+                    ImageAssetArray[9]='StickWandHeadgear_1';
+                    ImageAssetArray[10]='StickWandHeadgear_2';
+                    ImageAssetArray[11]='StickWandHeadgear_3';
+                    ImageAssetArray[12]='StickWandHeadgear_4';
+            ///////////////////////////
+            ////Fourth Sticker Group///
+            ///////////////////////////
+                    ImageAssetArray[17]='StickWandFeet_1';
+                    ImageAssetArray[18]='StickWandFeet_2';
+                    ImageAssetArray[19]='StickWandFeet_3';
+                    ImageAssetArray[20]='StickWandFeet_4';
+            ///////////////////////////
+            ////Fifth Sticker Group////
+            ///////////////////////////
+                    ImageAssetArray[17]='StickWandClothing_1';
+                    ImageAssetArray[18]='StickWandClothing_2';
+                    ImageAssetArray[19]='StickWandClothing_3';
+                    ImageAssetArray[20]='StickWandClothing_4';
+           
+                
+        Pivot_X [0]=0.5;
+        Pivot_Y [0]=0.5;        
+        Pivot_X [1]=0.5;
+        Pivot_Y [1]=0.5;
+        Pivot_X [2]=0.5;
+        Pivot_Y [2]=0.5;
+        Pivot_X [3]=0.5;
+        Pivot_Y [3]=0.5; 
+                
+        Pivot_X [4]=0.5;
+        Pivot_Y [4]=0.5; 
+        Pivot_X [5]=0.5;
+        Pivot_Y [5]=0.5;     
+        Pivot_X [6]=0.5;
+        Pivot_Y [6]=0.5;     
+        Pivot_X [7]=0.5;
+        Pivot_Y [7]=0.5;
+                
+        Pivot_X [8]=0.5;  
+        Pivot_Y [8]=0.72;   
+        Pivot_X [9]=0.5;
+        Pivot_Y [9]=0.65;    
+        Pivot_X [10]=0.5;
+        Pivot_Y [10]=0.6;  
+        Pivot_X [11]=0.5;
+        Pivot_Y [11]=0.6; 
+                
+        Pivot_X [12]=0.5;
+        Pivot_Y [12]=0.5;  
+        Pivot_X [13]=0.5;
+        Pivot_Y [13]=0.5;    
+        Pivot_X [14]=0.5;
+        Pivot_Y [14]=0.5;    
+        Pivot_X [15]=0.5;
+        Pivot_Y [15]=0.5;
+                
+        Pivot_Y [16]=0.5;
+        Pivot_X [16]=0.5;     
+        Pivot_Y [17]=0.5;
+        Pivot_X [17]=0.5;    
+        Pivot_Y [18]=0.5; 
+        Pivot_X [18]=0.5;      
+        Pivot_Y [19]=0.5;
+        Pivot_X [19]=0.5;
+                
+                
+            StickerAssigner_set1 = "StickWand_Stickers_1";
                 game.load.video('Episode', 'videos/Forest_Mobile/DaisyGBK_ForestMob_720.mp4');
                 
                 IsPlacingStickWand = false;
