@@ -37,7 +37,16 @@ var StateMain = {
                 game.load.image('Mobile_22', 'images/Mobile/Mobile_22.png');
                 game.load.image('Mobile_23', 'images/Mobile/Mobile_23.png');
                 game.load.image('Mobile_24', 'images/Mobile/Mobile_24.png');
-                game.load.spritesheet("Mobile_stickers", "images/ui/Mobile_stickers.png", 365, 250, 24);
+                game.load.image('Mobile_25', 'images/Mobile/Mobile_25.png');
+                game.load.image('Mobile_26', 'images/Mobile/Mobile_26.png');
+                game.load.image('Mobile_27', 'images/Mobile/Mobile_27.png');
+                game.load.image('Mobile_28', 'images/Mobile/Mobile_28.png');
+                
+                game.load.spritesheet("Mobile_stickers", "images/ui/Mobile_stickers.png", 365, 250, 28);
+                CaroselGroupNumber = 6;
+                StickerAssigner_set1 = "Mobile_stickers";
+                
+                
 
                 //////////////////////////
                 ////Sticker Body//////////
@@ -85,6 +94,13 @@ var StateMain = {
                         ImageAssetArray[22]='Mobile_22';
                         ImageAssetArray[23]='Mobile_23';
                         ImageAssetArray[24]='Mobile_24';
+                ///////////////////////////
+                ///Seventh Sticker Group///
+                ///////////////////////////
+                        ImageAssetArray[25]='Mobile_25';
+                        ImageAssetArray[26]='Mobile_26';
+                        ImageAssetArray[27]='Mobile_27';
+                        ImageAssetArray[28]='Mobile_28';
                 
 
                 Pivot_X [0]=0.8;
@@ -142,7 +158,7 @@ var StateMain = {
                 Pivot_X [23]=0.5;
 
 
-                StickerAssigner_set1 = "Mobile_stickers";
+                
                 game.load.video('Episode', 'videos/Forest_Mobile/DaisyGBK_ForestMob_720.mp4');
                 
                 //Turn this off in case it gets loaded again
@@ -179,8 +195,10 @@ var StateMain = {
                 game.load.image('PineconeClothing_3', 'images/Pinecone/PineconeClothing_3.png');      
                 game.load.image('PineconeClothing_4', 'images/Pinecone/PineconeClothing_4.png');
            
-                game.load.spritesheet("Pinecone_Stickers", "images/ui/Pinecone_stickers.png", 365, 250, 24);    
-
+                game.load.spritesheet("Pinecone_Stickers", "images/ui/Pinecone_stickers.png", 365, 250, 20);    
+                CaroselGroupNumber = 4;
+                StickerAssigner_set1 = "Pinecone_Stickers"; 
+                
                 //////////////////////////
                 ////Sticker Body//////////
                 //////////////////////////
@@ -229,7 +247,7 @@ var StateMain = {
          
             
                 
-                StickerAssigner_set1 = "Pinecone_Stickers"; 
+
 
                 game.load.video('Episode', 'videos/PineCone_Animal/DaisyGBK_PineCon_Ani_720.mp4');
 
@@ -264,8 +282,9 @@ var StateMain = {
             game.load.image('RockFeet_3', 'images/Rock/RockFeet_2.png');
             game.load.image('RockFeet_4', 'images/Rock/RockFeet_4.png');
             
-            game.load.spritesheet("Rock_Stickers_1", "images/ui/Rock_stickers.png", 365, 250, 24);
-
+            game.load.spritesheet("Rock_Stickers_1", "images/ui/Rock_stickers.png", 365, 250, 20);
+            CaroselGroupNumber = 4;
+            StickerAssigner_set1 = "Rock_Stickers_1";
 
             ///////////////////////////
             ////Sticker Body//////////
@@ -354,7 +373,7 @@ var StateMain = {
         Pivot_X [19]=0.5;
                 
                 
-            StickerAssigner_set1 = "Rock_Stickers_1";
+
 
             game.load.video('Episode', 'videos/Ladybug_Rock/DaisyGBK_LadyRock_720.mp4');
 
@@ -386,6 +405,46 @@ var StateMain = {
             game.load.spritesheet("Rock_Stickers_1", "images/ui/Leaf_stickers.png", 365, 250, 24);
 
 
+                game.load.spritesheet("Leaf_Stickers", "images/ui/Leaf_stickers.png", 365, 250, 16);  
+                CaroselGroupNumber = 3;
+                StickerAssigner_set1 = "Leaf_Stickers";
+                
+                ImageAssetArray[0]='LeafBody';
+                
+
+            ///////////////////////////
+            ////Sticker Body//////////
+            ///////////////////////////
+                    ImageAssetArray[0]='RockBody';
+            ///////////////////////////
+            ////First Sticker Group////
+            ///////////////////////////
+                    ImageAssetArray[1]='LeafWings_1';
+                    ImageAssetArray[2]='LeafWings_2'; 
+                    ImageAssetArray[3]='LeafWings_3';
+                    ImageAssetArray[4]='LeafWings_4';
+            ///////////////////////////
+            ////Second Sticker Group///
+            ///////////////////////////
+                    ImageAssetArray[5]='LeafFace_1';
+                    ImageAssetArray[6]='LeafFace_2';
+                    ImageAssetArray[7]='LeafFace_3';
+                    ImageAssetArray[8]='LeafFace_4';
+            ///////////////////////////
+            ////Third Sticker Group////
+            ///////////////////////////
+                    ImageAssetArray[9]='LeafHeadgear_1';
+                    ImageAssetArray[10]='LeafHeadgear_2';
+                    ImageAssetArray[11]='LeafHeadgear_3';
+                    ImageAssetArray[12]='LeafHeadgear_4';
+            ///////////////////////////
+            ////Fourth Sticker Group///
+            ///////////////////////////
+                    ImageAssetArray[13]='LeafClothing_1';
+                    ImageAssetArray[14]='LeafClothing_2';
+                    ImageAssetArray[15]='LeafClothing_3';  
+                    ImageAssetArray[16]='LeafClothing_4';
+                
             ///////////////////////////
             ////Sticker Body//////////
             ///////////////////////////
@@ -460,39 +519,50 @@ var StateMain = {
                 
                 
                 StickerAssigner_set1 = "Leaf_Stickers_1";
-                
+
                 game.load.video('Episode', 'videos/Flower_Petal/DaisyGBK_FlowerPetArt_720.mp4');
 
-                IsPlacingStickWand = false;
+
+                IsPlacingLeaf = false;
+
             }
 
             if(IsPlacingStickWand == true)
             {
+
                 game.load.image('StickWandBase_1', 'images/StickWand/StickWandBase_1.png');
                 game.load.image('StickWandBase_2', 'images/StickWand/StickWandBase_2.png');      
                 game.load.image('StickWandBase_3', 'images/StickWand/StickWandBase_3.png');
                 game.load.image('StickWandBase_4', 'images/StickWand/StickWandBase_4.png'); 
-                        
+                                
+                game.load.image('StickWandClothing_1', 'images/StickWand/StickWandClothing_1.png');
+                game.load.image('StickWandClothing_2', 'images/StickWand/StickWandClothing_2.png');
+                game.load.image('StickWandClothing_3', 'images/StickWand/StickWandClothing_3.png');
+                game.load.image('StickWandClothing_4', 'images/StickWand/StickWandClothing_4.png');
+
+                game.load.image('StickWandBase_1', 'images/StickWand/StickWandBase_1.png');
+                game.load.image('StickWandBase_2', 'images/StickWand/StickWandBase_2.png');      
+                game.load.image('StickWandBase_3', 'images/StickWand/StickWandBase_3.png');
+                game.load.image('StickWandBase_4', 'images/StickWand/StickWandBase_4.png'); 
+
                 game.load.image('StickWandFace_1', 'images/StickWand/StickWandFace_1.png');
                 game.load.image('StickWandFace_2', 'images/StickWand/StickWandFace_2.png');
                 game.load.image('StickWandFace_3', 'images/StickWand/StickWandFace_3.png');
                 game.load.image('StickWandFace_4', 'images/StickWand/StickWandFace_4.png');
-         
+                
+                game.load.image('StickWandFeet_1', 'images/StickWand/StickWandFeet_1.png');
+                game.load.image('StickWandFeet_3', 'images/StickWand/StickWandFeet_3.png');
+                game.load.image('StickWandFeet_2', 'images/StickWand/StickWandFeet_2.png');
+                game.load.image('StickWandFeet_4', 'images/StickWand/StickWandFeet_4.png');
+               
                 game.load.image('StickWandHeadgear_1', 'images/StickWand/StickWandHeadgear_1.png');
                 game.load.image('StickWandHeadgear_2', 'images/StickWand/StickWandHeadgear_2.png');
                 game.load.image('StickWandHeadgear_3', 'images/StickWand/StickWandHeadgear_3.png');
                 game.load.image('StickWandHeadgear_4', 'images/StickWand/StickWandHeadgear_4.png');
 
-                game.load.image('StickWandFeet_1', 'images/StickWand/StickWandFeet_1.png');
-                game.load.image('StickWandFeet_2', 'images/StickWand/StickWandFeet_3.png');
-                game.load.image('StickWandFeet_3', 'images/StickWand/StickWandFeet_2.png');
-                game.load.image('StickWandFeet_4', 'images/StickWand/StickWandFeet_4.png');
-       
-                game.load.image('StickWandClothing_1', 'images/StickWand/StickWandClothing_1.png');
-                game.load.image('StickWandClothing_2', 'images/StickWand/StickWandClothing_2.png');
-                game.load.image('StickWandClothing_3', 'images/StickWand/StickWandClothing_3.png');
-                game.load.image('StickWandClothing_4', 'images/StickWand/StickWandClothing_4.png');    
-
+                game.load.spritesheet("StickWand_stickers", "images/ui/StickWand_stickers.png", 365, 250, 20);  
+                CaroselGroupNumber = 4;
+                StickerAssigner_set1 = "Leaf_Stickers";
                 ImageAssetArray[0]='StickWandBody';
                 
                 game.load.spritesheet("StickWand_Stickers_1", "images/ui/StickWand_stickers.png", 365, 250, 24);
@@ -538,51 +608,81 @@ var StateMain = {
                     ImageAssetArray[19]='StickWandClothing_3';
                     ImageAssetArray[20]='StickWandClothing_4';
            
-                
-        Pivot_X [0]=0.5;
-        Pivot_Y [0]=0.5;        
-        Pivot_X [1]=0.5;
-        Pivot_Y [1]=0.5;
-        Pivot_X [2]=0.5;
-        Pivot_Y [2]=0.5;
-        Pivot_X [3]=0.5;
-        Pivot_Y [3]=0.5; 
-                
-        Pivot_X [4]=0.5;
-        Pivot_Y [4]=0.5; 
-        Pivot_X [5]=0.5;
-        Pivot_Y [5]=0.5;     
-        Pivot_X [6]=0.5;
-        Pivot_Y [6]=0.5;     
-        Pivot_X [7]=0.5;
-        Pivot_Y [7]=0.5;
-                
-        Pivot_X [8]=0.5;  
-        Pivot_Y [8]=0.72;   
-        Pivot_X [9]=0.5;
-        Pivot_Y [9]=0.65;    
-        Pivot_X [10]=0.5;
-        Pivot_Y [10]=0.6;  
-        Pivot_X [11]=0.5;
-        Pivot_Y [11]=0.6; 
-                
-        Pivot_X [12]=0.5;
-        Pivot_Y [12]=0.5;  
-        Pivot_X [13]=0.5;
-        Pivot_Y [13]=0.5;    
-        Pivot_X [14]=0.5;
-        Pivot_Y [14]=0.5;    
-        Pivot_X [15]=0.5;
-        Pivot_Y [15]=0.5;
-                
-        Pivot_Y [16]=0.5;
-        Pivot_X [16]=0.5;     
-        Pivot_Y [17]=0.5;
-        Pivot_X [17]=0.5;    
-        Pivot_Y [18]=0.5; 
-        Pivot_X [18]=0.5;      
-        Pivot_Y [19]=0.5;
-        Pivot_X [19]=0.5;
+            ///////////////////////////
+            ////Sticker Body//////////
+            ///////////////////////////
+                    ImageAssetArray[0]='LeafBody';
+            ///////////////////////////
+            ////First Sticker Group////
+            ///////////////////////////
+                    ImageAssetArray[1]='StickWandBase_1';
+                    ImageAssetArray[2]='StickWandBase_2'; 
+                    ImageAssetArray[3]='StickWandBase_3';
+                    ImageAssetArray[4]='StickWandBase_4';
+            ///////////////////////////
+            ///Second Sticker Group////
+            ///////////////////////////
+                    ImageAssetArray[5]='StickWandFace_1';
+                    ImageAssetArray[6]='StickWandFace_2';
+                    ImageAssetArray[7]='StickWandFace_3';
+                    ImageAssetArray[8]='StickWandFace_4';
+            ///////////////////////////
+            ////Third Sticker Group////
+            ///////////////////////////
+                    ImageAssetArray[9]='StickWandClothing_1';
+                    ImageAssetArray[10]='StickWandClothing_2';
+                    ImageAssetArray[11]='StickWandClothing_3';
+                    ImageAssetArray[12]='StickWandClothing_4';
+            ///////////////////////////
+            ////Fourth Sticker Group///
+            ///////////////////////////
+                    ImageAssetArray[13]='StickWandFeet_1';
+                    ImageAssetArray[14]='StickWandFeet_2';
+                    ImageAssetArray[15]='StickWandFeet_3';  
+                    ImageAssetArray[16]='StickWandFeet_4';
+            ///////////////////////////
+            ////Fifth Sticker Group///
+            ///////////////////////////
+                    ImageAssetArray[17]='StickWandHeadgear_1';
+                    ImageAssetArray[18]='StickWandHeadgear_2';
+                    ImageAssetArray[19]='StickWandHeadgear_3';  
+                    ImageAssetArray[20]='StickWandHeadgear_4';               
+
+            Pivot_X [4]=0.5;
+            Pivot_Y [4]=0.5; 
+            Pivot_X [5]=0.5;
+            Pivot_Y [5]=0.5;     
+            Pivot_X [6]=0.5;
+            Pivot_Y [6]=0.5;     
+            Pivot_X [7]=0.5;
+            Pivot_Y [7]=0.5;
+
+            Pivot_X [8]=0.5;  
+            Pivot_Y [8]=0.72;   
+            Pivot_X [9]=0.5;
+            Pivot_Y [9]=0.65;    
+            Pivot_X [10]=0.5;
+            Pivot_Y [10]=0.6;  
+            Pivot_X [11]=0.5;
+            Pivot_Y [11]=0.6; 
+
+            Pivot_X [12]=0.5;
+            Pivot_Y [12]=0.5;  
+            Pivot_X [13]=0.5;
+            Pivot_Y [13]=0.5;    
+            Pivot_X [14]=0.5;
+            Pivot_Y [14]=0.5;    
+            Pivot_X [15]=0.5;
+            Pivot_Y [15]=0.5;
+
+            Pivot_Y [16]=0.5;
+            Pivot_X [16]=0.5;     
+            Pivot_Y [17]=0.5;
+            Pivot_X [17]=0.5;    
+            Pivot_Y [18]=0.5; 
+            Pivot_X [18]=0.5;      
+            Pivot_Y [19]=0.5;
+            Pivot_X [19]=0.5;
                 
                 
             StickerAssigner_set1 = "StickWand_Stickers_1";
@@ -614,6 +714,7 @@ var StateMain = {
         StickerGroup_4 = game.add.group();
         StickerGroup_5 = game.add.group();
         StickerGroup_6 = game.add.group();
+        StickerGroup_7 = game.add.group();
         
         StickersUnderBody = game.add.group();
         StickerBody = game.add.group();
@@ -743,8 +844,12 @@ var StateMain = {
         CharacterStickerGroup.add(this.MobileCharacter);
                 
         //Character StickWand Stickers
+        this.SmudgeStickCharacter = game.add.sprite(ButtonsPos_x+this.RockCharacter.width*3, ButtonsPos_y , 'LeafBody');   
+        this.SmudgeStickCharacter.inputEnabled = true;
+
         this.StickWandCharacter = game.add.sprite(ButtonsPos_x+this.RockCharacter.width*3, ButtonsPos_y , 'StickWandBody');   
         this.StickWandCharacter.inputEnabled = true;
+
         //this.PineconeBody.input.pixelPerfectOver = true; 
         this.StickWandCharacter.events.onInputOver.add(this.StickWandSticker, this.StickWandCharacter);   
         this.StickWandCharacter.scale.setTo(CharacterButtonScale,CharacterButtonScale);
@@ -781,6 +886,7 @@ var StateMain = {
         ImageGroupReference[3] = StickerGroup_4;
         ImageGroupReference[4] = StickerGroup_5;
         ImageGroupReference[5] = StickerGroup_6;
+        ImageGroupReference[6] = StickerGroup_7;
         
         ImageGroupReference[0].visible = false;
         ImageGroupReference[1].visible = false;
@@ -788,6 +894,7 @@ var StateMain = {
         ImageGroupReference[3].visible = false;
         ImageGroupReference[4].visible = false;
         ImageGroupReference[5].visible = false;
+        ImageGroupReference[6].visible = false;
         ImageGroupReference[GroupRefArrayCounter].visible = true;
         
         //Sticker Vars
@@ -918,6 +1025,25 @@ var StateMain = {
                 else
                 {
                 StickersAboveBody.add(this.Sticker_6);
+                }
+        
+        //Sticker_7      
+        this.Sticker_7 = game.add.sprite(OGPose_X, OGPose_Y+StickerDepth[7], ImageAssetArray[0]);
+        this.Sticker_7.alpha = 0;
+        this.Sticker_7.anchor.x = 0.5;
+        this.Sticker_7.anchor.y = 0.5;
+        this.Sticker_7.inputEnabled = true;
+        this.Sticker_7.input.pixelPerfectOver = true;
+        this.Sticker_7.events.onInputOver.add(this.sticker_Click, {param1: this.Sticker_7, param2: 7});
+        this.Sticker_7.scale.setTo(scaleRatio,scaleRatio);
+        //Character.add(this.Sticker_6);  
+            if(StickerDepth[6]== false)
+            {
+            StickersUnderBody.add(this.Sticker_7);
+            }
+                else
+                {
+                StickersAboveBody.add(this.Sticker_7);
                 }
         
 ///////////////////////////
@@ -1052,6 +1178,26 @@ var StateMain = {
         this.StickerButton24.scale.setTo(ButtonsScale,ButtonsScale);
         StickerGroup_6.add(this.StickerButton24);
         
+///////////////////////////
+////Seven Sticker Group////
+///////////////////////////
+        
+        this.StickerButton25 = gameButtons.addStickerButton("0", ButtonsPos_x, ButtonsPos_y, this.Sticker_25_Place, this,24,StickerAssigner_set1); 
+        this.StickerButton25.scale.setTo(ButtonsScale,ButtonsScale);
+        StickerGroup_7.add(this.StickerButton25);
+        
+        this.StickerButton26 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width, ButtonsPos_y, this.Sticker_26_Place, this,25,StickerAssigner_set1); 
+        this.StickerButton26.scale.setTo(ButtonsScale,ButtonsScale);
+        StickerGroup_7.add(this.StickerButton26);
+        
+        this.StickerButton27 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width*2, ButtonsPos_y, this.Sticker_27_Place, this,26,StickerAssigner_set1);  
+        this.StickerButton27.scale.setTo(ButtonsScale,ButtonsScale);
+        StickerGroup_7.add(this.StickerButton27);
+        
+        this.StickerButton28 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width*3, ButtonsPos_y, this.Sticker_28_Place, this,27,StickerAssigner_set1);
+        this.StickerButton28.scale.setTo(ButtonsScale,ButtonsScale);
+        StickerGroup_7.add(this.StickerButton28);
+        
         
         Arrow_Y = game.height-this.StickerButton1.height;
         
@@ -1077,6 +1223,7 @@ var StateMain = {
         game.world.bringToTop(StickerBody);
         game.world.bringToTop(StickersAboveBody);
         
+        game.world.bringToTop(StickerGroup_7);
         game.world.bringToTop(StickerGroup_6);
         game.world.bringToTop(StickerGroup_5);       
         game.world.bringToTop(StickerGroup_4);
@@ -1204,6 +1351,7 @@ PineconeSticker: function () {
     
     LeafSticker: function () {
     //Turn on the loading mechanisim. 
+
         IsPlacingLeaf = true;
     //////////////////////////
     ////Sticker Depths////////
@@ -1212,9 +1360,7 @@ PineconeSticker: function () {
         StickerDepth[1]=true;
         StickerDepth[2]=true;
         StickerDepth[3]=false;
-    ///////////////////////////
-    ////Pivot Positions////////
-    ///////////////////////////
+
 
         game.state.start("StateMain");
     },
@@ -1293,7 +1439,7 @@ PineconeSticker: function () {
             }
                 else
                 {
-                GroupRefArrayCounter=ImageGroupReference.length-1;
+                GroupRefArrayCounter=CaroselGroupNumber;
                 }
         ImageGroupReference[GroupRefArrayCounter].visible = true;
     },
@@ -1301,7 +1447,7 @@ PineconeSticker: function () {
     Carosel_Right: function()
     {
          ImageGroupReference[GroupRefArrayCounter].visible = false;
-            if(GroupRefArrayCounter<ImageGroupReference.length-1)
+            if(GroupRefArrayCounter<CaroselGroupNumber)
             {
             GroupRefArrayCounter+=1;
             }
@@ -1715,6 +1861,71 @@ PineconeSticker: function () {
     PositionArrayIndicator = 24;
     testArrayAlpha[6] = 1;
     },   
+    
+///////////////////////////
+///Seventh Sticker Group///
+///////////////////////////
+    
+    Sticker_25_Place: function () {
+    isClickDragging = true;
+    this.SelectedButton = this.Sticker_7;
+    this.Sticker_7.loadTexture(ImageAssetArray[25]);
+    this.Sticker_7.alpha = 1; 
+    //Image Reference for placemnt section
+    ImageReference[7]=ImageAssetArray[25];
+    //Pivot 
+    this.Sticker_7.anchor.x = Pivot_X[24];
+    this.Sticker_7.anchor.y = Pivot_Y[24];
+    //Data storage
+    PositionArrayIndicator = 25;
+    testArrayAlpha[7] = 1;
+    }, 
+        
+    Sticker_26_Place: function () {
+    isClickDragging = true;
+    this.SelectedButton = this.Sticker_7;
+    this.Sticker_7.loadTexture(ImageAssetArray[26]);
+    this.Sticker_7.alpha = 1;
+    //Image Reference for placemnt section
+    ImageReference[7]=ImageAssetArray[26];
+    //Pivot 
+    this.Sticker_7.anchor.x = Pivot_X[25];
+    this.Sticker_7.anchor.y = Pivot_Y[25];
+    //Data storage
+    PositionArrayIndicator = 26;
+    testArrayAlpha[7] = 1;
+    }, 
+            
+    Sticker_27_Place: function () {
+    isClickDragging = true;
+    this.SelectedButton = this.Sticker_7;
+    this.Sticker_7.loadTexture(ImageAssetArray[27]);
+    this.Sticker_7.alpha = 1;
+    //Image Reference for placemnt section
+    ImageReference[7]=ImageAssetArray[27];
+    //Pivot 
+    this.Sticker_7.anchor.x = Pivot_X[26];
+    this.Sticker_7.anchor.y = Pivot_Y[26];
+    //Data storage
+    PositionArrayIndicator = 27;
+    testArrayAlpha[7] = 1;
+    }, 
+             
+    Sticker_28_Place: function () {
+    isClickDragging = true;
+    this.SelectedButton = this.Sticker_7;
+    this.Sticker_7.loadTexture(ImageAssetArray[28]);
+    this.Sticker_7.alpha = 1;
+    //Image Reference for placemnt section
+    ImageReference[7]=ImageAssetArray[24];
+    //Pivot 
+    this.Sticker_7.anchor.x = Pivot_X[23];
+    this.Sticker_7.anchor.y = Pivot_Y[23];
+    //Data storage
+    PositionArrayIndicator = 24;
+    testArrayAlpha[7] = 1;
+    },   
+    
 ////////////////////
 //Section Sticekrs//
 ////////////////////

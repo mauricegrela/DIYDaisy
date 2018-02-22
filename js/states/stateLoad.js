@@ -7,9 +7,31 @@ var StateLoad = {
         this.game.scale.refresh();
         
         this.time.advacedTiming = true;
+        
+              
+/////////////////////
+////ParentsCorner////
+/////////////////////        
+game.load.image('FrontEndTile', 'images/backgrounds/landing-page-bg.jpg');
+         
+/////////////////////
+/////LandingPage/////
+/////////////////////        
+game.load.image('FrontEndTile', 'images/backgrounds/landing-page-bg.jpg');
+        
+/////////////////////
+//////Directory//////
+/////////////////////     
+game.load.image('DirectoryBackground', 'images/results/book.png');        
+        
 ////////////////
 /////Videos/////
 ////////////////  
+        
+        var VideoBackground;
+        //game.load.image('VideoBackGround', 'images/backgrounds/DragBackground.png');
+        game.load.image('VideoBackGround', 'images/backgrounds/video-bg.jpg');
+        
         var video1;
         game.load.video('Intro', 'videos/Intro/DaisyGBK_Intro_720.mp4');
 
@@ -41,7 +63,7 @@ var StateLoad = {
         game.load.image('Mobile_8', 'images/Mobile/Mobile_8.png');
         game.load.image('Mobile_9', 'images/Mobile/Mobile_9.png');
         game.load.image('Mobile_10', 'images/Mobile/Mobile_10.png');
-        game.load.image('Mobile_11', 'images/Mobile/Mobile_11.png');
+        game.load.image('Mobile_11', 'images/Mobile/Mobile_11.pSng');
         game.load.image('Mobile_12', 'images/Mobile/Mobile_12.png'); 
         game.load.image('Mobile_13', 'images/Mobile/Mobile_13.png');
         game.load.image('Mobile_14', 'images/Mobile/Mobile_14.png');
@@ -258,32 +280,32 @@ var StateLoad = {
 ///////////////////////////
 ////First Sticker Group////
 ///////////////////////////
-        ImageAssetArray[13]='PineconeWings_1';
-        ImageAssetArray[14]='PineconeWings_2';
-        ImageAssetArray[15]='PineconeWings_3';  
-        ImageAssetArray[16]='PineconeWings_4';
+        ImageAssetArray[1]='PineconeWings_1';
+        ImageAssetArray[2]='PineconeWings_2';
+        ImageAssetArray[3]='PineconeWings_3';  
+        ImageAssetArray[4]='PineconeWings_4';
 ///////////////////////////
 ////Second Sticker Group///
 ///////////////////////////
-        ImageAssetArray[1]='PineconeEyes_1';
-        ImageAssetArray[2]='PineconeEyes_2'; 
-        ImageAssetArray[3]='PineconeEyes_3';
-        ImageAssetArray[4]='PineconeEyes_4';
+        ImageAssetArray[5]='PineconeEyes_1';
+        ImageAssetArray[6]='PineconeEyes_2'; 
+        ImageAssetArray[7]='PineconeEyes_3';
+        ImageAssetArray[8]='PineconeEyes_4';
 
 ///////////////////////////
 ////Third Sticker Group////
 ///////////////////////////
-        ImageAssetArray[21]='PineconeFeet_1';
-        ImageAssetArray[22]='PineconeFeet_2';
-        ImageAssetArray[23]='PineconeFeet_3';
-        ImageAssetArray[24]='PineconeFeet_4';
+        ImageAssetArray[9]='PineconeFeet_1';
+        ImageAssetArray[10]='PineconeFeet_2';
+        ImageAssetArray[11]='PineconeFeet_3';
+        ImageAssetArray[12]='PineconeFeet_4';
        
 ////Fourth Sticker Group///
 ///////////////////////////
-        ImageAssetArray[9]='PineconeHeadgear_1';
-        ImageAssetArray[10]='PineconeHeadgear_2';
-        ImageAssetArray[11]='PineconeHeadgear_3';
-        ImageAssetArray[12]='PineconeHeadgear_4';
+        ImageAssetArray[13]='PineconeHeadgear_1';
+        ImageAssetArray[14]='PineconeHeadgear_2';
+        ImageAssetArray[15]='PineconeHeadgear_3';
+        ImageAssetArray[16]='PineconeHeadgear_4';
  
 ///////////////////////////
 ////Fifth Sticker Group////

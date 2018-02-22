@@ -17,9 +17,12 @@ var isMobile;
 
 //Sprite Manipulation Library
 var IsPlacingRock = false;
-var IsPlacingPinecone = false;
-var IsPlacingMobile = false;
 
+var IsPlacingPineCone = true;
+
+var IsPlacingMobile = false;
+var IsPlacingLeaf = false;
+var IsPlacingPinecone = true;
 var IsPlacingLeaf = false;
 var IsPlacingStickWand = false;
 
@@ -41,7 +44,7 @@ var  ExtroVideoRef = //Images
     [0,0,0,0,0 ];
 
 var ImageGroupReference = //Images
-    [0,0,0,0,0,0 ];
+    [0,0,0,0,0,0,0 ];
 
 var ImageReference = //Images
     [
@@ -51,6 +54,7 @@ var ImageReference = //Images
     'PineconeBody',
     'PineconeBody',
     'PineconeBody',
+    'PineconeBody'
     ];
 
 var PlacableCollection = //Images
@@ -61,6 +65,7 @@ var PlacableCollection = //Images
     0,
     0,
     0,
+    0
     ];
 
 var AnimationsInTheGallery = //Images
@@ -99,7 +104,10 @@ var ImageAssetArray = //Images
         '22',
         '23',
         '24',
-        '25'             
+        '25',
+        '26',
+        '27',
+        '28'
         ];
 
 var testArrayAlpha = [
@@ -113,6 +121,10 @@ var testArrayAlpha = [
         0,
         0,
         0,        
+        0,
+        0,
+        0,
+        0,
         0,
         0,
         0,
@@ -160,6 +172,11 @@ var Pivot_X = [
         0.5,
         0.5,
         0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
         0.5
         ];
 
@@ -173,22 +190,27 @@ var Pivot_Y = [
         0.5,
         0.5,
         0.5,
-        0.6,
-        0.6,
-        0.6,
-        0.6,
         0.5,
         0.5,
         0.5,
         0.5,
-        0.2,
-        0.2,
-        0.4,
-        0.4,
-        0.4,
-        0.4,
-        0.4,
-        0.4
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
         ];
 
 //These stickers will dictate the order inwhich stickers will be shown 
@@ -198,9 +220,11 @@ var Pivot_Y = [
         true,
         false,
         true,
+        false,
         false
         ];
 
+var CaroselGroupNumber = 4;
 //portrait or landscape
 
 var useLandscape = true;

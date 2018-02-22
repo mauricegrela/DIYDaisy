@@ -39,7 +39,6 @@ var StatePlace = {
         this.craftBackground1.scale.setTo(craftBackgroundScale,craftBackgroundScale);
        
 
-        
         //this.craftBackground3 = game.add.sprite(0, 0, 'placing_Backgroung3');
         //this.craftBackground3.scale.setTo(scaleRatio,scaleRatio);
         
@@ -179,7 +178,7 @@ var StatePlace = {
         for (let i = 0; i < AnimationsInTheGallery.length-1; i+=2) 
         {
             if(
-            PlacableCollection[0].x>AnimationsInTheGallery[i].x-AnimationsInTheGallery[i].width &&               PlacableCollection[0].x<AnimationsInTheGallery[i].x+AnimationsInTheGallery[i].width &&
+            PlacableCollection[0].x>AnimationsInTheGallery[i].x-AnimationsInTheGallery[i].width/2 &&               PlacableCollection[0].x<AnimationsInTheGallery[i].x+AnimationsInTheGallery[i].width/2 &&
             AnimationsInTheGallery[i+1].isPlaying  == false)
             {
              AnimationsInTheGallery[i+1].play(10, false);
