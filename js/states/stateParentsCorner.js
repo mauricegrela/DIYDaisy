@@ -69,11 +69,11 @@ var StateParentsCorner = {
         this.MobileCharacter.scale.setTo(PDFButtonScale,PDFButtonScale);
                 
         //Character StickWand Stickers
-        this.SmudgeStickCharacter = game.add.sprite(PDFButtonsPos_x+this.RockCharacter.width*3, PDFButtonsPos_y , 'SmudgeStickBody');   
-        this.SmudgeStickCharacter.inputEnabled = true;
+        this.StickWandCharacter = game.add.sprite(PDFButtonsPos_x+this.RockCharacter.width*3, PDFButtonsPos_y , 'StickWandBody');   
+        this.StickWandCharacter.inputEnabled = true;
         //this.PineconeBody.input.pixelPerfectOver = true; 
-        this.SmudgeStickCharacter.events.onInputOver.add(this.imageClick, {param1: "PDFS/TestBuild.pdf",}, this.SmudgeStickCharacter);   
-        this.SmudgeStickCharacter.scale.setTo(PDFButtonScale,PDFButtonScale);
+        this.StickWandCharacter.events.onInputOver.add(this.imageClick, {param1: "PDFS/TestBuild.pdf",}, this.StickWandCharacter);   
+        this.StickWandCharacter.scale.setTo(PDFButtonScale,PDFButtonScale);
         
         //Character Mobile Stickers
         this.StickWandCharacter = game.add.sprite(PDFButtonsPos_x+this.RockCharacter.width*4, PDFButtonsPos_y , 'StickWandBody');

@@ -20,7 +20,7 @@ var IsPlacingRock = false;
 var IsPlacingPineCone = false;
 var IsPlacingMobile = false;
 
-var IsPlacingSmudgeStick = false;
+var IsPlacingStickWand = false;
 var IsPlacingStickWand = false;
 
 var isClickDragging = false;

@@ -52,18 +52,18 @@ var StateCharacterSelect = {
         this.RockSticker.events.onInputOver.add(this.RockGame, this);  
         this.RockSticker.scale.setTo(scaleRatio,scaleRatio);
         
-        //SmudgeStick Sticker
-        SmudgeStick_X = game.width / 2;
-        SmudgeStick_Y = game.width / 8;
-        this.SmudgeStickSticker = game.add.sprite(ButtonPosition_X+this.PineconeSticker.width, ButtonPosition_Y+this.PineconeSticker.height, 'SmudgeStickBody');  
-        this.SmudgeStickSticker.alpha = 1;
-        this.SmudgeStickSticker.anchor.x = 0.5;
-        this.SmudgeStickSticker.anchor.y =  0.5;
-        this.SmudgeStickSticker.inputEnabled = true;
-        this.SmudgeStickSticker.input.pixelPerfectOver = true;
+        //StickWand Sticker
+        StickWand_X = game.width / 2;
+        StickWand_Y = game.width / 8;
+        this.StickWandSticker = game.add.sprite(ButtonPosition_X+this.PineconeSticker.width, ButtonPosition_Y+this.PineconeSticker.height, 'StickWandBody');  
+        this.StickWandSticker.alpha = 1;
+        this.StickWandSticker.anchor.x = 0.5;
+        this.StickWandSticker.anchor.y =  0.5;
+        this.StickWandSticker.inputEnabled = true;
+        this.StickWandSticker.input.pixelPerfectOver = true;
         //game.input.addMoveCallback(this.p, this.Sticker_1);
-        this.SmudgeStickSticker.events.onInputOver.add(this.SmudgeStickGame, this);  
-        this.SmudgeStickSticker.scale.setTo(scaleRatio,scaleRatio);
+        this.StickWandSticker.events.onInputOver.add(this.StickWandGame, this);  
+        this.StickWandSticker.scale.setTo(scaleRatio,scaleRatio);
         
         //StickWand Sticker
         StickWand_X = game.width / 10;
@@ -178,9 +178,9 @@ var StateCharacterSelect = {
         
     },  
     
-    SmudgeStickGame: function () {    
+    StickWandGame: function () {    
 
-        ImageAssetArray[0]='SmudgeStickBody';
+        ImageAssetArray[0]='StickWandBody';
         PivotPoint_X[0] = 0.5;
         PivotPoint_Y[0] = 0.5;    
 ///////////////////////////
