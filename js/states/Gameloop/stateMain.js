@@ -789,7 +789,7 @@ var StateMain = {
       
 
         
-        scaleRatio = window.devicePixelRatio / 2;
+        //scaleRatio = window.devicePixelRatio / 2;
         
         game.input.addPointer();
 
@@ -828,17 +828,17 @@ var StateMain = {
         
         //Add background      
         this.craftBackground = game.add.sprite(0, 0, 'craft_Backgroung');
+        this.craftBackground.scale.setTo(scaleRatio,scaleRatio);
         BackgroundGroup.add(this.craftBackground);     
 
         carouselScaleOffset = 1.2;
         
         //add sound buttons
         this.btnMusic = gameButtons.addAudioButton("music", 20, 20, gameButtons.toggleMusic, this);
+        this.btnMusic.scale.setTo(scaleRatio,scaleRatio);
+        
         this.btnSound = gameButtons.addAudioButton("sound", 20, 70, gameButtons.toggleSound, this);
-
-        //if using a scrolling game uncomment these lines
-        //this.audioGroup=game.add.group();
-        //this.audioGroup.fixedToCamera=true;
+        this.btnSound.scale.setTo(scaleRatio,scaleRatio);
 
         //define sounds here
         this.elephant = game.add.audio("elephant");
@@ -852,16 +852,16 @@ var StateMain = {
         SelectedColor = 0xff00ff;
        
         
-///////////////////////////
-///CaroseleButtons Sticker Group////
-///////////////////////////
+///////////////////////////////////
+///CaroseleButtons Sticker Group///
+///////////////////////////////////
         
         if(this.game.device.desktop == true){ }
         
         //Main Button Placement
         var MainButtonsPos_x = game.width/2;
         var MainButtonsPos_y = game.height/1.6;
-        var MacroButton_Scale = scaleRatio*1.3;
+        var MacroButton_Scale = scaleRatio;
    
         //Placeable Buttons
         this.MainStickerButton = gameButtons.addGenericButton("0", MainButtonsPos_x, MainButtonsPos_y, this.CharacterHitOn, this,"TabButton",0); 
@@ -880,9 +880,21 @@ var StateMain = {
         
 
         //Save Button
-        this.SaveButton = gameButtons.addGenericButton("0", MenuTopButtons_Pos_x, MenuTopButtons_Pos_y+20, this.SaveClicked, this,"creativeButtons",4); 
+        this.SaveButton = gameButtons.addGenericButton("0", MenuTopButtons_Pos_x, MenuTopButtons_Pos_y+20, this.SaveClicked, this,"creativeButtons",1); 
         this.SaveButton.scale.setTo(scaleRatio,scaleRatio);
         MainButtonGroup.add(this.SaveButton);
+        
+        /*
+        this.SaveButton = game.add.sprite(
+        MenuTopButtons_Pos_x, MenuTopButtons_Pos_y+20
+        'CloseButton');
+        this.SaveButton.inputEnabled = true;
+        //this.PineconeBody.input.pixelPerfectOver = true; 
+        this.SaveButton.events.onInputOver.add( this.SaveClicked, this.SaveButton);   
+        this.SaveButton.scale.setTo(scaleRatio,scaleRatio);
+        this.SaveButton.x = this.game.width/8;
+        this.SaveButton.y = this.game.height-this.CloseButton.width;
+        MainButtonGroup.add(this.CloseButton);*/
                
         
 ///////////////////////////
@@ -894,14 +906,16 @@ var StateMain = {
         var ButtonsPos_y = game.height; 
         var ButtonsScale = scaleRatio;
         
-        var CharacterButtonScale = scaleRatio/3;
+        var CharacterButtonScale = scaleRatio/4;
+        
+        
         
         //character Carosels
-        charactercarouselScaleOffset = 1.2;
+        charactercarouselScaleOffset = 1;
         this.charactercarousel = game.add.sprite(game.width/2, game.height, 'characterCaroselTab');
         this.charactercarousel.anchor.x = 0.5;
         this.charactercarousel.anchor.y =  1;
-        this.charactercarousel.scale.setTo(scaleRatio*carouselScaleOffset,scaleRatio*carouselScaleOffset);
+        this.charactercarousel.scale.setTo(CharacterButtonScale,CharacterButtonScale);
         CharacterStickerGroup.add(this.charactercarousel); 
         
         //Character Rock Stickers
@@ -958,10 +972,14 @@ var StateMain = {
 ///////////////////////////
 
         //Sticker Carosels        
-        this.charactercarousel = game.add.sprite(game.width/2, game.height, 'StickerCaroselTab');
+        this.charactercarousel = game.add.sprite(game.width/2, game.height, 'StickerCaroselTab',0);
+        this.charactercarousel.scale.setTo(scaleRatio,scaleRatio);
+        //this.charactercarousel.y = game.height + this.charactercarousel.height/2;
+        
+        
         this.charactercarousel.anchor.x = 0.5;
-        this.charactercarousel.anchor.y =  1;
-        this.charactercarousel.scale.setTo(scaleRatio*carouselScaleOffset,scaleRatio*carouselScaleOffset);
+        this.charactercarousel.anchor.y =  0.75;
+        //this.charactercarousel.scale.setTo(scaleRatio*carouselScaleOffset,scaleRatio*carouselScaleOffset);
         //StickerGroup.add(this.charactercarousel);  
 
         GroupRefArrayCounter = 0;
@@ -991,11 +1009,13 @@ var StateMain = {
 ////First Sticker Group////
 ///////////////////////////
         
+       var CharacterButtonScale = scaleRatio/3;
+        
         //Pinecone Body
         this.PineconeBody = game.add.sprite(GameCenter_x, GameCenter_y+StickerDepth[0], ImageAssetArray[0]);
         this.PineconeBody.anchor.x = 0.5;
         this.PineconeBody.anchor.y = 0.5;
-        this.PineconeBody.scale.setTo(scaleRatio,scaleRatio);
+        this.PineconeBody.scale.setTo(CharacterButtonScale,CharacterButtonScale);
         StickerBody.add(this.PineconeBody);
         
         //Sticker_1_1
@@ -1007,7 +1027,7 @@ var StateMain = {
         this.Sticker_1.inputEnabled = true;
         this.Sticker_1.input.pixelPerfectOver = true;
         this.Sticker_1.events.onInputOver.add(this.sticker_Click, {param1: this.Sticker_1, param2: 1});
-        this.Sticker_1.scale.setTo(scaleRatio,scaleRatio);        
+        this.Sticker_1.scale.setTo(CharacterButtonScale,CharacterButtonScale);   
         //Character.add(this.Sticker_1);  
             if(StickerDepth[0]== false)
             {
@@ -1026,7 +1046,7 @@ var StateMain = {
         this.Sticker_2.inputEnabled = true;
         this.Sticker_2.input.pixelPerfectOver = true;
         this.Sticker_2.events.onInputOver.add(this.sticker_Click, {param1: this.Sticker_2, param2: 2});
-        this.Sticker_2.scale.setTo(scaleRatio,scaleRatio);   
+        this.Sticker_2.scale.setTo(CharacterButtonScale,CharacterButtonScale);
         //Character.add(this.Sticker_2);
             if(StickerDepth[1]== false)
             {
@@ -1045,7 +1065,7 @@ var StateMain = {
         this.Sticker_3.inputEnabled = true;
         this.Sticker_3.input.pixelPerfectOver = true; 
         this.Sticker_3.events.onInputOver.add(this.sticker_Click, {param1: this.Sticker_3, param2: 3});
-        this.Sticker_3.scale.setTo(scaleRatio,scaleRatio); 
+        this.Sticker_3.scale.setTo(CharacterButtonScale,CharacterButtonScale);
         //Character.add(this.Sticker_3);
             if(StickerDepth[2]== false)
             {
@@ -1064,7 +1084,7 @@ var StateMain = {
         this.Sticker_4.inputEnabled = true;
         this.Sticker_4.input.pixelPerfectOver = true;
         this.Sticker_4.events.onInputOver.add(this.sticker_Click, {param1: this.Sticker_4, param2: 4});
-        this.Sticker_4.scale.setTo(scaleRatio,scaleRatio); 
+        this.Sticker_4.scale.setTo(CharacterButtonScale,CharacterButtonScale);
         //Character.add(this.Sticker_4);
             if(StickerDepth[3]== false)
             {
@@ -1083,7 +1103,7 @@ var StateMain = {
         this.Sticker_5.inputEnabled = true;
         this.Sticker_5.input.pixelPerfectOver = true;
         this.Sticker_5.events.onInputOver.add(this.sticker_Click, {param1: this.Sticker_5, param2: 5});
-        this.Sticker_5.scale.setTo(scaleRatio,scaleRatio);   
+        this.Sticker_5.scale.setTo(CharacterButtonScale,CharacterButtonScale);  
         //Character.add(this.Sticker_5);      
             if(StickerDepth[4]== false)
             {
@@ -1102,7 +1122,7 @@ var StateMain = {
         this.Sticker_6.inputEnabled = true;
         this.Sticker_6.input.pixelPerfectOver = true;
         this.Sticker_6.events.onInputOver.add(this.sticker_Click, {param1: this.Sticker_6, param2: 6});
-        this.Sticker_6.scale.setTo(scaleRatio,scaleRatio);
+        this.Sticker_6.scale.setTo(CharacterButtonScale,CharacterButtonScale);
         //Character.add(this.Sticker_6);  
             if(StickerDepth[5]== false)
             {
@@ -1121,7 +1141,7 @@ var StateMain = {
         this.Sticker_7.inputEnabled = true;
         this.Sticker_7.input.pixelPerfectOver = true;
         this.Sticker_7.events.onInputOver.add(this.sticker_Click, {param1: this.Sticker_7, param2: 7});
-        this.Sticker_7.scale.setTo(scaleRatio,scaleRatio);
+        this.Sticker_7.scale.setTo(CharacterButtonScale,CharacterButtonScale);
         //Character.add(this.Sticker_6);  
             if(StickerDepth[6]== false)
             {
@@ -1141,13 +1161,20 @@ var StateMain = {
         this.StickerButton1.scale.setTo(ButtonsScale,ButtonsScale);      
         StickerGroup_1.add(this.StickerButton1);
         
+
+        /*
         //Readjust the Postiotions
         this.StickerButton1.y = game.height-this.StickerButton1.height*1.5;  
         var ButtonsPos_y = this.StickerButton1.y;
         //Readjust the Postiotions
         this.StickerButton1.x = game.width/2-this.StickerButton1.width*2;  
-        var ButtonsPos_x = this.StickerButton1.x;
-       
+        var ButtonsPos_x = this.StickerButton1.x;*/
+        //var ButtonsPos_x = game.width/2;
+        var ButtonsPos_y = game.height-this.StickerButton1.height; 
+        
+        this.StickerButton1.x=ButtonsPos_x;
+        this.StickerButton1.y=ButtonsPos_y;
+        
         this.StickerButton2 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width, ButtonsPos_y, this.Sticker_2_Place, this,1,StickerAssigner_set1); 
         this.StickerButton2.scale.setTo(ButtonsScale,ButtonsScale);
         StickerGroup_1.add(this.StickerButton2);
@@ -1287,6 +1314,7 @@ var StateMain = {
         
         Arrow_Y = game.height-this.StickerButton1.height;
         
+        
         //Carosels Left
         this.CaroselArrow_Left = gameButtons.addGenericButton("0", ButtonsPos_x, Arrow_Y, this.Carosel_Left, this,"CaroselArrows",0); 
         this.CaroselArrow_Left.anchor.x = 1;
@@ -1299,11 +1327,6 @@ var StateMain = {
         //StickerGroup.add(this.CaroselArrow_Right);
         
         Character.sort();
-
-                //StickersUnderBody = game.add.group();
-        //StickerBody = game.add.group();
-        //StickersAboveBody = game.add.group();
-        
         
         game.world.bringToTop(StickersUnderBody);
         game.world.bringToTop(StickerBody);
@@ -1330,40 +1353,9 @@ var StateMain = {
 
         this.SelectedButton = this.PineconeBody;
         
-          //////////////////////
-        //New Coloring Tools//
-        //////////////////////
-        var bmd;
-        var loop;
-
-        //	This is the sprite we're going to be drawing onto the BitmapData
-        //	We use game.make because we don't need it displayed, we just need it to exist
-        this.loop = game.make.sprite(0, 0, 'PaintDot');
-        this.loop.tint = 0xFE7805;
-        this.loop.alpha = 0.5;   
-        this.loop.anchor.set(0.5);
-        this.loop.blendMode = PIXI.blendModes.ADD;
-        //	Note that any properties you set here will be replicated when the Sprite is drawn
-        // this.loop.scale.set(2);
-
-        //this.crab = game.make.sprite(0, 0,'PineconeBody');
-
-        //	This is the BitmapData we're going to be drawing to
-        this.bmd = game.add.bitmapData(game.width, game.height);
-        this.bmd.addToWorld();
-
-        //	Disables anti-aliasing when we draw sprites to the BitmapData
-        this.bmd.smoothed = true;
-
-        //this.bmd.draw(this.crab, 10, 10);
-
         game.input.addMoveCallback(this.paint, this);  
         
         game.world.bringToTop(this.bmd);
-        //////////////////////
-        //////////////////////
-
-        //window.open(game.canvas.toDataURL('image/png'));
 
 
     },      
@@ -1987,20 +1979,24 @@ PineconeSticker: function () {
 ////////////////////
     StickerTurnOn: function () {
         CharacterStickerGroup.visible = false;
-        isAddingPaint = false;
-        isAddingSticker = true;
+        ImageGroupReference[GroupRefArrayCounter].visible = true;
+        this.CaroselArrow_Left.visible = true;
+        this.CaroselArrow_Right.visible = true;
+        //isAddingPaint = false;
+        //isAddingSticker = true;
         },
     
     
     CharacterHitOn: function () {
         CharacterStickerGroup.visible = true;
-        isAddingPaint = false;
-        isAddingSticker = false;
+        ImageGroupReference[GroupRefArrayCounter].visible = false;
+        this.CaroselArrow_Left.visible = false;
+        this.CaroselArrow_Right.visible = false;
+        //isAddingPaint = false;
+        //isAddingSticker = false;
     },
     
     SaveClicked: function () { 
-
-        game.cache.addBitmapData(this.DrawnSprite, this.bmd);
         game.state.start("StateOuttro");
     },
     

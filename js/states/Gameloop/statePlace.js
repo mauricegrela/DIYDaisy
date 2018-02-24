@@ -17,18 +17,15 @@ var StatePlace = {
 
         
         
-    mummy = game.add.sprite(200, 360, 'mummy', 5);
-    mummy.scale.set(4);
-    mummy.smoothed = false;
-    anim = mummy.animations.add('walk');
+
         
         
         //Add background      
      
-        scaleRatio = window.devicePixelRatio / 2;
+        //scaleRatio = window.devicePixelRatio / 2;
 
 
-        craftBackgroundScale = window.devicePixelRatio ;
+        craftBackgroundScale = scaleRatio ;
 
 
         CharacterScaleAdjustment = 0.5;
@@ -50,7 +47,7 @@ var StatePlace = {
         this.Body = game.add.sprite(GameCenter_x, GameCenter_y,ImageAssetArray[0]);
         this.Body.scale.setTo(scaleRatio*CharacterScaleAdjustment,scaleRatio*CharacterScaleAdjustment);
         this.Body.anchor.x = Pivot_X[0];
-        this.Body.anchor.y =  Pivot_Y[0];
+        this.Body.anchor.y = Pivot_Y[0];
         this.Body.alpha = 1;
         PlacableCollection[0]=this.Body;
         CharacterGroup.add(this.Body);
@@ -107,9 +104,12 @@ var StatePlace = {
         
         //game.world.bringToTop(this.craftBackground3);
         
-        this.mummy1 = game.add.sprite(this.craftBackground1.width/2, 0, 'Anim1', 5);
-        this.mummy1.scale.set(1.2);
-        this.mummy1.anchor.x = 0.5;
+        this.mummy1 = game.add.sprite(
+        0,
+        0, 
+        'Anim1', 5);
+        this.mummy1.scale.set(scaleRatio);
+        this.mummy1.anchor.x = 0.0;
         this.mummy1.anchor.y = 0.0;
         //this.mummy1.smoothed = false;
         //this.mummy1.fixedToCamera = true;
@@ -117,24 +117,93 @@ var StatePlace = {
 
         //this.anim1.play(10, true);
 
-        this.mummy2 = game.add.sprite(this.craftBackground1.width-this.mummy1.width, this.craftBackground1.height, 'Anim2', 5);
-        this.mummy2.scale.set(2);
+        this.mummy2 = game.add.sprite(
+        this.craftBackground1.width/10,
+        this.craftBackground1.height,
+        'Anim2', 5);
+        this.mummy2.scale.set(scaleRatio);
         this.mummy2.anchor.x = 0.5;
         this.mummy2.anchor.y =  1;
         //this.mummy2.smoothed = false;
         //this.mummy2.fixedToCamera = true;
         this.anim2 = this.mummy2.animations.add('walk');
 
-        //this.anim1.play(10, true);
-        
-        
-        this.mummy3 = game.add.sprite(0, this.craftBackground1.height, 'Anim3', 5);
-        this.mummy3.scale.set(2);
+        this.mummy3 = game.add.sprite(
+        (this.craftBackground1.width/10)*2, 
+        this.craftBackground1.height,
+        'Anim3', 5);
+        this.mummy3.scale.set(scaleRatio);
         this.mummy3.anchor.x = 0.5;
         this.mummy3.anchor.y =  1;
         //this.mummy2.smoothed = false;
         //this.mummy2.fixedToCamera = true;
         this.anim3 = this.mummy3.animations.add('walk');
+        
+        this.mummy4 = game.add.sprite(
+        (this.craftBackground1.width/10)*3, 
+        this.craftBackground1.height,
+        'Anim4', 5);
+        this.mummy4.scale.set(scaleRatio);
+        this.mummy4.anchor.x = 0.5;
+        this.mummy4.anchor.y =  1;
+        //this.mummy2.smoothed = false;
+        //this.mummy2.fixedToCamera = true;
+        this.mummy4 = this.mummy4.animations.add('walk');
+        
+        this.mummy5 = game.add.sprite(
+        (this.craftBackground1.width/10)*4, 
+        this.craftBackground1.height,
+        'Anim5', 5);
+        this.mummy5.scale.set(scaleRatio);
+        this.mummy5.anchor.x = 0.5;
+        this.mummy5.anchor.y =  1;
+        //this.mummy2.smoothed = false;
+        //this.mummy2.fixedToCamera = true;
+        this.mummy5 = this.mummy5.animations.add('walk');
+        
+        this.mummy7 = game.add.sprite(
+        (this.craftBackground1.width/10)*5, 
+        this.craftBackground1.height,
+        'Anim7', 5);
+        this.mummy7.scale.set(scaleRatio);
+        this.mummy7.anchor.x = 0.5;
+        this.mummy7.anchor.y =  1;
+        //this.mummy2.smoothed = false;
+        //this.mummy2.fixedToCamera = true;
+        this.mummy7 = this.mummy7.animations.add('walk');
+        
+        this.mummy8 = game.add.sprite(
+        (this.craftBackground1.width/10)*6, 
+        this.craftBackground1.height,
+        'Anim8', 5);
+        this.mummy8.scale.set(scaleRatio);
+        this.mummy8.anchor.x = 0.5;
+        this.mummy8.anchor.y =  1;
+        //this.mummy2.smoothed = false;
+        //this.mummy2.fixedToCamera = true;
+        this.mummy8 = this.mummy8.animations.add('walk');
+        
+        this.mummy9 = game.add.sprite(
+        (this.craftBackground1.width/10)*7, 
+        this.craftBackground1.height,
+        'Anim9', 5);
+        this.mummy9.scale.set(scaleRatio);
+        this.mummy9.anchor.x = 0.5;
+        this.mummy9.anchor.y =  1;
+        //this.mummy2.smoothed = false;
+        //this.mummy2.fixedToCamera = true;
+        this.mummy9 = this.mummy9.animations.add('walk');
+                
+        this.mummy10 = game.add.sprite(
+        (this.craftBackground1.width/10)*8, 
+        this.craftBackground1.height,
+        'Anim10', 5);
+        this.mummy10.scale.set(scaleRatio);
+        this.mummy10.anchor.x = 0.5;
+        this.mummy10.anchor.y =  1;
+        //this.mummy2.smoothed = false;
+        //this.mummy2.fixedToCamera = true;
+        this.mummy10 = this.mummy10.animations.add('walk');
         
         AnimationsInTheGallery[0]=this.mummy1;
         AnimationsInTheGallery[1]=this.anim1;
@@ -142,10 +211,24 @@ var StatePlace = {
         AnimationsInTheGallery[3]=this.anim2;
         AnimationsInTheGallery[4]=this.mummy3;
         AnimationsInTheGallery[5]=this.anim3;
+        AnimationsInTheGallery[6]=this.mummy4;
+        AnimationsInTheGallery[7]=this.anim4;
+        AnimationsInTheGallery[8]=this.mummy5;
+        AnimationsInTheGallery[9]=this.anim5;
+        AnimationsInTheGallery[10]=this.mummy6;
+        AnimationsInTheGallery[11]=this.anim6;
+        AnimationsInTheGallery[12]=this.mummy7;
+        AnimationsInTheGallery[13]=this.anim7;
+        AnimationsInTheGallery[14]=this.mummy8;
+        AnimationsInTheGallery[15]=this.anim8;
+        AnimationsInTheGallery[16]=this.mummy9;
+        AnimationsInTheGallery[17]=this.anim9;
+        AnimationsInTheGallery[18]=this.mummy10;
+        AnimationsInTheGallery[19]=this.anim10;
         
         this.craftBackground2 = game.add.sprite(0, 0, 'placing_Backgroung2');
         this.craftBackground2.scale.setTo(craftBackgroundScale,craftBackgroundScale);
-
+        this.craftBackground2.scale.set(scaleRatio);
         //game.world.bringToTop(this.mummy);
         //this.tester = game.add.sprite(0, 0, game.cache.getBitmapData(this.DrawnSprite));
     }, 
@@ -175,11 +258,11 @@ var StatePlace = {
                 else
                 {   this.game.origDragPoint = null;}
         
-        for (let i = 0; i < AnimationsInTheGallery.length-1; i+=2) 
+        for (let i = 0; i <= AnimationsInTheGallery.length-2; i+=2) 
         {
             if(
-            PlacableCollection[0].x>AnimationsInTheGallery[i].x-AnimationsInTheGallery[i].width/2 &&               PlacableCollection[0].x<AnimationsInTheGallery[i].x+AnimationsInTheGallery[i].width/2 &&
-            AnimationsInTheGallery[i+1].isPlaying  == false)
+            PlacableCollection[0].x>AnimationsInTheGallery[i].x-AnimationsInTheGallery[i].width/2 &&               PlacableCollection[0].x<AnimationsInTheGallery[i].x+AnimationsInTheGallery[i].width/2)// &&
+            //AnimationsInTheGallery[i+1].isPlaying  == false)
             {
              AnimationsInTheGallery[i+1].play(10, false);
             }

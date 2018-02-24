@@ -12,6 +12,17 @@ var gameButtons;
 var gameMedia;
 var SelectedColor;
 
+
+  var  canvas_height_max =900
+        var canvas_width_max =1600
+        var canvas_width = window.innerWidth * window.devicePixelRatio;
+        var canvas_height = window.innerHeight * window.devicePixelRatio;
+        var aspect_ratio = canvas_width / canvas_height;
+        if (aspect_ratio > 1) 
+             scaleRatio = canvas_height / canvas_height_max;
+                else 
+                 scaleRatio = canvas_width / canvas_width_max;
+
 //PLACE YOUR OWN GLOBALS HERE
 var isMobile;
 
@@ -67,6 +78,13 @@ var PlacableCollection = //Images
 
 var AnimationsInTheGallery = //Images
     [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
     0,
     0,
     0,
@@ -259,8 +277,12 @@ if (isMobile>-1)
             wrongTag = "wrongWayPortrait";
         }
     }
-        this.game.crossOrigin = "anonymous";
-
+    
+    this.game.crossOrigin = "anonymous";
+var scaleRatio=0;
+    
+      
+    
     gameMedia = new GameMedia();
     gameButtons = new GameButtons();
     //add a state or screen to the game

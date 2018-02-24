@@ -1,30 +1,30 @@
 var StateDirectory = {
 
     preload: function () {
-        GameCenter_x = game.world.centerX+game.width/8;
+        GameCenter_x = game.width-game.width/3.5;
         GameCenter_y = game.world.centerY-game.height/30;
         
         
         
-        XPosition = game.world.centerX-game.width/8;
-        YPosition = game.world.centerY;
+        XPosition = game.world.centerX-game.width/6;
+        YPosition = game.world.centerY-game.height/10;
     }
 
     , create: function () {   
     
-        scaleRatio = window.devicePixelRatio / 2;
+        //scaleRatio = window.devicePixelRatio / 2;
         
-        butonScale = 1.5;
+        butonScale = 0.8;
         
-                 this.craftBackground = game.add.sprite(0, 0, 'craft_Backgroung');
+         this.craftBackground = game.add.sprite(0, 0, 'craft_Backgroung');
         //BackgroundGroup.add(this.craftBackground); 
         
-        //Background Working
-        this.Background = game.add.sprite(game.world.centerX,game.world.centerY, 'DirectoryBackground');
-        this.Background.anchor.set(0.5);
-        this.Background.scale.setTo(scaleRatio,scaleRatio);
-        //this.Background.width =game.width; 
-        //this.Background.height =game.height;
+    //Background Working
+    this.Background = game.add.sprite(game.world.centerX,game.world.centerY, 'DirectoryBackground');
+    this.Background.anchor.set(0.5);
+    this.Background.scale.setTo(scaleRatio,scaleRatio);
+    //this.Background.width =game.width; 
+    //this.Background.height =game.height;
         
         
     this.PlaceModeButton = gameButtons.addGenericButton("0",
@@ -39,27 +39,6 @@ var StateDirectory = {
     this.WatchEpisode, this,"creativeButtons",1); 
     this.EpisodeModeButton.scale.setTo(scaleRatio*butonScale,scaleRatio*butonScale); 
         
-    /*ExtroMenu = game.add.group();
-    this.PlaceModeButton = gameButtons.addButton("place",                                          
-    XPosition,
-    YPosition, 
-    this.PlaceCreation, this);//Save File
-        
-        
-    ExtroMenu.add(this.PlaceModeButton);
-        
-    this.EpisodeModeButton = gameButtons.addButton("watch",
-    XPosition-this.PlaceModeButton.width,
-    (YPosition-this.PlaceModeButton.height),  
-    this.WatchEpisode, this);//Watch Episode
-    ExtroMenu.add(this.EpisodeModeButton);
-        
-    /*this.DownloadModeButton = gameButtons.addButton("download", 
-    XPosition-this.PlaceModeButton.width,
-    (YPosition+this.PlaceModeButton.height), 
-    this.SaveFile, this);//Enter place mode 
-    ExtroMenu.add(this.DownloadModeButton); */
-        
     //Save Button
     this.SaveButton = gameButtons.addGenericButton("0",
      XPosition-this.PlaceModeButton.width,
@@ -69,7 +48,7 @@ var StateDirectory = {
     //MainButtonGroup.add(this.SaveButton);
 
         
-        CharacterScaleAdjustment = 1.0;
+        CharacterScaleAdjustment = 0.5;
         CharacterGroup = game.add.group();
 
         this.Body = game.add.sprite(GameCenter_x, GameCenter_y,ImageAssetArray[0]);

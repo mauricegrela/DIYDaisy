@@ -26,9 +26,10 @@ var StateOuttro = {
         
         video1 = game.add.video(ExtroVideoRef[game.rnd.integerInRange(0, 4)]);
         video1.play(true); 
-        video1.addToWorld(game.width/2, game.height/2, 0.5, 0.5, 1, 1); 
+        video1.addToWorld(game.width/2, game.height/2, 0.5, 0.5, scaleRatio,scaleRatio); 
 
         this.btnStart = gameButtons.addButton("skip",game.width/2, game.height/2+video1.height, this.startGame, this);
+        this.btnStart.scale.setTo(scaleRatio,scaleRatio);
         this.btnStart.x = this.btnStart.width;
         this.btnStart.y = this.btnStart.height;
         this.btnStart.anchor.set(1.0, 1.0);
@@ -36,6 +37,7 @@ var StateOuttro = {
         if(this.game.device.desktop == false)
         { 
         this.Play = gameButtons.addButton("play", game.width/2, game.height/2, this.StartVideoMobile, this);
+        this.Play.scale.setTo(scaleRatio,scaleRatio);
         this.Play.anchor.set(0.5, 0.5);
         }
         

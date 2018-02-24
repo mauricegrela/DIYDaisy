@@ -16,32 +16,57 @@ var StateParentsCorner = {
         
         var BottomButtonPos_X = game.width/8;
         var BottomButtonPos_Y = game.height - 50;
-        scaleRatio = window.devicePixelRatio / 2;
+        //scaleRatio = window.devicePixelRatio / 4;
         
         var PDFButtonsPos_x = game.width/4;
         var PDFButtonsPos_y = game.height/2; 
-        var PDFButtonScale = scaleRatio/4;
+        var PDFButtonScale = scaleRatio/6;
         
         var Credits = "Credits";
         var TermsAndConditions = "terms and conditions";
         var privacystatement = "PrivacyStatement";
         
+        
+                
+        //Background Working
+        this.Background = game.add.sprite(0,0, 'craft_Backgroung');
+        this.Background.anchor.set(0.0);
+        this.Background.width =game.width; 
+        this.Background.height =game.height;
+
+        
+        
         ////////////////
         //Text buttons//
         ////////////////
-        //Credits
-        this.PlaceModeButton = gameButtons.addButton("credits", BottomButtonPos_X, BottomButtonPos_Y, this.TextSetUpButton, {param1: Credits,}, this);//Save File
-        //ExtroMenu.add(this.PlaceModeButton);
+        this.PlaceModeButton = gameButtons.addButton("credits",
+        this.game.width, 
+        this.game.height,
+        this.TextSetUpButton, {param1: Credits,}, this);
+        this.PlaceModeButton.anchor.setTo(0.5);
+        this.PlaceModeButton.scale.setTo(scaleRatio,scaleRatio);
+        this.PlaceModeButton.x = this.game.width/2 + this.PlaceModeButton.width;
+        this.PlaceModeButton.y = this.game.height - this.PlaceModeButton.height;
         
-        //Terms of Privacy
-        this.PlaceModeButton = gameButtons.addButton("terms and conditions", BottomButtonPos_X+this.PlaceModeButton.width, BottomButtonPos_Y, this.TextSetUpButton, {param1: TermsAndConditions,}, this);//Save File
-        //ExtroMenu.add(this.PlaceModeButton);
+        this.PlaceModeButton = gameButtons.addButton("terms and conditions",
+        this.game.width, 
+        this.game.height,
+        this.TextSetUpButton, {param1: TermsAndConditions,}, this);
+        this.PlaceModeButton.anchor.setTo(0.5);
+        this.PlaceModeButton.scale.setTo(scaleRatio,scaleRatio);
+        this.PlaceModeButton.x = this.game.width/2 ;
+        this.PlaceModeButton.y = this.game.height - this.PlaceModeButton.height;
         
-        //Credits
-        this.PlaceModeButton = gameButtons.addButton("privacy", BottomButtonPos_X+this.PlaceModeButton.width*2, BottomButtonPos_Y, this.TextSetUpButton, {param1: privacystatement,}, this);//Save File
-        //ExtroMenu.add(this.PlaceModeButton);
+        this.PlaceModeButton = gameButtons.addButton("privacy",
+        this.game.width, 
+        this.game.height,
+        this.TextSetUpButton, {param1: privacystatement,}, this);
+        this.PlaceModeButton.anchor.setTo(0.5);
+        this.PlaceModeButton.scale.setTo(scaleRatio,scaleRatio);
+        this.PlaceModeButton.x = this.game.width/2 - this.PlaceModeButton.width;
+        this.PlaceModeButton.y = this.game.height - this.PlaceModeButton.height;
         
-
+        
         
 
 
@@ -85,19 +110,39 @@ var StateParentsCorner = {
         ///////////////
         //Text Bodies//
         ///////////////
-        //Credits 
         CreditsGroup = game.add.group();
-        //character Carosels
-        charactercarouselScaleOffset = 1.2;
-        this.charactercarousel = game.add.sprite(game.width/2, game.height, 'characterCaroselTab');
-        this.charactercarousel.anchor.x = 0.5;
-        this.charactercarousel.anchor.y =  1;
-        CreditsGroup.add(this.charactercarousel);
         
-        //close Button
-        this.AlphaButton = gameButtons.addGenericButton("0", game.width/1.5, game.height/2, this.CloseButton, this,"creativeButtons",2); 
-        this.AlphaButton.scale.setTo(scaleRatio,scaleRatio);
-        CreditsGroup.add(this.AlphaButton);
+        this.charactercarousel = game.add.sprite(game.width/2, game.height/2, 'StickerCaroselTab',0);
+        this.charactercarousel.anchor.x = 0.5;
+        this.charactercarousel.anchor.y =  0;
+        this.charactercarousel.scale.setTo(scaleRatio,scaleRatio);
+        CreditsGroup.add(this.charactercarousel);
+        //Credits 
+        
+        /*
+        //*character Carosels
+        this.CloseButton = gameButtons.addButton("privacy", 
+        this.game.width/2, 
+        this.game.height, this.CloseButton, this);
+        this.CloseButton.scale.setTo(scaleRatio,scaleRatio);
+        this.CloseButton.anchor.set(0.5, 0.5);
+        this.CloseButton.x = this.game.width/8;
+        this.CloseButton.y = this.game.height-this.CloseButton.width;
+        CreditsGroup.add(this.CloseButton);*/
+        
+        this.CloseButton = game.add.sprite(
+        this.game.width/2, 
+        this.game.height/2,
+        'CloseButton');
+        this.CloseButton.inputEnabled = true;
+        //this.PineconeBody.input.pixelPerfectOver = true; 
+        this.CloseButton.events.onInputOver.add( this.CloseButtonpress, this.CloseButton);   
+        this.CloseButton.scale.setTo(scaleRatio,scaleRatio);
+        this.CloseButton.x = this.game.width/8;
+        this.CloseButton.y = this.game.height-this.CloseButton.width;
+        CreditsGroup.add(this.CloseButton);
+        
+
         
         //this.AlphaButton.x = MenuTopButtons_Pos_x-this.AlphaButton.width;  
 
@@ -107,11 +152,16 @@ var StateParentsCorner = {
         CreditsGroup.add(titleText);
         
         CreditsGroup.visible = false;
+     
         
         
-        this.btnStart = gameButtons.addButton("play", game.world.centerX, game.world.centerY-game.height/8, this.startGame, this);
+        this.btnStart = gameButtons.addButton("play", 
+        this.game.width/2, 
+        this.game.height/3, this.startGame, this);
+        this.btnStart.scale.setTo(scaleRatio,scaleRatio);
         titleText.anchor.set(0.5, 0.5);
-        
+        this.btnStart.x = this.game.width/2+this.btnStart.width/2;
+    
     }, 
     
     startGame: function () {  
@@ -120,7 +170,7 @@ var StateParentsCorner = {
     }, 
     
     
-    CloseButton: function () {
+    CloseButtonpress: function () {
     CreditsGroup.visible = false;
     }, 
     

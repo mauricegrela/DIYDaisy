@@ -6,7 +6,14 @@ var StateLoad = {
         this.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
         this.game.scale.refresh();
         
+
+
+        
+        
         this.time.advacedTiming = true;
+        
+        
+        
         
               
 /////////////////////
@@ -118,10 +125,6 @@ game.load.image('DirectoryBackground', 'images/results/book.png');
         
         game.load.spritesheet("Rock_Stickers_1", "images/ui/Rock_stickers.png", 365, 250, 24);
 
-        
-        //Object Tab
-        //game.load.image('PaintDot', 'images/ui/PaintDropTest.png');
-       
 ////////////////
 ///Leaf///
 ////////////////    
@@ -148,8 +151,7 @@ game.load.image('DirectoryBackground', 'images/results/book.png');
         game.load.image('LeafClothing_4', 'images/Leaf/LeafClothing_4.png');
        
         game.load.spritesheet("Leaf_Stickers_1", "images/ui/Leaf_stickers.png", 365, 250, 24);
-
-         
+        
 ////////////////
 ///StickWand///
 ////////////////    
@@ -163,11 +165,9 @@ game.load.image('DirectoryBackground', 'images/results/book.png');
         //Background for character movemeng 
         game.load.image('placement_Background', 'images/backgrounds/DragBackground.png');
         
-        //Object Tab
-        game.load.image('characterCaroselTab', 'images/ui/object-tab-active.png');
-        
         //Sticker Tab
-        game.load.image('StickerCaroselTab', 'images/ui/stickers-tab-active.png');
+        game.load.spritesheet('StickerCaroselTab', 'images/ui/diy-tabs.png', 1905, 536, 2);
+       
         
         //Arrows Tab
         game.load.spritesheet("CaroselArrows", "images/ui/sticker-arrows.png", 92, 95, 2);     
@@ -175,31 +175,32 @@ game.load.image('DirectoryBackground', 'images/results/book.png');
           //Sticker Tab
         game.load.image('TabButton', 'images/ui/StickerCollisionBox.png');
         
-//Placement Background
+        //Placement Background
         game.load.image('placing_Backgroung1', 'images/backgrounds/Placeable/Interactive_main_BG-min.png');
         game.load.image('placing_Backgroung2', 'images/backgrounds/Placeable/Interactive_main_FOREGROUND-min.png');
-        //game.load.image('placing_Backgroung3', 'images/backgrounds/Placeable/PlacableBackground_Level3.PNG');
-        
-        //Paint Brush Sprite
-        //game.load.spritesheet('PaintBrush', 'images/backgrounds/paintbrush-sprite.png', 409, 549, 3);
-        
-        //JarAnim Sprite
-        //game.load.spritesheet('PencilJar', 'images/backgrounds/jar-sprite.png', 500, 750, 2);
-        
-        
+
         //Animations
         game.load.spritesheet('Anim1', 'images/SpriteSheets/1_Clouds_SpriteSheet.png', 512, 512, 9);
-        game.load.spritesheet('Anim2', 'images/SpriteSheets/2_dandelion_spritesheet-min_1024.png', 341, 341, 9);
-        game.load.spritesheet('Anim3', 'images/SpriteSheets/3_squirrel_spritesheet-min_1024.png', 341, 341, 9);
-
+        game.load.spritesheet('Anim2', 'images/SpriteSheets/2_Dandelion_SpriteSheet.png', 341, 341, 9);
+        game.load.spritesheet('Anim3', 'images/SpriteSheets/3_Squirrel_SpriteSheet.png', 341, 341, 9);
+        game.load.spritesheet('Anim4', 'images/SpriteSheets/4_Donkey_SpriteSheet.png', 512, 512, 9);
+        game.load.spritesheet('Anim5', 'images/SpriteSheets/5_Frog_SpriteSheet.png', 341, 341, 9);
+        game.load.spritesheet('Anim6', 'images/SpriteSheets/6_Tutle_SpriteSheet.png', 341, 341, 9);
+        game.load.spritesheet('Anim7', 'images/SpriteSheets/7_Bee_SpriteSheet.png', 341, 341, 9);
+        game.load.spritesheet('Anim8', 'images/SpriteSheets/8_Kite_SpriteSheet.png', 512, 512, 9);
+        game.load.spritesheet('Anim9', 'images/SpriteSheets/9_Light_SpriteSheet.png', 341, 341, 9);
+        game.load.spritesheet('Anim10', 'images/SpriteSheets/10_Tea_SpriteSheet.png', 341, 341, 9);
+        
         //UI Assets
         game.load.spritesheet("buttons", "images/ui/buttons-red.png", 265, 75);
         game.load.spritesheet("soundButtons", "images/ui/soundButtons-blue.png", 44, 44, 4);
         game.load.spritesheet("daisylogo", "images/ui/daisylogo.png", 44, 44, 34);
-        game.load.spritesheet("creativeButtons", "images/ui/CreativeButtons.png", 140, 160, 7);
+        //Load Background images for the rock
+        game.load.image('CloseButton', 'images/results/close-button.png');
+        game.load.spritesheet("creativeButtons", "images/results/results-ui-sprite.png", 300, 255, 4);
         game.load.audio("backgroundMusic", "audio/background/piano.mp3");
         game.load.audio("elephant", "audio/sfx/elephant.mp3");  
-        game.load.image("PaintUI", "images/ui/PaintDrop.png");
+        
         
         //Loading Variables      
         var empty = game.add.image(0, 0, "loadingEmpty");
@@ -209,14 +210,16 @@ game.load.image('DirectoryBackground', 'images/results/book.png');
         full.anchor.set(0, 0.5);
         full.x = game.world.centerX - empty.width / 2;
         full.y = empty.y;
+        
+
+        
+        
 
         game.load.setPreloadSprite(full);
     },
 
     create: function () {
         game.state.start("StateTitle");
-        //game.state.start("StateCharacterSelect");
-        //game.state.start("StateRockMain");
     },
 
     update: function () {
