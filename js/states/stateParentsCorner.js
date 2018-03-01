@@ -29,7 +29,7 @@ var StateParentsCorner = {
         
                 
         //Background Working
-        this.Background = game.add.sprite(0,0, 'craft_Backgroung');
+        this.Background = game.add.sprite(0,0, 'VideoBackGround');
         this.Background.anchor.set(0.0);
         this.Background.width =game.width; 
         this.Background.height =game.height;
