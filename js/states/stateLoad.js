@@ -2,29 +2,21 @@ var StateLoad = {
 
     preload: function () {
 
-        this.game.scale.fullScreenScaleMode = Phaser.ScaleManager.SHOW_ALL;
-        this.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
-        this.game.scale.refresh();
-        
+this.game.scale.fullScreenScaleMode = Phaser.ScaleManager.SHOW_ALL;
+this.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+this.game.scale.refresh();   
 
-
+this.time.advacedTiming = true;       
         
-        
-        this.time.advacedTiming = true;
-        
-        
-        
-        
-              
 /////////////////////
 ////ParentsCorner////
 /////////////////////        
-game.load.image('FrontEndTile', 'images/backgrounds/landing-page-bg.jpg');
-         
+game.load.image('FrontEndTile', 'images/backgrounds/landing-page-bg.PNG');
+        
 /////////////////////
 /////LandingPage/////
 /////////////////////        
-game.load.image('FrontEndTile', 'images/backgrounds/landing-page-bg.jpg');
+game.load.image('FrontEndTile', 'images/backgrounds/landing-page-bg.png');
         
 /////////////////////
 //////Directory//////
@@ -37,7 +29,7 @@ game.load.image('DirectoryBackground', 'images/results/book.png');
         
         var VideoBackground;
         //game.load.image('VideoBackGround', 'images/backgrounds/DragBackground.png');
-        game.load.image('VideoBackGround', 'images/backgrounds/video-bg.jpg');
+        game.load.image('VideoBackGround', 'images/backgrounds/video-bg.PNG');
         
         var video1;
         game.load.video('Intro', 'videos/Intro/DaisyGBK_Intro_720.mp4');
@@ -90,68 +82,15 @@ game.load.image('DirectoryBackground', 'images/results/book.png');
         game.load.image('PineconeClothing_3', 'images/Pinecone/PineconeClothing_3.png');      
         game.load.image('PineconeClothing_4', 'images/Pinecone/PineconeClothing_4.png');
       
-        game.load.spritesheet("Pinecone_Stickers", "images/ui/Pinecone_stickers.png", 365, 250, 24);
-
+        game.load.spritesheet("Pinecone_Stickers", "images/ui/Pinecone_stickers.png", 182, 125, 24);
 ////////////////
-//////Rock//////
-////////////////           
-        //game.load.image('MagLenz', 'images/Pinecone/alphaMaskState.png');      
-        //Load Stickers and body
+///////Leaf/////
+////////////////         
         game.load.image('RockBody', 'images/Rock/RockBody.png');     
-        game.load.image('RockBase_1', 'images/Rock/RockBase_1.png');
-        game.load.image('RockBase_2', 'images/Rock/RockBase_2.png');      
-        game.load.image('RockBase_3', 'images/Rock/RockBase_3.png');
-        game.load.image('RockBase_4', 'images/Rock/RockBase_4.png'); 
-                        
-        game.load.image('RockFace_1', 'images/Rock/RockFace_1.png');
-        game.load.image('RockFace_2', 'images/Rock/RockFace_2.png');
-        game.load.image('RockFace_3', 'images/Rock/RockFace_3.png');
-        game.load.image('RockFace_4', 'images/Rock/RockFace_4.png');
-         
-        game.load.image('RockHeadgear_1', 'images/Rock/RockHeadgear_1.png');
-        game.load.image('RockHeadgear_2', 'images/Rock/RockHeadgear_2.png');
-        game.load.image('RockHeadgear_3', 'images/Rock/RockHeadgear_3.png');
-        game.load.image('RockHeadgear_4', 'images/Rock/RockHeadgear_4.png');
-                
-        game.load.image('RockWings_1', 'images/Rock/RockWings_1.png');
-        game.load.image('RockWings_2', 'images/Rock/RockWings_2.png');
-        game.load.image('RockWings_3', 'images/Rock/RockWings_3.png');
-        game.load.image('RockWings_4', 'images/Rock/RockWings_4.png');
-        
-        game.load.image('RockFeet_1', 'images/Rock/RockFeet_1.png');
-        game.load.image('RockFeet_2', 'images/Rock/RockFeet_3.png');
-        game.load.image('RockFeet_3', 'images/Rock/RockFeet_2.png');
-        game.load.image('RockFeet_4', 'images/Rock/RockFeet_4.png');
-        
-        game.load.spritesheet("Rock_Stickers_1", "images/ui/Rock_stickers.png", 365, 250, 24);
-
 ////////////////
-///Leaf///
+///////Leaf/////
 ////////////////    
         game.load.image('LeafBody', 'images/Leaf/LeafBody.png');  
-         
-        game.load.image('LeafWings_1', 'images/Leaf/LeafWings_1.png');
-        game.load.image('LeafWings_2', 'images/Leaf/LeafWings_2.png');
-        game.load.image('LeafWings_3', 'images/Leaf/LeafWings_3.png');
-        game.load.image('LeafWings_4', 'images/Leaf/LeafWings_4.png');
-
-        game.load.image('LeafFace_1', 'images/Leaf/LeafFace_1.png');
-        game.load.image('LeafFace_2', 'images/Leaf/LeafFace_2.png');
-        game.load.image('LeafFace_3', 'images/Leaf/LeafFace_3.png');
-        game.load.image('LeafFace_4', 'images/Leaf/LeafFace_4.png');
-         
-        game.load.image('LeafHeadgear_1', 'images/Leaf/LeafHeadgear_1.png');
-        game.load.image('LeafHeadgear_2', 'images/Leaf/LeafHeadgear_2.png');
-        game.load.image('LeafHeadgear_3', 'images/Leaf/LeafHeadgear_3.png');
-        game.load.image('LeafHeadgear_4', 'images/Leaf/LeafHeadgear_4.png');
-        
-        game.load.image('LeafClothing_1', 'images/Leaf/LeafClothing_1.png');
-        game.load.image('LeafClothing_2', 'images/Leaf/LeafClothing_2.png');
-        game.load.image('LeafClothing_3', 'images/Leaf/LeafClothing_3.png');
-        game.load.image('LeafClothing_4', 'images/Leaf/LeafClothing_4.png');
-       
-        game.load.spritesheet("Leaf_Stickers_1", "images/ui/Leaf_stickers.png", 365, 250, 24);
-        
 ////////////////
 ///StickWand///
 ////////////////    
@@ -160,17 +99,17 @@ game.load.image('DirectoryBackground', 'images/results/book.png');
 //Carosel Stickers to load/
 ///////////////////////////
         //Load Background images for the rock
-        game.load.image('craft_Backgroung', 'images/backgrounds/Background_1.jpg');
+        game.load.image('craft_Backgroung', 'images/backgrounds/Background_1.png');
         
         //Background for character movemeng 
         game.load.image('placement_Background', 'images/backgrounds/DragBackground.png');
         
         //Sticker Tab
-        game.load.spritesheet('StickerCaroselTab', 'images/ui/diy-tabs.png', 1905, 536, 2);
+        game.load.spritesheet('StickerCaroselTab', 'images/ui/diy-tabs.png', 952, 268, 2);
        
         
         //Arrows Tab
-        game.load.spritesheet("CaroselArrows", "images/ui/sticker-arrows.png", 92, 95, 2);     
+        game.load.spritesheet("CaroselArrows", "images/ui/sticker-arrows.png", 46, 47, 2);     
         
           //Sticker Tab
         game.load.image('TabButton', 'images/ui/StickerCollisionBox.png');
@@ -180,32 +119,45 @@ game.load.image('DirectoryBackground', 'images/results/book.png');
         game.load.image('placing_Backgroung2', 'images/backgrounds/Placeable/Interactive_main_FOREGROUND-min.png');
 
         //Animations
-        game.load.spritesheet('Anim1', 'images/SpriteSheets/1_Clouds_SpriteSheet.png', 512, 512, 9);
-        game.load.spritesheet('Anim2', 'images/SpriteSheets/2_Dandelion_SpriteSheet.png', 341, 341, 9);
-        game.load.spritesheet('Anim3', 'images/SpriteSheets/3_Squirrel_SpriteSheet.png', 341, 341, 9);
-        game.load.spritesheet('Anim4', 'images/SpriteSheets/4_Donkey_SpriteSheet.png', 512, 512, 9);
-        game.load.spritesheet('Anim5', 'images/SpriteSheets/5_Frog_SpriteSheet.png', 341, 341, 9);
-        game.load.spritesheet('Anim6', 'images/SpriteSheets/6_Tutle_SpriteSheet.png', 341, 341, 9);
-        game.load.spritesheet('Anim7', 'images/SpriteSheets/7_Bee_SpriteSheet.png', 341, 341, 9);
-        game.load.spritesheet('Anim8', 'images/SpriteSheets/8_Kite_SpriteSheet.png', 512, 512, 9);
-        game.load.spritesheet('Anim9', 'images/SpriteSheets/9_Light_SpriteSheet.png', 341, 341, 9);
-        game.load.spritesheet('Anim10', 'images/SpriteSheets/10_Tea_SpriteSheet.png', 341, 341, 9);
+        game.load.spritesheet('Anim1', 'images/SpriteSheets/1_Clouds_SpriteSheet.png', 256, 256, 9);
+        game.load.spritesheet('Anim2', 'images/SpriteSheets/2_Dandelion_SpriteSheet.png', 256, 256, 9);
+        game.load.spritesheet('Anim3', 'images/SpriteSheets/3_Squirrel_SpriteSheet.png', 256, 256, 9);
+        game.load.spritesheet('Anim4', 'images/SpriteSheets/4_Donkey_SpriteSheet.png', 256, 256, 9);
+        game.load.spritesheet('Anim5', 'images/SpriteSheets/5_Frog_SpriteSheet.png', 256, 256, 9);
+        game.load.spritesheet('Anim6', 'images/SpriteSheets/6_Tutle_SpriteSheet.png', 256, 256, 9);
+        game.load.spritesheet('Anim7', 'images/SpriteSheets/7_Bee_SpriteSheet.png', 256, 256, 9);
+        game.load.spritesheet('Anim8', 'images/SpriteSheets/8_Kite_SpriteSheet.png', 256, 256, 9);
+        game.load.spritesheet('Anim9', 'images/SpriteSheets/9_Light_SpriteSheet.png', 256, 256, 9);
+        game.load.spritesheet('Anim10', 'images/SpriteSheets/10_Tea_SpriteSheet.png', 256, 256, 9);
+        
+        //Parents Cornder
+        game.load.image("LeafPDF", "images/parentcorner/LeafPDF.png");
+        game.load.image("MobilePDF", "images/parentcorner/MobilePDF.png");
+        game.load.image("PineconePDF", "images/parentcorner/PineconePDF.png");
+        game.load.image("RockPDF", "images/parentcorner/RockPDF.png");
+        game.load.image("StickWandPDF", "images/parentcorner/StickWandPDF.png");
         
         //UI Assets
         game.load.spritesheet("buttons", "images/ui/buttons-red.png", 265, 75);
-        game.load.spritesheet("soundButtons", "images/ui/soundButtons-blue.png", 44, 44, 4);
-        game.load.spritesheet("daisylogo", "images/ui/daisylogo.png", 44, 44, 34);
+        game.load.spritesheet("soundButtons", "images/ui/soundButtons-blue.png", 22, 22, 4);
+        game.load.image("daisylogo", "images/ui/daisylogo.png");
         //Load Background images for the rock
         game.load.image('CloseButton', 'images/results/close-button.png');
-        game.load.spritesheet("creativeButtons", "images/results/results-ui-sprite.png", 300, 255, 4);
+        game.load.spritesheet("creativeButtons", "images/results/results-ui-sprite.png", 150, 128, 4);
         game.load.audio("backgroundMusic", "audio/background/piano.mp3");
         game.load.audio("elephant", "audio/sfx/elephant.mp3");  
-        
+        //Object UI
+        game.load.spritesheet("Characterbuttons", "images/ui/Objects_UI.png", 120, 120);
+    
+        //Placement
+         game.load.image('DownloadModal', "images/results/download-modal.png");
+         game.load.image('DownloadButton', "images/results/download.png");
         
         //Loading Variables      
         var empty = game.add.image(0, 0, "loadingEmpty");
         var full = game.add.image(0, 0, "loadingFull");
 
+        
         center(empty);
         full.anchor.set(0, 0.5);
         full.x = game.world.centerX - empty.width / 2;
@@ -214,8 +166,15 @@ game.load.image('DirectoryBackground', 'images/results/book.png');
 
         
         
-
         game.load.setPreloadSprite(full);
+        
+        
+      this.logo = this.add.sprite( game.width/2, 0, 'LoadscreenAnim');
+      this.logo.anchor.set(0.5, 0.5);
+        this.logo.x -= this.logo.width
+      this.logo.scale.set(scaleRatio*4,scaleRatio*4);
+      this.logo.animations.add('shake');
+      this.logo.animations.play('shake', 30, true)
     },
 
     create: function () {

@@ -3,6 +3,8 @@ var StateInit = {
     preload: function () {
         game.load.image("loadingEmpty", "images/loading/progress_none.png");
         game.load.image("loadingFull", "images/loading/progress_all.png");
+        
+        game.load.spritesheet('LoadscreenAnim', 'images/SpriteSheets/LOAD_SpriteSheet.png', 256, 256, 9);
 
         if (isMobile==true) {
             if (useLandscape == true) {
@@ -18,6 +20,7 @@ var StateInit = {
 
     }
     , create: function () {
+      this.game.stage.backgroundColor = "#9dbf58";
         game.state.start("StateLoad");
     }
     , update: function () {

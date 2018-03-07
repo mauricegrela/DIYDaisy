@@ -21,18 +21,19 @@ var StateOuttro = {
 
     , create: function () {
         
-        this.craftBackground1 = game.add.sprite(0, 0, 'VideoBackGround');
-        this.craftBackground1.scale.setTo(1,1);
+        this.craftBackground = game.add.sprite(0, 0, 'VideoBackGround');
+        this.craftBackground.height = this.game.height;
+        this.craftBackground.width = this.game.width;
         
         video1 = game.add.video(ExtroVideoRef[game.rnd.integerInRange(0, 4)]);
         video1.play(true); 
-        video1.addToWorld(game.width/2, game.height/2, 0.5, 0.5, scaleRatio,scaleRatio); 
+        video1.addToWorld(game.width/2, game.height/2, 0.5, 0.5, scaleRatio/1.2,scaleRatio/1.2); 
 
-        this.btnStart = gameButtons.addButton("skip",game.width/2, game.height/2+video1.height, this.startGame, this);
+        this.btnStart = gameButtons.addButton("skip",game.width/2, game.height-100, this.startGame, this);
         this.btnStart.scale.setTo(scaleRatio,scaleRatio);
-        this.btnStart.x = this.btnStart.width;
+        this.btnStart.x = game.width-this.btnStart.height;
         this.btnStart.y = this.btnStart.height;
-        this.btnStart.anchor.set(1.0, 1.0);
+        this.btnStart.anchor.set(0.5, 0.5);
         
         if(this.game.device.desktop == false)
         { 
@@ -41,8 +42,13 @@ var StateOuttro = {
         this.Play.anchor.set(0.5, 0.5);
         }
         
-
-
+        this.Logo = game.add.sprite(0,0, 'daisylogo');
+        this.Logo.scale.setTo(scaleRatio,scaleRatio);
+        this.Logo.inputEnabled = true;
+        this.Logo.anchor.set(0);
+        this.Logo.x =  this.Logo.width/4;
+        this.Logo.y =  this.Logo.height/2;
+        this.Logo.events.onInputOver.add(this.ToLandingPage, this.Logo); 
     },
     
     startGame: function () {  
@@ -54,6 +60,11 @@ var StateOuttro = {
     StartVideoMobile: function () {   
     this.Play.alpha = 0;      
     },
+        
+    ToLandingPage: function()
+    {
+        game.state.start("StateTitle");   
+    }, 
     
     update: function () {
 

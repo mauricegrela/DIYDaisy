@@ -6,12 +6,13 @@ var StateEpisode = {
 
     , create: function () 
     {  
-
-        this.VideoBackground = game.add.sprite(0, 0, 'VideoBackGround');
+        this.craftBackground = game.add.sprite(0, 0, 'VideoBackGround');
+        this.craftBackground.height = this.game.height;
+        this.craftBackground.width = this.game.width;
 
         video1 = game.add.video("Episode");
         video1.play(true); 
-        video1.addToWorld(game.width/2, game.height/2, 0.5, 0.5, scaleRatio,scaleRatio); 
+        video1.addToWorld(game.width/2, game.height/2, 0.5, 0.5, scaleRatio/1.2,scaleRatio/1.2); 
 
             if(this.game.device.desktop == false)
             { 
@@ -19,13 +20,27 @@ var StateEpisode = {
             this.Play.scale.setTo(scaleRatio,scaleRatio);
             this.Play.anchor.set(0.0, 0.0);
             }
-    ExtroMenu = game.add.group();
-    this.PlaceModeButton = gameButtons.addButton("skip",0,0,this.startGame, this);
-    this.PlaceModeButton.scale.setTo(scaleRatio,scaleRatio);
-    this.PlaceModeButton.x = this.PlaceModeButton.width;
-    this.PlaceModeButton.y = this.PlaceModeButton.height;
-    this.PlaceModeButton.anchor.set(1.0, 1.0);
+        ExtroMenu = game.add.group();
+        
+        //Back button
+        this.BackButton = game.add.sprite( this.game.width, 0, 'creativeButtons');
+        this.BackButton.frame = 2;
+        this.BackButton.anchor.x = 0.5;
+        this.BackButton.anchor.y = 0.5;
+        this.BackButton.x =this.game.width-this.BackButton.width;
+        this.BackButton.y = this.BackButton.height;
+        this.BackButton.inputEnabled = true;
+        //this.PineconeBody.input.pixelPerfectOver = true; 
+        this.BackButton.events.onInputOver.add(this.startGame, this.BackButton);   
+        this.BackButton.scale.setTo((ButtonScale/1.5),(ButtonScale/1.5));
    
+        this.Logo = game.add.sprite(0,0, 'daisylogo');
+        this.Logo.scale.setTo(scaleRatio,scaleRatio);
+        this.Logo.inputEnabled = true;
+        this.Logo.anchor.set(0);
+        this.Logo.x =  this.Logo.width/4;
+        this.Logo.y =  this.Logo.height/2;
+        this.Logo.events.onInputOver.add(this.ToLandingPage, this.Logo); 
     },
     
     
@@ -38,6 +53,11 @@ var StateEpisode = {
     StartVideoMobile: function () {   
     this.Play.alpha = 0;      
     },
+    
+    ToLandingPage: function()
+    {
+    game.state.start("StateTitle");   
+    }, 
     
     update: function () {
 

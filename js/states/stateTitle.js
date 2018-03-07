@@ -14,9 +14,9 @@ var StateTitle = {
     
     create: function () {
          
-        this.background = this.add.image(0, 0, "FrontEndTile");
-        this.background.height = this.game.height;
-        this.background.width = this.game.width;
+        //this.background = this.add.image(0, 0, "FrontEndTile");
+        //this.background.height = this.game.height;
+        //this.background.width = this.game.width;
         
         
         
@@ -45,11 +45,14 @@ var StateTitle = {
         
         this.btnStart.x = this.game.width - this.btnStart.width;
         this.btnStart.y = this.game.height - this.btnStart.height;
+        
+        
     },
 
     
     startGame: function () {     
-    game.state.start("StateDirectory");
+    game.state.start("StateIntroMovie");
+    //game.state.start("StatePlace");
     //game.state.start("StateDirectory");
     }, 
     
