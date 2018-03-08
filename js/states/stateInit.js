@@ -3,7 +3,7 @@ var StateInit = {
     preload: function () {
         game.load.image("loadingEmpty", "images/loading/progress_none.png");
         game.load.image("loadingFull", "images/loading/progress_all.png");
-        
+        game.load.image("loadingBackground", "images/loading/Loading-Screen-bg.png");
         game.load.spritesheet('LoadscreenAnim', 'images/SpriteSheets/LOAD_SpriteSheet.png', 256, 256, 9);
 
         if (isMobile==true) {
@@ -16,10 +16,12 @@ var StateInit = {
 
             game.scale.enterIncorrectOrientation.add(this.wrongWay, this);
             game.scale.leaveIncorrectOrientation.add(this.rightWay, this);
+            //game.scale.scaleMode = Phaser.ScaleManager.NO_SCALE; 
         }
 
     }
     , create: function () {
+        
       this.game.stage.backgroundColor = "#9dbf58";
         game.state.start("StateLoad");
     }

@@ -138,7 +138,7 @@ game.load.image('DirectoryBackground', 'images/results/book.png');
         game.load.image("StickWandPDF", "images/parentcorner/StickWandPDF.png");
         
         //UI Assets
-        game.load.spritesheet("buttons", "images/ui/buttons-red.png", 265, 75);
+        game.load.spritesheet("buttons", "images/ui/buttons-red@2x.png", 132, 37);
         game.load.spritesheet("soundButtons", "images/ui/soundButtons-blue.png", 22, 22, 4);
         game.load.image("daisylogo", "images/ui/daisylogo.png");
         //Load Background images for the rock
@@ -153,28 +153,36 @@ game.load.image('DirectoryBackground', 'images/results/book.png');
          game.load.image('DownloadModal', "images/results/download-modal.png");
          game.load.image('DownloadButton', "images/results/download.png");
         
+        
+        //Loading screen assets
+        var loadingBackground = game.add.image(0, 0, "loadingBackground");  
+        loadingBackground.anchor.set(0, 0);
+        loadingBackground.height = this.game.height;
+        loadingBackground.width = this.game.width;  
+        //loadingBackground.scale.set(scaleRatio,scaleRatio);
         //Loading Variables      
         var empty = game.add.image(0, 0, "loadingEmpty");
         var full = game.add.image(0, 0, "loadingFull");
 
-        
-        center(empty);
+        //center(empty);
         full.anchor.set(0, 0.5);
-        full.x = game.world.centerX - empty.width / 2;
-        full.y = empty.y;
-        
+        full.x = this.game.width - empty.width*2;
+        full.y = this.game.height-this.game.height/3;
+        //center(empty);
+        empty.anchor.set(0, 0.5);
+        empty.x = this.game.width - empty.width*2;
+        empty.y = this.game.height-this.game.height/3;
 
-        
-        
         game.load.setPreloadSprite(full);
         
         
-      this.logo = this.add.sprite( game.width/2, 0, 'LoadscreenAnim');
-      this.logo.anchor.set(0.5, 0.5);
-        this.logo.x -= this.logo.width
-      this.logo.scale.set(scaleRatio*4,scaleRatio*4);
-      this.logo.animations.add('shake');
-      this.logo.animations.play('shake', 30, true)
+        this.logo = this.add.sprite( full.x, full.y, 'LoadscreenAnim');
+        this.logo.anchor.set(0.4,0.4);
+        this.logo.x -= this.logo.width/2;
+        this.logo.y -= this.logo.height/3;
+        this.logo.scale.set(scaleRatio,scaleRatio);
+        this.logo.animations.add('shake');
+        this.logo.animations.play('shake', 30, true)
     },
 
     create: function () {
