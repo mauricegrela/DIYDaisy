@@ -403,6 +403,9 @@ if (isMobile>-1)
         //mobile device
         game = new Phaser.Game(window.innerWidth * window.devicePixelRatio, window.innerHeight * window.devicePixelRatio, Phaser.CANVAS, "ph_game");
     }
+    
+      //game.scale.scaleMode = Phaser.ScaleManager.NO_SCALE; 
+    
     if (isMobile==true) {
         if (useLandscape == true) {
             wrongTag = "wrongWayLandscape";
@@ -414,7 +417,7 @@ if (isMobile>-1)
 
     
     this.game.crossOrigin = "anonymous";
-var scaleRatio=0;
+    //var scaleRatio=0;
     
       
     
@@ -435,7 +438,7 @@ var scaleRatio=0;
     game.state.add("StateOuttro",StateOuttro);
     game.state.add("StateDirectory",StateDirectory);
     game.state.add("StateEpisode",StateEpisode);
-    game.state.add("StateImageDownload", StateImageDownload);
+    game.state.add("stateMainLoad", stateMainLoad);
     
     //StateShit
     game.state.add("StateLoad", StateLoad);

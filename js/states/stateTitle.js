@@ -21,10 +21,13 @@ var StateTitle = {
         
         
         //Background Working
-        this.Background = game.add.sprite(0,0, 'FrontEndTile');
-        this.Background.anchor.set(0.0);
-        this.Background.width =game.width; 
-        this.Background.height =game.height;
+        this.Background = game.add.sprite(this.game.width/2,this.game.height/2, 'FrontEndTile');
+        //this.Background.anchor.set(0.5);
+        this.Background.width =this.game.width; 
+        this.Background.height =this.game.width*0.60;
+        this.Background.anchor.x = 0.5;
+        this.Background.anchor.y = 0.45;
+        //this.Background.scale.setTo(scaleRatio,scaleRatio)
 
         this.btnStart = gameButtons.addButton("play", 
         this.game.width, 
