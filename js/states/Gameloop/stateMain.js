@@ -2,21 +2,12 @@ var StateMain = {
 ////////////////////////////////////////////
 ///////////REMEMBER TO REFRESH/////////////
 //////////////////////////////////////////
-    preload: function () { 
-
-        
+    preload: function () {        
         GameCenter_x = game.width/2;
-        GameCenter_y = game.height/2.3;   
+        GameCenter_y = game.height/2.8;   
 
         isTakingPhoto = false;
-
-           
-
-            
-        
         game.load.audio("drop",'audio/sfx/drop.mp3');
-        
-
     },
 
     create: function () {
@@ -74,42 +65,40 @@ var StateMain = {
         this.Logo.x =  this.Logo.width/4;
         this.Logo.y =  this.Logo.height/2;
         this.Logo.events.onInputOver.add(this.ToLandingPage, this.Logo); 
-            /*
+        /*
         //add sound buttons
         this.btnMusic = gameButtons.addAudioButton("music", 20, 20, gameButtons.toggleMusic, this);
         this.btnMusic.scale.setTo(scaleRatio,scaleRatio);
         
         this.btnSound = gameButtons.addAudioButton("sound", 20, 70, gameButtons.toggleSound, this);
         this.btnSound.scale.setTo(scaleRatio,scaleRatio);
-            */
+        */
         //define sounds here
         this.drop = game.add.audio("drop");
-        //define background music
-        //this.backgroundMusic = game.add.audio("backgroundMusic");
-        
-        //this.drop.play();
-        
-        //pass the background music to the gameMedia object
-        //gameMedia.setBackgroundMusic(this.backgroundMusic);
         
         //Images Variables
         SelectedColor = 0xff00ff;
-       
-        
+             
 ///////////////////////////////////
 ///CaroseleButtons Sticker Group///
 ///////////////////////////////////
         
         if(this.game.device.desktop == true){ }
         
-        //Save Button
-        this.SaveButton = gameButtons.addGenericButton("0", game.width,0 , this.SaveClicked, this,"creativeButtons",1); 
-        this.SaveButton.anchor.x = 0;
-        this.SaveButton.anchor.y = 0;
-        this.SaveButton.x = game.width-this.SaveButton.width*1.5;
+        this.SaveButton = gameButtons.addGenericButton("0", 0,0 , this.SaveClicked, this,"creativeButtons",1); 
+        this.SaveButton.anchor.x = 1.3;
+        this.SaveButton.anchor.y = -0.2;
+        this.SaveButton.x =  game.width;
         this.SaveButton.y = 0;
+        this.SaveButton.scale.setTo(0.8,0.8);
+        //Save Button
+        /*this.SaveButton = gameButtons.addGenericButton("0", game.width,0 , this.SaveClicked, this,"creativeButtons",1); 
+        this.SaveButton.anchor.x = 0.5;
+        this.SaveButton.anchor.y = 0.5;
+        this.SaveButton.x = game.width-this.SaveButton.width*RightHangButtonOffset_X;
+        this.SaveButton.y = this.SaveButton.height*RightHangButtonOffset_Y;
         this.SaveButton.scale.setTo(scaleRatio,scaleRatio);
-        MainButtonGroup.add(this.SaveButton);
+        MainButtonGroup.add(this.SaveButton);*/
         
                
         
@@ -128,7 +117,7 @@ var StateMain = {
                 {
                 var ButtonsScale = scaleRatio;
                 }
-        var CharacterStickerScale = scaleRatio*1.4;
+        var CharacterStickerScale = scaleRatio*1.2;
         
         //Character Carosels      
         /*this.charactercarouselCharacter = game.add.sprite(game.width/2, game.height, 'StickerCaroselTab',0);
@@ -205,7 +194,7 @@ var StateMain = {
         //ButtonsPos_x = this.RockCharacter.x;
         
         //Character Pinecone Stickers
-        this.PineconeCharacter = game.add.sprite(ButtonsPos_x+this.RockCharacter.width, ButtonsPos_y , 'Characterbuttons');   
+        this.PineconeCharacter = game.add.sprite(ButtonsPos_x+this.RockCharacter.width*1.2, ButtonsPos_y , 'Characterbuttons');   
         this.PineconeCharacter.inputEnabled = true;
         this.PineconeCharacter.frame = 4;
         this.PineconeCharacter.anchor.x = 0.5;
@@ -216,7 +205,7 @@ var StateMain = {
         CharacterStickerGroup.add(this.PineconeCharacter);
         
         //Character Mobile Stickers
-        this.MobileCharacter = game.add.sprite(ButtonsPos_x+this.RockCharacter.width*2, ButtonsPos_y , 'Characterbuttons');   
+        this.MobileCharacter = game.add.sprite(ButtonsPos_x+this.RockCharacter.width*2.2, ButtonsPos_y , 'Characterbuttons');   
         this.MobileCharacter.inputEnabled = true;
         this.MobileCharacter.frame = 0;
         this.MobileCharacter.anchor.x = 0.5;
@@ -227,7 +216,7 @@ var StateMain = {
         CharacterStickerGroup.add(this.MobileCharacter);
                 
         //Character StickWand Stickers
-        this.SmudgeStickCharacter = game.add.sprite(ButtonsPos_x-this.RockCharacter.width, ButtonsPos_y , 'Characterbuttons');   
+        this.SmudgeStickCharacter = game.add.sprite(ButtonsPos_x-this.RockCharacter.width*1.2, ButtonsPos_y , 'Characterbuttons');   
         this.SmudgeStickCharacter.inputEnabled = true;
         this.SmudgeStickCharacter.frame = 3;
         this.SmudgeStickCharacter.anchor.x = 0.5;
@@ -238,7 +227,7 @@ var StateMain = {
         
         
         //Character Mobile Stickers
-        this.StickWandCharacter = game.add.sprite(ButtonsPos_x-this.RockCharacter.width*2, ButtonsPos_y , 'Characterbuttons');
+        this.StickWandCharacter = game.add.sprite(ButtonsPos_x-this.RockCharacter.width*2.2, ButtonsPos_y , 'Characterbuttons');
         this.StickWandCharacter.inputEnabled = true;
         this.StickWandCharacter.frame = 2;
         this.StickWandCharacter.anchor.x = 0.5;
@@ -284,7 +273,7 @@ var StateMain = {
 ////First Sticker Group////
 ///////////////////////////
         
-       var CharacterButtonScale = scaleRatio;
+       var CharacterButtonScale = 0.8;
         
         
 
@@ -586,15 +575,16 @@ var StateMain = {
         
         Arrow_Y = game.height-this.StickerButton1.height;
         
+        arrowScaleOffset = 1.3;
         //Carosels Left
         this.CaroselArrow_Left = gameButtons.addGenericButton("0", ButtonsPos_x-this.StickerButton1.width*2, Arrow_Y, this.Carosel_Left, this,"CaroselArrows",0); 
         this.CaroselArrow_Left.anchor.x = 1;
-        this.CaroselArrow_Left.scale.setTo(scaleRatio,scaleRatio);
+        this.CaroselArrow_Left.scale.setTo(scaleRatio*arrowScaleOffset,scaleRatio*arrowScaleOffset);
         //StickerGroup.add(this.CaroselArrow_Left);
         
         //Carosels Right
         this.CaroselArrow_Right = gameButtons.addGenericButton("0", ButtonsPos_x+this.StickerButton1.width*2, Arrow_Y, this.Carosel_Right, this,"CaroselArrows",1); 
-        this.CaroselArrow_Right.scale.setTo(scaleRatio,scaleRatio);
+        this.CaroselArrow_Right.scale.setTo(scaleRatio*arrowScaleOffset,scaleRatio*arrowScaleOffset);
         //StickerGroup.add(this.CaroselArrow_Right);
         
         Character.sort();

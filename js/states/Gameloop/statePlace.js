@@ -17,8 +17,8 @@ var StatePlace = {
     , create: function () {
         
         craftBackgroundScale = scaleRatio;
-        craftAnimBackgroundScale = scaleRatio*2.33;
-        CharacterScaleAdjustment = 1;
+        craftAnimBackgroundScale = scaleRatio*1.5;
+        CharacterScaleAdjustment = 0.5;
         
         CharacterGroup = game.add.group();
                 
@@ -143,7 +143,7 @@ var StatePlace = {
         //game.world.bringToTop(this.craftBackground3);
         
         this.mummy1 = game.add.sprite(
-        0,
+        768,
         0, 
         'Anim1', 5);
         this.mummy1.scale.set(craftAnimBackgroundScale);
@@ -152,11 +152,11 @@ var StatePlace = {
         //this.mummy1.smoothed = false;
         //this.mummy1.fixedToCamera = true;
         this.anim1 = this.mummy1.animations.add('walk');
-        this.mummy1.x = this.mummy1.width*1.5;
+        //this.mummy1.x = this.mummy1.width*1.5;
         //this.anim1.play(10, true);
 
         this.mummy2 = game.add.sprite(
-        this.mummy1.width,
+        543,
         this.craftBackground1.height,
         'Anim2', 5);
         this.mummy2.scale.set(craftAnimBackgroundScale);
@@ -165,10 +165,10 @@ var StatePlace = {
         //this.mummy2.smoothed = false;
         //this.mummy2.fixedToCamera = true;
         this.anim2 = this.mummy2.animations.add('walk');
-        this.mummy2.x = this.mummy2.width*1.5;
+        //this.mummy2.x = this.mummy2.width*1.5;
         
         this.mummy3 = game.add.sprite(
-        this.mummy1.width,
+        1124,
         this.craftBackground1.height,
         'Anim3', 5);
         this.mummy3.scale.set(craftAnimBackgroundScale);
@@ -177,11 +177,11 @@ var StatePlace = {
         //this.mummy2.smoothed = false;
         //this.mummy2.fixedToCamera = true;
         this.anim3 = this.mummy3.animations.add('walk');
-        this.mummy3.x = this.mummy3.width*2.5;
+        //this.mummy3.x = this.mummy3.width*2.5;
         
         this.mummy4 = game.add.sprite(
-        this.mummy1.width,
-        this.craftBackground1.height,
+        1530,
+        this.craftBackground1.height-40,
         'Anim4', 5);
         this.mummy4.scale.set(craftAnimBackgroundScale);
         this.mummy4.anchor.x = 0.5;
@@ -189,11 +189,11 @@ var StatePlace = {
         //this.mummy2.smoothed = false;
         //this.mummy2.fixedToCamera = true;
         this.anim4 = this.mummy4.animations.add('walk');
-        this.mummy4.x = this.mummy4.width*2.92;
+        //this.mummy4.x = this.mummy4.width*2.92;
         
         this.mummy5 = game.add.sprite(
-        this.mummy1.width,
-        this.craftBackground1.height,
+        2304,
+        this.craftBackground1.height-20,
         'Anim5', 5);
         this.mummy5.scale.set(craftAnimBackgroundScale);
         this.mummy5.anchor.x = 0.5;
@@ -201,11 +201,11 @@ var StatePlace = {
         //this.mummy2.smoothed = false;
         //this.mummy2.fixedToCamera = true;
         this.anim5 = this.mummy5.animations.add('walk');
-        this.mummy5.x = this.mummy5.width*4.3;
+        //this.mummy5.x = this.mummy5.width*4.3;
         
         this.mummy6 = game.add.sprite(
-        this.mummy1.width,
-        this.craftBackground1.height,
+        2450,
+        this.craftBackground1.height-20,
         'Anim6', 5);
         this.mummy6.scale.set(craftAnimBackgroundScale);
         this.mummy6.anchor.x = 0.5;
@@ -213,11 +213,11 @@ var StatePlace = {
         //this.mummy2.smoothed = false;
         //this.mummy2.fixedToCamera = true;
         this.anim6 = this.mummy6.animations.add('walk');
-        this.mummy6.x = this.mummy6.width*4.7;
+        //this.mummy6.x = this.mummy6.width*4.7;
         
         this.mummy7 = game.add.sprite(
-        this.mummy1.width,
-        this.craftBackground1.height,
+        2850,
+        this.craftBackground1.height-20,
         'Anim7', 5);
         this.mummy7.scale.set(craftAnimBackgroundScale);
         this.mummy7.anchor.x = 0.5;
@@ -225,22 +225,22 @@ var StatePlace = {
         //this.mummy2.smoothed = false;
         //this.mummy2.fixedToCamera = true;
         this.anim7 = this.mummy7.animations.add('walk');
-        this.mummy7.x = this.mummy7.width*6.5;
+        //this.mummy7.x = this.mummy7.width*6.5;
         
         this.mummy8 = game.add.sprite(
-        this.mummy1.width,
-        0,
+        3050,
+        this.craftBackground1.height/2,
         'Anim8', 5);
         this.mummy8.scale.set(craftAnimBackgroundScale);
         this.mummy8.anchor.x = 0.5;
-        this.mummy8.anchor.y =  0;
+        this.mummy8.anchor.y =  0.8;
         //this.mummy2.smoothed = false;
         //this.mummy2.fixedToCamera = true;
         this.anim8 = this.mummy8.animations.add('walk');
-        this.mummy8.x = this.mummy8.width*6.5;
+        //this.mummy8.x = this.mummy8.width*6.5;
         
         this.mummy9 = game.add.sprite(
-        this.mummy1.width,
+        3521,
         this.craftBackground1.height,
         'Anim9', 5);
         this.mummy9.scale.set(craftAnimBackgroundScale);
@@ -249,19 +249,19 @@ var StatePlace = {
         //this.mummy2.smoothed = false;
         //this.mummy2.fixedToCamera = true;
         this.anim9 = this.mummy9.animations.add('walk');
-        this.mummy9.x = this.mummy9.width*7.2;
+        //this.mummy9.x = this.mummy9.width*7.2;
         
         this.mummy10 = game.add.sprite(
-        this.mummy1.width,
+        3730,
         this.craftBackground1.height,
         'Anim10', 5);
         this.mummy10.scale.set(craftAnimBackgroundScale);
         this.mummy10.anchor.x = 0.4;
-        this.mummy10.anchor.y =  0.9;
+        this.mummy10.anchor.y =  1.01;
         //this.mummy2.smoothed = false;
         //this.mummy2.fixedToCamera = true;
         this.anim10 = this.mummy10.animations.add('walk');
-        this.mummy10.x = this.mummy10.width*7.3;
+        //this.mummy10.x = this.mummy10.width*7.3;
         
         AnimObject[0]=this.mummy1;
         AnimObject[1]=this.mummy2;
@@ -313,6 +313,7 @@ var StatePlace = {
         game.world.bringToTop(StickersUnderBody);
         game.world.bringToTop(StickerBody);
         game.world.bringToTop(StickersAboveBody);
+        game.world.bringToTop(this.mummy2);
         
         this.craftBackground2 = game.add.sprite(0, 0, 'placing_Backgroung2');
         this.craftBackground2.scale.setTo(craftBackgroundScale,craftBackgroundScale);
@@ -332,18 +333,13 @@ var StatePlace = {
         this.Logo.events.onInputOver.add(this.ToLandingPage, this.Logo); 
         this.Logo.fixedToCamera = true;
         
-        //Back button
-        this.BackButton = game.add.sprite( this.game.width, 0, 'creativeButtons');
-        this.BackButton.frame = 2;
-        this.BackButton.anchor.x = 0.5;
-        this.BackButton.anchor.y = 0.5;
-        this.BackButton.x =this.game.width-this.BackButton.width;
-        this.BackButton.y = this.BackButton.height;
-        this.BackButton.inputEnabled = true;
-        //this.PineconeBody.input.pixelPerfectOver = true; 
-        this.BackButton.events.onInputOver.add(this.BackToCraft, this.BackButton);   
-        this.BackButton.scale.setTo((scaleRatio/1.5),(scaleRatio/1.5));
-        this.BackButton.fixedToCamera = true;
+        this.SaveButton = gameButtons.addGenericButton("0", 0,0 , this.BackToCraft, this,"creativeButtons",2); 
+        this.SaveButton.anchor.x = 1.3;
+        this.SaveButton.anchor.y = -0.2;
+        this.SaveButton.x =  game.width;
+        this.SaveButton.y = 0;
+        this.SaveButton.scale.setTo(0.8,0.8);
+        this.SaveButton.fixedToCamera = true;
     },
     
     PlaceCreation: function () {
@@ -359,7 +355,17 @@ var StatePlace = {
         
     BackToCraft: function()
     {
-    game.state.start("StateDirectory");   
+    game.state.start("StateDirectory"); 
+    this.Clouds.stop();
+    this.Dandelion.stop();
+    this.Squirrel.stop();
+    this.Donkey.stop();
+    this.Frog.stop();
+    this.Turtle.stop();
+    this.Bee.stop();
+    this.Kite.stop();
+    this.lights.stop();
+    this.tea.stop();
     },
     
     ToLandingPage: function()

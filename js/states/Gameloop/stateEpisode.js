@@ -20,10 +20,15 @@ var StateEpisode = {
             this.Play.scale.setTo(scaleRatio,scaleRatio);
             this.Play.anchor.set(0.0, 0.0);
             }
+                else
+                {
+                game.time.events.add(video1.duration*1000, function() {video1.stop();game.state.start("StateDirectory");});
+                }
+        
         ExtroMenu = game.add.group();
         
         //Back button
-        this.BackButton = game.add.sprite( this.game.width, 0, 'creativeButtons');
+        /*this.BackButton = game.add.sprite( this.game.width, 0, 'creativeButtons');
         this.BackButton.frame = 2;
         this.BackButton.anchor.x = 0.5;
         this.BackButton.anchor.y = 0.5;
@@ -32,7 +37,7 @@ var StateEpisode = {
         this.BackButton.inputEnabled = true;
         //this.PineconeBody.input.pixelPerfectOver = true; 
         this.BackButton.events.onInputOver.add(this.startGame, this.BackButton);   
-        this.BackButton.scale.setTo((ButtonScale/1.5),(ButtonScale/1.5));
+        this.BackButton.scale.setTo((ButtonScale/1.5),(ButtonScale/1.5));*/
    
         this.Logo = game.add.sprite(0,0, 'daisylogo');
         this.Logo.scale.setTo(scaleRatio,scaleRatio);
@@ -51,7 +56,8 @@ var StateEpisode = {
     }, 
     
     StartVideoMobile: function () {   
-    this.Play.alpha = 0;      
+    this.Play.alpha = 0;
+    game.time.events.add(video1.duration*1000, function() {video1.stop();game.state.start("StateDirectory");}); 
     },
     
     ToLandingPage: function()

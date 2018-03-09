@@ -19,7 +19,7 @@ var StateParentsCorner = {
         
         var PDFButtonsPos_x = game.width/2;
         var PDFButtonsPos_y = game.height/2; 
-        var PDFButtonScale = scaleRatio/1.6;
+        var PDFButtonScale = 0.5;
         
         var Credits = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
         var TermsAndConditions = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
@@ -41,7 +41,7 @@ var StateParentsCorner = {
         this.game.height,
         this.TextSetUpButton, {param1: Credits,}, this);
         this.PlaceModeButton.anchor.setTo(0.5);
-        this.PlaceModeButton.scale.setTo(scaleRatio,scaleRatio);
+        this.PlaceModeButton.scale.setTo(ButtonScaleAdjustment,ButtonScaleAdjustment);
         this.PlaceModeButton.x = this.game.width/2 + this.PlaceModeButton.width;
         this.PlaceModeButton.y = this.game.height - this.PlaceModeButton.height;
         
@@ -50,7 +50,7 @@ var StateParentsCorner = {
         this.game.height,
         this.TextSetUpButton, {param1: TermsAndConditions,}, this);
         this.PlaceModeButton.anchor.setTo(0.5);
-        this.PlaceModeButton.scale.setTo(scaleRatio,scaleRatio);
+        this.PlaceModeButton.scale.setTo(ButtonScaleAdjustment,ButtonScaleAdjustment);
         this.PlaceModeButton.x = this.game.width/2 ;
         this.PlaceModeButton.y = this.game.height - this.PlaceModeButton.height;
         
@@ -59,7 +59,7 @@ var StateParentsCorner = {
         this.game.height,
         this.TextSetUpButton, {param1: privacystatement,}, this);
         this.PlaceModeButton.anchor.setTo(0.5);
-        this.PlaceModeButton.scale.setTo(scaleRatio,scaleRatio);
+        this.PlaceModeButton.scale.setTo(ButtonScaleAdjustment,ButtonScaleAdjustment);
         this.PlaceModeButton.x = this.game.width/2 - this.PlaceModeButton.width;
         this.PlaceModeButton.y = this.game.height - this.PlaceModeButton.height;
         
@@ -132,7 +132,7 @@ var StateParentsCorner = {
         
 
         titleText =  game.add.text(game.width/2, game.height/2, "", 
-    {   font: "32px Arial",
+    {   font: "16px Arial",
         fill: '#000099',
         backgroundColor: 'rgba(0,0,255,0.25)',
         align: "left", // the alignment of the text is independent of the bounds, try changing to 'center' or 'right'
@@ -143,17 +143,12 @@ var StateParentsCorner = {
         titleText.fill = "#ffffff";
         titleText.anchor.set(0.5, 0.5);
         
-        CreditsGroup.add(titleText);
-        this.BackButton = game.add.sprite( this.game.width, 0, 'creativeButtons');
-        this.BackButton.frame = 2;
-        this.BackButton.anchor.x = 0.5;
-        this.BackButton.anchor.y = 0.5;
-        this.BackButton.x =this.game.width-this.BackButton.width;
-        this.BackButton.y = this.BackButton.height;
-        this.BackButton.inputEnabled = true;
-        //this.PineconeBody.input.pixelPerfectOver = true; 
-        this.BackButton.events.onInputOver.add(this.ToLandingPage, this.BackButton);   
-        this.BackButton.scale.setTo((scaleRatio/1.5),(scaleRatio/1.5));
+        this.SaveButton = gameButtons.addGenericButton("0", 0,0 , this.startGame, this,"creativeButtons",2); 
+        this.SaveButton.anchor.x = 1.3;
+        this.SaveButton.anchor.y = -0.2;
+        this.SaveButton.x =  game.width;
+        this.SaveButton.y = 0;
+        this.SaveButton.scale.setTo(0.8,0.8);
         
         /*
         this.btnStart = gameButtons.addButton("play", 
@@ -173,8 +168,8 @@ var StateParentsCorner = {
         CreditsGroup.add(graphics);
         
         this.CloseButton = game.add.sprite(
-        this.game.width/6, 
-        this.game.height/6,
+        titleText.x, 
+        titleText.y, 
         'CloseButton');
         this.CloseButton.inputEnabled = true;
         //this.PineconeBody.input.pixelPerfectOver = true; 

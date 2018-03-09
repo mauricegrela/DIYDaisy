@@ -7,10 +7,14 @@ var isInPlaceMode = false;
 var isExtroVideoPlaying = false;
 var isInCompleteCraftMode = false;
 var IsInAlpha = false;
+var SelectedColor;
 var wrongTag = "";
 var gameButtons;
 var gameMedia;
-var SelectedColor;
+//UI
+var RightHangButtonOffset_X = 1;
+var RightHangButtonOffset_Y = 1;
+var ButtonScaleAdjustment = 1;
 
 
         var  canvas_height_max =900
@@ -18,10 +22,12 @@ var SelectedColor;
         var canvas_width = window.innerWidth * window.devicePixelRatio;
         var canvas_height = window.innerHeight * window.devicePixelRatio;
         var aspect_ratio = canvas_width / canvas_height;
-        if (aspect_ratio > 1) 
-             scaleRatio = canvas_height / canvas_height_max;
-                else 
-                 scaleRatio = canvas_width / canvas_width_max;
+        //if (aspect_ratio > 1) 
+             //scaleRatio = canvas_height / canvas_height_max;
+                //else 
+                 //scaleRatio = canvas_width / canvas_width_max;
+
+              scaleRatio =1;      
 
 //PLACE YOUR OWN GLOBALS HERE
 var isMobile;
@@ -393,18 +399,22 @@ if (isMobile>-1)
     if (isMobile==false) {
         //desktop laptop
         if (useLandscape == true) {
-            game = new Phaser.Game(window.innerWidth * window.devicePixelRatio, window.innerHeight * window.devicePixelRatio, Phaser.CANVAS, "ph_game");
+            game = new Phaser.Game(1024, 768, Phaser.CANVAS, "ph_game");
         } else { 
 
-            game = new Phaser.Game(window.innerWidth * window.devicePixelRatio, window.innerHeight * window.devicePixelRatio, Phaser.CANVAS, "ph_game");
+            game = new Phaser.Game(1024, 768, Phaser.CANVAS, "ph_game");
         }
 
     } else {
         //mobile device
-        game = new Phaser.Game(window.innerWidth * window.devicePixelRatio, window.innerHeight * window.devicePixelRatio, Phaser.CANVAS, "ph_game");
+        game = new Phaser.Game(1024, 768, Phaser.CANVAS, "ph_game");
     }
     
-      //game.scale.scaleMode = Phaser.ScaleManager.NO_SCALE; 
+
+    /*game.scale.fullScreenScaleMode = Phaser.ScaleManager.SHOW_ALL;
+    game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+    game.scale.refresh();   
+    game.scale.scaleMode = Phaser.ScaleManager.NO_SCALE; */
     
     if (isMobile==true) {
         if (useLandscape == true) {

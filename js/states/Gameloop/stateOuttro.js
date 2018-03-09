@@ -27,7 +27,7 @@ var StateOuttro = {
         
         video1 = game.add.video(ExtroVideoRef[game.rnd.integerInRange(0, 4)]);
         video1.play(true); 
-        video1.addToWorld(game.width/2, game.height/2, 0.5, 0.5, scaleRatio/1.2,scaleRatio/1.2); 
+        video1.addToWorld(game.width/2, game.height/2, 0.5, 0.5, 0.5,0.5);
 
        0/* this.btnStart = gameButtons.addButton("skip",game.width/2, game.height-100, this.startGame, this);
         this.btnStart.scale.setTo(scaleRatio,scaleRatio);

@@ -2,30 +2,34 @@ var StateDirectory = {
 
     preload: function () {
 
-        
+          
                 
-        if(this.game.device.desktop) {
+
 
         GameCenter_x = game.width-game.width/2.5;
         GameCenter_y = game.height/2;
         
         XPosition = game.width/2.5;
-        YPosition = game.height/2.2;
-        }
-            else
-            {
-        GameCenter_x = game.width-game.width/3.3;
-        GameCenter_y = game.height/2;
-        
-        XPosition = game.width/3.1;
-        YPosition = game.height/2.2;            
-            }
+        YPosition = game.height/2.8;
+
         
         game.load.audio("cameraSnap",'audio/sfx/camera.mp3');   
     }
 
     , create: function () {   
     
+        game.stage.backgroundColor = "#ffffff";
+
+
+        
+        
+        
+        StickersUnderBody = game.add.group();
+        StickerBody = game.add.group();
+        StickersAboveBody = game.add.group();
+        
+        NonCharacterBackgroundGroup = game.add.group();
+        
         this.camerasnap = game.add.audio("cameraSnap");
         
         BookScale = scaleRatio *1.1;
@@ -35,22 +39,22 @@ var StateDirectory = {
         this.craftBackground = game.add.sprite(0, 0, 'craft_Backgroung');  
         this.craftBackground.height = game.height;
         this.craftBackground.width = game.width;
-        
-        //Background Working
+        NonCharacterBackgroundGroup.add(this.craftBackground);
+        //Book background
         this.Background = game.add.sprite(game.width/2, game.height/2, 'DirectoryBackground');
         this.Background.anchor.set(0.5);
         this.Background.scale.setTo(BookScale,BookScale);
+        NonCharacterBackgroundGroup.add(this.Background);
         //this.Background.width =game.width; 
         //this.Background.height =game.height;
 
-        CharacterScaleAdjustment = 1;
+        CharacterScaleAdjustment = 0.7;
         CharacterGroup = game.add.group();
         
-        StickersUnderBody = game.add.group();
-        StickerBody = game.add.group();
-        StickersAboveBody = game.add.group();
         
-
+        GameCenter_x = this.Background.x+this.Background.width/5;
+        GameCenter_y = this.Background.y;
+        
         this.Body = game.add.sprite(GameCenter_x, GameCenter_y,ImageAssetArray[0]);
         this.Body.scale.setTo(scaleRatio*CharacterScaleAdjustment,scaleRatio*CharacterScaleAdjustment);
         this.Body.anchor.x = Pivot_X[0];
@@ -173,21 +177,20 @@ var StateDirectory = {
         ExtroMenu = game.add.group();
         
         ButtonScale = scaleRatio*1.3;
-        //Back button
-        this.BackButton = game.add.sprite( this.game.width, 0, 'creativeButtons');
-        this.BackButton.frame = 2;
-        this.BackButton.anchor.x = 0.5;
-        this.BackButton.anchor.y = 0.0;
-        this.BackButton.x =this.game.width-this.BackButton.width;
-        //this.BackButton.y = this.BackButton.height;
-        this.BackButton.inputEnabled = true;
-        //this.PineconeBody.input.pixelPerfectOver = true; 
-        this.BackButton.events.onInputOver.add(this.BackToCraft, this.BackButton);   
-        this.BackButton.scale.setTo((ButtonScale/1.5),(ButtonScale/1.5));
+
+        this.BackToCraftButton = gameButtons.addGenericButton("0", 0,0 , this.BackToCraft, this,"creativeButtons",2); 
+        this.BackToCraftButton.anchor.x = 1.3;
+        this.BackToCraftButton.anchor.y = -0.2;
+        this.BackToCraftButton.x =  game.width;
+        this.BackToCraftButton.y = 0;
+        this.BackToCraftButton.scale.setTo(0.8,0.8);
+        NonCharacterBackgroundGroup.add(this.BackToCraftButton);
         
         
-        //Butons
+        XPosition = this.Background.x-this.Background.width/5;
+        YPosition = this.Background.y-game.height/10;
         
+        //Butons      
         this.PlaceModeButton = game.add.sprite(XPosition,(YPosition), 'creativeButtons');   
         this.PlaceModeButton.frame = 0;
         this.PlaceModeButton.anchor.setTo(0.5);
@@ -195,6 +198,7 @@ var StateDirectory = {
         //this.PineconeBody.input.pixelPerfectOver = true; 
         this.PlaceModeButton.events.onInputOver.add(this.PlaceCreation, this.PlaceModeButton);   
         this.PlaceModeButton.scale.setTo((ButtonScale),(ButtonScale));
+        NonCharacterBackgroundGroup.add(this.PlaceModeButton);
         
         this.DownloadButton = game.add.sprite(XPosition-this.PlaceModeButton.width/2,(YPosition+this.PlaceModeButton.height), 'creativeButtons');   
         this.DownloadButton.frame = 1;
@@ -203,6 +207,7 @@ var StateDirectory = {
         //this.PineconeBody.input.pixelPerfectOver = true; 
         this.DownloadButton.events.onInputOver.add(this.SaveFile, this.DownloadButton);   
         this.DownloadButton.scale.setTo((ButtonScale),(ButtonScale));
+        NonCharacterBackgroundGroup.add(this.DownloadButton);
                 
         this.EpisodeButton = game.add.sprite(XPosition+this.PlaceModeButton.width/2,(YPosition+this.PlaceModeButton.height), 'creativeButtons');   
         this.EpisodeButton.frame = 3;
@@ -211,6 +216,7 @@ var StateDirectory = {
         //this.PineconeBody.input.pixelPerfectOver = true; 
         this.EpisodeButton.events.onInputOver.add(this.WatchEpisode, this.EpisodeButton);   
         this.EpisodeButton.scale.setTo((ButtonScale),(ButtonScale));
+        NonCharacterBackgroundGroup.add(this.EpisodeButton);
 
         this.Logo = game.add.sprite(0,0, 'daisylogo');
         this.Logo.scale.setTo(scaleRatio,scaleRatio);
@@ -218,40 +224,28 @@ var StateDirectory = {
         this.Logo.anchor.set(0);
         this.Logo.x =  this.Logo.width/4;
         this.Logo.y =  this.Logo.height/2;
-        this.Logo.events.onInputOver.add(this.ToLandingPage, this.Logo); 
-        
-        this.link = document.createElement('a');
-        this.link.href = this.game.canvas.toDataURL('image/png');
-        this.link.download = 'MyCreation.jpg';
-        document.body.appendChild(this.link);
-        //this.link.click();
-        document.body.removeChild(this.link);   
+        this.Logo.events.onInputOver.add(this.ToLandingPage, this.Logo);
+        NonCharacterBackgroundGroup.add(this.Logo); 
+          
         
         game.world.bringToTop(StickersUnderBody);
         game.world.bringToTop(StickerBody);
         game.world.bringToTop(StickersAboveBody);
         
         DownloadModalGroup = game.add.group();
-
-        poly = new Phaser.Polygon(0, 0, game.width,game.height);
-
-        graphics = game.add.graphics(0, 0);
-
-        graphics.beginFill(0xFF33ff);
-        graphics.drawPolygon(poly.points);
-        graphics.endFill();
-        
-        
+   
         //Download modal
         this.DownloadBackground = game.add.sprite(game.width/2,game.height/2, 'DownloadModal');  
         //this.DownloadBackground.height = game.height;
         //this.DownloadBackground.width = game.width;
-        this.DownloadBackground.scale.setTo(scaleRatio*2,scaleRatio*2);
+        this.DownloadBackground.scale.setTo(scaleRatio,scaleRatio);
         this.DownloadBackground.anchor.x = 0.5;
         this.DownloadBackground.anchor.y = 0.5;
         DownloadModalGroup.add(this.DownloadBackground);
         
-        this.CloseButton = game.add.sprite(this.DownloadBackground.x+this.DownloadBackground.width/2,this.DownloadBackground.y,'CloseButton');
+        this.CloseButton = game.add.sprite(
+            this.DownloadBackground.x+this.DownloadBackground.width/2,
+            this.DownloadBackground.y-this.DownloadBackground.height/2,'CloseButton');
         this.CloseButton.anchor.x = 1.0;
         this.CloseButton.anchor.y = 0.0;
         this.CloseButton.inputEnabled = true;
@@ -274,8 +268,6 @@ var StateDirectory = {
         
         
         DownloadModalGroup.visible = false;
-        
-
         
     },
     
@@ -312,12 +304,45 @@ var StateDirectory = {
     //game.state.start("StateImageDownload");
        // this.camerasnap.play();
         DownloadModalGroup.visible = false;
+        NonCharacterBackgroundGroup.visible = false;
+        
+        /*this.PlacableCollection[0]
+        this.PlacableCollection[1]
+        this.PlacableCollection[2]
+        this.PlacableCollection[3]
+        this.PlacableCollection[4]*/
+
+        for (let i = 0; i <= PlacableCollection.length-1; i+=1) 
+        {
+        
+            PlacableCollection[i].x = game.width/2;
+            PlacableCollection[i].y = game.height/2;
+        }
+        
+        //StickersUnderBody
+        //StickerBody
+        //StickersAboveBody
+        /*this.StickersUnderBody.forEachAlive(function(platform)    {        
+        platform.body.x =this.game.width/2
+        platform.body.y =this.game.height/2
+        };*/
+                                            
+
+        game.time.events.add(200, function() {
         this.link = document.createElement('a');
         this.link.href = this.game.canvas.toDataURL('image/png');
         this.link.download = 'MyCreation.jpg';
         document.body.appendChild(this.link);
         this.link.click();
         document.body.removeChild(this.link);
+        NonCharacterBackgroundGroup.visible = true;
+        for (let i = 0; i <= PlacableCollection.length-1; i+=1) 
+        {
+        
+            PlacableCollection[i].x = GameCenter_x;
+            PlacableCollection[i].y = GameCenter_y;
+        }
+        });
     }, 
 
     

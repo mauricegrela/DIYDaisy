@@ -2,39 +2,36 @@ var StateLoad = {
 
     preload: function () {
 
-this.game.scale.fullScreenScaleMode = Phaser.ScaleManager.SHOW_ALL;
-this.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
-this.game.scale.refresh();   
+
+        
 
 this.time.advacedTiming = true;       
         
 /////////////////////
 ////ParentsCorner////
 /////////////////////        
-game.load.image('FrontEndTile', 'images/backgrounds/landing-page-bg.PNG');
+        game.load.image('FrontEndTile', 'images/backgrounds/landing-page-bg.PNG');
         
 /////////////////////
 /////LandingPage/////
 /////////////////////        
-game.load.image('FrontEndTile', 'images/backgrounds/landing-page-bg.png');
+        game.load.image('FrontEndTile', 'images/backgrounds/landing-page-bg.png');
         
 /////////////////////
 //////Directory//////
 /////////////////////     
-game.load.image('DirectoryBackground', 'images/results/book.png');        
+        game.load.image('DirectoryBackground', 'images/results/book.png');        
         
 ////////////////
 /////Videos/////
-////////////////  
-        
+////////////////    
         var VideoBackground;
         //game.load.image('VideoBackGround', 'images/backgrounds/DragBackground.png');
         game.load.image('VideoBackGround', 'images/backgrounds/video-bg.PNG');
         
         var video1;
         game.load.video('Intro', 'videos/Intro/DaisyGBK_Intro_720.mp4');
-        
-        //Exptros which will pla 
+
         game.load.video('Extro1', 'videos/Extro/DaisyGBK_Extro1_720.mp4');
         game.load.video('Extro2', 'videos/Extro/DaisyGBK_Extro2_720.mp4');
         game.load.video('Extro3', 'videos/Extro/DaisyGBK_Extro3_720.mp4');
@@ -43,7 +40,6 @@ game.load.image('DirectoryBackground', 'images/results/book.png');
 
         //Default Video loaded 
         game.load.video('Episode', 'videos/PineCone_Animal/DaisyGBK_PineCon_Ani_720.mp4');
-
 
 ////////////////
 /////Mobile/////
@@ -81,20 +77,24 @@ game.load.image('DirectoryBackground', 'images/results/book.png');
         game.load.image('PineconeClothing_2', 'images/Pinecone/PineconeClothing_2.png');
         game.load.image('PineconeClothing_3', 'images/Pinecone/PineconeClothing_3.png');      
         game.load.image('PineconeClothing_4', 'images/Pinecone/PineconeClothing_4.png');
-      
+        
         game.load.spritesheet("Pinecone_Stickers", "images/ui/Pinecone_stickers.png", 182, 125, 24);
+        
 ////////////////
 ///////Leaf/////
 ////////////////         
-        game.load.image('RockBody', 'images/Rock/RockBody.png');     
+        game.load.image('RockBody', 'images/Rock/RockBody.png');  
+        
 ////////////////
 ///////Leaf/////
 ////////////////    
-        game.load.image('LeafBody', 'images/Leaf/LeafBody.png');  
+        game.load.image('LeafBody', 'images/Leaf/LeafBody.png');
+        
 ////////////////
 ///StickWand///
 ////////////////    
-        game.load.image('StickWandBody', 'images/StickWand/StickWandBody.png');   
+        game.load.image('StickWandBody', 'images/StickWand/StickWandBody.png');
+        
 ///////////////////////////
 //Carosel Stickers to load/
 ///////////////////////////
@@ -153,6 +153,17 @@ game.load.image('DirectoryBackground', 'images/results/book.png');
          game.load.image('DownloadModal', "images/results/download-modal.png");
          game.load.image('DownloadButton', "images/results/download.png");
         
+        //AudioLoad
+        game.load.audio("Clouds",'audio/sfx/01_Clouds_SFX.mp3');
+        game.load.audio("Dandelion",'audio/sfx/02_Dandelion_SFX.mp3');
+        game.load.audio("Squirrel",'audio/sfx/03_Squirrel_SFX.mp3');
+        game.load.audio("Donkey",'audio/sfx/04_Donkey_SFX.mp3');
+        game.load.audio("Frog",'audio/sfx/05_Frog_SFX.mp3');
+        game.load.audio("Turtle",'audio/sfx/06_Turtle_SFX.mp3');
+        game.load.audio("Bee",'audio/sfx/07_Bee_SFX.mp3');
+        game.load.audio("Kite",'audio/sfx/08_Kite_SFX.mp3');
+        game.load.audio("lights",'audio/sfx/09_lights_SFX.mp3');
+        game.load.audio("tea",'audio/sfx/10_tea_SFX.mp3');
         
         //Loading screen assets
         var loadingBackground = game.add.image(0, 0, "loadingBackground");  
@@ -166,23 +177,23 @@ game.load.image('DirectoryBackground', 'images/results/book.png');
 
         //center(empty);
         full.anchor.set(0, 0.5);
-        full.x = this.game.width - empty.width*2;
-        full.y = this.game.height-this.game.height/3;
+        full.x = this.game.width - full.width*1.35;
+        full.y = this.game.height/2 + this.game.height/6;
         //center(empty);
         empty.anchor.set(0, 0.5);
-        empty.x = this.game.width - empty.width*2;
-        empty.y = this.game.height-this.game.height/3;
+        empty.x = this.game.width - full.width*1.35;
+        empty.y = this.game.height/2 + this.game.height/6;
 
         game.load.setPreloadSprite(full);
         
         
         this.logo = this.add.sprite( full.x, full.y, 'LoadscreenAnim');
-        this.logo.anchor.set(0.4,0.4);
-        this.logo.x -= this.logo.width/2;
-        this.logo.y -= this.logo.height/3;
-        this.logo.scale.set(scaleRatio,scaleRatio);
+        this.logo.anchor.set(0.9,0.5);
+        this.logo.x = empty.x;
+        this.logo.y = empty.y-this.logo.width/3;
+        //this.logo.scale.set(scaleRatio,scaleRatio);
         this.logo.animations.add('shake');
-        this.logo.animations.play('shake', 30, true)
+        this.logo.animations.play('shake', 15, true)
     },
 
     create: function () {
