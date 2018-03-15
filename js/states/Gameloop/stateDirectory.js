@@ -9,8 +9,8 @@ var StateDirectory = {
         GameCenter_x = game.width-game.width/2.5;
         GameCenter_y = game.height/2;
         
-        XPosition = game.width/2.5;
-        YPosition = game.height/2.8;
+        XPosition = game.width/2.7;
+        YPosition = game.height/3.0;
 
         
         game.load.audio("cameraSnap",'audio/sfx/camera.mp3');   
@@ -187,8 +187,8 @@ var StateDirectory = {
         NonCharacterBackgroundGroup.add(this.BackToCraftButton);
         
         
-        XPosition = this.Background.x-this.Background.width/5;
-        YPosition = this.Background.y-game.height/10;
+        XPosition = this.Background.x-this.Background.width/5.5;
+        YPosition = this.Background.y-game.height/12;
         
         //Butons      
         this.PlaceModeButton = game.add.sprite(XPosition,(YPosition), 'creativeButtons');   
@@ -234,6 +234,11 @@ var StateDirectory = {
         
         DownloadModalGroup = game.add.group();
    
+        var graphics = game.add.graphics(0, 0);
+        graphics.beginFill(0x000000, 0.5);
+        graphics.drawRect(0, 0, this.game.width,this.game.height);
+        DownloadModalGroup.add(graphics);
+        
         //Download modal
         this.DownloadBackground = game.add.sprite(game.width/2,game.height/2, 'DownloadModal');  
         //this.DownloadBackground.height = game.height;
@@ -246,8 +251,8 @@ var StateDirectory = {
         this.CloseButton = game.add.sprite(
             this.DownloadBackground.x+this.DownloadBackground.width/2,
             this.DownloadBackground.y-this.DownloadBackground.height/2,'CloseButton');
-        this.CloseButton.anchor.x = 1.0;
-        this.CloseButton.anchor.y = 0.0;
+        this.CloseButton.anchor.x = 0.5;
+        this.CloseButton.anchor.y = 0.5;
         this.CloseButton.inputEnabled = true;
         //this.PineconeBody.input.pixelPerfectOver = true; 
         this.CloseButton.events.onInputOver.add( this.CloseButtonpress, this.CloseButton);   
@@ -265,14 +270,21 @@ var StateDirectory = {
         
         DownloadModalGroup.add(this.downloadButton);
         
-        
+
         
         DownloadModalGroup.visible = false;
+        
+        
+        
+
+    //window.graphics = graphics;
+
+        
         
     },
     
     BackToCraft: function () {
-    game.state.start("StateMain");  
+    game.state.start("stateMainLoad");  
         
     },
     
@@ -302,7 +314,7 @@ var StateDirectory = {
     CloseButtonpressed: function () {
    // DownloadModalGroup.visible = false;
     //game.state.start("StateImageDownload");
-       // this.camerasnap.play();
+        this.camerasnap.play();
         DownloadModalGroup.visible = false;
         NonCharacterBackgroundGroup.visible = false;
         

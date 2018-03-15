@@ -6,9 +6,8 @@ var StateTitle = {
         
         //game.load.image('Whiskers', testArray[0]);
             //Responsive text
-        GameCenter_x = game.width/3.5;
-        GameCenter_y = game.height/5; 
-        
+        GameCenter_x = game.width/2;
+        GameCenter_y = game.height/2.8;   
 
         
         //scaleRatio = window.devicePixelRatio ;
@@ -19,40 +18,42 @@ var StateTitle = {
         this.Background.anchor.x = 0.5;
         this.Background.anchor.y = 0.5;
 
-        this.btnStart = gameButtons.addButton("play", 
-        this.game.width, 
-        this.game.height,
-        this.startGame, this);
-        this.btnStart.anchor.x = 1;
-        this.btnStart.anchor.y =  1;
-        //this.btnStart.scale.setTo(ButtonScaleAdjustment,ButtonScaleAdjustment);
         
-        this.btnStart.x = this.game.width - this.btnStart.width*1.2;
-        this.btnStart.y = this.game.height/2 + this.game.height/5;
+        this.btnStart = game.add.sprite(0, 0 , 'PlayButton');
+        this.btnStart.anchor.x = 0.4;
+        this.btnStart.anchor.y =  0.4;
+        this.btnStart.inputEnabled = true;
+        this.btnStart.events.onInputOver.add(this.startGame, this.btnStart);   
+        this.btnStart.scale.setTo(1.5,1.5);
+        this.btnStart.x = this.game.width - this.btnStart.width;
+        this.btnStart.y = this.game.height - this.btnStart.height;        
+
+        this.btnParentsCorner = game.add.sprite(0,0, 'ParentsCorner');
+        this.btnParentsCorner.anchor.x = 0.5;
+        this.btnParentsCorner.anchor.y = 0.5;
+        this.btnParentsCorner.inputEnabled = true;
+        this.btnParentsCorner.events.onInputOver.add(this.ParentsCorner, this.btnParentsCorner);   
+        this.btnParentsCorner.x = this.btnParentsCorner.width;
+        this.btnParentsCorner.y = this.game.height-this.btnParentsCorner.height;
         
-        this.btnStart = gameButtons.addButton("parents",
-        this.game.width, 
-        this.game.height,
-        this.ParentsCorner, this);
-        this.btnStart.anchor.setTo(0.5);
-        //this.btnStart.scale.setTo(ButtonScaleAdjustment,ButtonScaleAdjustment);
-        this.btnStart.anchor.x = 1;
-        this.btnStart.anchor.y =  1;
-        this.btnStart.x = this.game.width - this.btnStart.width*1.2;
-        this.btnStart.y = this.game.height/2 + this.game.height/4;
-        
-        
+        this.BtnCBC = game.add.sprite(this.btnParentsCorner.width*2, this.game.height-this.btnParentsCorner.height, 'CBCButton');
+        this.BtnCBC.anchor.x = 0.5;
+        this.BtnCBC.anchor.y =  0.5;
+        this.BtnCBC.inputEnabled = true;
+        this.BtnCBC.events.onInputOver.add(this.Cornerer, this.BtnCBC);   
     },
 
     
     startGame: function () {     
-    game.state.start("StateIntroMovie");
+    game.state.start("StateMain");
     //game.state.start("StatePlace");
     //game.state.start("StateDirectory");
     }, 
     
     ParentsCorner: function () {
     game.state.start("StateParentsCorner");
+    }, 
+    Cornerer: function () {
     }, 
     
     update: function () {

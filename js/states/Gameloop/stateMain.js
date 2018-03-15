@@ -3,8 +3,7 @@ var StateMain = {
 ///////////REMEMBER TO REFRESH/////////////
 //////////////////////////////////////////
     preload: function () {        
-        GameCenter_x = game.width/2;
-        GameCenter_y = game.height/2.8;   
+
 
         isTakingPhoto = false;
         game.load.audio("drop",'audio/sfx/drop.mp3');
@@ -34,18 +33,9 @@ var StateMain = {
         StickersUnderBody = game.add.group();
         StickerBody = game.add.group();
         StickersAboveBody = game.add.group();
-        
-        //Character change buttons 
         CharacterStickerGroup = game.add.group();
-        
-        //Main button group 
         MainButtonGroup = game.add.group();
-
-        //  Create a Group that will sit above Group 1
-        //PlacableMenuGroup = game.add.group();  PROTOTYPE FOR THE ANIMATION
-        //Background elements
         BackgroundGroup = game.add.group();
-        
         buttongroup = game.add.group();
         
         //reset the score
@@ -65,15 +55,6 @@ var StateMain = {
         this.Logo.x =  this.Logo.width/4;
         this.Logo.y =  this.Logo.height/2;
         this.Logo.events.onInputOver.add(this.ToLandingPage, this.Logo); 
-        /*
-        //add sound buttons
-        this.btnMusic = gameButtons.addAudioButton("music", 20, 20, gameButtons.toggleMusic, this);
-        this.btnMusic.scale.setTo(scaleRatio,scaleRatio);
-        
-        this.btnSound = gameButtons.addAudioButton("sound", 20, 70, gameButtons.toggleSound, this);
-        this.btnSound.scale.setTo(scaleRatio,scaleRatio);
-        */
-        //define sounds here
         this.drop = game.add.audio("drop");
         
         //Images Variables
@@ -82,31 +63,16 @@ var StateMain = {
 ///////////////////////////////////
 ///CaroseleButtons Sticker Group///
 ///////////////////////////////////
-        
-        if(this.game.device.desktop == true){ }
-        
         this.SaveButton = gameButtons.addGenericButton("0", 0,0 , this.SaveClicked, this,"creativeButtons",1); 
         this.SaveButton.anchor.x = 1.3;
         this.SaveButton.anchor.y = -0.2;
         this.SaveButton.x =  game.width;
         this.SaveButton.y = 0;
         this.SaveButton.scale.setTo(0.8,0.8);
-        //Save Button
-        /*this.SaveButton = gameButtons.addGenericButton("0", game.width,0 , this.SaveClicked, this,"creativeButtons",1); 
-        this.SaveButton.anchor.x = 0.5;
-        this.SaveButton.anchor.y = 0.5;
-        this.SaveButton.x = game.width-this.SaveButton.width*RightHangButtonOffset_X;
-        this.SaveButton.y = this.SaveButton.height*RightHangButtonOffset_Y;
-        this.SaveButton.scale.setTo(scaleRatio,scaleRatio);
-        MainButtonGroup.add(this.SaveButton);*/
-        
-               
-        
 ///////////////////////////
 //character Sticker Group//
 ///////////////////////////
 //These are the sprites which the player can click to change the character they're playing with       
-        
         var ButtonsPos_x = game.width/2;
         var ButtonsPos_y = game.height;
             if (isMobile==true) 
@@ -118,14 +84,7 @@ var StateMain = {
                 var ButtonsScale = scaleRatio;
                 }
         var CharacterStickerScale = scaleRatio*1.2;
-        
-        //Character Carosels      
-        /*this.charactercarouselCharacter = game.add.sprite(game.width/2, game.height, 'StickerCaroselTab',0);
-        this.charactercarouselCharacter.scale.setTo(scaleRatio,scaleRatio);
-        this.charactercarouselCharacter.anchor.x = 0.5;
-        this.charactercarouselCharacter.anchor.y =  0.1;
-        this.charactercarouselCharacter.alpha = 0;
-*/
+
         GroupRefArrayCounter = 0;
         
         //Sticker Carosels        
@@ -142,21 +101,14 @@ var StateMain = {
         this.charactercarouselCharacter.anchor.x = 0.5;
         this.charactercarouselCharacter.anchor.y =  1;
         //StickerBody.add(this.charactercarouselStickers);
-        CharacterStickerGroup.add(this.charactercarouselCharacter);
-        
-        //character Carosels
-        this.charactercarousel= game.add.sprite(game.width/2, game.height, 'characterCaroselTab');
-        this.charactercarousel.anchor.x = 0.5;
-        this.charactercarousel.anchor.y =  1;
-        this.charactercarousel.scale.setTo(CharacterButtonScale,CharacterButtonScale);
-        CharacterStickerGroup.add(this.charactercarousel); 
+        CharacterStickerGroup.add(this.charactercarouselCharacter);        
         
         //Character Rock Stickers
         this.RockCharacter = game.add.sprite(ButtonsPos_x, ButtonsPos_y , 'Characterbuttons');   
         this.RockCharacter.inputEnabled = true;
         this.RockCharacter.frame = 1;
         this.RockCharacter.anchor.x = 0.5;
-        this.RockCharacter.anchor.y =  0.5;
+        this.RockCharacter.anchor.y =  0.7;
         this.RockCharacter.events.onInputOver.add(this.RockSticker, this.RockCharacter);   
         this.RockCharacter.scale.setTo(CharacterStickerScale,CharacterStickerScale);
         CharacterStickerGroup.add(this.RockCharacter);
@@ -176,8 +128,6 @@ var StateMain = {
         this.MainStickerButton.anchor.x = 0.0;
         this.MainStickerButton.anchor.y = -0.5;
         this.MainStickerButton.alpha = 0;
-
-        
         this.MainStickerButton.x -=this.MainStickerButton.width;
         
         this.MainResetButton = gameButtons.addGenericButton("0", MainButtonsPos_x, MainButtonsPos_y, this.StickerTurnOn, this,"TabButton",0);
@@ -185,20 +135,15 @@ var StateMain = {
         this.MainResetButton.anchor.x = 0.0;
         this.MainResetButton.anchor.y =  -0.5;
         this.MainResetButton.alpha = 0;
-        
         buttongroup.add(this.MainResetButton);
         buttongroup.add(this.MainStickerButton);
-        ///////////////////
-        
-        //this.RockCharacter.x = game.width/2-this.RockCharacter.height*2.5;  
-        //ButtonsPos_x = this.RockCharacter.x;
-        
+
         //Character Pinecone Stickers
         this.PineconeCharacter = game.add.sprite(ButtonsPos_x+this.RockCharacter.width*1.2, ButtonsPos_y , 'Characterbuttons');   
         this.PineconeCharacter.inputEnabled = true;
         this.PineconeCharacter.frame = 4;
         this.PineconeCharacter.anchor.x = 0.5;
-        this.PineconeCharacter.anchor.y =  0.5;
+        this.PineconeCharacter.anchor.y =  0.7;
         //this.PineconeBody.input.pixelPerfectOver = true; 
         this.PineconeCharacter.events.onInputOver.add(this.PineconeSticker, this.PineconeCharacter);   
         this.PineconeCharacter.scale.setTo(CharacterStickerScale,CharacterStickerScale);
@@ -209,7 +154,7 @@ var StateMain = {
         this.MobileCharacter.inputEnabled = true;
         this.MobileCharacter.frame = 0;
         this.MobileCharacter.anchor.x = 0.5;
-        this.MobileCharacter.anchor.y =  0.5;
+        this.MobileCharacter.anchor.y = 0.7;
         //this.PineconeBody.input.pixelPerfectOver = true; 
         this.MobileCharacter.events.onInputOver.add(this.MobileSticker, this.MobileCharacter);   
         this.MobileCharacter.scale.setTo(CharacterStickerScale,CharacterStickerScale);
@@ -220,7 +165,7 @@ var StateMain = {
         this.SmudgeStickCharacter.inputEnabled = true;
         this.SmudgeStickCharacter.frame = 3;
         this.SmudgeStickCharacter.anchor.x = 0.5;
-        this.SmudgeStickCharacter.anchor.y =  0.5;
+        this.SmudgeStickCharacter.anchor.y = 0.7;
         this.SmudgeStickCharacter.events.onInputOver.add(this.LeafSticker, this.SmudgeStickCharacter);   
         this.SmudgeStickCharacter.scale.setTo(CharacterStickerScale,CharacterStickerScale);
         CharacterStickerGroup.add(this.SmudgeStickCharacter);
@@ -231,7 +176,7 @@ var StateMain = {
         this.StickWandCharacter.inputEnabled = true;
         this.StickWandCharacter.frame = 2;
         this.StickWandCharacter.anchor.x = 0.5;
-        this.StickWandCharacter.anchor.y =  0.5;
+        this.StickWandCharacter.anchor.y = 0.7;
         //this.PineconeBody.input.pixelPerfectOver = true; 
         this.StickWandCharacter.events.onInputOver.add(this.StickWandSticker, this.StickWandCharacter);   
         this.StickWandCharacter.scale.setTo(CharacterStickerScale,CharacterStickerScale);
@@ -604,9 +549,9 @@ var StateMain = {
         game.world.bringToTop(CharacterStickerGroup);
         game.world.bringToTop(buttongroup);
         //init the music
-        gameMedia.updateMusic();        
+        //gameMedia.updateMusic();        
         //init the sound buttons
-        gameButtons.updateButtons();
+        //gameButtons.updateButtons();
         //Set the outrovideo
         vidGroup = game.add.group();
         //Set the Episoderovideo
@@ -616,8 +561,14 @@ var StateMain = {
         
         game.input.addMoveCallback(this.paint, this);  
         
-
-
+        if(isFirstCharaterSelected == false)
+        {
+        CharacterStickerGroup.visible = true;
+        ImageGroupReference[GroupRefArrayCounter].visible = false;
+        this.charactercarouselStickers.visible = false;
+        this.CaroselArrow_Left.visible = false;
+        this.CaroselArrow_Right.visible = false;
+        }
     },      
     
     ToLandingPage: function()
@@ -1244,13 +1195,16 @@ PineconeSticker: function () {
 //Section Sticekrs//
 ////////////////////
     StickerTurnOn: function () {
-        CharacterStickerGroup.visible = false;
-        ImageGroupReference[GroupRefArrayCounter].visible = true;
-        this.charactercarouselStickers.visible = true;
-        this.CaroselArrow_Left.visible = true;
-        this.CaroselArrow_Right.visible = true;
-        //isAddingPaint = false;
-        //isAddingSticker = true;
+            if(isFirstCharaterSelected == true)
+            {
+            CharacterStickerGroup.visible = false;
+            ImageGroupReference[GroupRefArrayCounter].visible = true;
+            this.charactercarouselStickers.visible = true;
+            this.CaroselArrow_Left.visible = true;
+            this.CaroselArrow_Right.visible = true;
+            //isAddingPaint = false;
+            //isAddingSticker = true;
+            }
         },
     
     
@@ -1265,7 +1219,7 @@ PineconeSticker: function () {
     },
     
     SaveClicked: function () { 
-        game.state.start("StateOuttro");
+        game.state.start("StateDirectory");
     },
     
     BackToCharacterSelect: function () {game.state.start("StateCharacterSelect")},

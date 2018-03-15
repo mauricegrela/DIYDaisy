@@ -11,6 +11,7 @@ this.time.advacedTiming = true;
 ////ParentsCorner////
 /////////////////////        
         game.load.image('FrontEndTile', 'images/backgrounds/landing-page-bg.PNG');
+        game.load.image('ParentsCornerBG', 'images/backgrounds/parent-corner-bg.jpg');
         
 /////////////////////
 /////LandingPage/////
@@ -102,7 +103,7 @@ this.time.advacedTiming = true;
         game.load.image('craft_Backgroung', 'images/backgrounds/Background_1.png');
         
         //Background for character movemeng 
-        game.load.image('placement_Background', 'images/backgrounds/DragBackground.png');
+       ///game.load.image('placement_Background', 'images/backgrounds/DragBackground.png');
         
         //Sticker Tab
         game.load.spritesheet('StickerCaroselTab', 'images/ui/diy-tabs.png', 952, 268, 2);
@@ -138,6 +139,7 @@ this.time.advacedTiming = true;
         game.load.image("StickWandPDF", "images/parentcorner/StickWandPDF.png");
         
         //UI Assets
+        
         game.load.spritesheet("buttons", "images/ui/buttons-red@2x.png", 132, 37);
         game.load.spritesheet("soundButtons", "images/ui/soundButtons-blue.png", 22, 22, 4);
         game.load.image("daisylogo", "images/ui/daisylogo.png");
@@ -148,7 +150,10 @@ this.time.advacedTiming = true;
         game.load.audio("elephant", "audio/sfx/elephant.mp3");  
         //Object UI
         game.load.spritesheet("Characterbuttons", "images/ui/Objects_UI.png", 120, 120);
-    
+        //Front end issue 
+        game.load.image("PlayButton", "images/ui/PlayButton.png");
+        game.load.image("ParentsCorner", "images/ui/info-button.png");
+        game.load.image("CBCButton", "images/ui/cbc.png");
         //Placement
          game.load.image('DownloadModal', "images/results/download-modal.png");
          game.load.image('DownloadButton', "images/results/download.png");

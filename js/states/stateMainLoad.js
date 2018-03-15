@@ -2,6 +2,20 @@ var stateMainLoad = {
 
     preload: function () {
         
+        isFirstCharaterSelected = true;
+        
+         game.load.audio("drop",'audio/sfx/drop.mp3');
+            if(IsPlacingMobile == true)
+            { 
+        GameCenter_x = game.width/2;
+        GameCenter_y = game.height/2.4;  
+            }
+                else
+                {
+            GameCenter_x = game.width/2;
+                    GameCenter_y = game.height/2.8;  
+                }
+        
         if(IsPlacingMobile == true)
             {
                 game.load.image('Mobile_1', 'images/Mobile/Mobile_1.png');
@@ -45,6 +59,7 @@ var stateMainLoad = {
                     ImageReference[4] = 'MobileBody';
                     ImageReference[5] = 'MobileBody';
                     ImageReference[6] = 'MobileBody';
+                    ImageReference[7] = 'MobileBody';
 
                 //////////////////////////
                 ////Sticker Body//////////
@@ -106,7 +121,7 @@ var stateMainLoad = {
                 //////////////////////////
                         StickerDepth[0]=true;
                         StickerDepth[1]=true;
-                        StickerDepth[2]=false;
+                        StickerDepth[2]=true;
                         StickerDepth[3]=true;
                         StickerDepth[4]=true;
                         StickerDepth[5]=true;
@@ -227,6 +242,7 @@ var stateMainLoad = {
                     ImageReference[4] = 'PineconeBody';
                     ImageReference[5] = 'PineconeBody';
                     ImageReference[6] = 'PineconeBody';
+                    ImageReference[7] = 'PineconeBody';
                 
                 //////////////////////////
                 ////Sticker Body//////////
@@ -382,7 +398,7 @@ var stateMainLoad = {
                 ImageReference[4] = 'RockBody';
                 ImageReference[5] = 'RockBody';
                 ImageReference[6] = 'RockBody';
-                
+                ImageReference[7] = 'RockBody';
             ///////////////////////////
             ////Sticker Body//////////
             ///////////////////////////
@@ -532,7 +548,7 @@ var stateMainLoad = {
                 ImageReference[4] = 'LeafBody';
                 ImageReference[5] = 'LeafBody';
                 ImageReference[6] = 'LeafBody';
-                
+                ImageReference[7] = 'LeafBody';
 
             ///////////////////////////
             ////Sticker Body//////////
@@ -690,7 +706,7 @@ var stateMainLoad = {
                 ImageReference[4] = 'StickWandBody';
                 ImageReference[5] = 'StickWandBody';
                 ImageReference[6] = 'StickWandBody';
-                
+                ImageReference[7] = 'StickWandBody';
 
             ///////////////////////////
             ////Sticker Body//////////
@@ -808,7 +824,7 @@ var stateMainLoad = {
                 Pivot_X [27]=0.5;
                 
 
-                game.load.video('Episode', 'videos/Forest_Mobile/DaisyGBK_ForestMob_720.mp4');
+                game.load.video('Episode', 'videos/Rainbow_Wands/DaisyGBK_RainWand_720.mp4');
                 
                 IsPlacingStickWand = false;
                 

@@ -1,16 +1,7 @@
 var StatePlace = {
 
     preload: function () {        
-        game.load.audio("Clouds",'audio/sfx/01_Clouds_SFX.mp3');
-        game.load.audio("Dandelion",'audio/sfx/02_Dandelion_SFX.mp3');
-        game.load.audio("Squirrel",'audio/sfx/03_Squirrel_SFX.mp3');
-        game.load.audio("Donkey",'audio/sfx/04_Donkey_SFX.mp3');
-        game.load.audio("Frog",'audio/sfx/05_Frog_SFX.mp3');
-        game.load.audio("Turtle",'audio/sfx/06_Turtle_SFX.mp3');
-        game.load.audio("Bee",'audio/sfx/07_Bee_SFX.mp3');
-        game.load.audio("Kite",'audio/sfx/08_Kite_SFX.mp3');
-        game.load.audio("lights",'audio/sfx/09_lights_SFX.mp3');
-        game.load.audio("tea",'audio/sfx/10_tea_SFX.mp3');
+
         
     }
 
@@ -32,6 +23,9 @@ var StatePlace = {
         this.craftBackground1.width = this.game.height*5.3;
         
         game.world.setBounds(0, 0, this.craftBackground1.width, this.craftBackground1.height);
+        
+        this.game.camera.x =this.craftBackground1.width/2.7;
+        //this.game.camera.y
         
         this.cursors = game.input.keyboard.createCursorKeys();
         

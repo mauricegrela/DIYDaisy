@@ -27,11 +27,11 @@ var StateParentsCorner = {
         
         
                 
-        this.craftBackground1 = game.add.sprite(0, 0, 'VideoBackGround');
+        this.craftBackground1 = game.add.sprite(0, 0, 'ParentsCornerBG');
         this.craftBackground1.height = this.game.height;
         this.craftBackground1.width = this.game.width;
 
-        
+        CharacterGroup = game.add.group();
         
         ////////////////
         //Text buttons//
@@ -43,7 +43,8 @@ var StateParentsCorner = {
         this.PlaceModeButton.anchor.setTo(0.5);
         this.PlaceModeButton.scale.setTo(ButtonScaleAdjustment,ButtonScaleAdjustment);
         this.PlaceModeButton.x = this.game.width/2 + this.PlaceModeButton.width;
-        this.PlaceModeButton.y = this.game.height - this.PlaceModeButton.height;
+        this.PlaceModeButton.y = this.game.height - this.PlaceModeButton.height*3.5;
+        CharacterGroup.add(this.PlaceModeButton);
         
         this.PlaceModeButton = gameButtons.addButton("terms and conditions",
         this.game.width, 
@@ -52,7 +53,8 @@ var StateParentsCorner = {
         this.PlaceModeButton.anchor.setTo(0.5);
         this.PlaceModeButton.scale.setTo(ButtonScaleAdjustment,ButtonScaleAdjustment);
         this.PlaceModeButton.x = this.game.width/2 ;
-        this.PlaceModeButton.y = this.game.height - this.PlaceModeButton.height;
+        this.PlaceModeButton.y = this.game.height - this.PlaceModeButton.height*3.5;
+        CharacterGroup.add(this.PlaceModeButton);
         
         this.PlaceModeButton = gameButtons.addButton("privacy",
         this.game.width, 
@@ -61,11 +63,11 @@ var StateParentsCorner = {
         this.PlaceModeButton.anchor.setTo(0.5);
         this.PlaceModeButton.scale.setTo(ButtonScaleAdjustment,ButtonScaleAdjustment);
         this.PlaceModeButton.x = this.game.width/2 - this.PlaceModeButton.width;
-        this.PlaceModeButton.y = this.game.height - this.PlaceModeButton.height;
+        this.PlaceModeButton.y = this.game.height - this.PlaceModeButton.height*3.5;
+        CharacterGroup.add(this.PlaceModeButton);
         
         
         
-        CharacterGroup = game.add.group();
 
         //Character Rock Stickers
         this.RockCharacter = game.add.sprite(PDFButtonsPos_x, PDFButtonsPos_y , 'RockPDF');
@@ -130,18 +132,40 @@ var StateParentsCorner = {
         this.Logo.y =  this.Logo.height/2;
         this.Logo.events.onInputOver.add(this.ToLandingPage, this.Logo); 
         
+        /*var graphics = game.add.graphics(game.width/2, game.height/2);
+        graphics.anchor.setTo(0.5);
+        graphics.beginFill(0xffffff, 0.8);
+        graphics.drawRect(game.width/2, game.height/2, game.width/2,game.height/2);
+        CreditsGroup.add(graphics);*/
 
-        titleText =  game.add.text(game.width/2, game.height/2, "", 
-    {   font: "16px Arial",
-        fill: '#000099',
-        backgroundColor: 'rgba(0,0,255,0.25)',
-        align: "left", // the alignment of the text is independent of the bounds, try changing to 'center' or 'right'
-        boundsAlignH: "left", 
-        boundsAlignV: "top", 
-        wordWrap: true, wordWrapWidth: game.width/2 });
-        //text2.lineSpacing = 40;
-        titleText.fill = "#ffffff";
+        TextFill =  game.add.text(game.width-game.width/2, game.height/2, "", 
+        {   font: "16px Arial",
+            fill: 'rgba(255, 255, 255, 0.75)',
+            backgroundColor: 'rgba(255, 255, 255, 0.75)',
+            align: "center", // the alignment of the text is independent of the bounds, try changing to 'center' or 'right'
+            boundsAlignH: "center", 
+            boundsAlignV: "center", 
+            wordWrap: true, wordWrapWidth: game.width/2
+        });
+        
+        TextFill.fill = 'rgba(68, 136, 170, 0.0)';
+        TextFill.anchor.set(0.5, 0.5);
+        //TextFill.width = 20;
+        CreditsGroup.add(TextFill);
+        
+        
+        titleText =  game.add.text(game.width-game.width/2, game.height/2, "", 
+        {   font: "16px Arial",
+            //fill: '#333333',
+            backgroundColor: 'rgba(99, 99, 99, 0.0)',
+            align: "center", // the alignment of the text is independent of the bounds, try changing to 'center' or 'right'
+            boundsAlignH: "center", 
+            boundsAlignV: "center", 
+            wordWrap: true, wordWrapWidth: game.width/2
+        });
+        titleText.fill = '#333333';
         titleText.anchor.set(0.5, 0.5);
+        CreditsGroup.add(titleText);
         
         this.SaveButton = gameButtons.addGenericButton("0", 0,0 , this.startGame, this,"creativeButtons",2); 
         this.SaveButton.anchor.x = 1.3;
@@ -150,29 +174,15 @@ var StateParentsCorner = {
         this.SaveButton.y = 0;
         this.SaveButton.scale.setTo(0.8,0.8);
         
-        /*
-        this.btnStart = gameButtons.addButton("play", 
-        this.game.width/2, 
-        this.game.height/3, this.startGame, this);
-        this.btnStart.scale.setTo(scaleRatio,scaleRatio);
-        titleText.anchor.set(0.5, 0.5);
-        this.btnStart.x = this.game.width/2+this.btnStart.width/2;
-        */
-        var graphics = game.add.graphics(100, 100);
-
-        // draw a rectangle
-        graphics.lineStyle(2, 0x0000FF, 1);
-        graphics.drawRect(50, 250, 100, 100);
-        graphics.visible = false;
-        window.graphics = graphics;
-        CreditsGroup.add(graphics);
+        
         
         this.CloseButton = game.add.sprite(
-        titleText.x, 
-        titleText.y, 
+        game.width/2+game.width/3.7,
+        game.height/2-game.height/6,
         'CloseButton');
+        this.CloseButton.anchor.x = 0.5;
+        this.CloseButton.anchor.y = 0.5;
         this.CloseButton.inputEnabled = true;
-        //this.PineconeBody.input.pixelPerfectOver = true; 
         this.CloseButton.events.onInputOver.add( this.CloseButtonpress, this.CloseButton);   
         this.CloseButton.scale.setTo(scaleRatio,scaleRatio);
  
@@ -187,6 +197,8 @@ var StateParentsCorner = {
     
     
     CloseButtonpress: function () {
+    TextFill.width = TextFill.width-55;
+    TextFill.height = TextFill.height-55;
     CreditsGroup.visible = false;
     CharacterGroup.visible = true;
     }, 
@@ -202,12 +214,14 @@ var StateParentsCorner = {
     },
     
     TextSetUpButton: function () {
-    //this.titleText.text.set = "sss";
     titleText.setText(this.param1);
+    TextFill.setText(this.param1);
+    TextFill.width = TextFill.width+55;
+    TextFill.height = TextFill.height+55;
     CreditsGroup.visible = true;
     CharacterGroup.visible = false;
-    this.CloseButton.x =0;
-    this.CloseButton.y = 0;
+    //this.CloseButton.x =0;
+    //this.CloseButton.y = 0;
     }, 
     
     update: function () {

@@ -3,6 +3,7 @@ var score;
 var highScore;
 var soundOn = true;
 var musicOn = true;
+var isFirstCharaterSelected = false;
 var isInPlaceMode = false;
 var isExtroVideoPlaying = false;
 var isInCompleteCraftMode = false;
@@ -14,7 +15,7 @@ var gameMedia;
 //UI
 var RightHangButtonOffset_X = 1;
 var RightHangButtonOffset_Y = 1;
-var ButtonScaleAdjustment = 1;
+var ButtonScaleAdjustment = 1.5;
 
 
         var  canvas_height_max =900
@@ -62,6 +63,7 @@ var ImageGroupReference = //Images
 
 var ImageReference = //Images
     [
+    'PineconeBody',
     'PineconeBody',
     'PineconeBody',
     'PineconeBody',
@@ -409,7 +411,7 @@ if (isMobile>-1)
         //mobile device
         game = new Phaser.Game(1024, 768, Phaser.CANVAS, "ph_game");
     }
-    
+
 
     /*game.scale.fullScreenScaleMode = Phaser.ScaleManager.SHOW_ALL;
     game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;

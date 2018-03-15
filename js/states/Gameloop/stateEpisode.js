@@ -12,7 +12,7 @@ var StateEpisode = {
 
         video1 = game.add.video("Episode");
         video1.play(true); 
-        video1.addToWorld(game.width/2, game.height/2, 0.5, 0.5, scaleRatio/1.2,scaleRatio/1.2); 
+        video1.addToWorld(game.width/2, game.height/2, 0.5, 0.5, 0.6,0.6);
 
             if(this.game.device.desktop == false)
             { 
@@ -27,17 +27,13 @@ var StateEpisode = {
         
         ExtroMenu = game.add.group();
         
-        //Back button
-        /*this.BackButton = game.add.sprite( this.game.width, 0, 'creativeButtons');
-        this.BackButton.frame = 2;
-        this.BackButton.anchor.x = 0.5;
-        this.BackButton.anchor.y = 0.5;
-        this.BackButton.x =this.game.width-this.BackButton.width;
-        this.BackButton.y = this.BackButton.height;
-        this.BackButton.inputEnabled = true;
-        //this.PineconeBody.input.pixelPerfectOver = true; 
-        this.BackButton.events.onInputOver.add(this.startGame, this.BackButton);   
-        this.BackButton.scale.setTo((ButtonScale/1.5),(ButtonScale/1.5));*/
+        this.SaveButton = gameButtons.addGenericButton("0", 0,0 , this.backToCrafting, this,"creativeButtons",2); 
+        this.SaveButton.anchor.x = 1.3;
+        this.SaveButton.anchor.y = -0.2;
+        this.SaveButton.x =  game.width;
+        this.SaveButton.y = 0;
+        this.SaveButton.scale.setTo(0.8,0.8);
+        this.SaveButton.fixedToCamera = true;
    
         this.Logo = game.add.sprite(0,0, 'daisylogo');
         this.Logo.scale.setTo(scaleRatio,scaleRatio);
@@ -49,7 +45,7 @@ var StateEpisode = {
     },
     
     
-    startGame: function () {  
+    backToCrafting: function () {  
         video1.stop();
         game.state.start("StateDirectory");
         //
