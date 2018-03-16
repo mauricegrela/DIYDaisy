@@ -13,7 +13,7 @@ var StateDirectory = {
         YPosition = game.height/3.0;
 
         
-        game.load.audio("cameraSnap",'audio/sfx/camera.mp3');   
+
     }
 
     , create: function () {   
@@ -31,6 +31,10 @@ var StateDirectory = {
         NonCharacterBackgroundGroup = game.add.group();
         
         this.camerasnap = game.add.audio("cameraSnap");
+        
+        this.CameraClickPromt = game.add.audio("SaveButtonPressed");
+
+        this.ConfirmSoundEffect = game.add.audio("StartOverConfirm");
         
         BookScale = scaleRatio *1.1;
         
@@ -178,14 +182,13 @@ var StateDirectory = {
         
         ButtonScale = scaleRatio*1.3;
 
-        this.BackToCraftButton = gameButtons.addGenericButton("0", 0,0 , this.BackToCraft, this,"creativeButtons",2); 
+        this.BackToCraftButton = gameButtons.addGenericButton("0", 0,0 , this.BackToCraftConfirm, this,"creativeButtons",2); 
         this.BackToCraftButton.anchor.x = 1.3;
         this.BackToCraftButton.anchor.y = -0.2;
         this.BackToCraftButton.x =  game.width;
         this.BackToCraftButton.y = 0;
         this.BackToCraftButton.scale.setTo(0.8,0.8);
         NonCharacterBackgroundGroup.add(this.BackToCraftButton);
-        
         
         XPosition = this.Background.x-this.Background.width/5.5;
         YPosition = this.Background.y-game.height/12;
@@ -196,11 +199,11 @@ var StateDirectory = {
         this.PlaceModeButton.anchor.setTo(0.5);
         this.PlaceModeButton.inputEnabled = true;
         //this.PineconeBody.input.pixelPerfectOver = true; 
-        this.PlaceModeButton.events.onInputOver.add(this.PlaceCreation, this.PlaceModeButton);   
+        this.PlaceModeButton.events.onInputOver.add(this.PlaceCreation, this.PlaceModeButton)  
         this.PlaceModeButton.scale.setTo((ButtonScale),(ButtonScale));
         NonCharacterBackgroundGroup.add(this.PlaceModeButton);
         
-        this.DownloadButton = game.add.sprite(XPosition-this.PlaceModeButton.width/2,(YPosition+this.PlaceModeButton.height), 'creativeButtons');   
+        this.DownloadButton = game.add.sprite(XPosition,(YPosition+this.PlaceModeButton.height), 'creativeButtons');   
         this.DownloadButton.frame = 1;
         this.DownloadButton.anchor.setTo(0.5);
         this.DownloadButton.inputEnabled = true;
@@ -208,30 +211,23 @@ var StateDirectory = {
         this.DownloadButton.events.onInputOver.add(this.SaveFile, this.DownloadButton);   
         this.DownloadButton.scale.setTo((ButtonScale),(ButtonScale));
         NonCharacterBackgroundGroup.add(this.DownloadButton);
-                
-        this.EpisodeButton = game.add.sprite(XPosition+this.PlaceModeButton.width/2,(YPosition+this.PlaceModeButton.height), 'creativeButtons');   
-        this.EpisodeButton.frame = 3;
-        this.EpisodeButton.anchor.setTo(0.5);
-        this.EpisodeButton.inputEnabled = true;
-        //this.PineconeBody.input.pixelPerfectOver = true; 
-        this.EpisodeButton.events.onInputOver.add(this.WatchEpisode, this.EpisodeButton);   
-        this.EpisodeButton.scale.setTo((ButtonScale),(ButtonScale));
-        NonCharacterBackgroundGroup.add(this.EpisodeButton);
 
         this.Logo = game.add.sprite(0,0, 'daisylogo');
         this.Logo.scale.setTo(scaleRatio,scaleRatio);
         this.Logo.inputEnabled = true;
-        this.Logo.anchor.set(0);
+        this.Logo.anchor.set(0,0.4);
         this.Logo.x =  this.Logo.width/4;
         this.Logo.y =  this.Logo.height/2;
         this.Logo.events.onInputOver.add(this.ToLandingPage, this.Logo);
         NonCharacterBackgroundGroup.add(this.Logo); 
-          
         
         game.world.bringToTop(StickersUnderBody);
         game.world.bringToTop(StickerBody);
         game.world.bringToTop(StickersAboveBody);
         
+///////////////////////////
+//////DownloadGroup////////
+///////////////////////////
         DownloadModalGroup = game.add.group();
    
         var graphics = game.add.graphics(0, 0);
@@ -259,6 +255,7 @@ var StateDirectory = {
         this.CloseButton.scale.setTo(scaleRatio,scaleRatio);
         DownloadModalGroup.add(this.CloseButton);
         
+        
         this.downloadButton = game.add.sprite(game.width/2,game.height/2, 'DownloadButton');
         this.downloadButton.anchor.x = 0.5;
         this.downloadButton.anchor.y = 0.5;
@@ -267,30 +264,75 @@ var StateDirectory = {
         this.downloadButton.events.onInputOver.add(this.CloseButtonpressed, this.downloadButton);   
         this.downloadButton.scale.setTo(scaleRatio,scaleRatio);
         
-        
         DownloadModalGroup.add(this.downloadButton);
-        
 
-        
         DownloadModalGroup.visible = false;
         
+///////////////////////////
+///////Confirm Back////////
+///////////////////////////
+        ConfirmBackGroup = game.add.group();
+   
+        var graphics = game.add.graphics(0, 0);
+        graphics.beginFill(0x000000, 0.5);
+        graphics.drawRect(0, 0, this.game.width,this.game.height);
+        ConfirmBackGroup.add(graphics);
+        
+        //Download modal
+        this.ConfirmBackground = game.add.sprite(game.width/2,game.height/2, 'DownloadModal');  
+        //this.DownloadBackground.height = game.height;
+        //this.DownloadBackground.width = game.width;
+        this.ConfirmBackground.scale.setTo(scaleRatio,scaleRatio);
+        this.ConfirmBackground.anchor.x = 0.5;
+        this.ConfirmBackground.anchor.y = 0.5;
+        ConfirmBackGroup.add(this.ConfirmBackground);
         
         
-
-    //window.graphics = graphics;
-
+        this.YesButton = game.add.sprite(game.width/2,game.height/2, 'ThumbsDown');
+        this.YesButton.anchor.x = 0;
+        this.YesButton.anchor.y = 0.5;
+        this.YesButton.inputEnabled = true;
+        //this.PineconeBody.input.pixelPerfectOver = true; 
+        this.YesButton.events.onInputOver.add(this.CloseConfirmButtonpress, this.YesButton);   
+        //this.YesButton.scale.setTo(1.8,1.8);
+        ConfirmBackGroup.add(this.YesButton);
         
+        this.NoButton = game.add.sprite(game.width/2,game.height/2, 'ThumbsUp');
+        this.NoButton.anchor.x = 1;
+        this.NoButton.anchor.y = 0.5;
+        this.NoButton.inputEnabled = true;
+        //this.PineconeBody.input.pixelPerfectOver = true; 
+        this.NoButton.events.onInputOver.add(this.BackToCraft, this.NoButton);   
+        //this.NoButton.scale.setTo(1.8,1.8);
+        ConfirmBackGroup.add(this.NoButton);
+        ConfirmBackGroup.visible = false;
+    },
         
+    
+    CloseConfirmButtonpress: function () {
+    game.sound.stopAll(); 
+    ConfirmBackGroup.visible = false;
+    }, 
+    
+    BackToCraftConfirm: function () {
+    ConfirmBackGroup.visible = true;
+    game.sound.stopAll();   
+    this.ConfirmSoundEffect.play();
     },
     
     BackToCraft: function () {
-    game.state.start("stateMainLoad");  
-        
+    game.sound.stopAll();
+    isFirstCharaterSelected = false;
+    game.state.start("stateMainLoad");    
+    },
+    
+    CloseConfirmWindow: function () {
+    ConfirmBackGroup.visible = false;
     },
     
     PlaceCreation: function () {
-        game.state.start("StatePlace")
-        
+    game.sound.stopAll(); 
+    game.state.start("StatePlace")   
     },
 
     WatchEpisode: function () {
@@ -298,12 +340,15 @@ var StateDirectory = {
     },
 
     SaveFile: function () {
+        //this.CameraClickPromt.play();
         //this.camerasnap.play();
+        //this.ConfirmSoundEffect.play();
         DownloadModalGroup.visible = true;
     }, 
     
     ToLandingPage: function()
     {
+        game.sound.stopAll(); 
         game.state.start("StateTitle");   
     }, 
     
@@ -312,34 +357,16 @@ var StateDirectory = {
     }, 
     
     CloseButtonpressed: function () {
-   // DownloadModalGroup.visible = false;
-    //game.state.start("StateImageDownload");
-        this.camerasnap.play();
+        game.sound.stopAll();
+        //this.camerasnap.play();
         DownloadModalGroup.visible = false;
-        NonCharacterBackgroundGroup.visible = false;
-        
-        /*this.PlacableCollection[0]
-        this.PlacableCollection[1]
-        this.PlacableCollection[2]
-        this.PlacableCollection[3]
-        this.PlacableCollection[4]*/
+        NonCharacterBackgroundGroup.visible = false;       
+            for (let i = 0; i <= PlacableCollection.length-1; i+=1) 
+            {
 
-        for (let i = 0; i <= PlacableCollection.length-1; i+=1) 
-        {
-        
-            PlacableCollection[i].x = game.width/2;
-            PlacableCollection[i].y = game.height/2;
-        }
-        
-        //StickersUnderBody
-        //StickerBody
-        //StickersAboveBody
-        /*this.StickersUnderBody.forEachAlive(function(platform)    {        
-        platform.body.x =this.game.width/2
-        platform.body.y =this.game.height/2
-        };*/
-                                            
-
+                PlacableCollection[i].x = game.width/2;
+                PlacableCollection[i].y = game.height/2;
+            }     
         game.time.events.add(200, function() {
         this.link = document.createElement('a');
         this.link.href = this.game.canvas.toDataURL('image/png');
@@ -348,12 +375,12 @@ var StateDirectory = {
         this.link.click();
         document.body.removeChild(this.link);
         NonCharacterBackgroundGroup.visible = true;
-        for (let i = 0; i <= PlacableCollection.length-1; i+=1) 
-        {
-        
-            PlacableCollection[i].x = GameCenter_x;
-            PlacableCollection[i].y = GameCenter_y;
-        }
+            for (let i = 0; i <= PlacableCollection.length-1; i+=1) 
+            {
+
+                PlacableCollection[i].x = GameCenter_x;
+                PlacableCollection[i].y = GameCenter_y;
+            }
         });
     }, 
 

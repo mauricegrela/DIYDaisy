@@ -6,14 +6,17 @@ var StateMain = {
 
 
         isTakingPhoto = false;
-        game.load.audio("drop",'audio/sfx/drop.mp3');
+ 
     },
 
     create: function () {
-      
 
+    
         
-        //scaleRatio = window.devicePixelRatio / 2;
+        
+
+
+
         
         game.input.addPointer();
 
@@ -47,14 +50,20 @@ var StateMain = {
         this.craftBackground.width = this.game.width;
         //this.craftBackground.scale.setTo(scaleRatio,scaleRatio);
         BackgroundGroup.add(this.craftBackground);  
+     
+        /*
+       this.Logo= gameButtons.addGenericButton("0", 0,0 , this.ToLandingPage, this,"daisylogo",0); 
+         */
+       
         
         this.Logo = game.add.sprite(0,0, 'daisylogo');
         this.Logo.scale.setTo(scaleRatio,scaleRatio);
         this.Logo.inputEnabled = true;
-        this.Logo.anchor.set(0);
+        this.Logo.anchor.set(0,0.4);
         this.Logo.x =  this.Logo.width/4;
         this.Logo.y =  this.Logo.height/2;
         this.Logo.events.onInputOver.add(this.ToLandingPage, this.Logo); 
+       
         this.drop = game.add.audio("drop");
         
         //Images Variables
@@ -63,12 +72,26 @@ var StateMain = {
 ///////////////////////////////////
 ///CaroseleButtons Sticker Group///
 ///////////////////////////////////
+    if(isFirstCharaterSelected == true)
+    {    
         this.SaveButton = gameButtons.addGenericButton("0", 0,0 , this.SaveClicked, this,"creativeButtons",1); 
         this.SaveButton.anchor.x = 1.3;
         this.SaveButton.anchor.y = -0.2;
         this.SaveButton.x =  game.width;
         this.SaveButton.y = 0;
         this.SaveButton.scale.setTo(0.8,0.8);
+        
+        game.time.events.add(10*1000, function() {
+        this.DelayedAudioPromt = game.add.audio("TeachSaveButton");
+        this.DelayedAudioPromt.play();
+        });
+        
+    }
+        else
+        {
+        this.InitialAudioPromt = game.add.audio("InitialInstructions");
+        this.InitialAudioPromt.play();
+        }
 ///////////////////////////
 //character Sticker Group//
 ///////////////////////////
@@ -94,7 +117,8 @@ var StateMain = {
         this.charactercarouselStickers.anchor.y =  1;
 
         //StickerBody.add(this.charactercarouselStickers);
-
+    if(isFirstCharaterSelected == true)
+    {  
         //Sticker Carosels        
         this.charactercarouselCharacter = game.add.sprite(game.width/2, game.height, 'StickerCaroselTab',0);
         this.charactercarouselCharacter.scale.setTo(scaleRatio,scaleRatio);
@@ -102,7 +126,17 @@ var StateMain = {
         this.charactercarouselCharacter.anchor.y =  1;
         //StickerBody.add(this.charactercarouselStickers);
         CharacterStickerGroup.add(this.charactercarouselCharacter);        
-        
+    }
+        else
+        {
+        //Sticker Carosels        
+        this.charactercarouselCharacter = game.add.sprite(game.width/2, game.height, 'StickerCaroselTab',2);
+        this.charactercarouselCharacter.scale.setTo(scaleRatio,scaleRatio);
+        this.charactercarouselCharacter.anchor.x = 0.5;
+        this.charactercarouselCharacter.anchor.y =  1;
+        //StickerBody.add(this.charactercarouselStickers);
+        CharacterStickerGroup.add(this.charactercarouselCharacter);  
+        }
         //Character Rock Stickers
         this.RockCharacter = game.add.sprite(ButtonsPos_x, ButtonsPos_y , 'Characterbuttons');   
         this.RockCharacter.inputEnabled = true;
@@ -220,17 +254,16 @@ var StateMain = {
         
        var CharacterButtonScale = 0.8;
         
-        
 
-        
-        
         //Pinecone Body
         this.PineconeBody = game.add.sprite(GameCenter_x, GameCenter_y+StickerDepth[0], ImageAssetArray[0]);
         this.PineconeBody.anchor.x = 0.5;
         this.PineconeBody.anchor.y = 0.5;
         this.PineconeBody.scale.setTo(CharacterButtonScale,CharacterButtonScale);
-        StickerBody.add(this.PineconeBody);
-        
+        StickerBody.add(this.PineconeBody);  
+        if(isFirstCharaterSelected == false)
+        {this.PineconeBody.visibility = false;} 
+            
         //Sticker_1_1
         this.Sticker_1 = game.add.sprite(OGPose_X, OGPose_Y+StickerDepth[1], ImageAssetArray[0]);  
         this.Sticker_1.alpha = 0;
@@ -559,7 +592,7 @@ var StateMain = {
 
         this.SelectedButton = this.PineconeBody;
         
-        game.input.addMoveCallback(this.paint, this);  
+        //game.input.addMoveCallback(this.paint, this);  
         
         if(isFirstCharaterSelected == false)
         {
@@ -573,25 +606,62 @@ var StateMain = {
     
     ToLandingPage: function()
     {
+        game.sound.stopAll();
         game.state.start("StateTitle");   
     }, 
 
     RockSticker: function () {
-//Turn on the loading mechanisim. 
-    IsPlacingRock = true;
-    game.state.start("stateMainLoad");
-    },
-    
-PineconeSticker: function () {
-//Turn on the loading mechanisim. 
-    IsPlacingPinecone = true;
-    game.state.start("stateMainLoad");
-    },
-    
-    MobileSticker: function () {
-//Turn on the loading mechanisim. 
-    IsPlacingMobile = true;
-        
+isFirstCharaterSelected = true;
+CaroselGroupNumber = 4;
+StickerAssigner_set1 = "Rock_Stickers_1";
+//Reset the references to the body
+        ImageReference[0] = 'RockBody';
+        ImageReference[1] = 'RockBody';
+        ImageReference[2] = 'RockBody';
+        ImageReference[3] = 'RockBody';
+        ImageReference[4] = 'RockBody';
+        ImageReference[5] = 'RockBody';
+        ImageReference[6] = 'RockBody';
+        ImageReference[7] = 'RockBody';
+///////////////////////////
+////Sticker Body//////////
+///////////////////////////
+        ImageAssetArray[0]='RockBody';
+///////////////////////////
+////First Sticker Group////
+///////////////////////////
+        ImageAssetArray[1]='RockBase_1';
+        ImageAssetArray[2]='RockBase_2'; 
+        ImageAssetArray[3]='RockBase_3';
+        ImageAssetArray[4]='RockBase_4';
+///////////////////////////
+////Second Sticker Group///
+///////////////////////////
+        ImageAssetArray[5]='RockFace_1';
+        ImageAssetArray[6]='RockFace_2';
+        ImageAssetArray[7]='RockFace_3';
+        ImageAssetArray[8]='RockFace_4';
+///////////////////////////
+////Third Sticker Group////
+///////////////////////////
+        ImageAssetArray[9]='RockHeadgear_1';
+        ImageAssetArray[10]='RockHeadgear_2';
+        ImageAssetArray[11]='RockHeadgear_3';
+        ImageAssetArray[12]='RockHeadgear_4';
+///////////////////////////
+////Fourth Sticker Group///
+///////////////////////////
+        ImageAssetArray[13]='RockWings_1';
+        ImageAssetArray[14]='RockWings_2';
+        ImageAssetArray[15]='RockWings_3';  
+        ImageAssetArray[16]='RockWings_4';
+///////////////////////////
+////Fifth Sticker Group////
+///////////////////////////
+        ImageAssetArray[17]='RockFeet_1';
+        ImageAssetArray[18]='RockFeet_2';
+        ImageAssetArray[19]='RockFeet_3';
+        ImageAssetArray[20]='RockFeet_4';
 //////////////////////////
 ////Sticker Depths////////
 //////////////////////////
@@ -599,39 +669,269 @@ PineconeSticker: function () {
         StickerDepth[1]=true;
         StickerDepth[2]=true;
         StickerDepth[3]=false;
-        StickerDepth[4]=false;
+        StickerDepth[4]=true;
         StickerDepth[5]=true;
-        StickerDepth[6]=true;
-        StickerDepth[7]=true;
+game.sound.stopAll();
+game.state.start("StateMain"); 
+    },
+    
+PineconeSticker: function () {
+isFirstCharaterSelected = true;
+CaroselGroupNumber = 4;
+StickerAssigner_set1 = "Pinecone_Stickers"; 
+//Reset the references to the body
+    ImageReference[0] = 'PineconeBody';
+    ImageReference[1] = 'PineconeBody';
+    ImageReference[2] = 'PineconeBody';
+    ImageReference[3] = 'PineconeBody';
+    ImageReference[4] = 'PineconeBody';
+    ImageReference[5] = 'PineconeBody';
+    ImageReference[6] = 'PineconeBody';
+    ImageReference[7] = 'PineconeBody';
+
+//////////////////////////
+////Sticker Body//////////
+//////////////////////////
+        ImageAssetArray[0]='PineconeBody';
 ///////////////////////////
-////Pivot Positions////////
+////First Sticker Group////
 ///////////////////////////
+        ImageAssetArray[1]='PineconeWings_1';
+        ImageAssetArray[2]='PineconeWings_2';
+        ImageAssetArray[3]='PineconeWings_3';  
+        ImageAssetArray[4]='PineconeWings_4';
+///////////////////////////
+////Second Sticker Group///
+///////////////////////////
+        ImageAssetArray[5]='PineconeEyes_1';
+        ImageAssetArray[6]='PineconeEyes_2'; 
+        ImageAssetArray[7]='PineconeEyes_3';
+        ImageAssetArray[8]='PineconeEyes_4';
 
+///////////////////////////
+////Third Sticker Group////
+///////////////////////////
+        ImageAssetArray[9]='PineconeFeet_1';
+        ImageAssetArray[10]='PineconeFeet_2';
+        ImageAssetArray[11]='PineconeFeet_3';
+        ImageAssetArray[12]='PineconeFeet_4';
 
+////Fourth Sticker Group///
+///////////////////////////
+        ImageAssetArray[13]='PineconeHeadgear_1';
+        ImageAssetArray[14]='PineconeHeadgear_2';
+        ImageAssetArray[15]='PineconeHeadgear_3';
+        ImageAssetArray[16]='PineconeHeadgear_4';
 
-
-        game.state.start("stateMainLoad");
+///////////////////////////
+////Fifth Sticker Group////
+///////////////////////////
+        ImageAssetArray[17]='PineconeClothing_1';
+        ImageAssetArray[18]='PineconeClothing_2';
+        ImageAssetArray[19]='PineconeClothing_3';
+        ImageAssetArray[20]='PineconeClothing_4';
+//////////////////////////
+////Sticker Depths////////
+//////////////////////////
+        StickerDepth[0]=false;
+        StickerDepth[1]=true;
+        StickerDepth[2]=false;
+        StickerDepth[3]=true;
+        StickerDepth[4]=true;
+        StickerDepth[5]=true;
+game.sound.stopAll();
+game.state.start("StateMain");
+    },
+    
+    MobileSticker: function () {      
+isFirstCharaterSelected = true;
+CaroselGroupNumber = 6;
+StickerAssigner_set1 = "Mobile_stickers";
+//Reset the references to the body
+    ImageReference[0] = 'MobileBody';
+    ImageReference[1] = 'MobileBody';
+    ImageReference[2] = 'MobileBody';
+    ImageReference[3] = 'MobileBody';
+    ImageReference[4] = 'MobileBody';
+    ImageReference[5] = 'MobileBody';
+    ImageReference[6] = 'MobileBody';
+    ImageReference[7] = 'MobileBody';
+//////////////////////////
+////Sticker Body//////////
+//////////////////////////
+        ImageAssetArray[0]='MobileBody';
+///////////////////////////
+////First Sticker Group////
+///////////////////////////
+        ImageAssetArray[1]='Mobile_1';
+        ImageAssetArray[2]='Mobile_2'; 
+        ImageAssetArray[3]='Mobile_3';
+        ImageAssetArray[4]='Mobile_4';
+///////////////////////////
+////Second Sticker Group///
+///////////////////////////
+        ImageAssetArray[5]='Mobile_5';
+        ImageAssetArray[6]='Mobile_6';
+        ImageAssetArray[7]='Mobile_7';
+        ImageAssetArray[8]='Mobile_8';
+///////////////////////////
+////Third Sticker Group////
+///////////////////////////
+        ImageAssetArray[9]='Mobile_9';
+        ImageAssetArray[10]='Mobile_10';
+        ImageAssetArray[11]='Mobile_11';
+        ImageAssetArray[12]='Mobile_12';
+///////////////////////////
+////Fourth Sticker Group///
+///////////////////////////
+        ImageAssetArray[13]='Mobile_13';
+        ImageAssetArray[14]='Mobile_14';
+        ImageAssetArray[15]='Mobile_15';  
+        ImageAssetArray[16]='Mobile_16';
+///////////////////////////
+////Fifth Sticker Group////
+///////////////////////////
+        ImageAssetArray[17]='Mobile_17';
+        ImageAssetArray[18]='Mobile_18';
+        ImageAssetArray[19]='Mobile_19';
+        ImageAssetArray[20]='Mobile_20';
+///////////////////////////
+////Sixth Sticker Group////
+///////////////////////////
+        ImageAssetArray[21]='Mobile_21';
+        ImageAssetArray[22]='Mobile_22';
+        ImageAssetArray[23]='Mobile_23';
+        ImageAssetArray[24]='Mobile_24';
+///////////////////////////
+///Seventh Sticker Group///
+///////////////////////////
+        ImageAssetArray[25]='Mobile_25';
+        ImageAssetArray[26]='Mobile_26';
+        ImageAssetArray[27]='Mobile_27';
+        ImageAssetArray[28]='Mobile_28';
+//////////////////////////
+////Sticker Depths////////
+//////////////////////////
+        StickerDepth[0]=true;
+        StickerDepth[1]=true;
+        StickerDepth[2]=true;
+        StickerDepth[3]=true;
+        StickerDepth[4]=true;
+        StickerDepth[5]=true;
+game.sound.stopAll();
+game.state.start("StateMain"); 
     },
     
     LeafSticker: function () {
-    //Turn on the loading mechanisim. 
-
-        IsPlacingLeaf = true;
-    //////////////////////////
-    ////Sticker Depths////////
-    //////////////////////////
-        StickerDepth[0]=true;
+CaroselGroupNumber = 3;
+StickerAssigner_set1 = "Leaf_Stickers";
+isFirstCharaterSelected = true;
+//Reset the references to the body
+        ImageReference[0] = 'LeafBody';
+        ImageReference[1] = 'LeafBody';
+        ImageReference[2] = 'LeafBody';
+        ImageReference[3] = 'LeafBody';
+        ImageReference[4] = 'LeafBody';
+        ImageReference[5] = 'LeafBody';
+        ImageReference[6] = 'LeafBody';
+        ImageReference[7] = 'LeafBody';
+///////////////////////////
+////Sticker Body//////////
+///////////////////////////
+        ImageAssetArray[0]='LeafBody';
+///////////////////////////
+////First Sticker Group////
+///////////////////////////
+        ImageAssetArray[1]='LeafWings_1';
+        ImageAssetArray[2]='LeafWings_2'; 
+        ImageAssetArray[3]='LeafWings_3';
+        ImageAssetArray[4]='LeafWings_4';
+///////////////////////////
+////Second Sticker Group///
+///////////////////////////
+        ImageAssetArray[5]='LeafFace_1';
+        ImageAssetArray[6]='LeafFace_2';
+        ImageAssetArray[7]='LeafFace_3';
+        ImageAssetArray[8]='LeafFace_4';
+///////////////////////////
+////Third Sticker Group////
+///////////////////////////
+        ImageAssetArray[9]='LeafHeadgear_1';
+        ImageAssetArray[10]='LeafHeadgear_2';
+        ImageAssetArray[11]='LeafHeadgear_3';
+        ImageAssetArray[12]='LeafHeadgear_4';
+///////////////////////////
+////Fourth Sticker Group///
+///////////////////////////
+        ImageAssetArray[13]='LeafClothing_1';
+        ImageAssetArray[14]='LeafClothing_2';
+        ImageAssetArray[15]='LeafClothing_3';  
+        ImageAssetArray[16]='LeafClothing_4';
+//////////////////////////
+////Sticker Depths////////
+//////////////////////////
+        StickerDepth[0]=false;
         StickerDepth[1]=true;
         StickerDepth[2]=true;
-        StickerDepth[3]=false;
-
-
-        game.state.start("stateMainLoad");
+        StickerDepth[3]=true;
+        StickerDepth[4]=true;
+        StickerDepth[5]=true;    
+game.sound.stopAll();
+game.state.start("StateMain");
     },
      
     StickWandSticker: function () {
-    //Turn on the loading mechanisim. 
-        IsPlacingStickWand = true;
+CaroselGroupNumber = 4;
+StickerAssigner_set1 = "StickWand_stickers";
+isFirstCharaterSelected = true;
+//Reset the references to the body
+        ImageReference[0] = 'StickWandBody';
+        ImageReference[1] = 'StickWandBody';
+        ImageReference[2] = 'StickWandBody';
+        ImageReference[3] = 'StickWandBody';
+        ImageReference[4] = 'StickWandBody';
+        ImageReference[5] = 'StickWandBody';
+        ImageReference[6] = 'StickWandBody';
+        ImageReference[7] = 'StickWandBody';
+///////////////////////////
+////Sticker Body//////////
+///////////////////////////
+        ImageAssetArray[0]='StickWandBody';
+///////////////////////////
+////First Sticker Group////
+///////////////////////////
+        ImageAssetArray[1]='StickWandBase_1';
+        ImageAssetArray[2]='StickWandBase_2'; 
+        ImageAssetArray[3]='StickWandBase_3';
+        ImageAssetArray[4]='StickWandBase_4';
+///////////////////////////
+////Second Sticker Group///
+///////////////////////////
+        ImageAssetArray[5]='StickWandFace_1';
+        ImageAssetArray[6]='StickWandFace_2';
+        ImageAssetArray[7]='StickWandFace_3';
+        ImageAssetArray[8]='StickWandFace_4';
+///////////////////////////
+////Third Sticker Group////
+///////////////////////////
+        ImageAssetArray[9]='StickWandHeadgear_1';
+        ImageAssetArray[10]='StickWandHeadgear_2';
+        ImageAssetArray[11]='StickWandHeadgear_3';
+        ImageAssetArray[12]='StickWandHeadgear_4';
+///////////////////////////
+////Fourth Sticker Group///
+///////////////////////////
+        ImageAssetArray[13]='StickWandFeet_1';
+        ImageAssetArray[14]='StickWandFeet_2';
+        ImageAssetArray[15]='StickWandFeet_3';
+        ImageAssetArray[16]='StickWandFeet_4';
+///////////////////////////
+////Fifth Sticker Group////
+///////////////////////////
+        ImageAssetArray[17]='StickWandClothing_1';
+        ImageAssetArray[18]='StickWandClothing_2';
+        ImageAssetArray[19]='StickWandClothing_3';
+        ImageAssetArray[20]='StickWandClothing_4';
     //////////////////////////
     ////Sticker Depths////////
     //////////////////////////
@@ -639,13 +939,10 @@ PineconeSticker: function () {
         StickerDepth[1]=true;
         StickerDepth[2]=true;
         StickerDepth[3]=false;
-        StickerDepth[4]=false;
+        StickerDepth[4]=true;
         StickerDepth[5]=true;
-    ///////////////////////////
-    ////Pivot Positions////////
-    ///////////////////////////
-
-        game.state.start("stateMainLoad");
+game.sound.stopAll();        
+game.state.start("StateMain");
     },
     
     p: function (pointer) {
@@ -1202,8 +1499,6 @@ PineconeSticker: function () {
             this.charactercarouselStickers.visible = true;
             this.CaroselArrow_Left.visible = true;
             this.CaroselArrow_Right.visible = true;
-            //isAddingPaint = false;
-            //isAddingSticker = true;
             }
         },
     
@@ -1214,12 +1509,13 @@ PineconeSticker: function () {
         this.charactercarouselStickers.visible = false;
         this.CaroselArrow_Left.visible = false;
         this.CaroselArrow_Right.visible = false;
-        //isAddingPaint = false;
-        //isAddingSticker = false;
     },
     
     SaveClicked: function () { 
+        game.sound.stopAll();
         game.state.start("StateDirectory");
+        this.CompletedAudioPromt = game.add.audio("SaveButtonPressed");
+        this.CompletedAudioPromt.play();  
     },
     
     BackToCharacterSelect: function () {game.state.start("StateCharacterSelect")},
