@@ -1,101 +1,206 @@
 var StateLoad = {
 
     preload: function () {
-
-
         
-
-this.time.advacedTiming = true;       
+this.time.advacedTiming = true; 
+        
+        
+ 
+/////////////////////
+///////Sound FX//////
+/////////////////////   
+        game.load.audio("drop",'audio/sfx/drop.mp3');
+        game.load.audio("SavePromt",'audio/sfx/camera.mp3'); 
+        game.load.audio("cameraSnap",'audio/sfx/camera.mp3');  
+        
+        //Instructions
+        game.load.audio("Music",'audio/VoiceOver/Daisy_Music.mp3');
+        game.load.audio("FrontEndTitle",'audio/VoiceOver/DaisyVO_001.mp3'); 
+        game.load.audio("InitialInstructions",'audio/VoiceOver/DaisyVO_002.mp3'); 
+        game.load.audio("TeachSaveButton",'audio/VoiceOver/DaisyVO_003.mp3'); 
+        game.load.audio("SaveButtonPressed",'audio/VoiceOver/DaisyVO_004.mp3'); 
+        game.load.audio("StartOverConfirm",'audio/VoiceOver/DaisyVO_005.mp3'); 
         
 /////////////////////
 ////ParentsCorner////
 /////////////////////        
-        game.load.image('FrontEndTile', 'images/backgrounds/landing-page-bg.PNG');
+        game.load.image('FrontEndTile', 'images/backgrounds/landing-page-bg.jpg');
         game.load.image('ParentsCornerBG', 'images/backgrounds/parent-corner-bg.jpg');
         
 /////////////////////
 /////LandingPage/////
 /////////////////////        
-        game.load.image('FrontEndTile', 'images/backgrounds/landing-page-bg.png');
+        game.load.image('FrontEndTile', 'images/backgrounds/landing-page-bg.jpg');
         
 /////////////////////
 //////Directory//////
 /////////////////////     
-        game.load.image('DirectoryBackground', 'images/results/book.png');        
-        
+        game.load.image('DirectoryBackground', 'images/results/book.png'); 
+        game.load.image('ThumbsUp', 'images/results/thumbs-up.png');
+        game.load.image('ThumbsDown', 'images/results/thumbs-down.png');
 ////////////////
 /////Videos/////
 ////////////////    
         var VideoBackground;
         //game.load.image('VideoBackGround', 'images/backgrounds/DragBackground.png');
-        game.load.image('VideoBackGround', 'images/backgrounds/video-bg.PNG');
+        game.load.image('VideoBackGround', 'images/backgrounds/video-bg.jpg');
         
-        var video1;
-        game.load.video('Intro', 'videos/Intro/DaisyGBK_Intro_720.mp4');
 
-        game.load.video('Extro1', 'videos/Extro/DaisyGBK_Extro1_720.mp4');
-        game.load.video('Extro2', 'videos/Extro/DaisyGBK_Extro2_720.mp4');
-        game.load.video('Extro3', 'videos/Extro/DaisyGBK_Extro3_720.mp4');
-        game.load.video('Extro4', 'videos/Extro/DaisyGBK_Extro4_720.mp4');
-        game.load.video('Extro5', 'videos/Extro/DaisyGBK_Extro5_720.mp4');
-
-        //Default Video loaded 
-        game.load.video('Episode', 'videos/PineCone_Animal/DaisyGBK_PineCon_Ani_720.mp4');
-
+        //Load Episodes 
+        game.load.video('Episode_PineCone', 'videos/PineCone_Animal/DaisyGBK_PineCon_Ani_720.mp4');
+        game.load.video('Episode_Mobile', 'videos/Forest_Mobile/DaisyGBK_ForestMob_720.mp4');
+        game.load.video('Episode_Rock', 'videos/Ladybug_Rock/DaisyGBK_LadyRock_720.mp4');
+        game.load.video('Episode_Flower', 'videos/Flower_Petal/DaisyGBK_FlowerPetArt_720.mp4');
+        game.load.video('Episode_Rainbow', 'videos/Rainbow_Wands/DaisyGBK_RainWand_720.mp4');
 ////////////////
 /////Mobile/////
 ////////////////    
         game.load.image('MobileBody', 'images/Mobile/MobileBody.png');
+        game.load.image('Mobile_1', 'images/Mobile/Mobile_1.png');
+        game.load.image('Mobile_2', 'images/Mobile/Mobile_2.png');
+        game.load.image('Mobile_3', 'images/Mobile/Mobile_3.png');
+        game.load.image('Mobile_4', 'images/Mobile/Mobile_4.png');
+        game.load.image('Mobile_5', 'images/Mobile/Mobile_5.png');
+        game.load.image('Mobile_6', 'images/Mobile/Mobile_6.png');
+        game.load.image('Mobile_7', 'images/Mobile/Mobile_7.png');
+        game.load.image('Mobile_8', 'images/Mobile/Mobile_8.png');
+        game.load.image('Mobile_9', 'images/Mobile/Mobile_9.png');
+        game.load.image('Mobile_10', 'images/Mobile/Mobile_10.png');
+        game.load.image('Mobile_11', 'images/Mobile/Mobile_11.png');
+        game.load.image('Mobile_12', 'images/Mobile/Mobile_12.png'); 
+        game.load.image('Mobile_13', 'images/Mobile/Mobile_13.png');
+        game.load.image('Mobile_14', 'images/Mobile/Mobile_14.png');
+        game.load.image('Mobile_15', 'images/Mobile/Mobile_15.png');
+        game.load.image('Mobile_16', 'images/Mobile/Mobile_16.png');
+        game.load.image('Mobile_17', 'images/Mobile/Mobile_17.png');
+        game.load.image('Mobile_18', 'images/Mobile/Mobile_18.png'); 
+        game.load.image('Mobile_19', 'images/Mobile/Mobile_19.png');
+        game.load.image('Mobile_20', 'images/Mobile/Mobile_20.png');
+        game.load.image('Mobile_21', 'images/Mobile/Mobile_21.png');
+        game.load.image('Mobile_22', 'images/Mobile/Mobile_22.png');
+        game.load.image('Mobile_23', 'images/Mobile/Mobile_23.png');
+        game.load.image('Mobile_24', 'images/Mobile/Mobile_24.png');
+        game.load.image('Mobile_25', 'images/Mobile/Mobile_25.png');
+        game.load.image('Mobile_26', 'images/Mobile/Mobile_26.png');
+        game.load.image('Mobile_27', 'images/Mobile/Mobile_27.png');
+        game.load.image('Mobile_28', 'images/Mobile/Mobile_28.png');
+        game.load.spritesheet("Mobile_stickers", "images/ui/Mobile_stickers.png", 182, 125, 24); 
         
 ////////////////
-////Pinecones////
+////Pinecones///
 ////////////////    
         //game.load.image('MagLenz',     'images/Pinecone/alphaMaskState.png');      
         //Load Stickers and body
-        game.load.image('PineconeBody', 'images/Pinecone/PineconeBody.png');
-        //Wings
-        game.load.image('PineconeWings_1', 'images/Pinecone/PineconeWings_1.png');     
+         game.load.image('PineconeBody', 'images/Pinecone/PineconeBody.png');
+         game.load.image('PineconeWings_1', 'images/Pinecone/PineconeWings_1.png');     
         game.load.image('PineconeWings_2', 'images/Pinecone/PineconeWings_2.png'); 
         game.load.image('PineconeWings_3', 'images/Pinecone/PineconeWings_3.png'); 
         game.load.image('PineconeWings_4', 'images/Pinecone/PineconeWings_4.png');
-        //Eyes 
         game.load.image('PineconeEyes_1', 'images/Pinecone/PineconeEyes_1.png');     
         game.load.image('PineconeEyes_2', 'images/Pinecone/PineconeEyes_2.png'); 
         game.load.image('PineconeEyes_3', 'images/Pinecone/PineconeEyes_3.png'); 
         game.load.image('PineconeEyes_4', 'images/Pinecone/PineconeEyes_4.png');  
-        //Feet
         game.load.image('PineconeFeet_1', 'images/Pinecone/PineconeFeet_1.png');     
         game.load.image('PineconeFeet_2', 'images/Pinecone/PineconeFeet_2.png'); 
         game.load.image('PineconeFeet_3', 'images/Pinecone/PineconeFeet_3.png'); 
         game.load.image('PineconeFeet_4', 'images/Pinecone/PineconeFeet_4.png');
-        //Head gear
         game.load.image('PineconeHeadgear_1', 'images/Pinecone/PineconeHeadgear_1.png');     
         game.load.image('PineconeHeadgear_2', 'images/Pinecone/PineconeHeadgear_2.png'); 
         game.load.image('PineconeHeadgear_3', 'images/Pinecone/PineconeHeadgear_3.png'); 
         game.load.image('PineconeHeadgear_4', 'images/Pinecone/PineconeHeadgear_4.png');    
-        //Clothing 
         game.load.image('PineconeClothing_1', 'images/Pinecone/PineconeClothing_1.png');
         game.load.image('PineconeClothing_2', 'images/Pinecone/PineconeClothing_2.png');
-        game.load.image('PineconeClothing_3', 'images/Pinecone/PineconeClothing_3.png');      
-        game.load.image('PineconeClothing_4', 'images/Pinecone/PineconeClothing_4.png');
-        
+        game.load.image('PineconeClothing_3', 'images/Pinecone/PineconeClothing_3.png');    
+        game.load.image('PineconeClothing_4', 'images/Pinecone/PineconeClothing_4.png');    
         game.load.spritesheet("Pinecone_Stickers", "images/ui/Pinecone_stickers.png", 182, 125, 24);
         
 ////////////////
 ///////Leaf/////
 ////////////////         
         game.load.image('RockBody', 'images/Rock/RockBody.png');  
-        
+        game.load.image('RockBase_1', 'images/Rock/RockBase_1.png');
+        game.load.image('RockBase_2', 'images/Rock/RockBase_2.png');      
+        game.load.image('RockBase_3', 'images/Rock/RockBase_3.png');
+        game.load.image('RockBase_4', 'images/Rock/RockBase_4.png'); 
+
+        game.load.image('RockFace_1', 'images/Rock/RockFace_1.png');
+        game.load.image('RockFace_2', 'images/Rock/RockFace_2.png');
+        game.load.image('RockFace_3', 'images/Rock/RockFace_3.png');
+        game.load.image('RockFace_4', 'images/Rock/RockFace_4.png');
+
+        game.load.image('RockHeadgear_1', 'images/Rock/RockHeadgear_1.png');
+        game.load.image('RockHeadgear_2', 'images/Rock/RockHeadgear_2.png');
+        game.load.image('RockHeadgear_3', 'images/Rock/RockHeadgear_3.png');
+        game.load.image('RockHeadgear_4', 'images/Rock/RockHeadgear_4.png');
+
+        game.load.image('RockWings_1', 'images/Rock/RockWings_1.png');
+        game.load.image('RockWings_2', 'images/Rock/RockWings_2.png');
+        game.load.image('RockWings_3', 'images/Rock/RockWings_3.png');
+        game.load.image('RockWings_4', 'images/Rock/RockWings_4.png');
+
+        game.load.image('RockFeet_1', 'images/Rock/RockFeet_1.png');
+        game.load.image('RockFeet_2', 'images/Rock/RockFeet_2.png');
+        game.load.image('RockFeet_3', 'images/Rock/RockFeet_3.png');
+        game.load.image('RockFeet_4', 'images/Rock/RockFeet_4.png');
+
+        game.load.spritesheet("Rock_Stickers_1", "images/ui/Rock_stickers.png", 182, 125, 20);
 ////////////////
 ///////Leaf/////
 ////////////////    
         game.load.image('LeafBody', 'images/Leaf/LeafBody.png');
-        
+        game.load.image('LeafWings_1', 'images/Leaf/LeafWings_1.png');
+        game.load.image('LeafWings_2', 'images/Leaf/LeafWings_2.png');
+        game.load.image('LeafWings_3', 'images/Leaf/LeafWings_3.png');
+        game.load.image('LeafWings_4', 'images/Leaf/LeafWings_4.png');
+
+        game.load.image('LeafFace_1', 'images/Leaf/LeafFace_1.png');
+        game.load.image('LeafFace_2', 'images/Leaf/LeafFace_2.png');
+        game.load.image('LeafFace_3', 'images/Leaf/LeafFace_3.png');
+        game.load.image('LeafFace_4', 'images/Leaf/LeafFace_4.png');
+
+        game.load.image('LeafHeadgear_1', 'images/Leaf/LeafHeadgear_1.png');
+        game.load.image('LeafHeadgear_2', 'images/Leaf/LeafHeadgear_2.png');
+        game.load.image('LeafHeadgear_3', 'images/Leaf/LeafHeadgear_3.png');
+        game.load.image('LeafHeadgear_4', 'images/Leaf/LeafHeadgear_4.png');
+
+        game.load.image('LeafClothing_1', 'images/Leaf/LeafClothing_1.png');
+        game.load.image('LeafClothing_2', 'images/Leaf/LeafClothing_2.png');
+        game.load.image('LeafClothing_3', 'images/Leaf/LeafClothing_3.png');
+        game.load.image('LeafClothing_4', 'images/Leaf/LeafClothing_4.png');
+
+
+
+        game.load.spritesheet("Leaf_Stickers", "images/ui/Leaf_stickers.png", 182, 125, 16);  
 ////////////////
 ///StickWand///
 ////////////////    
         game.load.image('StickWandBody', 'images/StickWand/StickWandBody.png');
-        
+         game.load.image('StickWandBase_1', 'images/StickWand/StickWandBase_1.png');
+                game.load.image('StickWandBase_2', 'images/StickWand/StickWandBase_2.png');      
+                game.load.image('StickWandBase_3', 'images/StickWand/StickWandBase_3.png');
+                game.load.image('StickWandBase_4', 'images/StickWand/StickWandBase_4.png');              
+                game.load.image('StickWandClothing_1', 'images/StickWand/StickWandClothing_1.png');
+                game.load.image('StickWandClothing_2', 'images/StickWand/StickWandClothing_2.png');
+                game.load.image('StickWandClothing_3', 'images/StickWand/StickWandClothing_3.png');
+                game.load.image('StickWandClothing_4', 'images/StickWand/StickWandClothing_4.png');
+                game.load.image('StickWandBase_1', 'images/StickWand/StickWandBase_1.png');
+                game.load.image('StickWandBase_2', 'images/StickWand/StickWandBase_2.png');      
+                game.load.image('StickWandBase_3', 'images/StickWand/StickWandBase_3.png');
+                game.load.image('StickWandBase_4', 'images/StickWand/StickWandBase_4.png');
+                game.load.image('StickWandFace_1', 'images/StickWand/StickWandFace_1.png');
+                game.load.image('StickWandFace_2', 'images/StickWand/StickWandFace_2.png');
+                game.load.image('StickWandFace_3', 'images/StickWand/StickWandFace_3.png');
+                game.load.image('StickWandFace_4', 'images/StickWand/StickWandFace_4.png');
+                game.load.image('StickWandFeet_1', 'images/StickWand/StickWandFeet_1.png');
+                game.load.image('StickWandFeet_3', 'images/StickWand/StickWandFeet_3.png');
+                game.load.image('StickWandFeet_2', 'images/StickWand/StickWandFeet_2.png');
+                game.load.image('StickWandFeet_4', 'images/StickWand/StickWandFeet_4.png');
+                game.load.image('StickWandHeadgear_1', 'images/StickWand/StickWandHeadgear_1.png');
+                game.load.image('StickWandHeadgear_2', 'images/StickWand/StickWandHeadgear_2.png');
+                game.load.image('StickWandHeadgear_3', 'images/StickWand/StickWandHeadgear_3.png');
+                game.load.image('StickWandHeadgear_4', 'images/StickWand/StickWandHeadgear_4.png');
+
+                game.load.spritesheet("StickWand_stickers", "images/ui/StickWand_stickers.png", 182, 125, 24);  
 ///////////////////////////
 //Carosel Stickers to load/
 ///////////////////////////
@@ -106,7 +211,7 @@ this.time.advacedTiming = true;
        ///game.load.image('placement_Background', 'images/backgrounds/DragBackground.png');
         
         //Sticker Tab
-        game.load.spritesheet('StickerCaroselTab', 'images/ui/diy-tabs.png', 952, 268, 2);
+        game.load.spritesheet('StickerCaroselTab', 'images/ui/diy-tabs.png', 952, 268, 3);
        
         
         //Arrows Tab
@@ -151,7 +256,7 @@ this.time.advacedTiming = true;
         //Object UI
         game.load.spritesheet("Characterbuttons", "images/ui/Objects_UI.png", 120, 120);
         //Front end issue 
-        game.load.image("PlayButton", "images/ui/PlayButton.png");
+        game.load.image("PlayButton", "images/ui/Play-Button.png");
         game.load.image("ParentsCorner", "images/ui/info-button.png");
         game.load.image("CBCButton", "images/ui/cbc.png");
         //Placement

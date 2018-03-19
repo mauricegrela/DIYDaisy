@@ -2,7 +2,7 @@ var stateMainLoad = {
 
     preload: function () {
         
-        isFirstCharaterSelected = true;
+        //isFirstCharaterSelected = true;
         
          game.load.audio("drop",'audio/sfx/drop.mp3');
             if(IsPlacingMobile == true)
@@ -18,7 +18,7 @@ var stateMainLoad = {
         
         if(IsPlacingMobile == true)
             {
-                game.load.image('Mobile_1', 'images/Mobile/Mobile_1.png');
+                /*game.load.image('Mobile_1', 'images/Mobile/Mobile_1.png');
                 game.load.image('Mobile_2', 'images/Mobile/Mobile_2.png');
                 game.load.image('Mobile_3', 'images/Mobile/Mobile_3.png');
                 game.load.image('Mobile_4', 'images/Mobile/Mobile_4.png');
@@ -47,7 +47,7 @@ var stateMainLoad = {
                 game.load.image('Mobile_27', 'images/Mobile/Mobile_27.png');
                 game.load.image('Mobile_28', 'images/Mobile/Mobile_28.png');
                 
-                game.load.spritesheet("Mobile_stickers", "images/ui/Mobile_stickers.png", 182, 125, 28);
+                game.load.spritesheet("Mobile_stickers", "images/ui/Mobile_stickers.png", 182, 125, 28);*/
                 CaroselGroupNumber = 6;
                 StickerAssigner_set1 = "Mobile_stickers";
                 
@@ -194,7 +194,7 @@ var stateMainLoad = {
 
 
                 
-                game.load.video('Episode', 'videos/Forest_Mobile/DaisyGBK_ForestMob_720.mp4');
+                //game.load.video('Episode', 'videos/Forest_Mobile/DaisyGBK_ForestMob_720.mp4');
                 
                 //Turn this off in case it gets loaded again
                 IsPlacingMobile=false;
@@ -205,7 +205,7 @@ var stateMainLoad = {
             if(IsPlacingPinecone == true)
             {
                 //Wings
-                game.load.image('PineconeWings_1', 'images/Pinecone/PineconeWings_1.png');     
+               /* game.load.image('PineconeWings_1', 'images/Pinecone/PineconeWings_1.png');     
                 game.load.image('PineconeWings_2', 'images/Pinecone/PineconeWings_2.png'); 
                 game.load.image('PineconeWings_3', 'images/Pinecone/PineconeWings_3.png'); 
                 game.load.image('PineconeWings_4', 'images/Pinecone/PineconeWings_4.png');
@@ -230,7 +230,7 @@ var stateMainLoad = {
                 game.load.image('PineconeClothing_3', 'images/Pinecone/PineconeClothing_3.png');      
                 game.load.image('PineconeClothing_4', 'images/Pinecone/PineconeClothing_4.png');
            
-                game.load.spritesheet("Pinecone_Stickers", "images/ui/Pinecone_stickers.png", 182, 125, 24);
+                game.load.spritesheet("Pinecone_Stickers", "images/ui/Pinecone_stickers.png", 182, 125, 24);*/
                 CaroselGroupNumber = 4;
                 StickerAssigner_set1 = "Pinecone_Stickers"; 
                 
@@ -353,7 +353,7 @@ var stateMainLoad = {
                     Pivot_X [23]=0.5;
 
 
-                game.load.video('Episode', 'videos/PineCone_Animal/DaisyGBK_PineCon_Ani_720.mp4');
+                //game.load.video('Episode', 'videos/PineCone_Animal/DaisyGBK_PineCon_Ani_720.mp4');
 
                 //Turn this off in case it gets loaded again        
                 IsPlacingPinecone=false;
@@ -361,7 +361,7 @@ var stateMainLoad = {
 
             if (IsPlacingRock == true)
             {
-            game.load.image('RockBase_1', 'images/Rock/RockBase_1.png');
+            /*game.load.image('RockBase_1', 'images/Rock/RockBase_1.png');
             game.load.image('RockBase_2', 'images/Rock/RockBase_2.png');      
             game.load.image('RockBase_3', 'images/Rock/RockBase_3.png');
             game.load.image('RockBase_4', 'images/Rock/RockBase_4.png'); 
@@ -386,7 +386,7 @@ var stateMainLoad = {
             game.load.image('RockFeet_3', 'images/Rock/RockFeet_3.png');
             game.load.image('RockFeet_4', 'images/Rock/RockFeet_4.png');
             
-            game.load.spritesheet("Rock_Stickers_1", "images/ui/Rock_stickers.png", 182, 125, 20);
+            game.load.spritesheet("Rock_Stickers_1", "images/ui/Rock_stickers.png", 182, 125, 20);*/
             CaroselGroupNumber = 4;
             StickerAssigner_set1 = "Rock_Stickers_1";
 
@@ -507,14 +507,14 @@ var stateMainLoad = {
                 
 
 
-            game.load.video('Episode', 'videos/Ladybug_Rock/DaisyGBK_LadyRock_720.mp4');
+            //game.load.video('Episode', 'videos/Ladybug_Rock/DaisyGBK_LadyRock_720.mp4');
 
             IsPlacingRock=false;
             }
 
             if(IsPlacingLeaf == true)
             {
-                game.load.image('LeafWings_1', 'images/Leaf/LeafWings_1.png');
+                /*game.load.image('LeafWings_1', 'images/Leaf/LeafWings_1.png');
                 game.load.image('LeafWings_2', 'images/Leaf/LeafWings_2.png');
                 game.load.image('LeafWings_3', 'images/Leaf/LeafWings_3.png');
                 game.load.image('LeafWings_4', 'images/Leaf/LeafWings_4.png');
@@ -539,7 +539,7 @@ var stateMainLoad = {
                 game.load.spritesheet("Leaf_Stickers", "images/ui/Leaf_stickers.png", 182, 125, 16);  
                 CaroselGroupNumber = 3;
                 StickerAssigner_set1 = "Leaf_Stickers";
-                
+                */
             //Reset the references to the body
                 ImageReference[0] = 'LeafBody';
                 ImageReference[1] = 'LeafBody';
@@ -651,7 +651,7 @@ var stateMainLoad = {
                 
                 StickerAssigner_set1 = "Leaf_Stickers";
 
-                game.load.video('Episode', 'videos/Flower_Petal/DaisyGBK_FlowerPetArt_720.mp4');
+                //game.load.video('Episode', 'videos/Flower_Petal/DaisyGBK_FlowerPetArt_720.mp4');
 
 
                 IsPlacingLeaf = false;
@@ -661,7 +661,7 @@ var stateMainLoad = {
             if(IsPlacingStickWand == true)
             {
 
-                game.load.image('StickWandBase_1', 'images/StickWand/StickWandBase_1.png');
+                /*game.load.image('StickWandBase_1', 'images/StickWand/StickWandBase_1.png');
                 game.load.image('StickWandBase_2', 'images/StickWand/StickWandBase_2.png');      
                 game.load.image('StickWandBase_3', 'images/StickWand/StickWandBase_3.png');
                 game.load.image('StickWandBase_4', 'images/StickWand/StickWandBase_4.png'); 
@@ -697,7 +697,8 @@ var stateMainLoad = {
                 
                 
                 //game.load.spritesheet("StickWand_Stickers_1", "images/ui/StickWand_stickers.png", 365, 250, 24);
-
+                */
+                
                 //Reset the references to the body
                 ImageReference[0] = 'StickWandBody';
                 ImageReference[1] = 'StickWandBody';
@@ -753,7 +754,7 @@ var stateMainLoad = {
                         StickerDepth[0]=true;
                         StickerDepth[1]=true;
                         StickerDepth[2]=true;
-                        StickerDepth[3]=true;
+                        StickerDepth[3]=false;
                         StickerDepth[4]=true;
                         StickerDepth[5]=true;
 
@@ -824,14 +825,14 @@ var stateMainLoad = {
                 Pivot_X [27]=0.5;
                 
 
-                game.load.video('Episode', 'videos/Rainbow_Wands/DaisyGBK_RainWand_720.mp4');
+                //game.load.video('Episode', 'videos/Rainbow_Wands/DaisyGBK_RainWand_720.mp4');
                 
                 IsPlacingStickWand = false;
                 
             }
-        
+         /*
         game.load.audio("drop",'audio/sfx/drop.mp3');
-        
+       
         //Loading screen assets
         var loadingBackground = game.add.image(0, 0, "loadingBackground");  
         loadingBackground.anchor.set(0, 0);
@@ -860,7 +861,7 @@ var stateMainLoad = {
         this.logo.y = empty.y-this.logo.width/3;
         //this.logo.scale.set(scaleRatio,scaleRatio);
         this.logo.animations.add('shake');
-        this.logo.animations.play('shake', 15, true)
+        this.logo.animations.play('shake', 15, true)*/
     },
 
     create: function () {
