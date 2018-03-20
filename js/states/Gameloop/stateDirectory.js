@@ -174,9 +174,9 @@ var StateDirectory = {
             StickersAboveBody.add(this.Sticker7);
             }
         
-        game.world.bringToTop(StickersUnderBody);
-        game.world.bringToTop(StickerBody);
-        game.world.bringToTop(StickersAboveBody);
+        //game.world.bringToTop(StickersUnderBody);
+        //game.world.bringToTop(StickerBody);
+        //game.world.bringToTop(StickersAboveBody);
         
         ExtroMenu = game.add.group();
         
@@ -309,6 +309,12 @@ var StateDirectory = {
     },
         
     
+    render: function () {
+    game.debug.text(game.camera.width, 100, 380 );
+    game.debug.text(game.camera.x, 100, 400 );
+    
+    },
+    
     CloseConfirmButtonpress: function () {
     game.sound.stopAll(); 
     ConfirmBackGroup.visible = false;
@@ -323,7 +329,9 @@ var StateDirectory = {
     BackToCraft: function () {
     game.sound.stopAll();
     isFirstCharaterSelected = false;
-    game.state.start("stateMainLoad");    
+    GameCenter_x = game.width/2;
+    GameCenter_y = game.height/2.8;   
+    game.state.start("StateMain");    
     },
     
     CloseConfirmWindow: function () {

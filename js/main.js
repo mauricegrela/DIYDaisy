@@ -16,7 +16,8 @@ var gameMedia;
 var RightHangButtonOffset_X = 1;
 var RightHangButtonOffset_Y = 1;
 var ButtonScaleAdjustment = 1.5;
-
+var Logo_X =0;
+var Logo_Y =0;
 
         var  canvas_height_max =900
         var canvas_width_max =1600
@@ -384,6 +385,15 @@ var useLandscape = true;
                     Pivot_X [22]=0.5;   
                     Pivot_Y [23]=0.5;
                     Pivot_X [23]=0.5;
+
+                    Pivot_Y [24]=0.5;
+                    Pivot_X [24]=0.5;      
+                    Pivot_Y [25]=0.5;
+                    Pivot_X [25]=0.5;    
+                    Pivot_Y [26]=0.5;
+                    Pivot_X [26]=0.5;   
+                    Pivot_Y [27]=0.5;
+                    Pivot_X [27]=0.5;
 
 
 window.onload = function () {

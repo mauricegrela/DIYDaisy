@@ -1,16 +1,8 @@
 var StateTitle = {
 
     preload: function () {
-        
-
-        
-        //game.load.image('Whiskers', testArray[0]);
-            //Responsive text
         GameCenter_x = game.width/2;
-        GameCenter_y = game.height/2.8;   
-
-        
-        //scaleRatio = window.devicePixelRatio ;
+        GameCenter_y = game.height/2.8;
     }, 
     
     create: function () {
@@ -53,8 +45,8 @@ var StateTitle = {
     
     startGame: function () {    
     game.sound.stopAll();
-    //game.state.start("StateMain");
-    isFirstCharaterSelected = false;
+    game.state.start("StateMain");
+    //isFirstCharaterSelected = false;
     game.state.start("StatePlace");
     //game.state.start("StateDirectory");
     }, 
