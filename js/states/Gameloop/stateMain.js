@@ -10,19 +10,10 @@ var StateMain = {
     },
 
     create: function () {
-
-    
-        
-        
-
-
-
-        
         game.input.addPointer();
 
         //Set the character Group 
         Character = game.add.group();
-        
         
         //  Create the group for the stickers
         StickerGroup_1 = game.add.group();
@@ -50,12 +41,7 @@ var StateMain = {
         this.craftBackground.width = this.game.width;
         //this.craftBackground.scale.setTo(scaleRatio,scaleRatio);
         BackgroundGroup.add(this.craftBackground);  
-     
-        /*
-       this.Logo= gameButtons.addGenericButton("0", 0,0 , this.ToLandingPage, this,"daisylogo",0); 
-         */
-       
-        
+
         this.Logo = game.add.sprite(0,0, 'daisylogo');
         this.Logo.scale.setTo(scaleRatio,scaleRatio);
         this.Logo.inputEnabled = true;
@@ -256,7 +242,7 @@ var StateMain = {
         
 
         //Pinecone Body
-        this.PineconeBody = game.add.sprite(GameCenter_x, GameCenter_y+StickerDepth[0], ImageAssetArray[0]);
+        this.PineconeBody = game.add.sprite(GameCenter_x, GameCenter_y, ImageAssetArray[0]);
         this.PineconeBody.anchor.x = 0.5;
         this.PineconeBody.anchor.y = 0.5;
         this.PineconeBody.scale.setTo(CharacterButtonScale,CharacterButtonScale);
@@ -265,7 +251,7 @@ var StateMain = {
         {this.PineconeBody.visibility = false;} 
             
         //Sticker_1_1
-        this.Sticker_1 = game.add.sprite(OGPose_X, OGPose_Y+StickerDepth[1], ImageAssetArray[0]);  
+        this.Sticker_1 = game.add.sprite(OGPose_X, OGPose_Y, ImageAssetArray[0]);  
         this.Sticker_1.alpha = 0;
         this.Sticker_1.anchor.x = 0.5;
         this.Sticker_1.anchor.y = 0.5;
@@ -285,7 +271,7 @@ var StateMain = {
                 }
          
         //Sticker_2      
-        this.Sticker_2 = game.add.sprite(OGPose_X, OGPose_Y+StickerDepth[2], ImageAssetArray[0]);
+        this.Sticker_2 = game.add.sprite(OGPose_X, OGPose_Y, ImageAssetArray[0]);
         this.Sticker_2.alpha = 0;
         this.Sticker_2.anchor.x = 0.5;
         this.Sticker_2.anchor.y = 0.5;
@@ -304,7 +290,7 @@ var StateMain = {
                 }
                  
         //Sticker_3
-        this.Sticker_3 = game.add.sprite(OGPose_X, OGPose_Y+StickerDepth[3], ImageAssetArray[0]);
+        this.Sticker_3 = game.add.sprite(OGPose_X, OGPose_Y, ImageAssetArray[0]);
         this.Sticker_3.alpha = 0;
         this.Sticker_3.anchor.x = 0.5;
         this.Sticker_3.anchor.y = 0.5;
@@ -323,7 +309,7 @@ var StateMain = {
                 }
                 
         //Sticker_4
-        this.Sticker_4 = game.add.sprite(OGPose_X, OGPose_Y+StickerDepth[4], ImageAssetArray[0]);
+        this.Sticker_4 = game.add.sprite(OGPose_X, OGPose_Y, ImageAssetArray[0]);
         this.Sticker_4.alpha = 0;
         this.Sticker_4.anchor.x = 0.5;
         this.Sticker_4.anchor.y = 0.5;
@@ -342,7 +328,7 @@ var StateMain = {
                 }
 
         //Sticker_5
-        this.Sticker_5 = game.add.sprite(OGPose_X, OGPose_Y+StickerDepth[5], ImageAssetArray[0]);        
+        this.Sticker_5 = game.add.sprite(OGPose_X, OGPose_Y, ImageAssetArray[0]);        
         this.Sticker_5.alpha = 0;
         this.Sticker_5.anchor.x = 0.5;
         this.Sticker_5.anchor.y = 0.5;
@@ -361,7 +347,7 @@ var StateMain = {
                 }
 
         //Sticker_6      
-        this.Sticker_6 = game.add.sprite(OGPose_X, OGPose_Y+StickerDepth[6], ImageAssetArray[0]);
+        this.Sticker_6 = game.add.sprite(OGPose_X, OGPose_Y, ImageAssetArray[0]);
         this.Sticker_6.alpha = 0;
         this.Sticker_6.anchor.x = 0.5;
         this.Sticker_6.anchor.y = 0.5;
@@ -380,7 +366,7 @@ var StateMain = {
                 }
         
         //Sticker_7      
-        this.Sticker_7 = game.add.sprite(OGPose_X, OGPose_Y+StickerDepth[7], ImageAssetArray[0]);
+        this.Sticker_7 = game.add.sprite(OGPose_X, OGPose_Y, ImageAssetArray[0]);
         this.Sticker_7.alpha = 0;
         this.Sticker_7.anchor.x = 0.5;
         this.Sticker_7.anchor.y = 0.5;
@@ -601,6 +587,11 @@ var StateMain = {
         this.charactercarouselStickers.visible = false;
         this.CaroselArrow_Left.visible = false;
         this.CaroselArrow_Right.visible = false;
+            
+            
+        StickersUnderBody.visible = false;
+        StickerBody.visible = false;
+        StickersAboveBody.visible = false;
         }
     },      
     
@@ -671,6 +662,7 @@ StickerAssigner_set1 = "Rock_Stickers_1";
         StickerDepth[3]=false;
         StickerDepth[4]=true;
         StickerDepth[5]=true;
+        StickerDepth[6]=true;
 game.sound.stopAll();
 game.state.start("StateMain"); 
     },
@@ -739,6 +731,7 @@ StickerAssigner_set1 = "Pinecone_Stickers";
         StickerDepth[3]=true;
         StickerDepth[4]=true;
         StickerDepth[5]=true;
+        StickerDepth[6]=true;
 game.sound.stopAll();
 game.state.start("StateMain");
     },
@@ -818,6 +811,7 @@ StickerAssigner_set1 = "Mobile_stickers";
         StickerDepth[3]=true;
         StickerDepth[4]=true;
         StickerDepth[5]=true;
+        StickerDepth[6]=true;
 game.sound.stopAll();
 game.state.start("StateMain"); 
     },
@@ -875,7 +869,8 @@ isFirstCharaterSelected = true;
         StickerDepth[2]=true;
         StickerDepth[3]=true;
         StickerDepth[4]=true;
-        StickerDepth[5]=true;    
+        StickerDepth[5]=true;   
+        StickerDepth[6]=true;  
 game.sound.stopAll();
 game.state.start("StateMain");
     },
@@ -941,6 +936,7 @@ isFirstCharaterSelected = true;
         StickerDepth[3]=false;
         StickerDepth[4]=true;
         StickerDepth[5]=true;
+        StickerDepth[6]=true;
 game.sound.stopAll();        
 game.state.start("StateMain");
     },
@@ -1481,8 +1477,8 @@ game.state.start("StateMain");
     //Image Reference for placemnt section
     ImageReference[7]=ImageAssetArray[24];
     //Pivot 
-    this.Sticker_7.anchor.x = Pivot_X[23];
-    this.Sticker_7.anchor.y = Pivot_Y[23];
+    this.Sticker_7.anchor.x = Pivot_X[27];
+    this.Sticker_7.anchor.y = Pivot_Y[27];
     //Data storage
     PositionArrayIndicator = 24;
     testArrayAlpha[7] = 1;

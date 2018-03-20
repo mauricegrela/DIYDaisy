@@ -1,5 +1,7 @@
 var StatePlace = {
 
+    
+    
     preload: function () {        
 
         
@@ -17,14 +19,21 @@ var StatePlace = {
         StickerBody = game.add.group();
         StickersAboveBody = game.add.group();
      
-        this.craftBackground1 = game.add.sprite(0, 0, 'placing_Backgroung1');
-        this.craftBackground1.scale.setTo(scaleRatio,scaleRatio);
-        this.craftBackground1.height = this.game.height;
-        this.craftBackground1.width = this.game.height*5.3;
+        //tileSprite =game.add.tileSprite(0, 0, 800, 600, 'starfield');
+        
+        this.craftBackground1 = game.add.tileSprite(0, 0,  game.width, game.height,'placing_Backgroung1');
+        this.craftBackground1.scale.setTo(2,2);
+        //this.craftBackground1.height = this.game.height;
+        //this.craftBackground1.width = this.game.height*5.3;
+        
+        this.craftBackground2 = game.add.tileSprite(0, 0,  game.width, game.height,'placing_Backgroung2');
+        this.craftBackground2.scale.setTo(2,2);
+        cursors = game.input.keyboard.createCursorKeys();
+        
         
         game.world.setBounds(0, 0, this.craftBackground1.width, this.craftBackground1.height);
         
-        this.game.camera.x =this.craftBackground1.width/2.7;
+        //this.game.camera.x =this.craftBackground1.width/2.7;
         //this.game.camera.y
         
         this.cursors = game.input.keyboard.createCursorKeys();
@@ -132,9 +141,6 @@ var StatePlace = {
             {
             StickersAboveBody.add(this.Sticker6);
             }
-        //game.world.bringToTop(CharacterGroup);
-        
-        //game.world.bringToTop(this.craftBackground3);
         
         this.mummy1 = game.add.sprite(
         768,
@@ -304,19 +310,20 @@ var StatePlace = {
         AudioTunes[8]=game.add.audio("lights");
         AudioTunes[9]=game.add.audio("tea");
         
-        game.world.bringToTop(StickersUnderBody);
-        game.world.bringToTop(StickerBody);
-        game.world.bringToTop(StickersAboveBody);
+
         game.world.bringToTop(this.mummy2);
         
-        this.craftBackground2 = game.add.sprite(0, 0, 'placing_Backgroung2');
+        /*this.craftBackground2 = game.add.sprite(0, 0, 'placing_Backgroung2');
         this.craftBackground2.scale.setTo(craftBackgroundScale,craftBackgroundScale);
         this.craftBackground2.scale.setTo(scaleRatio,scaleRatio);
         this.craftBackground2.height = this.game.height;
-        this.craftBackground2.width = this.game.height*5.3;
+        this.craftBackground2.width = this.game.height*5.3;*/
         game.world.bringToTop(this.mummy1);
         //this.tester = game.add.sprite(0, 0, game.cache.getBitmapData(this.DrawnSprite));
 
+        game.world.bringToTop(StickersUnderBody);
+        game.world.bringToTop(StickerBody);
+        game.world.bringToTop(StickersAboveBody);
         
         this.Logo = game.add.sprite(0,0, 'daisylogo');
         this.Logo.scale.setTo(scaleRatio,scaleRatio);
@@ -334,6 +341,8 @@ var StatePlace = {
         this.SaveButton.y = 0;
         this.SaveButton.scale.setTo(0.8,0.8);
         this.SaveButton.fixedToCamera = true;
+        
+        
     },
     
     PlaceCreation: function () {
@@ -367,21 +376,58 @@ var StatePlace = {
     game.state.start("StateTitle");   
     },
     
+    render: function () {
+    game.debug.text( this.craftBackground1.tilePosition.x, 100, 380 );
+    game.debug.text( this.craftBackground1.width*2, 100, 400 );//2048
+    //game.debug.text( game.width, 100, 420 );
+    game.debug.text( (this.craftBackground1.width*2)-game.camera.width, 100, 420 );//1024
+    },
+    
     update: function () {
         //Paralaxing background. 
         this.craftBackground2.x = game.camera.x*0.1;
 
-        //Camera panning
-            if (this.game.input.activePointer.isDown) 
-            {   if (this.game.origDragPoint) {      
-            // move the camera by the amount the mouse has moved since last update      
-            this.game.camera.x += this.game.origDragPoint.x - this.game.input.activePointer.position.x;
-            this.game.camera.y += this.game.origDragPoint.y - this.game.input.activePointer.position.y; }
-            // set new drag origin to current position  
-            this.game.origDragPoint = this.game.input.activePointer.position.clone();
+            if(game.input.x<100)
+            {               
+                this.craftBackground1.tilePosition.x += 4;
+                    if((this.craftBackground1.tilePosition.x ==  (this.craftBackground1.width*2)*-1)
+                      ||(this.craftBackground1.tilePosition.x ==  game.camera.width/2))
+                    {//If the player has looped around, move all the assets up
+                        for (let i = 0; i <= AnimObject.length-1; i+=1) 
+                        {
+                        AnimObject[i].x -=this.craftBackground1.width*5;
+                        }
+                    }
+                        else
+                        {
+                            for (let i = 0; i <= AnimObject.length-1; i+=1) 
+                            {
+                            AnimObject[i].x += 8;
+                            }
+                        }
             }
-                else
-                {   this.game.origDragPoint = null;}
+                else if(game.input.x>game.width-100)
+                {//WHEN MOVING RIGHT
+                    this.craftBackground1.tilePosition.x -= 4;
+                        if((this.craftBackground1.tilePosition.x ==  (this.craftBackground1.width*2)*-1)
+                          ||(this.craftBackground1.tilePosition.x ==  game.camera.width/2))
+                        {//If the player has looped around, move all the assets up
+                            for (let i = 0; i <= AnimObject.length-1; i+=1) 
+                            {
+                            AnimObject[i].x +=this.craftBackground1.width*5;
+                            }
+
+                        }
+                            else
+                            {
+                                for (let i = 0; i <= AnimObject.length-1; i+=1) 
+                                {
+                                AnimObject[i].x -= 8;
+                                }
+                            }
+                }
+
+
         
         for (let i = 0; i <= AnimObject.length-1; i+=1) 
         {
@@ -520,12 +566,15 @@ var StatePlace = {
                                                     }
             }   
         }
+        
         //Render each of the character layers. 
         for (let i = 0; i < PlacableCollection.length-1; i++) 
-        {
+        {    
         PlacableCollection[i].x = game.input.x;
         PlacableCollection[i].y = game.input.y;
         PlacableCollection[i].fixedToCamera = true;
         }
+        
+        
     }
 }

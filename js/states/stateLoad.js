@@ -84,7 +84,7 @@ this.time.advacedTiming = true;
         game.load.image('Mobile_26', 'images/Mobile/Mobile_26.png');
         game.load.image('Mobile_27', 'images/Mobile/Mobile_27.png');
         game.load.image('Mobile_28', 'images/Mobile/Mobile_28.png');
-        game.load.spritesheet("Mobile_stickers", "images/ui/Mobile_stickers.png", 182, 125, 24); 
+        game.load.spritesheet("Mobile_stickers", "images/ui/Mobile_stickers.png", 182, 125, 28); 
         
 ////////////////
 ////Pinecones///
