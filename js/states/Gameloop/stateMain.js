@@ -105,7 +105,8 @@ var StateMain = {
         this.SaveButton.scale.setTo(0.8,0.8);
         
         this.BGMusic = game.add.audio("MusicTrack");
-        this.BGMusic.play();
+        this.BGMusic.play(true);
+        this.BGMusic.loopFull();
         
         game.time.events.add(10*1000, function() {
         this.DelayedAudioPromt = game.add.audio("TeachSaveButton");
