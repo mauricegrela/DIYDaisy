@@ -3,6 +3,7 @@ var score;
 var highScore;
 var soundOn = true;
 var musicOn = true;
+var selectedVideo;
 var isFirstCharaterSelected = false;
 var isInPlaceMode = false;
 var isExtroVideoPlaying = false;
@@ -19,17 +20,12 @@ var ButtonScaleAdjustment = 1.5;
 var Logo_X =0;
 var Logo_Y =0;
 
-        var  canvas_height_max =900
-        var canvas_width_max =1600
-        var canvas_width = window.innerWidth * window.devicePixelRatio;
-        var canvas_height = window.innerHeight * window.devicePixelRatio;
-        var aspect_ratio = canvas_width / canvas_height;
-        //if (aspect_ratio > 1) 
-             //scaleRatio = canvas_height / canvas_height_max;
-                //else 
-                 //scaleRatio = canvas_width / canvas_width_max;
-
-              scaleRatio =1;      
+var  canvas_height_max =900
+var canvas_width_max =1600
+var canvas_width = window.innerWidth * window.devicePixelRatio;
+var canvas_height = window.innerHeight * window.devicePixelRatio;
+var aspect_ratio = canvas_width / canvas_height;
+scaleRatio =1;      
 
 //PLACE YOUR OWN GLOBALS HERE
 var isMobile;
@@ -38,7 +34,6 @@ var isMobile;
 var IsPlacingRock = false;
 var IsPlacingPinecone = false;
 var IsPlacingMobile = false;
-var IsPlacingLeaf = false;
 var IsPlacingLeaf = false;
 var IsPlacingStickWand = false;
 

@@ -9,9 +9,12 @@ var StatePlace = {
 
     , create: function () {
         
+        this.BGMusic = game.add.audio("MusicTrack");
+        this.BGMusic.play();
+        
         craftBackgroundScale = scaleRatio;
         craftAnimBackgroundScale = scaleRatio*1.5;
-        CharacterScaleAdjustment = 0.5;
+        CharacterScaleAdjustment = 0.25;
         
         CharacterGroup = game.add.group();
                 
@@ -94,53 +97,65 @@ var StatePlace = {
             StickersAboveBody.add(this.Sticker3);
             }
         
-        this.Sticker4 = game.add.sprite(GameCenter_x, GameCenter_y, ImageReference[4]);
-        this.Sticker4.scale.setTo(scaleRatio*CharacterScaleAdjustment,scaleRatio*CharacterScaleAdjustment);
-        this.Sticker4.anchor.x = Pivot_X[4];
-        this.Sticker4.anchor.y =  Pivot_Y[4];
-        this.Sticker4.alpha = testArrayAlpha[4];
-        PlacableCollection[4]=this.Sticker4;
-        //CharacterGroup.add(this.Sticker4);
-        if(StickerDepth[3]== false)
-        {
-        StickersUnderBody.add(this.Sticker4);
-        }
-            else
+        if(CaroselGroupNumber<=4)
+        {    
+            this.Sticker4 = game.add.sprite(GameCenter_x, GameCenter_y, ImageReference[4]);
+            this.Sticker4.scale.setTo(scaleRatio*CharacterScaleAdjustment,scaleRatio*CharacterScaleAdjustment);
+            this.Sticker4.anchor.x = Pivot_X[4];
+            this.Sticker4.anchor.y =  Pivot_Y[4];
+            this.Sticker4.alpha = testArrayAlpha[4];
+            PlacableCollection[4]=this.Sticker4;
+            //CharacterGroup.add(this.Sticker4);
+            if(StickerDepth[3]== false)
             {
-            StickersAboveBody.add(this.Sticker4);
+            StickersUnderBody.add(this.Sticker4);
             }
+                else
+                {
+                StickersAboveBody.add(this.Sticker4);
+                }
+        }
         
-        this.Sticker5 = game.add.sprite(GameCenter_x, GameCenter_y, ImageReference[5]);
-        this.Sticker5.scale.setTo(scaleRatio*CharacterScaleAdjustment,scaleRatio*CharacterScaleAdjustment);
-        this.Sticker5.anchor.x = Pivot_X[5];
-        this.Sticker5.anchor.y =  Pivot_Y[5];
-        this.Sticker5.alpha = testArrayAlpha[5];
-        PlacableCollection[5]=this.Sticker5;
-        //CharacterGroup.add(this.Sticker5);
-        if(StickerDepth[4]== false)
-        {
-        StickersUnderBody.add(this.Sticker5);
-        }
-            else
+        if(CaroselGroupNumber<=5)
+        { 
+            this.Sticker5 = game.add.sprite(GameCenter_x, GameCenter_y, ImageReference[5]);
+            this.Sticker5.scale.setTo(scaleRatio*CharacterScaleAdjustment,scaleRatio*CharacterScaleAdjustment);
+            this.Sticker5.anchor.x = Pivot_X[5];
+            this.Sticker5.anchor.y =  Pivot_Y[5];
+            this.Sticker5.alpha = testArrayAlpha[5];
+            PlacableCollection[5]=this.Sticker5;
+            //CharacterGroup.add(this.Sticker5);
+            if(StickerDepth[4]== false)
             {
-            StickersAboveBody.add(this.Sticker5);
+            StickersUnderBody.add(this.Sticker5);
             }
+                else
+                {
+                StickersAboveBody.add(this.Sticker5);
+                }
+        }
         
-        this.Sticker6 = game.add.sprite(GameCenter_x, GameCenter_y, ImageReference[6]);
-        this.Sticker6.scale.setTo(scaleRatio*CharacterScaleAdjustment,scaleRatio*CharacterScaleAdjustment);
-        this.Sticker6.anchor.x = Pivot_X[6];
-        this.Sticker6.anchor.y =  Pivot_Y[6];
-        this.Sticker6.alpha = testArrayAlpha[6];
-        PlacableCollection[6]=this.Sticker6;
-        //CharacterGroup.add(this.Sticker6);
-        if(StickerDepth[5]== false)
-        {
-        StickersUnderBody.add(this.Sticker6);
-        }
-            else
+        if(CaroselGroupNumber<=5)
+        { 
+            this.Sticker6 = game.add.sprite(GameCenter_x, GameCenter_y, ImageReference[6]);
+            this.Sticker6.scale.setTo(scaleRatio*CharacterScaleAdjustment,scaleRatio*CharacterScaleAdjustment);
+            this.Sticker6.anchor.x = Pivot_X[6];
+            this.Sticker6.anchor.y =  Pivot_Y[6];
+            this.Sticker6.alpha = testArrayAlpha[6];
+            PlacableCollection[6]=this.Sticker6;
+            //CharacterGroup.add(this.Sticker6);
+            if(StickerDepth[5]== false)
             {
-            StickersAboveBody.add(this.Sticker6);
+            StickersUnderBody.add(this.Sticker6);
             }
+                else
+                {
+                StickersAboveBody.add(this.Sticker6);
+                }
+        }
+        
+
+        
         
         this.mummy1 = game.add.sprite(
         768,
@@ -263,6 +278,12 @@ var StatePlace = {
         this.anim10 = this.mummy10.animations.add('walk');
         //this.mummy10.x = this.mummy10.width*7.3;
         
+
+        
+        game.world.bringToTop(StickersUnderBody);
+        game.world.bringToTop(StickerBody);
+        game.world.bringToTop(StickersAboveBody);
+        
         AnimObject[0]=this.mummy1;
         AnimObject[1]=this.mummy2;
         AnimObject[2]=this.mummy3;
@@ -311,19 +332,17 @@ var StatePlace = {
         AudioTunes[9]=game.add.audio("tea");
         
 
-        game.world.bringToTop(this.mummy2);
-        
-        /*this.craftBackground2 = game.add.sprite(0, 0, 'placing_Backgroung2');
-        this.craftBackground2.scale.setTo(craftBackgroundScale,craftBackgroundScale);
-        this.craftBackground2.scale.setTo(scaleRatio,scaleRatio);
-        this.craftBackground2.height = this.game.height;
-        this.craftBackground2.width = this.game.height*5.3;*/
         game.world.bringToTop(this.mummy1);
-        //this.tester = game.add.sprite(0, 0, game.cache.getBitmapData(this.DrawnSprite));
+        game.world.bringToTop(this.mummy2);
+        game.world.bringToTop(this.mummy3);
+        game.world.bringToTop(this.mummy5);        
+        game.world.bringToTop(this.mummy6);
+        game.world.bringToTop(this.mummy7);
+        game.world.bringToTop(this.mummy8);
+        game.world.bringToTop(this.mummy9);
+        game.world.bringToTop(this.mummy10);
 
-        game.world.bringToTop(StickersUnderBody);
-        game.world.bringToTop(StickerBody);
-        game.world.bringToTop(StickersAboveBody);
+        
         
         this.Logo = game.add.sprite(0,0, 'daisylogo');
         this.Logo.scale.setTo(scaleRatio,scaleRatio);
@@ -331,12 +350,12 @@ var StatePlace = {
         this.Logo.anchor.set(0,0.4);
         this.Logo.x =  this.Logo.width/4;
         this.Logo.y =  this.Logo.height/2;
-        this.Logo.events.onInputOver.add(this.ToLandingPage, this.Logo); 
+        this.Logo.events.onInputDown.add(this.ToLandingPage, this.Logo); 
         this.Logo.fixedToCamera = true;
         
         this.SaveButton = gameButtons.addGenericButton("0", 0,0 , this.BackToCraft, this,"creativeButtons",2); 
-        this.SaveButton.anchor.x = 1.3;
-        this.SaveButton.anchor.y = -0.2;
+        this.SaveButton.anchor.x = 1;
+        this.SaveButton.anchor.y = 0;
         this.SaveButton.x =  game.width;
         this.SaveButton.y = 0;
         this.SaveButton.scale.setTo(0.8,0.8);
@@ -377,10 +396,10 @@ var StatePlace = {
     },
     
     render: function () {
-    game.debug.text( this.craftBackground1.tilePosition.x, 100, 380 );
-    game.debug.text( this.craftBackground1.width*2, 100, 400 );//2048
+    //game.debug.text( this.craftBackground1.tilePosition.x, 100, 380 );
+    //game.debug.text( this.craftBackground1.width*2, 100, 400 );//2048
     //game.debug.text( game.width, 100, 420 );
-    game.debug.text( (this.craftBackground1.width*2)-game.camera.width, 100, 420 );//1024
+    //game.debug.text( (this.craftBackground1.width*2)-game.camera.width, 100, 420 );//1024
     },
     
     update: function () {
