@@ -59,9 +59,35 @@ this.time.advacedTiming = true;
         game.load.video('Episode_Flower', 'videos/Flower_Petal/DaisyGBK_FlowerPetArt_720.mp4');
         game.load.video('Episode_Rainbow', 'videos/Rainbow_Wands/DaisyGBK_RainWand_720.mp4');
 ////////////////
+///Maple Leaf///
+////////////////  
+        game.load.image('MapleLeafBody', 'images/MapleLeaf/MapleLeafBody.png');
+        game.load.image('MapleLeaf_1', 'images/MapleLeaf/MapleLeafBase_1.png');
+        game.load.image('MapleLeaf_2', 'images/MapleLeaf/MapleLeafBase_2.png');
+        game.load.image('MapleLeaf_3', 'images/MapleLeaf/MapleLeafBase_3.png');
+        game.load.image('MapleLeaf_4', 'images/MapleLeaf/MapleLeafBase_4.png');
+        game.load.image('MapleLeaf_5', 'images/MapleLeaf/MapleLeafFace_1.png');
+        game.load.image('MapleLeaf_6', 'images/MapleLeaf/MapleLeafFace_2.png');
+        game.load.image('MapleLeaf_7', 'images/MapleLeaf/MapleLeafFace_3.png');
+        game.load.image('MapleLeaf_8', 'images/MapleLeaf/MapleLeafFace_4.png');
+        game.load.image('MapleLeaf_9', 'images/MapleLeaf/MapleLeafHeadgear_1.png');
+        game.load.image('MapleLeaf_10', 'images/MapleLeaf/MapleLeafHeadgear_2.png'); 
+        game.load.image('MapleLeaf_11', 'images/MapleLeaf/MapleLeafHeadgear_3.png');
+        game.load.image('MapleLeaf_12', 'images/MapleLeaf/MapleLeafHeadgear_4.png');
+        game.load.image('MapleLeaf_13', 'images/MapleLeaf/MapleLeafFeet_1.png');
+        game.load.image('MapleLeaf_14', 'images/MapleLeaf/MapleLeafFeet_2.png');
+        game.load.image('MapleLeaf_15', 'images/MapleLeaf/MapleLeafFeet_3.png');
+        game.load.image('MapleLeaf_16', 'images/MapleLeaf/MapleLeafFeet_4.png');
+        game.load.image('MapleLeaf_17', 'images/MapleLeaf/MapleLeafClothing_1.png');
+        game.load.image('MapleLeaf_18', 'images/MapleLeaf/MapleLeafClothing_2.png');
+        game.load.image('MapleLeaf_19', 'images/MapleLeaf/MapleLeafClothing_3.png');
+        game.load.image('MapleLeaf_20', 'images/MapleLeaf/MapleLeafClothing_4.png');
+
+        game.load.spritesheet("MapleLeaf_stickers", "images/ui/MapleLeaf_stickers.png", 182, 125, 20);
+////////////////
 /////Mobile/////
 ////////////////    
-        game.load.image('MobileBody', 'images/Mobile/MobileBody.png');
+        /*game.load.image('MobileBody', 'images/Mobile/MobileBody.png');
         game.load.image('Mobile_1', 'images/Mobile/Mobile_1.png');
         game.load.image('Mobile_2', 'images/Mobile/Mobile_2.png');
         game.load.image('Mobile_3', 'images/Mobile/Mobile_3.png');
@@ -90,7 +116,7 @@ this.time.advacedTiming = true;
         game.load.image('Mobile_26', 'images/Mobile/Mobile_26.png');
         game.load.image('Mobile_27', 'images/Mobile/Mobile_27.png');
         game.load.image('Mobile_28', 'images/Mobile/Mobile_28.png');
-        game.load.spritesheet("Mobile_stickers", "images/ui/Mobile_stickers.png", 182, 125, 28); 
+        game.load.spritesheet("Mobile_stickers", "images/ui/Mobile_stickers.png", 182, 125, 28);*/ 
         
 ////////////////
 ////Pinecones///
