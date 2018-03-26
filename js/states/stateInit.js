@@ -3,7 +3,7 @@ var StateInit = {
     preload: function () {
         game.load.image("loadingEmpty", "images/loading/progress_none.png");
         game.load.image("loadingFull", "images/loading/progress_all.png");
-        game.load.image("loadingBackground", "images/loading/Loading-Screen-bg.png");
+        game.load.image("loadingBackground", "images/loading/Loading-Screen-bg.jpg");
         game.load.spritesheet('LoadscreenAnim', 'images/SpriteSheets/LOAD_SpriteSheet.png', 256, 256, 9);
 
         game.scale.fullScreenScaleMode = Phaser.ScaleManager.SHOW_ALL;

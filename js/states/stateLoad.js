@@ -12,6 +12,7 @@ this.time.advacedTiming = true;
         game.load.audio("drop",'audio/sfx/drop.mp3');
         game.load.audio("SavePromt",'audio/sfx/camera.mp3'); 
         game.load.audio("cameraSnap",'audio/sfx/camera.mp3');  
+        game.load.audio("MusicTrack",'audio/Daisy_Music.mp3');  
         
         //Instructions
         game.load.audio("Music",'audio/VoiceOver/Daisy_Music.mp3');
@@ -20,6 +21,12 @@ this.time.advacedTiming = true;
         game.load.audio("TeachSaveButton",'audio/VoiceOver/DaisyVO_003.mp3'); 
         game.load.audio("SaveButtonPressed",'audio/VoiceOver/DaisyVO_004.mp3'); 
         game.load.audio("StartOverConfirm",'audio/VoiceOver/DaisyVO_005.mp3'); 
+        //Item Specific instructions
+         
+        game.load.audio("ButterflyInstructions",'audio/VoiceOver/DaisyVO_Butterfly.mp3'); 
+        game.load.audio("LadyBugInstructions",'audio/VoiceOver/DaisyVO_Ladybug.mp3'); 
+        game.load.audio("PineconeAnimalInstructions",'audio/VoiceOver/DaisyVO_PineconeAnimal.mp3');
+        game.load.audio("WandInstructions",'audio/VoiceOver/DaisyVO_Wand.mp3');
         
 /////////////////////
 ////ParentsCorner////
@@ -45,7 +52,6 @@ this.time.advacedTiming = true;
         //game.load.image('VideoBackGround', 'images/backgrounds/DragBackground.png');
         game.load.image('VideoBackGround', 'images/backgrounds/video-bg.jpg');
         
-
         //Load Episodes 
         game.load.video('Episode_PineCone', 'videos/PineCone_Animal/DaisyGBK_PineCon_Ani_720.mp4');
         game.load.video('Episode_Mobile', 'videos/Forest_Mobile/DaisyGBK_ForestMob_720.mp4');
@@ -211,11 +217,11 @@ this.time.advacedTiming = true;
        ///game.load.image('placement_Background', 'images/backgrounds/DragBackground.png');
         
         //Sticker Tab
-        game.load.spritesheet('StickerCaroselTab', 'images/ui/diy-tabs.png', 952, 268, 3);
+        game.load.spritesheet('StickerCaroselTab', 'images/ui/diy-tabs.png', 950, 265, 3);
        
         
         //Arrows Tab
-        game.load.spritesheet("CaroselArrows", "images/ui/sticker-arrows.png", 46, 47, 2);     
+        game.load.spritesheet("CaroselArrows", "images/ui/sticker-arrows.png", 72, 75, 2);     
         
           //Sticker Tab
         game.load.image('TabButton', 'images/ui/StickerCollisionBox.png');
@@ -245,16 +251,17 @@ this.time.advacedTiming = true;
         
         //UI Assets
         
-        game.load.spritesheet("buttons", "images/ui/buttons-red@2x.png", 132, 37);
+        game.load.spritesheet("buttons", "images/ui/buttons-red.png", 206, 58, 14);
+        
         game.load.spritesheet("soundButtons", "images/ui/soundButtons-blue.png", 22, 22, 4);
         game.load.image("daisylogo", "images/ui/daisylogo.png");
         //Load Background images for the rock
         game.load.image('CloseButton', 'images/results/close-button.png');
-        game.load.spritesheet("creativeButtons", "images/results/results-ui-sprite.png", 150, 128, 4);
+        game.load.spritesheet("creativeButtons", "images/results/results-ui-sprite.png", 235, 200, 4);
         game.load.audio("backgroundMusic", "audio/background/piano.mp3");
         game.load.audio("elephant", "audio/sfx/elephant.mp3");  
         //Object UI
-        game.load.spritesheet("Characterbuttons", "images/ui/Objects_UI.png", 120, 120);
+        game.load.spritesheet("Characterbuttons", "images/ui/Objects_UI.png", 188, 189);
         //Front end issue 
         game.load.image("PlayButton", "images/ui/Play-Button.png");
         game.load.image("ParentsCorner", "images/ui/info-button.png");

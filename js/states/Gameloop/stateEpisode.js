@@ -10,7 +10,7 @@ var StateEpisode = {
         this.craftBackground.height = this.game.height;
         this.craftBackground.width = this.game.width;
 
-        video1 = game.add.video("Episode");
+        video1 = game.add.video(selectedVideo);
         video1.play(true); 
         video1.addToWorld(game.width/2, game.height/2, 0.5, 0.5, 0.6,0.6);
 
@@ -27,27 +27,27 @@ var StateEpisode = {
         
         ExtroMenu = game.add.group();
         
-        this.SaveButton = gameButtons.addGenericButton("0", 0,0 , this.backToCrafting, this,"creativeButtons",2); 
-        this.SaveButton.anchor.x = 1.3;
-        this.SaveButton.anchor.y = -0.2;
-        this.SaveButton.x =  game.width;
-        this.SaveButton.y = 0;
-        this.SaveButton.scale.setTo(0.8,0.8);
-        this.SaveButton.fixedToCamera = true;
+        this.BackToCraftButton = gameButtons.addGenericButton("0", 0,0 , this.backToCrafting, this,"creativeButtons",2); 
+        this.BackToCraftButton.anchor.x = 1;
+        this.BackToCraftButton.anchor.y = 0;
+        this.BackToCraftButton.x =  game.width;
+        this.BackToCraftButton.y = 0;
+        this.BackToCraftButton.scale.setTo(0.8,0.8);
+        //NonCharacterBackgroundGroup.add(this.BackToCraftButton);
    
         this.Logo = game.add.sprite(0,0, 'daisylogo');
         this.Logo.scale.setTo(scaleRatio,scaleRatio);
         this.Logo.inputEnabled = true;
-        this.Logo.anchor.set(0);
+        this.Logo.anchor.set(0,0.4);
         this.Logo.x =  this.Logo.width/4;
         this.Logo.y =  this.Logo.height/2;
-        this.Logo.events.onInputOver.add(this.ToLandingPage, this.Logo); 
+        this.Logo.events.onInputDown.add(this.ToLandingPage, this.Logo); 
     },
     
     
     backToCrafting: function () {  
         video1.stop();
-        game.state.start("StateDirectory");
+        game.state.start("StateParentsCorner");
         //
     }, 
     
