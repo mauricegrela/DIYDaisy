@@ -61,8 +61,8 @@ var StateDirectory = {
         
         this.Body = game.add.sprite(GameCenter_x, GameCenter_y,ImageAssetArray[0]);
         this.Body.scale.setTo(scaleRatio*CharacterScaleAdjustment,scaleRatio*CharacterScaleAdjustment);
-        this.Body.anchor.x = Pivot_X[0];
-        this.Body.anchor.y =  Pivot_Y[0];
+        //this.Body.anchor.x = 0.5;
+        //this.Body.anchor.y =  0.5;
         this.Body.alpha = 1;
         StickerBody.add(this.Body);
         PlacableCollection[0]=this.Body;
@@ -70,8 +70,8 @@ var StateDirectory = {
         
         this.Sticker1 = game.add.sprite(GameCenter_x, GameCenter_y, ImageReference[1]);
         this.Sticker1.scale.setTo(scaleRatio*CharacterScaleAdjustment,scaleRatio*CharacterScaleAdjustment);
-        this.Sticker1.anchor.x = Pivot_X[1];
-        this.Sticker1.anchor.y =  Pivot_Y[1];
+        //this.Sticker1.anchor.x = Pivot_X[1];
+        //this.Sticker1.anchor.y =  Pivot_Y[1];
         this.Sticker1.alpha = testArrayAlpha[1];
         PlacableCollection[1]=this.Sticker1;
         if(StickerDepth[0]== false)
@@ -85,8 +85,8 @@ var StateDirectory = {
         
         this.Sticker2 = game.add.sprite(GameCenter_x, GameCenter_y, ImageReference[2]);
         this.Sticker2.scale.setTo(scaleRatio*CharacterScaleAdjustment,scaleRatio*CharacterScaleAdjustment);
-        this.Sticker2.anchor.x = Pivot_X[2];
-        this.Sticker2.anchor.y =  Pivot_Y[2];
+        //this.Sticker2.anchor.x = Pivot_X[2];
+        //this.Sticker2.anchor.y =  Pivot_Y[2];
         this.Sticker2.alpha = testArrayAlpha[2];
         PlacableCollection[2]=this.Sticker2;
         if(StickerDepth[1]== false)
@@ -100,8 +100,8 @@ var StateDirectory = {
         
         this.Sticker3 = game.add.sprite(GameCenter_x, GameCenter_y, ImageReference[3]);
         this.Sticker3.scale.setTo(scaleRatio*CharacterScaleAdjustment,scaleRatio*CharacterScaleAdjustment);
-        this.Sticker3.anchor.x = Pivot_X[3];
-        this.Sticker3.anchor.y =  Pivot_Y[3];
+        //this.Sticker3.anchor.x = Pivot_X[3];
+        //this.Sticker3.anchor.y =  Pivot_Y[3];
         this.Sticker3.alpha = testArrayAlpha[3];
         PlacableCollection[3]=this.Sticker3;
         if(StickerDepth[2]== false)
@@ -117,8 +117,8 @@ var StateDirectory = {
         {
             this.Sticker4 = game.add.sprite(GameCenter_x, GameCenter_y, ImageReference[4]);
             this.Sticker4.scale.setTo(scaleRatio*CharacterScaleAdjustment,scaleRatio*CharacterScaleAdjustment);
-            this.Sticker4.anchor.x = Pivot_X[4];
-            this.Sticker4.anchor.y =  Pivot_Y[4];
+            //this.Sticker4.anchor.x = Pivot_X[4];
+            //this.Sticker4.anchor.y =  Pivot_Y[4];
             this.Sticker4.alpha = testArrayAlpha[4];
             PlacableCollection[4]=this.Sticker4;
             if(StickerDepth[3]== false)
@@ -135,8 +135,8 @@ var StateDirectory = {
         {
             this.Sticker5 = game.add.sprite(GameCenter_x, GameCenter_y, ImageReference[5]);
             this.Sticker5.scale.setTo(scaleRatio*CharacterScaleAdjustment,scaleRatio*CharacterScaleAdjustment);
-            this.Sticker5.anchor.x = Pivot_X[5];
-            this.Sticker5.anchor.y =  Pivot_Y[5];
+            //this.Sticker5.anchor.x = Pivot_X[5];
+            //this.Sticker5.anchor.y =  Pivot_Y[5];
             this.Sticker5.alpha = testArrayAlpha[5];
             PlacableCollection[5]=this.Sticker5;
             if(StickerDepth[4]== false)
@@ -153,8 +153,8 @@ var StateDirectory = {
         {
             this.Sticker6 = game.add.sprite(GameCenter_x, GameCenter_y, ImageReference[6]);
             this.Sticker6.scale.setTo(scaleRatio*CharacterScaleAdjustment,scaleRatio*CharacterScaleAdjustment);
-            this.Sticker6.anchor.x = Pivot_X[6];
-            this.Sticker6.anchor.y =  Pivot_Y[6];
+            //this.Sticker6.anchor.x = Pivot_X[6];
+            //this.Sticker6.anchor.y =  Pivot_Y[6];
             this.Sticker6.alpha = testArrayAlpha[6];
             PlacableCollection[6]=this.Sticker6;
             if(StickerDepth[5]== false)
@@ -171,8 +171,8 @@ var StateDirectory = {
         {
             this.Sticker7 = game.add.sprite(GameCenter_x, GameCenter_y, ImageReference[7]);
             this.Sticker7.scale.setTo(scaleRatio*CharacterScaleAdjustment,scaleRatio*CharacterScaleAdjustment);
-            this.Sticker7.anchor.x = Pivot_X[7];
-            this.Sticker7.anchor.y =  Pivot_Y[7];
+            //this.Sticker7.anchor.x = Pivot_X[7];
+            //this.Sticker7.anchor.y =  Pivot_Y[7];
             this.Sticker7.alpha = testArrayAlpha[7];
             PlacableCollection[7]=this.Sticker7;
             if(StickerDepth[6]== false)

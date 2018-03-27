@@ -34,6 +34,15 @@ this.time.advacedTiming = true;
         game.load.image('FrontEndTile', 'images/backgrounds/landing-page-bg.jpg');
         game.load.image('ParentsCornerBG', 'images/backgrounds/parent-corner-bg.jpg');
         
+        game.load.image('PDFButton', 'images/parentcorner/play-parents-button.png');
+        game.load.image('VideoButton', 'images/parentcorner/pdf-button.png');
+        
+        //Logos
+        game.load.image('CBCLogo', 'images/parentcorner/cbc-logo.png');
+        game.load.image('RivalSchools', 'images/parentcorner/rs-logo.png');
+        game.load.image('BellLogo', 'images/parentcorner/Bell-logo.png');
+        game.load.image('ImagineCreate', 'images/parentcorner/Imagine-logo.png');    
+        
 /////////////////////
 /////LandingPage/////
 /////////////////////        
@@ -54,7 +63,7 @@ this.time.advacedTiming = true;
         
         //Load Episodes 
         game.load.video('Episode_PineCone', 'videos/PineCone_Animal/DaisyGBK_PineCon_Ani_720.mp4');
-        game.load.video('Episode_Mobile', 'videos/Forest_Mobile/DaisyGBK_ForestMob_720.mp4');
+        game.load.video('Episode_MapleLeaf', 'videos/Forest_Mobile/DaisyGBK_ForestMob_720.mp4');
         game.load.video('Episode_Rock', 'videos/Ladybug_Rock/DaisyGBK_LadyRock_720.mp4');
         game.load.video('Episode_Flower', 'videos/Flower_Petal/DaisyGBK_FlowerPetArt_720.mp4');
         game.load.video('Episode_Rainbow', 'videos/Rainbow_Wands/DaisyGBK_RainWand_720.mp4');
@@ -270,7 +279,7 @@ this.time.advacedTiming = true;
         
         //Parents Cornder
         game.load.image("LeafPDF", "images/parentcorner/LeafPDF.png");
-        game.load.image("MobilePDF", "images/parentcorner/MobilePDF.png");
+        game.load.image("MapleLeafPDF", "images/parentcorner/MapleLeafPDF.png");
         game.load.image("PineconePDF", "images/parentcorner/PineconePDF.png");
         game.load.image("RockPDF", "images/parentcorner/RockPDF.png");
         game.load.image("StickWandPDF", "images/parentcorner/StickWandPDF.png");

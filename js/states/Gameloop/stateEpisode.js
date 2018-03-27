@@ -47,6 +47,7 @@ var StateEpisode = {
     
     backToCrafting: function () {  
         video1.stop();
+        game.sound.stopAll();
         game.state.start("StateParentsCorner");
         //
     }, 
@@ -58,6 +59,8 @@ var StateEpisode = {
     
     ToLandingPage: function()
     {
+    video1.stop();
+    game.sound.stopAll();
     game.state.start("StateTitle");   
     }, 
     

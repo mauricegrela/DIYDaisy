@@ -647,10 +647,10 @@ var StateMain = {
     }, 
 
     RockSticker: function () {
-isFirstCharaterSelected = true;
-IsPlacingRock = true;
-CaroselGroupNumber = 4;
-StickerAssigner_set1 = "Rock_Stickers_1";
+        isFirstCharaterSelected = true;
+        IsPlacingRock = true;
+        CaroselGroupNumber = 4;
+        StickerAssigner_set1 = "Rock_Stickers_1";
 //Reset the references to the body
         ImageReference[0] = 'RockBody';
         ImageReference[1] = '';
@@ -709,6 +709,71 @@ StickerAssigner_set1 = "Rock_Stickers_1";
         StickerDepth[4]=true;
         StickerDepth[5]=true;
         StickerDepth[6]=true;
+//////////////////////////
+//////Pivot Points////////
+//////////////////////////
+            Pivot_X [0]=0.5;
+            Pivot_Y [0]=0.5;
+            Pivot_X [1]=0.5;
+            Pivot_Y [1]=0.5;
+            Pivot_X [2]=0.5;
+            Pivot_Y [2]=0.5;
+            Pivot_X [3]=0.5;
+            Pivot_Y [3]=0.5;
+
+            Pivot_X [4]=0.5;
+            Pivot_Y [4]=0.5;
+            Pivot_X [5]=0.5;
+            Pivot_Y [5]=0.4;
+            Pivot_X [6]=0.5;
+            Pivot_Y [6]=0.4; 
+            Pivot_X [7]=0.5;
+            Pivot_Y [7]=0.4;
+
+            Pivot_X [8]=0.5;
+            Pivot_Y [8]=0.4;
+            Pivot_X [9]=0.5;
+            Pivot_Y [9]=0.3;
+            Pivot_X [10]=0.5;
+            Pivot_Y [10]=0.3;
+            Pivot_X [11]=0.5;
+            Pivot_Y [11]=0.3;
+
+            Pivot_X [12]=0.5;
+            Pivot_Y [12]=0.3;
+            Pivot_X [13]=0.5;
+            Pivot_Y [13]=0.5;   
+            Pivot_X [14]=0.5;
+            Pivot_Y [14]=0.5;
+            Pivot_X [15]=0.5;
+            Pivot_Y [15]=0.5;
+
+            Pivot_X [16]=0.5;
+            Pivot_Y [16]=0.5;
+            Pivot_X [17]=0.5;
+            Pivot_Y [17]=0.5;   
+            Pivot_X [18]=0.5;
+            Pivot_Y [18]=0.5;  
+            Pivot_X [19]=0.5;
+            Pivot_Y [19]=0.5;
+
+            Pivot_Y [20]=0.5;
+            Pivot_X [20]=0.5;      
+            Pivot_Y [21]=0.5;
+            Pivot_X [21]=0.5;    
+            Pivot_Y [22]=0.5;
+            Pivot_X [22]=0.5;   
+            Pivot_Y [23]=0.5;
+            Pivot_X [23]=0.5;
+
+            Pivot_Y [24]=0.5;
+            Pivot_X [24]=0.5;      
+            Pivot_Y [25]=0.5;
+            Pivot_X [25]=0.5;    
+            Pivot_Y [26]=0.5;
+            Pivot_X [26]=0.5;   
+            Pivot_Y [27]=0.5;
+            Pivot_X [27]=0.5;
 game.sound.stopAll();
 game.state.start("StateMain"); 
     },
@@ -781,6 +846,71 @@ StickerAssigner_set1 = "Pinecone_Stickers";
         StickerDepth[4]=true;
         StickerDepth[5]=true;
         StickerDepth[6]=true;
+//////////////////////////
+//////Pivot Points////////
+//////////////////////////
+            Pivot_X [0]=0.5;
+            Pivot_Y [0]=0.5;
+            Pivot_X [1]=0.5;
+            Pivot_Y [1]=0.5;
+            Pivot_X [2]=0.5;
+            Pivot_Y [2]=0.5;
+            Pivot_X [3]=0.5;
+            Pivot_Y [3]=0.5;
+
+            Pivot_X [4]=0.5;
+            Pivot_Y [4]=0.5;
+            Pivot_X [5]=0.5;
+            Pivot_Y [5]=0.5;
+            Pivot_X [6]=0.5;
+            Pivot_Y [6]=0.5; 
+            Pivot_X [7]=0.5;
+            Pivot_Y [7]=0.5;
+
+            Pivot_X [8]=0.5;
+            Pivot_Y [8]=0.8;
+            Pivot_X [9]=0.5;
+            Pivot_Y [9]=0.8;
+            Pivot_X [10]=0.5;
+            Pivot_Y [10]=0.8;
+            Pivot_X [11]=0.5;
+            Pivot_Y [11]=0.8;
+
+            Pivot_X [12]=0.5;
+            Pivot_Y [12]=0.2;
+            Pivot_X [13]=0.5;
+            Pivot_Y [13]=0.2;   
+            Pivot_X [14]=0.5;
+            Pivot_Y [14]=0.2;
+            Pivot_X [15]=0.5;
+            Pivot_Y [15]=0.2;
+
+            Pivot_X [16]=0.5;
+            Pivot_Y [16]=0.5;
+            Pivot_X [17]=0.5;
+            Pivot_Y [17]=0.5;   
+            Pivot_X [18]=0.5;
+            Pivot_Y [18]=0.5;  
+            Pivot_X [19]=0.5;
+            Pivot_Y [19]=0.5;
+
+            Pivot_Y [20]=0.5;
+            Pivot_X [20]=0.5;      
+            Pivot_Y [21]=0.5;
+            Pivot_X [21]=0.5;    
+            Pivot_Y [22]=0.5;
+            Pivot_X [22]=0.5;   
+            Pivot_Y [23]=0.5;
+            Pivot_X [23]=0.5;
+
+            Pivot_Y [24]=0.5;
+            Pivot_X [24]=0.5;      
+            Pivot_Y [25]=0.5;
+            Pivot_X [25]=0.5;    
+            Pivot_Y [26]=0.5;
+            Pivot_X [26]=0.5;   
+            Pivot_Y [27]=0.5;
+            Pivot_X [27]=0.5;
 game.sound.stopAll();
 game.state.start("StateMain");
     },
@@ -845,6 +975,71 @@ StickerAssigner_set1 = "MapleLeaf_stickers";
         StickerDepth[1]=true;
         StickerDepth[2]=true;
         StickerDepth[3]=false;
+//////////////////////////
+//////Pivot Points////////
+//////////////////////////
+            Pivot_X [0]=0.5;
+            Pivot_Y [0]=0.5;
+            Pivot_X [1]=0.5;
+            Pivot_Y [1]=0.5;
+            Pivot_X [2]=0.5;
+            Pivot_Y [2]=0.5;
+            Pivot_X [3]=0.5;
+            Pivot_Y [3]=0.5;
+
+            Pivot_X [4]=0.5;
+            Pivot_Y [4]=0.3;
+            Pivot_X [5]=0.5;
+            Pivot_Y [5]=0.3;
+            Pivot_X [6]=0.5;
+            Pivot_Y [6]=0.3;
+            Pivot_X [7]=0.5;
+            Pivot_Y [7]=0.3;
+
+            Pivot_X [8]=0.5;
+            Pivot_Y [8]=0.2;
+            Pivot_X [9]=0.5;
+            Pivot_Y [9]=0.2;
+            Pivot_X [10]=0.5;
+            Pivot_Y [10]=0.2;
+            Pivot_X [11]=0.5;
+            Pivot_Y [11]=0.2;
+
+            Pivot_X [12]=0.5;
+            Pivot_Y [12]=0.8;
+            Pivot_X [13]=0.5;
+            Pivot_Y [13]=0.8;
+            Pivot_X [14]=0.5;
+            Pivot_Y [14]=0.8;
+            Pivot_X [15]=0.5;
+            Pivot_Y [15]=0.8;
+
+            Pivot_X [16]=0.5;
+            Pivot_Y [16]=0.5;
+            Pivot_X [17]=0.5;
+            Pivot_Y [17]=0.5;   
+            Pivot_X [18]=0.5;
+            Pivot_Y [18]=0.5;  
+            Pivot_X [19]=0.5;
+            Pivot_Y [19]=0.5;
+
+            Pivot_Y [20]=0.5;
+            Pivot_X [20]=0.5;      
+            Pivot_Y [21]=0.5;
+            Pivot_X [21]=0.5;    
+            Pivot_Y [22]=0.5;
+            Pivot_X [22]=0.5;   
+            Pivot_Y [23]=0.5;
+            Pivot_X [23]=0.5;
+
+            Pivot_Y [24]=0.5;
+            Pivot_X [24]=0.5;      
+            Pivot_Y [25]=0.5;
+            Pivot_X [25]=0.5;    
+            Pivot_Y [26]=0.5;
+            Pivot_X [26]=0.5;   
+            Pivot_Y [27]=0.5;
+            Pivot_X [27]=0.5;
 
 game.sound.stopAll();
 game.state.start("StateMain"); 
@@ -906,7 +1101,72 @@ isFirstCharaterSelected = true;
         StickerDepth[3]=true;
         StickerDepth[4]=true;
         StickerDepth[5]=true;   
-        StickerDepth[6]=true;  
+        StickerDepth[6]=true;
+//////////////////////////
+//////Pivot Points////////
+//////////////////////////
+            Pivot_X [0]=0.5;
+            Pivot_Y [0]=0.5;
+            Pivot_X [1]=0.5;
+            Pivot_Y [1]=0.5;
+            Pivot_X [2]=0.5;
+            Pivot_Y [2]=0.5;
+            Pivot_X [3]=0.5;
+            Pivot_Y [3]=0.5;
+
+            Pivot_X [4]=0.5;
+            Pivot_Y [4]=0.3;
+            Pivot_X [5]=0.5;
+            Pivot_Y [5]=0.3;
+            Pivot_X [6]=0.5;
+            Pivot_Y [6]=0.3;
+            Pivot_X [7]=0.5;
+            Pivot_Y [7]=0.3;
+
+            Pivot_X [8]=0.5;
+            Pivot_Y [8]=0.2;
+            Pivot_X [9]=0.5;
+            Pivot_Y [9]=0.2;
+            Pivot_X [10]=0.5;
+            Pivot_Y [10]=0.2;
+            Pivot_X [11]=0.5;
+            Pivot_Y [11]=0.2;
+
+            Pivot_X [12]=0.5;
+            Pivot_Y [12]=0.5;
+            Pivot_X [13]=0.5;
+            Pivot_Y [13]=0.5;
+            Pivot_X [14]=0.5;
+            Pivot_Y [14]=0.5;
+            Pivot_X [15]=0.5;
+            Pivot_Y [15]=0.5;
+
+            Pivot_X [16]=0.5;
+            Pivot_Y [16]=0.5;
+            Pivot_X [17]=0.5;
+            Pivot_Y [17]=0.5;   
+            Pivot_X [18]=0.5;
+            Pivot_Y [18]=0.5;  
+            Pivot_X [19]=0.5;
+            Pivot_Y [19]=0.5;
+
+            Pivot_Y [20]=0.5;
+            Pivot_X [20]=0.5;      
+            Pivot_Y [21]=0.5;
+            Pivot_X [21]=0.5;    
+            Pivot_Y [22]=0.5;
+            Pivot_X [22]=0.5;   
+            Pivot_Y [23]=0.5;
+            Pivot_X [23]=0.5;
+
+            Pivot_Y [24]=0.5;
+            Pivot_X [24]=0.5;      
+            Pivot_Y [25]=0.5;
+            Pivot_X [25]=0.5;    
+            Pivot_Y [26]=0.5;
+            Pivot_X [26]=0.5;   
+            Pivot_Y [27]=0.5;
+            Pivot_X [27]=0.5;  
 game.sound.stopAll();
 game.state.start("StateMain");
     },
@@ -974,6 +1234,71 @@ isFirstCharaterSelected = true;
         StickerDepth[4]=true;
         StickerDepth[5]=true;
         StickerDepth[6]=true;
+//////////////////////////
+//////Pivot Points////////
+//////////////////////////
+            Pivot_X [0]=0.5;
+            Pivot_Y [0]=0.5;
+            Pivot_X [1]=0.5;
+            Pivot_Y [1]=0.5;
+            Pivot_X [2]=0.5;
+            Pivot_Y [2]=0.5;
+            Pivot_X [3]=0.5;
+            Pivot_Y [3]=0.5;
+
+            Pivot_X [4]=0.5;
+            Pivot_Y [4]=0.3;
+            Pivot_X [5]=0.5;
+            Pivot_Y [5]=0.3;
+            Pivot_X [6]=0.5;
+            Pivot_Y [6]=0.3;
+            Pivot_X [7]=0.5;
+            Pivot_Y [7]=0.3;
+
+            Pivot_X [8]=0.5;
+            Pivot_Y [8]=0.2;
+            Pivot_X [9]=0.5;
+            Pivot_Y [9]=0.2;
+            Pivot_X [10]=0.5;
+            Pivot_Y [10]=0.2;
+            Pivot_X [11]=0.5;
+            Pivot_Y [11]=0.2;
+
+            Pivot_X [12]=0.5;
+            Pivot_Y [12]=0.5;
+            Pivot_X [13]=0.5;
+            Pivot_Y [13]=0.5;
+            Pivot_X [14]=0.5;
+            Pivot_Y [14]=0.5;
+            Pivot_X [15]=0.5;
+            Pivot_Y [15]=0.5;
+
+            Pivot_X [16]=0.5;
+            Pivot_Y [16]=0.2;
+            Pivot_X [17]=0.5;
+            Pivot_Y [17]=0.2;   
+            Pivot_X [18]=0.5;
+            Pivot_Y [18]=0.2;  
+            Pivot_X [19]=0.5;
+            Pivot_Y [19]=0.2;
+
+            Pivot_Y [20]=0.2;
+            Pivot_X [20]=0.5;   
+            Pivot_Y [21]=0.2;
+            Pivot_X [21]=0.2;    
+            Pivot_Y [22]=0.5;
+            Pivot_X [22]=0.5;   
+            Pivot_Y [23]=0.5;
+            Pivot_X [23]=0.5;
+
+            Pivot_Y [24]=0.5;
+            Pivot_X [24]=0.5;      
+            Pivot_Y [25]=0.5;
+            Pivot_X [25]=0.5;    
+            Pivot_Y [26]=0.5;
+            Pivot_X [26]=0.5;   
+            Pivot_Y [27]=0.5;
+            Pivot_X [27]=0.5; 
 game.sound.stopAll();        
 game.state.start("StateMain");
     },
@@ -1009,6 +1334,8 @@ game.state.start("StateMain");
                     isClickDragging = false;
                     this.SelectedButton.x = GameCenter_x;
                     this.SelectedButton.y = GameCenter_y;
+                    this.SelectedButton.anchor.x = 0.5;
+                    this.SelectedButton.anchor.y = 0.5;
                     this.drop.play();
                 }
         }
