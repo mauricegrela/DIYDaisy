@@ -105,7 +105,8 @@ var StateMain = {
         this.SaveButton.scale.setTo(0.8,0.8);
         
         this.BGMusic = game.add.audio("MusicTrack");
-        this.BGMusic.play();
+        this.BGMusic.play(true);
+        this.BGMusic.loopFull();
         
         game.time.events.add(10*1000, function() {
         this.DelayedAudioPromt = game.add.audio("TeachSaveButton");
@@ -122,7 +123,7 @@ var StateMain = {
 //character Sticker Group//
 ///////////////////////////
 //These are the sprites which the player can click to change the character they're playing with       
-        var ButtonsPos_x = game.width/2+25;
+        var ButtonsPos_x = game.width/2-60;
         var ButtonsPos_y = game.height;
             if (isMobile==true) 
             {
@@ -187,21 +188,20 @@ var StateMain = {
         buttongroup.add(this.MainResetButton);
         buttongroup.add(this.MainStickerButton);
 
+        ///////////////
         //Character Rock Stickers
         this.RockCharacter = game.add.sprite(ButtonsPos_x, ButtonsPos_y , 'Characterbuttons');   
         this.RockCharacter.inputEnabled = true;
         this.RockCharacter.frame = 1;
-        this.RockCharacter.anchor.x = 0.4;
+        this.RockCharacter.anchor.x = 0.5;
         this.RockCharacter.anchor.y =  0.5;
         this.RockCharacter.events.onInputDown.add(this.RockSticker, this.RockCharacter);   
         this.RockCharacter.scale.setTo(CharacterStickerScale,CharacterStickerScale);
-        CharacterStickerGroup.add(this.RockCharacter);
-        this.RockCharacter.x = ButtonsPos_x+this.RockCharacter.width/2;
-        this.RockCharacter.y = game.height-this.RockCharacter.height/2;  
+        CharacterStickerGroup.add(this.RockCharacter); 
         ButtonsPos_y = game.height-this.RockCharacter.height/2;  
-        
+        this.RockCharacter.y = ButtonsPos_y;
         //Character Pinecone Stickers
-        this.PineconeCharacter = game.add.sprite(ButtonsPos_x-this.RockCharacter.width/2, ButtonsPos_y , 'Characterbuttons');   
+        this.PineconeCharacter = game.add.sprite(ButtonsPos_x+this.RockCharacter.width, ButtonsPos_y , 'Characterbuttons');   
         this.PineconeCharacter.inputEnabled = true;
         this.PineconeCharacter.frame = 4;
         this.PineconeCharacter.anchor.x = 0.5;
@@ -212,7 +212,7 @@ var StateMain = {
         CharacterStickerGroup.add(this.PineconeCharacter);
         
         //Character StickWand Stickers
-        this.SmudgeStickCharacter = game.add.sprite((ButtonsPos_x-this.RockCharacter.width*1.5), ButtonsPos_y , 'Characterbuttons');   
+        this.SmudgeStickCharacter = game.add.sprite((ButtonsPos_x+this.RockCharacter.width*2), ButtonsPos_y , 'Characterbuttons');   
         this.SmudgeStickCharacter.inputEnabled = true;
         this.SmudgeStickCharacter.frame = 3;
         this.SmudgeStickCharacter.anchor.x = 0.5;
@@ -222,10 +222,10 @@ var StateMain = {
         CharacterStickerGroup.add(this.SmudgeStickCharacter);
         
         //Character Mobile Stickers
-        this.StickWandCharacter = game.add.sprite((ButtonsPos_x+this.RockCharacter.width*1.5), ButtonsPos_y , 'Characterbuttons');
+        this.StickWandCharacter = game.add.sprite((ButtonsPos_x-this.RockCharacter.width), ButtonsPos_y , 'Characterbuttons');
         this.StickWandCharacter.inputEnabled = true;
         this.StickWandCharacter.frame = 2;
-        this.StickWandCharacter.anchor.x = 0.5;
+        this.StickWandCharacter.anchor.x = 0.3;
         this.StickWandCharacter.anchor.y = 0.5;
         //this.PineconeBody.input.pixelPerfectOver = true; 
         this.StickWandCharacter.events.onInputDown.add(this.StickWandSticker, this.StickWandCharacter);   
@@ -233,10 +233,10 @@ var StateMain = {
         CharacterStickerGroup.add(this.StickWandCharacter);
         
         //Character Mobile Stickers
-        /*this.MobileCharacter = game.add.sprite(ButtonsPos_x+this.RockCharacter.width*2, ButtonsPos_y , 'Characterbuttons');   
+        this.MobileCharacter = game.add.sprite(ButtonsPos_x-this.RockCharacter.width*2, ButtonsPos_y , 'Characterbuttons');   
         this.MobileCharacter.inputEnabled = true;
         this.MobileCharacter.frame = 0;
-        this.MobileCharacter.anchor.x = 0.5;
+        this.MobileCharacter.anchor.x = 0.0;
         this.MobileCharacter.anchor.y = 0.5;
         //this.PineconeBody.input.pixelPerfectOver = true; 
         this.MobileCharacter.events.onInputDown.add(this.MobileSticker, this.MobileCharacter);   
@@ -245,7 +245,7 @@ var StateMain = {
                 
         
         
-*/
+
         
         CharacterStickerGroup.visible = false;
         
@@ -788,10 +788,10 @@ game.state.start("StateMain");
     MobileSticker: function () {  
 IsPlacingMobile = true;    
 isFirstCharaterSelected = true;
-CaroselGroupNumber = 6;
-StickerAssigner_set1 = "Mobile_stickers";
+CaroselGroupNumber = 4;
+StickerAssigner_set1 = "MapleLeaf_stickers";
 //Reset the references to the body
-    ImageReference[0] = 'MobileBody';
+    ImageReference[0] = 'MapleLeafBody';
     ImageReference[1] = '';
     ImageReference[2] = '';
     ImageReference[3] = '';
@@ -802,66 +802,50 @@ StickerAssigner_set1 = "Mobile_stickers";
 //////////////////////////
 ////Sticker Body//////////
 //////////////////////////
-        ImageAssetArray[0]='MobileBody';
+        ImageAssetArray[0]='MapleLeafBody';
 ///////////////////////////
 ////First Sticker Group////
 ///////////////////////////
-        ImageAssetArray[1]='Mobile_1';
-        ImageAssetArray[2]='Mobile_2'; 
-        ImageAssetArray[3]='Mobile_3';
-        ImageAssetArray[4]='Mobile_4';
+        ImageAssetArray[1]='MapleLeaf_1';
+        ImageAssetArray[2]='MapleLeaf_2'; 
+        ImageAssetArray[3]='MapleLeaf_3';
+        ImageAssetArray[4]='MapleLeaf_4';
 ///////////////////////////
 ////Second Sticker Group///
 ///////////////////////////
-        ImageAssetArray[5]='Mobile_5';
-        ImageAssetArray[6]='Mobile_6';
-        ImageAssetArray[7]='Mobile_7';
-        ImageAssetArray[8]='Mobile_8';
+        ImageAssetArray[5]='MapleLeaf_5';
+        ImageAssetArray[6]='MapleLeaf_6';
+        ImageAssetArray[7]='MapleLeaf_7';
+        ImageAssetArray[8]='MapleLeaf_8';
 ///////////////////////////
 ////Third Sticker Group////
 ///////////////////////////
-        ImageAssetArray[9]='Mobile_9';
-        ImageAssetArray[10]='Mobile_10';
-        ImageAssetArray[11]='Mobile_11';
-        ImageAssetArray[12]='Mobile_12';
+        ImageAssetArray[9]='MapleLeaf_9';
+        ImageAssetArray[10]='MapleLeaf_10';
+        ImageAssetArray[11]='MapleLeaf_11';
+        ImageAssetArray[12]='MapleLeaf_12';
 ///////////////////////////
 ////Fourth Sticker Group///
 ///////////////////////////
-        ImageAssetArray[13]='Mobile_13';
-        ImageAssetArray[14]='Mobile_14';
-        ImageAssetArray[15]='Mobile_15';  
-        ImageAssetArray[16]='Mobile_16';
+        ImageAssetArray[13]='MapleLeaf_13';
+        ImageAssetArray[14]='MapleLeaf_14';
+        ImageAssetArray[15]='MapleLeaf_15';  
+        ImageAssetArray[16]='MapleLeaf_16';
 ///////////////////////////
 ////Fifth Sticker Group////
 ///////////////////////////
-        ImageAssetArray[17]='Mobile_17';
-        ImageAssetArray[18]='Mobile_18';
-        ImageAssetArray[19]='Mobile_19';
-        ImageAssetArray[20]='Mobile_20';
-///////////////////////////
-////Sixth Sticker Group////
-///////////////////////////
-        ImageAssetArray[21]='Mobile_21';
-        ImageAssetArray[22]='Mobile_22';
-        ImageAssetArray[23]='Mobile_23';
-        ImageAssetArray[24]='Mobile_24';
-///////////////////////////
-///Seventh Sticker Group///
-///////////////////////////
-        ImageAssetArray[25]='Mobile_25';
-        ImageAssetArray[26]='Mobile_26';
-        ImageAssetArray[27]='Mobile_27';
-        ImageAssetArray[28]='Mobile_28';
+        ImageAssetArray[17]='MapleLeaf_17';
+        ImageAssetArray[18]='MapleLeaf_18';
+        ImageAssetArray[19]='MapleLeaf_19';
+        ImageAssetArray[20]='MapleLeaf_20';
 //////////////////////////
 ////Sticker Depths////////
 //////////////////////////
         StickerDepth[0]=true;
         StickerDepth[1]=true;
         StickerDepth[2]=true;
-        StickerDepth[3]=true;
-        StickerDepth[4]=true;
-        StickerDepth[5]=true;
-        StickerDepth[6]=true;
+        StickerDepth[3]=false;
+
 game.sound.stopAll();
 game.state.start("StateMain"); 
     },

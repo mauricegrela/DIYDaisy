@@ -39,9 +39,9 @@ var StateTitle = {
     
     startGame: function () {    
     game.sound.stopAll();
-    //game.state.start("StateMain");
+    game.state.start("StateMain");
     isFirstCharaterSelected = false;
-    game.state.start("StatePlace");
+    //game.state.start("StatePlace");
     //game.state.start("StateDirectory");
     }, 
     

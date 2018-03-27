@@ -10,11 +10,12 @@ var StatePlace = {
     , create: function () {
         
         this.BGMusic = game.add.audio("MusicTrack");
-        this.BGMusic.play();
+        this.BGMusic.play(true);
+        this.BGMusic.loopFull();
         
         craftBackgroundScale = scaleRatio;
         craftAnimBackgroundScale = scaleRatio*1.5;
-        CharacterScaleAdjustment = 0.25;
+        CharacterScaleAdjustment = 0.50;
         
         CharacterGroup = game.add.group();
                 
