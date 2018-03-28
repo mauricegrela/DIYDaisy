@@ -26,7 +26,7 @@ var StatePlace = {
         //tileSprite =game.add.tileSprite(0, 0, 800, 600, 'starfield');
         
         this.craftBackground1 = game.add.tileSprite(0, 0,  game.width, game.height,'placing_Backgroung1');
-        this.craftBackground1.scale.setTo(2,2);
+        this.craftBackground1.scale.setTo(1,1);
         //this.craftBackground1.height = this.game.height;
         //this.craftBackground1.width = this.game.height*5.3;
         
@@ -405,13 +405,13 @@ var StatePlace = {
     
     update: function () {
         //Paralaxing background. 
-        this.craftBackground2.x = game.camera.x*0.1;
+        //this.craftBackground2.x = game.camera.x*0.1;
 
             if(game.input.x<100)
             {               
-                this.craftBackground1.tilePosition.x += 4;
-                    if((this.craftBackground1.tilePosition.x ==  (this.craftBackground1.width*2)*-1)
-                      ||(this.craftBackground1.tilePosition.x ==  game.camera.width/2))
+                this.craftBackground1.tilePosition.x += 8;
+                    if((this.craftBackground1.tilePosition.x ==  (this.craftBackground1.width*4)*-1)
+                      ||(this.craftBackground1.tilePosition.x ==  game.camera.width))
                     {//If the player has looped around, move all the assets up
                         for (let i = 0; i <= AnimObject.length-1; i+=1) 
                         {
@@ -428,9 +428,9 @@ var StatePlace = {
             }
                 else if(game.input.x>game.width-100)
                 {//WHEN MOVING RIGHT
-                    this.craftBackground1.tilePosition.x -= 4;
-                        if((this.craftBackground1.tilePosition.x ==  (this.craftBackground1.width*2)*-1)
-                          ||(this.craftBackground1.tilePosition.x ==  game.camera.width/2))
+                    this.craftBackground1.tilePosition.x -= 8;
+                        if((this.craftBackground1.tilePosition.x ==  (this.craftBackground1.width*4)*-1)
+                          ||(this.craftBackground1.tilePosition.x ==  game.camera.width))
                         {//If the player has looped around, move all the assets up
                             for (let i = 0; i <= AnimObject.length-1; i+=1) 
                             {

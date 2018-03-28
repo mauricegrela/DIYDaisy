@@ -34,14 +34,14 @@ this.time.advacedTiming = true;
         game.load.image('FrontEndTile', 'images/backgrounds/landing-page-bg.jpg');
         game.load.image('ParentsCornerBG', 'images/backgrounds/parent-corner-bg.jpg');
         
-        game.load.image('PDFButton', 'images/parentcorner/play-parents-button.png');
-        game.load.image('VideoButton', 'images/parentcorner/pdf-button.png');
+        game.load.image('PDFButton', 'images/parentcorner/play-parents-button@2x.png');
+        game.load.image('VideoButton', 'images/parentcorner/pdf-button@2x.png');
         
         //Logos
-        game.load.image('CBCLogo', 'images/parentcorner/cbc-logo.png');
-        game.load.image('RivalSchools', 'images/parentcorner/rs-logo.png');
-        game.load.image('BellLogo', 'images/parentcorner/Bell-logo.png');
-        game.load.image('ImagineCreate', 'images/parentcorner/Imagine-logo.png');    
+        game.load.image('CBCLogo', 'images/parentcorner/cbc-logo@2x.png');
+        game.load.image('RivalSchools', 'images/parentcorner/rs-logo@2x.png');
+        game.load.image('BellLogo', 'images/parentcorner/Bell-logo@2x.png');
+        game.load.image('ImagineCreate', 'images/parentcorner/Imagine-logo@2x.png');    
         
 /////////////////////
 /////LandingPage/////
@@ -262,7 +262,7 @@ this.time.advacedTiming = true;
         game.load.image('TabButton', 'images/ui/StickerCollisionBox.png');
         
         //Placement Background
-        game.load.image('placing_Backgroung1', 'images/backgrounds/Placeable/Interactive_main_BG-min.png');
+        game.load.image('placing_Backgroung1', 'images/backgrounds/Placeable/Interactive_main_BG-min.jpg');
         game.load.image('placing_Backgroung2', 'images/backgrounds/Placeable/Interactive_main_FOREGROUND-min.png');
 
         //Animations

@@ -18,7 +18,7 @@ var StateParentsCorner = {
 
         var BottomButtonPos_X = game.width;
         var BottomButtonPos_Y = game.height - game.height/4;
-        //scaleRatio = window.devicePixelRatio / 4;
+        var buttonrez = window.devicePixelRatio/1.5;
         
         var PDFButtonsPos_x = game.width/2;
         var PDFButtonsPos_y = game.height/2; 
@@ -41,12 +41,24 @@ var StateParentsCorner = {
         /////LOGOS//////
         ////////////////
         this.CBCLogo = game.add.sprite(this.game.width/2, this.game.height-100,'CBCLogo');
+        this.CBCLogo.anchor.setTo(0.5);
+        //this.CBCLogo.smoothed = true;
+        this.CBCLogo.scale.setTo(buttonrez);
         
         this.RivalSchoolsLogo = game.add.sprite(this.game.width/2, this.game.height-100,'RivalSchools');
+        this.RivalSchoolsLogo.anchor.setTo(0.5);
+        //this.RivalSchoolsLogo.smoothed = true;
+        this.RivalSchoolsLogo.scale.setTo(buttonrez);
         
         this.BellLogo = game.add.sprite(this.game.width/2, this.game.height-100,'BellLogo');
+        this.BellLogo.anchor.setTo(0.5);
+        //this.BellLogo.smoothed = true;
+        this.BellLogo.scale.setTo(buttonrez);
         
         this.ImagineCreateLogo = game.add.sprite(this.game.width/2, this.game.height-100,'ImagineCreate');
+        this.ImagineCreateLogo.anchor.setTo(0.5);
+        //this.ImagineCreateLogo.smoothed = true;
+        this.ImagineCreateLogo.scale.setTo(buttonrez);
         
         var Logo_Y = this.game.height-50;
         
@@ -55,10 +67,10 @@ var StateParentsCorner = {
         this.BellLogo.y =Logo_Y;
         this.ImagineCreateLogo.y =Logo_Y;
         
-        this.CBCLogo.x =this.game.width/2-this.CBCLogo.width*5;
-        this.RivalSchoolsLogo.x =this.game.width/2+this.RivalSchoolsLogo.width*3;
-        this.BellLogo.x =this.game.width/2-this.BellLogo.width*2.5;
-        this.ImagineCreateLogo.x =this.game.width/2+this.BellLogo.width*1.5;
+        this.CBCLogo.x =this.game.width/2-this.CBCLogo.width*3;
+        this.RivalSchoolsLogo.x =this.game.width/2+this.RivalSchoolsLogo.width*2;
+        this.BellLogo.x =this.game.width/2-this.BellLogo.width*2;
+        this.ImagineCreateLogo.x =this.game.width/2+this.BellLogo.width*1;
         
         ////////////////
         ////Buttons/////
@@ -107,14 +119,14 @@ var StateParentsCorner = {
         this.RockCharacterVid.anchor.setTo(1,0.5);
         this.RockCharacterVid.inputEnabled = true;
         this.RockCharacterVid.events.onInputDown.add(this.videoClick, {param1: 'Episode_Rock',}, this.RockCharacterVid);   
-        this.RockCharacterVid.scale.setTo(1,1);
+        this.RockCharacterVid.scale.setTo(buttonrez);
         CharacterGroup.add(this.RockCharacterVid);
         
         this.RockCharacterPDF = game.add.sprite(PDFButtonsPos_x, PDFButtonsPos_y+this.RockCharacterImage.height/2, 'VideoButton');
         this.RockCharacterPDF.anchor.setTo(0,0.5);
         this.RockCharacterPDF.inputEnabled = true;
         this.RockCharacterPDF.events.onInputDown.add(this.imageClick, {param1: "PDFS/diyLadyBugRock.pdf",}, this.RockCharacter); 
-        this.RockCharacterPDF.scale.setTo(1,1);
+        this.RockCharacterPDF.scale.setTo(buttonrez);
         CharacterGroup.add(this.RockCharacterPDF);
 
         ///////////////////
@@ -131,14 +143,14 @@ var StateParentsCorner = {
         this.PineConeCharacterVid.anchor.setTo(1,0.5);
         this.PineConeCharacterVid.inputEnabled = true;
         this.PineConeCharacterVid.events.onInputDown.add(this.videoClick, {param1: 'Episode_PineCone',}, this.PineconeCharacter);  
-        this.PineConeCharacterVid.scale.setTo(1,1);
+        this.PineConeCharacterVid.scale.setTo(buttonrez);
         CharacterGroup.add(this.PineConeCharacterVid);
         
         this.RockCharacterPDF = game.add.sprite(this.PineConeCharacterImage.x, PDFButtonsPos_y+this.PineConeCharacterImage.height/2, 'VideoButton');
         this.RockCharacterPDF.anchor.setTo(0,0.5);
         this.RockCharacterPDF.inputEnabled = true;
         this.RockCharacterPDF.events.onInputDown.add(this.imageClick, {param1: "PDFS/diyPineconeFriend.pdf",}, this.PineConeCharacterVid);    
-        this.RockCharacterPDF.scale.setTo(1,1);
+        this.RockCharacterPDF.scale.setTo(buttonrez);
         CharacterGroup.add(this.RockCharacterPDF);
 
         ///////////////////
@@ -155,14 +167,14 @@ var StateParentsCorner = {
         this.StickWandCharacterVid.anchor.setTo(1,0.5);
         this.StickWandCharacterVid.inputEnabled = true;
         this.StickWandCharacterVid.events.onInputDown.add(this.videoClick, {param1: 'Episode_Flower',}, this.StickWandCharacterVid);  
-        this.StickWandCharacterVid.scale.setTo(1,1);
+        this.StickWandCharacterVid.scale.setTo(buttonrez);
         CharacterGroup.add(this.StickWandCharacterVid);
         
         this.StickWandCharacterPDF = game.add.sprite(this.StickWandCharacterImage.x, PDFButtonsPos_y+this.StickWandCharacterImage.height/2, 'VideoButton');
         this.StickWandCharacterPDF.anchor.setTo(0,0.5);
         this.StickWandCharacterPDF.inputEnabled = true;
         this.StickWandCharacterPDF.events.onInputDown.add(this.imageClick, {param1: "diyFlowerPetalArt.pdf",}, this.PineConeCharacterVid);    
-        this.StickWandCharacterPDF.scale.setTo(1,1);
+        this.StickWandCharacterPDF.scale.setTo(buttonrez);
         CharacterGroup.add(this.StickWandCharacterPDF);
 
         //////////////////
@@ -179,14 +191,14 @@ var StateParentsCorner = {
         this.StickWandCharacterVid.anchor.setTo(1,0.5);
         this.StickWandCharacterVid.inputEnabled = true;
         this.StickWandCharacterVid.events.onInputDown.add(this.videoClick, {param1: 'Episode_Rainbow',}, this.StickWandCharacterVid);  
-        this.StickWandCharacterVid.scale.setTo(1,1);
+        this.StickWandCharacterVid.scale.setTo(buttonrez);
         CharacterGroup.add(this.StickWandCharacterVid);
         
         this.StickWandCharacterPDF = game.add.sprite(this.StickWandCharacterImage.x, PDFButtonsPos_y+this.StickWandCharacterImage.height/2, 'VideoButton');
         this.StickWandCharacterPDF.anchor.setTo(0,0.5);
         this.StickWandCharacterPDF.inputEnabled = true;
         this.StickWandCharacterPDF.events.onInputDown.add(this.imageClick, {param1: "PDFS/diyNatureWand.pdf",}, this.StickWandCharacterPDF);    
-        this.StickWandCharacterPDF.scale.setTo(1,1);
+        this.StickWandCharacterPDF.scale.setTo(buttonrez);
         CharacterGroup.add(this.StickWandCharacterPDF);
 
         /////////////////////
@@ -203,14 +215,14 @@ var StateParentsCorner = {
         this.LeafCharacterVid.anchor.setTo(1,0.5);
         this.LeafCharacterVid.inputEnabled = true;
         this.LeafCharacterVid.events.onInputDown.add(this.videoClick, {param1: 'Episode_MapleLeaf',}, this.LeafCharacterVid);  
-        this.LeafCharacterVid.scale.setTo(1,1);
+        this.LeafCharacterVid.scale.setTo(buttonrez);
         CharacterGroup.add(this.LeafCharacterVid);
         
         this.LeafCharacterPDF = game.add.sprite(this.LeafCharacterImage.x, PDFButtonsPos_y+this.LeafCharacterImage.height/2, 'VideoButton');
         this.LeafCharacterPDF.anchor.setTo(0,0.5);
         this.LeafCharacterPDF.inputEnabled = true;
         this.LeafCharacterPDF.events.onInputDown.add(this.imageClick, {param1: "PDFS/diyFlowerPetalArt.pdf",}, this.LeafCharacterPDF);    
-        this.LeafCharacterPDF.scale.setTo(1,1);
+        this.LeafCharacterPDF.scale.setTo(buttonrez);
         CharacterGroup.add(this.LeafCharacterPDF);
         
        

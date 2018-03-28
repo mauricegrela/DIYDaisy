@@ -406,10 +406,10 @@ if (isMobile>-1)
     if (isMobile==false) {
         //desktop laptop
         if (useLandscape == true) {
-            game = new Phaser.Game(1024, 768, Phaser.CANVAS, "ph_game");
+            game = new Phaser.Game(1024, 768, Phaser.CANVAS, "ph_game", null, false, true);
         } else { 
 
-            game = new Phaser.Game(1024, 768, Phaser.CANVAS, "ph_game");
+            game = new Phaser.Game(1024, 768, Phaser.CANVAS, "ph_game", null, false, true);
         }
 
     } else {
