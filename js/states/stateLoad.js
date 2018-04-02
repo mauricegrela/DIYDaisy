@@ -287,7 +287,7 @@ this.time.advacedTiming = true;
         game.load.spritesheet('Anim8', 'images/SpriteSheets/8_Kite_SpriteSheet.png', 256, 256, 9);
         game.load.spritesheet('Anim9', 'images/SpriteSheets/9_Light_SpriteSheet.png', 256, 256, 9);
         game.load.spritesheet('Anim10', 'images/SpriteSheets/10_Tea_SpriteSheet.png', 256, 256, 9);
-        
+        game.load.spritesheet('Anim11', 'images/SpriteSheets/11_Daisy_SpriteSheet.png', 256, 256, 9);
         //Parents Cornder
         game.load.image("LeafPDF", "images/parentcorner/LeafPDF.png");
         game.load.image("MapleLeafPDF", "images/parentcorner/MapleLeafPDF.png");
@@ -327,6 +327,8 @@ this.time.advacedTiming = true;
         game.load.audio("Kite",'audio/sfx/08_Kite_SFX.mp3');
         game.load.audio("lights",'audio/sfx/09_lights_SFX.mp3');
         game.load.audio("tea",'audio/sfx/10_tea_SFX.mp3');
+        game.load.audio("Daisy",'audio/sfx/11_Daisy_SFX.mp3');
+        
         
         //Loading screen assets
         var loadingBackground = game.add.image(0, 0, "loadingBackground");  
