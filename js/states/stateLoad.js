@@ -274,7 +274,7 @@ this.time.advacedTiming = true;
         
         //Placement Background
         game.load.image('placing_Backgroung1', 'images/backgrounds/Placeable/Interactive_main_BG-min.jpg');
-        game.load.image('placing_Backgroung2', 'images/backgrounds/Placeable/Interactive_main_FOREGROUND-min.png');
+        game.load.image('placing_Backgroung2', 'images/backgrounds/Placeable/foreground-tree.png');
 
         //Animations
         game.load.spritesheet('Anim1', 'images/SpriteSheets/1_Clouds_SpriteSheet.png', 256, 256, 9);

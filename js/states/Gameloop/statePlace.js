@@ -39,8 +39,7 @@ var StatePlace = {
         //this.craftBackground1.height = this.game.height;
         //this.craftBackground1.width = this.game.height*5.3;
         
-        this.craftBackground2 = game.add.tileSprite(0, 0,  game.width, game.height,'placing_Backgroung2');
-        this.craftBackground2.scale.setTo(2,2);
+
         cursors = game.input.keyboard.createCursorKeys();
         
         
@@ -365,7 +364,8 @@ var StatePlace = {
         //game.world.bringToTop(this.mummy9);
         //game.world.bringToTop(this.mummy10);
 
-        
+        this.craftBackground2 = game.add.tileSprite(0, 0,  game.width, game.height,'placing_Backgroung2');
+        this.craftBackground2.scale.setTo(1,1);
         
         this.Logo = gameButtons.addGenericButton("0", 0,0 , this.ToLandingPage, this,"daisylogo",2); 
         //addGenericButton("0", 0,0 , this.BackToCraft, this,"daisylogo",2); 
@@ -385,6 +385,8 @@ var StatePlace = {
         this.SaveButton.scale.setTo(0.8,0.8);
         this.SaveButton.fixedToCamera = true;
         
+        
+
         
     },
     
@@ -481,6 +483,8 @@ var StatePlace = {
             if(game.input.x<100)
             {               
                 this.craftBackground1.tilePosition.x += 8;
+                this.craftBackground2.tilePosition.x += 8;
+                
                     if((this.craftBackground1.tilePosition.x ==  (this.craftBackground1.width*4)*-1)
                       ||(this.craftBackground1.tilePosition.x ==  game.camera.width))
                     {//If the player has looped around, move all the assets up
@@ -500,6 +504,8 @@ var StatePlace = {
                 else if(game.input.x>game.width-100)
                 {//WHEN MOVING RIGHT
                     this.craftBackground1.tilePosition.x -= 8;
+                    this.craftBackground2.tilePosition.x -= 8;
+                    
                         if((this.craftBackground1.tilePosition.x ==  (this.craftBackground1.width*4)*-1)
                           ||(this.craftBackground1.tilePosition.x ==  game.camera.width))
                         {//If the player has looped around, move all the assets up
