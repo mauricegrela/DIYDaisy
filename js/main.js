@@ -97,6 +97,7 @@ var AnimObject = //Images
     0,
     0,
     0,
+    0,
     0
     ];
 var AnimRef = //Images
@@ -110,10 +111,13 @@ var AnimRef = //Images
     0,
     0,
     0,
+    0,
     0
     ];
 var AudioTunes = //Images
     [
+    0,
+    0,
     0,
     0,
     0,

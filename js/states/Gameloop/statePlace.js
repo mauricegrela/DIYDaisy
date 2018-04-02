@@ -181,11 +181,11 @@ var StatePlace = {
         //this.anim1.play(10, true);
 
         this.mummy2 = game.add.sprite(
-        543,
+        0,
         this.craftBackground1.height,
         'Anim2', 5);
         this.mummy2.scale.set(craftAnimBackgroundScale);
-        this.mummy2.anchor.x = 0.5;
+        this.mummy2.anchor.x = 0;
         this.mummy2.anchor.y =  1;
         //this.mummy2.smoothed = false;
         //this.mummy2.fixedToCamera = true;
@@ -229,7 +229,7 @@ var StatePlace = {
         //this.mummy5.x = this.mummy5.width*4.3;
         
         this.mummy6 = game.add.sprite(
-        2450,
+        2700,
         this.craftBackground1.height-20,
         'Anim6', 5);
         this.mummy6.scale.set(craftAnimBackgroundScale);
@@ -241,7 +241,7 @@ var StatePlace = {
         //this.mummy6.x = this.mummy6.width*4.7;
         
         this.mummy7 = game.add.sprite(
-        2850,
+        3250,
         this.craftBackground1.height-20,
         'Anim7', 5);
         this.mummy7.scale.set(craftAnimBackgroundScale);
@@ -288,6 +288,18 @@ var StatePlace = {
         this.anim10 = this.mummy10.animations.add('walk');
         //this.mummy10.x = this.mummy10.width*7.3;
         
+        this.mummy11 = game.add.sprite(
+        4000,
+        this.craftBackground1.height,
+        'Anim11', 5);
+        this.mummy11.scale.set(craftAnimBackgroundScale);
+        this.mummy11.anchor.x = 0.35;
+        this.mummy11.anchor.y =  1.05;
+        //this.mummy2.smoothed = false;
+        //this.mummy2.fixedToCamera = true;
+        this.anim11 = this.mummy11.animations.add('walk');
+        //this.mummy10.x = this.mummy10.width*7.3;
+        
 
         
         game.world.bringToTop(StickersUnderBody);
@@ -304,7 +316,8 @@ var StatePlace = {
         AnimObject[7]=this.mummy8;
         AnimObject[8]=this.mummy9;
         AnimObject[9]=this.mummy10;
-         
+        AnimObject[10]=this.mummy11;
+        
         AnimRef[0]=this.anim1;
         AnimRef[1]=this.anim2;
         AnimRef[2]=this.anim3;
@@ -315,7 +328,7 @@ var StatePlace = {
         AnimRef[7]=this.anim8;
         AnimRef[8]=this.anim9;
         AnimRef[9]=this.anim10;
-         
+        AnimRef[10]=this.anim11; 
         
                 
         this.Clouds = game.add.audio("Clouds"); 
@@ -328,7 +341,7 @@ var StatePlace = {
         this.Kite = game.add.audio("Kite");
         this.lights = game.add.audio("lights");
         this.tea = game.add.audio("tea");
-        
+        this.Daisy = game.add.audio("Daisy");
         
         AudioTunes[0]=this.Clouds;
         AudioTunes[1]=game.add.audio("Dandelion");//this.Dandelion;
@@ -340,7 +353,7 @@ var StatePlace = {
         AudioTunes[7]=game.add.audio("Kite");
         AudioTunes[8]=game.add.audio("lights");
         AudioTunes[9]=game.add.audio("tea");
-        
+        AudioTunes[10]=game.add.audio("Daisy");
 
         game.world.bringToTop(this.mummy1);
         game.world.bringToTop(this.mummy2);
@@ -524,6 +537,7 @@ var StatePlace = {
                 this.Kite.stop();
                 this.lights.stop();
                 this.tea.stop();
+                this.Daisy.stop();
                 }
                     else if(i==1)
                     {
@@ -537,6 +551,7 @@ var StatePlace = {
                     this.Kite.stop();
                     this.lights.stop();
                     this.tea.stop();
+                    this.Daisy.stop();
                     }
                         else if(i==2)
                         {
@@ -550,6 +565,7 @@ var StatePlace = {
                         this.Kite.stop();
                         this.lights.stop();
                         this.tea.stop();
+                        this.Daisy.stop();
                         }
                             else if(i==3)
                             {
@@ -563,6 +579,7 @@ var StatePlace = {
                             this.Kite.stop();
                             this.lights.stop();
                             this.tea.stop();
+                            this.Daisy.stop();
                             }
                                 else if(i==4)
                                 {
@@ -576,6 +593,7 @@ var StatePlace = {
                                 this.Kite.stop();
                                 this.lights.stop();
                                 this.tea.stop();
+                                this.Daisy.stop();
                                 }
                                     else if(i==5)
                                     {
@@ -589,6 +607,7 @@ var StatePlace = {
                                     this.Kite.stop();
                                     this.lights.stop();
                                     this.tea.stop();
+                                    this.Daisy.stop();
                                     }
                                         else if(i==6)
                                         {
@@ -602,6 +621,7 @@ var StatePlace = {
                                         this.Kite.stop();
                                         this.lights.stop();
                                         this.tea.stop();
+                                        this.Daisy.stop();
                                         }
                                             else if(i==7)
                                             {
@@ -615,6 +635,7 @@ var StatePlace = {
                                             this.Kite.play();
                                             this.lights.stop();
                                             this.tea.stop();
+                                            this.Daisy.stop();
                                             }
                                                 else if(i==8)
                                                 {
@@ -628,6 +649,7 @@ var StatePlace = {
                                                 this.Kite.stop();
                                                 this.lights.play();
                                                 this.tea.stop();
+                                                this.Daisy.stop();
                                                 }
                                                     else if(i==9)
                                                     {
@@ -641,7 +663,22 @@ var StatePlace = {
                                                     this.Kite.stop();
                                                     this.lights.stop();
                                                     this.tea.play();
+                                                    this.Daisy.stop();
                                                     }
+                                                        else if(i==10 && this.Daisy.isPlaying == false)
+                                                        {
+                                                        this.Clouds.stop();
+                                                        this.Dandelion.stop();
+                                                        this.Squirrel.stop();
+                                                        this.Donkey.stop();
+                                                        this.Frog.stop();
+                                                        this.Turtle.stop();
+                                                        this.Bee.stop();
+                                                        this.Kite.stop();
+                                                        this.lights.stop();
+                                                        this.tea.stop();
+                                                        this.Daisy.play();
+                                                        }
             }   
         }
         
