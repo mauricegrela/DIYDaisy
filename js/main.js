@@ -11,8 +11,13 @@ var isInCompleteCraftMode = false;
 var IsInAlpha = false;
 var SelectedColor;
 var wrongTag = "";
+var IsCamSnap = false;
 var gameButtons;
 var gameMedia;
+//var BGMusic;
+//var BGMusicInteractive;
+var total = 0;
+var AudioLength = 0;
 //UI
 var RightHangButtonOffset_X = 1;
 var RightHangButtonOffset_Y = 1;
@@ -41,6 +46,7 @@ var isClickDragging = false;
 var isAddingPaint = false;
 var isAddingSticker = true;
 var isMovingSticker = true;
+var IsTwinklePlay = true;
 var GameCenter_x;
 var GameCenter_y;
 

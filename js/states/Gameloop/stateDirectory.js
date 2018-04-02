@@ -3,7 +3,8 @@ var StateDirectory = {
     preload: function () {
 
           
-                
+        this.BackButtonSFX = game.add.audio("BackButton");
+       
 
 
         GameCenter_x = game.width-game.width/2.5;
@@ -16,25 +17,38 @@ var StateDirectory = {
 
     }
 
-    , create: function () {   
-    
+    , create: function () { 
+        
+        //if (BGMusic && BGMusic.isPlaying){BGMusic.stop(); }
+        
+      //game.sound.stopAll();
+        
+        
+        
         game.stage.backgroundColor = "#ffffff";
 
 
-        
+
         
         
         StickersUnderBody = game.add.group();
         StickerBody = game.add.group();
         StickersAboveBody = game.add.group();
         
+        ScreenshotLogoGroup = game.add.group();
+        
         NonCharacterBackgroundGroup = game.add.group();
+        TopButtonsGroup = game.add.group();
+        
         
         this.camerasnap = game.add.audio("cameraSnap");
         
         this.CameraClickPromt = game.add.audio("SaveButtonPressed");
 
         this.ConfirmSoundEffect = game.add.audio("StartOverConfirm");
+        
+         this.ThumbsUpSFX = game.add.audio("ThumbsUpSFX");
+         this.ThumbsDownSFX = game.add.audio("ThumbsDownSFX");
         
         BookScale = scaleRatio/1.6 ;
         
@@ -199,7 +213,7 @@ var StateDirectory = {
         this.BackToCraftButton.y = 0;
         this.BackToCraftButton.scale.setTo(0.8,0.8);
         NonCharacterBackgroundGroup.add(this.BackToCraftButton);
-        
+        TopButtonsGroup.add(this.BackToCraftButton);
         XPosition = this.Background.x-this.Background.width/5.5;
         YPosition = this.Background.y-game.height/12;
         
@@ -213,8 +227,8 @@ var StateDirectory = {
         this.PlaceModeButton.scale.setTo((ButtonScale),(ButtonScale));
         NonCharacterBackgroundGroup.add(this.PlaceModeButton);
         
-        this.DownloadButton = game.add.sprite(XPosition,(YPosition+this.PlaceModeButton.height), 'creativeButtons');   
-        this.DownloadButton.frame = 1;
+        this.DownloadButton = game.add.sprite(XPosition,(YPosition+this.PlaceModeButton.height), 'PictureFrame');   
+        //this.DownloadButton.frame = 1;
         this.DownloadButton.anchor.setTo(0.5);
         this.DownloadButton.inputEnabled = true;
         //this.PineconeBody.input.pixelPerfectOver = true; 
@@ -229,11 +243,12 @@ var StateDirectory = {
         this.Logo.x =  this.Logo.width/4;
         this.Logo.y =  this.Logo.height/2;
         this.Logo.events.onInputDown.add(this.ToLandingPage, this.Logo);
-        NonCharacterBackgroundGroup.add(this.Logo); 
+        NonCharacterBackgroundGroup.add(this.Logo);
+        TopButtonsGroup.add(this.BackToCraftButton);
+        game.world.bringToTop(this.Logo);
+        game.world.bringToTop(this.BackToCraftButton);
         
-        game.world.bringToTop(StickersUnderBody);
-        game.world.bringToTop(StickerBody);
-        game.world.bringToTop(StickersAboveBody);
+
         
 ///////////////////////////
 //////DownloadGroup////////
@@ -241,7 +256,7 @@ var StateDirectory = {
         DownloadModalGroup = game.add.group();
    
         var graphics = game.add.graphics(0, 0);
-        graphics.beginFill(0x000000, 0.5);
+        graphics.beginFill(0x000000, 0.8);
         graphics.drawRect(0, 0, this.game.width,this.game.height);
         DownloadModalGroup.add(graphics);
         
@@ -249,20 +264,19 @@ var StateDirectory = {
         this.DownloadBackground = game.add.sprite(game.width/2,game.height/2, 'DownloadModal');  
         //this.DownloadBackground.height = game.height;
         //this.DownloadBackground.width = game.width;
-        this.DownloadBackground.scale.setTo(scaleRatio,scaleRatio);
+        this.DownloadBackground.scale.setTo(1.2,1.2);
         this.DownloadBackground.anchor.x = 0.5;
         this.DownloadBackground.anchor.y = 0.5;
         DownloadModalGroup.add(this.DownloadBackground);
         
         this.CloseButton = game.add.sprite(
-            this.DownloadBackground.x+this.DownloadBackground.width/2,
-            this.DownloadBackground.y-this.DownloadBackground.height/2,'CloseButton');
+        this.DownloadBackground.x+this.DownloadBackground.width/2,
+        this.DownloadBackground.y-this.DownloadBackground.height/2,'CloseButton');
         this.CloseButton.anchor.x = 0.5;
         this.CloseButton.anchor.y = 0.5;
         this.CloseButton.inputEnabled = true;
-        //this.PineconeBody.input.pixelPerfectOver = true; 
         this.CloseButton.events.onInputDown.add( this.CloseButtonpress, this.CloseButton);   
-        this.CloseButton.scale.setTo(scaleRatio,scaleRatio);
+        this.CloseButton.scale.setTo(1.5,1.5);
         DownloadModalGroup.add(this.CloseButton);
         
         
@@ -270,9 +284,8 @@ var StateDirectory = {
         this.downloadButton.anchor.x = 0.5;
         this.downloadButton.anchor.y = 0.5;
         this.downloadButton.inputEnabled = true;
-        //this.PineconeBody.input.pixelPerfectOver = true; 
         this.downloadButton.events.onInputDown.add(this.CloseButtonpressed, this.downloadButton);   
-        this.downloadButton.scale.setTo(scaleRatio,scaleRatio);
+        this.downloadButton.scale.setTo(1.5,1.5);
         
         DownloadModalGroup.add(this.downloadButton);
 
@@ -284,7 +297,7 @@ var StateDirectory = {
         ConfirmBackGroup = game.add.group();
    
         var graphics = game.add.graphics(0, 0);
-        graphics.beginFill(0x000000, 0.5);
+        graphics.beginFill(0x000000, 0.8);
         graphics.drawRect(0, 0, this.game.width,this.game.height);
         ConfirmBackGroup.add(graphics);
         
@@ -292,30 +305,63 @@ var StateDirectory = {
         this.ConfirmBackground = game.add.sprite(game.width/2,game.height/2, 'DownloadModal');  
         //this.DownloadBackground.height = game.height;
         //this.DownloadBackground.width = game.width;
-        this.ConfirmBackground.scale.setTo(scaleRatio,scaleRatio);
+        this.ConfirmBackground.scale.setTo(1.5,1.5);
         this.ConfirmBackground.anchor.x = 0.5;
         this.ConfirmBackground.anchor.y = 0.5;
         ConfirmBackGroup.add(this.ConfirmBackground);
         
         
-        this.YesButton = game.add.sprite(game.width/2,game.height/2, 'ThumbsDown');
+        this.YesButton = gameButtons.addGenericButton("0", game.width/2,game.height/2 , this.CloseConfirmButtonpress, this,"ThumbsDown",0); 
         this.YesButton.anchor.x = 0;
         this.YesButton.anchor.y = 0.5;
         this.YesButton.inputEnabled = true;
         //this.PineconeBody.input.pixelPerfectOver = true; 
-        this.YesButton.events.onInputDown.add(this.CloseConfirmButtonpress, this.YesButton); this.YesButton.scale.setTo(0.7,0.7);
-        //this.YesButton.scale.setTo(1.8,1.8);
+        //this.YesButton.events.onInputDown.add(this.CloseConfirmButtonpress, this.YesButton); this.YesButton.scale.setTo(0.7,0.7);
+        this.YesButton.scale.setTo(1.2,1.2);
         ConfirmBackGroup.add(this.YesButton);
         
-        this.NoButton = game.add.sprite(game.width/2,game.height/2, 'ThumbsUp');
+        this.NoButton = gameButtons.addGenericButton("0", game.width/2,game.height/2 , this.BackToCraft, this,"ThumbsUp",0); 
         this.NoButton.anchor.x = 1;
         this.NoButton.anchor.y = 0.5;
         this.NoButton.inputEnabled = true;
         //this.PineconeBody.input.pixelPerfectOver = true; 
-        this.NoButton.events.onInputDown.add(this.BackToCraft, this.NoButton);   
-        this.NoButton.scale.setTo(0.7,0.7);
+        //this.NoButton.events.onInputDown.add(this.BackToCraft, this.NoButton);   
+        this.NoButton.scale.setTo(1.2,1.2);
         ConfirmBackGroup.add(this.NoButton);
         ConfirmBackGroup.visible = false;
+        
+        game.world.bringToTop(NonCharacterBackgroundGroup);
+        //NonCharacterBackgroundGroup.visible = true;
+        
+        
+        //Screenshot
+        this.DIYLogo = game.add.sprite(0,0, 'daisylogo');
+        this.DIYLogo.scale.setTo(scaleRatio,scaleRatio);
+        this.DIYLogo.inputEnabled = true;
+        this.DIYLogo.anchor.set(0,0.4);
+        this.DIYLogo.x =  this.DIYLogo.width/4;
+        this.DIYLogo.y =  this.DIYLogo.height/2;
+        ScreenshotLogoGroup.add(this.DIYLogo);
+        
+        this.CBCLogo = game.add.sprite(0,0, 'CBCButton');
+        this.CBCLogo.scale.setTo(scaleRatio,scaleRatio);
+        this.CBCLogo.inputEnabled = true;
+        this.CBCLogo.anchor.set(0,1);
+        this.CBCLogo.x =  this.DIYLogo.width/2;
+        this.CBCLogo.y =  game.height;
+        ScreenshotLogoGroup.add(this.CBCLogo);
+        
+        ScreenshotLogoGroup.visible = false;
+        game.world.bringToTop(ScreenshotLogoGroup);
+        
+        game.world.bringToTop(StickersUnderBody);
+        game.world.bringToTop(StickerBody);
+        game.world.bringToTop(StickersAboveBody);
+        
+        game.world.bringToTop(TopButtonsGroup);
+        game.world.bringToTop(DownloadModalGroup);
+        game.world.bringToTop(ConfirmBackGroup);
+        
     },
         
     
@@ -327,17 +373,22 @@ var StateDirectory = {
     
     CloseConfirmButtonpress: function () {
     game.sound.stopAll(); 
+    this.ThumbsDownSFX.play();
     ConfirmBackGroup.visible = false;
+    TopButtonsGroup.visible = true;
     }, 
     
     BackToCraftConfirm: function () {
+    TopButtonsGroup.visible = false;
     ConfirmBackGroup.visible = true;
     game.sound.stopAll();   
+    this.BackButtonSFX.play();
     this.ConfirmSoundEffect.play();
     },
     
     BackToCraft: function () {
     game.sound.stopAll();
+    this.ThumbsUpSFX.play();
     isFirstCharaterSelected = false;
     GameCenter_x = game.width/2;
     GameCenter_y = game.height/2.8;   
@@ -346,11 +397,12 @@ var StateDirectory = {
     
     CloseConfirmWindow: function () {
     ConfirmBackGroup.visible = false;
+    TopButtonsGroup.visible = true;
     },
     
     PlaceCreation: function () {
     game.sound.stopAll(); 
-    game.state.start("StatePlace")   
+    game.state.start("StatePlace");   
     },
 
     WatchEpisode: function () {
@@ -362,6 +414,7 @@ var StateDirectory = {
         //this.camerasnap.play();
         //this.ConfirmSoundEffect.play();
         DownloadModalGroup.visible = true;
+        TopButtonsGroup.visible = false;
     }, 
     
     ToLandingPage: function()
@@ -372,13 +425,15 @@ var StateDirectory = {
     
     CloseButtonpress: function () {
         DownloadModalGroup.visible = false;
+        TopButtonsGroup.visible = true;
     }, 
     
     CloseButtonpressed: function () {
-        game.sound.stopAll();
-        //this.camerasnap.play();
+        //game.sound.stopAll();
+        IsCamSnap = true;
         DownloadModalGroup.visible = false;
-        NonCharacterBackgroundGroup.visible = false;       
+        NonCharacterBackgroundGroup.visible = false;   
+        ScreenshotLogoGroup.visible = true;
             for (let i = 0; i <= PlacableCollection.length-1; i+=1) 
             {
 
@@ -393,6 +448,11 @@ var StateDirectory = {
         this.link.click();
         document.body.removeChild(this.link);
         NonCharacterBackgroundGroup.visible = true;
+        
+        //GameCenter_x = this.Background.x+this.Background.width/5;
+        //GameCenter_y = this.Background.y;
+            
+            
             for (let i = 0; i <= PlacableCollection.length-1; i+=1) 
             {
 
@@ -400,10 +460,17 @@ var StateDirectory = {
                 PlacableCollection[i].y = GameCenter_y;
             }
         });
+        
+        //ScreenshotLogoGroup.visible = false;
     }, 
 
     
     update: function () {
+        if(game.input.activePointer.isUp == true && IsCamSnap == true)
+            {
+                this.camerasnap.play();
+                IsCamSnap = false;
+            }
         
     }
 

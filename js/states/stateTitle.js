@@ -3,11 +3,14 @@ var StateTitle = {
     preload: function () {
         GameCenter_x = game.width/2;
         GameCenter_y = game.height/2.8;
+        
+        
     }, 
     
     create: function () {
-        
-        game.sound.stopAll();
+            //game.sound.stopAll(); 
+        //game.sound.stopAll();
+        IsTwinklePlay = true;
         
         this.AudioPromt = game.add.audio("FrontEndTitle");
         this.AudioPromt.play();
@@ -17,7 +20,14 @@ var StateTitle = {
         this.Background.anchor.y = 0.5;
 
         
-        this.btnStart = game.add.sprite(0, 0 , 'PlayButton');
+        /*this.btnStart = gameButtons.addGenericButton("0", 0, 0, this.startGame, this,"PlayButton",0); 
+        this.btnStart.scale.setTo(MacroButton_Scale,MacroButton_Scale);
+        this.btnStart.anchor.x = 0.0;
+        this.btnStart.anchor.y = -0.5;
+        this.btnStart.alpha = 0;
+        this.btnStart.x -=this.btnStart.width;*/
+        
+        this.btnStart = gameButtons.addGenericButton("0", 0, 0, this.startGame, this,"PlayButton",0)
         this.btnStart.anchor.x = 0.5;
         this.btnStart.anchor.y =  1;
         this.btnStart.inputEnabled = true;
@@ -39,8 +49,10 @@ var StateTitle = {
     
     startGame: function () {    
     game.sound.stopAll();
-    game.state.start("StateMain");
     isFirstCharaterSelected = false;
+    //this.MindfulMoment.play();
+    //this.MindfulMoment.play();
+    game.state.start("StateMain");
     //game.state.start("StatePlace");
     //game.state.start("StateDirectory");
     }, 

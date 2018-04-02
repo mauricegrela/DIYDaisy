@@ -3,15 +3,26 @@ var StatePlace = {
     
     
     preload: function () {        
-
+        this.BackButtonSFX = game.add.audio("BackButton");
+           
         
     }
 
     , create: function () {
+        total =0;
+        game.time.events.loop(Phaser.Timer.MILI, this.updateCounter, this);
         
-        this.BGMusic = game.add.audio("MusicTrack");
-        this.BGMusic.play(true);
-        this.BGMusic.loopFull();
+        
+        this.BGMusicInteractive = game.add.audio("MusicTrackInteractive");
+        this.BGMusicInteractive.play();
+         
+        AudioLength =0;
+        AudioLength =8091.252699784017;
+        //this.BGMusicInteractive.durationMS;
+        
+        this.InteractiveInstruc = game.add.audio("InteractiveInstructions");
+        this.InteractiveInstruc.play();
+        //this.InteractiveInstruc.loopFull();
         
         craftBackgroundScale = scaleRatio;
         craftAnimBackgroundScale = scaleRatio*1.5;
@@ -22,8 +33,6 @@ var StatePlace = {
         StickersUnderBody = game.add.group();
         StickerBody = game.add.group();
         StickersAboveBody = game.add.group();
-     
-        //tileSprite =game.add.tileSprite(0, 0, 800, 600, 'starfield');
         
         this.craftBackground1 = game.add.tileSprite(0, 0,  game.width, game.height,'placing_Backgroung1');
         this.craftBackground1.scale.setTo(1,1);
@@ -44,16 +53,16 @@ var StatePlace = {
         
         this.Body = game.add.sprite(GameCenter_x, GameCenter_y,ImageAssetArray[0]);
         this.Body.scale.setTo(scaleRatio*CharacterScaleAdjustment,scaleRatio*CharacterScaleAdjustment);
-        this.Body.anchor.x = Pivot_X[0];
-        this.Body.anchor.y = Pivot_Y[0];
+        this.Body.anchor.x = 0.5;
+        this.Body.anchor.y = 0.5;
         this.Body.alpha = 1;
         PlacableCollection[0]=this.Body;
         StickerBody.add(this.Body);
         
         this.Sticker1 = game.add.sprite(GameCenter_x, GameCenter_y, ImageReference[1]);
         this.Sticker1.scale.setTo(scaleRatio*CharacterScaleAdjustment,scaleRatio*CharacterScaleAdjustment);
-        this.Sticker1.anchor.x = Pivot_X[1];
-        this.Sticker1.anchor.y =  Pivot_Y[1];
+        this.Sticker1.anchor.x = 0.5;
+        this.Sticker1.anchor.y = 0.5;
         this.Sticker1.alpha = testArrayAlpha[1];
         PlacableCollection[1]=this.Sticker1;
         //CharacterGroup.add(this.Sticker1);
@@ -68,8 +77,8 @@ var StatePlace = {
         
         this.Sticker2 = game.add.sprite(GameCenter_x, GameCenter_y, ImageReference[2]);
         this.Sticker2.scale.setTo(scaleRatio*CharacterScaleAdjustment,scaleRatio*CharacterScaleAdjustment);
-        this.Sticker2.anchor.x = Pivot_X[2];
-        this.Sticker2.anchor.y =  Pivot_Y[2];
+        this.Sticker2.anchor.x = 0.5;
+        this.Sticker2.anchor.y = 0.5;
         this.Sticker2.alpha = testArrayAlpha[2];
         PlacableCollection[2]=this.Sticker2;
         //CharacterGroup.add(this.Sticker2);
@@ -84,8 +93,8 @@ var StatePlace = {
         
         this.Sticker3 = game.add.sprite(GameCenter_x, GameCenter_y, ImageReference[3]);
         this.Sticker3.scale.setTo(scaleRatio*CharacterScaleAdjustment,scaleRatio*CharacterScaleAdjustment);
-        this.Sticker3.anchor.x = Pivot_X[3];
-        this.Sticker3.anchor.y =  Pivot_Y[3];
+        this.Sticker3.anchor.x = 0.5;
+        this.Sticker3.anchor.y = 0.5;
         this.Sticker3.alpha = testArrayAlpha[3];
         PlacableCollection[3]=this.Sticker3;
         //CharacterGroup.add(this.Sticker3);
@@ -102,8 +111,8 @@ var StatePlace = {
         {    
             this.Sticker4 = game.add.sprite(GameCenter_x, GameCenter_y, ImageReference[4]);
             this.Sticker4.scale.setTo(scaleRatio*CharacterScaleAdjustment,scaleRatio*CharacterScaleAdjustment);
-            this.Sticker4.anchor.x = Pivot_X[4];
-            this.Sticker4.anchor.y =  Pivot_Y[4];
+            this.Sticker4.anchor.x =  0.5;
+            this.Sticker4.anchor.y =   0.5;
             this.Sticker4.alpha = testArrayAlpha[4];
             PlacableCollection[4]=this.Sticker4;
             //CharacterGroup.add(this.Sticker4);
@@ -121,8 +130,8 @@ var StatePlace = {
         { 
             this.Sticker5 = game.add.sprite(GameCenter_x, GameCenter_y, ImageReference[5]);
             this.Sticker5.scale.setTo(scaleRatio*CharacterScaleAdjustment,scaleRatio*CharacterScaleAdjustment);
-            this.Sticker5.anchor.x = Pivot_X[5];
-            this.Sticker5.anchor.y =  Pivot_Y[5];
+            this.Sticker5.anchor.x =  0.5;
+            this.Sticker5.anchor.y =   0.5;
             this.Sticker5.alpha = testArrayAlpha[5];
             PlacableCollection[5]=this.Sticker5;
             //CharacterGroup.add(this.Sticker5);
@@ -140,8 +149,8 @@ var StatePlace = {
         { 
             this.Sticker6 = game.add.sprite(GameCenter_x, GameCenter_y, ImageReference[6]);
             this.Sticker6.scale.setTo(scaleRatio*CharacterScaleAdjustment,scaleRatio*CharacterScaleAdjustment);
-            this.Sticker6.anchor.x = Pivot_X[6];
-            this.Sticker6.anchor.y =  Pivot_Y[6];
+            this.Sticker6.anchor.x = 0.5;
+            this.Sticker6.anchor.y =   0.5;
             this.Sticker6.alpha = testArrayAlpha[6];
             PlacableCollection[6]=this.Sticker6;
             //CharacterGroup.add(this.Sticker6);
@@ -272,8 +281,8 @@ var StatePlace = {
         this.craftBackground1.height,
         'Anim10', 5);
         this.mummy10.scale.set(craftAnimBackgroundScale);
-        this.mummy10.anchor.x = 0.4;
-        this.mummy10.anchor.y =  1.01;
+        this.mummy10.anchor.x = 0.35;
+        this.mummy10.anchor.y =  1.05;
         //this.mummy2.smoothed = false;
         //this.mummy2.fixedToCamera = true;
         this.anim10 = this.mummy10.animations.add('walk');
@@ -339,19 +348,20 @@ var StatePlace = {
         game.world.bringToTop(this.mummy5);        
         game.world.bringToTop(this.mummy6);
         game.world.bringToTop(this.mummy7);
-        game.world.bringToTop(this.mummy8);
-        game.world.bringToTop(this.mummy9);
-        game.world.bringToTop(this.mummy10);
+        //game.world.bringToTop(this.mummy8);
+        //game.world.bringToTop(this.mummy9);
+        //game.world.bringToTop(this.mummy10);
 
         
         
-        this.Logo = game.add.sprite(0,0, 'daisylogo');
+        this.Logo = gameButtons.addGenericButton("0", 0,0 , this.ToLandingPage, this,"daisylogo",2); 
+        //addGenericButton("0", 0,0 , this.BackToCraft, this,"daisylogo",2); 
         this.Logo.scale.setTo(scaleRatio,scaleRatio);
         this.Logo.inputEnabled = true;
         this.Logo.anchor.set(0,0.4);
         this.Logo.x =  this.Logo.width/4;
         this.Logo.y =  this.Logo.height/2;
-        this.Logo.events.onInputDown.add(this.ToLandingPage, this.Logo); 
+        //this.Logo.events.onInputUp.add(this.ToLandingPage, this.Logo); 
         this.Logo.fixedToCamera = true;
         
         this.SaveButton = gameButtons.addGenericButton("0", 0,0 , this.BackToCraft, this,"creativeButtons",2); 
@@ -363,6 +373,11 @@ var StatePlace = {
         this.SaveButton.fixedToCamera = true;
         
         
+    },
+    
+        
+    BGComplete: function () {
+    BGMusic.play();
     },
     
     PlaceCreation: function () {
@@ -378,7 +393,7 @@ var StatePlace = {
         
     BackToCraft: function()
     {
-    game.state.start("StateDirectory"); 
+    this.BackButtonSFX.play();
     this.Clouds.stop();
     this.Dandelion.stop();
     this.Squirrel.stop();
@@ -389,24 +404,67 @@ var StatePlace = {
     this.Kite.stop();
     this.lights.stop();
     this.tea.stop();
+    this.BGMusicInteractive.stop();
+    //BGMusicInteractive.destroy();
+    this.InteractiveInstruc.stop();
+        
+    //game.sound.stopAll();
+
+    game.state.start("StateDirectory"); 
+
     },
     
     ToLandingPage: function()
     {
+        
+    this.Clouds.stop();
+    this.Dandelion.stop();
+    this.Squirrel.stop();
+    this.Donkey.stop();
+    this.Frog.stop();
+    this.Turtle.stop();
+    this.Bee.stop();
+    this.Kite.stop();
+    this.lights.stop();
+    this.tea.stop();
+    this.BGMusicInteractive.stop();
+    //BGMusicInteractive.destroy();
+    game.sound.stopAll();
     game.state.start("StateTitle");   
     },
     
-    render: function () {
-    //game.debug.text( this.craftBackground1.tilePosition.x, 100, 380 );
-    //game.debug.text( this.craftBackground1.width*2, 100, 400 );//2048
-    //game.debug.text( game.width, 100, 420 );
-    //game.debug.text( (this.craftBackground1.width*2)-game.camera.width, 100, 420 );//1024
+    updateCounter : function() {
+
+    //total++;
+
+    //text.setText('Counter: ' + counter);
+
     },
+
+    
+    render: function () {
+    //game.debug.text("Time until event: " + game.time.events.duration.toFixed(0), 32, 32);
+    //game.debug.text('total : ' + total  +'Track Length: ' + this.BGMusicInteractive.durationMS +'AudioLength: ' + AudioLength  , 32, 64);  
+    },
+
     
     update: function () {
         //Paralaxing background. 
         //this.craftBackground2.x = game.camera.x*0.1;
 
+        if(AudioLength != 0)
+            {
+                if(AudioLength<=total)
+                    {
+                    total =0;
+                    //this.BGUpdated.destroy();                  
+                    //this.BGUpdated = game.add.audio("MusicTrack");
+                    this.BGMusicInteractive.play();
+                    }
+                        else{total+=1; }       
+                
+            }
+        
             if(game.input.x<100)
             {               
                 this.craftBackground1.tilePosition.x += 8;
