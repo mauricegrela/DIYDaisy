@@ -6,10 +6,25 @@ var StateMain = {
 
 
         isTakingPhoto = false;
- 
+        this.UIChange = game.add.audio("UITab");
+        this.UIRight = game.add.audio("UIRight");        
+        this.UILeft = game.add.audio("UILeft");  
+            
     },
 
     create: function () {
+        game.sound.stopAll();
+        AudioLength =0;
+        if(IsTwinklePlay == true)
+            {
+                
+              this.MindfulMoment = game.add.audio("MindfulMoment");  
+                this.MindfulMoment.play();
+                IsTwinklePlay = false;
+            }
+        
+   
+        
         Character = game.add.group();
         
         //  Create the group for the stickers
@@ -40,7 +55,12 @@ var StateMain = {
         BackgroundGroup.add(this.craftBackground);  
 
 
+        
+        
        
+       
+      
+        
         this.drop = game.add.audio("drop");
         
 
@@ -59,7 +79,8 @@ var StateMain = {
         
          if(IsPlacingMobile == true)
              {         
-            //Nothing yet
+             this.SpecificInstructions = game.add.audio("MapleInstructions");
+             this.SpecificInstructions.play();
              }
         
          if(IsPlacingLeaf == true)
@@ -104,9 +125,12 @@ var StateMain = {
         this.SaveButton.y = 0;
         this.SaveButton.scale.setTo(0.8,0.8);
         
-        this.BGMusic = game.add.audio("MusicTrack");
-        this.BGMusic.play(true);
-        this.BGMusic.loopFull();
+        
+        this.BGUpdated = game.add.audio("MusicTrack");
+        this.BGUpdated.play();
+        //BGMusic.loopFull();
+        
+        AudioLength = 16*100;
         
         game.time.events.add(10*1000, function() {
         this.DelayedAudioPromt = game.add.audio("TeachSaveButton");
@@ -295,25 +319,7 @@ var StateMain = {
         if(isFirstCharaterSelected == false)
         {this.PineconeBody.visibility = false;} 
             
-        //Sticker_1_1
-        this.Sticker_1 = game.add.sprite(OGPose_X, OGPose_Y, ImageAssetArray[0]);  
-        this.Sticker_1.alpha = 0;
-        this.Sticker_1.anchor.x = 0.5;
-        this.Sticker_1.anchor.y = 0.5;
-        this.Sticker_1.z =-1;
-        //this.Sticker_1.inputEnabled = true;
-        //this.Sticker_1.input.pixelPerfectOver = true;
-        //this.Sticker_1.events.onInputDown.add(this.sticker_Click, {param1: this.Sticker_1, param2: 1});
-        this.Sticker_1.scale.setTo(CharacterButtonScale,CharacterButtonScale);   
-        //Character.add(this.Sticker_1);  
-            if(StickerDepth[0]== false)
-            {
-            StickersUnderBody.add(this.Sticker_1);
-            }
-                else
-                {
-                StickersAboveBody.add(this.Sticker_1);
-                }
+       
          
         //Sticker_2      
         this.Sticker_2 = game.add.sprite(OGPose_X, OGPose_Y, ImageAssetArray[0]);
@@ -332,6 +338,26 @@ var StateMain = {
                 else
                 {
                 StickersAboveBody.add(this.Sticker_2);
+                }
+        
+         //Sticker_1_1
+        this.Sticker_1 = game.add.sprite(OGPose_X, OGPose_Y, ImageAssetArray[0]);  
+        this.Sticker_1.alpha = 0;
+        this.Sticker_1.anchor.x = 0.5;
+        this.Sticker_1.anchor.y = 0.5;
+        this.Sticker_1.z =-1;
+        //this.Sticker_1.inputEnabled = true;
+        //this.Sticker_1.input.pixelPerfectOver = true;
+        //this.Sticker_1.events.onInputDown.add(this.sticker_Click, {param1: this.Sticker_1, param2: 1});
+        this.Sticker_1.scale.setTo(CharacterButtonScale,CharacterButtonScale);   
+        //Character.add(this.Sticker_1);  
+            if(StickerDepth[0]== false)
+            {
+            StickersUnderBody.add(this.Sticker_1);
+            }
+                else
+                {
+                StickersAboveBody.add(this.Sticker_1);
                 }
                  
         //Sticker_3
@@ -642,6 +668,8 @@ var StateMain = {
     
     ToLandingPage: function()
     {
+        //BGMusic.destroy();
+        //this.MindfulMoment.stop();
         game.sound.stopAll();
         game.state.start("StateTitle");   
     }, 
@@ -667,17 +695,17 @@ var StateMain = {
 ///////////////////////////
 ////First Sticker Group////
 ///////////////////////////
-        ImageAssetArray[1]='RockBase_1';
-        ImageAssetArray[2]='RockBase_2'; 
-        ImageAssetArray[3]='RockBase_3';
-        ImageAssetArray[4]='RockBase_4';
+        ImageAssetArray[1]='RockFace_1';
+        ImageAssetArray[2]='RockFace_2';
+        ImageAssetArray[3]='RockFace_3';
+        ImageAssetArray[4]='RockFace_4';
 ///////////////////////////
 ////Second Sticker Group///
 ///////////////////////////
-        ImageAssetArray[5]='RockFace_1';
-        ImageAssetArray[6]='RockFace_2';
-        ImageAssetArray[7]='RockFace_3';
-        ImageAssetArray[8]='RockFace_4';
+        ImageAssetArray[5]='RockBase_1';
+        ImageAssetArray[6]='RockBase_2'; 
+        ImageAssetArray[7]='RockBase_3';
+        ImageAssetArray[8]='RockBase_4';
 ///////////////////////////
 ////Third Sticker Group////
 ///////////////////////////
@@ -802,18 +830,17 @@ StickerAssigner_set1 = "Pinecone_Stickers";
 ///////////////////////////
 ////First Sticker Group////
 ///////////////////////////
-        ImageAssetArray[1]='PineconeWings_1';
-        ImageAssetArray[2]='PineconeWings_2';
-        ImageAssetArray[3]='PineconeWings_3';  
-        ImageAssetArray[4]='PineconeWings_4';
+        ImageAssetArray[1]='PineconeEyes_1';
+        ImageAssetArray[2]='PineconeEyes_2'; 
+        ImageAssetArray[3]='PineconeEyes_3';
+        ImageAssetArray[4]='PineconeEyes_4';   
 ///////////////////////////
 ////Second Sticker Group///
 ///////////////////////////
-        ImageAssetArray[5]='PineconeEyes_1';
-        ImageAssetArray[6]='PineconeEyes_2'; 
-        ImageAssetArray[7]='PineconeEyes_3';
-        ImageAssetArray[8]='PineconeEyes_4';
-
+        ImageAssetArray[5]='PineconeWings_1';
+        ImageAssetArray[6]='PineconeWings_2';
+        ImageAssetArray[7]='PineconeWings_3';  
+        ImageAssetArray[8]='PineconeWings_4';
 ///////////////////////////
 ////Third Sticker Group////
 ///////////////////////////
@@ -839,8 +866,8 @@ StickerAssigner_set1 = "Pinecone_Stickers";
 //////////////////////////
 ////Sticker Depths////////
 //////////////////////////
-        StickerDepth[0]=false;
-        StickerDepth[1]=true;
+        StickerDepth[0]=true;
+        StickerDepth[1]=false;
         StickerDepth[2]=false;
         StickerDepth[3]=true;
         StickerDepth[4]=true;
@@ -936,17 +963,17 @@ StickerAssigner_set1 = "MapleLeaf_stickers";
 ///////////////////////////
 ////First Sticker Group////
 ///////////////////////////
-        ImageAssetArray[1]='MapleLeaf_1';
-        ImageAssetArray[2]='MapleLeaf_2'; 
-        ImageAssetArray[3]='MapleLeaf_3';
-        ImageAssetArray[4]='MapleLeaf_4';
+        ImageAssetArray[1]='MapleLeaf_5';
+        ImageAssetArray[2]='MapleLeaf_6';
+        ImageAssetArray[3]='MapleLeaf_7';
+        ImageAssetArray[4]='MapleLeaf_8';
 ///////////////////////////
 ////Second Sticker Group///
-///////////////////////////
-        ImageAssetArray[5]='MapleLeaf_5';
-        ImageAssetArray[6]='MapleLeaf_6';
-        ImageAssetArray[7]='MapleLeaf_7';
-        ImageAssetArray[8]='MapleLeaf_8';
+/////////////////////////// 
+        ImageAssetArray[5]='MapleLeaf_1';
+        ImageAssetArray[6]='MapleLeaf_2'; 
+        ImageAssetArray[7]='MapleLeaf_3';
+        ImageAssetArray[8]='MapleLeaf_4';
 ///////////////////////////
 ////Third Sticker Group////
 ///////////////////////////
@@ -1067,17 +1094,18 @@ isFirstCharaterSelected = true;
 ///////////////////////////
 ////First Sticker Group////
 ///////////////////////////
-        ImageAssetArray[1]='LeafWings_1';
-        ImageAssetArray[2]='LeafWings_2'; 
-        ImageAssetArray[3]='LeafWings_3';
-        ImageAssetArray[4]='LeafWings_4';
+        ImageAssetArray[1]='LeafFace_1';
+        ImageAssetArray[2]='LeafFace_2';
+        ImageAssetArray[3]='LeafFace_3';
+        ImageAssetArray[4]='LeafFace_4';
 ///////////////////////////
 ////Second Sticker Group///
 ///////////////////////////
-        ImageAssetArray[5]='LeafFace_1';
-        ImageAssetArray[6]='LeafFace_2';
-        ImageAssetArray[7]='LeafFace_3';
-        ImageAssetArray[8]='LeafFace_4';
+
+        ImageAssetArray[5]='LeafWings_1';
+        ImageAssetArray[6]='LeafWings_2'; 
+        ImageAssetArray[7]='LeafWings_3';
+        ImageAssetArray[8]='LeafWings_4';
 ///////////////////////////
 ////Third Sticker Group////
 ///////////////////////////
@@ -1095,8 +1123,8 @@ isFirstCharaterSelected = true;
 //////////////////////////
 ////Sticker Depths////////
 //////////////////////////
-        StickerDepth[0]=false;
-        StickerDepth[1]=true;
+        StickerDepth[0]=true;
+        StickerDepth[1]=false;
         StickerDepth[2]=true;
         StickerDepth[3]=true;
         StickerDepth[4]=true;
@@ -1192,17 +1220,17 @@ isFirstCharaterSelected = true;
 ///////////////////////////
 ////First Sticker Group////
 ///////////////////////////
-        ImageAssetArray[1]='StickWandBase_1';
-        ImageAssetArray[2]='StickWandBase_2'; 
-        ImageAssetArray[3]='StickWandBase_3';
-        ImageAssetArray[4]='StickWandBase_4';
+        ImageAssetArray[1]='StickWandFace_1';
+        ImageAssetArray[2]='StickWandFace_2';
+        ImageAssetArray[3]='StickWandFace_3';
+        ImageAssetArray[4]='StickWandFace_4';
 ///////////////////////////
 ////Second Sticker Group///
 ///////////////////////////
-        ImageAssetArray[5]='StickWandFace_1';
-        ImageAssetArray[6]='StickWandFace_2';
-        ImageAssetArray[7]='StickWandFace_3';
-        ImageAssetArray[8]='StickWandFace_4';
+        ImageAssetArray[5]='StickWandBase_1';
+        ImageAssetArray[6]='StickWandBase_2'; 
+        ImageAssetArray[7]='StickWandBase_3';
+        ImageAssetArray[8]='StickWandBase_4';
 ///////////////////////////
 ////Third Sticker Group////
 ///////////////////////////
@@ -1311,15 +1339,26 @@ game.state.start("StateMain");
     },
     
     render: function () {
-    //game.debug.text( ImageAssetArray[0], 100, 380 );
-    //game.debug.text( ImageAssetArray[0], 100, 390 ); 
-    
-    //game.debug.text( Pivot_X[0], 100, 380 );
-    //game.debug.text( Pivot_Y[0], 100, 390 );     
+    //game.debug.text('Time until event: ' + timer.duration.toFixed(0), 32, 32);
+   //game.debug.text('total: ' + total +'AudioLength: ' + AudioLength, 32, 64);  
         
     },
 
-    update: function () { 
+    update: function () {
+        
+        if(AudioLength != 0)
+            {
+                if(AudioLength<=total)
+                    {
+                    total =0;
+                    //this.BGUpdated.destroy();                  
+                    //this.BGUpdated = game.add.audio("MusicTrack");
+                    this.BGUpdated.play();
+                    }
+                        else{ total++; }       
+                
+            }
+        
         if(isClickDragging == true) 
         {//If the player is dragging the image onto the 
             if(game.input.activePointer.isDown == true)
@@ -1355,7 +1394,8 @@ game.state.start("StateMain");
     
     Carosel_Left: function()
     {   
-         ImageGroupReference[GroupRefArrayCounter].visible = false;
+        this.UILeft.play(); 
+        ImageGroupReference[GroupRefArrayCounter].visible = false;
             if(GroupRefArrayCounter>0)
             {
             GroupRefArrayCounter-=1;
@@ -1369,7 +1409,8 @@ game.state.start("StateMain");
     
     Carosel_Right: function()
     {
-         ImageGroupReference[GroupRefArrayCounter].visible = false;
+        this.UIRight.play();
+        ImageGroupReference[GroupRefArrayCounter].visible = false;
             if(GroupRefArrayCounter<CaroselGroupNumber)
             {
             GroupRefArrayCounter+=1;
@@ -1855,6 +1896,7 @@ game.state.start("StateMain");
     StickerTurnOn: function () {
             if(isFirstCharaterSelected == true)
             {
+            this.UIChange.play();
             CharacterStickerGroup.visible = false;
             ImageGroupReference[GroupRefArrayCounter].visible = true;
             this.charactercarouselStickers.visible = true;
@@ -1865,6 +1907,7 @@ game.state.start("StateMain");
     
     
     CharacterHitOn: function () {
+        this.UIChange.play();
         CharacterStickerGroup.visible = true;
         ImageGroupReference[GroupRefArrayCounter].visible = false;
         this.charactercarouselStickers.visible = false;
@@ -1873,6 +1916,9 @@ game.state.start("StateMain");
     },
     
     SaveClicked: function () { 
+        //BGMusic.destroy();
+        this.MindfulMoment.stop();
+        
         game.sound.stopAll();
         game.state.start("StateDirectory");
         this.CompletedAudioPromt = game.add.audio("SaveButtonPressed");

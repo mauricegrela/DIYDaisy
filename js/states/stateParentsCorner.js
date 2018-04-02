@@ -5,6 +5,8 @@ var StateParentsCorner = {
     preload: function () {
         
         //game.load.image('Whiskers', testArray[0]);
+            this.BackButtonSFX = game.add.audio("BackButton");
+        
             var titleText;
         
     }
@@ -114,7 +116,7 @@ var StateParentsCorner = {
         this.RockCharacterImage.anchor.setTo(0.5);  
         this.RockCharacterImage.scale.setTo(PDFButtonScale,PDFButtonScale);
         CharacterGroup.add(this.RockCharacterImage);
-        
+        /*
         this.RockCharacterVid = game.add.sprite(PDFButtonsPos_x, PDFButtonsPos_y+this.RockCharacterImage.height/2, 'PDFButton');
         this.RockCharacterVid.anchor.setTo(1,0.5);
         this.RockCharacterVid.inputEnabled = true;
@@ -128,7 +130,7 @@ var StateParentsCorner = {
         this.RockCharacterPDF.events.onInputDown.add(this.imageClick, {param1: "PDFS/diyLadyBugRock.pdf",}, this.RockCharacter); 
         this.RockCharacterPDF.scale.setTo(buttonrez);
         CharacterGroup.add(this.RockCharacterPDF);
-
+        */
         ///////////////////
         //////Pinecone/////
         ///////////////////
@@ -138,7 +140,7 @@ var StateParentsCorner = {
         this.PineConeCharacterImage.anchor.setTo(0.5);  
         this.PineConeCharacterImage.scale.setTo(PDFButtonScale,PDFButtonScale);
         CharacterGroup.add(this.PineConeCharacterImage);
-        
+        /*
         this.PineConeCharacterVid = game.add.sprite(this.PineConeCharacterImage.x, PDFButtonsPos_y+this.PineConeCharacterImage.height/2, 'PDFButton');
         this.PineConeCharacterVid.anchor.setTo(1,0.5);
         this.PineConeCharacterVid.inputEnabled = true;
@@ -152,7 +154,7 @@ var StateParentsCorner = {
         this.RockCharacterPDF.events.onInputDown.add(this.imageClick, {param1: "PDFS/diyPineconeFriend.pdf",}, this.PineConeCharacterVid);    
         this.RockCharacterPDF.scale.setTo(buttonrez);
         CharacterGroup.add(this.RockCharacterPDF);
-
+        */
         ///////////////////
         /////StickWand/////
         ///////////////////
@@ -161,8 +163,8 @@ var StateParentsCorner = {
         this.StickWandCharacterImage = game.add.sprite(PDFButtonsPos_x-this.RockCharacterImage.width*2, PDFButtonsPos_y , 'LeafPDF');
         this.StickWandCharacterImage.anchor.setTo(0.5);  
         this.StickWandCharacterImage.scale.setTo(PDFButtonScale,PDFButtonScale);
-        CharacterGroup.add(this.PineConeCharacterImage);
-        
+        CharacterGroup.add(this.StickWandCharacterImage);
+        /*
         this.StickWandCharacterVid = game.add.sprite(this.StickWandCharacterImage.x, PDFButtonsPos_y+this.StickWandCharacterImage.height/2, 'PDFButton');
         this.StickWandCharacterVid.anchor.setTo(1,0.5);
         this.StickWandCharacterVid.inputEnabled = true;
@@ -173,10 +175,10 @@ var StateParentsCorner = {
         this.StickWandCharacterPDF = game.add.sprite(this.StickWandCharacterImage.x, PDFButtonsPos_y+this.StickWandCharacterImage.height/2, 'VideoButton');
         this.StickWandCharacterPDF.anchor.setTo(0,0.5);
         this.StickWandCharacterPDF.inputEnabled = true;
-        this.StickWandCharacterPDF.events.onInputDown.add(this.imageClick, {param1: "diyFlowerPetalArt.pdf",}, this.PineConeCharacterVid);    
+        this.StickWandCharacterPDF.events.onInputDown.add(this.imageClick, {param1: "PDFS/diyFlowerPetalArt.pdf",}, this.PineConeCharacterVid);    
         this.StickWandCharacterPDF.scale.setTo(buttonrez);
         CharacterGroup.add(this.StickWandCharacterPDF);
-
+        */
         //////////////////
         ///////Leaf///////
         //////////////////
@@ -186,7 +188,7 @@ var StateParentsCorner = {
         this.StickWandCharacterImage.anchor.setTo(0.5);  
         this.StickWandCharacterImage.scale.setTo(PDFButtonScale,PDFButtonScale);
         CharacterGroup.add(this.StickWandCharacterImage);
-        
+        /*
         this.StickWandCharacterVid = game.add.sprite(this.StickWandCharacterImage.x, PDFButtonsPos_y+this.StickWandCharacterImage.height/2, 'PDFButton');
         this.StickWandCharacterVid.anchor.setTo(1,0.5);
         this.StickWandCharacterVid.inputEnabled = true;
@@ -200,7 +202,7 @@ var StateParentsCorner = {
         this.StickWandCharacterPDF.events.onInputDown.add(this.imageClick, {param1: "PDFS/diyNatureWand.pdf",}, this.StickWandCharacterPDF);    
         this.StickWandCharacterPDF.scale.setTo(buttonrez);
         CharacterGroup.add(this.StickWandCharacterPDF);
-
+        */
         /////////////////////
         //////MapleLeaf//////
         /////////////////////
@@ -210,7 +212,7 @@ var StateParentsCorner = {
         this.LeafCharacterImage.anchor.setTo(0.5);  
         this.LeafCharacterImage.scale.setTo(PDFButtonScale,PDFButtonScale);
         CharacterGroup.add(this.LeafCharacterImage);
-        
+        /*
         this.LeafCharacterVid = game.add.sprite(this.LeafCharacterImage.x, PDFButtonsPos_y+this.LeafCharacterImage.height/2, 'PDFButton');
         this.LeafCharacterVid.anchor.setTo(1,0.5);
         this.LeafCharacterVid.inputEnabled = true;
@@ -224,8 +226,7 @@ var StateParentsCorner = {
         this.LeafCharacterPDF.events.onInputDown.add(this.imageClick, {param1: "PDFS/diyFlowerPetalArt.pdf",}, this.LeafCharacterPDF);    
         this.LeafCharacterPDF.scale.setTo(buttonrez);
         CharacterGroup.add(this.LeafCharacterPDF);
-        
-       
+        */
         ///////////////
         //Text Bodies//
         ///////////////
@@ -299,6 +300,7 @@ var StateParentsCorner = {
     }, 
     
     startGame: function () {  
+    this.BackButtonSFX.play();
     game.state.start("StateTitle");
     }, 
     

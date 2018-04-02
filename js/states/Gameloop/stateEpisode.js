@@ -1,7 +1,7 @@
 var StateEpisode = {
 
     preload: function () {
-
+    this.BackButtonSFX = game.add.audio("BackButton");
     }
 
     , create: function () 
@@ -48,6 +48,8 @@ var StateEpisode = {
     backToCrafting: function () {  
         video1.stop();
         game.sound.stopAll();
+        
+        this.BackButtonSFX.play();
         game.state.start("StateParentsCorner");
         //
     }, 

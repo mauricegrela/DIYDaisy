@@ -11,22 +11,32 @@ this.time.advacedTiming = true;
 /////////////////////   
         game.load.audio("drop",'audio/sfx/drop.mp3');
         game.load.audio("SavePromt",'audio/sfx/camera.mp3'); 
-        game.load.audio("cameraSnap",'audio/sfx/camera.mp3');  
+        game.load.audio("cameraSnap",'audio/UI_SFX/UI_Camera.mp3');
+        game.load.audio("MindfulMoment",'audio/UI_SFX/UI_Mindful_Moment.mp3');
+        game.load.audio("UITab",'audio/UI_SFX/UI_Tab.mp3');
+        game.load.audio("BackButton",'audio/UI_SFX/UI_Back.mp3');
+        game.load.audio("UIRight",'audio/UI_SFX/UI_Right.mp3');
+        game.load.audio("UILeft",'audio/UI_SFX/UI_Left.mp3');
+        //Music
         game.load.audio("MusicTrack",'audio/Daisy_Music.mp3');  
-        
+        //SFX 
+        game.load.audio("ThumbsUpSFX",'audio/UI_SFX/UI_Wood_ThumUP.mp3'); 
+        game.load.audio("ThumbsDownSFX",'audio/UI_SFX/UI_Wood_ThumDW.mp3'); 
+        game.load.audio("MusicTrackInteractive",'audio/Daisy_Music_Interactive.mp3');
         //Instructions
-        game.load.audio("Music",'audio/VoiceOver/Daisy_Music.mp3');
         game.load.audio("FrontEndTitle",'audio/VoiceOver/DaisyVO_001.mp3'); 
         game.load.audio("InitialInstructions",'audio/VoiceOver/DaisyVO_002.mp3'); 
         game.load.audio("TeachSaveButton",'audio/VoiceOver/DaisyVO_003.mp3'); 
         game.load.audio("SaveButtonPressed",'audio/VoiceOver/DaisyVO_004.mp3'); 
         game.load.audio("StartOverConfirm",'audio/VoiceOver/DaisyVO_005.mp3'); 
         //Item Specific instructions
-         
         game.load.audio("ButterflyInstructions",'audio/VoiceOver/DaisyVO_Butterfly.mp3'); 
         game.load.audio("LadyBugInstructions",'audio/VoiceOver/DaisyVO_Ladybug.mp3'); 
         game.load.audio("PineconeAnimalInstructions",'audio/VoiceOver/DaisyVO_PineconeAnimal.mp3');
         game.load.audio("WandInstructions",'audio/VoiceOver/DaisyVO_Wand.mp3');
+        game.load.audio("MapleInstructions",'audio/VoiceOver/DaisyVO_Maple.mp3');
+        //Interactive Instructions
+        game.load.audio("InteractiveInstructions",'audio/VoiceOver/DaisyVO_Interactive.mp3');
         
 /////////////////////
 ////ParentsCorner////
@@ -54,6 +64,7 @@ this.time.advacedTiming = true;
         game.load.image('DirectoryBackground', 'images/results/book.png'); 
         game.load.image('ThumbsUp', 'images/results/thumbs-up.png');
         game.load.image('ThumbsDown', 'images/results/thumbs-down.png');
+         game.load.image('PictureFrame', 'images/results/picture-download.png');
 ////////////////
 /////Videos/////
 ////////////////    
