@@ -57,27 +57,28 @@ this.time.advacedTiming = true;
 /////LandingPage/////
 /////////////////////        
         game.load.image('FrontEndTile', 'images/backgrounds/landing-page-bg.jpg');
-        
+
 /////////////////////
 //////Directory//////
 /////////////////////     
         game.load.image('DirectoryBackground', 'images/results/book.png'); 
         game.load.image('ThumbsUp', 'images/results/thumbs-up.png');
         game.load.image('ThumbsDown', 'images/results/thumbs-down.png');
-         game.load.image('PictureFrame', 'images/results/picture-download.png');
+        game.load.image('PictureFrame', 'images/results/picture-download.png');
+        game.load.image('DLLogo', 'images/results/download-daisy-logo@2x.png');
 ////////////////
 /////Videos/////
 ////////////////    
         var VideoBackground;
         //game.load.image('VideoBackGround', 'images/backgrounds/DragBackground.png');
         game.load.image('VideoBackGround', 'images/backgrounds/video-bg.jpg');
-        
+        /*
         //Load Episodes 
         game.load.video('Episode_PineCone', 'videos/PineCone_Animal/DaisyGBK_PineCon_Ani_720.mp4');
         game.load.video('Episode_MapleLeaf', 'videos/Forest_Mobile/DaisyGBK_ForestMob_720.mp4');
         game.load.video('Episode_Rock', 'videos/Ladybug_Rock/DaisyGBK_LadyRock_720.mp4');
         game.load.video('Episode_Flower', 'videos/Flower_Petal/DaisyGBK_FlowerPetArt_720.mp4');
-        game.load.video('Episode_Rainbow', 'videos/Rainbow_Wands/DaisyGBK_RainWand_720.mp4');
+        game.load.video('Episode_Rainbow', 'videos/Rainbow_Wands/DaisyGBK_RainWand_720.mp4');*/
 ////////////////
 ///Maple Leaf///
 ////////////////  
@@ -274,6 +275,7 @@ this.time.advacedTiming = true;
         
         //Placement Background
         game.load.image('placing_Backgroung1', 'images/backgrounds/Placeable/Interactive_main_BG-min.jpg');
+        
         game.load.image('placing_Backgroung2', 'images/backgrounds/Placeable/foreground-tree.png');
 
         //Animations
@@ -359,6 +361,15 @@ this.time.advacedTiming = true;
         //this.logo.scale.set(scaleRatio,scaleRatio);
         this.logo.animations.add('shake');
         this.logo.animations.play('shake', 15, true)
+        
+        this.MusicButton = this.add.sprite( full.x, full.y+50, 'AudioLoadingIcon');
+        this.MusicButton.anchor.set(0.5,0);
+        this.MusicButton.x = empty.x+empty.width/2;
+        this.MusicButton.y = empty.y+empty.height+25;
+        this.MusicButton.scale.set(0.8,0.8);
+        this.MusicButton.animations.add('shake');
+        this.MusicButton.animations.play('shake', 5, true)
+        
     },
 
     create: function () {
@@ -369,4 +380,6 @@ this.time.advacedTiming = true;
         
     }
 
+
+    
 }

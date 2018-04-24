@@ -24,6 +24,7 @@ var StateMain = {
             }
         
    
+        isFirstStickerSelected = false;
         
         Character = game.add.group();
         
@@ -132,10 +133,7 @@ var StateMain = {
         
         AudioLength = 16*100;
         
-        game.time.events.add(10*1000, function() {
-        this.DelayedAudioPromt = game.add.audio("TeachSaveButton");
-        this.DelayedAudioPromt.play();
-        });
+        
         
     }
         else
@@ -463,8 +461,8 @@ var StateMain = {
         this.StickerButton1 = gameButtons.addStickerButton("0", ButtonsPos_x, ButtonsPos_y, this.Sticker_1_Place, this,0,StickerAssigner_set1);         
         this.StickerButton1.scale.setTo(ButtonsScale,ButtonsScale);      
         StickerGroup_1.add(this.StickerButton1);
-        
-
+        this.SelectedButtonSticker1 = this.StickerButton1;
+        //this.StickerButton1.alpha =0;
         var ButtonsPos_x = game.width/2;
         var ButtonsPos_y = game.height-this.StickerButton1.height*1.3; 
         
@@ -493,6 +491,7 @@ var StateMain = {
         this.StickerButton5 = gameButtons.addStickerButton("0", ButtonsPos_x, ButtonsPos_y, this.Sticker_5_Place, this,4,StickerAssigner_set1); 
         this.StickerButton5.scale.setTo(ButtonsScale,ButtonsScale);
         StickerGroup_2.add(this.StickerButton5);
+        this.SelectedButtonSticker2 = this.StickerButton5; 
         
         this.StickerButton6 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width, ButtonsPos_y, this.Sticker_6_Place, this,5,StickerAssigner_set1); 
         this.StickerButton6.scale.setTo(ButtonsScale,ButtonsScale);
@@ -506,7 +505,7 @@ var StateMain = {
         this.StickerButton8 = gameButtons.addStickerButton("0", ButtonsPos_x-this.StickerButton1.width*2, ButtonsPos_y, this.Sticker_8_Place, this,7,StickerAssigner_set1);
         this.StickerButton8.scale.setTo(ButtonsScale,ButtonsScale);
         StickerGroup_2.add(this.StickerButton8);
-        
+        //this.StickerButton8.alpha =0;
 ///////////////////////////
 ////Third Sticker Group////
 ///////////////////////////
@@ -514,6 +513,7 @@ var StateMain = {
         this.StickerButton9 = gameButtons.addStickerButton("0", ButtonsPos_x, ButtonsPos_y, this.Sticker_9_Place, this,8,StickerAssigner_set1); 
         this.StickerButton9.scale.setTo(ButtonsScale,ButtonsScale);
         StickerGroup_3.add(this.StickerButton9);
+        this.SelectedButtonSticker3 = this.StickerButton9;
        
         this.StickerButton10 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width, ButtonsPos_y, this.Sticker_10_Place, this,9,StickerAssigner_set1); 
         this.StickerButton10.scale.setTo(ButtonsScale,ButtonsScale);
@@ -534,6 +534,7 @@ var StateMain = {
         this.StickerButton13 = gameButtons.addStickerButton("0", ButtonsPos_x, ButtonsPos_y, this.Sticker_13_Place, this,12,StickerAssigner_set1); 
         this.StickerButton13.scale.setTo(ButtonsScale,ButtonsScale);
         StickerGroup_4.add(this.StickerButton13);
+        this.SelectedButtonSticker4 =this.StickerButton13;
         
         this.StickerButton14 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width, ButtonsPos_y, this.Sticker_14_Place, this,13,StickerAssigner_set1); 
         this.StickerButton14.scale.setTo(ButtonsScale,ButtonsScale);
@@ -554,6 +555,7 @@ var StateMain = {
         this.StickerButton17 = gameButtons.addStickerButton("0", ButtonsPos_x, ButtonsPos_y,this.Sticker_17_Place, this,16,StickerAssigner_set1); 
         this.StickerButton17.scale.setTo(ButtonsScale,ButtonsScale);
         StickerGroup_5.add(this.StickerButton17);
+        this.SelectedButtonSticker5 =this.StickerButton14;
        
         this.StickerButton18 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width, ButtonsPos_y, this.Sticker_18_Place, this,17,StickerAssigner_set1); 
         this.StickerButton18.scale.setTo(ButtonsScale,ButtonsScale);
@@ -574,6 +576,7 @@ var StateMain = {
         this.StickerButton21 = gameButtons.addStickerButton("0", ButtonsPos_x, ButtonsPos_y, this.Sticker_21_Place, this,20,StickerAssigner_set1); 
         this.StickerButton21.scale.setTo(ButtonsScale,ButtonsScale);
         StickerGroup_6.add(this.StickerButton21);
+        this.SelectedButtonSticker6 =this.StickerButton21;
         
         this.StickerButton22 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width, ButtonsPos_y, this.Sticker_22_Place, this,21,StickerAssigner_set1); 
         this.StickerButton22.scale.setTo(ButtonsScale,ButtonsScale);
@@ -594,6 +597,7 @@ var StateMain = {
         this.StickerButton25 = gameButtons.addStickerButton("0", ButtonsPos_x, ButtonsPos_y, this.Sticker_25_Place, this,24,StickerAssigner_set1); 
         this.StickerButton25.scale.setTo(ButtonsScale,ButtonsScale);
         StickerGroup_7.add(this.StickerButton25);
+        this.SelectedButtonSticker7 =this.StickerButton25;
         
         this.StickerButton26 = gameButtons.addStickerButton("0", ButtonsPos_x+this.StickerButton1.width, ButtonsPos_y, this.Sticker_26_Place, this,25,StickerAssigner_set1); 
         this.StickerButton26.scale.setTo(ButtonsScale,ButtonsScale);
@@ -1371,6 +1375,7 @@ game.state.start("StateMain");
                 {
                     isMovingSticker = false;
                     isClickDragging = false;
+                    //this.SelectedButtonSticker.alpha = 1;                   
                     this.SelectedButton.x = GameCenter_x;
                     this.SelectedButton.y = GameCenter_y;
                     this.SelectedButton.anchor.x = 0.5;
@@ -1444,8 +1449,20 @@ game.state.start("StateMain");
 //////////////////////////////////
 ////First Sticker Button Group////
 //////////////////////////////////
-    Sticker_1_Place: function () {    
+    Sticker_1_Place: function () { 
+    
+        if(isFirstStickerSelected == false)
+        {
+        game.time.events.add(10*1000, function() {
+        this.DelayedAudioPromt = game.add.audio("TeachSaveButton");
+        this.DelayedAudioPromt.play();});
+        isFirstStickerSelected = true;
+        }
     isClickDragging = true; 
+        if(this.SelectedButtonSticker1 != this.StickerButton1)    
+        {
+        this.SelectedButtonSticker1.alpha = 1;
+        }
     this.SelectedButton = this.Sticker_1;
     this.Sticker_1.loadTexture(ImageAssetArray[1]);   
     this.Sticker_1.alpha = 1;  
@@ -1457,10 +1474,23 @@ game.state.start("StateMain");
     //Data storage 
     PositionArrayIndicator = 1;
     testArrayAlpha[1] = 1;
+    this.StickerButton1.alpha = SelectedButtonStickerAlpha;
+    this.SelectedButtonSticker1 = this.StickerButton1;
     },
     
     Sticker_2_Place: function () {
+        if(isFirstStickerSelected == false)
+        {
+        game.time.events.add(10*1000, function() {
+        this.DelayedAudioPromt = game.add.audio("TeachSaveButton");
+        this.DelayedAudioPromt.play();});
+        isFirstStickerSelected = true;
+        }
     isClickDragging = true;
+        if(this.SelectedButtonSticker1 != this.StickerButton2)      
+        {
+        this.SelectedButtonSticker1.alpha = 1;
+        }
     this.Sticker_1.loadTexture(ImageAssetArray[2]); 
     this.Sticker_1.alpha = 1;  
     this.SelectedButton = this.Sticker_1;
@@ -1472,10 +1502,23 @@ game.state.start("StateMain");
     //Data storage 
     PositionArrayIndicator = 2;
     testArrayAlpha[1] = 1;
+    this.StickerButton2.alpha = SelectedButtonStickerAlpha;
+    this.SelectedButtonSticker1 = this.StickerButton2;
     },
     
     Sticker_3_Place: function () {
+        if(isFirstStickerSelected == false)
+        {
+        game.time.events.add(10*1000, function() {
+        this.DelayedAudioPromt = game.add.audio("TeachSaveButton");
+        this.DelayedAudioPromt.play();});
+        isFirstStickerSelected = true;
+        }
     isClickDragging = true;
+        if(this.SelectedButtonSticker1 != this.StickerButton3)    
+        {
+        this.SelectedButtonSticker1.alpha = 1;
+        }
     this.Sticker_1.loadTexture(ImageAssetArray[3]);
     this.Sticker_1.alpha = 1;
     this.SelectedButton = this.Sticker_1;
@@ -1487,10 +1530,23 @@ game.state.start("StateMain");
     //Data storage 
     PositionArrayIndicator = 3;
     testArrayAlpha[1] = 1;
+    this.StickerButton3.alpha = SelectedButtonStickerAlpha;
+    this.SelectedButtonSticker1 = this.StickerButton3;
     },
     
     Sticker_4_Place: function () {
+        if(isFirstStickerSelected == false)
+        {
+        game.time.events.add(10*1000, function() {
+        this.DelayedAudioPromt = game.add.audio("TeachSaveButton");
+        this.DelayedAudioPromt.play();});
+        isFirstStickerSelected = true;
+        }
     isClickDragging = true;
+        if(this.SelectedButtonSticker1 != this.StickerButton4)    
+        {
+        this.SelectedButtonSticker1.alpha = 1;
+        }
     this.Sticker_1.loadTexture(ImageAssetArray[4]);
     this.Sticker_1.alpha = 1;
     this.SelectedButton = this.Sticker_1;
@@ -1502,6 +1558,8 @@ game.state.start("StateMain");
     //Data storage 
     PositionArrayIndicator = 4;
     testArrayAlpha[1] = 1;
+    this.StickerButton4.alpha = SelectedButtonStickerAlpha;
+    this.SelectedButtonSticker1 = this.StickerButton4;
     }, 
     
 ///////////////////////////
@@ -1509,7 +1567,18 @@ game.state.start("StateMain");
 ///////////////////////////
     
     Sticker_5_Place: function () {
+        if(isFirstStickerSelected == false)
+        {
+        game.time.events.add(10*1000, function() {
+        this.DelayedAudioPromt = game.add.audio("TeachSaveButton");
+        this.DelayedAudioPromt.play();});
+        isFirstStickerSelected = true;
+        }
     isClickDragging = true;
+        if(this.SelectedButtonSticker2 != this.StickerButton5)    
+        {
+        this.SelectedButtonSticker2.alpha = 1;
+        }
     this.SelectedButton = this.Sticker_2;
     this.Sticker_2.loadTexture(ImageAssetArray[5]);
     this.Sticker_2.alpha = 1; 
@@ -1521,10 +1590,23 @@ game.state.start("StateMain");
     //Data storage 
     PositionArrayIndicator = 5;
     testArrayAlpha[2] = 1;
+    this.StickerButton5.alpha = SelectedButtonStickerAlpha;
+    this.SelectedButtonSticker2 = this.StickerButton5;
     }, 
         
     Sticker_6_Place: function () {
+        if(isFirstStickerSelected == false)
+        {
+        game.time.events.add(10*1000, function() {
+        this.DelayedAudioPromt = game.add.audio("TeachSaveButton");
+        this.DelayedAudioPromt.play();});
+        isFirstStickerSelected = true;
+        }
     isClickDragging = true;
+        if(this.SelectedButtonSticker2 != this.StickerButton6)    
+        {
+        this.SelectedButtonSticker2.alpha = 1;
+        }
     this.SelectedButton = this.Sticker_2;
     this.Sticker_2.loadTexture(ImageAssetArray[6]);
     this.Sticker_2.alpha = 1; 
@@ -1536,10 +1618,23 @@ game.state.start("StateMain");
     //Data storage 
     PositionArrayIndicator = 6;
     testArrayAlpha[2] = 1;
+    this.StickerButton6.alpha = SelectedButtonStickerAlpha;
+    this.SelectedButtonSticker2 = this.StickerButton6;
     }, 
             
     Sticker_7_Place: function () {
+        if(isFirstStickerSelected == false)
+        {
+        game.time.events.add(10*1000, function() {
+        this.DelayedAudioPromt = game.add.audio("TeachSaveButton");
+        this.DelayedAudioPromt.play();});
+        isFirstStickerSelected = true;
+        }
     isClickDragging = true;
+        if(this.SelectedButtonSticker2 != this.StickerButton7)    
+        {
+        this.SelectedButtonSticker2.alpha = 1;
+        }
     this.SelectedButton = this.Sticker_2;
     this.Sticker_2.loadTexture(ImageAssetArray[7]);
     this.Sticker_2.alpha = 1;  
@@ -1551,10 +1646,23 @@ game.state.start("StateMain");
     //Data storage 
     PositionArrayIndicator = 7;
     testArrayAlpha[2] = 1;
+    this.StickerButton7.alpha = SelectedButtonStickerAlpha;
+    this.SelectedButtonSticker2 = this.StickerButton7;
     }, 
              
     Sticker_8_Place: function () {
+        if(isFirstStickerSelected == false)
+        {
+        game.time.events.add(10*1000, function() {
+        this.DelayedAudioPromt = game.add.audio("TeachSaveButton");
+        this.DelayedAudioPromt.play();});
+        isFirstStickerSelected = true;
+        }
     isClickDragging = true;
+        if(this.SelectedButtonSticker2 != this.StickerButton8)    
+        {
+        this.SelectedButtonSticker2.alpha = 1;
+        }
     this.SelectedButton = this.Sticker_2;
     this.Sticker_2.loadTexture(ImageAssetArray[8]);
     this.Sticker_2.alpha = 1; 
@@ -1566,14 +1674,27 @@ game.state.start("StateMain");
     //Data storage
     PositionArrayIndicator = 8;
     testArrayAlpha[2] = 1;
+    this.StickerButton8.alpha = SelectedButtonStickerAlpha;
+    this.SelectedButtonSticker2 = this.StickerButton8;
     }, 
 
 ///////////////////////////
 ////Third Sticker Group////
 ///////////////////////////
     
-    Sticker_9_Place: function () {    
+    Sticker_9_Place: function () {
+        if(isFirstStickerSelected == false)
+        {
+        game.time.events.add(10*1000, function() {
+        this.DelayedAudioPromt = game.add.audio("TeachSaveButton");
+        this.DelayedAudioPromt.play();});
+        isFirstStickerSelected = true;
+        }
     isClickDragging = true;
+        if(this.SelectedButtonSticker3 != this.StickerButton9)    
+        {
+        this.SelectedButtonSticker3.alpha = 1;
+        }
     this.SelectedButton = this.Sticker_3;
     this.Sticker_3.loadTexture(ImageAssetArray[9]);
     this.Sticker_3.alpha = 1; 
@@ -1585,10 +1706,23 @@ game.state.start("StateMain");
     //Data storage
     PositionArrayIndicator = 9;
     testArrayAlpha[3] = 1;
+    this.StickerButton9.alpha = SelectedButtonStickerAlpha;
+    this.SelectedButtonSticker3 = this.StickerButton9;
     },  
     
     Sticker_10_Place: function () {
+        if(isFirstStickerSelected == false)
+        {
+        game.time.events.add(10*1000, function() {
+        this.DelayedAudioPromt = game.add.audio("TeachSaveButton");
+        this.DelayedAudioPromt.play();});
+        isFirstStickerSelected = true;
+        }
     isClickDragging = true;
+        if(this.SelectedButtonSticker3 != this.StickerButton10)    
+        {
+        this.SelectedButtonSticker3.alpha = 1;
+        }
     this.SelectedButton = this.Sticker_3;
     this.Sticker_3.loadTexture(ImageAssetArray[10]);
     this.Sticker_3.alpha = 1;  
@@ -1600,10 +1734,23 @@ game.state.start("StateMain");
     //Data storage
     PositionArrayIndicator = 10;
     testArrayAlpha[3] = 1;
+    this.StickerButton10.alpha = SelectedButtonStickerAlpha;
+    this.SelectedButtonSticker3 = this.StickerButton10;
     }, 
     
     Sticker_11_Place: function () {
+        if(isFirstStickerSelected == false)
+        {
+        game.time.events.add(10*1000, function() {
+        this.DelayedAudioPromt = game.add.audio("TeachSaveButton");
+        this.DelayedAudioPromt.play();});
+        isFirstStickerSelected = true;
+        }
     isClickDragging = true;
+        if(this.SelectedButtonSticker3 != this.StickerButton11)    
+        {
+        this.SelectedButtonSticker3.alpha = 1;
+        }
     this.SelectedButton = this.Sticker_3;
     this.Sticker_3.loadTexture(ImageAssetArray[11]);
     this.Sticker_3.alpha = 1;
@@ -1615,10 +1762,23 @@ game.state.start("StateMain");
     //Data storage
     PositionArrayIndicator = 11;
     testArrayAlpha[3] = 1;
+    this.StickerButton11.alpha = SelectedButtonStickerAlpha;
+    this.SelectedButtonSticker3 = this.StickerButton11;
     },   
     
     Sticker_12_Place: function () {
+        if(isFirstStickerSelected == false)
+        {
+        game.time.events.add(10*1000, function() {
+        this.DelayedAudioPromt = game.add.audio("TeachSaveButton");
+        this.DelayedAudioPromt.play();});
+        isFirstStickerSelected = true;
+        }
     isClickDragging = true;
+        if(this.SelectedButtonSticker3 != this.StickerButton12)    
+        {
+        this.SelectedButtonSticker3.alpha = 1;
+        }
     this.SelectedButton = this.Sticker_3;
     this.Sticker_3.loadTexture(ImageAssetArray[12]);
     this.Sticker_3.alpha = 1;   
@@ -1630,6 +1790,8 @@ game.state.start("StateMain");
     //Data storage
     PositionArrayIndicator = 12;
     testArrayAlpha[3] = 1;
+    this.StickerButton12.alpha = SelectedButtonStickerAlpha;
+    this.SelectedButtonSticker3 = this.StickerButton12;
     }, 
     
     
@@ -1638,7 +1800,18 @@ game.state.start("StateMain");
 ///////////////////////////   
     
     Sticker_13_Place: function () {
+        if(isFirstStickerSelected == false)
+        {
+        game.time.events.add(10*1000, function() {
+        this.DelayedAudioPromt = game.add.audio("TeachSaveButton");
+        this.DelayedAudioPromt.play();});
+        isFirstStickerSelected = true;
+        }
     isClickDragging = true;
+        if(this.SelectedButtonSticker4 != this.StickerButton13)    
+        {
+        this.SelectedButtonSticker4.alpha = 1;
+        }
     this.SelectedButton = this.Sticker_4;
     this.Sticker_4.loadTexture(ImageAssetArray[13]);
     this.Sticker_4.alpha = 1; 
@@ -1650,10 +1823,23 @@ game.state.start("StateMain");
     //Data storage
     PositionArrayIndicator = 13;
     testArrayAlpha[4] = 1;
+    this.StickerButton13.alpha = SelectedButtonStickerAlpha;
+    this.SelectedButtonSticker4 = this.StickerButton13;
     }, 
         
     Sticker_14_Place: function () {
+        if(isFirstStickerSelected == false)
+        {
+        game.time.events.add(10*1000, function() {
+        this.DelayedAudioPromt = game.add.audio("TeachSaveButton");
+        this.DelayedAudioPromt.play();});
+        isFirstStickerSelected = true;
+        }
     isClickDragging = true;
+        if(this.SelectedButtonSticker4 != this.StickerButton14)    
+        {
+        this.SelectedButtonSticker4.alpha = 1;
+        }
     this.SelectedButton = this.Sticker_4;
     this.Sticker_4.loadTexture(ImageAssetArray[14]);
     this.Sticker_4.alpha = 1;
@@ -1665,10 +1851,23 @@ game.state.start("StateMain");
     //Data storage
     PositionArrayIndicator = 14;
     testArrayAlpha[4] = 1;
+    this.StickerButton14.alpha = SelectedButtonStickerAlpha;
+    this.SelectedButtonSticker4 = this.StickerButton14;
     }, 
             
     Sticker_15_Place: function () {
+        if(isFirstStickerSelected == false)
+        {
+        game.time.events.add(10*1000, function() {
+        this.DelayedAudioPromt = game.add.audio("TeachSaveButton");
+        this.DelayedAudioPromt.play();});
+        isFirstStickerSelected = true;
+        }
     isClickDragging = true;
+        if(this.SelectedButtonSticker4 != this.StickerButton15)    
+        {
+        this.SelectedButtonSticker4.alpha = 1;
+        }
     this.SelectedButton = this.Sticker_4;
     this.Sticker_4.loadTexture(ImageAssetArray[15]);
     this.Sticker_4.alpha = 1; 
@@ -1680,10 +1879,23 @@ game.state.start("StateMain");
     //Data storage
     PositionArrayIndicator = 15;
     testArrayAlpha[4] = 1;
+    this.StickerButton15.alpha = SelectedButtonStickerAlpha;
+    this.SelectedButtonSticker4 = this.StickerButton15;
     }, 
              
     Sticker_16_Place: function () {
+        if(isFirstStickerSelected == false)
+        {
+        game.time.events.add(10*1000, function() {
+        this.DelayedAudioPromt = game.add.audio("TeachSaveButton");
+        this.DelayedAudioPromt.play();});
+        isFirstStickerSelected = true;
+        }
     isClickDragging = true;
+        if(this.SelectedButtonSticker4 != this.StickerButton16)    
+        {
+        this.SelectedButtonSticker4.alpha = 1;
+        }
     this.SelectedButton = this.Sticker_4;
     this.Sticker_4.loadTexture(ImageAssetArray[16]);
     this.Sticker_4.alpha = 1; 
@@ -1695,14 +1907,27 @@ game.state.start("StateMain");
     //Data storage
     PositionArrayIndicator = 16;
     testArrayAlpha[4] = 1;
+    this.StickerButton16.alpha = SelectedButtonStickerAlpha;
+    this.SelectedButtonSticker4 = this.StickerButton16;
     }, 
 
 ///////////////////////////
 ////Fifth Sticker Group///
 ///////////////////////////  
     
-    Sticker_17_Place: function () {    
+    Sticker_17_Place: function () {
+        if(isFirstStickerSelected == false)
+        {
+        game.time.events.add(10*1000, function() {
+        this.DelayedAudioPromt = game.add.audio("TeachSaveButton");
+        this.DelayedAudioPromt.play();});
+        isFirstStickerSelected = true;
+        }
     isClickDragging = true;
+        if(this.SelectedButtonSticker5 != this.StickerButton17)    
+        {
+        this.SelectedButtonSticker5.alpha = 1;
+        }
     this.SelectedButton = this.Sticker_5;
     this.Sticker_5.loadTexture(ImageAssetArray[17]);
     this.Sticker_5.alpha = 1; 
@@ -1714,10 +1939,23 @@ game.state.start("StateMain");
     //Data storage
     PositionArrayIndicator = 17;
     testArrayAlpha[5] = 1;
+    this.StickerButton17.alpha = SelectedButtonStickerAlpha;
+    this.SelectedButtonSticker5 = this.StickerButton17;
     },  
     
     Sticker_18_Place: function () {
+        if(isFirstStickerSelected == false)
+        {
+        game.time.events.add(10*1000, function() {
+        this.DelayedAudioPromt = game.add.audio("TeachSaveButton");
+        this.DelayedAudioPromt.play();});
+        isFirstStickerSelected = true;
+        }
     isClickDragging = true;
+        if(this.SelectedButtonSticker5 != this.StickerButton18)    
+        {
+        this.SelectedButtonSticker5.alpha = 1;
+        }
     this.SelectedButton = this.Sticker_5;
     this.Sticker_5.loadTexture(ImageAssetArray[18]);
     this.Sticker_5.alpha = 1;
@@ -1729,10 +1967,23 @@ game.state.start("StateMain");
     //Data storage
     PositionArrayIndicator = 18;
     testArrayAlpha[5] = 1;
+    this.StickerButton18.alpha = SelectedButtonStickerAlpha;
+    this.SelectedButtonSticker5 = this.StickerButton18;
     }, 
     
     Sticker_19_Place: function () {
+        if(isFirstStickerSelected == false)
+        {
+        game.time.events.add(10*1000, function() {
+        this.DelayedAudioPromt = game.add.audio("TeachSaveButton");
+        this.DelayedAudioPromt.play();});
+        isFirstStickerSelected = true;
+        }
     isClickDragging = true;
+        if(this.SelectedButtonSticker5 != this.StickerButton19)    
+        {
+        this.SelectedButtonSticker5.alpha = 1;
+        }
     this.SelectedButton = this.Sticker_5;
     this.Sticker_5.loadTexture(ImageAssetArray[19]);
     this.Sticker_5.alpha = 1; 
@@ -1744,10 +1995,23 @@ game.state.start("StateMain");
     //Data storage
     PositionArrayIndicator = 19;
     testArrayAlpha[5] = 1;
+    this.StickerButton19.alpha = SelectedButtonStickerAlpha;
+    this.SelectedButtonSticker5 = this.StickerButton19;
     },   
     
     Sticker_20_Place: function () {
+        if(isFirstStickerSelected == false)
+        {
+        game.time.events.add(10*1000, function() {
+        this.DelayedAudioPromt = game.add.audio("TeachSaveButton");
+        this.DelayedAudioPromt.play();});
+        isFirstStickerSelected = true;
+        }
     isClickDragging = true;
+        if(this.SelectedButtonSticker5 != this.StickerButton20)    
+        {
+        this.SelectedButtonSticker5.alpha = 1;
+        }
     this.SelectedButton = this.Sticker_5;
     this.Sticker_5.loadTexture(ImageAssetArray[20]);
     this.Sticker_5.alpha = 1; 
@@ -1759,6 +2023,8 @@ game.state.start("StateMain");
     //Data storage
     PositionArrayIndicator = 20;
     testArrayAlpha[5] = 1;
+    this.StickerButton20.alpha = SelectedButtonStickerAlpha;
+    this.SelectedButtonSticker5 = this.StickerButton20;
     }, 
     
     
@@ -1767,7 +2033,18 @@ game.state.start("StateMain");
 ///////////////////////////
     
     Sticker_21_Place: function () {
+        if(isFirstStickerSelected == false)
+        {
+        game.time.events.add(10*1000, function() {
+        this.DelayedAudioPromt = game.add.audio("TeachSaveButton");
+        this.DelayedAudioPromt.play();});
+        isFirstStickerSelected = true;
+        }
     isClickDragging = true;
+        if(this.SelectedButtonSticker6 != this.StickerButton21)    
+        {
+        this.SelectedButtonSticker6.alpha = 1;
+        }
     this.SelectedButton = this.Sticker_6;
     this.Sticker_6.loadTexture(ImageAssetArray[21]);
     this.Sticker_6.alpha = 1; 
@@ -1779,10 +2056,23 @@ game.state.start("StateMain");
     //Data storage
     PositionArrayIndicator = 21;
     testArrayAlpha[6] = 1;
+    this.StickerButton21.alpha = SelectedButtonStickerAlpha;
+    this.SelectedButtonSticker6 = this.StickerButton21;
     }, 
         
     Sticker_22_Place: function () {
+        if(isFirstStickerSelected == false)
+        {
+        game.time.events.add(10*1000, function() {
+        this.DelayedAudioPromt = game.add.audio("TeachSaveButton");
+        this.DelayedAudioPromt.play();});
+        isFirstStickerSelected = true;
+        }
     isClickDragging = true;
+        if(this.SelectedButtonSticker6 != this.StickerButton22)    
+        {
+        this.SelectedButtonSticker6.alpha = 1;
+        }
     this.SelectedButton = this.Sticker_6;
     this.Sticker_6.loadTexture(ImageAssetArray[22]);
     this.Sticker_6.alpha = 1;
@@ -1794,10 +2084,23 @@ game.state.start("StateMain");
     //Data storage
     PositionArrayIndicator = 22;
     testArrayAlpha[6] = 1;
+    this.StickerButton22.alpha = SelectedButtonStickerAlpha;
+    this.SelectedButtonSticker6 = this.StickerButton22;
     }, 
             
     Sticker_23_Place: function () {
+        if(isFirstStickerSelected == false)
+        {
+        game.time.events.add(10*1000, function() {
+        this.DelayedAudioPromt = game.add.audio("TeachSaveButton");
+        this.DelayedAudioPromt.play();});
+        isFirstStickerSelected = true;
+        }
     isClickDragging = true;
+        if(this.SelectedButtonSticker6 != this.StickerButton23)    
+        {
+        this.SelectedButtonSticker6.alpha = 1;
+        }
     this.SelectedButton = this.Sticker_6;
     this.Sticker_6.loadTexture(ImageAssetArray[23]);
     this.Sticker_6.alpha = 1;
@@ -1809,10 +2112,23 @@ game.state.start("StateMain");
     //Data storage
     PositionArrayIndicator = 23;
     testArrayAlpha[6] = 1;
+    this.StickerButton23.alpha = SelectedButtonStickerAlpha;
+    this.SelectedButtonSticker6 = this.StickerButton23;
     }, 
              
     Sticker_24_Place: function () {
+        if(isFirstStickerSelected == false)
+        {
+        game.time.events.add(10*1000, function() {
+        this.DelayedAudioPromt = game.add.audio("TeachSaveButton");
+        this.DelayedAudioPromt.play();});
+        isFirstStickerSelected = true;
+        }
     isClickDragging = true;
+        if(this.SelectedButtonSticker6 != this.StickerButton24)    
+        {
+        this.SelectedButtonSticker6.alpha = 1;
+        }
     this.SelectedButton = this.Sticker_6;
     this.Sticker_6.loadTexture(ImageAssetArray[24]);
     this.Sticker_6.alpha = 1;
@@ -1824,6 +2140,8 @@ game.state.start("StateMain");
     //Data storage
     PositionArrayIndicator = 24;
     testArrayAlpha[6] = 1;
+    this.StickerButton24.alpha = SelectedButtonStickerAlpha;
+    this.SelectedButtonSticker6 = this.StickerButton24;
     },   
     
 ///////////////////////////
@@ -1831,7 +2149,18 @@ game.state.start("StateMain");
 ///////////////////////////
     
     Sticker_25_Place: function () {
+        if(isFirstStickerSelected == false)
+        {
+        game.time.events.add(10*1000, function() {
+        this.DelayedAudioPromt = game.add.audio("TeachSaveButton");
+        this.DelayedAudioPromt.play();});
+        isFirstStickerSelected = true;
+        }
     isClickDragging = true;
+        if(this.SelectedButtonSticker7 != this.StickerButton25)    
+        {
+        this.SelectedButtonSticker7.alpha = 1;
+        }
     this.SelectedButton = this.Sticker_7;
     this.Sticker_7.loadTexture(ImageAssetArray[25]);
     this.Sticker_7.alpha = 1; 
@@ -1843,10 +2172,23 @@ game.state.start("StateMain");
     //Data storage
     PositionArrayIndicator = 25;
     testArrayAlpha[7] = 1;
+    this.StickerButton25.alpha = SelectedButtonStickerAlpha;
+    this.SelectedButtonSticker7 = this.StickerButton25;
     }, 
         
     Sticker_26_Place: function () {
+        if(isFirstStickerSelected == false)
+        {
+        game.time.events.add(10*1000, function() {
+        this.DelayedAudioPromt = game.add.audio("TeachSaveButton");
+        this.DelayedAudioPromt.play();});
+        isFirstStickerSelected = true;
+        }
     isClickDragging = true;
+        if(this.SelectedButtonSticker7 != this.StickerButton26)    
+        {
+        this.SelectedButtonSticker7.alpha = 1;
+        }
     this.SelectedButton = this.Sticker_7;
     this.Sticker_7.loadTexture(ImageAssetArray[26]);
     this.Sticker_7.alpha = 1;
@@ -1858,10 +2200,23 @@ game.state.start("StateMain");
     //Data storage
     PositionArrayIndicator = 26;
     testArrayAlpha[7] = 1;
+    this.StickerButton26.alpha = SelectedButtonStickerAlpha;
+    this.SelectedButtonSticker7 = this.StickerButton26;
     }, 
             
     Sticker_27_Place: function () {
+        if(isFirstStickerSelected == false)
+        {
+        game.time.events.add(10*1000, function() {
+        this.DelayedAudioPromt = game.add.audio("TeachSaveButton");
+        this.DelayedAudioPromt.play();});
+        isFirstStickerSelected = true;
+        }
     isClickDragging = true;
+        if(this.SelectedButtonSticker7 != this.StickerButton27)    
+        {
+        this.SelectedButtonSticker7.alpha = 1;
+        }
     this.SelectedButton = this.Sticker_7;
     this.Sticker_7.loadTexture(ImageAssetArray[27]);
     this.Sticker_7.alpha = 1;
@@ -1873,10 +2228,23 @@ game.state.start("StateMain");
     //Data storage
     PositionArrayIndicator = 27;
     testArrayAlpha[7] = 1;
+    this.StickerButton27.alpha = SelectedButtonStickerAlpha;
+    this.SelectedButtonSticker7 = this.StickerButton27;
     }, 
              
     Sticker_28_Place: function () {
+        if(isFirstStickerSelected == false)
+        {
+        game.time.events.add(10*1000, function() {
+        this.DelayedAudioPromt = game.add.audio("TeachSaveButton");
+        this.DelayedAudioPromt.play();});
+        isFirstStickerSelected = true;
+        }
     isClickDragging = true;
+        if(this.SelectedButtonSticker7 != this.StickerButton28)    
+        {
+        this.SelectedButtonSticker7.alpha = 1;
+        }
     this.SelectedButton = this.Sticker_7;
     this.Sticker_7.loadTexture(ImageAssetArray[28]);
     this.Sticker_7.alpha = 1;
@@ -1888,6 +2256,8 @@ game.state.start("StateMain");
     //Data storage
     PositionArrayIndicator = 24;
     testArrayAlpha[7] = 1;
+    this.StickerButton28.alpha = SelectedButtonStickerAlpha;
+    this.SelectedButtonSticker7 = this.StickerButton28;
     },   
     
 ////////////////////

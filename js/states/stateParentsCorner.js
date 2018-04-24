@@ -20,7 +20,7 @@ var StateParentsCorner = {
 
         var BottomButtonPos_X = game.width;
         var BottomButtonPos_Y = game.height - game.height/4;
-        var buttonrez = window.devicePixelRatio/1.5;
+        var buttonrez = 0.8;
         
         var PDFButtonsPos_x = game.width/2;
         var PDFButtonsPos_y = game.height/2; 

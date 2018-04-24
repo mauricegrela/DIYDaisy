@@ -44,6 +44,8 @@ var StateTitle = {
         this.btnParentsCorner.x = this.btnParentsCorner.width;
         
         this.btnParentsCorner.y = this.btnStart.y;
+         
+        
     },
 
     
@@ -54,7 +56,7 @@ var StateTitle = {
     //this.MindfulMoment.play();
     game.state.start("StateMain");
     //game.state.start("StatePlace");
-    //game.state.start("StateDirectory");
+    // game.state.start("StateDirectory");
     }, 
     
     ParentsCorner: function () {
@@ -67,5 +69,8 @@ var StateTitle = {
     update: function () {
 
     }
+    
+   
+    
 
 }

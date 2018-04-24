@@ -58,22 +58,6 @@ var StatePlace = {
         PlacableCollection[0]=this.Body;
         StickerBody.add(this.Body);
         
-        this.Sticker1 = game.add.sprite(GameCenter_x, GameCenter_y, ImageReference[1]);
-        this.Sticker1.scale.setTo(scaleRatio*CharacterScaleAdjustment,scaleRatio*CharacterScaleAdjustment);
-        this.Sticker1.anchor.x = 0.5;
-        this.Sticker1.anchor.y = 0.5;
-        this.Sticker1.alpha = testArrayAlpha[1];
-        PlacableCollection[1]=this.Sticker1;
-        //CharacterGroup.add(this.Sticker1);
-        if(StickerDepth[0]== false)
-        {
-        StickersUnderBody.add(this.Sticker1);
-        }
-            else
-            {
-            StickersAboveBody.add(this.Sticker1);
-            }
-        
         this.Sticker2 = game.add.sprite(GameCenter_x, GameCenter_y, ImageReference[2]);
         this.Sticker2.scale.setTo(scaleRatio*CharacterScaleAdjustment,scaleRatio*CharacterScaleAdjustment);
         this.Sticker2.anchor.x = 0.5;
@@ -90,7 +74,23 @@ var StatePlace = {
             StickersAboveBody.add(this.Sticker2);
             }
         
-        this.Sticker3 = game.add.sprite(GameCenter_x, GameCenter_y, ImageReference[3]);
+        
+        
+        this.Sticker1 = game.add.sprite(GameCenter_x, GameCenter_y, ImageReference[1]);
+        this.Sticker1.scale.setTo(scaleRatio*CharacterScaleAdjustment,scaleRatio*CharacterScaleAdjustment);
+        this.Sticker1.anchor.x = 0.5;
+        this.Sticker1.anchor.y = 0.5;
+        this.Sticker1.alpha = testArrayAlpha[1];
+        PlacableCollection[1]=this.Sticker1;
+        //CharacterGroup.add(this.Sticker1);
+        if(StickerDepth[0]== false)
+        {
+        StickersUnderBody.add(this.Sticker1);
+        }
+            else
+            {
+            StickersAboveBody.add(this.Sticker1);
+            }this.Sticker3 = game.add.sprite(GameCenter_x, GameCenter_y, ImageReference[3]);
         this.Sticker3.scale.setTo(scaleRatio*CharacterScaleAdjustment,scaleRatio*CharacterScaleAdjustment);
         this.Sticker3.anchor.x = 0.5;
         this.Sticker3.anchor.y = 0.5;
@@ -192,7 +192,7 @@ var StatePlace = {
         //this.mummy2.x = this.mummy2.width*1.5;
         
         this.mummy3 = game.add.sprite(
-        1124,
+        1125,
         this.craftBackground1.height,
         'Anim3', 5);
         this.mummy3.scale.set(craftAnimBackgroundScale);
@@ -204,7 +204,7 @@ var StatePlace = {
         //this.mummy3.x = this.mummy3.width*2.5;
         
         this.mummy4 = game.add.sprite(
-        1530,
+        1542,
         this.craftBackground1.height-40,
         'Anim4', 5);
         this.mummy4.scale.set(craftAnimBackgroundScale);
@@ -357,7 +357,7 @@ var StatePlace = {
         game.world.bringToTop(this.mummy1);
         game.world.bringToTop(this.mummy2);
         game.world.bringToTop(this.mummy3);
-        game.world.bringToTop(this.mummy5);        
+        //game.world.bringToTop(this.mummy5);        
         game.world.bringToTop(this.mummy6);
         game.world.bringToTop(this.mummy7);
         //game.world.bringToTop(this.mummy8);
@@ -367,7 +367,7 @@ var StatePlace = {
         this.craftBackground2 = game.add.tileSprite(0, 0,  game.width, game.height,'placing_Backgroung2');
         this.craftBackground2.scale.setTo(1,1);
         
-        this.Logo = gameButtons.addGenericButton("0", 0,0 , this.ToLandingPage, this,"daisylogo",2); 
+        /*this.Logo = gameButtons.addGenericButton("0", 0,0 , this.ToLandingPage, this,"daisylogo",2); 
         //addGenericButton("0", 0,0 , this.BackToCraft, this,"daisylogo",2); 
         this.Logo.scale.setTo(scaleRatio,scaleRatio);
         this.Logo.inputEnabled = true;
@@ -376,6 +376,7 @@ var StatePlace = {
         this.Logo.y =  this.Logo.height/2;
         //this.Logo.events.onInputUp.add(this.ToLandingPage, this.Logo); 
         this.Logo.fixedToCamera = true;
+        */
         
         this.SaveButton = gameButtons.addGenericButton("0", 0,0 , this.BackToCraft, this,"creativeButtons",2); 
         this.SaveButton.anchor.x = 1;
@@ -482,8 +483,8 @@ var StatePlace = {
         
             if(game.input.x<100)
             {               
-                this.craftBackground1.tilePosition.x += 8;
-                this.craftBackground2.tilePosition.x += 8;
+                //this.craftBackground1.tilePosition.x += 8;
+                //this.craftBackground2.tilePosition.x += 8;
                 
                     if((this.craftBackground1.tilePosition.x ==  (this.craftBackground1.width*4)*-1)
                       ||(this.craftBackground1.tilePosition.x ==  game.camera.width))
@@ -491,6 +492,7 @@ var StatePlace = {
                         for (let i = 0; i <= AnimObject.length-1; i+=1) 
                         {
                         AnimObject[i].x -=this.craftBackground1.width*5;
+
                         }
                     }
                         else
@@ -503,8 +505,8 @@ var StatePlace = {
             }
                 else if(game.input.x>game.width-100)
                 {//WHEN MOVING RIGHT
-                    this.craftBackground1.tilePosition.x -= 8;
-                    this.craftBackground2.tilePosition.x -= 8;
+                    //this.craftBackground1.tilePosition.x -= 8;
+                    //this.craftBackground2.tilePosition.x -= 8;
                     
                         if((this.craftBackground1.tilePosition.x ==  (this.craftBackground1.width*4)*-1)
                           ||(this.craftBackground1.tilePosition.x ==  game.camera.width))
@@ -694,6 +696,21 @@ var StatePlace = {
         PlacableCollection[i].x = game.input.x;
         PlacableCollection[i].y = game.input.y;
         PlacableCollection[i].fixedToCamera = true;
+            
+            if(game.input.x<100)
+            {               
+             PlacableCollection[i].angle = -45;  
+            }
+                else if(game.input.x>game.width-100)
+                {//WHEN MOVING RIGHT
+                 PlacableCollection[i].angle = 45;  
+                }
+                    else 
+                    {
+
+                    PlacableCollection[i].angle = 0;
+                    }
+            
         }
         
         

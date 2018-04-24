@@ -5,6 +5,7 @@ var StateInit = {
         game.load.image("loadingFull", "images/loading/progress_all.png");
         game.load.image("loadingBackground", "images/loading/Loading-Screen-bg.jpg");
         game.load.spritesheet('LoadscreenAnim', 'images/SpriteSheets/LOAD_SpriteSheet.png', 256, 256, 9);
+        game.load.spritesheet('AudioLoadingIcon', 'images/loading/Audio-OnSpriteSheet.png', 126, 110, 4);
 
         game.scale.fullScreenScaleMode = Phaser.ScaleManager.SHOW_ALL;
         game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
@@ -39,5 +40,6 @@ var StateInit = {
     , wrongWay: function () {
         document.getElementById(wrongTag).style.display = "block";
     }
+
 
 }

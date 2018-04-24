@@ -1,8 +1,8 @@
 body {
-	width: auto;
     height: auto;
-	max-height: 1600px;
-	max-width: 1200px;
+	width: auto;
+	max-height: auto;
+	max-width: auto;
     position: static;
     top: 0px;
     left: 0px;
@@ -36,4 +36,10 @@ body {
     background-position: center center;
     display: none;
     z-index: 2;
+}
+
+#ph_game {
+    
+    left: 50vh; 
+    height:100vh; /*vh stands for view-port height, 1vh is 1% of screen height*/
 }

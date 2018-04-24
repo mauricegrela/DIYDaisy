@@ -18,18 +18,8 @@ var StateDirectory = {
     }
 
     , create: function () { 
-        
-        //if (BGMusic && BGMusic.isPlaying){BGMusic.stop(); }
-        
-      //game.sound.stopAll();
-        
-        
-        
+
         game.stage.backgroundColor = "#ffffff";
-
-
-
-        
         
         StickersUnderBody = game.add.group();
         StickerBody = game.add.group();
@@ -54,6 +44,9 @@ var StateDirectory = {
         
         butonScale = 0.8;
         
+        this.Screenshot = game.add.sprite(0, 0, 'craft_Backgroung'); 
+        ScreenshotLogoGroup.add(this.Screenshot);
+        
         this.craftBackground = game.add.sprite(0, 0, 'craft_Backgroung');  
         this.craftBackground.height = game.height;
         this.craftBackground.width = game.width;
@@ -63,6 +56,7 @@ var StateDirectory = {
         this.Background.anchor.set(0.5);
         this.Background.scale.setTo(BookScale,BookScale);
         NonCharacterBackgroundGroup.add(this.Background);
+        TopButtonsGroup.add(this.Background);
         //this.Background.width =game.width; 
         //this.Background.height =game.height;
 
@@ -80,14 +74,31 @@ var StateDirectory = {
         this.Body.alpha = 1;
         StickerBody.add(this.Body);
         PlacableCollection[0]=this.Body;
-      
+        //TopButtonsGroup.add(this.Body);
         
+        this.Sticker2 = game.add.sprite(GameCenter_x, GameCenter_y, ImageReference[2]);
+        this.Sticker2.scale.setTo(scaleRatio*CharacterScaleAdjustment,scaleRatio*CharacterScaleAdjustment);
+        this.Sticker2.anchor.x = 0.5;
+        this.Sticker2.anchor.y = 0.5;
+        this.Sticker2.alpha = testArrayAlpha[2];
+        PlacableCollection[2]=this.Sticker2;
+        //TopButtonsGroup.add(this.Sticker2);
+        if(StickerDepth[1]== false)
+        {
+        StickersUnderBody.add(this.Sticker2);
+        }
+            else
+            {
+            StickersAboveBody.add(this.Sticker2);
+            }
+
         this.Sticker1 = game.add.sprite(GameCenter_x, GameCenter_y, ImageReference[1]);
         this.Sticker1.scale.setTo(scaleRatio*CharacterScaleAdjustment,scaleRatio*CharacterScaleAdjustment);
         this.Sticker1.anchor.x = 0.5;
         this.Sticker1.anchor.y = 0.5;
         this.Sticker1.alpha = testArrayAlpha[1];
         PlacableCollection[1]=this.Sticker1;
+        //TopButtonsGroup.add(this.Sticker1);
         if(StickerDepth[0]== false)
         {
         StickersUnderBody.add(this.Sticker1);
@@ -97,27 +108,13 @@ var StateDirectory = {
             StickersAboveBody.add(this.Sticker1);
             }
         
-        this.Sticker2 = game.add.sprite(GameCenter_x, GameCenter_y, ImageReference[2]);
-        this.Sticker2.scale.setTo(scaleRatio*CharacterScaleAdjustment,scaleRatio*CharacterScaleAdjustment);
-        this.Sticker2.anchor.x = 0.5;
-        this.Sticker2.anchor.y = 0.5;
-        this.Sticker2.alpha = testArrayAlpha[2];
-        PlacableCollection[2]=this.Sticker2;
-        if(StickerDepth[1]== false)
-        {
-        StickersUnderBody.add(this.Sticker2);
-        }
-            else
-            {
-            StickersAboveBody.add(this.Sticker2);
-            }
-        
         this.Sticker3 = game.add.sprite(GameCenter_x, GameCenter_y, ImageReference[3]);
         this.Sticker3.scale.setTo(scaleRatio*CharacterScaleAdjustment,scaleRatio*CharacterScaleAdjustment);
         this.Sticker3.anchor.x = 0.5;
         this.Sticker3.anchor.y = 0.5;
         this.Sticker3.alpha = testArrayAlpha[3];
         PlacableCollection[3]=this.Sticker3;
+        //TopButtonsGroup.add(this.Sticker3);
         if(StickerDepth[2]== false)
         {
         StickersUnderBody.add(this.Sticker3);
@@ -135,6 +132,7 @@ var StateDirectory = {
             this.Sticker4.anchor.y = 0.5;
             this.Sticker4.alpha = testArrayAlpha[4];
             PlacableCollection[4]=this.Sticker4;
+            //TopButtonsGroup.add(this.Sticker4);
             if(StickerDepth[3]== false)
             {
             StickersUnderBody.add(this.Sticker4);
@@ -153,6 +151,7 @@ var StateDirectory = {
             this.Sticker5.anchor.y = 0.5;
             this.Sticker5.alpha = testArrayAlpha[5];
             PlacableCollection[5]=this.Sticker5;
+            //TopButtonsGroup.add(this.Sticker5);
             if(StickerDepth[4]== false)
             {
             StickersUnderBody.add(this.Sticker5);
@@ -171,6 +170,7 @@ var StateDirectory = {
             this.Sticker6.anchor.y = 0.5;
             this.Sticker6.alpha = testArrayAlpha[6];
             PlacableCollection[6]=this.Sticker6;
+            //TopButtonsGroup.add(this.Sticker6);
             if(StickerDepth[5]== false)
             {
             StickersUnderBody.add(this.Sticker6);
@@ -189,6 +189,7 @@ var StateDirectory = {
             this.Sticker7.anchor.y = 0.5;
             this.Sticker7.alpha = testArrayAlpha[7];
             PlacableCollection[7]=this.Sticker7;
+            //TopButtonsGroup.add(this.Sticker7);
             if(StickerDepth[6]== false)
             {
             StickersUnderBody.add(this.Sticker7);
@@ -216,6 +217,7 @@ var StateDirectory = {
         TopButtonsGroup.add(this.BackToCraftButton);
         XPosition = this.Background.x-this.Background.width/5.5;
         YPosition = this.Background.y-game.height/12;
+    
         
         //Butons      
         this.PlaceModeButton = game.add.sprite(XPosition,(YPosition), 'creativeButtons');   
@@ -226,6 +228,7 @@ var StateDirectory = {
         this.PlaceModeButton.events.onInputDown.add(this.PlaceCreation, this.PlaceModeButton)  
         this.PlaceModeButton.scale.setTo((ButtonScale),(ButtonScale));
         NonCharacterBackgroundGroup.add(this.PlaceModeButton);
+        TopButtonsGroup.add(this.PlaceModeButton);
         
         this.DownloadButton = game.add.sprite(XPosition,(YPosition+this.PlaceModeButton.height), 'PictureFrame');   
         //this.DownloadButton.frame = 1;
@@ -235,7 +238,8 @@ var StateDirectory = {
         this.DownloadButton.events.onInputDown.add(this.SaveFile, this.DownloadButton);   
         this.DownloadButton.scale.setTo((ButtonScale),(ButtonScale));
         NonCharacterBackgroundGroup.add(this.DownloadButton);
-
+        TopButtonsGroup.add(this.DownloadButton);
+        
         this.Logo = game.add.sprite(0,0, 'daisylogo');
         this.Logo.scale.setTo(scaleRatio,scaleRatio);
         this.Logo.inputEnabled = true;
@@ -248,7 +252,8 @@ var StateDirectory = {
         game.world.bringToTop(this.Logo);
         game.world.bringToTop(this.BackToCraftButton);
         
-
+        this.addDelayTwo();
+        this.addDelayOne();
         
 ///////////////////////////
 //////DownloadGroup////////
@@ -278,7 +283,7 @@ var StateDirectory = {
         this.CloseButton.events.onInputDown.add( this.CloseButtonpress, this.CloseButton);   
         this.CloseButton.scale.setTo(1.5,1.5);
         DownloadModalGroup.add(this.CloseButton);
-        
+
         
         this.downloadButton = game.add.sprite(game.width/2,game.height/2, 'DownloadButton');
         this.downloadButton.anchor.x = 0.5;
@@ -335,7 +340,7 @@ var StateDirectory = {
         
         
         //Screenshot
-        this.DIYLogo = game.add.sprite(0,0, 'daisylogo');
+        this.DIYLogo = game.add.sprite(0,0, 'DLLogo');
         this.DIYLogo.scale.setTo(scaleRatio,scaleRatio);
         this.DIYLogo.inputEnabled = true;
         this.DIYLogo.anchor.set(0,0.4);
@@ -354,13 +359,15 @@ var StateDirectory = {
         ScreenshotLogoGroup.visible = false;
         game.world.bringToTop(ScreenshotLogoGroup);
         
+
+        game.world.bringToTop(TopButtonsGroup);
+        game.world.bringToTop(DownloadModalGroup);
+        game.world.bringToTop(ConfirmBackGroup);
+        
         game.world.bringToTop(StickersUnderBody);
         game.world.bringToTop(StickerBody);
         game.world.bringToTop(StickersAboveBody);
         
-        game.world.bringToTop(TopButtonsGroup);
-        game.world.bringToTop(DownloadModalGroup);
-        game.world.bringToTop(ConfirmBackGroup);
         
     },
         
@@ -376,10 +383,16 @@ var StateDirectory = {
     this.ThumbsDownSFX.play();
     ConfirmBackGroup.visible = false;
     TopButtonsGroup.visible = true;
+    StickersUnderBody.visible = true;
+    StickerBody.visible = true;
+    StickersAboveBody.visible = true;
     }, 
     
     BackToCraftConfirm: function () {
     TopButtonsGroup.visible = false;
+    StickersUnderBody.visible = false;
+    StickerBody.visible = false;
+    StickersAboveBody.visible = false;
     ConfirmBackGroup.visible = true;
     game.sound.stopAll();   
     this.BackButtonSFX.play();
@@ -415,6 +428,9 @@ var StateDirectory = {
         //this.ConfirmSoundEffect.play();
         DownloadModalGroup.visible = true;
         TopButtonsGroup.visible = false;
+        StickersUnderBody.visible = false;
+        StickerBody.visible = false;
+        StickersAboveBody.visible = false;
     }, 
     
     ToLandingPage: function()
@@ -426,6 +442,9 @@ var StateDirectory = {
     CloseButtonpress: function () {
         DownloadModalGroup.visible = false;
         TopButtonsGroup.visible = true;
+        StickersUnderBody.visible = true;
+        StickerBody.visible = true;
+        StickersAboveBody.visible = true;
     }, 
     
     CloseButtonpressed: function () {
@@ -434,6 +453,9 @@ var StateDirectory = {
         DownloadModalGroup.visible = false;
         NonCharacterBackgroundGroup.visible = false;   
         ScreenshotLogoGroup.visible = true;
+        StickersUnderBody.visible = true;
+        StickerBody.visible = true;
+        StickersAboveBody.visible = true;
             for (let i = 0; i <= PlacableCollection.length-1; i+=1) 
             {
 
@@ -441,14 +463,47 @@ var StateDirectory = {
                 PlacableCollection[i].y = game.height/2;
             }     
         game.time.events.add(200, function() {
-        this.link = document.createElement('a');
-        this.link.href = this.game.canvas.toDataURL('image/png');
-        this.link.download = 'MyCreation.jpg';
-        document.body.appendChild(this.link);
-        this.link.click();
-        document.body.removeChild(this.link);
+            //window.open("yoitsmoe.co");
+            if(Phaser.Device.iOS == true)
+            {
+            
+            /*var a = window.document.createElement("a");
+            a.target = '_blank';
+            a.href = 'http://www.google.com';
+
+            // Dispatch fake click
+            var e = window.document.createEvent("MouseEvents");
+            e.initMouseEvent("click", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+            a.dispatchEvent(e);
+                
+             //openTab('http://www.google.com');
+            this.link = document.createElement('a');
+            this.link.href = this.game.canvas.toDataURL('image/png');
+            this.link.download = 'MyCreation.jpg';
+            document.body.appendChild(this.link);
+            this.link.click();
+            document.body.removeChild(this.link);*/
+            var string = this.game.canvas.toDataURL('image/png');
+            var iframe = "<iframe width='100%' height='100%' src='" + string + "'></iframe>"
+            var x = window.open();
+            x.document.open();
+            x.document.write(iframe) ;
+            x.document.close();
+            }
+                else
+                {
+                this.link = document.createElement('a');
+                this.link.href = this.game.canvas.toDataURL('image/png');
+                this.link.download = 'MyCreation.jpg';
+                document.body.appendChild(this.link);
+                this.link.click();
+                document.body.removeChild(this.link);
+                } 
+        //window.open(document.getElementById("a").toDataURL());
+            
         NonCharacterBackgroundGroup.visible = true;
-        
+        ScreenshotLogoGroup.visible = false;
+        TopButtonsGroup.visible = true;
         //GameCenter_x = this.Background.x+this.Background.width/5;
         //GameCenter_y = this.Background.y;
             
@@ -461,7 +516,7 @@ var StateDirectory = {
             }
         });
         
-        //ScreenshotLogoGroup.visible = false;
+        //
     }, 
 
     
@@ -473,5 +528,69 @@ var StateDirectory = {
             }
         
     }
+    
+    ,addDelayTwo: function () {
+  
+      // define the camera offset for the quake
+      var rumbleOffset = 10;
+
+      // we need to move according to the camera's current position
+      var properties = {
+        x: this.PlaceModeButton.x - rumbleOffset
+      };
+
+      // we make it a relly fast movement
+      var duration = 100;
+      // because it will repeat
+      var repeat = 4;
+      // we use bounce in-out to soften it a little bit
+      var ease = Phaser.Easing.Bounce.InOut;
+      var autoStart = false;
+      // a little delay because we will run it indefinitely
+      var delay =  9000;
+      // we want to go back to the original position
+      var yoyo = true;
+
+      var quake = game.add.tween(this.PlaceModeButton)
+        .to(properties, duration, ease, autoStart, delay, 4, yoyo);
+
+      // we're using this line for the example to run indefinitely
+      //.quake.onComplete.addOnce(this.addQuake);
+
+      // let the earthquake begins
+      quake.start();
+        }
+    ,addDelayOne: function () {
+  
+      // define the camera offset for the quake
+      var rumbleOffset = 10;
+
+      // we need to move according to the camera's current position
+      var properties = {
+        x: this.DownloadButton.x - rumbleOffset
+      };
+
+      // we make it a relly fast movement
+      var duration = 100;
+      // because it will repeat
+      var repeat = 4;
+      // we use bounce in-out to soften it a little bit
+      var ease = Phaser.Easing.Bounce.InOut;
+      var autoStart = false;
+      // a little delay because we will run it indefinitely
+      var delay =  11000;
+      // we want to go back to the original position
+      var yoyo = true;
+
+      var quake = game.add.tween(this.DownloadButton)
+        .to(properties, duration, ease, autoStart, delay, 4, yoyo);
+
+      // we're using this line for the example to run indefinitely
+      //.quake.onComplete.addOnce(this.addQuake);
+
+      // let the earthquake begins
+      quake.start();
+        }
+    
 
 }
