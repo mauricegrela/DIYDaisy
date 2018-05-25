@@ -35,11 +35,12 @@ var StatePlace = {
         StickersAboveBody = game.add.group();
         
         this.craftBackground1 = game.add.tileSprite(0, 0,  game.width, game.height,'placing_Backgroung1');
-        this.craftBackground1.scale.setTo(1,1);
+        this.craftBackground1.scale.setTo(1.25,1.25);
         //this.craftBackground1.height = this.game.height;
         //this.craftBackground1.width = this.game.height*5.3;
         
-
+        var isMoving = false;
+        
         cursors = game.input.keyboard.createCursorKeys();
         
         
@@ -167,7 +168,7 @@ var StatePlace = {
         
         
         this.mummy1 = game.add.sprite(
-        768,
+        1024,
         0, 
         'Anim1', 5);
         this.mummy1.scale.set(craftAnimBackgroundScale);
@@ -365,7 +366,7 @@ var StatePlace = {
         //game.world.bringToTop(this.mummy10);
 
         this.craftBackground2 = game.add.tileSprite(0, 0,  game.width, game.height,'placing_Backgroung2');
-        this.craftBackground2.scale.setTo(1,1);
+        this.craftBackground2.scale.setTo(1.25,1.25);
         
         /*this.Logo = gameButtons.addGenericButton("0", 0,0 , this.ToLandingPage, this,"daisylogo",2); 
         //addGenericButton("0", 0,0 , this.BackToCraft, this,"daisylogo",2); 
@@ -459,8 +460,9 @@ var StatePlace = {
 
     
     render: function () {
-    //game.debug.text("Time until event: " + game.time.events.duration.toFixed(0), 32, 32);
-    //game.debug.text('total : ' + total  +'Track Length: ' + this.BGMusicInteractive.durationMS +'AudioLength: ' + AudioLength  , 32, 64);  
+    //game.debug.text((this.craftBackground1.width)*4, 32, 32);
+      //game.debug.text(game.camera.width-200, 32, 64);
+        //game.debug.text(this.craftBackground1.tilePosition.x, 32, 96);
     },
 
     
@@ -483,11 +485,11 @@ var StatePlace = {
         
             if(game.input.x<100)
             {               
-                //this.craftBackground1.tilePosition.x += 8;
-                //this.craftBackground2.tilePosition.x += 8;
+                this.craftBackground1.tilePosition.x += 6;
+                this.craftBackground2.tilePosition.x += 6;
                 
-                    if((this.craftBackground1.tilePosition.x ==  (this.craftBackground1.width*4)*-1)
-                      ||(this.craftBackground1.tilePosition.x ==  game.camera.width))
+                    if((this.craftBackground1.tilePosition.x ==  -3300 || this.craftBackground1.tilePosition.x ==  -3290 || this.craftBackground1.tilePosition.x ==  -3280)
+                      ||(this.craftBackground1.tilePosition.x ==  840 || this.craftBackground1.tilePosition.x ==  830 || this.craftBackground1.tilePosition.x ==  820))
                     {//If the player has looped around, move all the assets up
                         for (let i = 0; i <= AnimObject.length-1; i+=1) 
                         {
@@ -499,17 +501,17 @@ var StatePlace = {
                         {
                             for (let i = 0; i <= AnimObject.length-1; i+=1) 
                             {
-                            AnimObject[i].x += 8;
+                            AnimObject[i].x += 6*1.25;
                             }
                         }
             }
                 else if(game.input.x>game.width-100)
                 {//WHEN MOVING RIGHT
-                    //this.craftBackground1.tilePosition.x -= 8;
-                    //this.craftBackground2.tilePosition.x -= 8;
+                    this.craftBackground1.tilePosition.x -= 6;
+                    this.craftBackground2.tilePosition.x -= 6;
                     
-                        if((this.craftBackground1.tilePosition.x ==  (this.craftBackground1.width*4)*-1)
-                          ||(this.craftBackground1.tilePosition.x ==  game.camera.width))
+                    if((this.craftBackground1.tilePosition.x ==  -3300 || this.craftBackground1.tilePosition.x ==  -3290 || this.craftBackground1.tilePosition.x ==  -3280)
+                      ||(this.craftBackground1.tilePosition.x ==  840 || this.craftBackground1.tilePosition.x ==  830 || this.craftBackground1.tilePosition.x ==  820))
                         {//If the player has looped around, move all the assets up
                             for (let i = 0; i <= AnimObject.length-1; i+=1) 
                             {
@@ -521,7 +523,7 @@ var StatePlace = {
                             {
                                 for (let i = 0; i <= AnimObject.length-1; i+=1) 
                                 {
-                                AnimObject[i].x -= 8;
+                                AnimObject[i].x -= 6*1.25;
                                 }
                             }
                 }
@@ -693,24 +695,31 @@ var StatePlace = {
         //Render each of the character layers. 
         for (let i = 0; i < PlacableCollection.length-1; i++) 
         {    
-        PlacableCollection[i].x = game.input.x;
-        PlacableCollection[i].y = game.input.y;
-        PlacableCollection[i].fixedToCamera = true;
+        
+        InteractiveCollections_y = game.input.y;
+
             
             if(game.input.x<100)
-            {               
-             PlacableCollection[i].angle = -45;  
+            {
+            InteractiveCollections_x = 100;
+            //PlacableCollection[i].x = 100;
+            PlacableCollection[i].angle = -45;  
             }
                 else if(game.input.x>game.width-100)
                 {//WHEN MOVING RIGHT
-                 PlacableCollection[i].angle = 45;  
+                InteractiveCollections_x = game.width-100;
+                //PlacableCollection[i].x = game.width-100;
+                PlacableCollection[i].angle = 45;  
                 }
-                    else 
+                    else if(game.input.x>100 && game.input.x<game.width-100 )
                     {
-
+                    InteractiveCollections_x = game.input.x;
+                    //PlacableCollection[i].x = game.input.x;   
                     PlacableCollection[i].angle = 0;
                     }
-            
+        PlacableCollection[i].x = InteractiveCollections_x;
+        PlacableCollection[i].y = InteractiveCollections_y;
+        PlacableCollection[i].fixedToCamera = true;   
         }
         
         

@@ -18,6 +18,18 @@ var StateDirectory = {
     }
 
     , create: function () { 
+        
+            if(Phaser.Device.iOS == false || Phaser.Device.iOS == true)
+            {
+            this.CompletedAudioPromt = game.add.audio("SaveButtonPressed");
+            this.CompletedAudioPromt.play();  
+            }
+                else
+                    {
+                     this.CompletedAudioPromt = game.add.audio("SaveButtonPressedIOS");
+                     this.CompletedAudioPromt.play();                            
+                    }
+        
 
         game.stage.backgroundColor = "#ffffff";
         
@@ -215,9 +227,17 @@ var StateDirectory = {
         this.BackToCraftButton.scale.setTo(0.8,0.8);
         NonCharacterBackgroundGroup.add(this.BackToCraftButton);
         TopButtonsGroup.add(this.BackToCraftButton);
+        
+        if(Phaser.Device.iOS == false || Phaser.Device.iOS == true)
+        {
         XPosition = this.Background.x-this.Background.width/5.5;
         YPosition = this.Background.y-game.height/12;
-    
+        }
+            else
+            {
+            XPosition = this.Background.x-this.Background.width/5.5;
+            YPosition = game.height/2;   
+            }
         
         //Butons      
         this.PlaceModeButton = game.add.sprite(XPosition,(YPosition), 'creativeButtons');   
@@ -230,16 +250,18 @@ var StateDirectory = {
         NonCharacterBackgroundGroup.add(this.PlaceModeButton);
         TopButtonsGroup.add(this.PlaceModeButton);
         
-        this.DownloadButton = game.add.sprite(XPosition,(YPosition+this.PlaceModeButton.height), 'PictureFrame');   
-        //this.DownloadButton.frame = 1;
-        this.DownloadButton.anchor.setTo(0.5);
-        this.DownloadButton.inputEnabled = true;
-        //this.PineconeBody.input.pixelPerfectOver = true; 
-        this.DownloadButton.events.onInputDown.add(this.SaveFile, this.DownloadButton);   
-        this.DownloadButton.scale.setTo((ButtonScale),(ButtonScale));
-        NonCharacterBackgroundGroup.add(this.DownloadButton);
-        TopButtonsGroup.add(this.DownloadButton);
-        
+            if(Phaser.Device.iOS == false || Phaser.Device.iOS == true)
+            {
+            this.DownloadButton = game.add.sprite(XPosition,(YPosition+this.PlaceModeButton.height), 'PictureFrame');   
+            //this.DownloadButton.frame = 1;
+            this.DownloadButton.anchor.setTo(0.5);
+            this.DownloadButton.inputEnabled = true;
+            //this.PineconeBody.input.pixelPerfectOver = true; 
+            this.DownloadButton.events.onInputDown.add(this.SaveFile, this.DownloadButton);   
+            this.DownloadButton.scale.setTo((ButtonScale),(ButtonScale));
+            NonCharacterBackgroundGroup.add(this.DownloadButton);
+            TopButtonsGroup.add(this.DownloadButton);
+            }
         this.Logo = game.add.sprite(0,0, 'daisylogo');
         this.Logo.scale.setTo(scaleRatio,scaleRatio);
         this.Logo.inputEnabled = true;
@@ -252,8 +274,12 @@ var StateDirectory = {
         game.world.bringToTop(this.Logo);
         game.world.bringToTop(this.BackToCraftButton);
         
-        this.addDelayTwo();
         this.addDelayOne();
+        if(Phaser.Device.iOS == false || Phaser.Device.iOS == true)
+        {
+        this.addDelayTwo();
+        }
+
         
 ///////////////////////////
 //////DownloadGroup////////
@@ -348,13 +374,22 @@ var StateDirectory = {
         this.DIYLogo.y =  this.DIYLogo.height/2;
         ScreenshotLogoGroup.add(this.DIYLogo);
         
-        this.CBCLogo = game.add.sprite(0,0, 'CBCButton');
-        this.CBCLogo.scale.setTo(scaleRatio,scaleRatio);
+        this.CBCLogo = game.add.sprite(0,0, 'CBCKidsLogo');
+        this.CBCLogo.scale.setTo(0.2,0.2);
         this.CBCLogo.inputEnabled = true;
-        this.CBCLogo.anchor.set(0,1);
-        this.CBCLogo.x =  this.DIYLogo.width/2;
+        this.CBCLogo.anchor.set(0,1.3);
+        this.CBCLogo.x =  game.width-this.CBCLogo.width*1.2;
         this.CBCLogo.y =  game.height;
         ScreenshotLogoGroup.add(this.CBCLogo);
+        
+        /*this.CBCURLLogo = game.add.sprite(0,0, 'CBCURL');
+        this.CBCURLLogo.scale.setTo(0.1,0.15);
+        this.CBCURLLogo.inputEnabled = true;
+        this.CBCURLLogo.anchor.set(0,1);
+        this.CBCURLLogo.x =  this.CBCLogo.width*2.5;
+        this.CBCURLLogo.y =  game.height-23;
+        ScreenshotLogoGroup.add(this.CBCURLLogo);*/
+        
         
         ScreenshotLogoGroup.visible = false;
         game.world.bringToTop(ScreenshotLogoGroup);
@@ -373,8 +408,8 @@ var StateDirectory = {
         
     
     render: function () {
-    //game.debug.text(game.camera.width, 100, 380 );
-    //game.debug.text(game.camera.x, 100, 400 );
+    //game.debug.text("www.cbc.ca", this.DIYLogo.width, game.height-this.DIYLogo.height/4 );
+    //game.debug.text(window.devicePixelRatio, 100, 400 );
     
     },
     
@@ -456,39 +491,38 @@ var StateDirectory = {
         StickersUnderBody.visible = true;
         StickerBody.visible = true;
         StickersAboveBody.visible = true;
+            
+        //Scaling code
+        var canvas_width = window.innerWidth * window.devicePixelRatio;
+        var canvas_height = window.innerHeight * window.devicePixelRatio;
+        var aspect_ratio = canvas_width / canvas_height;
+        if (aspect_ratio > 1) 
+        {var DLscale_ratio = canvas_height / canvas_height_max;}
+        else 
+        {var DLscale_ratio = canvas_width / canvas_width_max;}
+        
             for (let i = 0; i <= PlacableCollection.length-1; i+=1) 
             {
 
                 PlacableCollection[i].x = game.width/2;
                 PlacableCollection[i].y = game.height/2;
+
+                PlacableCollection[i].scale.setTo(scaleRatio*1.1,scaleRatio*1.1) ;
+                  
+                
             }     
         game.time.events.add(200, function() {
-            //window.open("yoitsmoe.co");
+            
             if(Phaser.Device.iOS == true)
             {
-            
-            /*var a = window.document.createElement("a");
-            a.target = '_blank';
-            a.href = 'http://www.google.com';
-
-            // Dispatch fake click
-            var e = window.document.createEvent("MouseEvents");
-            e.initMouseEvent("click", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
-            a.dispatchEvent(e);
                 
-             //openTab('http://www.google.com');
-            this.link = document.createElement('a');
-            this.link.href = this.game.canvas.toDataURL('image/png');
-            this.link.download = 'MyCreation.jpg';
-            document.body.appendChild(this.link);
-            this.link.click();
-            document.body.removeChild(this.link);*/
-            var string = this.game.canvas.toDataURL('image/png');
-            var iframe = "<iframe width='100%' height='100%' src='" + string + "'></iframe>"
-            var x = window.open();
-            x.document.open();
-            x.document.write(iframe) ;
-            x.document.close();
+                this.link = document.createElement('a');
+                this.link.href = this.game.canvas.toDataURL('image/png');
+                this.link.download = 'MyCreation.jpg';
+                //document.body.appendChild(this.link);
+                //this.link.click();
+                //document.body.removeChild(this.link);
+               
             }
                 else
                 {
@@ -499,7 +533,7 @@ var StateDirectory = {
                 this.link.click();
                 document.body.removeChild(this.link);
                 } 
-        //window.open(document.getElementById("a").toDataURL());
+         window.open(this.link);
             
         NonCharacterBackgroundGroup.visible = true;
         ScreenshotLogoGroup.visible = false;
@@ -510,7 +544,7 @@ var StateDirectory = {
             
             for (let i = 0; i <= PlacableCollection.length-1; i+=1) 
             {
-
+                PlacableCollection[i].scale.setTo(scaleRatio*CharacterScaleAdjustment,scaleRatio*CharacterScaleAdjustment);
                 PlacableCollection[i].x = GameCenter_x;
                 PlacableCollection[i].y = GameCenter_y;
             }
@@ -529,7 +563,7 @@ var StateDirectory = {
         
     }
     
-    ,addDelayTwo: function () {
+    ,addDelayOne: function () {
   
       // define the camera offset for the quake
       var rumbleOffset = 10;
@@ -560,7 +594,7 @@ var StateDirectory = {
       // let the earthquake begins
       quake.start();
         }
-    ,addDelayOne: function () {
+    ,addDelayTwo: function () {
   
       // define the camera offset for the quake
       var rumbleOffset = 10;
@@ -578,7 +612,7 @@ var StateDirectory = {
       var ease = Phaser.Easing.Bounce.InOut;
       var autoStart = false;
       // a little delay because we will run it indefinitely
-      var delay =  11000;
+      var delay =  12000;
       // we want to go back to the original position
       var yoyo = true;
 

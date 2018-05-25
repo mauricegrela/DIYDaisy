@@ -34,17 +34,32 @@
     <script src="js/util/media.js"></script>
     <script src="js/util/buttons.js"></script>
     <script src="js/util/pos.js"></script>
+	
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
 <body bgcolor="#c8d6cd">
+
+<button onclick="myFunction()">Try it</button>
+
+<script>
+function myFunction() {
+
+	this.link = document.createElement('a');
+	this.link.href = this.game.canvas.toDataURL('image/png');
+	this.link.download = 'MyCreation.jpg';
+	document.body.appendChild(this.link);
+	//this.link.click();
+	document.body.removeChild(this.link);
+    window.open(this.link);
+}
+</script>
 
     <div id="wrongWayLandscape"></div>
     <div id="wrongWayPortrait"></div>
 
     <div 
          id="ph_game"align="middle">
-
     </div>
 
 

@@ -28,6 +28,7 @@ this.time.advacedTiming = true;
         game.load.audio("InitialInstructions",'audio/VoiceOver/DaisyVO_002.mp3'); 
         game.load.audio("TeachSaveButton",'audio/VoiceOver/DaisyVO_003.mp3'); 
         game.load.audio("SaveButtonPressed",'audio/VoiceOver/DaisyVO_004.mp3'); 
+        game.load.audio("SaveButtonPressedIOS",'audio/VoiceOver/DaisyVO_004b.mp3');
         game.load.audio("StartOverConfirm",'audio/VoiceOver/DaisyVO_005.mp3'); 
         //Item Specific instructions
         game.load.audio("ButterflyInstructions",'audio/VoiceOver/DaisyVO_Butterfly.mp3'); 
@@ -48,6 +49,7 @@ this.time.advacedTiming = true;
         game.load.image('VideoButton', 'images/parentcorner/pdf-button@2x.png');
         
         //Logos
+        game.load.image('CBCKidsLogo', 'images/parentcorner/cbc-logo_Kids.png');
         game.load.image('CBCLogo', 'images/parentcorner/cbc-logo@2x.png');
         game.load.image('RivalSchools', 'images/parentcorner/rs-logo@2x.png');
         game.load.image('BellLogo', 'images/parentcorner/Bell-logo@2x.png');
@@ -314,6 +316,7 @@ this.time.advacedTiming = true;
         game.load.image("PlayButton", "images/ui/Play-Button.png");
         game.load.image("ParentsCorner", "images/ui/info-button.png");
         game.load.image("CBCButton", "images/ui/cbc.png");
+        game.load.image("CBCURL", "images/ui/CBC_URL.PNG");
         //Placement
          game.load.image('DownloadModal', "images/results/download-modal.png");
          game.load.image('DownloadButton', "images/results/download.png");
@@ -362,13 +365,13 @@ this.time.advacedTiming = true;
         this.logo.animations.add('shake');
         this.logo.animations.play('shake', 15, true)
         
-        this.MusicButton = this.add.sprite( full.x, full.y+50, 'AudioLoadingIcon');
-        this.MusicButton.anchor.set(0.5,0);
-        this.MusicButton.x = empty.x+empty.width/2;
-        this.MusicButton.y = empty.y+empty.height+25;
-        this.MusicButton.scale.set(0.8,0.8);
-        this.MusicButton.animations.add('shake');
-        this.MusicButton.animations.play('shake', 5, true)
+        this.AudioOnButton = this.add.sprite( full.x, full.y+50, 'AudioLoadingIcon');
+        this.AudioOnButton.anchor.set(0.5,0);
+        this.AudioOnButton.x = empty.x+empty.width/2;
+        this.AudioOnButton.y = empty.y+empty.height+25;
+        this.AudioOnButton.scale.set(0.8,0.8);
+        this.AudioOnButton.animations.add('shake');
+        this.AudioOnButton.animations.play('shake', 2.5, true)
         
     },
 

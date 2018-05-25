@@ -2258,6 +2258,7 @@ game.state.start("StateMain");
     testArrayAlpha[7] = 1;
     this.StickerButton28.alpha = SelectedButtonStickerAlpha;
     this.SelectedButtonSticker7 = this.StickerButton28;
+    this.SelectedButtonSticker7 = this.StickerButton28;
     },   
     
 ////////////////////
@@ -2291,8 +2292,16 @@ game.state.start("StateMain");
         
         game.sound.stopAll();
         game.state.start("StateDirectory");
-        this.CompletedAudioPromt = game.add.audio("SaveButtonPressed");
-        this.CompletedAudioPromt.play();  
+            /*if(Phaser.Device.iOS == false)
+            {
+            this.CompletedAudioPromt = game.add.audio("SaveButtonPressed");
+            this.CompletedAudioPromt.play();  
+            }
+                else
+                    {
+                     this.CompletedAudioPromt = game.add.audio("SaveButtonPressedIOS");
+                     this.CompletedAudioPromt.play();                            
+                    }*/
     },
     
     BackToCharacterSelect: function () {game.state.start("StateCharacterSelect")},

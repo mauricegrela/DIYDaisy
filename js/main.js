@@ -58,10 +58,14 @@ var IsTwinklePlay = true;
 var GameCenter_x;
 var GameCenter_y;
 
+var InteractiveCollections_x;
+var InteractiveCollections_y;
+
 var DrawnSprite; 
 
 var StickerAssigner_set1 = "Pinecone_Stickers"; 
 
+var Speed;
 
 var GroupRefArrayCounter = 0;
 
@@ -108,6 +112,37 @@ var AnimObject = //Images
     0,
     0
     ];
+
+var AnimObject = //Images
+    [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+    ];
+
+var AnimObjectOGPos = //Images
+    [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+    ];
+
 var AnimRef = //Images
     [
     0,

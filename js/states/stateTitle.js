@@ -56,7 +56,7 @@ var StateTitle = {
     //this.MindfulMoment.play();
     game.state.start("StateMain");
     //game.state.start("StatePlace");
-    // game.state.start("StateDirectory");
+    //game.state.start("StateDirectory");
     }, 
     
     ParentsCorner: function () {
