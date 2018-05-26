@@ -36,22 +36,33 @@
     <script src="js/util/pos.js"></script>
 	
     <link rel="stylesheet" type="text/css" href="css/style.css">
+	
+
 </head>
 
 <body bgcolor="#c8d6cd">
 
-<button onclick="myFunction()">Try it</button>
+
+
 
 <script>
-function myFunction() {
-
+var clicks = 0;
+function ScreenCap() {
+	clicks += 1;
+	
+	if(clicks >=3)
+	{	
 	this.link = document.createElement('a');
 	this.link.href = this.game.canvas.toDataURL('image/png');
 	this.link.download = 'MyCreation.jpg';
 	document.body.appendChild(this.link);
-	//this.link.click();
 	document.body.removeChild(this.link);
     window.open(this.link);
+	}
+	
+	document.getElementById("CaptureButton").innerHTML = clicks;
+	document.getElementById("CaptureButton").style.display =  "none";
+	 
 }
 </script>
 
@@ -60,6 +71,12 @@ function myFunction() {
 
     <div 
          id="ph_game"align="middle">
+		 
+		 <button 
+		 id="CaptureButton" 
+		 onclick="ScreenCap()"
+		 align="middle">
+		 Try it</button>
     </div>
 
 

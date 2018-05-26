@@ -365,15 +365,16 @@ this.time.advacedTiming = true;
         this.logo.animations.add('shake');
         this.logo.animations.play('shake', 15, true)
         
-        this.AudioOnButton = this.add.sprite( full.x, full.y+50, 'AudioLoadingIcon');
-        this.AudioOnButton.anchor.set(0.5,0);
-        this.AudioOnButton.x = empty.x+empty.width/2;
-        this.AudioOnButton.y = empty.y+empty.height+25;
+        this.AudioOnButton = this.add.sprite( 0, 0, 'AudioLoadingIcon');
+        this.AudioOnButton.anchor.set(0.8,0.5);
+        this.AudioOnButton.x = this.game.width-this.AudioOnButton.width;
+        this.AudioOnButton.y = this.AudioOnButton.width/2;
         this.AudioOnButton.scale.set(0.8,0.8);
         this.AudioOnButton.animations.add('shake');
         this.AudioOnButton.animations.play('shake', 2.5, true)
         
     },
+
 
     create: function () {
         game.state.start("StateTitle");

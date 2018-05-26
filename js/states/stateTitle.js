@@ -19,14 +19,6 @@ var StateTitle = {
         this.Background.anchor.x = 0.5;
         this.Background.anchor.y = 0.5;
 
-        
-        /*this.btnStart = gameButtons.addGenericButton("0", 0, 0, this.startGame, this,"PlayButton",0); 
-        this.btnStart.scale.setTo(MacroButton_Scale,MacroButton_Scale);
-        this.btnStart.anchor.x = 0.0;
-        this.btnStart.anchor.y = -0.5;
-        this.btnStart.alpha = 0;
-        this.btnStart.x -=this.btnStart.width;*/
-        
         this.btnStart = gameButtons.addGenericButton("0", 0, 0, this.startGame, this,"PlayButton",0)
         this.btnStart.anchor.x = 0.5;
         this.btnStart.anchor.y =  1;
@@ -44,11 +36,17 @@ var StateTitle = {
         this.btnParentsCorner.x = this.btnParentsCorner.width;
         
         this.btnParentsCorner.y = this.btnStart.y;
-         
+                 
+        this.AudioOnButton = this.add.sprite( 0, 0, 'AudioLoadingIcon');
+        this.AudioOnButton.anchor.set(0.8,0.5);
+        this.AudioOnButton.x = this.game.width-this.AudioOnButton.width;
+        this.AudioOnButton.y = this.AudioOnButton.width/2;
+        this.AudioOnButton.scale.set(0.8,0.8);
+        this.AudioOnButton.animations.add('shake');
+        this.AudioOnButton.animations.play('shake', 2.5, true);
         
     },
 
-    
     startGame: function () {    
     game.sound.stopAll();
     isFirstCharaterSelected = false;
