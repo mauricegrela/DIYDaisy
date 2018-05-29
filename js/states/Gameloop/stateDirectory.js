@@ -41,7 +41,7 @@ var StateDirectory = {
         
         NonCharacterBackgroundGroup = game.add.group();
         TopButtonsGroup = game.add.group();
-        IOSExitButton= game.add.group();
+        
         
         this.camerasnap = game.add.audio("cameraSnap");
         
@@ -321,22 +321,6 @@ var StateDirectory = {
         this.downloadButton.scale.setTo(1.0,1.0);
         DownloadModalGroup.add(this.downloadButton);
         }
-            else
-            {
-            this.CloseIOSButton = game.add.sprite(
-            this.DownloadBackground.x+this.DownloadBackground.width/2,
-            this.DownloadBackground.y-this.DownloadBackground.height/2,'CloseButton');
-            this.CloseIOSButton.anchor.x = 0.5;
-            this.CloseIOSButton.anchor.y = 0.5;
-            this.CloseIOSButton.x = game.width-this.CloseIOSButton.width;
-            this.CloseIOSButton.y = this.CloseIOSButton.height;   
-            this.CloseIOSButton.inputEnabled = true;
-            this.CloseIOSButton.events.onInputDown.add( this.CloseButtonpress, this.CloseIOSButton);   
-            this.CloseIOSButton.scale.setTo(1.5,1.5); 
-            IOSExitButton.add(this.CloseIOSButton);
-            IOSExitButton.visible =false;
-            }
-        
         /*
         this.downloadButton = game.add.sprite(game.width/2,game.height/2, 'DownloadButton');
         this.downloadButton.anchor.x = 0.5;
@@ -430,8 +414,6 @@ var StateDirectory = {
         game.world.bringToTop(StickerBody);
         game.world.bringToTop(StickersAboveBody);
         
-        game.world.bringToTop(IOSExitButton);
-        
         
     },
         
@@ -501,15 +483,31 @@ var StateDirectory = {
         
          if(Phaser.Device.iOS == true)
             {
+                                
+        //Scaling code
+        var canvas_width = window.innerWidth * window.devicePixelRatio;
+        var canvas_height = window.innerHeight * window.devicePixelRatio;
+        var aspect_ratio = canvas_width / canvas_height;
+        if (aspect_ratio > 1) 
+        {var DLscale_ratio = canvas_height / canvas_height_max;}
+        else 
+        {var DLscale_ratio = canvas_width / canvas_width_max;}
+                
             var x = document.createElement("IMG");
             x.setAttribute("src", "images/results/download.png");
             x.setAttribute("id", "CaptureButton");
-            x.setAttribute("onclick", "ScreenCap()");
-                
-
-            //x.setAttribute("onclick", "setTimeout(ScreenCap(),300)");
-            //x.setAttribute("alt", "The Pulpit Rock");
+            x.setAttribute("onclick", "ScreenCap()");              
+            x.setAttribute("height", 88*DLscale_ratio);               
+            x.setAttribute("width", 88*DLscale_ratio);
             document.body.appendChild(x);
+                
+            var CloseButton = document.createElement("IMG");
+            CloseButton.setAttribute("src", "images/results/close-button.png");
+            CloseButton.setAttribute("id", "CloseButton");
+            CloseButton.setAttribute("onclick", "CloseScreenshot()");
+            CloseButton.setAttribute("height", 88*DLscale_ratio);               
+            CloseButton.setAttribute("width", 88*DLscale_ratio);
+            document.body.appendChild(CloseButton);
             
             IsCamSnap = true;
             DownloadModalGroup.visible = false;
@@ -529,8 +527,7 @@ var StateDirectory = {
 
 
                 }
-                IOSExitButton.visible =true;
-              //game.world.bringToTop(this.CloseIOSButton);
+                
             }
     }, 
     
@@ -546,21 +543,6 @@ var StateDirectory = {
         StickersUnderBody.visible = true;
         StickerBody.visible = true;
         StickersAboveBody.visible = true;
-        IOSExitButton.visible =false;
-        NonCharacterBackgroundGroup.visible = true;
-        ScreenshotLogoGroup.visible = false;
-        TopButtonsGroup.visible = true;
-        //GameCenter_x = this.Background.x+this.Background.width/5;
-        //GameCenter_y = this.Background.y;
-            
-            
-            for (let i = 0; i <= PlacableCollection.length-1; i+=1) 
-            {
-                PlacableCollection[i].scale.setTo(scaleRatio*CharacterScaleAdjustment,scaleRatio*CharacterScaleAdjustment);
-                PlacableCollection[i].x = GameCenter_x;
-                PlacableCollection[i].y = GameCenter_y;
-            }
-        document.getElementById("CaptureButton").remove();
     }, 
     
     CloseButtonpressed: function () {

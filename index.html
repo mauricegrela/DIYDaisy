@@ -45,7 +45,7 @@
 var clicks = 0;
 function ScreenCap() {
 	this.link = document.createElement('a');
-	this.link.href = this.game.canvas.toDataURL('image/png');
+	this.link.href = this.game.canvas.toDataURL('image/jpeg', 0.5);
 	this.link.download = 'MyCreation.jpg';
 	document.body.appendChild(this.link);
 	document.body.removeChild(this.link);
@@ -53,8 +53,17 @@ function ScreenCap() {
 	
 	game.state.states['StateDirectory'].IosCapTakeDown();
 		
-	document.getElementById("CaptureButton").innerHTML = clicks;
-	document.getElementById("CaptureButton").style.display =  "none";	 
+	document.getElementById("CloseButton").remove();
+	document.getElementById("CaptureButton").remove();	 
+}
+</script>
+<script>
+var clicks = 0;
+function CloseScreenshot() {
+	
+	game.state.states['StateDirectory'].IosCapTakeDown();
+	document.getElementById("CloseButton").remove();	
+	document.getElementById("CaptureButton").remove();
 }
 </script>
     <div id="wrongWayLandscape"></div>

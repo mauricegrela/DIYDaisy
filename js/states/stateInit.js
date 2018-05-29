@@ -15,11 +15,11 @@ var StateInit = {
             {
                 if (useLandscape == true) 
                 {
-                    //game.scale.forceOrientation(true, false);
+                   game.scale.forceOrientation(true, false);
                 } 
                     else 
                     {
-                       // game.scale.forceOrientation(false, true);
+                        game.scale.forceOrientation(false, true);
                     }
             game.scale.enterIncorrectOrientation.add(this.wrongWay, this);
             game.scale.leaveIncorrectOrientation.add(this.rightWay, this);

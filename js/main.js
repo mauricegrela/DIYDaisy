@@ -470,7 +470,7 @@ if (isMobile>-1)
         game = new Phaser.Game(1024, 768, Phaser.CANVAS, "ph_game");
     }
 
-
+    Phaser.ScaleManager.forceLandscape = true;
     /*game.scale.fullScreenScaleMode = Phaser.ScaleManager.SHOW_ALL;
     game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
     game.scale.refresh();   
