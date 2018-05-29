@@ -112,91 +112,51 @@ var StateParentsCorner = {
         ///////////////////
 
         //Character Rock Stickers
-        this.RockCharacterImage = game.add.sprite(PDFButtonsPos_x+125, PDFButtonsPos_y , 'RockPDF');
+        this.RockCharacterImage = game.add.button(PDFButtonsPos_x+125, PDFButtonsPos_y , 'RockPDF',this.imageClick, {param1: "http://www.cbc.ca/parents/content/pdf/DaisyPrintable_LadybugRocks.pdf",}, this.RockCharacterImage,2,1,0)
+        this.RockCharacterImage.anchor.setTo(0.5);  
+        this.RockCharacterImage.scale.setTo(PDFButtonScale,PDFButtonScale);
+        this.RockCharacterImage.inputEnabled = true;
+        
+        /*this.RockCharacterImage = game.add.sprite(PDFButtonsPos_x+125, PDFButtonsPos_y , 'RockPDF');
         this.RockCharacterImage.inputEnabled = true;
         this.RockCharacterImage.events.onInputDown.add(this.imageClick, {param1: "PDFS/diyLadyBugRock.pdf",}, this.RockCharacterImage);
         this.RockCharacterImage.anchor.setTo(0.5);  
         this.RockCharacterImage.scale.setTo(PDFButtonScale,PDFButtonScale);
-        CharacterGroup.add(this.RockCharacterImage);
-        /*
-        this.RockCharacterVid = game.add.sprite(PDFButtonsPos_x, PDFButtonsPos_y+this.RockCharacterImage.height/2, 'PDFButton');
-        this.RockCharacterVid.anchor.setTo(1,0.5);
-        this.RockCharacterVid.inputEnabled = true;
-        this.RockCharacterVid.events.onInputDown.add(this.videoClick, {param1: 'Episode_Rock',}, this.RockCharacterVid);   
-        this.RockCharacterVid.scale.setTo(buttonrez);
-        CharacterGroup.add(this.RockCharacterVid);
-        
-        this.RockCharacterPDF = game.add.sprite(PDFButtonsPos_x, PDFButtonsPos_y+this.RockCharacterImage.height/2, 'VideoButton');
-        this.RockCharacterPDF.anchor.setTo(0,0.5);
-        this.RockCharacterPDF.inputEnabled = true;
-        this.RockCharacterPDF.events.onInputDown.add(this.imageClick, {param1: "PDFS/diyLadyBugRock.pdf",}, this.RockCharacter); 
-        this.RockCharacterPDF.scale.setTo(buttonrez);
-        CharacterGroup.add(this.RockCharacterPDF);
         */
         ///////////////////
         //////Pinecone/////
         ///////////////////
-
-        //Character Rock Stickers
-        this.PineConeCharacterImage = game.add.sprite(PDFButtonsPos_x-100, PDFButtonsPos_y , 'PineconePDF');
-        this.PineConeCharacterImage.inputEnabled = true;
-        this.PineConeCharacterImage.events.onInputDown.add(this.imageClick, {param1: "PDFS/diyFlowerPetalArt.pdf",}, this.PineConeCharacterImage);  
+        this.PineConeCharacterImage = game.add.button(PDFButtonsPos_x-100, PDFButtonsPos_y , 'PineconePDF',this.imageClick, {param1: "http://www.cbc.ca/parents/content/pdf/DaisyPrintable_PineconeFriends.pdf",}, this.PineConeCharacterImage,2,1,0);
         this.PineConeCharacterImage.anchor.setTo(0.5);  
         this.PineConeCharacterImage.scale.setTo(PDFButtonScale,PDFButtonScale);
-        CharacterGroup.add(this.PineConeCharacterImage);
-        /*
-        this.PineConeCharacterVid = game.add.sprite(this.PineConeCharacterImage.x, PDFButtonsPos_y+this.PineConeCharacterImage.height/2, 'PDFButton');
-        this.PineConeCharacterVid.anchor.setTo(1,0.5);
-        this.PineConeCharacterVid.inputEnabled = true;
-        this.PineConeCharacterVid.events.onInputDown.add(this.videoClick, {param1: 'Episode_PineCone',}, this.PineconeCharacter);  
-        this.PineConeCharacterVid.scale.setTo(buttonrez);
-        CharacterGroup.add(this.PineConeCharacterVid);
-        
-        this.RockCharacterPDF = game.add.sprite(this.PineConeCharacterImage.x, PDFButtonsPos_y+this.PineConeCharacterImage.height/2, 'VideoButton');
-        this.RockCharacterPDF.anchor.setTo(0,0.5);
-        this.RockCharacterPDF.inputEnabled = true;
-        this.RockCharacterPDF.events.onInputDown.add(this.imageClick, {param1: "PDFS/diyPineconeFriend.pdf",}, this.PineConeCharacterVid);    
-        this.RockCharacterPDF.scale.setTo(buttonrez);
-        CharacterGroup.add(this.RockCharacterPDF);
-        */
+        this.PineConeCharacterImage.inputEnabled = true;
+
         ///////////////////
         /////StickWand/////
         ///////////////////
-
-        //Character Rock Stickers
-        this.StickWandCharacterImage = game.add.sprite(PDFButtonsPos_x-300, PDFButtonsPos_y , 'LeafPDF');
-        this.StickWandCharacterImage.inputEnabled = true;
-        this.StickWandCharacterImage.events.onInputDown.add(this.imageClick, {param1: "PDFS/diyFlowerPetalArt.pdf",}, this.StickWandCharacterImage);
+        this.StickWandCharacterImage = game.add.button(PDFButtonsPos_x-300, PDFButtonsPos_y , 'LeafPDF',this.imageClick, {param1: "http://www.cbc.ca/parents/content/pdf/DaisyPrintable_FlowerButterfly.pdf",}, this.StickWandCharacterImage,2,1,0);
         this.StickWandCharacterImage.anchor.setTo(0.5);  
         this.StickWandCharacterImage.scale.setTo(PDFButtonScale,PDFButtonScale);
-        CharacterGroup.add(this.StickWandCharacterImage);
-        /*
-        this.StickWandCharacterVid = game.add.sprite(this.StickWandCharacterImage.x, PDFButtonsPos_y+this.StickWandCharacterImage.height/2, 'PDFButton');
-        this.StickWandCharacterVid.anchor.setTo(1,0.5);
-        this.StickWandCharacterVid.inputEnabled = true;
-        this.StickWandCharacterVid.events.onInputDown.add(this.videoClick, {param1: 'Episode_Flower',}, this.StickWandCharacterVid);  
-        this.StickWandCharacterVid.scale.setTo(buttonrez);
-        CharacterGroup.add(this.StickWandCharacterVid);
-        
-        this.StickWandCharacterPDF = game.add.sprite(this.StickWandCharacterImage.x, PDFButtonsPos_y+this.StickWandCharacterImage.height/2, 'VideoButton');
-        this.StickWandCharacterPDF.anchor.setTo(0,0.5);
-        this.StickWandCharacterPDF.inputEnabled = true;
-        this.StickWandCharacterPDF.events.onInputDown.add(this.imageClick, {param1: "PDFS/diyFlowerPetalArt.pdf",}, this.PineConeCharacterVid);    
-        this.StickWandCharacterPDF.scale.setTo(buttonrez);
-        CharacterGroup.add(this.StickWandCharacterPDF);
-        */
+        this.StickWandCharacterImage.inputEnabled = true;
+
         //////////////////
         ///////Leaf///////
         //////////////////
 
         //Character Rock Stickers
+        this.StickWandCharacterImage = game.add.button(PDFButtonsPos_x+300, PDFButtonsPos_y , 'StickWandPDF',this.imageClick, {param1: "http://www.cbc.ca/parents/content/pdf/DaisyPrintable_RainbowNatureWand.pdf",}, this.StickWandCharacterImage,2,1,0);
+        this.StickWandCharacterImage.anchor.setTo(0.5);  
+        this.StickWandCharacterImage.scale.setTo(PDFButtonScale,PDFButtonScale);
+        this.StickWandCharacterImage.inputEnabled = true;
+       
+            /*
         this.StickWandCharacterImage = game.add.sprite(PDFButtonsPos_x+300, PDFButtonsPos_y , 'StickWandPDF');
         this.StickWandCharacterImage.inputEnabled = true;
         this.StickWandCharacterImage.events.onInputDown.add(this.imageClick, {param1: "PDFS/diyNatureWand.pdf",}, this.StickWandCharacterImage);   
         this.StickWandCharacterImage.anchor.setTo(0.5);  
         this.StickWandCharacterImage.scale.setTo(PDFButtonScale,PDFButtonScale);
         CharacterGroup.add(this.StickWandCharacterImage);
-        /*
+    
         this.StickWandCharacterVid = game.add.sprite(this.StickWandCharacterImage.x, PDFButtonsPos_y+this.StickWandCharacterImage.height/2, 'PDFButton');
         this.StickWandCharacterVid.anchor.setTo(1,0.5);
         this.StickWandCharacterVid.inputEnabled = true;

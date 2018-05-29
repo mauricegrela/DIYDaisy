@@ -36,12 +36,12 @@ var StateDirectory = {
         StickersUnderBody = game.add.group();
         StickerBody = game.add.group();
         StickersAboveBody = game.add.group();
-        
+        CloseButtonGroup =  game.add.group();
         ScreenshotLogoGroup = game.add.group();
         
         NonCharacterBackgroundGroup = game.add.group();
         TopButtonsGroup = game.add.group();
-        
+        IOSExitButton= game.add.group();
         
         this.camerasnap = game.add.audio("cameraSnap");
         
@@ -310,15 +310,42 @@ var StateDirectory = {
         this.CloseButton.scale.setTo(1.5,1.5);
         DownloadModalGroup.add(this.CloseButton);
 
+        if(Phaser.Device.iOS == false)
+        {
         
+        this.downloadButton = game.add.button(game.width/2,game.height/2,'DownloadButton',
+        this.CloseButtonpressed,2,1,0);
+        this.downloadButton.anchor.x = 0.5;
+        this.downloadButton.anchor.y = 0.5;
+        this.downloadButton.inputEnabled = true;
+        this.downloadButton.scale.setTo(1.0,1.0);
+        DownloadModalGroup.add(this.downloadButton);
+        }
+            else
+            {
+            this.CloseIOSButton = game.add.sprite(
+            this.DownloadBackground.x+this.DownloadBackground.width/2,
+            this.DownloadBackground.y-this.DownloadBackground.height/2,'CloseButton');
+            this.CloseIOSButton.anchor.x = 0.5;
+            this.CloseIOSButton.anchor.y = 0.5;
+            this.CloseIOSButton.x = game.width-this.CloseIOSButton.width;
+            this.CloseIOSButton.y = this.CloseIOSButton.height;   
+            this.CloseIOSButton.inputEnabled = true;
+            this.CloseIOSButton.events.onInputDown.add( this.CloseButtonpress, this.CloseIOSButton);   
+            this.CloseIOSButton.scale.setTo(1.5,1.5); 
+            IOSExitButton.add(this.CloseIOSButton);
+            IOSExitButton.visible =false;
+            }
+        
+        /*
         this.downloadButton = game.add.sprite(game.width/2,game.height/2, 'DownloadButton');
         this.downloadButton.anchor.x = 0.5;
         this.downloadButton.anchor.y = 0.5;
         this.downloadButton.inputEnabled = true;
         this.downloadButton.events.onInputDown.add(this.CloseButtonpressed, this.downloadButton);   
-        this.downloadButton.scale.setTo(1.5,1.5);
+        this.downloadButton.scale.setTo(1.5,1.5);*/
         
-        DownloadModalGroup.add(this.downloadButton);
+
 
         DownloadModalGroup.visible = false;
         
@@ -403,6 +430,8 @@ var StateDirectory = {
         game.world.bringToTop(StickerBody);
         game.world.bringToTop(StickersAboveBody);
         
+        game.world.bringToTop(IOSExitButton);
+        
         
     },
         
@@ -461,11 +490,48 @@ var StateDirectory = {
         //this.CameraClickPromt.play();
         //this.camerasnap.play();
         //this.ConfirmSoundEffect.play();
+        
+        
+        
         DownloadModalGroup.visible = true;
         TopButtonsGroup.visible = false;
         StickersUnderBody.visible = false;
         StickerBody.visible = false;
         StickersAboveBody.visible = false;
+        
+         if(Phaser.Device.iOS == true)
+            {
+            var x = document.createElement("IMG");
+            x.setAttribute("src", "images/results/download.png");
+            x.setAttribute("id", "CaptureButton");
+            x.setAttribute("onclick", "ScreenCap()");
+                
+
+            //x.setAttribute("onclick", "setTimeout(ScreenCap(),300)");
+            //x.setAttribute("alt", "The Pulpit Rock");
+            document.body.appendChild(x);
+            
+            IsCamSnap = true;
+            DownloadModalGroup.visible = false;
+            NonCharacterBackgroundGroup.visible = false;   
+            ScreenshotLogoGroup.visible = true;
+            StickersUnderBody.visible = true;
+            StickerBody.visible = true;
+            StickersAboveBody.visible = true;
+        
+                for (let i = 0; i <= PlacableCollection.length-1; i+=1) 
+                {
+
+                    PlacableCollection[i].x = game.width/2;
+                    PlacableCollection[i].y = game.height/2;
+
+                    PlacableCollection[i].scale.setTo(scaleRatio*1.1,scaleRatio*1.1) ;
+
+
+                }
+                IOSExitButton.visible =true;
+              //game.world.bringToTop(this.CloseIOSButton);
+            }
     }, 
     
     ToLandingPage: function()
@@ -480,9 +546,25 @@ var StateDirectory = {
         StickersUnderBody.visible = true;
         StickerBody.visible = true;
         StickersAboveBody.visible = true;
+        IOSExitButton.visible =false;
+        NonCharacterBackgroundGroup.visible = true;
+        ScreenshotLogoGroup.visible = false;
+        TopButtonsGroup.visible = true;
+        //GameCenter_x = this.Background.x+this.Background.width/5;
+        //GameCenter_y = this.Background.y;
+            
+            
+            for (let i = 0; i <= PlacableCollection.length-1; i+=1) 
+            {
+                PlacableCollection[i].scale.setTo(scaleRatio*CharacterScaleAdjustment,scaleRatio*CharacterScaleAdjustment);
+                PlacableCollection[i].x = GameCenter_x;
+                PlacableCollection[i].y = GameCenter_y;
+            }
+        document.getElementById("CaptureButton").remove();
     }, 
     
     CloseButtonpressed: function () {
+        //var newWin = window.open("this.param1","_blank");
         //game.sound.stopAll();
         IsCamSnap = true;
         DownloadModalGroup.visible = false;
@@ -515,14 +597,21 @@ var StateDirectory = {
             
             if(Phaser.Device.iOS == true)
             {
+            /*this.link = document.createElement('a');
+            this.link.href = this.game.canvas.toDataURL('image/png');
+            this.link.download = 'MyCreation.jpg';
+            document.body.appendChild(this.link);
+            document.body.removeChild(this.link);
+            window.open(this.link);*/
+            //document.getElementById("CaptureButton").innerHTML = ScreenCap();
                 
-                this.link = document.createElement('a');
-                this.link.href = this.game.canvas.toDataURL('image/png');
-                this.link.download = 'MyCreation.jpg';
-                //document.body.appendChild(this.link);
-                //this.link.click();
-                //document.body.removeChild(this.link);
-               
+
+                
+             //id="CaptureButton"
+             //onclick="ScreenCap()"
+             //src="images/results/download.png"
+
+                
             }
                 else
                 {
@@ -533,7 +622,7 @@ var StateDirectory = {
                 this.link.click();
                 document.body.removeChild(this.link);
                 } 
-         window.open(this.link);
+        
             
         NonCharacterBackgroundGroup.visible = true;
         ScreenshotLogoGroup.visible = false;
@@ -551,10 +640,48 @@ var StateDirectory = {
         });
         
         //
-    }, 
-
+    }
     
-    update: function () {
+    ,IosCapSetUp: function () {
+        IsCamSnap = true;
+        DownloadModalGroup.visible = false;
+        NonCharacterBackgroundGroup.visible = false;   
+        ScreenshotLogoGroup.visible = true;
+        StickersUnderBody.visible = true;
+        StickerBody.visible = true;
+        StickersAboveBody.visible = true;
+        
+            for (let i = 0; i <= PlacableCollection.length-1; i+=1) 
+            {
+
+                PlacableCollection[i].x = game.width/2;
+                PlacableCollection[i].y = game.height/2;
+
+                PlacableCollection[i].scale.setTo(scaleRatio*1.1,scaleRatio*1.1) ;
+                  
+                
+            }
+        
+    }
+    
+    ,IosCapTakeDown: function () {
+
+        NonCharacterBackgroundGroup.visible = true;
+        ScreenshotLogoGroup.visible = false;
+        TopButtonsGroup.visible = true;
+        //GameCenter_x = this.Background.x+this.Background.width/5;
+        //GameCenter_y = this.Background.y;
+            
+            
+            for (let i = 0; i <= PlacableCollection.length-1; i+=1) 
+            {
+                PlacableCollection[i].scale.setTo(scaleRatio*CharacterScaleAdjustment,scaleRatio*CharacterScaleAdjustment);
+                PlacableCollection[i].x = GameCenter_x;
+                PlacableCollection[i].y = GameCenter_y;
+            }
+    }
+    
+    ,update: function () {
         if(game.input.activePointer.isUp == true && IsCamSnap == true)
             {
                 this.camerasnap.play();
