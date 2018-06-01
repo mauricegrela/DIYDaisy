@@ -168,7 +168,7 @@ var StatePlace = {
         
         
         this.mummy1 = game.add.sprite(
-        1024,
+        700,
         0, 
         'Anim1', 5);
         this.mummy1.scale.set(craftAnimBackgroundScale);
@@ -493,7 +493,7 @@ var StatePlace = {
                     {//If the player has looped around, move all the assets up
                         for (let i = 0; i <= AnimObject.length-1; i+=1) 
                         {
-                        AnimObject[i].x -=this.craftBackground1.width*5;
+                        AnimObject[i].x -=(this.craftBackground1.width*5)-8;
 
                         }
                     }
@@ -515,7 +515,7 @@ var StatePlace = {
                         {//If the player has looped around, move all the assets up
                             for (let i = 0; i <= AnimObject.length-1; i+=1) 
                             {
-                            AnimObject[i].x +=this.craftBackground1.width*5;
+                            AnimObject[i].x +=(this.craftBackground1.width*5)-8;
                             }
 
                         }

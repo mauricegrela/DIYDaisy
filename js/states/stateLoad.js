@@ -24,7 +24,7 @@ this.time.advacedTiming = true;
         game.load.audio("ThumbsDownSFX",'audio/UI_SFX/UI_Wood_ThumDW.mp3'); 
         game.load.audio("MusicTrackInteractive",'audio/Daisy_Music_Interactive.mp3');
         //Instructions
-        game.load.audio("FrontEndTitle",'audio/VoiceOver/DaisyVO_001.mp3'); 
+        game.load.audio("FrontEndTitle",['///audio/VoiceOver/DaisyVO_001.wav','///audio/VoiceOver/DaisyVO_001.mp3']); 
         game.load.audio("InitialInstructions",'audio/VoiceOver/DaisyVO_002.mp3'); 
         game.load.audio("TeachSaveButton",'audio/VoiceOver/DaisyVO_003.mp3'); 
         game.load.audio("SaveButtonPressed",'audio/VoiceOver/DaisyVO_004.mp3'); 

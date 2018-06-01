@@ -39,13 +39,11 @@ body {
 }
 
 #ph_game {
-    
+    top: -50px;
     left: 50vh; 
-    height:95vh; /*vh stands for view-port height, 1vh is 1% of screen height*/
- z-index: 9;
+    height:93vh; /*vh stands for view-port height, 1vh is 1% of screen height*/
+	z-index: 9; 
 }
-
-#buttonLeft {margin-left:50px;} /* But with a on clicked parameter instead of active */
 
 
 #CaptureButton {

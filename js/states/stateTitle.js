@@ -8,11 +8,6 @@ var StateTitle = {
     }, 
     
     create: function () {
-        
-       
-        
-            //game.sound.stopAll(); 
-        //game.sound.stopAll();
         IsTwinklePlay = true;
         
         this.AudioPromt = game.add.audio("FrontEndTitle");
